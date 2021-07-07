@@ -14,16 +14,16 @@ import Search from "./components/Search";
 import Form from "./components/Form";
 import TourInfo from "./components/TourInfo";
 import SatView from "./components/SatView";
-import WorldWeather from "./component/WorldWeather";
-import AsterTrack from "./component/AsterTrack";
+import WorldWeather from "./components/WorldWeather";
+import AsterTrack from "./components/AsterTrack";
 
 function App({
   client,
   clearFavorites,
   clearSearch,
   clearClient,
-  ClearForm,
-  ClearAsterTrack,
+  clearForm,
+  clearAsterTrack,
   clearWorldWeather,
   clearSatView,
 }) {
@@ -140,7 +140,7 @@ const mapDispatchToProps = {
   clearForm,
   clearSatView,
   clearWorldWeather,
-  ClearAsterTrack,
+  clearAsterTrack,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
