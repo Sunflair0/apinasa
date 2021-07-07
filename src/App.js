@@ -14,8 +14,8 @@ import Search from "./components/Search";
 import Form from "./components/Form";
 import TourInfo from "./components/TourInfo";
 import SatView from "./components/SatView";
-import WorldWeather from "./WorldWeather";
-import AsterTrack from "./AsterTrack";
+import WorldWeather from "./component/WorldWeather";
+import AsterTrack from "./component/AsterTrack";
 
 function App({
   client,
