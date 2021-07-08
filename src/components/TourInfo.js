@@ -1,19 +1,49 @@
+import React, { useState, useContext} from "react";
+import {connect} from "react-redux";
+import * as FaIcons from "react-icons/fa";
+import Link from "react-router-dom";
 
-    <a id="top"></a>
 
-    <div class="page-two">
-        <div class="sale-menu">
-            <a href="#pit1">Sun/Sol</a>
-            <a href="#pit2">Mercury</a>
-            <a href="#pit3">Earth</a>
-            <a href="#pit4">Moon/Luna</a>
-            <a href="#pit5">Mars</a>
-            <a href="#pit6">Ganymede</a>
-            <a href="#pit7">Callisto</a>
-            <a href="#pit8">Titan</a>
-            <a href="#pit9">Mimas</a>
-            <a href="#pit10">Uranus</a>
-            <a href="#pit11">Pluto</a>
+
+function NavTour() {
+  const [sidebar, setSidebar] = useState(false)
+  const showSidebar =() =>setSidebar(!sidebar)
+
+return (
+  <>
+  <IconContext.Provider value={{color: red}}>
+  <div className ="navbar-tour">
+    <Link to="#" className="menu-bars"><FaIcons.FaBars onClick={showSidebar}/></Link>
+    </div>
+    <nav className={sidebar ? "navTour-menu active" : "navTour-menu"}>
+      <ul className="navTour-menu-items" onClick={showSidebar}>
+        <li className="navTour-toggle">
+          <Link to="#" className="menu-bars">
+
+          </Link>
+        </li>
+        {Ventures.map((item,index) => {
+          return ( 
+            <li key={index} className={item,cname}>
+            <Link to={item.path}>
+            {item.icon}
+            <span>{item.title}</span>
+            </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+    </IconContext.Provider>
+    </>
+)
+
+}
+   
+
+    <div class="tour-page">
+        <div class="venture-menu">
+
 
         </div>
 
