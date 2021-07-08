@@ -36,3 +36,120 @@
     transform: rotate(360deg);
   }
 }
+
+/////tourinfo page
+.page-two {
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
+}
+
+.top {
+  margin-top: 8px;
+}
+
+.pit-shell {
+  flex-direction: column;
+}
+
+.sale-menu {
+  width: fit-content;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.sale-menu a {
+  background-color: black;
+  color: blanchedalmond;
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.sale-menu a:hover {
+  background-color: rgba(160, 13, 50, 0.5);
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.sale-menu a:active {
+  background-color: blanchedalmond;
+  color: black;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.planet-image-text {
+  display: flex;
+  flex-basis: content;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.planet-image {
+  display: flex;
+  max-width: min-content;
+  align-self: auto;
+  padding: 4px;
+  transform: scale(4);
+  transform: scale(1);
+}
+
+.planet-text {
+  display: flex;
+  background-color: rgba(160, 13, 50, 0.25);
+  color: white;
+  flex-basis: 100%;
+  margin: 5px;
+  flex-flow: row wrap;
+  border: solid 2px black;
+  padding: 4px;
+}
+
+/***Transforms of planets***/
+
+#pit1 :hover {
+  transform: scale(1.5);
+}
+
+#pit2 :hover {
+  transform: scale(1.2);
+}
+
+#pit3 :hover {
+  transform: scale(1.2);
+}
+
+#pit4 :hover {
+  transform: scale(1.2);
+}
+
+#pit5 :hover {
+  transform: scale(1.2);
+}
+
+#pit6 :hover {
+  transform: scale(1.2);
+}
+
+#pit7 :hover {
+  transform: scale(1.2);
+}
+
+#pit8 :hover {
+  transform: scale(1.2);
+}
+
+#pit9 :hover {
+  transform: scale(1.2);
+}
+
+#pit10 :hover {
+  transform: scale(1.2);
+}
+
+#pit11 :hover {
+  transform: scale(1.2);
+}
