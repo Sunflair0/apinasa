@@ -1,6 +1,6 @@
-import { SET_TOURINS, CLEAR_TOURINS, CLEAR_TOURINFO } from "../actions";
+import { SET_TOURINS, CLEAR_TOURINS, CLEAR_TOURINS } from "../actions";
 
-const initialTourinshState = [];
+const initialTourinsState = [];
 
 export default function tourinsReducer(state = initialTourinsState, action) {
   switch (action.type) {

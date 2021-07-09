@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const baseUrl =
-  "https://api.giphy.com/v1/gifs/search?api_key=DtwTkZwAIfcbYylnIlpb5tczU7Y3MH8n&limit=25&offset=0&rating=pg-13&lang=en&q="; // If all of them go to something like https://www.omdb.api this would go there
+"https://api.nasa.gov/planetary/apod?api_key=ODX7vfG331Sr6RrRX0GLhKfXypZKtaCV8NF45frT"
 
 export default function useFetch(url) {
   // This hook uses state management AND hooks
@@ -19,7 +19,7 @@ export default function useFetch(url) {
     }
     async function callAPI() {
       setLoading(true);
-      // This is with fetch, but it could just as easily be with axios
+      
       try {
         const response = await fetch(baseUrl + url);
         if (response.ok) {
@@ -42,3 +42,4 @@ export default function useFetch(url) {
   // Exposes the data, any error, and whether or not it was loading
   return { data, error, loading };
 }
+export default function useFetch(url, baseUrl)

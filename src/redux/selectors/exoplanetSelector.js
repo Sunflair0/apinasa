@@ -1,1 +1,0 @@
-export const exoplanetSelector = (state) => state.exoplanet;
