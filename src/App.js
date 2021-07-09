@@ -70,6 +70,7 @@ function App({
               className="presenter"
               to="/search"
             >
+              {" "}
               Search{" "}
             </NavLink>
             <NavLink
@@ -104,7 +105,6 @@ function App({
       <main>
         <Switch>
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
-
           <Route path="*">
             {" "}
             <Redirect to="/login" />
