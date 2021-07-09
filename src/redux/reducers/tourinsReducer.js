@@ -1,4 +1,4 @@
-import { SET_TOURINS, CLEAR_TOURINS, CLEAR_TOURINS } from "../actions";
+import { SET_TOURINS, CLEAR_TOURINS } from "../actions";
 
 const initialTourinsState = [];
 

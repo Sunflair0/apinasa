@@ -14,9 +14,7 @@ import ProtectedRoute from "./shared/ProtectedRoute";
 import Search from "./components/Search";
 import Form from "./components/Form";
 import TourInfo from "./components/TourInfo";
-import Eonet from "./components/Eonet";
-import Exoplanet from "./components/Exoplanet";
-import Donki from "./components/Donki";
+import Pod from "./components/Pod";
 import TourIns from "./components/TourIns";
 
 function App({
@@ -25,10 +23,8 @@ function App({
   clearSearch,
   clearClient,
   clearForm,
-  clearDonki,
-  clearExoplanet,
-  clearEonet,
-  clearTourIns,
+  clearPod,
+   clearTourIns,
 }) {
   return (
     <Router>
@@ -48,21 +44,10 @@ function App({
             >
               Tour Info(Buy Here){" "}
             </NavLink>
-            <NavLink activeClassName="active" className="presenter" to="/eonet">
-              EONET(Earth Observatory Natural Event Tracker){" "}
-            </NavLink>
-            <NavLink activeClassName="active" className="presenter" to="/donki">
-              DONKI - Space Weather(Database of Notifications, Knowledge,
-              Information){" "}
-            </NavLink>
-            <NavLink
-              activeClassName="active"
-              className="presenter"
-              to="/exoplanet"
-            >
-              ExoPlanet(Furture Tour Possibilities){" "}
-            </NavLink>
-            <NavLink activeClassName="active" className="presenter" to="/ins">
+            <NavLink activeClassName="active" className="presenter" to="/pod">
+              POD (Photo of the Day -Astronomy){" "}
+              </NavLink>
+                       <NavLink activeClassName="active" className="presenter" to="/ins">
               Tour Insurance{" "}
             </NavLink>
             <NavLink
@@ -91,9 +76,7 @@ function App({
                 clearSearch();
                 clearForm();
                 clearTourIns();
-                clearExoplanet();
-                clearDonki();
-                clearEonet();
+                clearPod();f
                 clearClient();
               }}
             >
@@ -113,13 +96,8 @@ function App({
               reqUser={true}
               component={TourInfo}
             />
-            <ProtectedRoute path="/donki" reqUser={true} component={Donki} />
-            <ProtectedRoute
-              path="/exoplanet"
-              reqUser={true}
-              component={Exoplanet}
-            />
-            <ProtectedRoute path="/eonet" reqUser={true} component={Eonet} />
+            <ProtectedRoute path="/pod" reqUser={true} component={Pod} />
+                        <ProtectedRoute path="/eonet" reqUser={true} component={Eonet} />
             <ProtectedRoute
               path="/tourins"
               reqUser={true}
@@ -195,9 +173,7 @@ const mapDispatchToProps = {
   clearSearch,
   clearTourIns,
   clearForm,
-  clearDonki,
-  clearExoplanet,
-  clearEonet,
+  clearPod,
   clearTourInfo,
 };
 

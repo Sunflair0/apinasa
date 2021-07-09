@@ -42,4 +42,3 @@ export default function useFetch(url) {
   // Exposes the data, any error, and whether or not it was loading
   return { data, error, loading };
 }
-export default function useFetch(url, baseUrl)

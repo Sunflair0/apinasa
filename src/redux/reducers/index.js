@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import clientReducer from "./clientReducer";
 
-import exoplanetReducer from "./exoplanetReducer";
+import podtReducer from "./podReducer";
 import favoritesReducer from "./favoritesReducer";
 import formReducer from "./formReducer";
 import podReducer from "./podReducer";
