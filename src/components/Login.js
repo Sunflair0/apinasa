@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Login = ({ setLoggedInUser }) => {
-  const [client, setClient] = useState("");
+const Login = ({ setLoggedInClient }) => {
+  const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
 
   return (
@@ -9,11 +9,11 @@ const Login = ({ setLoggedInUser }) => {
       <h2 className="center"></h2>
       <form className="form">
         <div className="presenter">
-          <label htmlFor="client">Client Sign In</label>
+          <label htmlFor="clienttag">Client Sign In</label>
           <input
-            id="client"
-            onChange={(e) => setClient(e.target.value)}
-            value={client}
+            id="clienttag"
+            onChange={(e) => setClienttag(e.target.value)}
+            value={clienttag}
           />
         </div>
         <div className="presenter">
@@ -28,8 +28,8 @@ const Login = ({ setLoggedInUser }) => {
         <button
           className="btn"
           onClick={(e) => {
-            if (client.length > 4 && password.length > 4) {
-              setClient(client);
+            if (clienttag.length > 4 && password.length > 4) {
+              setClient(clientag);
             }
           }}
         >

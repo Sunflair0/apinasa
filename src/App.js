@@ -20,7 +20,7 @@ import Donki from "./components/Donki";
 import TourIns from "./components/TourIns";
 
 function App({
-  client,
+  clienttag,
   clearFavorites,
   clearSearch,
   clearClient,
@@ -34,12 +34,12 @@ function App({
     <Router>
       <nav className="presenter">
         {" "}
-        {!client && (
+        {!clienttag && (
           <NavLink activeClassName="active" className="presenter" to="/login">
             Login{" "}
           </NavLink>
         )}{" "}
-        {client && (
+        {clienttag && (
           <>
             <NavLink
               activeClassName="active"
@@ -186,18 +186,19 @@ function App({
 }
 
 function mapStateToProps(state) {
-  return { client: state.user.client };
+  return { clienttag: state.client.clienttag };
 }
 
 const mapDispatchToProps = {
   clearFavorites,
   clearClient,
   clearSearch,
-  clearFavorites,
+  clearTourIns,
   clearForm,
   clearDonki,
   clearExoplanet,
   clearEonet,
+  clearTourInfo,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

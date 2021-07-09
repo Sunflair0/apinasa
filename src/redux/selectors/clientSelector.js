@@ -1,5 +1,5 @@
-export const clientSelector = (state) => state.client;
-export const clientSelectorID = (state) => state.client.id;
+export const clienttagSelector = (state) => state.client.clienttag;
+export const clienttagSelectorID = (state) => state.clienttag.id;
 export const clientRoleSelector = (state) => state.client.role;
 export const clienttagSelector = (state) => state.client.clienttag;
 export const clienttagAndID = (state) => ({

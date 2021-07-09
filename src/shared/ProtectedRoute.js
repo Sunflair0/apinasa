@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
-function ProtectedRoute({ username, path, reqUser, component }) {
-  if ((username && reqUser) || (!username && !reqUser)) {
+function ProtectedRoute({ clienttag, path, reqUser, component }) {
+  if ((clienttag && reqUser) || (!clienttag && !reqUser)) {
     return <Route path={path} component={component} />;
   } else {
     return <Redirect to={reqUser ? "/login" : "/search"} />;
@@ -12,7 +12,7 @@ function ProtectedRoute({ username, path, reqUser, component }) {
 
 function mapStateToProps(state) {
   return {
-    username: state.user.username,
+    clienttag: state.client.clienttag,
   };
 }
 

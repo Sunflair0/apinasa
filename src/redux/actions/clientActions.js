@@ -5,6 +5,6 @@ export function clearClient() {
   return { type: CLEAR_CLIENT };
 }
 
-export function setClient(client) {
-  return { type: SET_CLIENT, client };
+export function setClient(clienttag) {
+  return { type: SET_CLIENT, clienttag };
 }

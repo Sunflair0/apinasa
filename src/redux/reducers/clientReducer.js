@@ -1,13 +1,13 @@
 import { SET_CLIENT, CLEAR_CLIENT } from "../actions";
 
-const initialClientState = { id: null, client: null, role: null };
+const initialClientState = { id: null, clienttag: null, role: null };
 
 export default function clientReducer(state = initialClienrState, action) {
   switch (action.type) {
     case SET_CLIENT:
-      return { ...state, client: action.client };
+      return { ...state, clienttag: action.clienttag };
     case CLEAR_CLIENT:
-      return { ...state, client: null };
+      return { ...state, clienttag: null };
     default:
       return state;
   }
