@@ -21,7 +21,7 @@ const Search = ({
 
   useEffect(() => {
     if (data) {
-      setSearch(data.data);
+      setSearches(data.data);
     }
   }, [data]);
 
@@ -53,7 +53,7 @@ const Search = ({
       {search && (
         <div className="flex-wrap">
           {search.map((gif) => (
-            <GifDisplay
+            <Console
               deleteFavorite={deleteFavorite}
               addFavorite={addFavorite}
               isFav={favIds.includes(gif.id)}
@@ -80,7 +80,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   deleteFavorite,
   addFavorite,
-  setSearch,
+  setSearches,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
