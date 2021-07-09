@@ -5,5 +5,5 @@ export * from "./favoritesActions";
 export * from "./exoplanetActions";
 export * from "./formActions";
 export * from "./tourinfoActions";
-export * from "./searchActions";
+export * from "./searchesActions";
 export * from "./tourinsActions";

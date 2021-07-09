@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { connect } from "react-redux";
 import * as FaIcons from "react-icons/fa";
-import Link from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function NavTour() {
   const [sidebar, setSidebar] = useState(false);
@@ -36,4 +36,4 @@ function NavTour() {
     </>
   );
 }
-
+export default connect(mapStateToProps, mapDispatchToProps)(TourInfo);
