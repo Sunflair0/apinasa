@@ -29,7 +29,7 @@ const Login = ({ setLoggedInUser }) => {
           className="btn"
           onClick={(e) => {
             if (client.length > 4 && password.length > 4) {
-              setLoggedInClient(client);
+              setClient(client);
             }
           }}
         >

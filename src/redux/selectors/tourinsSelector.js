@@ -1,0 +1,1 @@
+export const tourinsSelector = (state) => state.tourins;
