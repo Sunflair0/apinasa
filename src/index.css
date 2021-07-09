@@ -1,18 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .presenter {
   color: aliceblue;
   font-weight: 500;
@@ -20,4 +5,98 @@ code {
 
 .center {
   align-content: center;
+}
+
+/* //// Venture Menu */
+
+.navbar {
+  background-color: rgb(162, 22, 243);
+  height: 120px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.navbar-tour {
+  background-color: chartreuse;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100;
+  transition: 850;
+}
+
+.navbar-tour.active {
+  left: 0;
+  transition: 350;
+}
+
+.nav.text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: wheat;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: yellow;
+}
+.navTour-menu-items {
+  width: 100%;
+}
+
+.navTour-toggle {
+  background-color: blue;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+/* MENU */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.callisto,
+.titan,
+.ganymede,
+.mimas,
+.moon {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
 }
