@@ -121,8 +121,8 @@ function App({
 
                     }
                 } >
-                Logout < /NavLink>  <
-                />
+                Logout < /NavLink>  < /
+                >
 
             )
         } < /nav> <
@@ -190,10 +190,13 @@ function App({
         /Switch>  <
         /main>
 
+
         <
         aside >
+
         <
         Switch >
+
         <
         Route >
         <
@@ -266,12 +269,12 @@ function App({
         ProtectedRoute path = "/pluto"
         reqUser = { true }
         component = { Pluto }
-        />  <
-        /Route >
+        />  </Route >
+
 
         <
-        /Switch >  <
-        /aside> 
+        /Switch >  < /
+        aside >
 
         <
         />
