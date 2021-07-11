@@ -10,6 +10,8 @@ export default function useFetch(url) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+
+
   useEffect(() => {
     setError(null);
     setData(null);
@@ -31,7 +33,7 @@ export default function useFetch(url) {
         }
       } catch (e) {
         console.log(e);
-        setError("Something went wrong. Please try again later");
+        setError("Something isn't right. Please try again.");
       } finally {
         setLoading(false);
       }
@@ -39,6 +41,8 @@ export default function useFetch(url) {
     callAPI();
   }, [url]);
 
-  // Exposes the data, any error, and whether or not it was loading
+  
   return { data, error, loading };
 }
+
+export default function useFetch(url, baseUrl) {}
