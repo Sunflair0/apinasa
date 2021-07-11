@@ -1,20 +1,17 @@
-import React, { useState, useContext } from "react";
-import VentConsole2 from "./VentConsole2";
-import { connect } from "react-redux";
+import React, {useState} from "react";
 import * as FaIcons from "react-icons/fa";
 import {Link} from "react-router-dom";
-import {clearForm} from "../form";
+import Ventures from "./extension/Data";
+import "./Navbar.css";
+import {IconContext} from  "react.icons";
+
 
 function VentureTour() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  const [ventureInfo2, setVentureInfo2] =useContext;
 
   return (
-    <><div className="displayvent">
-    <VentConsole2 
-    
-     />
+    <>
       <IconContext.Provider value={{ color: red }}>
         <div className="venture-menu">
           <Link to="#" className="menu-bars">
@@ -28,10 +25,12 @@ function VentureTour() {
             </li>
             {Ventures.map((item, index) => {
               return (
-                <li key={index} >
+                <li key={index} ><img src={item.icon}/>
+
                   <Link to={item.path}>
-                   <img src={item.icon}/>
+                   
                     <span>{item.title}</span>
+                    
                   </Link>
                 </li>
               );
@@ -42,4 +41,4 @@ function VentureTour() {
     </>
   );
 }
-export default connect(mapStateToProps, mapDispatchToProps)(TourInfo);
+export default VentureTour

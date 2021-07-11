@@ -97,7 +97,7 @@ function App({
               component={TourInfo}
             />
             <ProtectedRoute path="/pod" reqUser={true} component={Pod} />
-                        <ProtectedRoute path="/eonet" reqUser={true} component={Eonet} />
+                        
             <ProtectedRoute
               path="/tourins"
               reqUser={true}
@@ -114,7 +114,7 @@ function App({
         </Switch>
       </main>
 
-      <aside>
+      <NavTour>
         <Switch>
           <Route>
             <ProtectedRoute
@@ -158,7 +158,7 @@ function App({
             <ProtectedRoute path="/pluto" reqUser={true} component={Pluto} />
           </Route>
         </Switch>
-      </aside>
+      </NavTour>
     </Router>
   );
 }

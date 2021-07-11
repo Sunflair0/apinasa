@@ -6,7 +6,7 @@ export const Ventures = [
     title: "ORDER FORM",
     path: "/form",
     icon: "./assets/sun",
-    cname: "navMenu-text",
+    
   },
   {
     title: "SOL/SUN",
