@@ -15,7 +15,7 @@ function ContactUs() {
     <p className="formbody">What's on your mind?</p>
     <p>{client}</p>
     <input type="email" placeholder="Email" name="email" ref="register ({ required: true})}"></input>
-    <select {...register ("subject")}>
+    <select {...register ("Subject Topic")}>
 <option value="Newsletter">Newsletter</option>
 <option value="Insurance Claim">Insurance Claim</option>
 <option value="IntraPlanet Net">IntraPlanet Net</option>
