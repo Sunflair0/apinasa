@@ -3,7 +3,6 @@ import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
 import { setSearch, addFavorite, deleteFavorite } from "../redux/actions";
-
 const Pod = ({
  
  
@@ -16,14 +15,11 @@ const Pod = ({
   const [pod, setPod] =useState ("");
   const { data, loading, error } = useFetch(query);
   
-
-
   useEffect(() => {
     if (data) {
       setPod(data.data);
     }
   }, [data]);
-
   return (
     <div>
       <div className="headtitle">Astronomy Picture of the Day
@@ -47,10 +43,8 @@ const Pod = ({
         >
           Gimmie Pod!
         </button>
-
 <div>
     <h3> Gimmie a Range!</h3>
-
         <input type="date"
           className="btn"
           onClick={(e) => {
@@ -58,8 +52,6 @@ const Pod = ({
             setQuery(`&start_date==${startDate}`);
           }}
         ></input> TO
-
-
             <input type="date"
           className="btn"
           onClick={(e) => {
@@ -67,7 +59,6 @@ const Pod = ({
             setQuery(`&end_date=${endDate}`);
           }}
         >
-
         </input>
         </div>
          
@@ -81,7 +72,6 @@ const Pod = ({
           }}
         ></input>
       </div>
-
     
       {loading && <div className="text-center">Loading Pics</div>}
       {error && <div className="text-center">{error}</div>}
@@ -103,7 +93,6 @@ const Pod = ({
     </div>
   );
 };
-
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
@@ -111,7 +100,6 @@ function mapStateToProps(state) {
     pod: state.pod,
   };
 }
-
 const mapDispatchToProps = {
   deleteFavorite,
   addFavorite,
@@ -119,7 +107,5 @@ const mapDispatchToProps = {
   byDate,
   endDate,
   startDate,
-
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
