@@ -1,6 +1,6 @@
 import React from "react";
 import VentureInfo2 from "./VentureInfo2";
-Import {Ventures} from "../extension/Data";
+Import {Ventures} from "./extension/Data";
 
 export default function VentConsole2() { 
  const [active, setActive] = useState("Form");

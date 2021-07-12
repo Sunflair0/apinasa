@@ -11,11 +11,10 @@ function VentureTour() {
   const [ventureInfo2, setVentureInfo2] =useContext;
 
   return (
-    <><div className="displayvent">
-    <VentConsole2 
-    
-     />
-      <IconContext.Provider value={{ color: red }}>
+  
+    <div className="displayvent">
+   
+      
         <div className="venture-menu">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
@@ -38,8 +37,8 @@ function VentureTour() {
             })}
           </ul>
         </nav>
-      </IconContext.Provider>
-    </>
+         
+    </div>
   );
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TourInfo);
