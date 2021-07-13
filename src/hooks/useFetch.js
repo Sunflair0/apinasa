@@ -45,4 +45,3 @@ export default function useFetch(url) {
   return { data, error, loading };
 }
 
-export default function useFetch(url, baseUrl) {}

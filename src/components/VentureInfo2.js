@@ -1,6 +1,6 @@
 import React from "react";
 
- VentureInfo =({data, index})=> {
+ VentureInfo2 =({item})=> {
     return (
         <div>
             {data[index].map(item =>{
@@ -14,4 +14,4 @@ import React from "react";
     );
 }
 
-export default VentureInfo;
+export default VentureInfo2;
