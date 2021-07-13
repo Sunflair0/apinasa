@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { setClient } from "../redux/actions";
+import { connect } from "react-redux";
 
-const Login = ({ setLoggedInClient }) => {
+const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
 
@@ -40,4 +42,10 @@ const Login = ({ setLoggedInClient }) => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {};
+};
+const mapDispatchToProps = {
+  setClient,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
