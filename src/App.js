@@ -8,23 +8,28 @@ import {
   Switch,
 } from "react-router-dom";
 import "./App.css";
-import Favorites from "./components/Favorites";
 import Login from "./components/Login";
-import ProtectedRoute from "./shared/ProtectedRoute";
-import Search from "./components/Search";
-import Form from "./components/Form";
 import TourInfo from "./components/TourInfo";
+import Form from "./components/Form";
 import Pod from "./components/Pod";
-import TourIns from "./components/TourIns";
+import Search from "./components/Search";
+import Favorites from "./components/Favorites";
+import ContactUs from "./components/ContactUs";
+import ProtectedRoute from "./shared/ProtectedRoute";
+
 
 function App({
   clienttag,
-  clearFavorites,
-  clearSearch,
-  clearClient,
+  clearTourInfo,
   clearForm,
   clearPod,
-   clearTourIns,
+  clearSearch,
+  clearFavorites,
+  clearContactUs,
+  clearClient
+  
+  
+   
 }) {
   return (
     <Router>
@@ -37,129 +42,68 @@ function App({
         )}{" "}
         {clienttag && (
           <>
-            <NavLink
-              activeClassName="active"
-              className="presenter"
-              to="/tourinfo"
-            >
-              Tour Info(Buy Here){" "}
+            <NavLink activeClassName="active" className="presenter" to="/tourinfo"
+            > Tour Info{" "}
             </NavLink>
+            
+            <NavLink activeClassName="active" className="presenter" to="/form">
+              Tour Order Form{" "}
+            </NavLink>
+
             <NavLink activeClassName="active" className="presenter" to="/pod">
               POD (Photo of the Day -Astronomy){" "}
               </NavLink>
-                       <NavLink activeClassName="active" className="presenter" to="/ins">
-              Tour Insurance{" "}
+
+            <NavLink activeClassName="active" className="presenter" to="/search">Search{" "}
             </NavLink>
-            <NavLink
-              activeClassName="active"
-              className="presenter"
-              to="/search"
-            >
-              {" "}
-              Search{" "}
-            </NavLink>
-            <NavLink
-              activeClassName="active"
-              className="presenter"
-              to="/favorites"
-            >
-              Favorites{" "}
-            </NavLink>
+
+            <NavLink activeClassName="active" className="presenter" to="/favorites">
+              Favorites{" "} </NavLink>
+
             <NavLink activeClassName="active" className="presenter" to="/form">
               Contact Us{" "}
             </NavLink>
+
             <NavLink
               className="presenter"
               to="/login"
               onClick={() => {
-                clearFavorites();
-                clearSearch();
+                clearTourInfo();
                 clearForm();
-                clearTourIns();
-                clearPod();f
+                clearPod();
+                clearSearch();
+                clearFavorites();
+                clearContactUs();
                 clearClient();
               }}
             >
-              Logout{" "}
-            </NavLink>{" "}
+              Logout
+            </NavLink>
           </>
-        )}{" "}
+        )}
       </nav>
       <main>
         <Switch>
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
-          <Route path="*">
-            {" "}
-            <Redirect to="/login" />
-            <ProtectedRoute
-              path="/tourinfo"
-              reqUser={true}
-              component={TourInfo}
-            />
+          
+          <Route path="*">  <Redirect to="/login" />
+
+            <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
+
+            <ProtectedRoute path="/form" reqUser={true} component={Form} />
+          
             <ProtectedRoute path="/pod" reqUser={true} component={Pod} />
                         
-            <ProtectedRoute
-              path="/tourins"
-              reqUser={true}
-              component={TourIns}
-            />
             <ProtectedRoute path="/search" reqUser={true} component={Search} />
-            <ProtectedRoute
-              path="/favorites"
-              reqUser={true}
-              component={Favorites}
+            
+            <ProtectedRoute path="/favorites" reqUser={true} component={Favorites}
             />
-            <ProtectedRoute path="/form" reqUser={false} component={Form} />
+            <ProtectedRoute path="/contactus" reqUser={false} component={ContactUs} />
           </Route>
         </Switch>
       </main>
 
-      <NavTour>
-        <Switch>
-          <Route>
-            <ProtectedRoute
-              path="/buyventure"
-              reqUser={true}
-              component={BuyVenture}
-            />
-
-            <ProtectedRoute path="/sun" reqUser={true} component={Sun} />
-
-            <ProtectedRoute
-              path="/mercury"
-              reqUser={true}
-              component={Mercury}
-            />
-
-            <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
-
-            <ProtectedRoute path="/moon" reqUser={true} component={Moon} />
-
-            <ProtectedRoute path="/mars" reqUser={true} component={Mars} />
-
-            <ProtectedRoute
-              path="/ganymede"
-              reqUser={true}
-              component={Ganymede}
-            />
-
-            <ProtectedRoute
-              path="/callisto"
-              reqUser={true}
-              component={Callisto}
-            />
-
-            <ProtectedRoute path="/titan" reqUser={true} component={Titan} />
-
-            <ProtectedRoute path="/mimas" reqUser={true} component={Mimas} />
-
-            <ProtectedRoute path="/uranus" reqUser={true} component={Uranus} />
-
-            <ProtectedRoute path="/pluto" reqUser={true} component={Pluto} />
-          </Route>
-        </Switch>
-      </NavTour>
-    </Router>
+      </Router>
   );
 }
 
@@ -168,13 +112,14 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  clearFavorites,
-  clearClient,
-  clearSearch,
-  clearTourIns,
-  clearForm,
-  clearPod,
-  clearTourInfo,
+clearTourInfo,
+clearForm,
+clearPod,
+clearSearch,
+clearFavorites,
+clearContactUs, 
+clearClient
+ 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
