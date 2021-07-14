@@ -1,0 +1,1 @@
+export const contactusSelector = (state) => state.contactus;

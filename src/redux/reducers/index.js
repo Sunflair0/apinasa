@@ -1,24 +1,24 @@
 import { combineReducers } from "redux";
+import tourinfoReducer from "./tourinfoReducer"
 import clientReducer from "./clientReducer";
-
-import podtReducer from "./podReducer";
-import favoritesReducer from "./favoritesReducer";
+import podReducer from "./podReducer";
 import formReducer from "./formReducer";
 import podReducer from "./podReducer";
 import searchesReducer from "./searchesReducer";
-import tourinfoReducer from "./tourinfoReducer";
-import tourinsReducer from "./tourinsReducer";
+import favoritesReducer from "./favoritesReducer";
+import contactusReducer from "./contactusReducer";
+
 
 
 
 const rootReducer = combineReducers({
   client: clientReducer,
-  favorites: favoritesReducer,
+  tourinfo: tourinfoReducer,
   form: formReducer,
   pod: podReducer,
   search: searchesReducer,
-  tourinfo: tourinfoReducer,
-  tourins: tourinsReducer,
+  favorites: favoritesReducer,
+  contactus: contactusReducer,
 
 
  

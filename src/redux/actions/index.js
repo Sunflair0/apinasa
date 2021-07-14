@@ -4,4 +4,4 @@ export * from "./podActions";
 export * from "./formActions";
 export * from "./tourinfoActions";
 export * from "./searchesActions";
-export * from "./tourinsActions";
+export * from "./contactusActions";

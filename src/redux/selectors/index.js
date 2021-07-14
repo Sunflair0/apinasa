@@ -4,4 +4,4 @@ export * from "./favoritesSelectors";
 export * from "./formSelectors";
 export * from "./searchSelectors";
 export * from "./tourinfoSelectors";
-export * from "./tourinsSelectors";
+export * from "./contactusSelectors";
