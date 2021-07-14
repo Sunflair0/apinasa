@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
+  clearClient, clearTourInfo, clearForm, clearPod, clearSearch, clearFavorites, clearContactUs} from "./redux/actions";
+
+import {
   BrowserRouter as Router,
   NavLink,
   Redirect,
