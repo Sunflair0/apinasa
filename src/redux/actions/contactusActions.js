@@ -1,7 +1,7 @@
-export const CLEAR_CONTACTUS = "Clear Contactus";
-export const SET_CONTACTUS = "Set Contactus";
+export const CLEAR_CONTACTUS = "Clear ContactUs";
+export const SET_CONTACTUS = "Set ContactUs";
 
-export function clearContactus() {
+export function clearContactUs() {
   return { type: CLEAR_CONTACTUS };
 }
 

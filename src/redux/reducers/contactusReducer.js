@@ -1,8 +1,8 @@
 import { SET_CONTACTUS, CLEAR_CONTACTUS } from "../actions";
 
-const initialContactusState = [];
+const initialContactUsState = [];
 
-export default function contactusReducer(state = initialContactusState, action) {
+export default function contactusReducer(state = initialContactUsState, action) {
   switch (action.type) {
     case SET_CONTACTUS:
       return [...action.contactus];
