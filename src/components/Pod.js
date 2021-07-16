@@ -1,26 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import { setSearch, addFavorite, deleteFavorite } from "../redux/actions";
-const Pod = ({
- 
- 
-}) => {
-  const [byDate, setByDate] = useState("");
-  const [query, setQuery] = useState("");
-  const [startDate, setStartDate]= useState("");
-  const [endDate, setEndDate]= useState("");
-  const [date1, setDate1] = useState("");
-  const [pod, setPod] =useState ("");
-  const { data, loading, error } = useFetch(query);
-  
-  useEffect(() => {
-    if (data) {
-      setPod(data.data);
-    }
-  }, [data]);
-  return (
+import { addFavorite, deleteFavorite } from "../redux/actions";
+
+const Pods = ({ addFavorite, deleteFavorite, pod, clienttag, setQuery})
+  => { return (
+
     <div>
       <div className="headtitle">Astronomy Picture of the Day
 </div>
@@ -28,9 +14,9 @@ const Pod = ({
         <div className="form-field flex-wrap">
           <label htmlFor="search">Gimme Picture of the Day!</label>
           <input
-            id="search"
+            id="pod"
             value={pod}
-            onChange={(e) => setPod(e.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder="Picture of the Day"
           />
         </div>
@@ -49,19 +35,19 @@ const Pod = ({
           className="btn"
           onClick={(e) => {
             e.preventDefault();
-            setQuery(`&start_date==${startDate}`);
+            setStartDate(`&start_date==${startDate}`);
           }}
         ></input> TO
             <input type="date"
           className="btn"
           onClick={(e) => {
             e.preventDefault();
-            setQuery(`&end_date=${endDate}`);
+            setEndDate(`&end_date=${endDate}`);
           }}
         >
         </input>
         </div>
-         
+
       
       <div> <h3> Gimmie Five!</h3>
       <input type="button"
@@ -73,19 +59,19 @@ const Pod = ({
         ></input>
       </div>
     
-      {loading && <div className="text-center">Loading Pics</div>}
+      {loading && <div className="text-center">Loading PoDs</div>}
       {error && <div className="text-center">{error}</div>}
       {search && (
         <div className="flex-wrap">
-          {search.map((gif) => (
+          {search.map((pod) => (
             <Console
               deleteFavorite={deleteFavorite}
               addFavorite={addFavorite}
-              isFav={favIds.includes(gif.id)}
-              id={gif.id}
-              title={gif.title}
+              isFav={podIds.includes(pod.id)}
+              id={pod.id}
+              title={pod.title}
               url={gif.images.original.url}
-              key={gif.id}
+              key={pod.id}
             />
           ))}
         </div>
