@@ -3,7 +3,7 @@ let router = express.Router();
 
 const query = require("../config/mysql.conf");
 
-//! favorites by user_id
+
 async function byUserID(res, user_id) {
   let json = { success: false, error: null, data: null };
   try {
@@ -19,7 +19,7 @@ async function byUserID(res, user_id) {
 }
 
 //! favorites by favorite ID
-async function byFavID(res, id) {
+async function byFaveID(res, id) {
   let json = { success: false, error: null, data: null };
   try {
     const favorites = await query("SELECT * FROM favorites WHERE id = ?", [id]);
@@ -32,7 +32,7 @@ async function byFavID(res, id) {
 }
 
 //! add favorite
-async function addFav(res, user_id, gif) {
+async function addFave(res, user_id, gif) {
   let json = { success: false, error: null, data: null };
   try {
     const result = await query(
@@ -49,7 +49,7 @@ async function addFav(res, user_id, gif) {
 }
 
 //! delete favorite by ID
-async function deleteFav(res, user_id, gif_id) {
+async function deleteFave(res, user_id, gif_id) {
   let json = { success: false, error: null, data: null };
   try {
     await query("DELETE FROM favorites WHERE user_id = ? AND gif_id = ?", [
@@ -64,7 +64,7 @@ async function deleteFav(res, user_id, gif_id) {
   }
 }
 
-//! delete favorites by UserID, will delete all three categories
+//! delete favorites by UserID
 async function deleteByUserID(res, user_id) {
   let json = { success: false, error: null, data: null };
   try {
@@ -77,7 +77,7 @@ async function deleteByUserID(res, user_id) {
   }
 }
 
-module.exports = { byFavID, byUserID, addFav,  deleteByUserID, deleteFav  };
+module.exports = { byFaveID, byUserID, addFave, deleteByUserID, deleteFave };
 
 
 module.exports = router;
