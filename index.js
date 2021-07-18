@@ -16,7 +16,10 @@ app.use("/api/pod", podRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
 app.use("/api/ventures", venturesRoutes);
 
-
+app.get("/", (req, res) =>{
+console.log(req.url);
+res.send("<h4><hello></h4>");
+});
 
 app.use(express.static(__dirname + "/build"));
 
