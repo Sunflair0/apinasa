@@ -4,7 +4,7 @@ import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
 import { addFavorite, deleteFavorite } from "../redux/actions";
 
-const Pods = ({ addFavorite, deleteFavorite, pod, clienttag, setQuery})
+const apods = ({ addFavorite, deleteFavorite, apod, clienttag, setQuery})
   => { return (
 
     <div>
@@ -14,8 +14,8 @@ const Pods = ({ addFavorite, deleteFavorite, pod, clienttag, setQuery})
         <div className="form-field flex-wrap">
           <label htmlFor="search">Gimme Picture of the Day!</label>
           <input
-            id="pod"
-            value={pod}
+            id="apod"
+            value={apod}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Picture of the Day"
           />
@@ -27,7 +27,7 @@ const Pods = ({ addFavorite, deleteFavorite, pod, clienttag, setQuery})
             setQuery(`&date=${byDate}`);
           }}
         >
-          Gimmie Pod!
+          Gimmie apod!
         </button>
 <div>
     <h3> Gimmie a Range!</h3>
@@ -59,19 +59,19 @@ const Pods = ({ addFavorite, deleteFavorite, pod, clienttag, setQuery})
         ></input>
       </div>
     
-      {loading && <div className="text-center">Loading PoDs</div>}
+      {loading && <div className="text-center">Loading apods</div>}
       {error && <div className="text-center">{error}</div>}
       {search && (
         <div className="flex-wrap">
-          {search.map((pod) => (
+          {search.map((apod) => (
             <Console
               deleteFavorite={deleteFavorite}
               addFavorite={addFavorite}
-              isFav={podIds.includes(pod.id)}
-              id={pod.id}
-              title={pod.title}
+              isFav={apodIds.includes(apod.id)}
+              id={apod.id}
+              title={apod.title}
               url={gif.images.original.url}
-              key={pod.id}
+              key={apod.id}
             />
           ))}
         </div>
@@ -83,13 +83,13 @@ function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
     favorites: state.favorites,
-    pod: state.pod,
+    apod: state.apod,
   };
 }
 const mapDispatchToProps = {
   deleteFavorite,
   addFavorite,
-  setPod,
+  setapod,
   byDate,
   endDate,
   startDate,

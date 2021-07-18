@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const logger = require("./middleware/logger");
 const PORT = process.env.PORT || 63306;
+
 const userRoutes = require("./server/routes/users.routes");
 const favoritesRoutes = require("./server/routes/favorites.routes");
-const podRoutes = require("./server/routes/pod.routes");
+const apodRoutes = require("./server/routes/apod.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
 const venturesRoutes = require("./server/routes/ventures.routes");
 
@@ -12,7 +14,7 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 app.use("/api/favorites", favoritesRoutes);
-app.use("/api/pod", podRoutes);
+app.use("/api/apod", apodRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
 app.use("/api/ventures", venturesRoutes);
 
@@ -22,6 +24,7 @@ res.send("<h4><hello></h4>");
 });
 
 app.use(express.static(__dirname + "/build"));
+app.use(express.urlencoded({extended :false}));
 
 
 app.get("*", (req, res) => {

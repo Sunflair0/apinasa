@@ -3,8 +3,8 @@ const router = express.Router();
 const { addFav, deleteFav, byUserID } = require("../models/favorites.model");
 
 router.put("/add", (req, res) => {
-  const { user_id, pod } = req.body;
-  if (user_id && pod && pod.url && pod.pod_id && pod.title && pod.date && pod.copyright && pod.explanation) {
+  const { user_id, apod } = req.body;
+  if (user_id && apod && apod.url && apod.apod_id && apod.title && apod.date && apod.copyright && apod.explanation) {
   return addFav(res, user_id,test);
   }
   return res.send({
@@ -40,9 +40,9 @@ router.post("/add", (req, res) => {
 
 
 
-router.delete("/delete/:user_id/:pod_id", (req, res) => {
-  const { user_id, pod_id } = req.params;
-  return deleteFav(res, user_id, pod_id);
+router.delete("/delete/:user_id/:apod_id", (req, res) => {
+  const { user_id, apod_id } = req.params;
+  return deleteFav(res, user_id, apod_id);
 });
 
 

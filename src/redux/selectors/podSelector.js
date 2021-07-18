@@ -1,1 +1,1 @@
-export const podSelector = (state) => state.pod;
+export const apodSelector = (state) => state.apod;

@@ -1,26 +1,49 @@
+module.exports = router;
+
 const express = require("express");
 const router = express.Router();
-const { addFave, deleteFave, byUserID } = require("../models/favorites.model");
+const {
+  signup,
+  login,
+  getAllUsers,
+  getByUserID,
+  getByUsername,
+} = require("../models/users.model");
 
-router.post("/add", (req, res) => {
-  const { user_id, pod } = req.body;
-  if (user_id && pod && pod.url && pod.pod_id && pod.title && pod.date && pod.copyright && pod.explanation) {
-    return addFave(res, user_id, pod);
+router.post("/signup", (req, res) => {
+  const { username, password } = req.body;
+  if (validate(username, password)) {
+    return signup(res, username, password);
   }
   return res.send({
     success: false,
-    error: "Invalid data provided",
     data: null,
+    error: "Invalid data provided",
   });
 });
 
-router.delete("/delete/:user_id/:pod_id", (req, res) => {
-  const { user_id, pod_id } = req.params;
-  return deleteFave(res, user_id, pod_id);
+router.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  if (validate(username, password)) {
+    return login(res, username, password);
+  }
+  return res.send({
+    success: false,
+    data: null,
+    error: "Invalid data provided",
+  });
 });
 
-router.get("/user/:user_id", (req, res) => {
-  return byUserID(res, req.params.user_id);
-});
+function validate(username, password) {
+  return (
+    username &&
+    username.length >= 4 &&
+    username.length <= 20 &&
+    password &&
+    password.length >= 4 &&
+    password.length <= 20
+  );
+}
 
 module.exports = router;
+

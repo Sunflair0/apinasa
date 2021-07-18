@@ -2,11 +2,15 @@ const express = require("express");
 const router = require("router");
 
 
-router.get("/", (req, res) => {
+router.get("/_id", (req, res) => {
 return res.send();
 });
 
-router.get("/vent_id", (req, res) => {
+router.get("/apodrang_id", (req, res) => {
+return res.send();
+});
+
+router.get("/apod5_id", (req, res) => {
 return res.send();
 });
 
