@@ -1,12 +1,12 @@
-import { SET_POD, CLEAR_POD } from "../actions";
+import { SET_apod, CLEAR_apod } from "../actions";
 
-const initialPodState = [];
+const initialapodState = [];
 
-export default function podReducer(state = initialPodState, action) {
+export default function apodReducer(state = initialapodState, action) {
   switch (action.type) {
-    case SET_POD:
-      return [...action.pod];
-    case CLEAR_POD:
+    case SET_apod:
+      return [...action.apod];
+    case CLEAR_apod:
       return [];
     default:
       return state;

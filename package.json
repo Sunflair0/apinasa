@@ -1,6 +1,7 @@
 {
   "name": "apinasa",
   "version": "0.1.0",
+  "proxy": "http://localhost:3306",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -15,6 +16,7 @@
     "react-animations": "^1.0.0",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.10.1",
+    "react-icons": "^4.2.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -23,8 +25,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "back": "nodemon index",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [

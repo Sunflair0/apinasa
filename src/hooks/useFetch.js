@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const baseUrl =
-"https://api.nasa.gov/planetary/apod?api_key=ODX7vfG331Sr6RrRX0GLhKfXypZKtaCV8NF45frT"
+"https://api.nasa.gov/planetary/aapod?api_key=ODX7vfG331Sr6RrRX0GLhKfXypZKtaCV8NF45frT"
 
 export default function useFetch(url) {
   // This hook uses state management AND hooks
