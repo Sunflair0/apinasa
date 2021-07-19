@@ -1,13 +1,15 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const logger = require("./middleware/logger");
 const PORT = process.env.PORT || 63306;
 
-const userRoutes = require("./server/routes/users.routes");
-const favoritesRoutes = require("./server/routes/favorites.routes");
+const logger = require("./middleware/logger");
+const timestamp = require("./middleware/timestamp");
+
 const apodRoutes = require("./server/routes/apod.routes");
+const favoritesRoutes = require("./server/routes/favorites.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
+const userRoutes = require("./server/routes/users.routes");
 const venturesRoutes = require("./server/routes/ventures.routes");
 
 app.use(express.json());
