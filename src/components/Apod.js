@@ -4,14 +4,14 @@ import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
 import { addFavorite, deleteFavorite } from "../redux/actions";
 
-const apods = ({ addFavorite, deleteFavorite, apod, clienttag, setQuery})
+const apod = ({ addFavorite, deleteFavorite, apod, clienttag, setQuery})
   => { return (
 
     <div>
       <div className="headtitle">Astronomy Picture of the Day
 </div>
       
-        <div className="form-field flex-wrap">
+        <div className="menubox">
           <label htmlFor="search">Gimme Picture of the Day!</label>
           <input
             id="apod"
@@ -71,7 +71,9 @@ const apods = ({ addFavorite, deleteFavorite, apod, clienttag, setQuery})
               id={apod.id}
               title={apod.title}
               url={gif.images.original.url}
-              key={apod.id}
+description={description}
+      copyright ={copyright}        
+key={apod.id}
             />
           ))}
         </div>

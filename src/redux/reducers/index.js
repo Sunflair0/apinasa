@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import tourinfoReducer from "./tourinfoReducer"
 import formReducer from "./formReducer";
-import apodReducer from "./apodReducer";
+// import apodReducer from "./apodReducer";
 import searchesReducer from "./searchesReducer";
 import favoritesReducer from "./favoritesReducer";
 import contactusReducer from "./contactusReducer";
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   client: clientReducer,
   tourinfo: tourinfoReducer,
   form: formReducer,
-  apod: apodReducer,
+  // apod: apodReducer,
   search: searchesReducer,
   favorites: favoritesReducer,
   contactus: contactusReducer,
