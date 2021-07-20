@@ -25,7 +25,7 @@ function VentureTour() {
             </li>
             {Ventures.map((item, index) => {
               return (
-                <li key={index} ><img alt="menu with planet icons" src={item.icon}/>
+                <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon}/>
 
                   <Link to={item.path}>
                    
@@ -37,7 +37,11 @@ function VentureTour() {
             })}
           </ul>
         </nav>
+<<<<<<< HEAD
       
+=======
+   
+>>>>>>> master
     </>
   );
 }
