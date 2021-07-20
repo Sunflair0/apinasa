@@ -1,20 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import { addFavorite, deleteFavorite } from "../redux/actions";
+import { addFavorite, deleteFavorite, setSearch } from "../redux/actions";
 
-const apod = ({ addFavorite, deleteFavorite, apod, clienttag, setQuery})
-  => { return (
+const Search =({
+startDate, 
+endDate, 
+byDate, 
+apod, 
+setApod,
+addFavorite, 
+deleteFavorite, 
+search, 
+setSearch 
+
+}) => {
+
+const [query, setQuery]= useState("")};
+const [apod, setApod]=useState("");
+const {data, loading, error} = useFetch(query);
+const apodId = useMemo(()=>{
+return favorites.map((val)=> val.id);
+}, [favorites]);
+
+useEffect (()=> {
+if (data){
+setSearch(data.data)}})
+
+ return (
 
     <div>
       <div className="headtitle">Astronomy Picture of the Day
 </div>
-      
-        <div className="menubox">
+<div className="menubox">
           <label htmlFor="search">Gimme Picture of the Day!</label>
           <input
-            id="apod"
+            id="search"
             value={apod}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Picture of the Day"
@@ -80,7 +102,7 @@ key={apod.id}
       )}
     </div>
   );
-};
+
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
