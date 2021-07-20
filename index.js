@@ -1,10 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 63306;
+const PORT = process.env.PORT || 8080;
 
-const logger = require("./middleware/logger");
-const timestamp = require("./middleware/timestamp");
+// const logger = require("./middleware/logger");
+// const timestamp = require("./middleware/timestamp");
 
 const apodRoutes = require("./server/routes/apod.routes");
 const favoritesRoutes = require("./server/routes/favorites.routes");
@@ -34,5 +34,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, function(){
-console.log("Listening on port 63306");
+console.log("Listening on port 3306");
 })
