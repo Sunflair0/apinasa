@@ -1,14 +1,15 @@
 import React from "react";
 
- VentureInfo2 =({item})=> {
+ const VentureInfo2 =({item})=> {
     return (
         <div>
-            {data[index].map(item =>{
+            {item[index].map(item => {
            <div className="venture">   
-           <img src={item.icon}/> 
+           <img alt="menu with planets as an icon"src={item.icon}/> 
             <p>{item.title}</p>
             <h4>{item.content}</h4></div>
             })}
+
         <button className="ventBtn">Click to place order</button>
             </div>
     );

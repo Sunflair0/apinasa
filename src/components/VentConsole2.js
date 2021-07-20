@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import VentureInfo2 from "./VentureInfo2";
 import { Ventures } from "./extension/Data";
 export default function VentConsole2() {

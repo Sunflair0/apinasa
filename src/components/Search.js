@@ -23,7 +23,7 @@ const Search = ({
     if (data) {
       setSearches(data.data);
     }
-  }, [data]);
+  }, [data, setSearches]);
 
   return (
     <div>
