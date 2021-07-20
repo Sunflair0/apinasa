@@ -3,9 +3,7 @@ const router = express.Router();
 const {
   signup,
   login,
-  getAllUsers,
-  getByUserID,
-  getByUsername,
+ 
 } = require("../models/users.model");
 
 router.post("/signup", (req, res) => {
