@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  clearClient, clearTourInfo, clearForm, clearapod, clearSearch, clearFavorites, clearContactUs} from "./redux/actions";
+  clearClient, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearContactUs} from "./redux/actions";
 
 import {
   BrowserRouter as Router,
@@ -14,7 +14,7 @@ import "./App.css";
 import Login from "./components/Login";
 import TourInfo from "./components/TourInfo";
 import Form from "./components/Form";
-import apod from "./components/apod";
+import Apod from "./components/Apod";
 import Search from "./components/Search";
 import Favorites from "./components/Favorites";
 import ContactUs from "./components/ContactUs";
@@ -25,7 +25,7 @@ function App({
   clienttag,
   clearTourInfo,
   clearForm,
-  clearapod,
+  clearApod,
   clearSearch,
   clearFavorites,
   clearContactUs,
@@ -54,10 +54,11 @@ function App({
             </NavLink>
 
             <NavLink activeClassName="active" className="presenter" to="/apod">
-              apod (Photo of the Day -Astronomy){" "}
+              Apod (Photo of the Day -Astronomy){" "}
               </NavLink>
 
-            <NavLink activeClassName="active" className="presenter" to="/search">Search{" "}
+            <NavLink activeClassName="active" className="presenter" to="/search">
+              Search{" "}
             </NavLink>
 
             <NavLink activeClassName="active" className="presenter" to="/favorites">
@@ -73,7 +74,7 @@ function App({
               onClick={() => {
                 clearTourInfo();
                 clearForm();
-                clearapod();
+                clearApod();
                 clearSearch();
                 clearFavorites();
                 clearContactUs();
@@ -95,7 +96,7 @@ function App({
 
             <ProtectedRoute path="/form" reqUser={true} component={Form} />
           
-            <ProtectedRoute path="/apod" reqUser={true} component={apod} />
+            <ProtectedRoute path="/apod" reqUser={true} component={Apod} />
                         
             <ProtectedRoute path="/search" reqUser={true} component={Search} />
             
@@ -117,7 +118,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
 clearTourInfo,
 clearForm,
-clearapod,
+clearApod,
 clearSearch,
 clearFavorites,
 clearContactUs, 
