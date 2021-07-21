@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import {Link} from "react-router-dom";
 import Ventures from "./extension/Data";
 import "./Navbar.css";
-import {IconContext} from  "react.icons";
+
 
 
 function VentureTour() {
@@ -12,7 +12,7 @@ function VentureTour() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: red }}>
+   
         <div className="venture-menu">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
@@ -25,7 +25,7 @@ function VentureTour() {
             </li>
             {Ventures.map((item, index) => {
               return (
-                <li key={index} ><img src={item.icon}/>
+                <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon}/>
 
                   <Link to={item.path}>
                    
@@ -37,7 +37,7 @@ function VentureTour() {
             })}
           </ul>
         </nav>
-      </IconContext.Provider>
+   
     </>
   );
 }

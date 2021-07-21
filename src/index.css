@@ -6,6 +6,19 @@
 .center {
   align-content: center;
 }
+.headtitle{font-weight: 500;
+color:rgba(0, 0, 255, 0.493);
+}
+.menubox {
+    background-color:rgb(22, 236, 243);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s;
+    margin: 0 auto;
+    width: 300px;
+}
+
 
 /* //// Venture Menu */
 

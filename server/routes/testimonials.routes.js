@@ -3,15 +3,15 @@ const router = express.Router();
 const { byUserIDt, byTestIDt, findTByTtl, writeTByUser, patchTByUser, deleteTByUser } = require("../models/favorites.model");
 
 
-router.get("/:user_id", (req, res) => {
+router.get("/user:user_id", (req, res) => {
 return byUserIDt(res, req.params.user_id);
 });
 
-router.get("/:test_id", (req, res) => {
+router.get("/test:test_id", (req, res) => {
 return byTestIDt(res, req.params.test_id);
 });
 
-router.get("/:title", (req, res) => {
+router.get("/title:title", (req, res) => {
 return findTByTtl(res, req.params.title);
 });
 
