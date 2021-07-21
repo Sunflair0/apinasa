@@ -1,5 +1,6 @@
 const query = require("../config/mysql.conf");
 
+
 //! find a favorites by fav_id
 async function byFavIDf(res, fav_id) {
   let json = { success: false, error: null, data: null };
@@ -34,9 +35,9 @@ async function addFavA(res, user_id, apod_id, title, url, description, copyright
   try {
     const result = await query(
       "INSERT INTO favorites (user_id, apod_id, title, url, description, copyright, explanation) VALUES (?,?,?,?,?,?,?)",
-      [user_id, apod.apod_id, apod.title, apod.url, apod.description, apod.copyright, apod.explanation]
+      [user_id, apod_id, title, url, description, copyright, explanation]
     );
-    apod = { ...apod, id: result.insertId,user_id, apod_id, title, url, description, copyright, explanation };
+    const apod = {  id: result.insertId,user_id, apod_id, title, url, description, copyright, explanation };
     json = { ...json, success: true, data: apod };
   } catch (err) {
     json.error = "Something went wrong...";
@@ -54,8 +55,8 @@ async function addFavT(res, user_id, test_id, title, testimonial) {
       [user_id, test.test_id, test.title, test.testimonial]
     );
 ///////check this one, w
-    test = { ...test, id: result.insertId, user_id, test_id, title, testimonial };
-    json = { ...json, success: true, data: test };
+    const newtest = { ...test, id: result.insertId, user_id, test_id, title, testimonial };
+    json = { ...json, success: true, data: newtest };
   } catch (err) {
     json.error = "Something went wrong...";
   } finally {
@@ -69,9 +70,9 @@ async function addFavV(res, user_id, vent_id, tour, description) {
   try {
     const result = await query(
       "INSERT INTO favorites (user_id, vent_id, tour, description) VALUES (?,?,?,?)",
-      [user_id, vent.vent_id, vent.tour, vent.description]
+      [user_id, vent_id, tour, description]
     );
-    vent = { ...vent, id: result.insertId, user_id, vent_id, tour, description };
+    const vent = {  id: result.insertId, user_id, vent_id, tour, description };
     json = { ...json, success: true, data: vent };
   } catch (err) {
     json.error = "Something went wrong...";

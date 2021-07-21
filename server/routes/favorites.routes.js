@@ -14,9 +14,9 @@ return byUserIDf(res, req.params.user_id);
 
 
 //! add favorite for APOD
-outer.put("/add", (req, res) => {
+router.put("/add", (req, res) => {
   const { user_id, apod_id, title, url, description, copyright, explanation} = req.body;
-  if (user_id && apod && apod.url && apod.apod_id && apod.title && apod.date && apod.copyright && apod.explanation) {
+  if (user_id  && url && apod_id && title  && copyright && explanation) {
   return addFavA(res, user_id, apod_id, title, url, description, copyright, explanation);
   }
   return res.send({
@@ -42,7 +42,7 @@ router.post("/add", (req, res) => {
 //! add favorite for Ventures
 router.post("/add", (req, res) => {
   const { user_id, vent_id, tour, description} = req.body;
-  if (user_id && vent.vent_id && vent.tour&& vent.description ) {
+  if (user_id && vent_id && tour&& description ) {
   return addFavV(res, user_id, vent_id, tour, description);
   }
   return res.send({
