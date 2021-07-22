@@ -7,6 +7,7 @@ async function byVentIDv(res, vent_id) {
     const ventures = await query("SELECT * FROM ventures WHERE vent_id = ?", [
       vent_id,
     ]);
+console.log(ventures);
     json = { ...json, success: true, data: ventures[0]};
   } catch (err) {
     json.error = "Something went wrong...";
