@@ -6,21 +6,22 @@ const PORT = process.env.PORT || 8080;
 // const logger = require("./middleware/logger");
 // const timestamp = require("./middleware/timestamp");
 
-const apodRoutes = require("./server/routes/apod.routes");
 const favoritesRoutes = require("./server/routes/favorites.routes");
-const testimonialsRoutes = require("./server/routes/testimonials.routes");
-const userRoutes = require("./server/routes/users.routes");
-const venturesRoutes = require("./server/routes/ventures.routes");
 const purchasesRoutes =require("./server/routes/purchases.routes");
+const testimonialsRoutes = require("./server/routes/testimonials.routes");
+const usersRoutes = require("./server/routes/users.routes");
+const ventfavRoutes = require("./server/routes/ventfav.routes");
+const venturesRoutes = require("./server/routes/ventures.routes");
 
 app.use(express.json());
 
-app.use("/api/users", userRoutes);
+
 app.use("/api/favorites", favoritesRoutes);
-app.use("/api/apod", apodRoutes);
-app.use("/api/testimonials", testimonialsRoutes);
-app.use("/api/ventures", venturesRoutes);
 app.use("/api/purchases", purchasesRoutes);
+app.use("/api/testimonials", testimonialsRoutes);
+app.use("/api/users", usersRoutes);
+app.use("/api/apod", ventfavRoutes);
+app.use("/api/ventures", venturesRoutes);
 
 
 app.get("/", (req, res) =>{
