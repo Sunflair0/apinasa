@@ -103,5 +103,18 @@ async function getAllUsers(res) {
     return res.send(json);
   }
 }
+//! delete favorites by UserID, will delete everything
+async function deleteByUserID(res, user_id) {
+  let json = { success: false, error: null, data: null };
+  try {
+    await query("DELETE * FROM favorites WHERE user_id = ?", [user_id]);
+    json = { ...json, success: true };
+  } catch (err) {
+    json.error = "Something went wrong...";
+  } finally {
+    return res.send(json);
+  }
+}
+
 
 module.exports = { signup, login, getAllUsers, getByUserID, getByUsername };

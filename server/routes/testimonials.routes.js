@@ -4,7 +4,7 @@ const { byUserIDt, byTestIDt, findTByTtl, writeTByUser, patchTByUser, deleteTByU
 
 
 //! find testimonials by user ID
-router.get("/test/:user_id", (req, res) => {
+router.get("/:user_id", (req, res) => {
 return byUserIDt(res, req.params.user_id); 
 });
 
