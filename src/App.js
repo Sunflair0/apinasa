@@ -13,6 +13,7 @@ import {
 import "./App.css";
 import Login from "./components/Login";
 import TourInfo from "./components/TourInfo";
+import Purchases from "./components/Purchases";
 import Form from "./components/Form";
 import Apod from "./components/Apod";
 import Search from "./components/Search";
@@ -48,7 +49,11 @@ function App({
             <NavLink activeClassName="active" className="presenter" to="/tourinfo"
             > Tour Info{" "}
             </NavLink>
-            
+
+            <NavLink activeClassName="active" className="presenter" to="/purchases">
+              Purchases{" "}
+            </NavLink>
+
             <NavLink activeClassName="active" className="presenter" to="/form">
               Tour Order Form{" "}
             </NavLink>
@@ -93,6 +98,8 @@ function App({
           <Route path="*">  <Redirect to="/login" />
 
             <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
+
+<ProtectedRoute path="/purchases" reqUser={true} component={Purchases} />
 
             <ProtectedRoute path="/form" reqUser={true} component={Form} />
           

@@ -11,6 +11,7 @@ const favoritesRoutes = require("./server/routes/favorites.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
 const userRoutes = require("./server/routes/users.routes");
 const venturesRoutes = require("./server/routes/ventures.routes");
+const purchasesRoutes =require("./server/routes/purchases.routes");
 
 app.use(express.json());
 
@@ -19,6 +20,8 @@ app.use("/api/favorites", favoritesRoutes);
 app.use("/api/apod", apodRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
 app.use("/api/ventures", venturesRoutes);
+app.use("/api/purchases", purchasesRoutes);
+
 
 app.get("/", (req, res) =>{
 console.log(req.url);
