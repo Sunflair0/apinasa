@@ -36,7 +36,7 @@ app.use(express.urlencoded({extended :false}));
 app.use(express.cookieSession({
   key: "mysite.sid",
   
-  secret: env.get("SESSION_SECRET"),
+SESSION_SECRET: process.env.get("SESSION_SECRET"),
   cookie: {
     maxAge: 2678400000 // 31 days
   }

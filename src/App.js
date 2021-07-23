@@ -40,7 +40,7 @@ function App({
       <nav>
         {" "}
         {!clienttag && (
-           <NavLink activeClassName="active" className="menu1item" to="/login">
+           <NavLink activeClassName="active" className="menuitem" to="/login">
             {" "}
           </NavLink> 
         )}{" "}
@@ -64,9 +64,9 @@ function App({
             </NavLink></li> 
 
          <li>    <NavLink activeClassName="active" className="menu1item" to="/favorites">
-              Favorites{" "} </NavLink>
+              Favorites{" "} </NavLink></li>
 
-            <NavLink activeClassName="active" className="menu1item" to="/form">
+           <li> <NavLink activeClassName="active" className="menu1item" to="/form">
               Contact Us{" "}
             </NavLink></li> 
 
