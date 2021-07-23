@@ -1,9 +1,6 @@
 import React from "react";
-import VentureInfo2 from "./VentureInfo2";
-import { Ventures } from "./extension/Data";
-export default function VentConsole2() {
-  const [active, setActive] = useState("Form");
-  const locations = ["Sun", "Mercury", "Earth", "Moon", "Mars", "Ganymede","Callisto","Titan","Mimas","Uranus","Pluto"];
+
+const leftMenu =()=>{
   return (
     <>
       <li>FORM</li>
@@ -14,3 +11,5 @@ export default function VentConsole2() {
     </>
   );
 }
+
+export default leftMenu;
