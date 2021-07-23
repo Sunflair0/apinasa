@@ -7,7 +7,7 @@ import "./Navbar.css";
 
 
 function VentureTour() {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
