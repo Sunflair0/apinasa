@@ -36,39 +36,41 @@ function App({
 }) {
   return (
     <Router>
-      <nav className="presenter">
+
+      <nav>
         {" "}
         {!clienttag && (
-          <NavLink activeClassName="active" className="presenter" to="/login">
-            Login{" "}
-          </NavLink>
+           <NavLink activeClassName="active" className="menu1item" to="/login">
+            {" "}
+          </NavLink> 
         )}{" "}
         {clienttag && (
-          <>
-            <NavLink activeClassName="active" className="presenter" to="/tourinfo"
+     <ul>   
+<div className="menu1">
+           <li>  <NavLink activeClassName="active" className="menu1item" to="/tourinfo"
             > Tour Info{" "}
-            </NavLink>
+            </NavLink></li> 
             
-            <NavLink activeClassName="active" className="presenter" to="/form">
+          <li>   <NavLink activeClassName="active" className="menu1item" to="/form">
               Tour Order Form{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/apod">
+        <li>     <NavLink activeClassName="active" className="menu1item" to="/apod">
               Apod (Photo of the Day -Astronomy){" "}
-              </NavLink>
+              </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/search">
+           <li>  <NavLink activeClassName="active" className="menu1item" to="/search">
               Search{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/favorites">
+         <li>    <NavLink activeClassName="active" className="menu1item" to="/favorites">
               Favorites{" "} </NavLink>
 
-            <NavLink activeClassName="active" className="presenter" to="/form">
+            <NavLink activeClassName="active" className="menu1item" to="/form">
               Contact Us{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink
+        <li>    <NavLink
               className="presenter"
               to="/login"
               onClick={() => {
@@ -82,10 +84,11 @@ function App({
               }}
             >
               Logout
-            </NavLink>
-          </>
+            </NavLink></li>
+          </div></ul>
         )}
       </nav>
+
       <main>
         <Switch>
           <ProtectedRoute path="/login" reqUser={false} component={Login} />

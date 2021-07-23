@@ -8,7 +8,7 @@ const Login = ({ setClient }) => {
 
   return (
     <>
-      <h2 className="center"></h2>
+      <div className="center">Welcome to SpaceTours. Please log in.</div>
       <form className="form">
         <div className="presenter">
           <label htmlFor="clienttag">Client Sign In</label>

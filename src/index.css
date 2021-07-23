@@ -22,7 +22,7 @@ margin-top: 100px;
 .menu1{  width: 200px;
 background-color: black;
 color: bisque;
-font-size: 7mm;
+font-size: 5mm;
 text-align: center;
 padding: 2mm;
 text-decoration: none;
@@ -30,7 +30,14 @@ text-decoration: none;
 
 }
 
-menu a:hover{
+li {padding: 3mm;
+border-top: 2px;
+border-color: blue;
+border-bottom: 2px;
+text-decoration: none;
+}
+
+menu :hover{
 background-color: rgba(43, 40, 40, 0.637);
 color: rgb(26, 6, 206);
 border-color: blue;

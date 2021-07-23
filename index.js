@@ -1,10 +1,11 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const cors = require("cors");
+const logger =require("morgan");
 const PORT = process.env.PORT || 8080;
-
-// const logger = require("./middleware/logger");
-// const timestamp = require("./middleware/timestamp");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
 const apodRoutes = require("./server/routes/apod.routes");
 const favoritesRoutes = require("./server/routes/favorites.routes");
@@ -13,6 +14,11 @@ const userRoutes = require("./server/routes/users.routes");
 const venturesRoutes = require("./server/routes/ventures.routes");
 
 app.use(express.json());
+app.use(logger('dev'));
+app.use(cors());
+app.use(cookieParser());
+app.use(session());
+
 
 app.use("/api/users", userRoutes);
 app.use("/api/favorites", favoritesRoutes);
@@ -27,6 +33,15 @@ res.send("<h4><hello></h4>");
 
 app.use(express.static(__dirname + "/build"));
 app.use(express.urlencoded({extended :false}));
+app.use(express.cookieSession({
+  key: "mysite.sid",
+  
+  secret: env.get("SESSION_SECRET"),
+  cookie: {
+    maxAge: 2678400000 // 31 days
+  }
+}));
+app.use(express.csrf());
 
 
 app.get("*", (req, res) => {
@@ -36,3 +51,5 @@ app.get("*", (req, res) => {
 app.listen(PORT, function(){
 console.log("Listening on port 3306");
 })
+
+module.exports = app;
