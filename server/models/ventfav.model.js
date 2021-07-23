@@ -31,13 +31,13 @@ async function byUserIDf(res, user_id) {
 }
 
 // /////I want to delete off my vent personal list
-async function delOneventf(res, vent_id) {
+async function delOneventf(res, user_id, vent_id) {
   let json = { success: false, error: null, data: null };
   try {
-    const ventfav = await query("DELETE FROM ventfav WHERE vent_id =?", [
-      vent_id,
+    const ventfav = await query("DELETE FROM ventfav WHERE user_id =? AND vent_id =?", [
+      user_id,vent_id,
     ]);
-    json = { ...json, success: true, data: ventfav[0]};
+    json = { ...json, success: true, data: user_id, ventfav};
   } catch (err) {
     json.error = "Something went wrong...";
   } finally {

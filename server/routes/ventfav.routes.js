@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { byUserIDv, byUserIDf, delOneventf, delAllventf } = require("../models/ventfav,models");
+const { byUserIDv, byUserIDf, delOneventf, delAllventf } = require("../models/ventfav.model");
 
 // /////I want to see all the ventures I have chosen
 router.get("/mine/:user_id", (req, res) => {
@@ -21,15 +21,15 @@ router.post("/add/:user_id", (req, res) => {
 });
 
 // /////I want to delete off my vent personal list
-router.delete("/delete/one/:vent_id", (req,res)=> {
-const {vent_id} =req.params;
-return delOneventf(res, vent_id);
+router.delete("/delete/one/:user_id/:vent_id", (req,res)=> {
+const {user_id, vent_id} =req.params;
+return delOneventf(res, user_id,vent_id);
 });
 
 // /////I want to clear my personal vent list
 router.delete("/delete/all/:user_id", (req,res)=> {
-const {vent_id} =req.params;
-return delAllventf(res, vent_id);
+const {user_id} =req.params;
+return delAllventf(res, user_id);
 });
 
-
+module.exports = router;

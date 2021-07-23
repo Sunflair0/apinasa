@@ -20,8 +20,9 @@ app.use("/api/favorites", favoritesRoutes);
 app.use("/api/purchases", purchasesRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
 app.use("/api/users", usersRoutes);
-app.use("/api/apod", ventfavRoutes);
+app.use("/api/ventfav", ventfavRoutes);
 app.use("/api/ventures", venturesRoutes);
+
 
 
 app.get("/", (req, res) =>{
