@@ -1,28 +1,25 @@
 import React, { useState } from "react";
-import { setClient } from "../redux/actions";
-import { connect } from "react-redux";
 import useFetch from "../hooks/useFetch";
 
-const Login = ({ setClient }) => {
-  const [clienttag, setClienttag] = useState("");
+const Signup = () => {
+  const [clienttag, setclienttag] = useState("");
   const [password, setPassword] = useState("");
-const {callAPI: loginCall} = useFetch("POST");
-const [error, setError]=useState(null)
-
-
+  const { callAPI: signupCall } = useFetch("POST");
+  const [error, setError] = useState(null);
+  // const history = useHistory();
   return (
     <>
-      <h2 className="center">Welcome!</h2>
+      <h2 className="text-center">Signup</h2>
       <form className="form">
-        <div className="presenter">
-          <label htmlFor="clienttag">Client Sign In</label>
+        <div className="form-field flex-wrap">
+          <label htmlFor="clienttag">clienttag</label>
           <input
             id="clienttag"
-            onChange={(e) => setClienttag(e.target.value)}
+            onChange={(e) => setclienttag(e.target.value)}
             value={clienttag}
           />
         </div>
-        <div className="presenter">
+        <div className="form-field flex-wrap">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -31,41 +28,34 @@ const [error, setError]=useState(null)
             value={password}
           />
         </div>
+
         <button
           className="btn"
           onClick={async (e) => {
-e.preventDefault();
-           if (
+            e.preventDefault();
+            if (
               clienttag.length > 4 &&
               password.length > 4 &&
               clienttag.length <= 20 &&
               password.length <= 20
             ) {
               setError(null);
-              let res = await loginCall("/api/clients/login", {
+              let res = await signupCall("/api/clients/signup", {
                 clienttag,
                 password,
               });
               if (res.error) {
                 return setError(res.error);
               }
-              clienttag(res.data.clienttag);
             }
           }}
-
         >
-          Login
+          Signup
         </button>
       </form>
-<div>{error}</div>
+      <div>{error}</div>
     </>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {};
-};
-const mapDispatchToProps = {
-  setClient,
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Signup;

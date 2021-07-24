@@ -1,13 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-<<<<<<< HEAD
-import {clearByDate, clearClient, clearContactUs, clearEndDate, clearFavorites, clearForm, clearSearch, clearStartDate, 
-   clearTourInfo, clearTourIns} from "./redux/actions";
-=======
-import {
-  clearClient, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearContactUs} from "./redux/actions";
->>>>>>> master
-
+import { clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+clearclienttag, clearByDate, clearEndDate, clearStartDate, } from  "./redux/actions";
 import {
   BrowserRouter as Router,
   NavLink,
@@ -17,6 +11,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
+import Signup from "./components/SignUp";
 import TourInfo from "./components/TourInfo";
 import Purchases from "./components/Purchases";
 import Form from "./components/Form";
@@ -25,38 +20,10 @@ import Search from "./components/Search";
 import Favorites from "./components/Favorites";
 import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
-import useFetch from "./hooks/useFetch";
 
 
-function App(
-
-clearclienttag,
-clearByDate,
-clearClient,
-clearContactUs,
-clearEndDate,
-clearFavorites,
-clearForm,
-clearSearch,
-clearStartDate,
-clearTourInfo,
-clearTourIns,
-clearClient
+function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearclienttag, clearByDate, clearEndDate, clearStartDate}
 ) 
-
-{useEffect(() => {
-    if (clienttag === null) {
-      return;
-    }
-    async function call() {
-      const res = await getFavs(`/api/favorites/user/`);
-      if (!res.success) {
-        return console.error(res.error);
-      }
-      setFavorites(res.data);
-    }
-    call();
-  }, [clienttag]);
 
 {
   return (
@@ -85,11 +52,7 @@ clearClient
             </NavLink>
 
             <NavLink activeClassName="active" className="presenter" to="/apod">
-<<<<<<< HEAD
               Apod (Astronomy){" "}
-=======
-              Apod (Photo of the Day -Astronomy){" "}
->>>>>>> master
               </NavLink>
 
             <NavLink activeClassName="active" className="presenter" to="/search">
@@ -99,15 +62,12 @@ clearClient
             <NavLink activeClassName="active" className="presenter" to="/favorites">
               Favorites{" "} </NavLink>
 
-            <NavLink activeClassName="active" className="presenter" to="/form">
+            <NavLink activeClassName="active" className="presenter" to="/contact">
               Contact Us{" "}
             </NavLink>
 
             <NavLink
-              className="presenter"
-              to="/login"
-              onClick={() => {
-                logout();
+              className="presenter" to="/login" onClick={() => {
 
                 clearTourInfo();
                 clearForm();
@@ -117,7 +77,7 @@ clearClient
                 clearContactUs();
                 clearClient();
               }}
-            >
+           >
               Logout
             </NavLink>
           </>
@@ -143,31 +103,33 @@ clearClient
 
             <ProtectedRoute path="/contactus" reqUser={false} component={ContactUs} />
 
-<Route path="*">  <Redirect to="/login" />
+            <Route path="*">  
+
+            <Redirect to="/login" />
           </Route>
         </Switch>
       </main>
       </Router>
   );
 }
-<<<<<<< HEAD
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-=======
 
 function mapStateToProps(state) {
   return { clienttag: state.client.clienttag };
 }
 
 const mapDispatchToProps = {
+clienttag,
 clearTourInfo,
 clearForm,
 clearApod,
 clearSearch,
 clearFavorites,
-clearContactUs, 
-clearClient
- 
+clearClient,
+clearContactUs,
+clearclienttag,
+clearByDate,
+clearEndDate,
+clearStartDate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
->>>>>>> master
