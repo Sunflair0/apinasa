@@ -1,24 +1,25 @@
 import { combineReducers } from "redux";
-import tourinfoReducer from "./tourinfoReducer"
-import formReducer from "./formReducer";
-import apodReducer from "./apodReducer";
-import searchesReducer from "./searchesReducer";
-import favoritesReducer from "./favoritesReducer";
-import contactusReducer from "./contactusReducer";
+import bydateReducer from "./bydateReducer";
 import clientReducer from "./clientReducer";
-
+import contactusReducer from "./contactusReducer";
+import enddateReducer from "./enddateReducer";
+import favoritesReducer from "./favoritesReducer";
+import formReducer from "./formReducer";
+import searchesReducer from "./searchesReducer";
+import startdateReducer from "./startdateReducer";
+import tourinfoReducer from "./tourinfoReducer"
 
 const rootReducer = combineReducers({
+  bydate: bydateReducer,
   client: clientReducer,
-  tourinfo: tourinfoReducer,
-  form: formReducer,
-  apod: apodReducer,
-  search: searchesReducer,
-  favorites: favoritesReducer,
   contactus: contactusReducer,
-
-
- 
+  enddate: enddateReducer,
+  favorites: favoritesReducer,
+  form: formReducer,
+  search: searchesReducer,
+  startdate: startdateReducer,
+  tourinfo: tourinfoReducer,
+  
 });
 
 export default rootReducer;

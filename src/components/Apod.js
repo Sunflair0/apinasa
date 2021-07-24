@@ -3,26 +3,23 @@ import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
 import { addFavorite, deleteFavorite, setSearch } from "../redux/actions";
+const baseUrl ="https://api.nasa.gov/planetary/apod?api_key=D8IXnLxb35Z9djMqZXoghWbJqdB9J2acQe22JwT7";
 
 const Search =({
-startDate, 
-endDate, 
-byDate, 
-apods, 
-setApods,
 addFavorite, 
 deleteFavorite, 
 search, 
 setSearch,
-description,
-copyright,
+clienttag,
 favorites
 
 
 }) => {
 
 const [query, setQuery]= useState("");
-const [apod, setApod]=useState("");
+const [byDate, setByDate]=useState("");
+const [endDate, setEndDate]=useState("");
+const [startDate, setStartDate]=useState("");
 const {data, loading, error} = useFetch(query);
 const apodIds = useMemo(()=>{
 return favorites.map((val)=> val.id);
@@ -43,8 +40,8 @@ useEffect(() => {
           <label htmlFor="search"><h3>Gimme Picture of the Day</h3>!</label>
           <input
             id="search"
-            value={apod}
-            onChange={(e) => setApod(e.target.value)}
+            value={byDate}
+            onChange={(e) => setByDate(e.target.value)}
             placeholder="Picture of the Day"
           />
         </div>
@@ -63,15 +60,28 @@ useEffect(() => {
             e.preventDefault();
             setQuery(`&start_date==${startDate}`);
           }}
-        ></input> TO
+        >Start Date</input> 
+ <input
+            id="search"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            placeholder="Start"
+          />
             <input type="date"
           className="btn"
           onClick={(e) => {
             e.preventDefault();
             setQuery(`&end_date=${endDate}`);
           }}
-        >
+        >End Date
         </input>
+
+ <input
+            id="search"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+            placeholder="Picture of the Day"
+          />
         </div>
       <div className="menubox">
       <div> <h3> Gimmie Five!</h3>
@@ -84,7 +94,7 @@ useEffect(() => {
         >5</input>
       </div></div>
     </form>
-      {loading && <div className="text-center">Loading apods</div>}
+      {loading && <div className="text-center">Loading APODs</div>}
       {error && <div className="text-center">{error}</div>}
       {search && (
         <div className="flex-wrap">
@@ -96,8 +106,8 @@ useEffect(() => {
               id={apod.id}
               title={apod.title}
               url={apod.images.original.url}
-          description={description}
-      copyright ={copyright}        
+              description={apod.description}
+              copyright ={apod.copyright}        
 key={apod.id}
             />
           ))}
@@ -111,8 +121,10 @@ function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
     favorites: state.favorites,
-search: state.search,
-    apod: state.apod,
+    search: state.search,
+    byDate: state.byDate,
+    startDate: state.byStartDate,
+    endDate: state.byEndDate
   };
 }
 
@@ -120,7 +132,10 @@ const mapDispatchToProps = {
   deleteFavorite,
   addFavorite,
   setSearch,
- 
+  setByDate,
+  setStartDate,
+  setEndDate
+
 
 };
 
