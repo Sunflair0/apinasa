@@ -10,13 +10,9 @@ const session = require("express-session");
 const favoritesRoutes = require("./server/routes/favorites.routes");
 const purchasesRoutes =require("./server/routes/purchases.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
-<<<<<<< HEAD
-const usersRoutes = require("./server/routes/users.routes");
-const ventfavRoutes = require("./server/routes/ventfav.routes");
-=======
-const userRoutes = require("./server/routes/clients.routes");
->>>>>>> master
+const clientsRoutes = require("./server/routes/clients.routes");
 const venturesRoutes = require("./server/routes/ventures.routes");
+const ventfavRoutes = require("./server/routes/ventfav.routes");
 
 app.use(express.json());
 app.use(logger('dev'));
@@ -25,15 +21,11 @@ app.use(cookieParser());
 app.use(session());
 
 
-<<<<<<< HEAD
 
-=======
-app.use("/api/clients", userRoutes);
->>>>>>> master
 app.use("/api/favorites", favoritesRoutes);
 app.use("/api/purchases", purchasesRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
-app.use("/api/users", usersRoutes);
+app.use("/api/clients", clientsRoutes);
 app.use("/api/ventfav", ventfavRoutes);
 app.use("/api/ventures", venturesRoutes);
 
