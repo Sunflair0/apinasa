@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 8080;
 const apodRoutes = require("./server/routes/apod.routes");
 const favoritesRoutes = require("./server/routes/favorites.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
-const userRoutes = require("./server/routes/users.routes");
+const userRoutes = require("./server/routes/clients.routes");
 const venturesRoutes = require("./server/routes/ventures.routes");
 
 app.use(express.json());
 
-app.use("/api/users", userRoutes);
+app.use("/api/clients", userRoutes);
 app.use("/api/favorites", favoritesRoutes);
 app.use("/api/apod", apodRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
