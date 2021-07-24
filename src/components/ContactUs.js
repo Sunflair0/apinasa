@@ -6,6 +6,7 @@ const [text, setText] = useState("What's on your mind?")
 
 const handleSubmit = (e) => {e.preventDefault()}
 
+
 return (
 <>
 <div className="form">SpaceTours</div>

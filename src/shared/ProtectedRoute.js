@@ -9,7 +9,6 @@ function ProtectedRoute({ clienttag, path, reqUser, component }) {
     return <Redirect to={reqUser ? "/login" : "/search"} />;
   }
 }
-
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
