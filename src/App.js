@@ -27,43 +27,46 @@ function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clear
 {
   return (
     <Router>
-      <nav className="presenter">
+
+      <nav>
         {" "}
         {!clienttag && (
-          <NavLink activeClassName="active" className="presenter" to="/login">
-            Login{" "}
-          </NavLink>
+           <NavLink activeClassName="active" className="menuitem" to="/login">
+            {" "}
+          </NavLink> 
         )}{" "}
 <NavLink activeClassName="active" className="presenter" to="/signup"
 ></NavLink>
         {clienttag && (
-          <>
-            <NavLink activeClassName="active" className="presenter" to="/tourinfo"
+     <ul>   
+<div className="menu1">
+           <li>  <NavLink activeClassName="active" className="menu1item" to="/tourinfo"
             > Tour Info{" "}
-            </NavLink>
-
-                  <NavLink activeClassName="active" className="presenter" to="/form">
+            </NavLink></li> 
+            
+          <li>   <NavLink activeClassName="active" className="menu1item" to="/form">
               Tour Order Form{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/apod">
-              Apod (Astronomy){" "}
-              </NavLink>
+        <li>     <NavLink activeClassName="active" className="menu1item" to="/apod">
+              Apod (Photo of the Day -Astronomy){" "}
+              </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/search">
+           <li>  <NavLink activeClassName="active" className="menu1item" to="/search">
               Search{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/favorites">
-              Favorites{" "} </NavLink>
+         <li>    <NavLink activeClassName="active" className="menu1item" to="/favorites">
+              Favorites{" "} </NavLink></li>
 
-            <NavLink activeClassName="active" className="presenter" to="/contact">
+           <li> <NavLink activeClassName="active" className="menu1item" to="/form">
               Contact Us{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink
-              className="presenter" to="/login" onClick={() => {
-
+        <li>    <NavLink
+              className="presenter"
+              to="/login"
+              onClick={() => {
                 clearTourInfo();
                 clearForm();
                 clearApod();
@@ -74,10 +77,11 @@ function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clear
               }}
            >
               Logout
-            </NavLink>
-          </>
+            </NavLink></li>
+          </div></ul>
         )}
       </nav>
+
       <main>
         <Switch>
           <ProtectedRoute path="/login" reqUser={false} component={Login} />

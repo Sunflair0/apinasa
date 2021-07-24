@@ -30,12 +30,12 @@ const Search = ({
       <h2 className="text-center">Welcome {clienttag}</h2>
       <form className="form">
         <div className="form-field flex-wrap">
-          <label htmlFor="search">Search</label>
+          <label htmlFor="Submit"></label>
           <input
             id="search"
             value={searchField}
             onChange={(e) => setSearchField(e.target.value)}
-            placeholder="Search for Gifs"
+            placeholder="We will be up and running soon"
           />
         </div>
         <button
@@ -45,7 +45,7 @@ const Search = ({
             setQuery(searchField);
           }}
         >
-          Search
+          Submit
         </button>
       </form>
       {loading && <div className="text-center">Loading Gifs</div>}

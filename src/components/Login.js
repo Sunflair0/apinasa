@@ -12,7 +12,7 @@ const [error, setError]=useState(null)
 
   return (
     <>
-      <h2 className="center">Welcome!</h2>
+      <div className="center">Welcome to SpaceTours. Please log in.</div>
       <form className="form">
         <div className="presenter">
           <label htmlFor="clienttag">Client Sign In</label>

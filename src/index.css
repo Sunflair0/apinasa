@@ -1,11 +1,55 @@
+body {background-color: darkkhaki;
+font-family: "Times New Roman", Times, serif;
+}
 .presenter {
-  color: aliceblue;
+  color: rgb(4, 89, 163);
   font-weight: 500;
 }
 
 .center {
-  align-content: center;
+  text-align: center;
+font-size: x-large;
+
 }
+
+
+form { width: 300px;
+height: 200px;
+top: 50%;
+left: 50%;
+margin-left: 150px;
+margin-top: 100px;
+}
+
+.menuitem {margin-top: 200px;
+}
+
+.menu1{  width: 200px;
+background-color: black;
+color: bisque;
+font-size: 5mm;
+text-align: left;
+padding: 2mm;
+text-decoration: none;
+
+
+}
+
+li {padding: 3mm;
+border-top: 2px;
+border-color: blue;
+border-bottom: 2px;
+text-decoration: none;
+}
+
+menu :hover{
+background-color: rgba(43, 40, 40, 0.637);
+color: rgb(26, 6, 206);
+border-color: blue;
+text-decoration: none;
+}
+
+
 .headtitle{font-weight: 500;
 color:rgba(0, 0, 255, 0.493);
 }
