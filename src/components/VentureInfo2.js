@@ -2,7 +2,6 @@
 
  function VentureInfo2(){ 
 
-
     return (
         <div>
         
