@@ -1,7 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+<<<<<<< HEAD
 import {clearByDate, clearClient, clearContactUs, clearEndDate, clearFavorites, clearForm, clearSearch, clearStartDate, 
    clearTourInfo, clearTourIns} from "./redux/actions";
+=======
+import {
+  clearClient, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearContactUs} from "./redux/actions";
+>>>>>>> master
 
 import {
   BrowserRouter as Router,
@@ -80,7 +85,11 @@ clearClient
             </NavLink>
 
             <NavLink activeClassName="active" className="presenter" to="/apod">
+<<<<<<< HEAD
               Apod (Astronomy){" "}
+=======
+              Apod (Photo of the Day -Astronomy){" "}
+>>>>>>> master
               </NavLink>
 
             <NavLink activeClassName="active" className="presenter" to="/search">
@@ -141,4 +150,24 @@ clearClient
       </Router>
   );
 }
+<<<<<<< HEAD
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+=======
+
+function mapStateToProps(state) {
+  return { clienttag: state.client.clienttag };
+}
+
+const mapDispatchToProps = {
+clearTourInfo,
+clearForm,
+clearApod,
+clearSearch,
+clearFavorites,
+clearContactUs, 
+clearClient
+ 
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+>>>>>>> master

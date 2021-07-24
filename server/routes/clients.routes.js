@@ -3,15 +3,15 @@ const router = express.Router();
 const {
   signup,
   login,
-  getAllUsers,
-  getByUserID,
-  getByUsername,
-} = require("../models/users.model");
+  getAllclients,
+  getByclientID,
+  getByclienttag,
+} = require("../models/clients.model");
 
 router.post("/signup", (req, res) => {
-  const { username, password } = req.body;
-  if (validate(username, password)) {
-    return signup(res, username, password);
+  const { clienttag, password } = req.body;
+  if (validate(clienttag, password)) {
+    return signup(res, clienttag, password);
   }
   return res.send({
     success: false,
@@ -21,9 +21,9 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  const { username, password } = req.body;
-  if (validate(username, password)) {
-    return login(res, username, password);
+  const { clienttag, password } = req.body;
+  if (validate(clienttag, password)) {
+    return login(res, clienttag, password);
   }
   return res.send({
     success: false,
@@ -32,11 +32,11 @@ router.post("/login", (req, res) => {
   });
 });
 
-function validate(username, password) {
+function validate(clienttag, password) {
   return (
-    username &&
-    username.length >= 4 &&
-    username.length <= 20 &&
+    clienttag &&
+    clienttag.length >= 4 &&
+    clienttag.length <= 20 &&
     password &&
     password.length >= 4 &&
     password.length <= 20

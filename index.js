@@ -9,13 +9,21 @@ const PORT = process.env.PORT || 8080;
 const favoritesRoutes = require("./server/routes/favorites.routes");
 const purchasesRoutes =require("./server/routes/purchases.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
+<<<<<<< HEAD
 const usersRoutes = require("./server/routes/users.routes");
 const ventfavRoutes = require("./server/routes/ventfav.routes");
+=======
+const userRoutes = require("./server/routes/clients.routes");
+>>>>>>> master
 const venturesRoutes = require("./server/routes/ventures.routes");
 
 app.use(express.json());
 
+<<<<<<< HEAD
 
+=======
+app.use("/api/clients", userRoutes);
+>>>>>>> master
 app.use("/api/favorites", favoritesRoutes);
 app.use("/api/purchases", purchasesRoutes);
 app.use("/api/testimonials", testimonialsRoutes);

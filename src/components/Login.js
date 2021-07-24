@@ -6,12 +6,22 @@ import useFetch from "../hooks/useFetch";
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
+<<<<<<< HEAD
   const [error, setError] = useState(null);
   const {callAPI: loginCall} = useFetch("POST");
 
   return (
     <>
       <div className="center"></div>
+=======
+const {callAPI: loginCall} = useFetch("POST");
+const [error, setError]=useState(null)
+
+
+  return (
+    <>
+      <h2 className="center">Welcome!</h2>
+>>>>>>> master
       <form className="form">
         <div className="presenter">
           <label htmlFor="clienttag">Client Sign In</label>
@@ -32,6 +42,7 @@ const Login = ({ setClient }) => {
         </div>
         <button
           className="btn"
+<<<<<<< HEAD
           onClick={async(e) => {e.preventDefault();
 if(clienttag.length > 4 &&
     password.length > 4 &&
@@ -49,7 +60,28 @@ Login(res.data.clienttag);
 }
             
             
+=======
+          onClick={async (e) => {
+e.preventDefault();
+           if (
+              clienttag.length > 4 &&
+              password.length > 4 &&
+              clienttag.length <= 20 &&
+              password.length <= 20
+            ) {
+              setError(null);
+              let res = await loginCall("/api/clients/login", {
+                clienttag,
+                password,
+              });
+              if (res.error) {
+                return setError(res.error);
+              }
+              clienttag(res.data.clienttag);
+            }
+>>>>>>> master
           }}
+
         >
           Login
         </button>
