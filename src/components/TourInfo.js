@@ -1,13 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 import VentConsole2 from "./VentConsole2";
-import { connect } from "react-redux";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 // import { clearForm } from "../form";
 function TourInfo() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  const [ventureInfo2, setVentureInfo2] = useContext;
   return (
     <>
       <div className="displayvent">

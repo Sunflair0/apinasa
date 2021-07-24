@@ -18,15 +18,9 @@ export default function useFetch(method) {
         throw response;
       }
     } catch (e) {
-<<<<<<< HEAD
       return { error: "Something isn't right, please try again" };
     }
   }
   // Exposes the data, any error, and whether or not it was loading
-=======
-      return { error: "Something went wrong, please try again later" };
-    }
-  }
->>>>>>> master
   return { callAPI };
 }
