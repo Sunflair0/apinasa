@@ -12,24 +12,24 @@ const [error, setError]=useState(null)
 
   return (
     <>
-      <div className="center">Welcome to SpaceTours. Please log in.</div>
+      <div className="logintop">Welcome to SpaceTours. Please log in.</div>
       <form className="loginform">
         
-          <label htmlFor="clienttag">Sign In</label>
-          <input
+          <label htmlFor="clienttag" ></label>
+          <div id="space"> <input placeholder="Name"
             id="clienttag"
             onChange={(e) => setClienttag(e.target.value)}
             value={clienttag}
-          />
+          /></div>
         
         
-          <label htmlFor="password">Password</label>
-          <input
+          <label htmlFor="password" ></label>
+          <div id="space"><input placeholder="Password"
             type="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-          />
+          /></div>
         
         <button
           className="btn"
@@ -49,7 +49,7 @@ e.preventDefault();
               if (res.error) {
                 return setError(res.error);
               }
-              clienttag(res.data.clienttag);
+              loginCall(res.data.clienttag);
             }
           }}
 
