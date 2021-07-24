@@ -1,12 +1,10 @@
 const bcrypt = require("bcrypt");
 const query = require("../config/mysql.conf");
 const { v4: uuidv4 } = require('uuid');
-uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
-
 
 
 async function signup(res, clienttag, password) {
-  //! check if clienttag in use
+ 
   let json = { data: null, success: false, error: null };
   try {
     const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
@@ -16,15 +14,16 @@ async function signup(res, clienttag, password) {
       json.error = "Choice already taken";
     } else {
       const hashed = await bcrypt.hash(password, 10);
-      await query("INSERT INTO clients (password, clienttag) VALUES (?,?)", [
+      const uuid = uuidv4();
+      await query("INSERT INTO clients (password, clienttag, uuid) VALUES (?,?,?)", [
         hashed,
-        clienttag,
+        clienttag, uuid
       ]);
       json = { ...json, success: true };
     }
   } catch (err) {
     console.log(err);
-    json.error = "Something went wrong?";
+    json.error = "Something's not right...";
   } finally {
     return res.send(json);
   }
@@ -39,19 +38,19 @@ async function login(res, clienttag, password) {
     const client = clients[0] || { password: 1234 };
     const matches = await bcrypt.compare(password, client.password);
     if (matches) {
-      json = { ...json, success: matches, data: { clienttag, id: client.id } };
+       json = { ...json, data: { clienttag, uuid: client.uuid } };
     } else {
       json.error = "Invalid clienttag / password";
     }
   } catch (err) {
     json.error = "Something went wrong?";
   } finally {
-    return res.send(json);
+    return (json);
   }
 }
 
-async function getByclientID(res, clientID) {
-  let json = { success: false, error: null, data: null };
+async function getByClientID(res, clientID) {
+  let json = { error: null, data: null };
   try {
     const clients = await query(
       "SELECT id, clienttag, uuid FROM clients WHERE id = ?",
@@ -60,7 +59,7 @@ async function getByclientID(res, clientID) {
     if (clients.length === 0) {
       json.error = "No client found";
     } else {
-      json = { ...json, success: true, data: clients[0] };
+      json = { ...json, data: clients[0] };
     }
   } catch (err) {
     json.error = "Something went wrong?";
@@ -69,7 +68,7 @@ async function getByclientID(res, clientID) {
   }
 }
 
-async function getByclienttag(res, clienttag) {
+async function getByClienttag(res, clienttag) {
   let json = { success: false, error: null, data: null };
   try {
     const clients = await query(
@@ -104,4 +103,4 @@ async function getAllclients(res) {
   }
 }
 
-module.exports = { signup, login, getAllclients, getByclientID, getByclienttag };
+module.exports = { signup, login, getAllclients, getByClientID, getByClienttag };

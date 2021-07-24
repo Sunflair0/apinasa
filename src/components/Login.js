@@ -65,7 +65,5 @@ e.preventDefault();
 const mapStateToProps = (state) => {
   return {};
 };
-const mapDispatchToProps = {
-  setClient,
-};
+const mapDispatchToProps = { setClient,};
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

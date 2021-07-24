@@ -1,12 +1,27 @@
 const express = require("express");
+const passport = require("passport");
+const auth = require("../middleware/auth.middleware");
 const router = express.Router();
 const {
   signup,
   login,
-  getAllclients,
-  getByclientID,
-  getByclienttag,
+  getAllClients,
+  getByClientID,
+  getByClienttag,
 } = require("../models/clients.model");
+
+router.get("/validate", auth, (req, res) => {
+  return res.send({
+    success: true,
+    error: null,
+    data: { clienttag: req.client.clienttag },
+  });
+});
+
+router.get("/logout", (req, res) => {
+  res.clearCookie("jwt");
+  return res.send({ success: true, error: null, body: null });
+});
 
 router.post("/signup", (req, res) => {
   const { clienttag, password } = req.body;
@@ -22,14 +37,21 @@ router.post("/signup", (req, res) => {
 
 router.post("/login", (req, res) => {
   const { clienttag, password } = req.body;
-  if (validate(clienttag, password)) {
-    return login(res, clienttag, password);
-  }
-  return res.send({
+  if (!validate(clienttag, password)) {
+   return res.send({
     success: false,
     data: null,
     error: "Invalid data provided",
-  });
+    });
+  }
+  passport.authenticate("local-login", (err, client, info) => {
+    if (err) {
+      return res.send({ success: false, error: err, data: null });
+    }
+    return res
+      .cookie("jwt", info.token, { secure: true, httpOnly: true })
+      .send({ success: true, error: null, data: client });
+  })(req, res);
 });
 
 function validate(clienttag, password) {

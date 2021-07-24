@@ -1,8 +1,0 @@
-
-
-app.use(function (err, req, res, next) {
-  console.error(err.stack)
-  res.status(500).send('Something's not right. It's not you, it's me.')
-})
-
-module.exports = error;
