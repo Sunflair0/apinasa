@@ -3,7 +3,6 @@ const router = express.Router();
 const { addPurch, byUserIDv, delOnePurch } = require("../models/purchases.model");
 
 
-
 // /////I want to buy this
 router.put("/add", (req, res) => {
 const {user_id, vent_id} =req.body;

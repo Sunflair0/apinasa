@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { writeTByUser, getAllmyTest,byUserIDt, patchTByUser, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/favorites.model");
+const { writeTByUser, getAllmyTest,byUserIDt, byTestIDt, patchTByUser, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/favorites.model");
 
 
-<<<<<<< HEAD
-// /////I want to add a testimonials
-=======
 router.get("/user:user_id", (req, res) => {
 return byUserIDt(res, req.params.user_id);
 });
@@ -18,7 +15,6 @@ router.get("/title:title", (req, res) => {
 return findTByTtl(res, req.params.title);
 });
 
->>>>>>> master
 router.post("/add", (req, res) => {
 const {user_id, title, testimonial} =req.body;
 if (user_id && title && testimonial){ 

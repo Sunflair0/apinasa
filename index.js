@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(express.static(__dirname + "/build"));
 
+
 app.use("/api/favorites", favoritesRoutes);
 app.use("/api/purchases", purchasesRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
