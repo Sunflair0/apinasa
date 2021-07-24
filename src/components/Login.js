@@ -13,16 +13,16 @@ const [error, setError]=useState(null)
   return (
     <>
       <div className="center">Welcome to SpaceTours. Please log in.</div>
-      <form className="form">
-        <div className="presenter">
-          <label htmlFor="clienttag">Client Sign In</label>
+      <form className="loginform">
+        
+          <label htmlFor="clienttag">Sign In</label>
           <input
             id="clienttag"
             onChange={(e) => setClienttag(e.target.value)}
             value={clienttag}
           />
-        </div>
-        <div className="presenter">
+        
+        
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -30,7 +30,7 @@ const [error, setError]=useState(null)
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-        </div>
+        
         <button
           className="btn"
           onClick={async (e) => {

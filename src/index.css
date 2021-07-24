@@ -13,12 +13,43 @@ font-size: x-large;
 }
 
 
-form { width: 300px;
-height: 200px;
-top: 50%;
-left: 50%;
-margin-left: 150px;
-margin-top: 100px;
+.loginform { 
+background-color: whitesmoke;
+border-radius: 15px;
+padding-top: 4mm;
+padding: 25px;
+height: 350px;
+margin-top: 250px;
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+width: 8em
+
+
+}
+
+.loginform button {
+  border:none;
+  background-color:#015d74;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  width:60px;
+height: 30px;
+margin-top: 65%;
+}
+
+.loginform img{
+    display: block;
+margin-top:300;
+    margin-left: auto;
+    margin-right: auto }
+
+input {
+width: 200px;
+height: 25px;
+
+border-radius: 5px;
 }
 
 .menuitem {margin-top: 200px;
