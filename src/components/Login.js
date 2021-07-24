@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
+import useFetch from "../hooks/useFetch";
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const {callAPI: loginCall} = useFetch("POST");
 
   return (
     <>
-      <h2 className="center"></h2>
+      <div className="center"></div>
       <form className="form">
         <div className="presenter">
           <label htmlFor="clienttag">Client Sign In</label>
@@ -29,15 +32,29 @@ const Login = ({ setClient }) => {
         </div>
         <button
           className="btn"
-          onClick={(e) => {
-            if (clienttag.length > 4 && password.length > 4) {
-              setClient(clienttag);
-            }
+          onClick={async(e) => {e.preventDefault();
+if(clienttag.length > 4 &&
+    password.length > 4 &&
+    clienttag.length <= 20 &&
+password.length <= 20){
+setError(null);
+let res =await loginCall("api/clients/login", {
+clienttag,
+password,
+});
+if (res.error){
+return setError(res.error);
+}
+Login(res.data.clienttag);
+}
+            
+            
           }}
         >
           Login
         </button>
       </form>
+<div>{error}</div>
     </>
   );
 };
