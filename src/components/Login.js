@@ -8,6 +8,7 @@ const Login = ({ setClient }) => {
   const [password, setPassword] = useState("");
 const {callAPI: loginCall} = useFetch("POST");
 const [error, setError]=useState(null)
+const [login, setLogin] =useState(null)
 
 
   return (
@@ -49,7 +50,7 @@ e.preventDefault();
               if (res.error) {
                 return setError(res.error);
               }
-              loginCall(res.data.clienttag);
+              login(res.data.clienttag);
             }
           }}
 
