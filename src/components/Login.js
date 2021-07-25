@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import useFetch from "../hooks/useFetch";
-
+import { Link } from "react-router-dom";
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
@@ -50,10 +50,10 @@ const [error, setError]=useState(null)
              setClient(res.data.clienttag);
             }
           }}
-
         >
           Login
         </button>
+<Link to='/signup'>Signup</Link>
       </form>
 <div>{error}</div>
     </>
