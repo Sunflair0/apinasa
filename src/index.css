@@ -6,6 +6,14 @@ font-family: "Times New Roman", Times, serif;
   font-weight: 500;
 }
 
+.topBar {
+height:40px;
+display: flex;
+justify-content: start;
+align-items: center;
+background-image: linear-gradient(to right, rgba(24,23,23,1), rgba(24,23,23,0));
+}
+
 .logintop {
 margin-top: 100px;
 text-align: center;
@@ -20,13 +28,24 @@ border-radius: 15px;
 padding: 25px;
 height: 370px;
 margin-top: 4em;
-text-align: left;
+
 margin-left: auto;
 margin-right: auto;
 width: 18em;
 border: 4px black double;
 box-shadow: 4px 4px 15px black;
+}
 
+.circle{
+margin-left: auto;
+margin-right: auto;
+margin-top: 20%;
+align-items: flex-start;
+height: 100px;
+  width:100px;
+  border-radius: 50px;
+  background-color: rgb(55, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, blue, black, white);
 }
 
 .loginform button {
@@ -37,23 +56,18 @@ box-shadow: 4px 4px 15px black;
   border-radius:5px;
   width:65px;
 height: 30px;
-margin-top: 55%;
+margin-top: 20%;
 }
-
-.loginform img{
-    display: block;
-    margin-top:300;
-    margin-left: auto;
-    margin-right: auto }
 
 input {
 width: 200px;
 height: 30px;
+padding-left: 12px;
 border-radius: 5px;
 }
 
 #space{
-padding: 20px;}
+padding: 10px;}
 
 .menuitem {margin-top: 200px;
 }
@@ -65,8 +79,6 @@ font-size: 5mm;
 text-align: left;
 padding: 2mm;
 text-decoration: none;
-
-
 }
 
 li {padding: 3mm;
