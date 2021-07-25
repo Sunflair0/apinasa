@@ -6,36 +6,37 @@ import useFetch from "../hooks/useFetch";
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
-const {callAPI: loginCall} = useFetch("POST");
-const [error, setError]=useState(null)
+  const { callAPI: loginCall } = useFetch("POST");
+  const [error, setError] = useState(null)
 
 
   return (
     <>
+      <div className="topBar"></div>
       <div className="logintop">Welcome to SpaceTours. Please log in.</div>
       <form className="loginform">
-        
-          <label htmlFor="clienttag" ></label>
-          <div id="space"> <input placeholder="Name"
-            id="clienttag"
-            onChange={(e) => setClienttag(e.target.value)}
-            value={clienttag}
-          /></div>
-        
-        
-          <label htmlFor="password" ></label>
-          <div id="space"><input placeholder="Password"
-            type="password"
-            id="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          /></div>
-        
+
+        <label htmlFor="clienttag" ></label>
+        <div id="space"> <input placeholder="Name"
+          id="clienttag"
+          onChange={(e) => setClienttag(e.target.value)}
+          value={clienttag}
+        /></div>
+
+
+        <label htmlFor="password" ></label>
+        <div id="space"><input placeholder="Password"
+          type="password"
+          id="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        /></div>
+<div className="circle"></div>
         <button
           className="btn"
           onClick={async (e) => {
-e.preventDefault();
-           if (
+            e.preventDefault();
+            if (
               clienttag.length > 4 &&
               password.length > 4 &&
               clienttag.length <= 20 &&
@@ -52,12 +53,11 @@ e.preventDefault();
               loginCall(res.data.clienttag);
             }
           }}
+         >Login
+    </button> 
 
-        >
-          Login
-        </button>
-      </form>
-<div>{error}</div>
+      </form >
+  <div>{error}</div>
     </>
   );
 };
@@ -65,5 +65,5 @@ e.preventDefault();
 const mapStateToProps = (state) => {
   return {};
 };
-const mapDispatchToProps = { setClient,};
+const mapDispatchToProps = { setClient, };
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
