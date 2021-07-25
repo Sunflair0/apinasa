@@ -8,8 +8,6 @@ const Login = ({ setClient }) => {
   const [password, setPassword] = useState("");
 const {callAPI: loginCall} = useFetch("POST");
 const [error, setError]=useState(null)
-const [login, setLogin] =useState(null)
-
 
   return (
     <>
@@ -23,7 +21,6 @@ const [login, setLogin] =useState(null)
             value={clienttag}
           /></div>
         
-        
           <label htmlFor="password" ></label>
           <div id="space"><input placeholder="Password"
             type="password"
@@ -35,7 +32,7 @@ const [login, setLogin] =useState(null)
         <button
           className="btn"
           onClick={async (e) => {
-e.preventDefault();
+            e.preventDefault();
            if (
               clienttag.length > 4 &&
               password.length > 4 &&
@@ -50,7 +47,7 @@ e.preventDefault();
               if (res.error) {
                 return setError(res.error);
               }
-              login(res.data.clienttag);
+             setClient(res.data.clienttag);
             }
           }}
 
