@@ -7,4 +7,4 @@ export function clearApod() {
 
 export function setApod(apod) {
   return { type: SET_APOD, apod };
-}
+} 
