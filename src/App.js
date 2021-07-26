@@ -81,7 +81,6 @@ function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clear
           </div></ul>
         )}
       </nav>
-
       <main>
         <Switch>
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
