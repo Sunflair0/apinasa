@@ -8,9 +8,11 @@ import formReducer from "./formReducer";
 import loginReducer from "./loginReducer";
 import searchesReducer from "./searchesReducer";
 import startdateReducer from "./startdateReducer";
-import tourinfoReducer from "./tourinfoReducer"
+import tourinfoReducer from "./tourinfoReducer";
+import addFavoriteReducer from "./addFavoriteReducer";
 
 const rootReducer = combineReducers({
+addFavorite: addFavoriteReducer,
   bydate: bydateReducer,
   client: clientReducer,
   contactus: contactusReducer,
@@ -21,6 +23,7 @@ const rootReducer = combineReducers({
   search: searchesReducer,
   startdate: startdateReducer,
   tourinfo: tourinfoReducer,
+
   
 });
 

@@ -8,3 +8,4 @@ export * from "./loginSelector";
 export * from "./searchSelectors";
 export * from "./startdateSelector";
 export * from "./tourinfoSelectors";
+export * from "./addFavoriteSelector";

@@ -1,0 +1,1 @@
+export const addFavoriteSelector = (state) => state.addFavorite;
