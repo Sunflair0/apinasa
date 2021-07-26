@@ -3,7 +3,7 @@ import bydateReducer from "./bydateReducer";
 import clientReducer from "./clientReducer";
 import contactusReducer from "./contactusReducer";
 import enddateReducer from "./enddateReducer";
-import favoritesReducer from "./favoritesReducer";
+import favoriteReducer from "./favoriteReducer";
 import formReducer from "./formReducer";
 import loginReducer from "./loginReducer";
 import searchesReducer from "./searchesReducer";
@@ -17,7 +17,7 @@ addFavorite: addFavoriteReducer,
   client: clientReducer,
   contactus: contactusReducer,
   enddate: enddateReducer,
-  favorites: favoritesReducer,
+  favorites: favoriteReducer,
   form: formReducer,
   login: loginReducer,  
   search: searchesReducer,
