@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { addFavorite, deleteFavorite, setSearch, setByDate, setStartDate, setEndDate } from "../redux/actions";
 const baseUrl ="https://api.nasa.gov/planetary/apod?api_key=D8IXnLxb35Z9djMqZXoghWbJqdB9J2acQe22JwT7";
 
-const Search =({
+const Search =({ 
 addFavorite, 
 deleteFavorite, 
 search,
