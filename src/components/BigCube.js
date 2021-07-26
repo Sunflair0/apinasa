@@ -1,6 +1,6 @@
 // import React from "react";
 
- function VentureInfo2(){ 
+ function BigCube(){ 
 
     return (
         <div>
@@ -10,4 +10,4 @@
     );
 }
 
- export default VentureInfo2;
+ export default BigCube;
