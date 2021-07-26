@@ -12,6 +12,7 @@ const [error, setError]=useState(null)
 
   return (
     <>
+<div className="topBar"></div>
       <div className="logintop">Welcome to SpaceTours. Please log in.</div>
       <form className="loginform">
         
@@ -30,7 +31,7 @@ const [error, setError]=useState(null)
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           /></div>
-        
+        <div className="circle"></div>
         <button
           className="btn"
           onClick={async (e) => {
