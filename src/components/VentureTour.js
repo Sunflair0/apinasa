@@ -12,7 +12,7 @@ function VentureTour() {
 
   return (
     <>
-   
+  
         <div className="venture-menu">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
@@ -28,7 +28,6 @@ function VentureTour() {
                 <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon}/>
 
                   <Link to={item.path}>
-                   
                     <span>{item.title}</span>
                     
                   </Link>
@@ -37,7 +36,6 @@ function VentureTour() {
             })}
           </ul>
         </nav>
-   
     </>
   );
 }

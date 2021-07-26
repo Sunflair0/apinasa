@@ -11,11 +11,19 @@ const [error, setError]=useState(null)
 
   return (
     <>
+<<<<<<< HEAD
       <div className="logintop">Welcome to SpaceTours. Please log in.</div>
       <form className="loginform">
         
           <label htmlFor="clienttag" ></label>
           <div id="space"> <input placeholder="Name"
+=======
+      <div className="center"></div>
+      <form className="form">
+        <div className="presenter">
+          <label htmlFor="clienttag">Client Sign In</label>
+          <input
+>>>>>>> css-fix-second-menu
             id="clienttag"
             onChange={(e) => setClienttag(e.target.value)}
             value={clienttag}
