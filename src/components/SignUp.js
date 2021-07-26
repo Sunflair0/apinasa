@@ -9,19 +9,19 @@ const Signup = () => {
   // const history = useHistory();
   return (
     <>
-      <h2 className="text-center">Signup</h2>
-      <form className="form">
-        <div className="form-field flex-wrap">
-          <label htmlFor="clienttag">clienttag</label>
+      <h2 className="logintop">Signup</h2>
+      <form className="loginform">
+        
+          <label  id="space" htmlFor="clienttag"></label>
           <input
-            id="clienttag"
+            id="clienttag" placeholder= "Client Name"
             onChange={(e) => setclienttag(e.target.value)}
             value={clienttag}
           />
-        </div>
+        
         <div className="form-field flex-wrap">
-          <label htmlFor="password">Password</label>
-          <input
+          <label id="space" htmlFor="password"></label>
+          <input placeholder="Password"
             type="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}
