@@ -10,7 +10,7 @@ addFavorite,
 deleteFavorite, 
 search,
 setSearch,
-favorites
+favorite
 
 
 }) => {
@@ -22,8 +22,8 @@ const {data, loading, error} = useFetch(query);
 const { callAPI: apodCall } = useFetch("GET");
 
 const apodIds = useMemo(()=>{
-return favorites.map((val)=> val.id);
-}, [favorites]);
+return favorite.map((val)=> val.id);
+}, [favorite]);
 
 useEffect(() => {
     if (data) {
@@ -131,7 +131,7 @@ key={apod.id}
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
-    favorites: state.favorites,
+    favorite: state.favorite,
     search: state.search,
     byDate: state.byDate,
     startDate: state.byStartDate,

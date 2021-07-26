@@ -1,4 +1,4 @@
-export * from "./addfavoritesadd"
+export * from "./addFavorites.Actions";
 export * from "./bydate.Actions";
 export * from "./clientActions";
 export * from "./contactusActions";

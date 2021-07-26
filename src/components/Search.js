@@ -7,7 +7,7 @@ import { setSearches, addFavorite, deleteFavorite } from "../redux/actions";
 const Search = ({
   addFavorite,
   deleteFavorite,
-  favorites,
+  favorite,
   clienttag,
   setSearches,
   search,
@@ -16,8 +16,8 @@ const Search = ({
   const [query, setQuery] = useState("");
   const { data, loading, error } = useFetch(query);
   const favIds = useMemo(() => {
-    return favorites.map((val) => val.id);
-  }, [favorites]);
+    return favorite.map((val) => val.id);
+  }, [favorite]);
 
   useEffect(() => {
     if (data) {
@@ -72,7 +72,7 @@ const Search = ({
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
-    favorites: state.favorites,
+    favorite: state.favorite,
     search: state.search,
   };
 }
