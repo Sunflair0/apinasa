@@ -28,6 +28,7 @@ const [error, setError]=useState(null)
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           /></div>
+<div className="circle"></div>
         
         <button
           className="btn"
