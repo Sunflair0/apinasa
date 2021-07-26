@@ -36,7 +36,7 @@
   "scripts": {
     "start": "node index",
     "build": "react-scripts build",
-    "front": "react=scripts start",
+    "front": "react-scripts start",
     "back": "nodemon index",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
