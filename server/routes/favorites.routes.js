@@ -1,86 +1,65 @@
 const express = require("express");
 const router = express.Router();
-const { byFavIDf, byUserIDf, addFavA, addFavT, addFavV, deleteAFav, deleteFavidA, deleteFavidT, deleteFavidV ,deleteByUserID } = require("../models/favorites.model");
+const {cAllF, cAllApodF, cAllVentF, addFavA, addFavV, deleteAllFav, delAllApodF, delAllVentF, delOneVentF,delOneApodF} = require("../models/clients.model");
 
-//! find a favorites by fav_id
-router.get("/:fav_id", (req, res) => {
-return byFavIDf(res, req.params.fav_id);
+// /////I want to see all favorites
+router.get("/see/vent/:client_id", (req, res) => {
+  const { client_id} = req.params;
+  return cAllF(res, client_id);
 });
 
-//! find all favorites for user ID
-router.get("/:user_id", (req, res) => {
-return byUserIDf(res, req.params.user_id);
+// /////I want to see all my apod favorites
+router.get("/see/apod/:client_id/:apod_id", (req, res) => {
+  const { client_id, apod_id } = req.params;
+  return cAllApodF(res, client_id, apod_id);
 });
 
-
-//! add favorite for APOD
-router.put("/add", (req, res) => {
-  const { user_id, apod_id, title, url, description, copyright, explanation} = req.body;
-  if (user_id  && url && apod_id && title  && copyright && explanation) {
-  return addFavA(res, user_id, apod_id, title, url, description, copyright, explanation);
-  }
-  return res.send({
-    success: false,
-    error: "Invalid data provided. Please try other parameters.",
-    data: null,
-  });
+// /////I want to see all my vent favorites
+router.get("/see/vent/:client_id/:vent_id", (req, res) => {
+  const { client_id, fav_id } = req.params;
+  return cAllVentF(res, client_id, fav_id);
 });
 
-//! add favorite for Testimonials
-router.post("/add", (req, res) => {
-  const { user_id, test_id, title, testimonial } = req.body;
-  if (user_id  && test.test.id && title && test.testimonial) {
-  return addFavT(res, user_id, test_id, title, testimonial);
-  }
-  return res.send({
-    success: false,
-    error: "Invalid data provided. Please try other parameters.",
-    data: null,
-  });
+// /////I want to add an apod favorite
+router.put("/add/apod/:client_id/:fav_id", (req, res) => {
+  const { client_id, fav_id } = req.params;
+  return addFavA(res, client_id, fav_id);
 });
 
-//! add favorite for Ventures
-router.post("/add", (req, res) => {
-  const { user_id, vent_id, tour, description} = req.body;
-  if (user_id && vent_id && tour&& description ) {
-  return addFavV(res, user_id, vent_id, tour, description);
-  }
-  return res.send({
-    success: false,
-    error: "Invalid data provided. Please try other parameters.",
-    data: null,
-  });
+// /////I want to add a vent favorite
+router.put("/add/:client_id/:fav_id", (req, res) => {
+  const { client_id, fav_id } = req.params;
+  return addFavV(res, client_id, fav_id);
 });
 
-//! delete single favorite 
-router.delete("/delete/:user_id/:fav_id", (req, res) => {
-  const { user_id, fav_id } = req.params;
-  return deleteAFav(res, user_id, fav_id);
+// /////I want to delete all my favorites
+router.delete("/delete/all/:client_id", (req, res) => {
+  const { client_id } = req.params;
+  return deleteAllFav(res, client_id);
 });
 
-//! delete favorite APOD by for user by ApodID
-router.delete("/delete/:user_id/:apod_id", (req, res) => {
-  const { user_id, apod_id } = req.params;
-  return deleteFavidA(res, user_id, apod_id);
+// /////I want to delete all my vent favorites
+router.delete("/delete/all/venture/:client_id/:vent_id", (req, res) => {
+  const { client_id, vent_id } = req.params;
+  return delAllVentF(res, client_id, vent_id);
 });
 
-//! delete favorite Test by for user by TestID
-router.delete("/delete/:user_id/:test_id", (req, res) => {
-  const { user_id, test_id } = req.params;
-  return deleteFavidT(res, user_id, test_id);
+// /////I want to delete all my apod favorites
+router.delete("/delete/all/apod/:client_id/:vent_id", (req, res) => {
+  const { client_id, vent_id } = req.params;
+  return delAllApodF(res, client_id, vent_id);
 });
 
-//! delete favorite Vent for user by VentID
-router.delete("/delete/:user_id/:vent_id", (req, res) => {
-  const { user_id, vent_id } = req.params;
-  return deleteFavidV(res, user_id, vent_id);
+// /////I want to delete one vent favorites
+router.delete("/delete/venture/:client_id/:vent_id", (req, res) => {
+  const { client_id, vent_id } = req.params;
+  return delOneVentF(res, client_id, vent_id);
 });
 
-//! delete favorites by UserID, will delete everything
-router.delete("/delete/:user_id", (req, res) => {
-  const { user_id } = req.params;
-  return deleteByUserID(res, user_id);
+// /////I want to delete one apod favorites
+router.delete("/delete/favorite/:client_id/:apod_id", (req, res) => {
+  const { client_id, apod_id } = req.params;
+  return delOneApodF(res, client_id, apod_id);
 });
-
 
 module.exports = router;

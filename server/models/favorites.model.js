@@ -1,14 +1,14 @@
 const query = require("../config/mysql.conf");
 
 
-//! find a favorites by fav_id
-async function byFavIDf(res, fav_id) {
+// /////I want to see all my favorites
+async function cAllF(res, user_id) {
   let json = { success: false, error: null, data: null };
   try {
-    const favorites = await query("SELECT * FROM favorites WHERE fav_id = ?", [
-      fav_id
+    const favorites = await query("SELECT FROM favorites WHERE user_id=?", [
+      user_id,
     ]);
-    json = { ...json, success: true, data: favorites[0]  };
+    json = { ...json, success: true, data: favorites};
   } catch (err) {
     json.error = "Something went wrong...";
   } finally {
@@ -16,12 +16,15 @@ async function byFavIDf(res, fav_id) {
   }
 }
 
-//! find all favorites for user ID
-async function byUserIDf(res, user_id) {
+// /////I want to see all my apod favorites
+async function cAllApodF(res, user_id, apod_id) {
   let json = { success: false, error: null, data: null };
   try {
-    const favorites = await query("SELECT * FROM favorites WHERE user_id = ?", [user_id]);
-    json = { ...json, success: true, data: favorites[0] };
+    const apod = await query("SELECT * FROM apod WHERE user_id = ?, apod_id=?", [
+      user_id,
+      apod_id,
+    ]);
+    json = { ...json, success: true, data: apod };
   } catch (err) {
     json.error = "Something went wrong...";
   } finally {
@@ -29,7 +32,23 @@ async function byUserIDf(res, user_id) {
   }
 }
 
-//! add favorite for APOD
+// /////I want to see all my vent favorites
+async function cAllVentF(res, user_id, vent_id) {
+  let json = { success: false, error: null, data: null };
+  try {
+    const vent = await query("SELECT * FROM apod WHERE user_id = ? AND vent_id = ?", [
+      user_id,
+      vent_id,
+    ]);
+    json = { ...json, success: true, data: vent};
+  } catch (err) {
+    json.error = "Something went wrong...";
+  } finally {
+    return res.send(json);
+  }
+}
+
+// /////I want to add an apod favorite
 async function addFavA(res, user_id, apod_id, title, url, description, copyright, explanation) {
   let json = { success: false, error: null, data: null };
   try {
@@ -46,33 +65,15 @@ async function addFavA(res, user_id, apod_id, title, url, description, copyright
   }
 }
 
-//! add favorite for Testimonials
-async function addFavT(res, user_id, test_id, title, testimonial) {
+// /////I want to add a vent favorite
+async function addFavV(res, vent_id) {
   let json = { success: false, error: null, data: null };
   try {
     const result = await query(
-      "INSERT INTO favorites (user_id, test_id, title, testimonial) VALUES (?,?,?,?)",
-      [user_id, test.test_id, test.title, test.testimonial]
+      "INSERT INTO favorites WHERE vent_id=?",
+      [vent_id]
     );
-///////check this one, w
-    const newtest = { ...test, id: result.insertId, user_id, test_id, title, testimonial };
-    json = { ...json, success: true, data: newtest };
-  } catch (err) {
-    json.error = "Something went wrong...";
-  } finally {
-    return res.send(json);
-  }
-}
-
-//! add favorite for Ventures
-async function addFavV(res, user_id, vent_id, tour, description) {
-  let json = { success: false, error: null, data: null };
-  try {
-    const result = await query(
-      "INSERT INTO favorites (user_id, vent_id, tour, description) VALUES (?,?,?,?)",
-      [user_id, vent_id, tour, description]
-    );
-    const vent = {  id: result.insertId, user_id, vent_id, tour, description };
+    const vent = {  id: result.insertId, vent_id };
     json = { ...json, success: true, data: vent };
   } catch (err) {
     json.error = "Something went wrong...";
@@ -80,15 +81,12 @@ async function addFavV(res, user_id, vent_id, tour, description) {
     return res.send(json);
   }
 }
-
-//! delete single favorite 
-async function deleteAFav(res, user_id, fav_id) {
+// /////I want to delete all my favorites
+async function deleteAllFav(res, user_id) {
   let json = { success: false, error: null, data: null };
   try {
-    await query("DELETE FROM favorites WHERE user_id = ? AND fav_id = ?", [
-      user_id,
-      fav_id,
-          ]);
+    await query("DELETE FROM favorites WHERE user_id = ?", [
+      user_id,]);
     json = { ...json, success: true };
   } catch (err) {
     json.error = "Something went wrong...";
@@ -97,40 +95,9 @@ async function deleteAFav(res, user_id, fav_id) {
   }
 }
 
-//! delete favorite APOD by for user by ApodID
-async function deleteFavidA(res, user_id, apod_id) {
-  let json = { success: false, error: null, data: null };
-  try {
-    await query("DELETE FROM favorites WHERE user_id = ? AND apod_id = ?", [
-      user_id,
-      apod_id,
-          ]);
-    json = { ...json, success: true };
-  } catch (err) {
-    json.error = "Something went wrong...";
-  } finally {
-    return res.send(json);
-  }
-}
 
-//! delete favorite Test by for user by TestID
-async function deleteFavidT(res, user_id, test_id) {
-  let json = { success: false, error: null, data: null };
-  try {
-    await query("DELETE FROM favorites WHERE user_id = ? AND test_id = ?", [
-      user_id,
-      test_id,
-          ]);
-    json = { ...json, success: true };
-  } catch (err) {
-    json.error = "Something went wrong...";
-  } finally {
-    return res.send(json);
-  }
-}
-
-//! delete favorite Vent for user by VentID
-async function deleteFavidV(res, user_id, vent_id) {
+// /////I want to delete all my vent favorites
+async function delAllVentF(res, user_id, vent_id) {
   let json = { success: false, error: null, data: null };
   try {
     await query("DELETE FROM favorites WHERE user_id = ? AND vent_id = ?", [
@@ -145,11 +112,14 @@ async function deleteFavidV(res, user_id, vent_id) {
   }
 }
 
-//! delete favorites by UserID, will delete everything
-async function deleteByUserID(res, user_id) {
+// /////I want to delete all my apod favorites
+async function delAllApodF(res, user_id, apod_id) {
   let json = { success: false, error: null, data: null };
   try {
-    await query("DELETE * FROM favorites WHERE user_id = ?", [user_id]);
+    await query("DELETE FROM favorites WHERE user_id = ? AND apod_id = ?", [
+      user_id,
+      apod_id,
+          ]);
     json = { ...json, success: true };
   } catch (err) {
     json.error = "Something went wrong...";
@@ -158,4 +128,38 @@ async function deleteByUserID(res, user_id) {
   }
 }
 
-module.exports = { byFavIDf, byUserIDf, addFavA, addFavT, addFavV, deleteAFav, deleteFavidA, deleteFavidT, deleteFavidV ,deleteByUserID };
+// /////I want to delete one vent favorites
+async function delOneVentF(res, client_id, vent_id) {
+  let json = { success: false, error: null, data: null };
+  try {
+    await query("DELETE FROM favorites WHERE client_id = ? AND vent_id = ?", [
+      client_id,
+      vent_id,
+          ]);
+    json = { ...json, success: true };
+  } catch (err) {
+    json.error = "Something went wrong...";
+  } finally {
+    return res.send(json);
+  }
+}
+
+// /////I want to delete one apod favorites
+async function delOneApodF(res, user_id, apod_id) {
+  let json = { success: false, error: null, data: null };
+  try {
+    await query("DELETE FROM favorites WHERE user_id = ? AND apod_id = ?", [
+      user_id,
+      apod_id,
+          ]);
+    json = { ...json, success: true };
+  } catch (err) {
+    json.error = "Something went wrong...";
+  } finally {
+    return res.send(json);
+  }
+}
+
+
+
+module.exports = { cAllF, cAllApodF, cAllVentF, addFavA, addFavV, deleteAllFav, delAllApodF, delAllVentF, delOneVentF,delOneApodF };

@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  clearClient, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearContactUs} from "./redux/actions";
-
+import { clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+clearclienttag, clearByDate, clearEndDate, clearStartDate, } from  "./redux/actions";
 import {
   BrowserRouter as Router,
   NavLink,
@@ -12,6 +11,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
+import Signup from "./components/SignUp";
 import TourInfo from "./components/TourInfo";
 import Form from "./components/Form";
 import Apod from "./components/Apod";
@@ -21,54 +21,49 @@ import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
 
 
-function App({
-  clienttag,
-  clearTourInfo,
-  clearForm,
-  clearApod,
-  clearSearch,
-  clearFavorites,
-  clearContactUs,
-  clearClient
-  
-  
-   
-}) {
+function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearclienttag, clearByDate, clearEndDate, clearStartDate}
+) 
+
+{
   return (
     <Router>
-      <nav className="presenter">
+
+      <nav>
         {" "}
         {!clienttag && (
-          <NavLink activeClassName="active" className="presenter" to="/login">
-            Login{" "}
-          </NavLink>
+           <NavLink activeClassName="active" className="menuitem" to="/login">
+            {" "}
+          </NavLink> 
         )}{" "}
+<NavLink activeClassName="active" className="presenter" to="/signup"
+></NavLink>
         {clienttag && (
-          <>
-            <NavLink activeClassName="active" className="presenter" to="/tourinfo"
+     <ul>   
+<div className="menu1">
+           <li>  <NavLink activeClassName="active" className="menu1item" to="/tourinfo"
             > Tour Info{" "}
-            </NavLink>
+            </NavLink></li> 
             
-            <NavLink activeClassName="active" className="presenter" to="/form">
+          <li>   <NavLink activeClassName="active" className="menu1item" to="/form">
               Tour Order Form{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/apod">
+        <li>     <NavLink activeClassName="active" className="menu1item" to="/apod">
               Apod (Photo of the Day -Astronomy){" "}
-              </NavLink>
+              </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/search">
+           <li>  <NavLink activeClassName="active" className="menu1item" to="/search">
               Search{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink activeClassName="active" className="presenter" to="/favorites">
-              Favorites{" "} </NavLink>
+         <li>    <NavLink activeClassName="active" className="menu1item" to="/favorites">
+              Favorites{" "} </NavLink></li>
 
-            <NavLink activeClassName="active" className="presenter" to="/form">
+           <li> <NavLink activeClassName="active" className="menu1item" to="/form">
               Contact Us{" "}
-            </NavLink>
+            </NavLink></li> 
 
-            <NavLink
+        <li>    <NavLink
               className="presenter"
               to="/login"
               onClick={() => {
@@ -80,18 +75,18 @@ function App({
                 clearContactUs();
                 clearClient();
               }}
-            >
+           >
               Logout
-            </NavLink>
-          </>
+            </NavLink></li>
+          </div></ul>
         )}
       </nav>
       <main>
         <Switch>
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
-          
-          <Route path="*">  <Redirect to="/login" />
 
+            <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
+          
             <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
 
             <ProtectedRoute path="/form" reqUser={true} component={Form} />
@@ -100,13 +95,16 @@ function App({
                         
             <ProtectedRoute path="/search" reqUser={true} component={Search} />
             
-            <ProtectedRoute path="/favorites" reqUser={true} component={Favorites}
-            />
+            <ProtectedRoute path="/favorites" reqUser={true} component={Favorites} />
+
             <ProtectedRoute path="/contactus" reqUser={false} component={ContactUs} />
+
+            <Route path="*">  
+
+            <Redirect to="/login" />
           </Route>
         </Switch>
       </main>
-
       </Router>
   );
 }
@@ -116,14 +114,18 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
+clienttag,
 clearTourInfo,
 clearForm,
 clearApod,
 clearSearch,
 clearFavorites,
-clearContactUs, 
-clearClient
- 
+clearClient,
+clearContactUs,
+clearclienttag,
+clearByDate,
+clearEndDate,
+clearStartDate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

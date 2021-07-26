@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { byUserIDv, byVentIDv } = require("../models/ventures.model");
+const { byVentIDv, byUserIDv } = require("../models/ventures.model");
 
 
 router.get("/tour/:user_id", (req, res) => {

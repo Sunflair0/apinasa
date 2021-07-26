@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { byUserIDt, byTestIDt, findTByTtl, writeTByUser, patchTByUser, deleteTByUser } = require("../models/favorites.model");
+const { writeTByUser, getAllmyTest,byUserIDt, byTestIDt, patchTByUser, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/favorites.model");
 
 
 router.get("/user:user_id", (req, res) => {
@@ -26,7 +26,17 @@ error: "Invalid Data Entered",
 data: null,});
 });
 
-///// see about this one w
+// /////I want to see all testimonials3
+router.get("/test/all", (req, res) => {
+return byUserIDt(res);
+});
+
+// /////I want to see all my testimonials
+router.get("/mine/test/all:user_id", (req, res) => {
+return getAllmyTest(res);
+});
+
+// /////I want to change one of my testimonials
 router.patch("/patch/:user_id/:test_id", (req, res) => {
 const {user_id, test_id, title, testimonial} =req.params;
 if (user_id && test_id && title && testimonial){ 
@@ -38,9 +48,22 @@ error: "Invalid Data Entered",
 data: null,});
 });
 
-router.delete("/delete/:user_id/:test_id", (req, res) => {
+// /////I want to delete a testimonials
+router.delete("/delete/one/mine/:user_id/:test_id", (req, res) => {
 const {user_id, test_id} =req.params;
-return deleteTByUser(res, user_id, test_id);
+return delOneMyTest(res, user_id, test_id);
+});
+
+// /////I want to delete all my testimonials
+router.delete("/delete/all/mine/:user_id/:test_id", (req, res) => {
+const {user_id, test_id} =req.params;
+return delAllMyTest(res, user_id, test_id);
 }); 
+
+//!I want to find testimonials by part title
+router.get("/title/part", (req, res) => {
+return findTByTtl(res, req.params.title);
+});
+
 
 module.exports = router;

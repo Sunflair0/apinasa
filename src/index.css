@@ -1,11 +1,88 @@
+body {background-color: darkkhaki;
+font-family: "Times New Roman", Times, serif;
+}
 .presenter {
-  color: aliceblue;
+  color: rgb(4, 89, 163);
   font-weight: 500;
 }
+.logintop {
+margin-top: 100px;
+text-align: center;
+font-size: 200%;
 
-.center {
-  align-content: center;
 }
+
+
+.loginform { 
+background-color: whitesmoke;
+border-radius: 15px;
+padding: 25px;
+height: 370px;
+margin-top: 4em;
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+width: 18em;
+border: 4px black double;
+box-shadow: 4px 4px 15px black;
+
+}
+
+.loginform button {
+  border:2px solid black;
+  background-color:#015d74;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  width:65px;
+height: 30px;
+margin-top: 55%;
+}
+
+.loginform img{
+    display: block;
+    margin-top:300;
+    margin-left: auto;
+    margin-right: auto }
+
+input {
+width: 200px;
+height: 30px;
+border-radius: 5px;
+}
+
+#space{
+padding: 20px;}
+
+.menuitem {margin-top: 200px;
+}
+
+.menu1{  width: 200px;
+background-color: black;
+color: bisque;
+font-size: 5mm;
+text-align: left;
+padding: 2mm;
+text-decoration: none;
+
+
+}
+
+li {padding: 3mm;
+border-top: 2px;
+border-color: blue;
+border-bottom: 2px;
+text-decoration: none;
+}
+
+menu :hover{
+background-color: rgba(43, 40, 40, 0.637);
+color: rgb(26, 6, 206);
+border-color: blue;
+text-decoration: none;
+}
+
+
 .headtitle{font-weight: 500;
 color:rgba(0, 0, 255, 0.493);
 }

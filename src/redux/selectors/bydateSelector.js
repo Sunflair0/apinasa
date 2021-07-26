@@ -1,0 +1,1 @@
+export const bydateSelector = (state) => state.bydate;
