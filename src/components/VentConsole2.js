@@ -30,5 +30,3 @@ MenuPop.map((item, index) => {
 </>)}
 
 
-export default MenuPop;
-

@@ -8,6 +8,8 @@ export default function MenuPop() {
 return (
 <>
 <ul className="nav-menu-items">
+
+const item = 
 return( 
 MenuPop.map((item, index) => {
 
@@ -30,5 +32,4 @@ MenuPop.map((item, index) => {
 </>)}
 
 
-export default MenuPop;
 
