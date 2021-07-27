@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { byVentIDv, byUserIDv } = require("../models/ventures.model");
+const { byVentIDv, byClientIDv} = require("../models/ventures.model");
 
 
-router.get("/tour/:user_id", (req, res) => {
-return byUserIDv(res, req.params.user_id); 
+router.get("/tour/:client_id", (req, res) => {
+return byClientIDv(res, req.params.client_id);
 });
 
 router.get("/vent/:vent_id", (req, res) => {
