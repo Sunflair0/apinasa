@@ -1,247 +1,117 @@
-body {background-color: darkkhaki;
-font-family: "Times New Roman", Times, serif;
+/* /////tourinfo page */
+
+.tour-page {
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
 }
 
-.presenter {
-  color: rgb(4, 89, 163);
-  font-weight: 500;
+.top {
+  margin-top: 8px;
 }
 
-.topBar {
-height:40px;
-display: flex;
-justify-content: start;
-align-items: center;
-background-image: linear-gradient(to right, rgba(24,23,23,1), rgba(24,23,23,0));
+.pit-shell {
+  flex-direction: column;
 }
 
-.logintop {
-margin-top: 100px;
-text-align: center;
-font-size: 200%;
-}
-
-.loginform { 
-background-color: whitesmoke;
-border-radius: 15px;
-padding: 25px;
-height: 370px;
-margin-top: 4em;
-margin-left: auto;
-margin-right: auto;
-width: 18em;
-border: 4px black double;
-box-shadow: 4px 4px 15px black;
-}
-
-.circle{
-margin-left: auto;
-margin-right: auto;
-margin-top: 20%;
-align-items: flex-start;
-height: 100px;
-  width:100px;
-  border-radius: 50px;
-  background-color: rgb(55, 0, 255); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, blue, black, white);
-}
-
-.loginform button {
-  border:2px solid black;
-  background-color:#015d74;
-  color:#fff;
-  font-weight:600;
-  border-radius:5px;
-  width:65px;
-height: 30px;
-margin-top: 20%;
-}
-
-input {
-width: 200px;
-height: 30px;
-padding-left: 12px;
-border-radius: 5px;
-}
-
-#space{
-padding: 10px;}
-
-.menuitem {margin-top: 200px;
-}
-
-.menu1 {  width: 200px;
-background-color: black;
-color: bisque;
-font-size: 5mm;
-text-align: left;
-padding: 2mm;
-text-decoration: none;
-}
-
-
-li {padding: 3mm;
-border-top: 2px;
-border-color: blue;
-border-bottom: 2px;
-text-decoration: none;
-}
-
-menu :hover{
-background-color: rgba(43, 40, 40, 0.637);
-color: rgb(26, 6, 206);
-border-color: blue;
-text-decoration: none;
-}
-
-.headtitle{font-weight: 500;
-color:rgba(0, 0, 255, 0.493);
-}
-
-.menubox {
-    background-color:rgb(22, 236, 243);
-    border-radius: 4px;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.2s;
-    margin: 0 auto;
-    width: 300px;
-}
-/* //// Venture Menu */
 .venture-menu {
-  background-color: rgb(162, 22, 243);
-  height: 120px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  width: fit-content;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.menu-bars {
-  margin-left: 2rem;
-  font-size: 2rem;
-  background: none;
-}
-
-.navbar-menu {
-  background-color: chartreuse;
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: -100;
-  transition: 850;
-}
-
-.navbar-menu.active {
-  left: 0;
-  transition: 350;
-}
-
-.navbar.text {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 8px 0px 8px 16px;
-  list-style: none;
-  height: 60;
-}
-
-.navbar-text a {
+.venture-menu a {
+  background-color: black;
+  color: blanchedalmond;
+  display: block;
+  padding: 8px;
   text-decoration: none;
-  color: wheat;
-  font-size: 18px;
-  width: 95%;
-  height: 100%;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.venture-menu a:hover {
+  background-color: rgba(160, 13, 50, 0.5);
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.venture-menu a:active {
+  background-color: blanchedalmond;
+  color: black;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.planet-image-text {
   display: flex;
-  align-items: center;
-  padding: 0 16px;
-  border-radius: 4px;
+  flex-basis: content;
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
-.navbar-text a:hover {
-  background-color: yellow;
-}
-
-.navTour-menu-items {
-  width: 100%;
-}
-
-.navVenture-toggle {
-  background-color: blue;
-  width: 100%;
-  height: 80px;
+.planet-image {
   display: flex;
-  justify-content: start;
-  align-items: center;
+  max-width: min-content;
+  align-self: auto;
+  padding: 4px;
+  transform: scale(4);
+  transform: scale(1);
 }
 
-span {
-  margin-left: 16px;
-}
-
-/* CUBE */
-
-.wrapper {
-position: 'relative';
-z-index: 1;
-}
-
-.more {
-position: 'relative';
-z-index:  2;
-background-color: 'red';
-padding: "10px";
-}
-
-.Cube {
-position: "fixed";
-top: "50%";
-left: "50%";
-transform: "translate(-50%, -50%)";
-background-color: "darkgrey";
-padding: "50px";
-z-index: 100;
-}
-
-.Overlay {
-position: 'fixed';
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: 'rgba(0,0,0,.7)';
-z-index: 100;
-}
-
-/* MENU */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.contactus
- {
+.planet-text {
   display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  background-color: rgba(160, 13, 50, 0.25);
+  color: white;
+  flex-basis: 100%;
+  margin: 5px;
+  flex-flow: row wrap;
+  border: solid 2px black;
+  padding: 4px;
 }
 
-.logintop {
-margin-top: 100px;
-text-align: center;
-font-size: 200%;
+/***Transforms of planets***/
+
+#pit1 :hover {
+  transform: scale(1.5);
 }
 
-.loginform { 
-background-color: whitesmoke;
-border-radius: 15px;
-padding: 25px;
-height: 370px;
-margin-top: 4em;
+#pit2 :hover {
+  transform: scale(1.2);
+}
+
+#pit3 :hover {
+  transform: scale(1.2);
+}
+
+#pit4 :hover {
+  transform: scale(1.2);
+}
+
+#pit5 :hover {
+  transform: scale(1.2);
+}
+
+#pit6 :hover {
+  transform: scale(1.2);
+}
+
+#pit7 :hover {
+  transform: scale(1.2);
+}
+
+#pit8 :hover {
+  transform: scale(1.2);
+}
+
+#pit9 :hover {
+  transform: scale(1.2);
+}
+
+#pit10 :hover {
+  transform: scale(1.2);
+}
+
+#pit11 :hover {
+  transform: scale(1.2);
 }
