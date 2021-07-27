@@ -1,13 +1,24 @@
 import React, {useState} from "react";
 import * as FaIcons from "react-icons/fa";
 import {Link} from "react-router-dom";
+import { useFetch, useEffect } from "react";
 import "./Navbar.css";
 
 
+export default function VentureTour() {
+  const [ventures, setVentures] = useState(false)
+const { callAPI: getventures } = useFetch("GET");
 
-function VentureTour() {
-  const [sidebar, setSidebar] = useState(false)
-  const showSidebar = () => setSidebar(!sidebar);
+useEffect(() => {
+    async function call() {
+      const res = await getventures(`/api/ventures/tours`);
+      if (!res.success) {
+        return console.error(res.error);
+      }
+      setVentures(res.data);
+  }
+    call();
+  }, []);
 
 
   return (
@@ -16,11 +27,11 @@ function VentureTour() {
    
         <div className="venture-menu">
           <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+           
           </Link>
         </div>
-        <nav className={sidebar ? "venture-menu active" : "venture-menu"}>
-          <ul className="venture-menu-items" onClick={showSidebar}>
+       
+          <ul className="venture-menu-items">
             <li className="venture-toggle">
               <Link to="#" className="menu-bars"></Link>
             </li>
@@ -37,9 +48,6 @@ function VentureTour() {
               );
             })}
           </ul>
-        </nav>
-   
     </>
   );
 }
-export default VentureTour
