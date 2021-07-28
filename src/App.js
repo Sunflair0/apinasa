@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
-clearclienttag, clearByDate, clearEndDate, clearStartDate, } from  "./redux/actions";
+import { clienttag, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+ clearBigCube, clearBuyVent, } from  "./redux/actions";
 import {
   BrowserRouter as Router,
   NavLink,
@@ -16,12 +16,14 @@ import TourInfo from "./components/TourInfo";
 import Form from "./components/Form";
 import Apod from "./components/Apod";
 import Search from "./components/Search";
+import BuyVent from "./components/BuyVent";
+import BigCube from "./components/BigCube";
 import Favorites from "./components/Favorites";
 import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
 
 
-function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearclienttag, clearByDate, clearEndDate, clearStartDate}
+function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearBuyVent}
 ) 
 
 {
@@ -63,17 +65,27 @@ function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clear
               Contact Us{" "}
             </NavLink></li> 
 
+           <li> <NavLink activeClassName="active" className="menu1item" to="/bigcube">
+              bg{" "}
+            </NavLink></li> 
+
+
+           <li> <NavLink activeClassName="active" className="menu1item" to="/buyvent">
+              vb{" "}
+            </NavLink></li> 
+
         <li>    <NavLink
               className="presenter"
               to="/login"
               onClick={() => {
-                clearTourInfo();
-                clearForm();
                 clearApod();
-                clearSearch();
-                clearFavorites();
+                clearBigCube();
+                clearBuyVent();
+                clearClient()     
                 clearContactUs();
-                clearClient();
+                clearFavorites();
+                clearForm();
+                clearSearch();                      
               }}
            >
               Logout
@@ -106,7 +118,16 @@ function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clear
           </Route>
         </Switch>
       </main>
-      </Router>
+
+<Switch>
+
+<ProtectedRoute path="/bigcube" reqUser={false} component={BigCube} />
+
+<ProtectedRoute path="/buyvent" reqUser={false} component={BuyVent} />
+
+</Switch>
+
+</Router>
   );
 }
 
@@ -116,17 +137,14 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
 clienttag,
-clearTourInfo,
 clearForm,
 clearApod,
 clearSearch,
 clearFavorites,
 clearClient,
 clearContactUs,
-clearclienttag,
-clearByDate,
-clearEndDate,
-clearStartDate,
+clearBigCube,
+clearBuyVent,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
