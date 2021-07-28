@@ -12,7 +12,6 @@ import {
 import "./App.css";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
-import TourInfo from "./components/TourInfo";
 import Form from "./components/Form";
 import Apod from "./components/Apod";
 import Search from "./components/Search";
@@ -99,8 +98,6 @@ function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearF
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
 
             <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
-          
-            <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
 
             <ProtectedRoute path="/form" reqUser={true} component={Form} />
           
