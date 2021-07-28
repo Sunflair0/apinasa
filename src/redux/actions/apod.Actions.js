@@ -4,6 +4,10 @@ export const CLEAR_BYDATE = "Clear ByDate";
 export const SET_BYDATE = "Set ByDate";
 export const CLEAR_STARTDATE = "Clear StartDate";
 export const SET_STARTDATE = "Set StartDate";
+export const CLEAR_ENDDATE = "Clear EndDate";
+export const SET_ENDDATE = "Set EndDate";
+export const ADD_APOD ="ADD APOD";
+export const DELETE_APOD ="DELETE APOD";
 
 export function clearApod() {
   return { type: CLEAR_APOD };
@@ -28,9 +32,6 @@ export function clearStartDate() {
 export function setStartDate(startdate) {
   return { type: SET_STARTDATE, startdate };
 }
-
-export const CLEAR_ENDDATE = "Clear EndDate";
-export const SET_ENDDATE = "Set EndDate";
 
 export function clearEndDate() {
   return { type: CLEAR_ENDDATE };
