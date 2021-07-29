@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
@@ -12,12 +13,9 @@ const [error, setError]=useState(null)
 
   return (
     <>
-<div className="topBar"></div>
-      <div className="logintop">Welcome to SpaceTours. Please log in.</div>
-<div className="circle1"></div>
-<div className="circle2"></div>
-<div className="circle3"></div>
-<div className="circle4"></div>
+
+      <div className="logintop">Welcome to SpaceTours</div>
+
       <form className="loginform">
         
           <label htmlFor="clienttag" ></label>
@@ -35,8 +33,7 @@ const [error, setError]=useState(null)
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           /></div>
-        <div className="circle"></div>
-        <button
+                <button
           className="btn"
           onClick={async (e) => {
 e.preventDefault();
@@ -54,7 +51,8 @@ e.preventDefault();
               if (res.error) {
                 return setError(res.error);
               }
-              loginCall(res.data.clienttag);
+console.log(res);
+            
             }
           }}
 
@@ -62,8 +60,24 @@ e.preventDefault();
           Login
         </button>
 
-<button className="btn" to="/signup">Create Account</button>
+<Link className="btn" to="/signup">Create Account</Link>
       </form>
+<div className="circle"></div>
+<div className="circle1"></div>
+<div className="circle2"></div>
+<div className="circle3"></div>
+<div className="circle4"></div>
+<div className="circle5"></div>
+<div className="circle6"></div>
+<div className="circle7"></div>
+<div className="circle8"></div>
+<div className="circle9"></div>
+<div className="circle10"></div>
+<div className="circle11"></div>
+<div className="circle12"></div>
+<div className="circle13"></div>
+<div className="circle14"></div>
+<div className="circle15"></div>
 <div>{error}</div>
     </>
   );

@@ -20,24 +20,24 @@ font-family: "Times New Roman", Times, serif;
 
 
 .logintop {
-margin-top: 100px;
 text-align: center;
- border-radius: 15px;
-padding: 25px;
-width: auto;
-height: 100px;
-margin-top: 0em;
+border-radius: 15px;
+padding: 15px;
+height: 75px;
+margin-top: 0;
 margin-left: auto;
 margin-right: auto;
-width: 300px;
+font-weight: 600;
+font-size: xx-large;
+width: 600px;
 border-color: #2c4cee;
 box-shadow: 4px 4px 30px #2c4cee;
 }
 
 .circle {
-margin-left: auto;
-margin-right: auto;
-margin-top: 0%;
+display: flex;
+margin-left: 40%;
+margin-top: 5%;
 height: 125px;
   width:125px;
   border-radius: 70px;
@@ -45,14 +45,16 @@ height: 125px;
   background-image: radial-gradient(circle, rgb(0, 0, 255), rgb(0, 0, 0));
 }
 
+
+
 .circle1{
 display: flex;
-align-content:initial;
-margin-top: 5%;
-height: 80px;
-  width:80px;
+margin-left: auto;
+margin-top: 1%;
+height: 40px;
+  width:40px;
   border-radius: 70px;
-  background-color: rgb((255, 115, 0)); /* For browsers that do not support gradients */
+  background-color:antiquewhite rgb((255, 115, 0)); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(255, 115, 0), rgb(0, 0, 0));
   position: relative;
 
@@ -60,26 +62,149 @@ height: 80px;
 
 
 .circle2{
-margin-top: 13%;
-margin-left: 95%;
-height:50px;
-  width: 50px;
+margin-top: 5%;
+margin-left: 71%;
+height:70px;
+  width: 70px;
   border-radius: 70px;
   background-color: rgb((37, 189, 125)); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(37, 189, 125), rgb(0, 0, 0));
+  background-image: radial-gradient(circle, rgb(101, 202, 160), rgb(0, 0, 0));
+}
+
+.circle3 {
+margin-left: 45%;
+margin-top: 10%;
+position: initial;
+height: 15px;
+  width:15px;
+  border-radius: 50px;
+  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(192, 192, 201), rgb(189, 91, 168));
+z-index: 1;
+}
+
+.circle4 {
+margin-left: 50%;
+position: sticky;
+margin-top:-35.8%;
+height: 17px;
+  width:17px;
+  border-radius: 60px;
+  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(128, 128, 134), rgb(0, 0, 0));
+z-index: 2;
+}
+
+.circle5 {
+margin-left: 60%;
+margin-top:-5%;
+height:5px;
+  width:5px;
+  border-radius: 50px;
+  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(128, 128, 134), rgb(192, 7, 7));
+z-index: 2;
+}
+
+.circle6 {
+margin-left: 46%;
+margin-top: 8.5%;
+position: relative;
+height: 8px;
+  width:8px;
+  border-radius: 50px;
+  background-color: rgb(102, 187, 22); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(102, 187, 22), rgb(0, 0, 0));
+z-index: 1;
+box-shadow: black;
+}
+
+.circle7 {
+margin-left: 15%;
+margin-top: 10%;
+position: sticky;
+height: 35px;
+  width:35px;
+  border-radius: 50px;
+  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
+z-index: 1;
+}
+
+.circle8 {
+margin-left: 85%;
+margin-top: -17%;
+position: sticky;
+height: 5px;
+  width:5px;
+  border-radius: 50px;
+  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
+z-index: 1;
+}
+
+.circle9 {
+margin-left: 85%;
+margin-top: -15%;
+position: sticky;
+height: 5px;
+  width:5px;
+  border-radius: 50px;
+  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(224, 205, 184), rgb(0,0,0));
+z-index: 3;
+}
+
+.circle10 {
+margin-left: -28%;
+margin-top: -35%;
+position: absolute;
+height: 650px;
+  width:650px;
+  border-radius: 500px;
+  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(137, 160, 37), rgb(0,0,0));
+z-index: -1;
+}
+
+.loginform {
+display: flex;
+margin-left: auto;
+margin-right: auto;
+width: 280px;
+height: 50px;
+margin-top: 10;
+border-radius: 5px;
+background-color: rgba(44, 76, 238, 0.239);
+font-weight: 500;
+
+border-color: red;
+
 }
 
 .loginform button {
 box-shadow: 4px 4px 35px b#02061b5d;;
 border-radius:5px;
-width:265px;
+width:200px;
 height: 70px;
+}
 
+.loginform:hover{
+border-color: aqua;
+}
 
+button {
 
+box-shadow: 4px 4px 35px b#02061b5d;;
+border-radius:5px;
+width:200px;
+height: 70px;
 }
 
 input {
+margin-top: 70%;
+margin-left: auto;
+margin-right: auto;
 width: 280px;
 height: 50px;
 padding-left: 12px;
@@ -90,10 +215,13 @@ font-size: large;
 border-color: black;
 }
 
+input:hover {
+border-color: white ;
+}
 
-
+/* 
 #space{
-padding: 10px;}
+padding: 30px;} */
 
 .menuitem {margin-top: 200px;
 }
