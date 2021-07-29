@@ -9,6 +9,6 @@ export default function searchReducer(state = initialSearchState, action) {
     case CLEAR_SEARCH:
       return [];
     default:
-      return state;
+      return state; 
   }
 }
