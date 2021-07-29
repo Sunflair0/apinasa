@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   favorites: favoritesReducer,
   form: formReducer,
   search: searchReducer,
- 
+
   
 });
 
