@@ -1,6 +1,44 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import BigCube from "./BigCube";
+import { ReactDOM } from "react-dom";
+import { getElementById } from "domutils";
+
+const BigCube1 = (props)=> {
+const [display, setDisplay]=useState(false);
+
+const open = () => {
+setDisplay(true)
+};
+
+const close =() => {
+
+setDisplay(false);
+}
+if (display) {
+
+return ReactDOM.createPortal(
+<div className={"cube-wrapper"}>
+<div className={"cube-backdrop"}/>
+<div className ={"cube"}>
+{props.children}</div>
+</div>
+document,getElementById("cube-root"))
+}
+
+return( 
+
+)
+
+	return null (
+)}
+
+
+
+
+
+
+
 
 
 // export default function MenuPop() {
