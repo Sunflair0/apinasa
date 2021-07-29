@@ -49,7 +49,7 @@ async function delOneventf(res, user_id, vent_id) {
 async function delAllventf(res, user_id) {
   let json = { success: false, error: null, data: null };
   try {
-    const ventfav = await query("DELETE  * FROM ventfav JOIN ventures ON ventfav.vent_id = ventures.vent_id WHERE ventfav.user_id = ?", [
+    const ventfav = await query("DELETE * FROM ventfav JOIN ventures ON ventfav.vent_id = ventures.vent_id WHERE ventfav.user_id = ?", [
       user_id,
     ]);
     json = { ...json, success: true, data: ventfav};

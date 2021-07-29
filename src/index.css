@@ -1,63 +1,74 @@
-body {background-color: darkkhaki;
+body {background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 font-family: "Times New Roman", Times, serif;
+color: antiquewhite;
 }
+
 .presenter {
   color: rgb(4, 89, 163);
   font-weight: 500;
 }
 
+.topBar {
+height:40px;
+display: flex;
+justify-content: start;
+align-items: center;
+background-image: linear-gradient(to right, rgba(24,23,23,1), rgba(24,23,23,0));
+}
+
 .logintop {
 margin-top: 100px;
 text-align: center;
-font-size: 200%;
-
-}
-
-
-.loginform { 
-background-color: whitesmoke;
-border-radius: 15px;
+ border-radius: 15px;
 padding: 25px;
 height: 370px;
 margin-top: 4em;
-text-align: left;
 margin-left: auto;
 margin-right: auto;
 width: 18em;
 border: 4px black double;
 box-shadow: 4px 4px 15px black;
+}
 
+.circle {
+margin-left: auto;
+margin-right: auto;
+margin-top: 20%;
+align-items: flex-start;
+height: 100px;
+  width:100px;
+  border-radius: 50px;
+  background-color: rgb(55, 0, 255); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, blue, black, white);
 }
 
 .loginform button {
-  border:2px solid black;
-  background-color:#015d74;
-  color:#fff;
-  font-weight:600;
-  border-radius:5px;
-  width:65px;
+box-shadow: 4px 4px 15px black;
+border-radius:5px;
+width:65px;
 height: 30px;
-margin-top: 55%;
+margin-top: 20%;
 }
-
-.loginform img{
-    display: block;
-    margin-top:300;
-    margin-left: auto;
-    margin-right: auto }
 
 input {
 width: 200px;
 height: 30px;
+padding-left: 12px;
 border-radius: 5px;
 }
 
 #space{
-padding: 20px;}
+padding: 10px;}
 
 .menuitem {margin-top: 200px;
 }
-
 .menu1{  width: 200px;
 background-color: black;
 color: bisque;
@@ -65,8 +76,6 @@ font-size: 5mm;
 text-align: left;
 padding: 2mm;
 text-decoration: none;
-
-
 }
 
 li {padding: 3mm;
@@ -83,10 +92,10 @@ border-color: blue;
 text-decoration: none;
 }
 
-
 .headtitle{font-weight: 500;
 color:rgba(0, 0, 255, 0.493);
 }
+
 .menubox {
     background-color:rgb(22, 236, 243);
     border-radius: 4px;
@@ -96,10 +105,7 @@ color:rgba(0, 0, 255, 0.493);
     margin: 0 auto;
     width: 300px;
 }
-
-
 /* //// Venture Menu */
-
 .venture-menu {
   background-color: rgb(162, 22, 243);
   height: 120px;
@@ -107,13 +113,11 @@ color:rgba(0, 0, 255, 0.493);
   justify-content: start;
   align-items: center;
 }
-
 .menu-bars {
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
 }
-
 .navbar-menu {
   background-color: chartreuse;
   width: 250px;
@@ -125,12 +129,10 @@ color:rgba(0, 0, 255, 0.493);
   left: -100;
   transition: 850;
 }
-
 .navbar-menu.active {
   left: 0;
   transition: 350;
 }
-
 .navbar.text {
   display: flex;
   justify-content: start;
@@ -139,7 +141,6 @@ color:rgba(0, 0, 255, 0.493);
   list-style: none;
   height: 60;
 }
-
 .navbar-text a {
   text-decoration: none;
   color: wheat;
@@ -151,14 +152,12 @@ color:rgba(0, 0, 255, 0.493);
   padding: 0 16px;
   border-radius: 4px;
 }
-
 .navbar-text a:hover {
   background-color: yellow;
 }
 .navTour-menu-items {
   width: 100%;
 }
-
 .navVenture-toggle {
   background-color: blue;
   width: 100%;
@@ -167,19 +166,15 @@ color:rgba(0, 0, 255, 0.493);
   justify-content: start;
   align-items: center;
 }
-
 span {
   margin-left: 16px;
 }
-
 /* MENU */
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 .callisto,
 .titan,
 .ganymede,

@@ -1,0 +1,1 @@
+export const buyVentSelector = (state) => state.buyvent;
