@@ -5,4 +5,4 @@ export * from "./clientActions";
 export * from "./contactusActions";
 export * from "./favoritesActions";
 export * from "./formActions";
-export * from "./searchesActions";
+export * from "./searchActions";

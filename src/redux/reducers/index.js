@@ -6,7 +6,7 @@ import clientReducer from "./clientReducer";
 import contactusReducer from "./contactusReducer";
 import favoritesReducer from "./favoritesReducer";
 import formReducer from "./formReducer";
-import searchesReducer from "./searchesReducer";
+import searchReducer from "./searchReducer";
 
 
 const rootReducer = combineReducers({
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   contactus: contactusReducer,
   favorites: favoritesReducer,
   form: formReducer,
-  search: searchesReducer,
+  search: searchReducer,
  
   
 });

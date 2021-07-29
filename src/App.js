@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { clienttag, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+import { clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
  clearBigCube, clearBuyVent, } from  "./redux/actions";
 import {
   BrowserRouter as Router,
@@ -133,7 +133,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-clienttag,
 clearForm,
 clearApod,
 clearSearch,

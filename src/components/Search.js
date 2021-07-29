@@ -2,14 +2,14 @@ import React, { useEffect, useMemo, useState } from "react";
 import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import { setSearches, addFavorite, deleteFavorite } from "../redux/actions";
+import { setSearch, addFavorite, deleteFavorite } from "../redux/actions";
 
 const Search = ({
   addFavorite,
   deleteFavorite,
   favorites,
   clienttag,
-  setSearches,
+  setSearch,
   search,
 }) => {
   const [searchField, setSearchField] = useState("");
@@ -21,9 +21,9 @@ const Search = ({
 
   useEffect(() => {
     if (data) {
-      setSearches(data.data);
+      setSearch(data.data);
     }
-  }, [data, setSearches]);
+  }, [data, setSearch]);
 
   return (
     <div>
@@ -80,7 +80,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   deleteFavorite,
   addFavorite,
-  setSearches,
+  setSearch,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
