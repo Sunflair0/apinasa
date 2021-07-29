@@ -14,6 +14,10 @@ const [error, setError]=useState(null)
     <>
 <div className="topBar"></div>
       <div className="logintop">Welcome to SpaceTours. Please log in.</div>
+<div className="circle1"></div>
+<div className="circle2"></div>
+<div className="circle3"></div>
+<div className="circle4"></div>
       <form className="loginform">
         
           <label htmlFor="clienttag" ></label>
@@ -57,6 +61,8 @@ e.preventDefault();
         >
           Login
         </button>
+
+<button className="btn" to="/signup">Create Account</button>
       </form>
 <div>{error}</div>
     </>
