@@ -1,39 +1,39 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
-import BigCube from "./BigCube";
+import React, {useState, forwardRef, useImperativeHandle} from "react";
 import { ReactDOM } from "react-dom";
 import { getElementById } from "domutils";
 
-const BigCube1 = (props)=> {
+const BigCube = forwardRef((props,ref)=> {
 const [display, setDisplay]=useState(false);
+
+useImperativeHandle(ref,() => {
+return {
+
+openCube: () => open(),
+close: ()=> close()
+}
+} );
 
 const open = () => {
 setDisplay(true)
 };
 
 const close =() => {
-
 setDisplay(false);
-}
-if (display) {
+};
 
+
+if(display) {
 return ReactDOM.createPortal(
 <div className={"cube-wrapper"}>
 <div className={"cube-backdrop"}/>
 <div className ={"cube"}>
 {props.children}</div>
-</div>
-document,getElementById("cube-root"))
+</div>,
+document.getElementById("cube-root"))
 }
-
-return( 
-
-)
-
-	return null (
-)}
-
-
+return null
+ 
+});
 
 
 
