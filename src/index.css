@@ -29,8 +29,7 @@ height: 100px;
 margin-top: 0em;
 margin-left: auto;
 margin-right: auto;
-width: 18em;
-border: 4px black double;
+width: 300px;
 border-color: #2c4cee;
 box-shadow: 4px 4px 30px #2c4cee;
 }
@@ -55,7 +54,6 @@ height: 80px;
   border-radius: 70px;
   background-color: rgb((255, 115, 0)); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(255, 115, 0), rgb(0, 0, 0));
-  height: 200px;
   position: relative;
 
 }
