@@ -163,8 +163,9 @@ height: 650px;
   width:650px;
   border-radius: 500px;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(137, 160, 37), rgb(0,0,0));
+  background-image: radial-gradient(circle, rgba(137, 160, 37, 0.171), rgb(137, 160, 37));
 z-index: -1;
+ box-shadow: 0px 0px 200px 20px rgba(216, 205, 56, 0.877);
 }
 
 .loginform {
