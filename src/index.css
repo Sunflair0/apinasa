@@ -18,7 +18,6 @@ font-family: "Times New Roman", Times, serif;
   font-weight: 500;
 }
 
-
 .logintop {
 text-align: center;
 border-radius: 15px;
@@ -36,6 +35,7 @@ box-shadow: 4px 4px 30px #2c4cee;
 }
 
 .sign {
+margin: 30px;
 box-shadow: 4px 4px 35px b#02061b5d;;
 border-radius:5px;
 width:200px;
@@ -60,7 +60,10 @@ z-index: -1;
 
 
 .therest {
-margin-top: -200px;
+flex: content;
+margin-bottom: -575px;
+z-index: -1;
+
 }
 
 .earthmoon {
@@ -267,57 +270,60 @@ z-index: 3;
 
 
 .loginform {
-background-color: rgba(240, 238, 238, 0.151);
-border: solid 1px rgba(255, 255, 255, 0.308);
-display: flex;
+background-color: rgba(255, 255, 255, 0.05);
+border: solid 1px rgba(255, 255, 255, 0.425);
+border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
+box-shadow: 5px 5px 1px 1px rgba(130, 134, 218, 0.425);
+display: grid;
 margin-left: auto;
 margin-right: auto;
 width: 275px;
 height: 350px;
-margin-top: 30px;
+margin-top: 50px;
 border-radius: 5px;
 font-weight: 300;
+align-content: center;
+justify-content: center;
+backdrop-filter: blur(8px);
+
 }
 
 .loginform button {
 border-radius:50px;
-margin-top: 0%;
-width:60px;
-height: 60px;
-border-color: rgb(40, 5, 122);
+display: flex;
+margin-top: 45px;
+width:50px;
+height: 50px;
+box-shadow: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
+justify-content:end;
+background-image: linear-gradient(to right, #314755 0%, #5ece32  51%, #314755  100%)}
 
-
-}
-
-btn {
-box-shadow: 4px 4px 35px b#02061b5d;;
-border-radius:5px;
-width:200px;
-height: 60px;
-}
 
 input {
-align-items:baseline;
+
 color: rgb(214, 214, 214);
 margin-top: 10px;
 margin-left: auto;
 margin-right: auto;
 width: 250px;
-height: 30px;
+height: 25px;
 border-radius: 5px;
-background-color: hsl(230, 90%, 8%);
-font-weight: 200;
-font-size: large;
-border-color: black;
+box-shadow: 0px 0px 0px 1px #ffffff79;
+background-color:rgba(0, 0, 0, 0.85);
+border-color: rgba(255, 255, 255, 0.247);
 }
 
 input:hover {
-border-color: blue;
+ box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
+
 }
 
 .loginform:hover {
 border-color: blue;
 }
+
+
+/*///////Menu*/
 
 .menuitem {margin-top: 200px;
 }
