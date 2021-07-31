@@ -14,12 +14,13 @@ const Login = ({ setClient }) => {
   return (
     <>
       <div className="shell">
+<div className="logintop">Welcome to SpaceTours</div>
         <div className="circle15" title="Sun/Sol"></div>
         <div className="therest">
-          <div className="logintop">Welcome to SpaceTours</div>
+          
 
           <form className="loginform">
-<div className="Form">
+<div className="stripe">
             <label htmlFor="clienttag" ></label>
             <div id="space"> <input placeholder="Name"
               id="clienttag"
@@ -33,7 +34,7 @@ const Login = ({ setClient }) => {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             /></div>
-            <button
+            <div className="outerS"> <button
               className="btn"
               onClick={async (e) => {
                 e.preventDefault();
@@ -53,11 +54,13 @@ const Login = ({ setClient }) => {
                   }
                   console.log(res);
                 }
-              }}><div className="gmessage"></div>
+              }}>
               GO
             </button>
-            <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
-<div className="smessage"></div>
+
+<div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
+         </div><div className="outerS">   <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
+<div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div></div>
           </div></form>
 
           <div>{error}</div>
