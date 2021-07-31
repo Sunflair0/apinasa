@@ -53,10 +53,11 @@ const Login = ({ setClient }) => {
                   }
                   console.log(res);
                 }
-              }}>
-              ENTER
+              }}><div className="gmessage"></div>
+              GO
             </button>
             <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
+<div className="smessage"></div>
           </div></form>
 
           <div>{error}</div>
