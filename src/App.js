@@ -64,15 +64,6 @@ function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearF
               Contact Us{" "}
             </NavLink></li> 
 
-           <li> <NavLink activeClassName="active" className="menu1item" to="/bigcube">
-              
-            </NavLink></li> 
-
-
-           <li> <NavLink activeClassName="active" className="menu1item" to="/buyvent">
-              {" "}
-            </NavLink></li> 
-
         <li>    <NavLink
               className="presenter"
               to="/login"
@@ -89,6 +80,15 @@ function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearF
            >
               Logout
             </NavLink></li>
+
+           <li> <NavLink activeClassName="active" className="menu1item" to="/bigcube">
+              
+            </NavLink></li> 
+
+           <li> <NavLink activeClassName="active" className="menu1item" to="/buyvent">
+            
+            </NavLink></li> 
+
           </div></ul>
         )}
       </nav>

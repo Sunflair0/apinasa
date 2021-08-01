@@ -1,6 +1,7 @@
 const query = require("../config/mysql.conf");
 
 
+
 // /////I want to buy this
 async function addPurch(res, user_id) {
   let json = { success: false, error: null, data: null };
@@ -15,7 +16,7 @@ async function addPurch(res, user_id) {
 }
 
 // /////I want to see what have I bought
-async function byUserIDv(res, user_id) {
+async function myVents(res, user_id) {
   let json = { success: false, error: null, data: null };
   try {
     const purchases = await query("SELECT * FROM purchases WHERE user_id = ?", [user_id]);
@@ -41,5 +42,5 @@ async function delOnePurch(res, user_id, vent_id) {
 }
 
 
-module.exports = {addPurch, byUserIDv, delOnePurch};
+module.exports = {addPurch, myVents, delOnePurch};
 
