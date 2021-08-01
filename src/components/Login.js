@@ -3,6 +3,7 @@ import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
+import * as AiIcons from "react-icons/ai";
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
@@ -22,6 +23,7 @@ const Login = ({ setClient }) => {
           <form className="loginform">
 <div className="stripe">
             <label htmlFor="clienttag" ></label>
+ <div className="bulb"><AiIcons.AiOutlineBulb/></div>
             <div id="space"> <input placeholder="Name"
               id="clienttag"
               onChange={(e) => setClienttag(e.target.value)}

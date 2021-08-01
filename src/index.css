@@ -277,7 +277,7 @@ margin-top: 90px;
 .stripe {
 background-color: #31475583;
 padding: 0%;
-height:110px ;
+height:128px ;
 border-bottom: 1px rgba(255, 255, 255, 0.425) solid;
 }
 
@@ -300,6 +300,136 @@ backdrop-filter: blur(6px);
 z-index: 10;
 position: relative;
 }
+
+.btnGroup {
+display:flex;
+flex-direction: column;
+justify-content: center;
+
+
+}
+
+.bulb{
+/*AiOutlineBulb*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.bulb :active{
+/*AiOutlineBulb*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.intraNet{
+/*AiFillWechat*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.intraNet :active{
+/*AiFillWechat*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.speaker{
+/*AiFillAudio*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.speaker :active{
+/*AiFillAudio*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.camera{
+/*AiOutlineCamera*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.camera :active{
+/*AiOutlineCamera*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+
 
 .modelNum{
 font-family: "Copperplate", Times, serif;
@@ -333,6 +463,7 @@ background-color: black;
 border: 3px groove grey;
 z-index: 11;
 justify-content: flex-start;
+margin-top: 20px;
 }
 
 .outerS{
@@ -343,19 +474,19 @@ padding: 20px;
 }
 
 .signMess{
+margin-top: 20px;
 font-family: "Monaco", Times, serif;
 display:inline-block;
 padding: 5px;
-height: 340px;
+height: 330px;
 width: 200px;
 border-radius: 5px;
 background-color: black;
 border: 3px groove grey;
 z-index: 11;
 justify-content: flex-start;
+
 }
-
-
 
 input {
 color: rgb(214, 214, 214);

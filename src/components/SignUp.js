@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useFetch from "../hooks/useFetch";
+import * as AiIcons from "react-icons/ai";
 
 const Signup = () => {
   const [clienttag, setclienttag] = useState("");
@@ -12,14 +13,16 @@ const Signup = () => {
      
 <h2 className="logintop">Signup</h2>
       <div className="spacer"><form className="loginform">
-        
+        <div className="stripeGroup">      </div>
           <div className="stripe"><label  id="space" htmlFor="clienttag"></label>
            <div className="namepass"><input
             id="clienttag" placeholder= "Client Name"
             onChange={(e) => setclienttag(e.target.value)}
             value={clienttag}
           />
-        
+
+        <div className="bulb"><AiIcons.AiOutlineBulb/></div>
+    
         
          <label id="space" htmlFor="password"></label>
           <input placeholder="Password"
