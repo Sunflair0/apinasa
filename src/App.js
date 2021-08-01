@@ -68,7 +68,6 @@ function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearF
               bg{" "}
             </NavLink></li> 
 
-
            <li> <NavLink activeClassName="active" className="menu1item" to="/buyvent">
               vb{" "}
             </NavLink></li> 
