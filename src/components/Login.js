@@ -77,8 +77,6 @@ const Login = ({ setClient }) => {
 
       <div className="circle6" title="Mimas"></div>
       <div className="circle8" title="Titan"></div>
-
-
       <div className="circle9" title="Uranus"></div>
       <div className="circle10" title="Ariel"></div>
       <div className="circle11" title="Titania"></div>
