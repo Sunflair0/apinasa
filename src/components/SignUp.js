@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useFetch from "../hooks/useFetch";
+import * as AiIcons from "react-icons/ai";
 
 const Signup = () => {
   const [clienttag, setclienttag] = useState("");
@@ -9,18 +10,21 @@ const Signup = () => {
   // const history = useHistory();
   return (
     <>
-      <h2 className="logintop">Signup</h2>
-      <form className="loginform">
-        
-          <label  id="space" htmlFor="clienttag"></label>
-          <input
+     
+<h2 className="logintop">Signup</h2>
+      <div className="spacer"><form className="loginform">
+        <div className="stripeGroup">      </div>
+          <div className="stripe"><label  id="space" htmlFor="clienttag"></label>
+           <div className="namepass"><input
             id="clienttag" placeholder= "Client Name"
             onChange={(e) => setclienttag(e.target.value)}
             value={clienttag}
           />
+
+        <div className="bulb"><AiIcons.AiOutlineBulb/></div>
+    
         
-        <div className="form-field flex-wrap">
-          <label id="space" htmlFor="password"></label>
+         <label id="space" htmlFor="password"></label>
           <input placeholder="Password"
             type="password"
             id="password"
@@ -28,7 +32,10 @@ const Signup = () => {
             value={password}
           />
         </div>
-
+<div className="outerS"> <div className="signMess"><ul>
+<li>This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.</li>
+<li>This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.</li>
+</ul></div>
         <button
           className="btn"
           onClick={async (e) => {
@@ -49,11 +56,21 @@ const Signup = () => {
               }
             }
           }}
-        >
-          Signup
+        >Signup
         </button>
-      </form>
-      <div>{error}</div>
+      </div>
+<div className="modelNum">TourGuide 2.1M31-7 LU</div>
+ </div></form> </div>    
+<div className="circle16" title="Blackhole"></div>
+<div className="circle3 mars2" title="Mars"></div>
+<div className="uGroup2">
+          <div className="circle9" title="Uranus"></div>
+          <div className="circle10" title="Ariel"></div>
+          <div className="circle11" title="Titania"></div>
+          <div className="circle12" title="Umbriel"></div>
+          <div className="circle13" title="Oberon"></div>
+</div>
+<div>{error}</div>
     </>
   );
 };

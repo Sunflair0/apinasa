@@ -29,7 +29,7 @@ async function signup(res, clienttag, password) {
   }
 }
 
-async function login(res, clienttag, password) {
+async function login( clienttag, password) {
   let json = { data: null, success: false, error: null };
   try {
     const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [

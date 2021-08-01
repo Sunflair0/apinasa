@@ -9,9 +9,12 @@ function configPassport(passport) {
     "local-login",
     new LocalStrategy(async (clienttag, password, done) => {
       //! Check the login things like before
+
       const { data, error } = await login(clienttag, password);
       //! If everything looks good send back a signed jwt with the user's uuid
-      if (error) {
+console.log(data);
+console.log(error);      
+if (error) {
         return done(error);
       }
       //! Otherwise send an appropriate message
@@ -56,8 +59,8 @@ function configPassport(passport) {
   );
 
   //! Serialize user
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
+  passport.serializeUser((client, done) => {
+    done(null, client.id);
   });
 }
 
