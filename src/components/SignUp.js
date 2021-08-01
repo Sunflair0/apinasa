@@ -61,7 +61,15 @@ const Signup = () => {
       </div>
 <div className="modelNum">TourGuide 2.1M31-7 LU</div>
  </div></form> </div>    
-
+<div className="circle16" title="Blackhole"></div>
+<div className="circle3 mars2" title="Mars"></div>
+<div className="uGroup2">
+          <div className="circle9" title="Uranus"></div>
+          <div className="circle10" title="Ariel"></div>
+          <div className="circle11" title="Titania"></div>
+          <div className="circle12" title="Umbriel"></div>
+          <div className="circle13" title="Oberon"></div>
+</div>
 <div>{error}</div>
     </>
   );
