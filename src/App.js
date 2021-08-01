@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { clienttag, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+import { clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
  clearBigCube, clearBuyVent, } from  "./redux/actions";
 import {
   BrowserRouter as Router,
@@ -65,12 +65,12 @@ function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearF
             </NavLink></li> 
 
            <li> <NavLink activeClassName="active" className="menu1item" to="/bigcube">
-              bg{" "}
+              
             </NavLink></li> 
 
 
            <li> <NavLink activeClassName="active" className="menu1item" to="/buyvent">
-              vb{" "}
+              {" "}
             </NavLink></li> 
 
         <li>    <NavLink
@@ -118,9 +118,9 @@ function App({clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearF
 
 <Switch>
 
-<ProtectedRoute path="/bigcube" reqUser={false} component={BigCube} />
+<ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
 
-<ProtectedRoute path="/buyvent" reqUser={false} component={BuyVent} />
+<ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
 
 </Switch>
 
@@ -133,7 +133,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-clienttag,
 clearForm,
 clearApod,
 clearSearch,
