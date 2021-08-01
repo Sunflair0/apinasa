@@ -13,6 +13,13 @@ background-position: 0px 0px, 10px 10px, 40px 60px, 130px 270px, 100px 130px, 15
 font-family: "Times New Roman", Times, serif;
 }
 
+/*signup page*/
+
+.namepass{
+display: flex;
+flex-direction: column;
+}
+
 .presenter {
   color: rgb(4, 89, 163);
   font-weight: 500;
@@ -65,7 +72,7 @@ z-index: -1;
 }
 
 
-.circle {
+.circle { 
 /*Earth*/
 margin-left: 10%;
 margin-top: 7%;
@@ -262,9 +269,16 @@ height: 1px;
   background-image: radial-gradient(circle,  rgba(229, 231, 216, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: 3;
 }
+
+.spacer{
+margin-top: 90px;
+}
+
 .stripe {
 background-color: #31475583;
-height:110px;
+padding: 0%;
+height:110px ;
+border-bottom: 1px rgba(255, 255, 255, 0.425) solid;
 }
 
 .loginform {
@@ -284,11 +298,22 @@ align-content: center;
 justify-content: center;
 backdrop-filter: blur(6px);
 z-index: 10;
+position: relative;
+}
+
+.modelNum{
+font-family: "Copperplate", Times, serif;
+margin-left: 1em;
+color: #838080;
+position:fixed;
+left:0px;
+bottom:0px;
+
 }
 
 .loginform button {
 border-radius:50px;
-margin-right: 1em;
+margin-left: 1em;
 margin-top: 45px;
 width:50px;
 height: 50px;
@@ -298,10 +323,11 @@ background-image: linear-gradient(to right, #314755 0%, #5ece32  51%, #314755  1
 
 
 .gmessage, .smessage {
+font-family: "Monaco", Times, serif;
 display:inline-block;
 padding: 5px;
 height: 102px;
-width: 200px;
+width: 202px;
 border-radius: 5px;
 background-color: black;
 border: 3px groove grey;
@@ -310,10 +336,25 @@ justify-content: flex-start;
 }
 
 .outerS{
+display: inline-flex;
 flex-direction: row;
 flex-basis:auto;
 padding: 20px;
 }
+
+.signMess{
+font-family: "Monaco", Times, serif;
+display:inline-block;
+padding: 5px;
+height: 340px;
+width: 200px;
+border-radius: 5px;
+background-color: black;
+border: 3px groove grey;
+z-index: 11;
+justify-content: flex-start;
+}
+
 
 
 input {

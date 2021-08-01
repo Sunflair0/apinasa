@@ -34,7 +34,8 @@ const Login = ({ setClient }) => {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             /></div>
-            <div className="outerS"> <button
+            <div className="outerS"><div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
+         <button
               className="btn"
               onClick={async (e) => {
                 e.preventDefault();
@@ -58,10 +59,9 @@ const Login = ({ setClient }) => {
               GO
             </button>
 
-<div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
-         </div><div className="outerS">   <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
-<div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div></div>
-          </div></form>
+ </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
+            <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
+</div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
 
           <div>{error}</div>
         </div> </div>
