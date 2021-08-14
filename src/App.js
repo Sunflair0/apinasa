@@ -141,6 +141,6 @@ clearClient,
 clearContactUs,
 clearBigCube,
 clearBuyVent,
-};
+}; 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
