@@ -13,13 +13,6 @@ background-position: 0px 0px, 10px 10px, 40px 60px, 130px 270px, 100px 130px, 15
 font-family: "Times New Roman", Times, serif;
 }
 
-/*signup page*/
-
-.namepass{
-display: flex;
-flex-direction: column;
-}
-
 .presenter {
   color: rgb(4, 89, 163);
   font-weight: 500;
@@ -39,54 +32,22 @@ background-color: hsl(230, 90%, 8%);
 border-color: #2c4cee;
 box-shadow: 4px 4px 30px #2c4cee;
 }
-
-.circle16 { 
-/*Blackhole*/
-margin-left: -20%;
-margin-top: -50%;
-height:303.5px;
-  width:303.5px;
-  border-radius: 370px;
-  background-color: rgb(0, 0, 0); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(155, 51, 120, 0.384),rgba(41, 2, 28, 0.075),rgba(70, 11, 165, 0.486) );
-box-shadow: 0px 0px 2px 2px rgba(70, 11, 165, 0.315);
-z-index: -2;
-}
-
-
-
-.uGroup2{
+.uGroup2
+{
 position: static;
 margin-top: -500px;
 margin-left: -250px;
 }
-
-.circle15 {
-/*Sun*/
-display: flex;
-position: fixed;
-margin-left: -255em;
-margin-block-start: -410em; 
-position: sticky;
-height: 6645px;
-  width:6645px;
-  border-radius: 6000px;
-  background-color: rgb(148, 172, 41); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(137, 160, 37, 0.171), rgb(148, 172, 41));
-z-index: -1;
- box-shadow: 0px 0px 200px 20px rgb(148, 172, 41, 0.877);
-}
-
-
-
-.therest {
+.therest 
+{
 flex: content;
 margin-bottom: -575px;
 z-index: -1;
 }
 
-
-.circle { 
+/* /////Celestial Bodies */
+.circle 
+{ 
 /*Earth*/
 margin-left: 10%;
 margin-top: 7%;
@@ -98,9 +59,8 @@ height: 63.5px;
 box-shadow: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
 z-index: -2;
 }
-
-
-.circle1{
+.circle1
+{
 /*Pluto*/
 display: flex;
 margin-left: auto;
@@ -111,12 +71,9 @@ height: 10.37px;
   background-color:antiquewhite rgb((255, 115, 0)); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(150, 140, 131), rgb(0, 0, 0));
   position: relative;
-
 }
-
-
-
-.circle2 {
+.circle2 
+{
 /*Ganymede*/
 margin-left: 85%;
 margin-top: 10%;
@@ -127,8 +84,8 @@ height: 26px;
   background-image: radial-gradient(circle, rgb(192, 192, 201), rgb(85, 57, 79));
 z-index: 1;
 }
-
-.circle3 {
+.circle3
+{
 /*Mars*/
 margin-left: 40%;
 margin-bottom:5.8%;
@@ -137,11 +94,10 @@ height: 34px;
   border-radius: 60px;
   background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
  background-image: radial-gradient(circle, rgb(224, 139, 41), rgba(187, 24, 24, 0.822));
-
 z-index: 2;
 }
-
-.circle4 {
+.circle4 
+{
 /*Callisto*/
 margin-left: 60%;
 margin-top:0%;
@@ -152,8 +108,8 @@ height:24px;
   background-image: radial-gradient(circle, rgb(148, 230, 148),rgb(0, 0, 0));
 z-index: 2;
 }
-
-.circle5 {
+.circle5 
+{
 /* Mercury*/
 margin-left: 4.5%;
 margin-top: 0%;
@@ -166,8 +122,8 @@ height: 23px;
 z-index: 1;
 box-shadow: black;
 }
-
-.circle6 {
+.circle6 
+{
 /*Mimas*/
 margin-left: 65%;
 margin-top: -17%;
@@ -178,8 +134,8 @@ height: 10px;
   background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
 z-index: 1;
 }
-
-.circle7 {
+.circle7 
+{
 /*Moon*/
 margin-left: 14%;
 margin-top: -4%;
@@ -191,12 +147,11 @@ height: 17.35px;
   background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
 z-index: 0;
 }
-
-.circle8 {
+.circle8 
+{
 /*Titan*/
 margin-left: 77%;
 margin-top: 15%;
-
 height: 26px;
   width:26px;
   border-radius: 50px;
@@ -205,9 +160,8 @@ height: 26px;
   z-index: 3;
  box-shadow: 0px 0px 2px 2px rgba(222, 223, 207, 0.877);
 }
-
-
-.circle9{
+.circle9
+{
 /*Uranus*/
 margin-top: 5%;
 margin-left: 71%;
@@ -219,8 +173,8 @@ height:250px;
   background-image: radial-gradient(circle, rgb(114, 243, 232),rgba(0, 0, 0, 0.479), rgba(61, 178, 224, 0.788));
 z-index: -2;
 }
-
-.circle10 {
+.circle10 
+{
 /*Ariel*/
 margin-left: 76%;
 margin-top: -19%;
@@ -232,8 +186,8 @@ height: 7px;
   background-image: radial-gradient(circle, rgb(151, 108, 58), rgb(208, 221, 90));
 z-index: -1;
 }
-
-.circle11 {
+.circle11 
+{
 /*Titania*/
 margin-left: 74.3%;
 margin-top: 7%;
@@ -245,8 +199,8 @@ height: 9px;
   background-image: radial-gradient(circle, rgba(221, 123, 12, 0.418), rgba(187, 140, 86, 0.842),rgb(0, 0, 0) );
 z-index: -1;
 }
-
-.circle12 {
+.circle12
+{
 /*Umbriel*/
 margin-left: 74.3%;
 margin-top: 7%;
@@ -258,8 +212,8 @@ height: 6px;
   background-image: radial-gradient(circle,  rgba(231, 144, 14, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: -1;
 }
-
-.circle13 {
+.circle13
+{
 /*Oberon*/
 margin-left: 93.3%;
 margin-top: -50%;
@@ -271,8 +225,8 @@ height: 7px;
   background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: -1;
 }
-
-.circle14{
+.circle14
+{
 /*comet*/
 margin-right: 89.3%;
 margin-bottom: 50%;
@@ -283,23 +237,61 @@ height: 1px;
   background-image: radial-gradient(circle,  rgba(229, 231, 216, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: 3;
 }
+.circle15 
+{
+/*Sun*/
+display: flex;
+position: fixed;
+margin-left: -255em;
+margin-block-start: -410em; 
+position: sticky;
+height: 6645px;
+  width:6645px;
+  border-radius: 70000px;
+  background-color: rgb(148, 172, 41); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgba(137, 160, 37, 0.171), rgb(148, 172, 41));
+z-index: -1;
+ box-shadow: 0px 250px 50px 1px rgb(148, 172, 41, 0.175);
+}
+.circle16 
+{ 
+/*Blackhole*/
+margin-left: -20%;
+margin-top: -50%;
+height:303.5px;
+  width:303.5px;
+  border-radius: 370px;
+  background-color: rgb(0, 0, 0); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgba(155, 51, 120, 0.384),rgba(41, 2, 28, 0.075),rgba(70, 11, 165, 0.486) );
+box-shadow: 0px 0px 2px 2px rgba(70, 11, 165, 0.315);
+z-index: -2;
+}
 
 .spacer{
 margin-top: 90px;
 }
 
-.stripe {
+/* // ///// TourGuide  */
+.stripe 
+{
 background-color: #31475583;
 padding: 0%;
 height:128px ;
 border-bottom: 1px rgba(255, 255, 255, 0.425) solid;
 }
-
-.loginform {
+/*signup*/
+.namepass
+{
+display: flex;
+flex-direction: column;
+}
+/* login */
+.loginform 
+{
 background-color: rgba(255, 255, 255, 0.05);
 border: solid 1px rgba(255, 255, 255, 0.425);
 border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
-box-shadow: 5px 5px 1px 1px #31475583;
+box-shadow: 6px 6px 1px 2px hsla(203, 27%, 26%, 0.45);
 display: flex;
 margin-left: auto;
 margin-right: auto;
@@ -314,17 +306,16 @@ backdrop-filter: blur(6px);
 z-index: 10;
 position: relative;
 }
-
-.btnGroup {
+.btnGroup
+{
 display:flex;
 flex-direction: column;
 justify-content: center;
-
-
 }
 
 .bulb{
 /*AiOutlineBulb*/
+animation: mymove 4s infinite;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -336,6 +327,10 @@ height: 30px;
 width: 30px;
 border: white dotted 1px;
 border-radius: 5px;
+}
+@keyframes mymove
+{
+  50% {box-shadow: 0px -20px 30px rgba(41, 172, 150, 0.877)}
 }
 
 .bulb :active{
@@ -349,8 +344,10 @@ top: 0px;
 background-color: black;
 height: 30px;
 width: 30px;
-border: white dotted 1px;
+border: rgba(41, 172, 150, 0.877) dotted 1px;
 border-radius: 5px;
+ box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
+
 }
 
 .intraNet{
@@ -443,8 +440,6 @@ border: white dotted 1px;
 border-radius: 5px;
 }
 
-
-
 .modelNum{
 font-family: "Copperplate", Times, serif;
 margin-left: 1em;
@@ -473,18 +468,12 @@ padding: 5px;
 height: 102px;
 width: 202px;
 border-radius: 5px;
-background-color: black;
+background-color: rgb(0, 0, 0);
 border: 3px groove grey;
 z-index: 11;
 justify-content: flex-start;
 margin-top: 20px;
-}
-
-.outerS{
-display: inline-flex;
-flex-direction: row;
-flex-basis:auto;
-padding: 20px;
+color: #8093f0;
 }
 
 .signMess{
@@ -499,7 +488,13 @@ background-color: black;
 border: 3px groove grey;
 z-index: 11;
 justify-content: flex-start;
+}
 
+.outerS{
+display: inline-flex;
+flex-direction: row;
+flex-basis:auto;
+padding: 20px;
 }
 
 input {
@@ -527,17 +522,18 @@ border-color: blue;
 
 /*///////Menu*/
 
-.menuitem {margin-top: 200px;
+.menuitem {
+margin-top: 50px;
+text-decoration: none;
+
 } 
 
 .menu1{  
-text-decoration: none;
 width: 200px;
 background-color: black;
-color: bisque;
 font-size: 5mm;
 text-align: left;
-padding: 2mm;
+
 
 }
 

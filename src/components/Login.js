@@ -10,6 +10,7 @@ const Login = ({ setClient }) => {
   const [password, setPassword] = useState("");
   const { callAPI: loginCall } = useFetch("POST");
   const [error, setError] = useState(null)
+  const [isOn, setIsOn] =useState("false")
 
   return (
     <>
@@ -20,7 +21,8 @@ const Login = ({ setClient }) => {
           <form className="loginform">
             <div className="stripe">
               <label htmlFor="clienttag"></label>
-              <div className="bulb"><AiIcons.AiOutlineBulb /></div>
+              <div className="bulb"><AiIcons.AiOutlineBulb />
+</div>
               <div id="space"> <input placeholder="Name"
                 id="clienttag"
                 onChange={(e) => setClienttag(e.target.value)}
