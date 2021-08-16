@@ -22,7 +22,11 @@ import BigCube from "./components/BigCube";
 import Favorites from "./components/Favorites";
 import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
-
+import TourGuide from "./components/TourGuide"
+import TourIns from "./components/TourIns"
+import TourInfo from "./components/TourInfo"
+import VentureTour from "./components/VentureTour"
+import VentConsole2 from "./components/VentConsole2"
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearBuyVent }
 ) {
@@ -49,7 +53,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 Tour Order Form{" "}
               </NavLink></li>
 
-              <li>     <NavLink activeClassName="active" className="menu1item" to="/apod">
+              <li> <NavLink activeClassName="active" className="menu1item" to="/apod">
                 Apod (Photo of the Day -Astronomy){" "}
               </NavLink></li>
 
@@ -57,14 +61,31 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 Search{" "}
               </NavLink></li>
 
-              <li>    <NavLink activeClassName="active" className="menu1item" to="/favorites">
+              <li><NavLink activeClassName="active" className="menu1item" to="/favorites">
                 Favorites{" "} </NavLink></li>
 
               <li> <NavLink activeClassName="active" className="menu1item" to="/form">
                 Contact Us{" "}
               </NavLink></li>
- <li> <NavLink activeClassName="active" className="menu1item" to="/tourins">
+
+              <li> <NavLink activeClassName="active" className="menu1item" to="/tourins">
                 Tour{" "}
+              </NavLink></li>
+
+              <li> <NavLink activeClassName="active" className="menu1item" to="/venturetour">
+                VentureTour{" "}
+              </NavLink></li>
+
+<li> <NavLink activeClassName="active" className="menu1item" to="/tourins">
+                TourIns{" "}
+              </NavLink></li>
+
+<li> <NavLink activeClassName="active" className="menu1item" to="/tourguide">
+                TourGuide{" "}
+              </NavLink></li>
+
+<li> <NavLink activeClassName="active" className="menu1item" to="/venturetour2">
+                VentureTour2{" "}
               </NavLink></li>
 
               <li>    <NavLink
@@ -82,17 +103,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 }}
               >
                 Logout
-              </NavLink></li>
-
-              <li> <NavLink activeClassName="active" className="menu1item" to="/bigcube">
-
-              </NavLink></li>
-
-              <li> <NavLink activeClassName="active" className="menu1item" to="/buyvent">
-
-              </NavLink></li>
-<li> <NavLink activeClassName="active" className="menu1item" to="/tourins">
-
               </NavLink></li>
 
             </div></ul>
@@ -113,7 +123,19 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/favorites" reqUser={true} component={Favorites} />
 
-          <ProtectedRoute path="/contactus" reqUser={false} component={ContactUs} />
+          <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
+
+          <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
+
+          <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
+
+          <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
+
+          <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
+
+          <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
+
+          <ProtectedRoute path="/contactus" component={ContactUs} />
 
           <Route path="*">
 

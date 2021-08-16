@@ -2,6 +2,18 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import BigCube from "./BigCube";
 
+//   const [isOn, setIsOn] =useState("false")
+
+
+
+// render() {
+//   const isOn = this.state.isOn;
+//   return (
+//     <div>
+//       {isOn ? 'currently' : 'not'}/div>
+//   );
+// }
+
 
 // export default function MenuPop() {
 //   const [isPop, setIsPop] = useState(false);

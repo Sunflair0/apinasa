@@ -27,10 +27,10 @@ margin-left: auto;
 margin-right: auto;
 font-weight: 600;
 font-size: xx-large;
-width: 320px;
+width: 310px;
 background-color: hsl(230, 90%, 8%);
 border-color: #2c4cee;
-box-shadow: 4px 4px 30px #2c4cee;
+box-shadow: 0px 0px 30px #2c4cee;
 }
 .uGroup2
 {
@@ -279,6 +279,9 @@ padding: 0%;
 height:128px ;
 border-bottom: 1px rgba(255, 255, 255, 0.425) solid;
 }
+.control-arrow.control-next{
+text-decoration: none;
+}
 /*signup*/
 .namepass
 {
@@ -295,10 +298,10 @@ box-shadow: 6px 6px 1px 2px hsla(203, 27%, 26%, 0.45);
 display: flex;
 margin-left: auto;
 margin-right: auto;
-width: 320px;
+width: 310px;
 height: 520px;
 margin-top: -10px;
-border-radius: 5px;
+border-radius: 7px;
 font-weight: 300;
 align-content: center;
 justify-content: center;
@@ -451,14 +454,16 @@ bottom:0px;
 }
 
 .loginform button {
+display: flex;
+align-items: center;
+justify-content: center;
 border-radius:50px;
-margin-left: 1em;
+margin-left: 5px;
 margin-top: 45px;
 width:50px;
 height: 50px;
-box-shadow: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
 z-index: 11;
-background-image: linear-gradient(to right, #314755 0%, #5ece32  51%, #314755  100%)}
+background-image: linear-gradient(to right, #314755 0%, #5ece32  51%, #314755 100%)}
 
 
 .gmessage, .smessage {
@@ -481,7 +486,7 @@ margin-top: 20px;
 font-family: "Monaco", Times, serif;
 display:inline-block;
 padding: 5px;
-height: 330px;
+height: 200px;
 width: 200px;
 border-radius: 5px;
 background-color: black;
@@ -562,7 +567,7 @@ color:rgba(0, 0, 255, 0.493);
     text-align: center;
     transition: all 0.2s;
     margin: 0 auto;
-    width: 300px;
+   
 }
 /* //// Venture Menu */
 .venture-menu {

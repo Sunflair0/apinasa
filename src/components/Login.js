@@ -10,7 +10,6 @@ const Login = ({ setClient }) => {
   const [password, setPassword] = useState("");
   const { callAPI: loginCall } = useFetch("POST");
   const [error, setError] = useState(null)
-  const [isOn, setIsOn] =useState("false")
 
   return (
     <>
@@ -38,23 +37,14 @@ const Login = ({ setClient }) => {
               <div className="outerS"><div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
                 <button
                   className="btn"
-                  onClick={async (e) => {
+                  onClick={(e) => {
                     e.preventDefault();
                     if (
                       clienttag.length > 4 &&
                       password.length > 4 &&
                       clienttag.length <= 20 &&
                       password.length <= 20
-                    )  setClient(clienttag);{
-                      setError(null);
-                      let res = await loginCall("/api/clients/login", {
-                        clienttag,
-                        password,
-                      });
-                      if (res.error) {
-                        return setError(res.error);
-                      }
-                      console.log(res);
+                    )  {setClient(clienttag);
                     }
                   }}>
                   GO
@@ -85,9 +75,6 @@ const Login = ({ setClient }) => {
       <div className="circle12" title="Umbriel"></div>
       <div className="circle13" title="Oberon"></div>
       <div className="circle14" title="comet"></div>
-
-
-
     </>
   );
 };
