@@ -479,8 +479,8 @@ justify-content: flex-start;
 margin-top: 20px;
 color: #8093f0;
 }
-
-.signMess{
+.signMess
+{
 margin-top: 20px;
 font-family: "Monaco", Times, serif;
 display:inline-block;
