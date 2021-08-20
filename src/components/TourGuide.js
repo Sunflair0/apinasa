@@ -2,13 +2,13 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel';
 
 
-export default function TourGuide( ) {
-const gmessage = ("");
+export default function TourGuide() {
+	const gmessage = ("");
 
 
-return (
+	return (
 		<>
-	function signUpMess(){
+			function signUpMess(){
 				<div className="carousel-wrapper">
 					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
 						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
@@ -21,17 +21,25 @@ return (
 							Flip the TourGuide to select which Venture you want next.
 						</div>
 					</Carousel>
-return signUpMess();
+					return signUpMess();
 				</div>
 			}
 
- {(gmessage)} return{
+			{(gmessage)} return{
 				<div className="carousel-wrapper">
 					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
 						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
 							Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.
 						</div>
-						
+					</Carousel>
+				</div>
+			}
+{(gmessage)} return{
+				<div className="carousel-wrapper">
+					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
+						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
+							Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.
+						</div>
 					</Carousel>
 				</div>
 			}
