@@ -12,6 +12,8 @@ import {
   Switch,
 } from "react-router-dom";
 import "./App.css";
+
+import Splash from "./components/Splash";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Form from "./components/Form";
@@ -32,8 +34,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 ) {
   return (
     <Router>
-
-      <nav>
+      <nav style={{maxWidth: "300px"}}>
         {" "}
         {!clienttag && (
           <NavLink activeClassName="active" className="menuitem" to="/login">
@@ -43,53 +44,61 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
         <NavLink activeClassName="active" className="presenter" to="/signup"
         ></NavLink>
         {clienttag && (
-          <ul>
-            <div className="menu1">
-              <li>  <NavLink activeClassName="active" className="menu1item" to="/tourinfo"
+
+          <div className="menu1">
+            <ul className="menu1item">
+              <li> <NavLink activeClassName="active" className=" menu1items" to="/splash">
+                HOME{" "}
+              </NavLink></li>
+
+
+              <li>  <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
               > Tour Info{" "}
               </NavLink></li>
 
-              <li>   <NavLink activeClassName="active" className="menu1item" to="/form">
+              <li>   <NavLink activeClassName="active" className=" menu1items" to="/form">
                 Tour Order Form{" "}
               </NavLink></li>
 
-              <li> <NavLink activeClassName="active" className="menu1item" to="/apod">
-                Apod (Photo of the Day -Astronomy){" "}
+              <li> <NavLink activeClassName="active" className=" menu1items" to="/apod">
+                APOD {" "}
               </NavLink></li>
 
-              <li>  <NavLink activeClassName="active" className="menu1item" to="/search">
+              <li>  <NavLink activeClassName="active" className=" menu1items" to="/search">
                 Search{" "}
               </NavLink></li>
 
-              <li><NavLink activeClassName="active" className="menu1item" to="/favorites">
+              <li><NavLink activeClassName="active" className="menu1items" to="/favorites">
                 Favorites{" "} </NavLink></li>
 
-              <li> <NavLink activeClassName="active" className="menu1item" to="/form">
+              <li> <NavLink activeClassName="active" className="menu1items" to="/form">
                 Contact Us{" "}
               </NavLink></li>
 
-              <li> <NavLink activeClassName="active" className="menu1item" to="/tourins">
+              <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
                 Tour{" "}
               </NavLink></li>
 
-              <li> <NavLink activeClassName="active" className="menu1item" to="/venturetour">
+              <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour">
                 VentureTour{" "}
               </NavLink></li>
 
-<li> <NavLink activeClassName="active" className="menu1item" to="/tourins">
+              <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
                 TourIns{" "}
               </NavLink></li>
 
-<li> <NavLink activeClassName="active" className="menu1item" to="/tourguide">
+              <li> <NavLink activeClassName="active" className="menu1items" to="/tourguide">
                 TourGuide{" "}
               </NavLink></li>
 
-<li> <NavLink activeClassName="active" className="menu1item" to="/venturetour2">
+              <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour2">
                 VentureTour2{" "}
               </NavLink></li>
 
+
               <li>    <NavLink
-                className="presenter"
+                className="menu1items
+"
                 to="/login"
                 onClick={() => {
                   clearApod();
@@ -105,7 +114,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 Logout
               </NavLink></li>
 
-            </div></ul>
+            </ul></div>
         )}
       </nav>
 
@@ -114,6 +123,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
 
           <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
+
+          <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
 
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
@@ -131,6 +142,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
 
+          <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
+
           <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
 
           <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
@@ -139,12 +152,44 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <Route path="*">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <Redirect to="/login" />
           </Route>
         </Switch>
       </main>
-
-
     </Router>
   );
 }
