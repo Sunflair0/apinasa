@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react";
+import { connect } from "react-redux";
+import {  } from "../redux/actions";
+
 
 export default function Form() {
 	return (
-		<div>
+		<div className="content">
 			Order Form
 		</div>
 	)

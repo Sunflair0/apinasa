@@ -8,8 +8,8 @@ function Splash() {
 
   return (
 <>
-    <div className="welcome">
-      <h2 className="text-center">Welcome, {clienttag}</h2>
+    <div className="content">
+      <h2 className="">Welcome, {clienttag}</h2>
 </div>
 <div className="menu1">
 <ol>

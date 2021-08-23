@@ -6,7 +6,7 @@ import { deleteFavorite } from "../redux/actions";
 const Favorites = ({ favorites, deleteFavorite, clienttag }) => {
   return (
     <>
-      <h2 className="text-center">Favorites for {clienttag}</h2>
+      <h2 className="content">Favorites for {clienttag}</h2>
       <div className="flex-wrap">
         {favorites.map((gif) => (
           <Console

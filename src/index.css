@@ -524,6 +524,12 @@ input:hover {
 border-color: blue;
 }
 
+.navDiv {
+display: flex;
+max-width: 210px;
+
+}
+
 /*///////Menu*/
 
 /* .menu1item {
@@ -648,8 +654,10 @@ margin-top: 0;
 margin-left: 12em;
 }
 
-.welcomeShell {
-display: flex;
+.content {
+ display: flex;
+  
+margin-top: -750px;
 }
 
 

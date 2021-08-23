@@ -1,7 +1,7 @@
 import React from "react";
 
 function BuyVent(){
-<div>Buy Vent</div>
+<div className="content">Buy Vent</div>
 }
 
 export default BuyVent;

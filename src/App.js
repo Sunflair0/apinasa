@@ -34,6 +34,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 ) {
   return (
     <Router>
+<div className="navDiv">
       <nav style={{maxWidth: "300px"}}>
         {" "}
         {!clienttag && (
@@ -116,7 +117,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
             </ul></div>
         )}
-      </nav>
+      </nav></div>
 
       <main>
         <Switch>
