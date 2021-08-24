@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from 'react';
 import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
 import { addFavorite, deleteFavorite, setSearch, setByDate } from "../redux/actions";
-
 
 
 const baseUrl ="https://api.nasa.gov/planetary/apod?api_key=D8IXnLxb35Z9djMqZXoghWbJqdB9J2acQe22JwT7";
@@ -34,10 +33,10 @@ useEffect(() => {
 
    return (
     <div>
-      <div className="headtitle">Astronomy Picture of the Day
+      <div className="banner">Astronomy Picture of the Day
 </div>
 <form>
-<div className="menubox">
+<div className="menubox content">
           <label htmlFor="search"><h3>Gimme Picture of the Day</h3>!</label>
           <input
             id="search"
