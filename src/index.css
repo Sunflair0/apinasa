@@ -11,6 +11,23 @@ radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.04) 1px, transparent 7px
 background-size: 550px 550px, 450px 450px, 350px 350px, 250px 250px, 500px 400px, 250px 120px;
 background-position: 0px 0px, 10px 10px, 40px 60px, 130px 270px, 100px 130px, 150px 100px;
 font-family: "Times New Roman", Times, serif;
+	color:#ceda8d;
+}
+
+/* page spacing */
+
+.banner {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: .5em;
+}
+
+.content {
+ display: flex;
+margin-left: 20em;
+margin-top: -750px;
+flex-direction: column;
 }
 
 .presenter {
@@ -558,7 +575,7 @@ margin-left: -38px;
 padding: 0mm;
 border-radius: 5px 5px ;
 height: 2.5em;
-	background-image: linear-gradient(bottom, rgb(1, 10, 51) 0%, rgb(4, 12, 49) 100%);
+background-image: linear-gradient(bottom, rgb(1, 10, 51) 0%, rgb(4, 12, 49) 100%);
 background-color: rgb(1, 10, 51);
 text-shadow: 0px 0px 10px#000000;
 box-shadow: inset 0px 0px 15px#000000;
@@ -633,35 +650,6 @@ padding-left: 12px;
 .headtitle{font-weight: 500;
 color:rgba(0, 0, 255, 0.493);
 }
-
-/* splashpage */
-/* .splash {
-margin-top: 0;
-
-} */
-
-.content {
- display: flex;
-margin-left: 20em;
-margin-top: -750px;
-flex-direction: column;
-}
-
-.banner {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-left: .5em;
-}
-
-
-
-
-
-
-
-
-
 
 
 /* //tourguide */
