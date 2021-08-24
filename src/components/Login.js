@@ -36,7 +36,7 @@ const Login = ({ setClient }) => {
               /></div>
               <div className="outerS"><div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
                 <button
-                  className="btn"
+                  className="btnGroup"
                   onClick={(e) => {
                     e.preventDefault();
                     if (
@@ -51,7 +51,7 @@ const Login = ({ setClient }) => {
                 </button>
 
               </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
-                <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
+                <Link className="sign btnGroup" to="/signup"><button type="button">Sign Up!</button></Link>
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
 
           <div>{error}</div>

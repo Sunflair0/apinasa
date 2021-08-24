@@ -39,7 +39,7 @@ const Signup = () => {
 <signUpMess />
 </div>
         <button
-          className="btn"
+          className="btnGroup" 
           onClick={async (e) => {
             e.preventDefault();
             if (
