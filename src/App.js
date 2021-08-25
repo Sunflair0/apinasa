@@ -18,6 +18,8 @@ import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Form from "./components/Form";
 import Apod from "./components/Apod";
+import Gimme5 from "./components/Gimme5";
+import ChooseApod from "./components/ChooseApod";
 import Mer from "./components/Mer";
 import Earth from "./components/Earth";
 import Search from "./components/Search";
@@ -55,7 +57,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   HOME{" "}
                 </NavLink></li>
 
-                <li>  <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
+                <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
                 > Tour Info{" "}
                 </NavLink></li>
 
@@ -110,10 +112,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   VentureTour2{" "}
                 </NavLink></li>
 
-
-                <li>    <NavLink
-                  className="menu1items
-"
+                <li> <NavLink
+                  className="menu1items"
                   to="/login"
                   onClick={() => {
                     clearApod();
@@ -144,6 +144,10 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
           <ProtectedRoute path="/apod" reqUser={true} component={Apod} />
+
+          <ProtectedRoute path="/gimme5" reqUser={true} component={Gimme5} />
+
+          <ProtectedRoute path="/chooseapod" reqUser={true} component={ChooseApod} />
 
           <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
 

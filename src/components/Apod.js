@@ -1,119 +1,115 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import Console from "./Console";
-import useFetch from "../hooks/useFetch";
-import { connect } from "react-redux";
-import { addFavorite, deleteFavorite, setSearch, setByDate } from "../redux/actions";
+import React, { useEffect, useState, } from 'react';
+import useFetch from '../hooks/useFetch';
+import { NavLink } from 'react-router-dom';
+const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-const baseUrl ="https://api.nasa.gov/planetary/apod?api_key=D8IXnLxb35Z9djMqZXoghWbJqdB9J2acQe22JwT7";
-
-const Search =({
-addFavorite, 
-deleteFavorite, 
-search,
-setSearch,
-favorites
+export default function Apod() {
+  const [apodData, setApodData] = useState(null);
 
 
-}) => {
-const [query, setQuery]= useState("");
-const [byDate, setByDate]=useState("");
-const {data, loading, error} = useFetch(query);
-const { callAPI: apodCall } = useFetch("GET");
+  useEffect(() => {
+    fetchApod();
 
-const apodIds = useMemo(()=>{
-return favorites.map((val)=> val.id);
-}, [favorites]);
+    async function fetchApod() {
+      const res = await fetch(
 
-useEffect(() => {
-    if (data) {
-      setSearch(data.data);
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
+      );
+      const data = await res.json();
+      setApodData(data);
     }
-  }, [data, setSearch]);
+  }, []);
 
-   return (
-    <div>
-      <div className="banner">Astronomy Picture of the Day
-</div>
-<form>
-<div className="menubox content">
-          <label htmlFor="search"><h3>Gimme Picture of the Day</h3>!</label>
-          <input
-            id="search"
-            value={byDate}
-            onChange={(e) => setByDate(e.target.value)}
-            placeholder="Picture of the Day"
-            
-          />
-        </div>
-<button
-          className="btn"
-          onClick={async (e) => {
-            e.preventDefault();
-            setQuery(`&date=${byDate}`);
-const res = await fetch(baseUrl + byDate.current.value);
-            
-}}> Gimmie a Pod!
-        </button>
-
-      <div className="menubox">
+  if (!apodData) return <div />;
 
 
-      <div> <h3> Gimmie Five!</h3>
-      <input type="button"
-          className="btn"
-          onClick={async (e) => {
-            e.preventDefault();
-            setQuery(`&count=5`);
-const res = await apodCall(baseUrl + `&count=5`);
-            if (res.error) {
-              return res(res.error);
-            }
-            setSearch(res.data);
+
+  return (
+    <>
+      <div className="banner center">
+
+
+        <NavLink
+          to="/apod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/today.png)",
+            borderRadius: "50px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+
           }}
-        >5</input>
-      </div></div>
-    </form>
-      {loading && <div className="text-center">Loading APODs</div>}
-      {error && <div className="text-center">{error}</div>}
-      {search && (
-        <div className="flex-wrap">
-          {search.map((apod) => (
-            <Console
-              deleteFavorite={deleteFavorite}
-              addFavorite={addFavorite}
-              isFav={apodIds.includes(apod.id)}
-              id={apod.id}
-              title={apod.title}
-              url={apod.images.original.url}
-              description={apod.description}
-              copyright ={apod.copyright}        
-key={apod.id}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/chooseApod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/choose.png)",
+
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/gimme5"
+          style={{
+            height: "120px",
+            width: "100px",
+            borderRadius: "50px",
+            backgroundImage: "url(./assets/gimme.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+        </NavLink>
+
+      </div>
+
+
+
+      <div className="content">
+        <div className="apod-photo">
+          {apodData.media_type === "image" ? (
+            <img
+              src={apodData.url}
+              alt={apodData.title}
+
             />
-          ))}
-        </div>
-      )}
-    </div>
+          ) : (
+            <iframe
+              title="space-video"
+              src={apodData.url}
+              frameBorder="0"
+              gesture="media"
+              allow="encrypted-media"
+              allowFullScreen
+            />
+          )}
+          <div>
+            <h1>{apodData.title}</h1>
+            <p className="date">{apodData.date}</p>
+            <p className="copyright">{apodData.copyright}YES </p>
+            <p className="explanation">{apodData.explanation}</p>
+
+
+
+          </div>
+
+
+
+        </div></div>
+    </>
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    clienttag: state.client.clienttag,
-    favorites: state.favorites,
-    search: state.search,
-    byDate: state.byDate,
-    startDate: state.byStartDate,
-    endDate: state.byEndDate
-  };
-}
 
-const mapDispatchToProps = {
-  deleteFavorite,
-  addFavorite,
-  setSearch,
-  setByDate,
-  
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
