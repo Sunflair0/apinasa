@@ -77,7 +77,7 @@ export default function Apod() {
 
 
 
-      <div className="content">
+      <div className="content stylebox">
         <div className="apod-photo">
           {apodData.media_type === "image" ? (
             <img
@@ -98,8 +98,10 @@ export default function Apod() {
           <div>
             <h1>{apodData.title}</h1>
             <p className="date">{apodData.date}</p>
-            <p className="copyright">{apodData.copyright}YES </p>
+            <p className="url">{apodData.url} </p>
+            <p className="copyright">{apodData.copyright} (copyright)</p>
             <p className="explanation">{apodData.explanation}</p>
+
 
 
 

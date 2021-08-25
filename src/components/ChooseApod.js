@@ -1,7 +1,30 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect, useState, } from 'react';
+import useFetch from '../hooks/useFetch';
+import { NavLink } from 'react-router-dom';
+const apiKey = process.env.REACT_APP_NASA_KEY;
 
-export default function ChooseApod() {
+
+export default function Apod() {
+	const [apodData, setApodData] = useState(null);
+
+
+	useEffect(() => {
+		fetchApod();
+
+		async function fetchApod() {
+			const res = await fetch(
+
+				`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
+			);
+			const data = await res.json();
+			setApodData(data);
+		}
+	}, []);
+
+	if (!apodData) return <div />;
+
+
+
 	return (
 		<>
 			<div className="banner center">
@@ -28,7 +51,6 @@ export default function ChooseApod() {
 						height: "120px",
 						width: "100px",
 						backgroundImage: "url(./assets/choose.png)",
-
 						backgroundPosition: 'center',
 						backgroundSize: 'cover',
 						backgroundRepeat: 'no-repeat'
@@ -51,6 +73,35 @@ export default function ChooseApod() {
 				</NavLink>
 
 			</div>
+
+
+
+			<div className="content stylebox">
+				<div className="apod-photo">
+					{apodData.media_type === "image" ? (
+						<img
+							src={apodData.url}
+							alt={apodData.title}
+
+						/>
+					) : (
+						<iframe
+							title="space-video"
+							src={apodData.url}
+							frameBorder="0"
+							gesture="media"
+							allow="encrypted-media"
+							allowFullScreen
+						/>
+					)}
+					<div>
+						<h1>{apodData.title}</h1>
+						<p className="date">{apodData.date}</p>
+						<p className="url">{apodData.url} </p>
+						<p className="copyright">{apodData.copyright} (copyright)</p>
+						<p className="explanation">{apodData.explanation}</p>
+					</div>
+				</div></div>
 		</>
-	)
+	);
 }
