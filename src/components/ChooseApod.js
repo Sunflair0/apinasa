@@ -27,16 +27,15 @@ export default function Apod() {
 
 	return (
 		<>
-			<div className="banner center">
+			<div className="banner cntr">
 
 
-				<NavLink
+				<NavLink className="apodNav"
 					to="/apod"
 					style={{
 						height: "120px",
 						width: "100px",
 						backgroundImage: "url(./assets/today.png)",
-						borderRadius: "50px",
 						backgroundPosition: 'center',
 						backgroundSize: 'cover',
 						backgroundRepeat: 'no-repeat'
@@ -45,7 +44,7 @@ export default function Apod() {
 				>
 				</NavLink>
 
-				<NavLink
+				<NavLink className="apodNav"
 					to="/chooseApod"
 					style={{
 						height: "120px",
@@ -58,12 +57,11 @@ export default function Apod() {
 				>
 				</NavLink>
 
-				<NavLink
+				<NavLink className="apodNav"
 					to="/gimme5"
 					style={{
 						height: "120px",
 						width: "100px",
-						borderRadius: "50px",
 						backgroundImage: "url(./assets/gimme.png)",
 						backgroundPosition: 'center',
 						backgroundSize: 'cover',
@@ -73,8 +71,6 @@ export default function Apod() {
 				</NavLink>
 
 			</div>
-
-
 
 			<div className="content stylebox">
 				<div className="apod-photo">

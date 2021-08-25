@@ -81,12 +81,19 @@ background-position: 0px 0px;
 }
 
 /* APOD */
+.stylebox {
+border: solid 6px;
+background-color: #0e1224;
+box-shadow: inset -2px 0px 5px #ceda8d,
+ inset 2px 0px 5px #d4dd9f;
+}
 
 .apod-photo {
   display: flex;
   padding: 40px;
   margin: 0 auto;
   max-height: 100%;
+
 }
 
 .apod-photo img {
