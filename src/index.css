@@ -21,12 +21,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: -750px;
-margin-left: .5em;
+
 }
 
 .content {
- display: flex;
-margin-left: 18em;
+display: flex;
+margin-left: 8em;
 flex-direction: column;
 }
 
