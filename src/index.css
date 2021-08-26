@@ -20,13 +20,13 @@ font-family: "Times New Roman", Times, serif;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-left: .5em;
+margin-top: -750px;
+
 }
 
 .content {
- display: flex;
-margin-left: 20em;
-margin-top: -750px;
+display: flex;
+margin-left: 8em;
 flex-direction: column;
 }
 

@@ -3,8 +3,8 @@ import React from "react";
 function Console({ id, title, url, isFav, addFavorite, deleteFavorite, addapod, deleteapod }) {
   return (
     <div className="presenter">
-      <h4 className="text-center">{title}</h4>
-      <img className="gif" alt="fun gif" src={url} />
+      <h4 className="center">{title}</h4>
+      <img className="pic" alt="astronomy pic" src={url} />
       {isFav && (
         <button className="presenter" onClick={() => deleteFavorite({id, deleteapod })}>
           Delete Favorite
