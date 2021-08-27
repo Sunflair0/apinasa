@@ -27,51 +27,55 @@ export default function Date() {
 
 	return (
 		<>
-			<div className="banner ">
+      <div className="banner">
+
+        <NavLink
+          to="/apod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/today.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/chooseApod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/choose.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/gimme5"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/gimme.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+      </div>
+
 <div className="content">
-
-
-				<NavLink className="apodNav"
-					to="/apod"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/today.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-
-					}}
-				>
-				</NavLink>
-
-				<NavLink className="apodNav"
-					to="/chooseApod"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/choose.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-					}}
-				>
-				</NavLink>
-
-				<NavLink className="apodNav"
-					to="/gimme5"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/gimme.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-					}}
-				>
-				</NavLink>
-			</div>
-<input type="date"></input>
+<input type="date"></input></div>
 			<div className="content stylebox">
 				<div className="date-photo">
 					{dateData.media_type === "image" ? (
@@ -97,7 +101,7 @@ export default function Date() {
 						<p className="copyright">{dateData.copyright} (copyright)</p>
 						<p className="explanation">{dateData.explanation}</p>
 					</div>
-				</div></div></div>
+				</div></div>
 		</>
 	);
 }

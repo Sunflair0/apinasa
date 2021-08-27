@@ -27,52 +27,52 @@ export default function Gimme5() {
 
 	return (
 		<>
-			<div className="banner center">
+      <div className="banner">
 
+        <NavLink
+          to="/apod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/today.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
 
-				<NavLink
-					to="/apod"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/today.png)",
-						borderRadius: "50px",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
+        <NavLink
+          to="/chooseApod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/choose.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
 
-					}}
-				>
-				</NavLink>
-
-				<NavLink
-					to="/chooseApod"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/choose.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-					}}
-				>
-				</NavLink>
-
-				<NavLink
-					to="/gimme5"
-					style={{
-						height: "120px",
-						width: "100px",
-						borderRadius: "50px",
-						backgroundImage: "url(./assets/gimme.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-					}}
-				>
-				</NavLink>
-
-			</div>
+        <NavLink
+          to="/gimme5"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/gimme.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+      </div>
 
 
 
