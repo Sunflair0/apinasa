@@ -29,7 +29,6 @@ export default function Apod() {
     <>
       <div className="banner center">
 
-
         <NavLink
           to="/apod"
           style={{
@@ -37,6 +36,7 @@ export default function Apod() {
             width: "100px",
             backgroundImage: "url(./assets/today.png)",
             borderRadius: "50px",
+            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
@@ -51,7 +51,7 @@ export default function Apod() {
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/choose.png)",
-
+            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
@@ -68,7 +68,8 @@ export default function Apod() {
             backgroundImage: "url(./assets/gimme.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+           
           }}
         >
         </NavLink>

@@ -138,7 +138,7 @@ border-radius: 50px;
        inset -6px 0 30px #0ff, 
        0 0 18px #fff, -4px 0 18px 
        #f3bad6, 4px 0 18px #0ff;
-animation: rotation 2s  infinite  linear ;
+animation: rotation .8s  infinite  linear ;
   }
 @keyframes rotation {
   from {
