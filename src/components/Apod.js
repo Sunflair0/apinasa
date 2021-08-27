@@ -79,7 +79,7 @@ export default function Apod() {
 
 
       <div className="content stylebox">
-        <div className="apod-photo">
+        <div className="apodPhoto">
           {apodData.media_type === "image" ? (
             <img
               src={apodData.url}

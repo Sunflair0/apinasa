@@ -1,107 +1,107 @@
 import React, { useEffect, useState, } from 'react';
-import useFetch from '../hooks/useFetch';
+
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Apod() {
-	const [apodData, setApodData] = useState(null);
+export default function Date() {
+  const [dateData, setDateData] = useState(null);
 
 
-	useEffect(() => {
-		fetchApod();
+  useEffect(() => {
+    fetchDate();
 
-		async function fetchApod() {
-			const res = await fetch(
+    async function fetchDate() {
+      const res = await fetch(
 
-				`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
-			);
-			const data = await res.json();
-			setApodData(data);
-		}
-	}, []);
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
+      );
+      const data = await res.json();
+      setDateData(data);
+    }
+  }, []);
 
-	if (!apodData) return <div />;
-
-
-
-	return (
-		<>
-			<div className="banner center">
-
-
-				<NavLink
-					to="/apod"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/today.png)",
-						borderRadius: "50px",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-
-					}}
-				>
-				</NavLink>
-
-				<NavLink
-					to="/chooseApod"
-					style={{
-						height: "120px",
-						width: "100px",
-						backgroundImage: "url(./assets/choose.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-					}}
-				>
-				</NavLink>
-
-				<NavLink
-					to="/gimme5"
-					style={{
-						height: "120px",
-						width: "100px",
-						borderRadius: "50px",
-						backgroundImage: "url(./assets/gimme.png)",
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						backgroundRepeat: 'no-repeat'
-					}}
-				>
-				</NavLink>
-
-			</div>
+  if (!dateData) return <div />;
 
 
 
-			<div className="content stylebox">
-				<div className="apod-photo">
-					{apodData.media_type === "image" ? (
-						<img
-							src={apodData.url}
-							alt={apodData.title}
+  return (
+    <>
+      <div className="banner">
 
-						/>
-					) : (
-						<iframe
-							title="space-video"
-							src={apodData.url}
-							frameBorder="0"
-							gesture="media"
-							allow="encrypted-media"
-							allowFullScreen
-						/>
-					)}
-					<div>
-						<h1>{apodData.title}</h1>
-						<p className="date">{apodData.date}</p>
-						<p className="url">{apodData.url} </p>
-						<p className="copyright">{apodData.copyright} (copyright)</p>
-						<p className="explanation">{apodData.explanation}</p>
-					</div>
-				</div></div>
-		</>
-	);
+        <NavLink
+          to="/apod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/today.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/chooseApod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/choose.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/gimme5"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/gimme.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            transition: ".3s ease all",
+          }}
+        >
+        </NavLink>
+      </div>
+
+<div className="content">
+<input type="date"></input></div>
+      <div className="content stylebox">
+        <div className="date-photo">
+          {dateData.media_type === "image" ? (
+            <img
+              src={dateData.url}
+              alt={dateData.title}
+
+            />
+          ) : (
+            <iframe
+              title="space-video"
+              src={dateData.url}
+              frameBorder="0"
+              gesture="media"
+              allow="encrypted-media"
+              allowFullScreen
+            />
+          )}
+          <div>
+            <h1>{dateData.title}</h1>
+            <p className="date">{dateData.date}</p>
+            <p className="url">{dateData.url} </p>
+            <p className="copyright">{dateData.copyright} (copyright)</p>
+            <p className="explanation">{dateData.explanation}</p>
+          </div>
+        </div></div>
+    </>
+  );
 }
