@@ -96,10 +96,10 @@ export default function Apod() {
               allowFullScreen
             />
           )}
-          <div>
+          <div className="infobox">
             <h1>{apodData.title}</h1>
             <p className="date">{apodData.date}</p>
-            <p className="url">{apodData.url} </p>
+            <p className="urla">{apodData.url} </p>
             <p className="copyright">{apodData.copyright} (copyright)</p>
             <div className="exBox"></div>
             <p className="explanation">{apodData.explanation}</p>

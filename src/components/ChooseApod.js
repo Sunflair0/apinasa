@@ -1,5 +1,6 @@
 import React, { useEffect, useState, } from 'react';
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -75,7 +76,9 @@ export default function Date() {
       </div>
 
 <div className="content">
+
 <input type="date"></input></div>
+
       <div className="content stylebox">
       <div className="apodPhoto">
           {dateData.media_type === "image" ? (

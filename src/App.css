@@ -84,12 +84,23 @@ background-position: 0px 0px;
         /* header buttons */
 
 .stylebox {
+  display: flex;
     border: solid 1px rgb(216, 86, 39);
     background-color: #0e1224;
     box-shadow: inset -2px 2px 5px #ceda8d,
      inset 2px -1px 5px #d4dd9f;
-  
-    }
+     min-width: 350px;
+      }
+
+.infobox {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-right: 50px;
+  object-fit: contain;
+  max-height: 60vh;
+  overflow: auto;
+} 
 
 .apodPhoto {
   display: flex;
@@ -99,8 +110,8 @@ background-position: 0px 0px;
 
 }
 
-.apodPhoto img {
-  width: 60%;
+ .apodPhoto img {
+  width: 50%;
   margin-right: 50px;
   object-fit: contain;
   max-height: 60vh;
@@ -111,24 +122,32 @@ background-position: 0px 0px;
   margin-bottom: 0;
 }
 
-.apodPhoto .date {
+
+.urla {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: visible;
+}
+
+.apodPhoto .date  {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .apodPhoto .explanation {
   color: #bbb;
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1350px) {
   .apodPhoto {
     display: block;
   }
 
-  .apodPhoto img {
+  .infobox .apodPhoto img {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 }
 .ipn {
