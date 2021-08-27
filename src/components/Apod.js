@@ -1,5 +1,5 @@
 import React, { useEffect, useState, } from 'react';
-import useFetch from '../hooks/useFetch';
+
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -101,16 +101,10 @@ export default function Apod() {
             <p className="date">{apodData.date}</p>
             <p className="url">{apodData.url} </p>
             <p className="copyright">{apodData.copyright} (copyright)</p>
+            <div className="exBox"></div>
             <p className="explanation">{apodData.explanation}</p>
 
-
-
-
-          </div>
-
-
-
-        </div></div>
+          </div></div></div>
     </>
   );
 }
