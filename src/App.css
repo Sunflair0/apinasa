@@ -88,7 +88,7 @@ background-position: 0px 0px;
     background-color: #0e1224;
     box-shadow: inset -2px 2px 5px #ceda8d,
      inset 2px -1px 5px #d4dd9f;
-   
+  
     }
 
 .apodPhoto {
@@ -100,10 +100,10 @@ background-position: 0px 0px;
 }
 
 .apodPhoto img {
-  width: 50%;
+  width: 60%;
   margin-right: 50px;
   object-fit: contain;
-  max-height: 80vh;
+  max-height: 60vh;
 }
 
 .apodPhoto h1 {

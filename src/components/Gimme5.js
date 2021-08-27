@@ -76,7 +76,7 @@ export default function Gimme5() {
 	  </div>
 
       <div className="content stylebox">
-        <div className="gimme5-photo">
+	  <div className="apodPhoto">
           {gimme5Data.media_type === "image" ? (
             <img
               src={gimme5Data.url}
