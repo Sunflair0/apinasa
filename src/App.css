@@ -120,7 +120,7 @@ background-position: 0px 0px;
   color: #bbb;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1450px) {
   .apodPhoto {
     display: block;
   }
