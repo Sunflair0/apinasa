@@ -77,7 +77,7 @@ export default function Date() {
 <div className="content">
 <input type="date"></input></div>
       <div className="content stylebox">
-        <div className="date-photo">
+      <div className="apodPhoto">
           {dateData.media_type === "image" ? (
             <img
               src={dateData.url}
