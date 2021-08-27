@@ -1,5 +1,5 @@
 import React, { useEffect, useState, } from 'react';
-// import useFetch from '../hooks/useFetch';
+
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -74,8 +74,11 @@ export default function Apod() {
       </div>
 
 
+<div className="content stylebox">
 
-      <div className="content stylebox">
+
+          </div>
+      <div >
         <div className="apod-photo">
           {apodData.media_type === "image" ? (
             <img
@@ -93,19 +96,16 @@ export default function Apod() {
               allowFullScreen
             />
           )}
-          <div>
+          
+</div>
+
+<div  className="titleBox">
             <h1>{apodData.title}</h1>
             <p className="date">{apodData.date}</p>
             <p className="url">{apodData.url} </p>
             <p className="copyright">{apodData.copyright} (copyright)</p>
-            <p className="explanation">{apodData.explanation}</p>
-
-
-
-
-          </div>
-
-
+      <div className="exBox"></div>     
+ <p className="explanation">{apodData.explanation}</p>
 
         </div></div></div>
     </>

@@ -28,14 +28,14 @@ margin-top: -750px;
 display: flex;
 margin-left: 8em;
 flex-direction: column;
+margin-top: 5em;
 }
 
 .cntr {
 display: flex;
 width: fit-content;
-margin-left: 18em;
+margin-left: 700px;
 flex-direction: row;
-
 }
 
 .apodNav {
@@ -44,6 +44,7 @@ height: 120px;
 width: 120px;
 margin-right: 50px;
 }
+
 
 .presenter {
   color: rgb(4, 89, 163);
@@ -571,7 +572,7 @@ max-width: 210px;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 240px;
+width: 200px;
 border: solid 6px;
 border-color: #010a33;
 box-shadow: 2px 2px 5px #ceda8d,
@@ -608,7 +609,7 @@ color: rgb(26, 6, 206);
 .menu1items {
 
 display: flex;
-width: 120px;
+width: 70px;
 background-color: rgb(1, 10, 51);
 	font-size:16px;
 	text-decoration:none;

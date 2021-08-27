@@ -87,13 +87,6 @@ background-color: #0e1224;
 box-shadow: inset -2px 0px 5px #ceda8d,
  inset 2px 0px 5px #d4dd9f;
 }
-
-        /* header buttons */
-.cntr {
-margin-left: 18em;
-display: flex;
-}
-
 .apod-photo {
   display: flex;
   padding: 40px;
@@ -146,7 +139,7 @@ border-radius: 50px;
        inset -6px 0 30px #0ff, 
        0 0 18px #fff, -4px 0 18px 
        #f3bad6, 4px 0 18px #0ff;
-animation: rotation 2s  infinite  linear ;
+animation: rotation .8s  infinite  linear ;
   }
 @keyframes rotation {
   from {
