@@ -1,42 +1,42 @@
 import React, { useEffect, useState, } from 'react';
-import useFetch from '../hooks/useFetch';
+
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Apod() {
-	const [apodData, setApodData] = useState(null);
+export default function Date() {
+	const [dateData, setDateData] = useState(null);
 
 
 	useEffect(() => {
-		fetchApod();
+		fetchDate();
 
-		async function fetchApod() {
+		async function fetchDate() {
 			const res = await fetch(
 
 				`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
 			);
 			const data = await res.json();
-			setApodData(data);
+			setDateData(data);
 		}
 	}, []);
 
-	if (!apodData) return <div />;
+	if (!dateData) return <div />;
 
 
 
 	return (
 		<>
-			<div className="banner center">
+			<div className="banner ">
+<div className="content">
 
 
-				<NavLink
+				<NavLink className="apodNav"
 					to="/apod"
 					style={{
 						height: "120px",
 						width: "100px",
 						backgroundImage: "url(./assets/today.png)",
-						borderRadius: "50px",
 						backgroundPosition: 'center',
 						backgroundSize: 'cover',
 						backgroundRepeat: 'no-repeat'
@@ -45,7 +45,7 @@ export default function Apod() {
 				>
 				</NavLink>
 
-				<NavLink
+				<NavLink className="apodNav"
 					to="/chooseApod"
 					style={{
 						height: "120px",
@@ -58,12 +58,11 @@ export default function Apod() {
 				>
 				</NavLink>
 
-				<NavLink
+				<NavLink className="apodNav"
 					to="/gimme5"
 					style={{
 						height: "120px",
 						width: "100px",
-						borderRadius: "50px",
 						backgroundImage: "url(./assets/gimme.png)",
 						backgroundPosition: 'center',
 						backgroundSize: 'cover',
@@ -71,23 +70,20 @@ export default function Apod() {
 					}}
 				>
 				</NavLink>
-
 			</div>
-
-
-
+<input type="date"></input>
 			<div className="content stylebox">
-				<div className="apod-photo">
-					{apodData.media_type === "image" ? (
+				<div className="date-photo">
+					{dateData.media_type === "image" ? (
 						<img
-							src={apodData.url}
-							alt={apodData.title}
+							src={dateData.url}
+							alt={dateData.title}
 
 						/>
 					) : (
 						<iframe
 							title="space-video"
-							src={apodData.url}
+							src={dateData.url}
 							frameBorder="0"
 							gesture="media"
 							allow="encrypted-media"
@@ -95,13 +91,13 @@ export default function Apod() {
 						/>
 					)}
 					<div>
-						<h1>{apodData.title}</h1>
-						<p className="date">{apodData.date}</p>
-						<p className="url">{apodData.url} </p>
-						<p className="copyright">{apodData.copyright} (copyright)</p>
-						<p className="explanation">{apodData.explanation}</p>
+						<h1>{dateData.title}</h1>
+						<p className="date">{dateData.date}</p>
+						<p className="url">{dateData.url} </p>
+						<p className="copyright">{dateData.copyright} (copyright)</p>
+						<p className="explanation">{dateData.explanation}</p>
 					</div>
-				</div></div>
+				</div></div></div>
 		</>
 	);
 }

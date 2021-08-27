@@ -3,18 +3,15 @@ import React, {useState} from "react";
 // import BigCube from "./BigCube";
 
 
-
-
 export default function VentConsole2() {
   return (
     <div>
-      VentConsole Page
+      
     </div>
   )
 }
 
 
-// const baseUrl ="https://ventures/tour/all"
 
 // export default function MenuPop() {
 //   const [isPop, setIsPop] = useState(false);
@@ -25,21 +22,21 @@ export default function VentConsole2() {
 // MenuPop.map((item, index) => {
 
 // <li className="wrapper"><button onClick={() => setIsPop(true)}>
-{/* <div key={index}>
-<Link to={item.path}>
- {item.img}
-<span>{item.tour}</span>  */}
+// <div key={index}>
+// <Link to={item.path}>
+//  {item.img}
+// <span>{item.tour}</span> 
 
-{/* <BigCube open={isPop} onClose ={()=> setIsPop(false)}></BigCube>
-<div className="more">{BigCube()}</div>
+// <BigCube open={isPop} onClose ={()=> setIsPop(false)}></BigCube>
+// <div className="more">{BigCube()}</div>
 
-</Link>
-</div>
-</button>
-</li>
-}))
-</ul>
+// </Link>
+// </div>
+// </button>
+// </li>
+// }))
+// </ul>
 
-</>)} */}
+// </>)}
 
 

@@ -29,7 +29,23 @@ display: flex;
 margin-left: 18em;
 margin-right: 5em;
 flex-direction: column;
+margin-top: 5em;
 }
+
+.cntr {
+display: flex;
+width: fit-content;
+margin-left: 700px;
+flex-direction: row;
+}
+
+.apodNav {
+display: flex;
+height: 120px;
+width: 120px;
+margin-right: 50px;
+}
+
 
 .presenter {
   color: rgb(4, 89, 163);
@@ -551,13 +567,13 @@ max-width: 210px;
 
 }
 
-/*///////Menu*/
+/*///////Main Menu*/
 
 .menu1{  
 display: flex;
 align-items: center;
 justify-content: center;
-width: 240px;
+width: 200px;
 border: solid 6px;
 border-color: #010a33;
 box-shadow: 2px 2px 5px #ceda8d,
@@ -594,7 +610,7 @@ color: rgb(26, 6, 206);
 .menu1items {
 
 display: flex;
-width: 120px;
+width: 70px;
 background-color: rgb(1, 10, 51);
 	font-size:16px;
 	text-decoration:none;
@@ -614,7 +630,7 @@ align-items: center;
 justify-content: center;
 display: flex;
 	top:3px;
-	background-image: linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+	background-image: linear-gradient(to bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
 	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
 }
 

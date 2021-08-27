@@ -1,6 +1,13 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
-import BigCube from "./BigCube";
+import React from 'react'
+
+export default function BigCube() {
+	return (
+		<div>
+			Big Cube
+		</div>
+	)
+}
+
 
 //   const [isOn, setIsOn] =useState("false")
 
@@ -44,4 +51,4 @@ import BigCube from "./BigCube";
 
 </>)} }*/
 
-export default BigCube;
+
