@@ -70,4 +70,4 @@ return null
 
 </>)} }*/
 
-export default BigCube;
+

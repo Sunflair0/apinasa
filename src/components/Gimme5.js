@@ -1,33 +1,33 @@
 import React, { useEffect, useState, } from 'react';
-
+import useFetch from '../hooks/useFetch';
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Apod() {
-  const [apodData, setApodData] = useState(null);
+export default function Gimme5() {
+  const [gimme5Data, setGimme5Data] = useState(null);
 
 
   useEffect(() => {
-    fetchApod();
+    fetchGimme5();
 
-    async function fetchApod() {
+    async function fetchGimme5() {
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=5`
       );
       const data = await res.json();
-      setApodData(data);
+      setGimme5Data(data);
     }
   }, []);
 
-  if (!apodData) return <div />;
+  if (!gimme5Data) return <div />;
 
 
 
   return (
     <>
-      <div className="banner center">
+      <div className="banner">
 
         <NavLink
           to="/apod"
@@ -35,12 +35,11 @@ export default function Apod() {
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/today.png)",
-            borderRadius: "50px",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -51,10 +50,11 @@ export default function Apod() {
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/choose.png)",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -64,49 +64,43 @@ export default function Apod() {
           style={{
             height: "120px",
             width: "100px",
-            borderRadius: "50px",
             backgroundImage: "url(./assets/gimme.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-           
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
-
-      </div>
-
-
+      
+	  </div>
 
       <div className="content stylebox">
-        <div className="apodPhoto">
-          {apodData.media_type === "image" ? (
+	  <div className="apodPhoto">
+          {gimme5Data.media_type === "image" ? (
             <img
-              src={apodData.url}
-              alt={apodData.title}
+              src={gimme5Data.url}
+              alt={gimme5Data.title}
 
             />
           ) : (
             <iframe
               title="space-video"
-              src={apodData.url}
+              src={gimme5Data.url}
               frameBorder="0"
               gesture="media"
               allow="encrypted-media"
               allowFullScreen
             />
           )}
-          <div className="infobox">
-            <h1>{apodData.title}</h1>
-            <p className="date">{apodData.date}</p>
-            <p className="urla">{apodData.url} </p>
-            <p className="copyright">{apodData.copyright} (copyright)</p>
-            <div className="exBox"></div>
-            <p className="explanation">{apodData.explanation}</p>
-
-          </div></div></div>
+          <div>
+            <h1>{gimme5Data.title}</h1>
+            <p className="date">{gimme5Data.date}</p>
+            <p className="url">{gimme5Data.url} </p>
+            <p className="copyright">{gimme5Data.copyright} (copyright)</p>
+            <p className="explanation">{gimme5Data.explanation}</p>
+          </div>
+        </div></div>
     </>
   );
 }
-
-

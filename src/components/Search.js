@@ -26,10 +26,10 @@ const Search = ({
   }, [data, setSearch]);
 
   return (
-    <div>
-      <h2 className="text-center">Welcome {clienttag}</h2>
+    <div className="content">
+      <h2 className="splash">Welcome, {clienttag}</h2>
       <form className="form">
-        <div className="form-field flex-wrap">
+        <div>
           <label htmlFor="Submit"></label>
           <input
             id="search"

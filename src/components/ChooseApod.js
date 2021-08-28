@@ -1,33 +1,34 @@
 import React, { useEffect, useState, } from 'react';
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Apod() {
-  const [apodData, setApodData] = useState(null);
+export default function Date() {
+  const [dateData, setDateData] = useState(null);
 
 
   useEffect(() => {
-    fetchApod();
+    fetchDate();
 
-    async function fetchApod() {
+    async function fetchDate() {
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
       );
       const data = await res.json();
-      setApodData(data);
+      setDateData(data);
     }
   }, []);
 
-  if (!apodData) return <div />;
+  if (!dateData) return <div />;
 
 
 
   return (
     <>
-      <div className="banner center">
+      <div className="banner">
 
         <NavLink
           to="/apod"
@@ -35,12 +36,11 @@ export default function Apod() {
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/today.png)",
-            borderRadius: "50px",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -51,10 +51,11 @@ export default function Apod() {
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/choose.png)",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -64,49 +65,46 @@ export default function Apod() {
           style={{
             height: "120px",
             width: "100px",
-            borderRadius: "50px",
             backgroundImage: "url(./assets/gimme.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-           
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
-
       </div>
 
+<div className="content">
 
+<input type="date"></input></div>
 
       <div className="content stylebox">
-        <div className="apodPhoto">
-          {apodData.media_type === "image" ? (
+      <div className="apodPhoto">
+          {dateData.media_type === "image" ? (
             <img
-              src={apodData.url}
-              alt={apodData.title}
+              src={dateData.url}
+              alt={dateData.title}
 
             />
           ) : (
             <iframe
               title="space-video"
-              src={apodData.url}
+              src={dateData.url}
               frameBorder="0"
               gesture="media"
               allow="encrypted-media"
               allowFullScreen
             />
           )}
-          <div className="infobox">
-            <h1>{apodData.title}</h1>
-            <p className="date">{apodData.date}</p>
-            <p className="urla">{apodData.url} </p>
-            <p className="copyright">{apodData.copyright} (copyright)</p>
-            <div className="exBox"></div>
-            <p className="explanation">{apodData.explanation}</p>
-
-          </div></div></div>
+          <div>
+            <h1>{dateData.title}</h1>
+            <p className="date">{dateData.date}</p>
+            <p className="url">{dateData.url} </p>
+            <p className="copyright">{dateData.copyright} (copyright)</p>
+            <p className="explanation">{dateData.explanation}</p>
+          </div>
+        </div></div>
     </>
   );
 }
-
-

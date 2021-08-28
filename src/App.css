@@ -108,48 +108,106 @@ padding: 40px;
   padding: 4px;
 }
 
-/***Transforms of planets***/
-
-#pit1 :hover {
-  transform: scale(1.5);
+.top-border {
+background-color: darkolivegreen;
+width: 100%;
+height: 150px;
+background-image: 
+radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 20px);
+background-size: 550px 550px;
+background-position: 0px 0px;
 }
 
-#pit2 :hover {
-  transform: scale(1.2);
+/* APOD */
+        /* header buttons */
+
+.stylebox {
+  display: flex;
+    border: solid 1px rgb(216, 86, 39);
+    background-color: #0e1224;
+    box-shadow: inset -2px 2px 5px #ceda8d,
+     inset 2px -1px 5px #d4dd9f;
+     min-width: 350px;
+      }
+
+.infobox {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-right: 50px;
+  object-fit: contain;
+  max-height: 60vh;
+  overflow: auto;
+} 
+
+.apodPhoto {
+  display: flex;
+  padding: 40px;
+  margin: 0 auto;
+  max-height: 100%;
+
 }
 
-#pit3 :hover {
-  transform: scale(1.2);
+ .apodPhoto img {
+  width: 50%;
+  margin-right: 50px;
+  object-fit: contain;
+  max-height: 60vh;
 }
 
-#pit4 :hover {
-  transform: scale(1.2);
+.apodPhoto h1 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-#pit5 :hover {
-  transform: scale(1.2);
+
+.urla {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: visible;
 }
 
-#pit6 :hover {
-  transform: scale(1.2);
+.apodPhoto .date  {
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
-#pit7 :hover {
-  transform: scale(1.2);
+.apodPhoto .explanation {
+  color: #bbb;
 }
 
-#pit8 :hover {
-  transform: scale(1.2);
+@media (max-width: 1350px) {
+  .apodPhoto {
+    display: block;
+  }
+
+  .infobox .apodPhoto img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+}
+.ipn {
+margin: 5em;
+height: 100px;
+width: 100px;
+border-radius: 50px;
+ box-shadow: inset 0 0 18px #fff, 
+       inset 6px 0 18px #f3bad6, 
+       inset -6px 0 18px #0ff, 
+       inset 6px 0 30px #f3bad6, 
+       inset -6px 0 30px #0ff, 
+       0 0 18px #fff, -4px 0 18px 
+       #f3bad6, 4px 0 18px #0ff;
+animation: rotation .8s  infinite  linear ;
+  }
+@keyframes rotation {
+  from {
+    transform: scale(.01)  rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(1100deg);
+  }
 }
 
-#pit9 :hover {
-  transform: scale(1.2);
-}
-
-#pit10 :hover {
-  transform: scale(1.2);
-}
-
-#pit11 :hover {
-  transform: scale(1.2);
-}
