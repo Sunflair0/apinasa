@@ -1,25 +1,44 @@
-import React from 'react'
+import React, {useState, forwardRef, useImperativeHandle} from "react";
+import { ReactDOM } from "react-dom";
+import { getElementById } from "domutils";
 
-export default function BigCube() {
-	return (
-		<div>
-			Big Cube
-		</div>
-	)
+const BigCube = forwardRef((props,ref)=> {
+const [display, setDisplay]=useState(false);
+
+useImperativeHandle(ref,() => {
+return {
+
+openCube: () => open(),
+close: ()=> close()
 }
+} );
+
+const open = () => {
+setDisplay(true)
+};
+
+const close =() => {
+setDisplay(false);
+};
 
 
-//   const [isOn, setIsOn] =useState("false")
+if(display) {
+return ReactDOM.createPortal(
+<div className={"cube-wrapper"}>
+<div className={"cube-backdrop"}/>
+<div className ={"cube"}>
+{props.children}</div>
+</div>,
+document.getElementById("cube-root"))
+}
+return null
+ 
+});
 
 
 
-// render() {
-//   const isOn = this.state.isOn;
-//   return (
-//     <div>
-//       {isOn ? 'currently' : 'not'}/div>
-//   );
-// }
+
+
 
 
 // export default function MenuPop() {
