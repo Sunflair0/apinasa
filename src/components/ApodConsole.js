@@ -6,13 +6,13 @@ import ApodRange from './ApodRange';
 
  const ApodConsole = () => {
   const apodOptions = ["today", "choose", "gimme5", "range"];
-  const [selection, setSelection]=useState("today")
+  const [selection, setSelection]=useState("")
   
   return (
     <>
       <div className=" banner ">
-        <h4 className="content">Explore the universe and add to your personal album.</h4>
-
+        <h4 className="">Explore the universe and add to your personal album.</h4>
+<div className="content">
         <button
          type="button"
           style={{ 
@@ -23,7 +23,9 @@ import ApodRange from './ApodRange';
             backgroundRepeat: "no-repeat",
             marginRight: "5em",
             transition: ".3s ease all",
-              backgroundImage: "url(./assets/today.png)" }}>
+              backgroundImage: "url(./assets/today.png)" }}
+              onClick={()=> setSelection(selection)}
+              >
         </button>
 
         <button
@@ -35,7 +37,9 @@ import ApodRange from './ApodRange';
           backgroundRepeat: "no-repeat",
           marginRight: "5em",
           transition: ".3s ease all",
-            backgroundImage: "url(./assets/choose.png)" }}>
+            backgroundImage: "url(./assets/choose.png)" }}
+            onClick={()=> setSelection(selection)}
+            >
         </button>
 
         <button
@@ -47,7 +51,9 @@ import ApodRange from './ApodRange';
           backgroundRepeat: "no-repeat",
           marginRight: "5em",
           transition: ".3s ease all", 
-          backgroundImage: "url(./assets/gimme.png)" }} >
+          backgroundImage: "url(./assets/gimme.png)" }} 
+          onClick={()=> setSelection(selection)}
+          >
         </button>
 
         <button
@@ -63,9 +69,9 @@ import ApodRange from './ApodRange';
           onClick={()=> setSelection(selection)}
           >
             
-            {selection.toLowerCase()}
+            {selection.toLocaleLowerCase()}
         </button>
-
+</div>
       
       <p>{selection}</p>
       <p>{apodOptions === "today" && <ApodToday/>}</p>

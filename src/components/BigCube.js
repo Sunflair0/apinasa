@@ -1,6 +1,6 @@
 import React, {useState, forwardRef, useImperativeHandle} from "react";
 import { ReactDOM } from "react-dom";
-import { getElementById } from "domutils";
+
 
 const BigCube = forwardRef((props,ref)=> {
 const [display, setDisplay]=useState(false);
@@ -71,3 +71,4 @@ return null
 </>)} }*/
 
 
+export default BigCube
