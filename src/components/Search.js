@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState } from "react";
 import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import { setSearch, addFavorite, deleteFavorite } from "../redux/actions";
+import { setSearch, addEntry, deleteEntry } from "../redux/actions";
 
 const Search = ({
-  addFavorite,
-  deleteFavorite,
-  favorites,
+  addEntry,
+  deleteEntry,
+  album,
   clienttag,
   setSearch,
   search,
@@ -16,8 +16,8 @@ const Search = ({
   const [query, setQuery] = useState("");
   const { data, loading, error } = useFetch(query);
   const favIds = useMemo(() => {
-    return favorites.map((val) => val.id);
-  }, [favorites]);
+    return album.map((val) => val.id);
+  }, [album]);
 
   useEffect(() => {
     if (data) {
@@ -54,8 +54,8 @@ const Search = ({
         <div className="flex-wrap">
           {search.map((gif) => (
             <Console
-              deleteFavorite={deleteFavorite}
-              addFavorite={addFavorite}
+              deleteEntry={deleteEntry}
+              addEntry={addEntry}
               isFav={favIds.includes(gif.id)}
               id={gif.id}
               title={gif.title}
@@ -72,14 +72,14 @@ const Search = ({
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
-    favorites: state.favorites,
+    album: state.album,
     search: state.search,
   };
 }
 
 const mapDispatchToProps = {
-  deleteFavorite,
-  addFavorite,
+  deleteEntry,
+  addEntry,
   setSearch,
 };
 

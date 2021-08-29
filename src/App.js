@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+  clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
   clearBigCube, clearBuyVent,
 } from "./redux/actions";
 import {
@@ -17,15 +17,17 @@ import Splash from "./components/Splash";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Form from "./components/Form";
-import Apod from "./components/Apod";
-import Gimme5 from "./components/Gimme5";
-import ChooseApod from "./components/ChooseApod";
+import ApodConsole from "./components/ApodConsole";
+import ApodToday from "./components/ApodToday";
+import ApodRange from "./components/ApodRange";
+import ApodGimme5 from "./components/ApodGimme5";
+import ApodChoose from "./components/ApodChoose";
 import Mer from "./components/Mer";
 import Earth from "./components/Earth";
 import Search from "./components/Search";
 import BuyVent from "./components/BuyVent";
 import BigCube from "./components/BigCube";
-import Favorites from "./components/Favorites";
+import Album from "./components/Album";
 import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
 import TourGuide from "./components/TourGuide"
@@ -35,7 +37,7 @@ import TourInfo from "./components/TourInfo"
 import VentureTour from "./components/VentureTour"
 import VentConsole2 from "./components/VentConsole2"
 
-function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearBuyVent }
+function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
   return (
     <Router>
@@ -65,8 +67,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   Tour Order Form{" "}
                 </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/apod">
-                  APOD {" "}
+                <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
+                  APOD CONSOLE {" "}
                 </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -81,8 +83,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   Search{" "}
                 </NavLink></li>
 
-                <li><NavLink activeClassName="active" className="menu1items" to="/favorites">
-                  Favorites{" "} </NavLink></li>
+                <li><NavLink activeClassName="active" className="menu1items" to="/album">
+                  Album{" "} </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/form">
                   Contact Us{" "}
@@ -121,7 +123,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                     clearBuyVent();
                     clearClient()
                     clearContactUs();
-                    clearFavorites();
+                    clearAlbum();
                     clearForm();
                     clearSearch();
                   }}
@@ -143,11 +145,15 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
-          <ProtectedRoute path="/apod" reqUser={true} component={Apod} />
+          <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
 
-          <ProtectedRoute path="/gimme5" reqUser={true} component={Gimme5} />
+          <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
 
-          <ProtectedRoute path="/chooseapod" reqUser={true} component={ChooseApod} />
+          <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
+
+          <ProtectedRoute path="/apodgimme5" reqUser={true} component={ApodGimme5} />
+
+          <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
 
           <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
 
@@ -155,7 +161,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/search" reqUser={true} component={Search} />
 
-          <ProtectedRoute path="/favorites" reqUser={true} component={Favorites} />
+          <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
           <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
 
@@ -193,7 +199,7 @@ const mapDispatchToProps = {
   clearForm,
   clearApod,
   clearSearch,
-  clearFavorites,
+  clearAlbum,
   clearClient,
   clearContactUs,
   clearBigCube,

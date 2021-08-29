@@ -27,54 +27,7 @@ export default function Gimme5() {
 
   return (
     <>
-      <div className="banner">
-
-        <NavLink
-          to="/apod"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/today.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/chooseApod"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/choose.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/gimme5"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/gimme.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
       
-	  </div>
-
       <div className="content stylebox">
 	  <div className="apodPhoto">
           {gimme5Data.media_type === "image" ? (

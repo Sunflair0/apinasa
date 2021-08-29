@@ -11,6 +11,7 @@ export default function TourGuide() {
 			function signUpMess(){
 				<div className="carousel-wrapper">
 					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
+						switch(className) {} 
 						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
 							This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
 						</div>

@@ -83,6 +83,18 @@ background-position: 0px 0px;
 /* APOD */
         /* header buttons */
 
+.apodBtn {
+  height: 120px;
+  width: 100px;  
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 5em;
+  transition: .3s ease all;
+}
+
+
+
 .stylebox {
   display: flex;
     border: solid 1px rgb(216, 86, 39);
@@ -104,7 +116,7 @@ background-position: 0px 0px;
 
 .apodPhoto {
   display: flex;
-  padding: 40px;
+  padding: 20px;
   margin: 0 auto;
   max-height: 100%;
 
@@ -146,8 +158,11 @@ background-position: 0px 0px;
 
   .infobox .apodPhoto img {
     width: 100%;
-    margin-right: 0;
+    justify-items: center;
+    align-self: center;
+    margin: 0px;
     margin-bottom: 50px;
+    
   }
 }
 .ipn {

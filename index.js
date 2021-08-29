@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const passportConf = require("./server/config/passport.conf");
 
-const favoritesRoutes = require("./server/routes/favorites.routes");
+const albumRoutes = require("./server/routes/album.routes");
 const purchasesRoutes =require("./server/routes/purchases.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
 const clientsRoutes = require("./server/routes/clients.routes");
@@ -20,7 +20,7 @@ app.use(passport.initialize());
 app.use(express.static(__dirname + "/build"));
 
 
-app.use("/api/favorites", favoritesRoutes);
+app.use("/api/album", albumRoutes);
 app.use("/api/purchases", purchasesRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
 app.use("/api/clients", clientsRoutes);

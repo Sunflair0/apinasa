@@ -33,11 +33,22 @@ flex-direction: column;
 margin-top: 5em;
 }
 
+
+.content2 {
+  margin-left: 18em;
+}
+
 .cntr {
 display: flex;
 width: fit-content;
 margin-left: 700px;
 flex-direction: row;
+}
+
+html .infobox {
+scrollbar-color: darkolivegreen black;
+scrollbar-width: thin;
+
 }
 
 .apodNav {
