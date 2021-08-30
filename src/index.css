@@ -22,7 +22,10 @@ justify-content: center;
 align-items: center;
 margin-top: -900px;
 margin-bottom: 30px;
+}
 
+.toLeft {
+margin-right: -1950px;
 }
 
 .content {
@@ -54,7 +57,7 @@ scrollbar-width: thin;
 .apodNav {
 display: flex;
 height: 120px;
-width: 120px;
+width: 200px;
 margin-right: 50px;
 }
 

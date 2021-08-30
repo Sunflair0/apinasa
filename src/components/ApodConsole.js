@@ -3,84 +3,101 @@ import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
 import ApodGimme5 from './ApodGimme5';
 import ApodRange from './ApodRange';
+import { Link, NavLink } from 'react-router-dom';
 
- const ApodConsole = () => {
+
+const ApodConsole = () => {
   const apodOptions = ["today", "choose", "gimme5", "range"];
-  const [selection, setSelection]=useState("")
-  
+  const [selection, setSelection] = useState("")
+
   return (
     <>
-      <div className=" banner ">
-        <h4 className="">Explore the universe and add to your personal album.</h4>
-<div className="content">
-        <button
-         type="button"
-          style={{ 
-            height: "120px",
-            width: "100px",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            marginRight: "5em",
-            transition: ".3s ease all",
-              backgroundImage: "url(./assets/today.png)" }}
-              onClick={()=> setSelection(selection)}
-              >
-        </button>
+      <nav>
+        <apodMenu>
+          <ul className="content cntr banner toLeft">
 
-        <button
-          type="button"
-          style={{ height: "120px",
-          width: "100px",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          marginRight: "5em",
-          transition: ".3s ease all",
-            backgroundImage: "url(./assets/choose.png)" }}
-            onClick={()=> setSelection(selection)}
-            >
-        </button>
+            <li className="apodBtn " style={{
+              backgroundImage: "url(./assets/today.png)"
+            }}>
+              <Link className="toLeft"></Link></li>
 
-        <button
-          type="button"
-          style={{height: "120px",
-          width: "100px",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          marginRight: "5em",
-          transition: ".3s ease all", 
-          backgroundImage: "url(./assets/gimme.png)" }} 
-          onClick={()=> setSelection(selection)}
-          >
-        </button>
+            <li className="apodBtn" style={{
+              backgroundImage: "url(./assets/choose.png)"
+            }}>
+              <Link></Link></li>
 
-        <button
-         type="button"
-          style={{height: "120px",
-          width: "100px",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          marginRight: "5em",
-          transition: ".3s ease all",
-           backgroundImage: "url(./assets/range.png)" }}
-          onClick={()=> setSelection(selection)}
-          >
-            
-            {selection.toLocaleLowerCase()}
-        </button>
-</div>
-      
-      <p>{selection}</p>
-      <p>{apodOptions === "today" && <ApodToday/>}</p>
-      <p>{apodOptions === "choose" && <ApodChoose/>}</p>
-      <p>{apodOptions === "gimme" && <ApodGimme5/>}</p>
-      <p>{apodOptions === "range" && <ApodRange/>}</p>
-      
+            <li className="apodBtn" style={{
+              backgroundImage: "url(./assets/gimme.png)"
+            }}>
+              <Link></Link></li>
+
+            <li className="apodBtn" style={{
+              backgroundImage: "url(./assets/range.png)"
+            }}>
+              <Link></Link></li>
+
+          </ul><h4 className="layerWrapper">Explore the universe and add to your personal album.</h4></apodMenu>
+      </nav><p>{selection}bbbb</p>
+      <div className="boxOverlay ">
+        
+
+        <p>{apodOptions === "today" && <ApodToday/> }</p>
+        <p>{apodOptions === "choose" && <ApodChoose />}</p>
+        <p>{apodOptions === "gimme" && <ApodGimme5 />}</p>
+        <p>{apodOptions === "range" && <ApodRange />}</p>
       </div>
+      <div className="toLeft ">
+        <div className="banner ">
+
+          {apodOptions.map(selectio => (
+            <button className="clear apodBtn"
+              type="button"
+              key={selectio}
+
+              onClick={() => setSelection(selectio)}
+            >
+
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="  layer">
+        <Link className="apodBtn"
+          style={{
+            backgroundImage: "url(./assets/today.png)"
+          }}>
+        </Link>
+
+        <Link className="apodBtn" to="/apodconsole"
+          style={{
+            backgroundImage: "url(./assets/choose.png)"
+          }}>
+        </Link>
+
+        <Link className="apodBtn" to="/apodconsole"
+          style={{
+            backgroundImage: "url(./assets/gimme.png)"
+          }}>
+        </Link>
+
+        <NavLink className="apodBtn" to="/apodconsole"
+          style={{
+            backgroundImage: "url(./assets/range.png)"
+          }}>
+        </NavLink>
+
+      </div>
+      <p>{apodOptions === "range" && <ApodRange />}</p>
+      <div className="cntr ">
+        <div className="boxOverlay">
+
+
+
+
+        </div></div>
     </>
-  )
-  }
-  export default ApodConsole;
+  );
+}
+
+
+export default ApodConsole;
