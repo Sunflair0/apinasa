@@ -1,9 +1,12 @@
 import React, {useState, forwardRef, useImperativeHandle} from "react";
 import { ReactDOM } from "react-dom";
-import { getElementById } from "domutils";
+
+
+
 
 const BigCube = forwardRef((props,ref)=> {
 const [display, setDisplay]=useState(false);
+const [light, setLight] = useState(false);
 
 useImperativeHandle(ref,() => {
 return {
@@ -31,9 +34,13 @@ return ReactDOM.createPortal(
 </div>,
 document.getElementById("cube-root"))
 }
-return null
+return(
+
+<><button onClick={setLight(!light)}>{light ? "off" : "on"}</button>
+</>
+);
  
-});
+})
 
 
 
@@ -41,7 +48,7 @@ return null
 
 
 
-// export default function MenuPop() {
+// export default function BigCube() {
 //   const [isPop, setIsPop] = useState(false);
 // return (
 // <>
@@ -71,3 +78,4 @@ return null
 </>)} }*/
 
 
+export default BigCube
