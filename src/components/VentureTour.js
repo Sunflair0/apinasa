@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import * as FaIcons from "react-icons/fa";
 import {Link} from "react-router-dom";
 import { useFetch, useEffect } from "react";
-import "./Navbar.css";
+
 
 
 export default function VentureTour() {

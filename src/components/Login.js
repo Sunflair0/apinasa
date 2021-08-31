@@ -20,7 +20,8 @@ const Login = ({ setClient }) => {
           <form className="loginform">
             <div className="stripe">
               <label htmlFor="clienttag"></label>
-              <div className="bulb"><AiIcons.AiOutlineBulb /></div>
+              <div className="bulb"><AiIcons.AiOutlineBulb />
+</div>
               <div id="space"> <input placeholder="Name"
                 id="clienttag"
                 onChange={(e) => setClienttag(e.target.value)}
@@ -35,31 +36,22 @@ const Login = ({ setClient }) => {
               /></div>
               <div className="outerS"><div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
                 <button
-                  className="btn"
-                  onClick={async (e) => {
+                  className="btnGroup"
+                  onClick={(e) => {
                     e.preventDefault();
                     if (
                       clienttag.length > 4 &&
                       password.length > 4 &&
                       clienttag.length <= 20 &&
                       password.length <= 20
-                    )  setClient(clienttag);{
-                      setError(null);
-                      let res = await loginCall("/api/clients/login", {
-                        clienttag,
-                        password,
-                      });
-                      if (res.error) {
-                        return setError(res.error);
-                      }
-                      console.log(res);
+                    )  {setClient(clienttag);
                     }
                   }}>
                   GO
                 </button>
 
               </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
-                <Link className="sign" to="/signup"><button type="button">Sign Up!</button></Link>
+                <Link className="sign btnGroup" to="/signup"><button type="button">Sign Up!</button></Link>
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
 
           <div>{error}</div>
@@ -83,9 +75,6 @@ const Login = ({ setClient }) => {
       <div className="circle12" title="Umbriel"></div>
       <div className="circle13" title="Oberon"></div>
       <div className="circle14" title="comet"></div>
-
-
-
     </>
   );
 };

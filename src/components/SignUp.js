@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import * as AiIcons from "react-icons/ai";
+import TourGuide from "./TourGuide";
+import signUpMess from "./TourGuide"
 
 const Signup = () => {
   const [clienttag, setclienttag] = useState("");
   const [password, setPassword] = useState("");
   const { callAPI: signupCall } = useFetch("POST");
   const [error, setError] = useState(null);
+
   // const history = useHistory();
   return (
     <>
@@ -32,12 +35,11 @@ const Signup = () => {
             value={password}
           />
         </div>
-<div className="outerS"> <div className="signMess"><ul>
-<li>This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.</li>
-<li>This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.</li>
-</ul></div>
+<div className="outerS"> <div className="signMess">
+<signUpMess />
+</div>
         <button
-          className="btn"
+          className="btnGroup" 
           onClick={async (e) => {
             e.preventDefault();
             if (
