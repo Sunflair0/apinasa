@@ -64,11 +64,27 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 </NavLink></li>
 
                 <li>   <NavLink activeClassName="active" className=" menu1items" to="/form">
-                  Tour Order Form{" "}
+                  Order{" "}
                 </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
-                  APOD CONSOLE {" "}
+                  ***SOLE {" "}
+                </NavLink></li>
+
+                <li> <NavLink activeClassName="active" className="menu1items" to="/apodtoday">
+                  TODAY {" "}
+                </NavLink></li>
+
+                <li> <NavLink activeClassName="active" className="menu1items" to="/apodchoose">
+                  CHOOSE {" "}
+                </NavLink></li>
+
+                <li> <NavLink activeClassName="active" className="menu1items" to="/apodgimme5">
+                  GIMME 5 {" "}
+                </NavLink></li>
+
+                <li> <NavLink activeClassName="active" className="menu1items" to="/apodrange">
+                  RANGE {" "}
                 </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -79,12 +95,13 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   Earth {" "}
                 </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className=" menu1items" to="/search">
+                <li> <NavLink activeClassName="active" className="menu1items" to="/search">
                   Search{" "}
                 </NavLink></li>
 
-                <li><NavLink activeClassName="active" className="menu1items" to="/album">
-                  Album{" "} </NavLink></li>
+                <li> <NavLink activeClassName="active" className="menu1items" to="/album">
+                  Album{" "}
+                </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
                   Contact Us{" "}

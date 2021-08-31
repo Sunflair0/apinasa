@@ -14,7 +14,7 @@ const ApodConsole = () => {
     <>
       <nav>
         <apodMenu>
-          <ul className="content cntr banner toLeft">
+          <ul className="content">
 
             <li className="apodBtn " style={{
               backgroundImage: "url(./assets/today.png)"
