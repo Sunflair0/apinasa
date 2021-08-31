@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 
-let clienttag
+
 
 const Splash=({ clienttag }) => {
   return (

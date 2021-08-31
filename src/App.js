@@ -25,7 +25,7 @@ import Earth from "./components/Earth";
 import Search from "./components/Search";
 import BuyVent from "./components/BuyVent";
 import BigCube from "./components/BigCube";
-import Favorites from "./components/Favorites";
+import Album from "./components/Album";
 import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
 import TourGuide from "./components/TourGuide"
@@ -84,7 +84,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 <li><NavLink activeClassName="active" className="menu1items" to="/favorites">
                   Favorites{" "} </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/form">
+                <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
                   Contact Us{" "}
                 </NavLink></li>
 
@@ -155,7 +155,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/search" reqUser={true} component={Search} />
 
-          <ProtectedRoute path="/favorites" reqUser={true} component={Favorites} />
+          <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
           <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
 
@@ -173,7 +173,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
 
-          <ProtectedRoute path="/contactus" component={ContactUs} />
+          <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
           <Route path="*">
 
