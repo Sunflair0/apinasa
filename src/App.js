@@ -86,7 +86,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                 <li><NavLink activeClassName="active" className="menu1items" to="/album">
                   Album{" "} </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/form">
+                <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
                   Contact Us{" "}
                 </NavLink></li>
 
@@ -179,7 +179,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
 
-          <ProtectedRoute path="/contactus" component={ContactUs} />
+          <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
           <Route path="*">
 

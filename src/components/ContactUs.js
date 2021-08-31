@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-function ContactUs() {
-
+export default function ContactUs() {
 const [text, setText] = useState("What's on your mind?")
 
 const handleSubmit = (e) => {e.preventDefault()}
@@ -9,6 +8,7 @@ const handleSubmit = (e) => {e.preventDefault()}
 
 return (
 <>
+<div className="contactBg">
 <div className="content form">SpaceTours</div>
 <form onSubmit={handleSubmit}/>
 <div className="contact"/>
@@ -28,8 +28,9 @@ return (
  <p> Subject must be between 3 and 15 characters</p>
 
     <input type="submit"></input>
+</div>
 </>
 )
 }
 
-export default ContactUs;
+

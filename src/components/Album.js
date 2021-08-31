@@ -1,21 +1,21 @@
 import React from "react";
 import Console from "./Console";
 import { connect } from "react-redux";
-import { deleteEntry } from "../redux/actions";
+import { deleteFavorite } from "../redux/actions";
 
-const Album = ({ album, deleteEntry, clienttag }) => {
+const Favorites = ({ favorites, deleteFavorite, clienttag }) => {
   return (
     <>
-      <h2 className="content">Album for {clienttag}</h2>
+      <h2 className="content">Favorites for {clienttag}</h2>
       <div className="flex-wrap">
-        {album.map((pic) => (
+        {favorites.map((gif) => (
           <Console
-            id={pic.id}
+            id={gif.id}
             isFav={true}
-            deleteEntry={deleteEntry}
-            title={pic.title}
-            url={pic.url}
-            key={pic.id}
+            deleteFavorite={deleteFavorite}
+            title={gif.title}
+            url={gif.url}
+            key={gif.id}
           />
         ))}
       </div>
@@ -26,12 +26,12 @@ const Album = ({ album, deleteEntry, clienttag }) => {
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
-    album: state.album,
+    favorites: state.favorites,
   };
 }
 
 const mapDispatchToProps = {
-  deleteEntry,
+  deleteFavorite,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Album);
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

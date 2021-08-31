@@ -23,13 +23,12 @@ export default function Gimme5() {
 
   if (!gimme5Data) return <div />;
 
-
-
   return (
     <>
       
       <div className="content stylebox">
 	  <div className="apodPhoto">
+
           {gimme5Data.media_type === "image" ? (
             <img
               src={gimme5Data.url}

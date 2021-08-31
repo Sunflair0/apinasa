@@ -2,8 +2,13 @@ import React from 'react'
 
 export default function TourIns() {
 	return (
-		<div style={{backgroundColor: "lightblue"}}>
-			<div className="top-border"></div>
-		</div>
+		<>
+			<div className=" content banner boxFade">
+				<div className="fadeBox">
+					<div className="iris">
+						<div className=""></div>
+					</div>
+				</div></div>
+		</>
 	)
 }
