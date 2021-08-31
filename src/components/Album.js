@@ -15,7 +15,7 @@ const Album = ({ album, deleteEntry, clienttag }) => {
             deleteEntry={deleteEntry}
             title={pic.title}
             url={pic.url}
-            key={pic.id}
+            key={pic.id} 
           />
         ))}
       </div>
