@@ -3,7 +3,7 @@ export const CLEAR_BIGCUBE = "Clear BigCube"
 
 
 export function clearBigCube(bigcube) {
-  return { type:CLEAR_BIGCUBE , bigcube };
+  return { type: CLEAR_BIGCUBE, bigcube };
 }
 
 export function setbigcube(bigcube) {

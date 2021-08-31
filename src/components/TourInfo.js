@@ -10,6 +10,7 @@ function TourInfo() {
  
   return (
     <>
+<div className="content">Tour Info Page</div>
       <div className="displayvent">
         <VentConsole2 />
         <div className="venture-menu">

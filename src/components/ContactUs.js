@@ -9,7 +9,7 @@ const handleSubmit = (e) => {e.preventDefault()}
 
 return (
 <>
-<div className="form">SpaceTours</div>
+<div className="content form">SpaceTours</div>
 <form onSubmit={handleSubmit}/>
 <div className="contact"/>
 <textarea type="text"required value={text} onChange ={ (e) => setText(e.target.value)}/>

@@ -1,6 +1,25 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
-import BigCube from "./BigCube";
+import React from 'react'
+
+export default function BigCube() {
+	return (
+		<div>
+			Big Cube
+		</div>
+	)
+}
+
+
+//   const [isOn, setIsOn] =useState("false")
+
+
+
+// render() {
+//   const isOn = this.state.isOn;
+//   return (
+//     <div>
+//       {isOn ? 'currently' : 'not'}/div>
+//   );
+// }
 
 
 // export default function MenuPop() {
@@ -32,4 +51,4 @@ import BigCube from "./BigCube";
 
 </>)} }*/
 
-export default BigCube;
+

@@ -6,7 +6,7 @@ function ProtectedRoute({ clienttag, path, reqUser, component }) {
   if ((clienttag && reqUser) || (!clienttag && !reqUser)) {
     return <Route path={path} component={component} />;
   } else {
-    return <Redirect to={reqUser ? "/login" : "/search"} />;
+    return <Redirect to={reqUser ? "/login" : "/splash"} />;
   }
 }
 function mapStateToProps(state) {
