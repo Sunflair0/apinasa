@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
+  clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
   clearBigCube, clearBuyVent,
 } from "./redux/actions";
 import {
@@ -35,7 +35,7 @@ import TourInfo from "./components/TourInfo"
 import VentureTour from "./components/VentureTour"
 import VentConsole2 from "./components/VentConsole2"
 
-function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearBuyVent }
+function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
   return (
     <Router>
@@ -81,8 +81,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   Search{" "}
                 </NavLink></li>
 
-                <li><NavLink activeClassName="active" className="menu1items" to="/favorites">
-                  Favorites{" "} </NavLink></li>
+                <li><NavLink activeClassName="active" className="menu1items" to="/album">
+                  Album{" "} </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
                   Contact Us{" "}
@@ -121,7 +121,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                     clearBuyVent();
                     clearClient()
                     clearContactUs();
-                    clearFavorites();
+                    clearAlbum();
                     clearForm();
                     clearSearch();
                   }}
@@ -193,7 +193,7 @@ const mapDispatchToProps = {
   clearForm,
   clearApod,
   clearSearch,
-  clearFavorites,
+  clearAlbum,
   clearClient,
   clearContactUs,
   clearBigCube,

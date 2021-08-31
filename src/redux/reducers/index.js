@@ -4,7 +4,7 @@ import bigcubeReducer from "./bigcubeReducer";
 import buyventReducer from "./buyventReduce";
 import clientReducer from "./clientReducer";
 import contactusReducer from "./contactusReducer";
-import favoritesReducer from "./favoritesReducer";
+import albumReducer from "./albumReducer";
 import formReducer from "./formReducer";
 import searchReducer from "./searchReducer";
 
@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   buyvent: buyventReducer,
   client: clientReducer,
   contactus: contactusReducer,
-  favorites: favoritesReducer,
+  album: albumReducer,
   form: formReducer,
   search: searchReducer,
 
