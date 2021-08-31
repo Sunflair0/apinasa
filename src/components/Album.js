@@ -11,11 +11,11 @@ const Album = ({ album, deleteEntry, clienttag }) => {
         {album.map((pic) => (
           <Console
             id={pic.id}
-            isFav={true}
+            isLike={true}
             deleteEntry={deleteEntry}
             title={pic.title}
             url={pic.url}
-            key={pic.id}
+            key={pic.id} 
           />
         ))}
       </div>
