@@ -25,7 +25,6 @@ import ApodRange from "./components/ApodRange";
 import ContactUs from "./components/ContactUs";
 import Earth from "./components/Earth";
 import Form from "./components/Form";
-import Gimme5 from "./components/Gimme5";
 import Ipn from "./components/Ipn"
 import Login from "./components/Login";
 import Mer from "./components/Mer";
@@ -184,8 +183,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
 
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
-
-          <ProtectedRoute path="/gimme5" reqUser={true} component={Gimme5} />
 
           <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
 

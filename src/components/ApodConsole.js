@@ -61,27 +61,57 @@ const ApodConsole = () => {
           ))}
         </div>
       </div>
-      <div className="  layer">
+      <div className="  ">
         <Link className="apodBtn"
-          style={{
+          style={{height: "150px",
+  width: "130px",  
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  marginRight: "5em",
+  marginBottom: "5em",
+  textDecoration: "none",
+  transition: ".3s ease all",
             backgroundImage: "url(./assets/today.png)"
           }}>
         </Link>
 
         <Link className="apodBtn" to="/apodconsole"
-          style={{
+          style={{height: "150px",
+  width: "130px",  
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  marginRight: "5em",
+  marginBottom: "5em",
+  textDecoration: "none",
+  transition: ".3s ease all",
             backgroundImage: "url(./assets/choose.png)"
           }}>
         </Link>
 
         <Link className="apodBtn" to="/apodconsole"
-          style={{
+          style={{height: "150px",
+  width: "130px",  
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  marginRight: "5em",
+  marginBottom: "5em",
+  textDecoration: "none",
+  transition: ".3s ease all",
             backgroundImage: "url(./assets/gimme.png)"
           }}>
         </Link>
 
-        <NavLink className="apodBtn" to="/apodconsole"
+        <NavLink to="/apodconsole" className="apodBtn" 
           style={{
+
+  height: "150px",
+  width: "130px",  
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  marginRight: "5em",
+  marginBottom: "5em",
+  textDecoration: "none",
+  transition: ".3s ease all",
             backgroundImage: "url(./assets/range.png)"
           }}>
         </NavLink>

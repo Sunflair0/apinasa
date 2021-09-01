@@ -1,6 +1,5 @@
 import React, { useEffect, useState, } from 'react';
-import useFetch from '../hooks/useFetch';
-import { NavLink } from 'react-router-dom';
+
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
