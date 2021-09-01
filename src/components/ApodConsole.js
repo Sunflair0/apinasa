@@ -17,21 +17,49 @@ const ApodConsole = () => {
           <ul className="content">
 
             <li className="apodBtn " style={{
+    height: "120px",
+            width: "100px",
+            borderRadius: "50px",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
               backgroundImage: "url(./assets/today.png)"
             }}>
               <Link className="toLeft"></Link></li>
 
             <li className="apodBtn" style={{
+    height: "120px",
+            width: "100px",
+            borderRadius: "50px",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
               backgroundImage: "url(./assets/choose.png)"
             }}>
               <Link></Link></li>
 
-            <li className="apodBtn" style={{
+            <li>gggg
+              <NavLink to="" className="apodBtn banner" style={{
+    height: "120px",
+            width: "100px",
+            borderRadius: "50px",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
               backgroundImage: "url(./assets/gimme.png)"
-            }}>
-              <Link></Link></li>
+            }}></NavLink></li>
 
             <li className="apodBtn" style={{
+    height: "120px",
+            width: "100px",
+            borderRadius: "50px",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
               backgroundImage: "url(./assets/range.png)"
             }}>
               <Link></Link></li>

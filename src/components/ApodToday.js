@@ -1,11 +1,9 @@
 import React, { useEffect, useState, } from 'react';
-import { addEntry, deleteEntry } from "../redux/actions";
-import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
-
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
- function ApodToday() {
+
+export default function Apod() {
   const [apodData, setApodData] = useState(null);
 
 
@@ -23,6 +21,7 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
   }, []);
 
   if (!apodData) return <div />;
+
 
 
   return (
@@ -87,8 +86,8 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
           }}
         >
         </NavLink>
- </div>
-     
+      </div>
+
 
 
 
@@ -117,22 +116,10 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
             <p className="copyright">{apodData.copyright} (copyright)</p>
             <div className="exBox"></div>
             <p className="explanation">{apodData.explanation}</p>
-                    </div></div></div>
+
+          </div></div></div>
     </>
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    clienttag: state.client.clienttag,
-    album: state.album    
-  };
-}
-
-const mapDispatchToProps = {
-  deleteEntry,
-  addEntry  
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ApodToday);
 
