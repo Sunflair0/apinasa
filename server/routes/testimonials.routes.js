@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { allTest, writeTByclient, getAllmyTest,byclientIDt, byTestIDt, patchTByclient, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/favorites.model");
+const { allTest, writeTByclient, getAllmyTest, byclientIDt, byTestIDt, patchTByclient, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/album.model");
 
 // /////I want to see all testimonials
 router.get("/testimonial/all", (req, res) => {
