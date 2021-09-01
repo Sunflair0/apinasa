@@ -1,6 +1,7 @@
 import React, { useEffect, useState, } from 'react';
 import { addEntry, deleteEntry } from "../redux/actions";
 import { connect } from "react-redux";
+import { NavLink } from 'react-router-dom';
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -26,7 +27,71 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
 
   return (
     <>
+      <div className="banner ">
+
+        <NavLink
+          to="/apod"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/today.png)",
+            borderRadius: "50px",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/chooseApod"
+          style={{
+            height: "120px",
+            width: "120px",
+            backgroundImage: "url(./assets/choose.png)",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/gimme5"
+          style={{
+            height: "120px",
+            width: "100px",
+            backgroundImage: "url(./assets/gimme.png)",
+            marginRight: "100px",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+
+          }}
+        >
+        </NavLink>
+
+        <NavLink
+          to="/range"
+          style={{
+            height: "120px",
+            width: "130px",
+            backgroundImage: "url(./assets/range.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+
+          }}
+        >
+        </NavLink>
+ </div>
      
+
+
+
       <div className="content stylebox">
         <div className="apodPhoto">
           {apodData.media_type === "image" ? (

@@ -13,29 +13,32 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
-import Splash from "./components/Splash";
-import Login from "./components/Login";
-import Signup from "./components/SignUp";
-import Form from "./components/Form";
-import ApodConsole from "./components/ApodConsole";
-import ApodToday from "./components/ApodToday";
-import ApodRange from "./components/ApodRange";
-import ApodGimme5 from "./components/ApodGimme5";
-import ApodChoose from "./components/ApodChoose";
-import Mer from "./components/Mer";
-import Earth from "./components/Earth";
-import Search from "./components/Search";
-import BuyVent from "./components/BuyVent";
-import BigCube from "./components/BigCube";
-import Album from "./components/Album";
-import ContactUs from "./components/ContactUs";
 import ProtectedRoute from "./shared/ProtectedRoute";
-import TourGuide from "./components/TourGuide"
-import TourIns from "./components/TourIns"
+import Album from "./components/Album";
+import ApodConsole from "./components/ApodConsole";
+import BigCube from "./components/BigCube";
+import BuyVent from "./components/BuyVent";
+import ApodToday from "./components/ApodToday";
+import ApodChoose from "./components/ApodChoose";
+import ApodGimme5 from "./components/ApodGimme5";
+import ApodRange from "./components/ApodRange";
+import ContactUs from "./components/ContactUs";
+import Earth from "./components/Earth";
+import Form from "./components/Form";
+import Gimme5 from "./components/Gimme5";
 import Ipn from "./components/Ipn"
+import Login from "./components/Login";
+import Mer from "./components/Mer";
+import Search from "./components/Search";
+import Signup from "./components/SignUp";
+import Splash from "./components/Splash";
+import Tour from "./components/Tour"
+import TourGuide from "./components/TourGuide"
 import TourInfo from "./components/TourInfo"
-import VentureTour from "./components/VentureTour"
+import TourIns from "./components/TourIns"
 import VentConsole2 from "./components/VentConsole2"
+import VentureTour from "./components/VentureTour"
+
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
@@ -107,7 +110,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   Contact Us{" "}
                 </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
+                <li> <NavLink activeClassName="active" className="menu1items" to="/tour">
                   Tour{" "}
                 </NavLink></li>
 
@@ -154,13 +157,13 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
       <main>
         <Switch>
-          <ProtectedRoute path="/login" reqUser={false} component={Login} />
 
-          <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
-          <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
 
-          <ProtectedRoute path="/form" reqUser={true} component={Form} />
+
+
+
+          <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
           <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
 
@@ -168,19 +171,35 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
 
+          <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
+
+          <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
+
           <ProtectedRoute path="/apodgimme5" reqUser={true} component={ApodGimme5} />
 
           <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
 
-          <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
+          <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
           <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
 
+          <ProtectedRoute path="/form" reqUser={true} component={Form} />
+
+          <ProtectedRoute path="/gimme5" reqUser={true} component={Gimme5} />
+
+          <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
+
+          <ProtectedRoute path="/login" reqUser={false} component={Login} />
+
+          <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
+
           <ProtectedRoute path="/search" reqUser={true} component={Search} />
 
-          <ProtectedRoute path="/album" reqUser={true} component={Album} />
+          <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
-          <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
+          <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
+
+          <ProtectedRoute path="/tour" reqUser={true} component={Tour} />
 
           <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
 
@@ -188,15 +207,11 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
 
-          <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
-
-          <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
+          <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
 
           <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
 
-          <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
 
-          <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
           <Route path="*">
 

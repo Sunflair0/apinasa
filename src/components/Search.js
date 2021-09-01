@@ -15,7 +15,7 @@ const Search = ({
   const [searchField, setSearchField] = useState("");
   const [query, setQuery] = useState("");
   const { data, loading, error } = useFetch(query);
-  const favIds = useMemo(() => {
+  const likeIds = useMemo(() => {
     return album.map((val) => val.id);
   }, [album]);
 
@@ -48,19 +48,19 @@ const Search = ({
           Submit
         </button>
       </form>
-      {loading && <div className="text-center">Loading Gifs</div>}
+      {loading && <div className="text-center">Loading pics</div>}
       {error && <div className="text-center">{error}</div>}
       {search && (
         <div className="flex-wrap">
-          {search.map((gif) => (
+          {search.map((pic) => (
             <Console
-              deleteEntry={deleteEntry}
-              addEntry={addEntry}
-              isFav={favIds.includes(gif.id)}
-              id={gif.id}
-              title={gif.title}
-              url={gif.images.original.url}
-              key={gif.id}
+              deleteFAlbum={deleteEntry}
+              addFAlbum={addEntry}
+              isFav={likeIds.includes(pic.id)}
+              id={pic.id}
+              title={pic.title}
+              url={pic.images.original.url}
+              key={pic.id}
             />
           ))}
         </div>

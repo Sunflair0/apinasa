@@ -11,5 +11,5 @@ export function deleteEntry(id) {
 }
 
 export function clearAlbum() {
-  return { type: CLEAR_ALBUM  };
+  return { type: CLEAR_ALBUM };
 }
