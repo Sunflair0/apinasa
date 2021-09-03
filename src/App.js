@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
   clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
@@ -59,9 +59,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <NavLink activeClassName="active" className="presenter" to="/signup"
           ></NavLink>
           {clienttag && (
-            <><Navbar/>
+            <><Navbar />
 
-<div className="menu1">
+              <div className="menu1">
                 <ul className="menu1item">
                   <li> <NavLink activeClassName="active" className=" menu1items" to="/splash">
                     HOME{" "}
@@ -75,8 +75,24 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                     Form{" "}
                   </NavLink></li>
 
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
+                    APOD console {" "}
+                  </NavLink></li>
+
                   <li> <NavLink activeClassName="active" className="menu1items" to="/apodtoday">
-                    APOD TODAY {" "}
+                    Today {" "}
+                  </NavLink></li>
+
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/apodchoose">
+                    Choose
+                  </NavLink></li>
+
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/apodgimme5">
+                    Gimme 5 {" "}
+                  </NavLink></li>
+
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/apodrange">
+                    Range {" "}
                   </NavLink></li>
 
                   <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -162,9 +178,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
 
-  <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
+          <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
 
-  <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
+          <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
 
           <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 

@@ -14,17 +14,17 @@ const [aRange, setARange] =useState();
 
 const showChoose = () => setAChoose(!aChoose)
 const options =["<ApodToday/>","<ApodChoose/>","<ApodGimme5/>","<ApodRange/>"];
-const [selections, setSelections]=useState("")
+const [selection, setSelection]=useState("")
 
 	return (
 		<>
-<p>{options === "<ApodToday/>"}</p>
-<p>{options === "<ApodChoose/>"}</p>
-<p>{options === "<ApodGimme5/>"}</p>
-<p>{options === "<ApodRange/>"}</p>
+<p>{selection === "<ApodToday/>"}</p>
+<p>{selection === "<ApodChoose/>"}</p>
+<p>{selection === "<ApodGimme5/>"}</p>
+<p>{selection === "<ApodRange/>"}</p>
 
 
-{options.map(selections => (<button type="button" key={selections} onClick={() => setSelections(selections)}></button>))}
+{options.map(opt => <button type="button" key={opt} onClick={e=> setSelection(opt)}>{opt}</button>)}
 
 			<nav className="banner ">
 
