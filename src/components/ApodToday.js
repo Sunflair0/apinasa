@@ -1,10 +1,9 @@
 import React, { useEffect, useState, } from 'react';
-
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Apod() {
+export default function ApodToday() {
   const [apodData, setApodData] = useState(null);
 
 
@@ -30,7 +29,7 @@ export default function Apod() {
       <div className="banner ">
 
         <NavLink
-          to="/apod"
+          to="/apodtoday"
           style={{
             height: "120px",
             width: "100px",
@@ -46,7 +45,7 @@ export default function Apod() {
         </NavLink>
 
         <NavLink
-          to="/chooseApod"
+          to="/apodchoose"
           style={{
             height: "120px",
             width: "120px",
@@ -60,7 +59,7 @@ export default function Apod() {
         </NavLink>
 
         <NavLink
-          to="/gimme5"
+          to="/apodgimme5"
           style={{
             height: "120px",
             width: "100px",
@@ -75,7 +74,7 @@ export default function Apod() {
         </NavLink>
 
         <NavLink
-          to="/range"
+          to="/apodrange"
           style={{
             height: "120px",
             width: "130px",

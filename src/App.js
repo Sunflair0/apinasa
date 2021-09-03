@@ -15,14 +15,14 @@ import "./App.css";
 
 import ProtectedRoute from "./shared/ProtectedRoute";
 import Album from "./components/Album";
-import Apod from "./components/Apod";
+import ApodToday from "./components/ApodToday";
 import BigCube from "./components/BigCube";
 import BuyVent from "./components/BuyVent";
-import ChooseApod from "./components/ChooseApod";
+import ApodChoose from "./components/ApodChoose";
 import ContactUs from "./components/ContactUs";
 import Earth from "./components/Earth";
 import Form from "./components/Form";
-import Gimme5 from "./components/Gimme5";
+import ApodGimme5 from "./components/ApodGimme5";
 import Ipn from "./components/Ipn"
 import Login from "./components/Login";
 import Mer from "./components/Mer";
@@ -35,6 +35,8 @@ import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
 import VentConsole2 from "./components/VentConsole2"
 import VentureTour from "./components/VentureTour"
+import ApodConsole from "./components/ApodConsole";
+import ApodRange from "./components/ApodRange";
 
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
@@ -67,8 +69,25 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                    Form{" "}
                 </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/apod">
-                  APOD {" "}
+   <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
+                  **CONSOLE {" "}
+                </NavLink></li>
+
+                <li> <NavLink activeClassName="active" className="menu1items" to="/apodtoday">
+                  aTODAY {" "}
+                </NavLink></li>
+
+<li> <NavLink activeClassName="active" className="menu1items" to="/apodrange">
+                  aRANGE {" "}
+                </NavLink></li>
+
+<li> <NavLink activeClassName="active" className="menu1items" to="/apodchoose">
+                  aCHOOSE {" "}
+                </NavLink></li>
+
+
+<li> <NavLink activeClassName="active" className="menu1items" to="/apodgimme5">
+                  aGIMME {" "}
                 </NavLink></li>
 
                 <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -145,13 +164,17 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
-          <ProtectedRoute path="/apod" reqUser={true} component={Apod} />
+          <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
 
           <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
 
           <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
 
-          <ProtectedRoute path="/chooseapod" reqUser={true} component={ChooseApod} />
+          <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
+
+  <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
+
+  <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
 
           <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
@@ -159,7 +182,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
-          <ProtectedRoute path="/gimme5" reqUser={true} component={Gimme5} />
+          <ProtectedRoute path="/apodgimme5" reqUser={true} component={ApodGimme5} />
 
           <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
 

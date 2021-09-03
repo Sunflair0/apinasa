@@ -1,96 +1,106 @@
 import React, { useEffect, useState, } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Date() {
-  const [dateData, setDateData] = useState(null);
+export default function ApodGimme5() {
+  const [gimme5Data, setGimme5Data] = useState(null);
 
 
   useEffect(() => {
-    fetchDate();
+    fetchGimme5();
 
-    async function fetchDate() {
+    async function fetchGimme5() {
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
+        `https://api.nasa.gov/planetary/apod?&api_key=${apiKey}count=5`
       );
       const data = await res.json();
-      setDateData(data);
+
+      setGimme5Data(data);
     }
   }, []);
 
-  if (!dateData) return <div />;
-
-
+  if (!gimme5Data) return <div />;
 
   return (
     <>
       <div className="banner">
 
-        <NavLink
-          to="/apod"
+          <NavLink
+          to="/apodtoday"
           style={{
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/today.png)",
+            borderRadius: "50px",
+            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
+            backgroundRepeat: 'no-repeat'
+
           }}
         >
         </NavLink>
 
         <NavLink
-          to="/chooseApod"
+          to="/apodchoose"
           style={{
             height: "120px",
-            width: "100px",
+            width: "120px",
             backgroundImage: "url(./assets/choose.png)",
+            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
+            backgroundRepeat: 'no-repeat'
           }}
         >
         </NavLink>
 
         <NavLink
-          to="/gimme5"
+          to="/apodgimme5"
           style={{
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/gimme.png)",
+            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            transition: ".3s ease all",
+
           }}
         >
         </NavLink>
-      </div>
 
-<div className="content">
+        <NavLink
+          to="/apodrange"
+          style={{
+            height: "120px",
+            width: "130px",
+            backgroundImage: "url(./assets/range.png)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
 
-<input type="date"></input></div>
+          }}
+        >
+        </NavLink>
+      
+	  </div>
 
       <div className="content stylebox">
-      <div className="apodPhoto">
-          {dateData.media_type === "image" ? (
+	  <div className="apodPhoto">
+
+          {gimme5Data.media_type === "image" ? (
             <img
-              src={dateData.url}
-              alt={dateData.title}
+              src={gimme5Data.url}
+              alt={gimme5Data.title}
 
             />
           ) : (
             <iframe
               title="space-video"
-              src={dateData.url}
+              src={gimme5Data.url}
               frameBorder="0"
               gesture="media"
               allow="encrypted-media"
@@ -98,11 +108,11 @@ export default function Date() {
             />
           )}
           <div>
-            <h1>{dateData.title}</h1>
-            <p className="date">{dateData.date}</p>
-            <p className="url">{dateData.url} </p>
-            <p className="copyright">{dateData.copyright} (copyright)</p>
-            <p className="explanation">{dateData.explanation}</p>
+            <h1>{gimme5Data.title}</h1>
+            <p className="date">{gimme5Data.date}</p>
+            <p className="url">{gimme5Data.url} </p>
+            <p className="copyright">{gimme5Data.copyright} (copyright)</p>
+            <p className="explanation">{gimme5Data.explanation}</p>
           </div>
         </div></div>
     </>
