@@ -16,7 +16,7 @@ export default function ApodChoose() {
     async function fetchDate() {
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`
       );
       const data = await res.json();
       ;

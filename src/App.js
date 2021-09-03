@@ -16,6 +16,8 @@ import "./App.css";
 import ProtectedRoute from "./shared/ProtectedRoute";
 import Album from "./components/Album";
 import ApodToday from "./components/ApodToday";
+import ApodConsole from "./components/ApodConsole";
+import ApodRange from "./components/ApodRange";
 import BigCube from "./components/BigCube";
 import BuyVent from "./components/BuyVent";
 import ApodChoose from "./components/ApodChoose";
@@ -73,8 +75,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                     Form{" "}
                   </NavLink></li>
 
-                  <li> <NavLink activeClassName="active" className="menu1items" to="/apod">
-                    APOD {" "}
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/apodtoday">
+                    APOD TODAY {" "}
                   </NavLink></li>
 
                   <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -152,7 +154,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
-          <ProtectedRoute path="/apodconsole" reqUser={true} component={aConsole} />
+          <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
 
           <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
 
@@ -160,7 +162,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
 
-  <ProtectedRoute path="/apodrange" reqUser={true} component={aRange} />
+  <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
 
   <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
 
