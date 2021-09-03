@@ -89,18 +89,21 @@ export default function ApodGimme5() {
 	  </div>
 
       <div className="content stylebox">
-	  <div className="apodPhoto">
+{gimme5Data.map(item => (
+ <div className="apodPhoto">
 
-          {gimme5Data.media_type === "image" ? (
+
+
+          {item.media_type === "image" ? (
             <img
-              src={gimme5Data.url}
-              alt={gimme5Data.title}
+              src={item.url}
+              alt={item.title}
 
             />
           ) : (
             <iframe
               title="space-video"
-              src={gimme5Data.url}
+              src={item.url}
               frameBorder="0"
               gesture="media"
               allow="encrypted-media"
@@ -108,13 +111,18 @@ export default function ApodGimme5() {
             />
           )}
           <div>
-            <h1>{gimme5Data.title}</h1>
-            <p className="date">{gimme5Data.date}</p>
-            <p className="url">{gimme5Data.url} </p>
-            <p className="copyright">{gimme5Data.copyright} (copyright)</p>
-            <p className="explanation">{gimme5Data.explanation}</p>
+            <h1>{item.title}</h1>
+            <p className="date">{item.date}</p>
+            <p className="url">{item.url} </p>
+            <p className="copyright">{item.copyright} (copyright)</p>
+            <p className="explanation">{item.explanation}</p>
           </div>
-        </div></div>
+        </div>
+))}
+
+ 
+
+</div> 
     </>
-  );
+  );	  
 }

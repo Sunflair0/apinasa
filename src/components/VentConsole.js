@@ -3,7 +3,7 @@ import React, {useState} from "react";
 // import BigCube from "./BigCube";
 
 
-export default function VentConsole2() {
+export default function VentConsole() {
   return (
     <div>
       
