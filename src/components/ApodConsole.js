@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Apod() {
+export default function ApodConsole() {
   const [apodData, setApodData] = useState(null);
 
 

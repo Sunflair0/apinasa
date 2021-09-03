@@ -1,30 +1,26 @@
 import React, { useEffect, useState, } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function Date() {
-  const [dateData, setDateData] = useState(null);
+export default function ApodGimme5() {
+  const [gimme5Data, setGimme5Data] = useState(null);
 
 
   useEffect(() => {
-    fetchDate();
+    fetchGimme5();
 
-    async function fetchDate() {
+    async function fetchGimme5() {
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&{date}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=5`
       );
       const data = await res.json();
-      setDateData(data);
+      setGimme5Data(data);
     }
   }, []);
 
-  if (!dateData) return <div />;
-
-
+  if (!gimme5Data) return <div />;
 
   return (
     <>
@@ -73,24 +69,25 @@ export default function Date() {
           }}
         >
         </NavLink>
-      </div>
-
-<div className="content">
-
-<input type="date"></input></div>
+      
+	  </div>
 
       <div className="content stylebox">
-      <div className="apodPhoto">
-          {dateData.media_type === "image" ? (
+{gimme5Data.map(item => (
+ <div className="apodPhoto">
+
+
+
+          {item.media_type === "image" ? (
             <img
-              src={dateData.url}
-              alt={dateData.title}
+              src={item.url}
+              alt={item.title}
 
             />
           ) : (
             <iframe
               title="space-video"
-              src={dateData.url}
+              src={item.url}
               frameBorder="0"
               gesture="media"
               allow="encrypted-media"
@@ -98,13 +95,18 @@ export default function Date() {
             />
           )}
           <div>
-            <h1>{dateData.title}</h1>
-            <p className="date">{dateData.date}</p>
-            <p className="url">{dateData.url} </p>
-            <p className="copyright">{dateData.copyright} (copyright)</p>
-            <p className="explanation">{dateData.explanation}</p>
+            <h1>{item.title}</h1>
+            <p className="date">{item.date}</p>
+            <p className="url">{item.url} </p>
+            <p className="copyright">{item.copyright} (copyright)</p>
+            <p className="explanation">{item.explanation}</p>
           </div>
-        </div></div>
+        </div>
+))}
+
+ 
+
+</div> 
     </>
-  );
+  );	  
 }
