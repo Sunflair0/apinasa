@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { connect } from "react-redux";
 import {
   clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
@@ -29,19 +29,24 @@ import Mer from "./components/Mer";
 import Search from "./components/Search";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
-import Tour from "./components/Tour"
+import Tour from "./components/Navbar"
 import TourGuide from "./components/TourGuide"
 import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
-import VentConsole2 from "./components/VentConsole2"
+import VentConsole from "./components/VentConsole"
 import VentureTour from "./components/VentureTour"
+import Navbar from "./components/Navbar";
+
 
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
+  const [sidebar, setSidebar] = useState(true);
+  const showSidebar = () => setSidebar(!sidebar);
   return (
     <Router>
       <div className="navDiv">
+
         <nav style={{ maxWidth: "300px" }}>
           {" "}
           {!clienttag && (
@@ -52,86 +57,88 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <NavLink activeClassName="active" className="presenter" to="/signup"
           ></NavLink>
           {clienttag && (
+            <><Navbar/>
 
-            <div className="menu1">
-              <ul className="menu1item">
-                <li> <NavLink activeClassName="active" className=" menu1items" to="/splash">
-                  HOME{" "}
-                </NavLink></li>
+<div className="menu1">
+                <ul className="menu1item">
+                  <li> <NavLink activeClassName="active" className=" menu1items" to="/splash">
+                    HOME{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
-                > Tour Info{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
+                  > Tour Info{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className=" menu1items" to="/form">
-                   Form{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className=" menu1items" to="/form">
+                    Form{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/apod">
-                  APOD {" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/apod">
+                    APOD {" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
-                  MER {" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
+                    MER {" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/earth">
-                  Earth {" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/earth">
+                    Earth {" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className=" menu1items" to="/search">
-                  Search{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className=" menu1items" to="/search">
+                    Search{" "}
+                  </NavLink></li>
 
-                <li><NavLink activeClassName="active" className="menu1items" to="/album">
-                  Album{" "} </NavLink></li>
+                  <li><NavLink activeClassName="active" className="menu1items" to="/album">
+                    Album{" "} </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
-                  Contact Us{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
+                    Contact Us{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/tour">
-                  Tour{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/tour">
+                    Tour{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour">
-                  VentureTour{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
+                    TourIns{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
-                  TourIns{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/ipn">
+                    IPN{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/ipn">
-                  IPN{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/tourguide">
+                    TourGuide{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/tourguide">
-                  TourGuide{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour">
+                    VentureTour{" "}
+                  </NavLink></li>
 
-                <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour2">
-                  VentureTour2{" "}
-                </NavLink></li>
+                  <li> <NavLink activeClassName="active" className="menu1items" to="/ventconsole">
+                    VentConsole{" "}
+                  </NavLink></li>
 
-                <li> <NavLink
-                  className="menu1items"
-                  to="/login"
-                  onClick={() => {
-                    clearApod();
-                    clearBigCube();
-                    clearBuyVent();
-                    clearClient()
-                    clearContactUs();
-                    clearAlbum();
-                    clearForm();
-                    clearSearch();
-                  }}
-                >
-                  Logout
-                </NavLink></li>
+                  <li> <NavLink
+                    className="menu1items"
+                    to="/login"
+                    onClick={() => {
+                      clearApod();
+                      clearBigCube();
+                      clearBuyVent();
+                      clearClient()
+                      clearContactUs();
+                      clearAlbum();
+                      clearForm();
+                      clearSearch();
+                    }}
+                  >
+                    Logout
+                  </NavLink></li>
 
-              </ul></div>
+                </ul></div>
+            </>
           )}
         </nav></div>
 
@@ -181,7 +188,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
 
-          <ProtectedRoute path="/ventconsole2" reqUser={true} component={VentConsole2} />
+          <ProtectedRoute path="/ventconsole" reqUser={true} component={VentConsole} />
 
           <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
 

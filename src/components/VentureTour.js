@@ -11,7 +11,7 @@ const { callAPI: getventures } = useFetch("GET");
 
 useEffect(() => {
     async function call() {
-      const res = await getventures(`/api/ventures/tours`);
+      const res = await getventures(`http://localhost:3006/api/ventures/tour/all`);
       if (!res.success) {
         return console.error(res.error);
       }

@@ -563,6 +563,7 @@ border-color: blue;
 }
 
 .navDiv {
+margin-left:-9px;
 display: flex;
 max-width: 210px;
 
@@ -577,8 +578,8 @@ justify-content: center;
 width: 200px;
 border: solid 6px;
 border-color: #010a33;
-box-shadow: 2px 2px 5px #ceda8d,
- inset 2px 2px 7px #d4dd9f;
+box-shadow: inset -2px -2px 7px 2px #ceda8d,
+ inset 2px 2px 7px 2px #d4dd9f;
 }
 ul 
 {
