@@ -28,9 +28,8 @@ export default function ApodToday() {
   return (
     <>
       <div className="banner ">
-
         <NavLink
-          to="/apod"
+          to="/apodtoday"
           style={{
             height: "120px",
             width: "100px",
@@ -46,7 +45,7 @@ export default function ApodToday() {
         </NavLink>
 
         <NavLink
-          to="/chooseApod"
+          to="/apodchoose"
           style={{
             height: "120px",
             width: "120px",
@@ -60,7 +59,7 @@ export default function ApodToday() {
         </NavLink>
 
         <NavLink
-          to="/gimme5"
+          to="/apodgimme5"
           style={{
             height: "120px",
             width: "100px",
@@ -75,7 +74,7 @@ export default function ApodToday() {
         </NavLink>
 
         <NavLink
-          to="/range"
+          to="/apodrange"
           style={{
             height: "120px",
             width: "130px",
@@ -83,15 +82,11 @@ export default function ApodToday() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-
           }}
         >
         </NavLink>
  </div>
      
-
-
-
       <div className="content stylebox">
         <div className="apodPhoto">
           {apodData.media_type === "image" ? (

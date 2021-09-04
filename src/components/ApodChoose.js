@@ -7,24 +7,25 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
 export default function ApodChoose() {
-  const [date, setDate] = useState(new Date());;
+  const [chooseData, setChooseData] = useState(new Date());;
+  const [date, setDate] = useState(new Date());
   const handleChange = date => setDate(date);
 
 
   useEffect(() => {
-    fetchDate();
+    fetchChoose();
 
-    async function fetchDate() {
+    async function fetchChoose() {
       const res = await fetch(
 
         `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`
       );
       const data = await res.json();
-      ;
+      setChooseData(data);
     }
   }, []);
 
-  if (!date) return <div />;
+  if (!chooseData) return <div />;
 
 
 
@@ -48,8 +49,8 @@ export default function ApodChoose() {
           useShortMonthInDropdown
           fixedHeight
         />
-</div>
-<div className="banner">
+      </div>
+      <div className="banner">
         <NavLink
           to="/apodtoday"
           style={{
@@ -107,21 +108,17 @@ export default function ApodChoose() {
         </NavLink>
       </div>
 
-      <div className="content">
-
-        <input type="date"></input></div>
-
       <div className="content stylebox">
         <div className="apodPhoto">
-          {date.media_type === "image" ? (
+          {chooseData.media_type === "image" ? (
             <img
-              src={date.url}
-              alt={date.title}
+              src={chooseData.url}
+              alt={chooseData.title}
             />
           ) : (
             <iframe
               title="space-video"
-              src={date.url}
+              src={chooseData.url}
               frameBorder="0"
               gesture="media"
               allow="encrypted-media"
@@ -129,11 +126,11 @@ export default function ApodChoose() {
             />
           )}
           <div>
-            <h1>{date.title}</h1>
-            <p className="date">{date.date}</p>
-            <p className="url">{date.url} </p>
-            <p className="copyright">{date.copyright} (copyright)</p>
-            <p className="explanation">{date.explanation}</p>
+            <h1>{chooseData.title}</h1>
+            <p className="date">{chooseData.date}</p>
+            <p className="url">{chooseData.url} </p>
+            <p className="copyright">{chooseData.copyright} (copyright)</p>
+            <p className="explanation">{chooseData.explanation}</p>
           </div>
         </div>
       </div>

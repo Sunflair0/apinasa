@@ -1,36 +1,37 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 export default function ApodRange() {
-
+	const [rangeData, setRangeData] = useState(null);
+	const [date, setDate] = useState(new Date());
 	const [start_date, setStart_Date] = useState();
 	const [end_date, setEnd_Date] = useState();
 	const handleChange = dateData => setEnd_Date(end_date);
 
 
 	useEffect(() => {
-		fetchApod();
+		fetchRange();
 
-		async function fetchApod() {
+		async function fetchRange() {
 			const res = await fetch(
 
 				`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${start_date}&end_date=${end_date}`
 			);
 			const data = await res.json();
-			setApodData(data);
+			setRangeData(data);
 		}
 	}, []);
 
-	if (!apodData) return <div />;
+	if (!rangeData) return <div />;
 
 
 
 	return (
 		<>
-
+			<DatePicker selected={date} onChange={date => setDate(date)} />
 
 			return (
 			<div className="banner ">
@@ -40,7 +41,7 @@ export default function ApodRange() {
 
 				<DatePicker
 					required
-					selected={start_date}
+					selected={date}
 					onChange={(date) => setStart_Date(date)}
 					selectsStart
 					startDate={start_date}
@@ -49,6 +50,7 @@ export default function ApodRange() {
 					maxDate={new Date()}
 					placeholderText="Select a start date"
 				/>
+
 				<DatePicker
 					selected={end_date}
 					onChange={(date) => setEnd_Date(date)}
@@ -118,6 +120,7 @@ export default function ApodRange() {
 							height: "120px",
 							width: "130px",
 							backgroundImage: "url(./assets/range.png)",
+							marginRight: "100px",
 							backgroundPosition: 'center',
 							backgroundSize: 'cover',
 							backgroundRepeat: 'no-repeat',
@@ -125,8 +128,45 @@ export default function ApodRange() {
 						}}
 					>
 					</NavLink>
+					<div className="content stylebox">
+						{rangeData.map(item => (
+							<div className="apodPhoto">
+
+
+
+								{item.media_type === "image" ? (
+									<img
+										src={item.url}
+										alt={item.title}
+
+									/>
+								) : (
+									<iframe
+										title="space-video"
+										src={item.url}
+										frameBorder="0"
+										gesture="media"
+										allow="encrypted-media"
+										allowFullScreen
+									/>
+								)}
+								<div>
+									<h1>{item.title}</h1>
+									<p className="date">{item.date}</p>
+									<p className="url">{item.url} </p>
+									<p className="copyright">{item.copyright} (copyright)</p>
+									<p className="explanation">{item.explanation}</p>
+								</div>
+							</div>
+						))}
+
+
+
+					</div>
 				</div>
 			</div>
 		</>
-	)
+	);
 }
+
+

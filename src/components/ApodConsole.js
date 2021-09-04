@@ -1,124 +1,32 @@
-import React, { useEffect, useState, } from 'react';
+import React, { useState, } from 'react';
+import ApodToday from './ApodToday';
+import ApodChoose from './ApodChoose';
+import ApodGimme5 from './ApodGimme5';
+import ApodRange from './ApodRange';
 
-import { NavLink } from 'react-router-dom';
-const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
 export default function ApodConsole() {
-  const [apodData, setApodData] = useState(null);
+const [aToday, setAToday] = useState(true);
+const [aChoose, setAChoose] =useState();
+const [aGimme5, setAGimme5] =useState();
+const [aRange, setARange] =useState();
+
+const showChoose = () => setAChoose(!aChoose)
+const options =["<ApodToday/>","<ApodChoose/>","<ApodGimme5/>","<ApodRange/>"];
+const [selection, setSelection]=useState("")
+
+	return (
+		<>
+<p>{selection === "<ApodToday/>"}</p>
+<p>{selection === "<ApodChoose/>"}</p>
+<p>{selection === "<ApodGimme5/>"}</p>
+<p>{selection === "<ApodRange/>"}</p>
 
 
-  useEffect(() => {
-    fetchApod();
-
-    async function fetchApod() {
-      const res = await fetch(
-
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
-      );
-      const data = await res.json();
-      setApodData(data);
-    }
-  }, []);
-
-  if (!apodData) return <div />;
-
-
-
-  return (
-    <>
-      <div className="banner ">
-
-        <NavLink
-          to="/apod"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/today.png)",
-            borderRadius: "50px",
-            marginRight: "100px",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/chooseApod"
-          style={{
-            height: "120px",
-            width: "120px",
-            backgroundImage: "url(./assets/choose.png)",
-            marginRight: "100px",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/gimme5"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/gimme.png)",
-            marginRight: "100px",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/range"
-          style={{
-            height: "120px",
-            width: "130px",
-            backgroundImage: "url(./assets/range.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-
-          }}
-        >
-        </NavLink>
- </div>
-     
-
-
-
-      <div className="content stylebox">
-        <div className="apodPhoto">
-          {apodData.media_type === "image" ? (
-            <img
-              src={apodData.url}
-              alt={apodData.title}
-
-            />
-          ) : (
-            <iframe
-              title="space-video"
-              src={apodData.url}
-              frameBorder="0"
-              gesture="media"
-              allow="encrypted-media"
-              allowFullScreen
-            />
-          )}
-          <div className="infobox">
-            <h1>{apodData.title}</h1>
-            <p className="date">{apodData.date}</p>
-            <p className="urla">{apodData.url} </p>
-            <p className="copyright">{apodData.copyright} (copyright)</p>
-            <div className="exBox"></div>
-            <p className="explanation">{apodData.explanation}</p>
-
-          </div></div></div>
+{options.map(opt => <button type="button" key={opt} onClick={e=> setSelection(opt)}>{opt}</button>)}
+    <nav className="banner "></nav>
+      
     </>
   );
 }
