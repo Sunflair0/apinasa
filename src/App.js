@@ -47,9 +47,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <Router>
-      <div className="navDiv">
-
-        <nav style={{ maxWidth: "300px" }}>
+      <div className="">
+        
           {" "}
           {!clienttag && (
             <NavLink activeClassName="active" className="menuitem" to="/login">
@@ -61,25 +60,26 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           {clienttag && (
             <>
 
-
               {/*///// Main Menu Toggle */}
-
 
               <h1 >SpaceTours <Link to='#' className="menu-bars">
                 <FaIcons.FaBars onClick={showSidebar} />
               </Link></h1>
 
               <div className="menu1 ">
-                <div className=""></div>
-                <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
+
+<div className="  "></div>
+                
+                <nav className={sidebar ? 'main-menu-a' : 'main-menu '}>
 
 
                   <ul className="">
 
-                    <div className="main-menu-items   navbar-toggle ">
+
+                    <div className="main-menu-items navbar-toggle ">
 
                       <Link to="#" className="menu-barsx">
-                        <AiIcons.AiOutlineClose onClick={showSidebar} />
+                        <AiIcons.AiOutlineClose  />
                       </Link>
                     </div>
 
@@ -164,7 +164,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 </div>
             </>
           )}
-        </nav></div>
+        </div>
 
       <main>
         <Switch>
