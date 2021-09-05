@@ -80,14 +80,14 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                   <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
 
 
-                    <ul className="main-menu-items ">
+                    <ul className="">
 
-                      <li className="navbar-toggle ">
+                      <div className="main-menu-items   navbar-toggle ">
 
                         <Link to="#" className="menu-barsx">
                           <AiIcons.AiOutlineClose onClick={showSidebar} />
                         </Link>
-                      </li>
+                      </div>
 
 
                       {/* ///// Main Menu */}
