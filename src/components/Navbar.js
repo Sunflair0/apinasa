@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Navbar() {
-    const [sidebar, setSidebar] = useState(false)
+    const [sidebar, setSidebar] = useState(true)
     const showSidebar = () => setSidebar(!sidebar)
 
     return (

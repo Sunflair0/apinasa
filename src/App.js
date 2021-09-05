@@ -54,7 +54,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
   return (
     <Router>
-      <div className="">
+      <div className="bigShell">
         <nav >
           {" "}
           {!clienttag && (
@@ -67,28 +67,25 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           {clienttag && (
             <>
               <div className=" ">
-                
-
-                
-
-
+         
                   {/*///// Main Menu Toggle */}
 
 
-                  <h1 style={{ fontSize: "" }}>SpaceTours <Link to='#' className="menu-bars">
+                  <h1 >SpaceTours <Link to='#' className="menu-bars">
                     <FaIcons.FaBars onClick={showSidebar} />
                   </Link></h1>
 
 <div className="menu1 ">
+<div className=""></div>
+                  <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
 
-                  <nav className={sidebar ? 'main-menu-active' : 'main-menu'}>
 
+                    <ul className="main-menu-items ">
 
-                    <ul className="main-menu-items">
+                      <li className="navbar-toggle ">
 
-                      <li className="navbar-toggle">
-                        <Link to="#" className="menu-bars">
-                          <AiIcons.AiOutlineClose />
+                        <Link to="#" className="menu-barsx">
+                          <AiIcons.AiOutlineClose onClick={showSidebar} />
                         </Link>
                       </li>
 
