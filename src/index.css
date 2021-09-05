@@ -562,12 +562,7 @@ input:hover
 border-color: blue;
 }
 
-.navDiv {
-margin-left:-9px;
-display: flex;
-max-width: 210px;
 
-}
 
 /*///////Main Menu*/
 
@@ -688,16 +683,17 @@ color:rgba(0, 0, 255, 0.493);
 }
 .menu-barsx{
 margin-top: -60px;
-margin-left: 3.6em;
+margin-left: 6em;
 font-size: 2rem;
 background-color: #000000;
 }
-.main-menu-a {
+.main-menu-active {
 top: 100px;
 left: 0;
   transition: 350ms;
 }
-.main-menu {
+.main-men {
+color: #56ce32;
 top: 0px;
 background-color: #000000;
 width: 50px;

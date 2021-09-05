@@ -11,18 +11,12 @@ export default function Navbar() {
     return (
         <>
 
-            <div className="navbar">
+             <div className="main-menu-items navbar-toggle ">
 
-                <h1>SpaceTours</h1><Link to='#' className="menu-bars"><FaIcons.FaBars onClick={showSidebar} /></Link>
-            </div>
-            <nav className={sidebar ? 'nav-menu-active' : 'nav-menu'}>
-                <ul className="nav-menu-items">
-                    <li className="navbar-toggle">
-                        <Link to="#" className="menu-bars">
-                            <AiIcons.AiOutlineClose />
-                        </Link></li>
-                </ul>
-            </nav>
+                      <Link to="#" className="menu-barsx">
+                        <AiIcons.AiOutlineClose  />
+                      </Link>
+                    </div>
 
 
         </>

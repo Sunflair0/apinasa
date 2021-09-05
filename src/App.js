@@ -70,7 +70,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
 <div className="  "></div>
                 
-                <nav className={sidebar ? 'main-menu-a' : 'main-menu '}>
+                <nav className={sidebar ? 'main-menu-active' : 'main-menu '}>
 
 
                   <ul className="">
