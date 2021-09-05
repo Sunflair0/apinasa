@@ -9,7 +9,7 @@ export default function ApodRange() {
 	const [date, setDate] = useState(new Date());
 	const [start_date, setStart_Date] = useState();
 	const [end_date, setEnd_Date] = useState();
-	const handleChange = dateData => setEnd_Date(end_date);
+
 
 
 	useEffect(() => {
@@ -34,8 +34,7 @@ export default function ApodRange() {
 			<DatePicker selected={date} onChange={date => setDate(date)} />
 
 			return (
-			<div className="banner ">
-
+			<div className="banner">
 				<p>Want to see a range of days for Picture of the Day? Choose a date before June 16th,
 					1995. If you like it, add it to your Album.</p>
 
@@ -46,12 +45,19 @@ export default function ApodRange() {
 					selectsStart
 					startDate={start_date}
 					endDate={end_date}
+					showYearDropdown
+					scrollableMonthYearDropdown
+					showMonthDropdown
+					useShortMonthInDropdown
+					fixedHeight
+					dateFormat="yyyy-MM-dd"
 					minDate={new Date(1995, 6, 16)}
 					maxDate={new Date()}
 					placeholderText="Select a start date"
 				/>
 
 				<DatePicker
+					required
 					selected={end_date}
 					onChange={(date) => setEnd_Date(date)}
 					selectsEnd
@@ -68,7 +74,7 @@ export default function ApodRange() {
 					fixedHeight
 				/>
 
-				<div className="content">
+				<div className="banner">
 					<NavLink
 						to="/apodtoday"
 						style={{

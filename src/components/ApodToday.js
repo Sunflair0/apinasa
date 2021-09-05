@@ -1,5 +1,4 @@
 import React, { useEffect, useState, } from 'react';
-
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -23,23 +22,20 @@ export default function ApodToday() {
 
   if (!apodData) return <div />;
 
-
-
   return (
     <>
-      <div className="banner ">
+      <div className="content">
         <NavLink
           to="/apodtoday"
           style={{
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/today.png)",
-            borderRadius: "50px",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -48,12 +44,13 @@ export default function ApodToday() {
           to="/apodchoose"
           style={{
             height: "120px",
-            width: "120px",
+            width: "100px",
             backgroundImage: "url(./assets/choose.png)",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -64,11 +61,11 @@ export default function ApodToday() {
             height: "120px",
             width: "100px",
             backgroundImage: "url(./assets/gimme.png)",
-            marginRight: "100px",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-
+            marginRight: "5em",
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
@@ -77,15 +74,17 @@ export default function ApodToday() {
           to="/apodrange"
           style={{
             height: "120px",
-            width: "130px",
+            width: "100px",
             backgroundImage: "url(./assets/range.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+            transition: ".3s ease all",
           }}
         >
         </NavLink>
- </div>
+
+      </div>
      
       <div className="content stylebox">
         <div className="apodPhoto">

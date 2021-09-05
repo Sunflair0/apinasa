@@ -10,21 +10,20 @@ export default function Navbar() {
 
     return (
         <>
-
-            <div className="navbar">
-
-                <h1>SpaceTours</h1><Link to='#' className="menu-bars"><FaIcons.FaBars onClick={showSidebar} /></Link>
-            </div>
-            <nav className={sidebar ? 'nav-menu-active' : 'nav-menu'}>
-                <ul className="nav-menu-items">
+<div className="main-menu">
+                <Link to='#' className="menu-bars">
+                    <FaIcons.FaBars onClick={showSidebar} /></Link>
+            
+            <nav className={sidebar ? 'main-menu-active' : 'main-menu'}>
+                <ul className="main-menu-items">
                     <li className="navbar-toggle">
                         <Link to="#" className="menu-bars">
                             <AiIcons.AiOutlineClose />
                         </Link></li>
                 </ul>
             </nav>
-
-
+<div className="menu1"></div>
+</div>
         </>
     )
 }

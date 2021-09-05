@@ -4,8 +4,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
-
-
 export default function ApodChoose() {
   const [chooseData, setChooseData] = useState(new Date());;
   const [date, setDate] = useState(new Date());
@@ -31,26 +29,26 @@ export default function ApodChoose() {
 
   return (
     <>
-      <div className="banner ">
-        <p>Want to see a different Picture of the Day? Choose a date before June 16th,
+      
+        <p className="banner">Want to see a different Picture of the Day? Choose a date before June 16th,
           1995. If you like it, add it to your Album.</p>
 
         <DatePicker
           required
           selected={date}
           onChange={handleChange}
-          dateFormat="yyyy-MM-dd"
-          minDate={new Date(1995, 6, 16)}
-          maxDate={new Date()}
-          placeholderText="Select a date"
           showYearDropdown
           scrollableMonthYearDropdown
           showMonthDropdown
           useShortMonthInDropdown
           fixedHeight
+          dateFormat="yyyy-MM-dd"
+          minDate={new Date(1995, 6, 16)}
+          maxDate={new Date()}
+          placeholderText="Select a date"
         />
-      </div>
       <div className="banner">
+      
         <NavLink
           to="/apodtoday"
           style={{

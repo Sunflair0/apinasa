@@ -6,6 +6,7 @@ import { deleteEntry } from "../redux/actions";
 const Album = ({ deleteEntry, album, clienttag }) => {
   return (
     <>
+<div style={{backgroundColor: "rgb(70,184,167", height: "100vh"}}>
       <h2 className="content">Album for {clienttag}</h2>
       <div className="flex-wrap">
         {album.map((pic) => (
@@ -18,7 +19,7 @@ const Album = ({ deleteEntry, album, clienttag }) => {
             key={pic.id}
           />
         ))}
-      </div>
+      </div></div>
     </>
   );
 };

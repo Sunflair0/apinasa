@@ -24,8 +24,7 @@ export default function ApodGimme5() {
 
   return (
     <>
-      <div className="banner">
-
+      <div className="">
         <NavLink
           to="/apodtoday"
           style={{
@@ -108,6 +107,7 @@ export default function ApodGimme5() {
                 allow="encrypted-media"
                 allowFullScreen
               />
+
             )}
             <div>
               <h1>{item.title}</h1>
