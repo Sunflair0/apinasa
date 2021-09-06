@@ -315,7 +315,7 @@ font-weight: 300;
 align-content: center;
 justify-content: center;
 backdrop-filter: blur(6px);
-z-index: 10;
+z-index: 100;
 
 }
 .btnGroup
@@ -625,10 +625,6 @@ color: rgb(171, 194, 219);
 
 }
 
-.content2 {
-margin-top: vh;
-}
-
 .menu1items::active {
 align-items: center;
 justify-content: center;
@@ -683,14 +679,21 @@ height: 500px;
   margin-left: 3.5rem;
   font-size: 1.5rem;
   background: none;
-
+position: fixed;
+z-index: 1;
 }
 
 .menu-barsx {
-margin-top: -60px;
- margin-left: 3.6em;
-font-size: 2rem;
+margin-top: -55px;
+margin-left: 3.3em;
 background: #000000;
+font-size: 2rem;
+z-index: 2;
+
+}
+
+.iconStay {
+display: block;
 }
 
 .main-menu-active {
@@ -709,8 +712,6 @@ position: fixed;
 left: -100%;
 transition: 250ms;
 }
-
-
 .main-menu-items {
   width: 100%;
 margin-top: -75px;

@@ -63,17 +63,15 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <NavLink activeClassName="active" className="presenter" to="/signup"
           ></NavLink>
           {clienttag && (
-            <>
-              <div className=" ">
-
-                {/*///// Main Menu Toggle */}
-
+          <>
+            
+             {/*///// Main Menu Toggle */}
 
                 <h1 >SpaceTours <Link to='#' className="menu-bars">
                   <FaIcons.FaBars onClick={showSidebar} />
                 </Link></h1>
 
-                <div className="menu1 ">
+                <div className="menu1">
 
                   <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
 
@@ -166,8 +164,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                     </ul>
                   </nav>
                 </div>
-              </div>
-            </>
+                         </>
           )}
         </nav>
 
