@@ -26,8 +26,10 @@ text-align: center;
 border-radius: 15px;
 padding: 5px;
 height: 45px;
-margin-left: auto;
-margin-right: auto;
+position: fixed;
+top: 10%;
+left: 50%;
+transform: translate(-50%, -50%);
 font-weight: 600;
 font-size: xx-large;
 width: 350px;
@@ -301,18 +303,20 @@ border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
 box-shadow: 6px 6px 1px 2px hsla(203, 27%, 26%, 0.45),
 inset 8px 8px 2px hsla(180, 22%, 10%, 0.596);
 display: flex;
-margin-left: auto;
-margin-right: auto;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 width: 310px;
 height: 520px;
-margin-top: -10px;
+margin-top: 50px;
 border-radius: 7px;
 font-weight: 300;
 align-content: center;
 justify-content: center;
 backdrop-filter: blur(6px);
 z-index: 10;
-position: relative;
+
 }
 .btnGroup
 {
