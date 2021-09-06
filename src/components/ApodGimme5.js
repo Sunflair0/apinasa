@@ -1,11 +1,9 @@
 import React, { useEffect, useState, } from 'react';
-import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
 export default function ApodGimme5() {
   const [gimme5Data, setGimme5Data] = useState(null);
-
 
   useEffect(() => {
     fetchGimme5();
@@ -24,43 +22,36 @@ export default function ApodGimme5() {
 
   return (
     <>
- 
+      <div className="flex3">
+        <div className="stylebox">
+          {gimme5Data.map(item => (
+            <div className="apodPhoto">
 
-      <div className="stylebox">
-        {gimme5Data.map(item => (
-          <div className="apodPhoto">
-
-
-
-            {item.media_type === "image" ? (
-              <img
-                src={item.url}
-                alt={item.title}
-
-              />
-            ) : (
-              <iframe
-                title="space-video"
-                src={item.url}
-                frameBorder="0"
-                gesture="media"
-                allow="encrypted-media"
-                allowFullScreen
-              />
-
-            )}
-            <div>
-              <h1>{item.title}</h1>
-              <p className="date">{item.date}</p>
-              <p className="url">{item.url} </p>
-              <p className="copyright">{item.copyright} (copyright)</p>
-              <p className="explanation">{item.explanation}</p>
+              {item.media_type === "image" ? (
+                <img
+                  src={item.url}
+                  alt={item.title}
+                />
+              ) : (
+                <iframe
+                  title="space-video"
+                  src={item.url}
+                  frameBorder="0"
+                  gesture="media"
+                  allow="encrypted-media"
+                  allowFullScreen
+                />
+              )}
+              <div>
+                <h1>{item.title}</h1>
+                <p className="date">{item.date}</p>
+                <p className="url">{item.url} </p>
+                <p className="copyright">{item.copyright} (copyright)</p>
+                <p className="explanation">{item.explanation}</p>
+              </div>
             </div>
-          </div>
-        ))}
-
-
-
+          ))}
+        </div>
       </div>
     </>
   );

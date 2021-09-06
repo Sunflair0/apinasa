@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;
@@ -9,8 +8,6 @@ export default function ApodRange() {
 	const [date, setDate] = useState(new Date());
 	const [start_date, setStart_Date] = useState();
 	const [end_date, setEnd_Date] = useState();
-
-
 
 	useEffect(() => {
 		fetchRange();
@@ -27,14 +24,12 @@ export default function ApodRange() {
 
 	if (!rangeData) return <div />;
 
-
-
 	return (
 		<>
 			<DatePicker selected={date} onChange={date => setDate(date)} />
 
 			return (
-			<div className="">
+			<div className="flex3">
 				<p>Want to see a range of days for Picture of the Day? Choose a date before June 16th,
 					1995. If you like it, add it to your Album.</p>
 
@@ -72,79 +67,14 @@ export default function ApodRange() {
 					showMonthDropdown
 					useShortMonthInDropdown
 					fixedHeight
-				/>
-
-				<div className="banner">
-					<NavLink
-						to="/apodtoday"
-						style={{
-							height: "120px",
-							width: "100px",
-							backgroundImage: "url(./assets/today.png)",
-							borderRadius: "50px",
-							marginRight: "100px",
-							backgroundPosition: 'center',
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat'
-
-						}}
-					>
-					</NavLink>
-
-					<NavLink
-						to="/apodchoose"
-						style={{
-							height: "120px",
-							width: "120px",
-							backgroundImage: "url(./assets/choose.png)",
-							marginRight: "100px",
-							backgroundPosition: 'center',
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat'
-						}}
-					>
-					</NavLink>
-
-					<NavLink
-						to="/apodgimme5"
-						style={{
-							height: "120px",
-							width: "100px",
-							backgroundImage: "url(./assets/gimme.png)",
-							marginRight: "100px",
-							backgroundPosition: 'center',
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat',
-
-						}}
-					>
-					</NavLink>
-
-					<NavLink
-						to="/apodrange"
-						style={{
-							height: "120px",
-							width: "130px",
-							backgroundImage: "url(./assets/range.png)",
-							marginRight: "100px",
-							backgroundPosition: 'center',
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat',
-
-						}}
-					>
-					</NavLink>
+				/>			
 					<div className="content stylebox">
 						{rangeData.map(item => (
 							<div className="apodPhoto">
-
-
-
 								{item.media_type === "image" ? (
 									<img
 										src={item.url}
 										alt={item.title}
-
 									/>
 								) : (
 									<iframe
@@ -165,12 +95,8 @@ export default function ApodRange() {
 								</div>
 							</div>
 						))}
-
-
-
 					</div>
 				</div>
-			</div>
 		</>
 	);
 }

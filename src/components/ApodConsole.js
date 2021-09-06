@@ -22,20 +22,12 @@ export default function ApodConsole() {
   return (
     <>
 
-      <div className="clear">
-        <p>{selection === "today" && <ApodToday />}2222</p>
-        <p>{selection === "choose" && <ApodChoose />}</p>
-        <p>{selection === "gimme" && <ApodGimme5 />}</p>
-        <p>{selection === "range" && <ApodRange />}</p>
-
+      <div className="flex1  xx">
+<div className="clear">{options.map(opt => <button type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
       </div>
 
-      <div className="">
-
-
         <NavLink
-          to="#"
-          onClick={() => setShowToday(showToday)}
+          to="#"          
           style={{
             height: "120px",
             width: "100px",
@@ -45,13 +37,11 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}
-        >
+          }}onClick={() => setShowToday(showToday)}>33333
         </NavLink>
 
         <NavLink
-          to="#"
-          onClick={() => setShowChoose(showChoose)}
+          to="#"          
           style={{
             height: "120px",
             width: "100px",
@@ -61,13 +51,11 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}
-        >
+          }}onClick={() => setShowChoose(showChoose)}>33333
         </NavLink>
 
         <NavLink
           to="#"
-          onClick={() => setShowGimme5(showGimme5)}
           style={{
             height: "120px",
             width: "100px",
@@ -77,13 +65,11 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}
-        >
+          }}onClick={() => setShowGimme5(showGimme5)}>33333 
         </NavLink>
 
         <NavLink
-          to="#"
-          onClick={() => setShowRange(showRange)}
+          to="#"          
           style={{
             height: "120px",
             width: "100px",
@@ -93,17 +79,16 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}
-        >
+          }}onClick={() => setShowRange(showRange)}>33333
         </NavLink>
-
       </div >
 
-
-
-      {options.map(opt => <button type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
-      <nav className="clear "></nav>
-
+      <div className="flex3">
+        <p>{selection === "today" && <ApodToday />}</p>
+        <p>{selection === "choose" && <ApodChoose />}</p>
+        <p>{selection === "gimme" && <ApodGimme5 />}</p>
+        <p>{selection === "range" && <ApodRange />}</p>
+      </div>
     </>
   );
 }

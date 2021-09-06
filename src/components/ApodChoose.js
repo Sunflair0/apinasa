@@ -1,14 +1,12 @@
 import React, { useEffect, useState, } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { NavLink } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 export default function ApodChoose() {
   const [chooseData, setChooseData] = useState(new Date());;
   const [date, setDate] = useState(new Date());
   const handleChange = date => setDate(date);
-
 
   useEffect(() => {
     fetchChoose();
@@ -21,90 +19,29 @@ export default function ApodChoose() {
       const data = await res.json();
       setChooseData(data);
     }
-  }, []);
+  }, [date]);
 
   if (!chooseData) return <div />;
 
-
-
   return (
     <>
-      
-        <p className="">Want to see a different Picture of the Day? Choose a date before June 16th,
-          1995. If you like it, add it to your Album.</p>
+      <p className="flex3">Want to see a different Picture of the Day? Choose a date before June 16th,
+        1995. If you like it, add it to your Album.</p>
 
-        <DatePicker
-          required
-          selected={date}
-          onChange={handleChange}
-          showYearDropdown
-          scrollableMonthYearDropdown
-          showMonthDropdown
-          useShortMonthInDropdown
-          fixedHeight
-          dateFormat="yyyy-MM-dd"
-          minDate={new Date(1995, 6, 16)}
-          maxDate={new Date()}
-          placeholderText="Select a date"
-        />
-      <div className="banner">
-      
-        <NavLink
-          to="/apodtoday"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/today.png)",
-            borderRadius: "50px",
-            marginRight: "100px",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/apodchoose"
-          style={{
-            height: "120px",
-            width: "120px",
-            backgroundImage: "url(./assets/choose.png)",
-            marginRight: "100px",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/apodgimme5"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/gimme.png)",
-            marginRight: "100px",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/apodrange"
-          style={{
-            height: "120px",
-            width: "130px",
-            backgroundImage: "url(./assets/range.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-        </NavLink>
-      </div>
+      <DatePicker
+        required
+        selected={date}
+        onChange={handleChange}
+        showYearDropdown
+        scrollableMonthYearDropdown
+        showMonthDropdown
+        useShortMonthInDropdown
+        fixedHeight
+        dateFormat="yyyy-MM-dd"
+        minDate={new Date(1995, 6, 16)}
+        maxDate={new Date()}
+        placeholderText="Select a date"
+      />
 
       <div className="content stylebox">
         <div className="apodPhoto">

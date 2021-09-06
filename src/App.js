@@ -32,7 +32,6 @@ import Mer from "./components/Mer";
 import Search from "./components/Search";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
-import Tour from "./components/Navbar"
 import TourGuide from "./components/TourGuide"
 import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
@@ -96,32 +95,16 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         HOME{" "}
                       </NavLink></li>
 
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
-                      > Tour Info{" "}
+                      <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"> 
+                        Tour Info{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className=" menu1items" to="/form">
-                        Form{" "}
+                        Order Now{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
-                        CONSOLE {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodtoday">
-                        today {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodchoose">
-                        choose {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodgimme5">
-                        gimme 5 {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodrange">
-                        range {" "}
+                        APOD {" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -141,10 +124,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
                         Contact Us{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/tour">
-                        Tour{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
@@ -233,8 +212,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
           <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
-
-          <ProtectedRoute path="/tour" reqUser={true} component={Tour} />
 
           <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
 

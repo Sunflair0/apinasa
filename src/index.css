@@ -16,38 +16,17 @@ font-family: "Times New Roman", Times, serif;
 
 /* page spacing */
 
-.banner {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: -900px;
-margin-bottom: 30px;
-
-}
-
-.content {
-display: flex;
-margin-left: 18em;
-margin-right: 5em;
-flex-direction: column;
-margin-top: -170vh;
-}
-
-.cntr {
-display: flex;
-width: fit-content;
-margin-left: 700px;
-flex-direction: row;
-}
-
 .clear {
 display: flex;
-height: 320px;
-width: fit-content;
-margin-left: 700px;
-flex-direction: row;
+
+height: 120px;
+width: 120px;
+opacity: .15;
 
 
+}
+.between {
+margin-right: 1em;
 }
 
 
@@ -567,22 +546,33 @@ border-color: blue;
 
 /* /////  Outer Flexbox */
 .bigShell {
-border: solid  #f69619 2px;
 display: inline-flex;
 justify-content: center;
 flex-direction: row;
 }
 
 .flex1 {
-background-color: #07615b;
+margin: 100px 40px 0px 10px;
+padding: 0px 10px;
+justify-content: space-evenly;
 flex: 1 60%;
 }
 
 .flex2 {
-border: solid  #19f6e8 2px;
 flex: 2 25%;
 }
 
+.flex3 {
+margin: 100px 40px 0px 10px;
+padding: 0px 10px;
+justify-content: space-evenly;
+flex: 3 75%;
+}
+
+.xx {
+display: flex;
+padding: 0em;
+}
 /*///////Main Menu*/
 
 
