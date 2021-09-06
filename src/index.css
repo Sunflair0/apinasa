@@ -672,8 +672,8 @@ padding-left: 12px;
 }
 
 .menu1items::active::before {
-	top:-3px;
-	box-shadow:inset 0px 1px 0px #093a4d, 0px 5px 0px 0px #032b3a, 1px 1px 0px 0px #044a64, 2px 2px 0px 0px #044a64, 2px 5px 0px 0px #044a64, 6px 4px 2px #0b698b, 0px 10px 5px #999 ;
+  top:-3px;
+  box-shadow:inset 0px 1px 0px #093a4d, 0px 5px 0px 0px #032b3a, 1px 1px 0px 0px #044a64, 2px 2px 0px 0px #044a64, 2px 5px 0px 0px #044a64, 6px 4px 2px #0b698b, 0px 10px 5px #999 ;
 }
 
 .headtitle{font-weight: 500;

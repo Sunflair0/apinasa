@@ -6,8 +6,8 @@ import {
 } from "./redux/actions";
 import {
   BrowserRouter as Router,
-  NavLink,
   Link,
+  NavLink,
   Redirect,
   Route,
   Switch,
