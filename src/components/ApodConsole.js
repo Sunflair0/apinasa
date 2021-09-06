@@ -12,22 +12,18 @@ export default function ApodConsole() {
   const [showChoose, setShowChoose] = useState();
   const [showGimme5, setShowGimme5] = useState();
   const [showRange, setShowRange] = useState();
-  const options = ["today", "choose", "gimme", "range"];
-
-
-
   const [selection, setSelection] = useState("")
-
+  const options = ["today", "choose", "gimme", "range"];
 
   return (
     <>
 
-      <div className="flex1  xx">
-<div className="clear">{options.map(opt => <button type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
-      </div>
-
+      <div className="flex1">
+        <div className="">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
+        </div>
+<div className=" xx">
         <NavLink
-          to="#"          
+          to="#"
           style={{
             height: "120px",
             width: "100px",
@@ -37,11 +33,11 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}onClick={() => setShowToday(showToday)}>33333
+          }} onClick={() => setShowToday(showToday)}>
         </NavLink>
 
         <NavLink
-          to="#"          
+          to="#"
           style={{
             height: "120px",
             width: "100px",
@@ -51,7 +47,7 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}onClick={() => setShowChoose(showChoose)}>33333
+          }} onClick={() => setShowChoose(showChoose)}>
         </NavLink>
 
         <NavLink
@@ -65,11 +61,11 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}onClick={() => setShowGimme5(showGimme5)}>33333 
+          }} onClick={() => setShowGimme5(showGimme5)}>
         </NavLink>
 
         <NavLink
-          to="#"          
+          to="#"
           style={{
             height: "120px",
             width: "100px",
@@ -79,9 +75,10 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
             margin: "1em",
             transition: ".3s ease all",
-          }}onClick={() => setShowRange(showRange)}>33333
+          }} onClick={() => setShowRange(showRange)}>
         </NavLink>
       </div >
+</div>
 
       <div className="flex3">
         <p>{selection === "today" && <ApodToday />}</p>
