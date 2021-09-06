@@ -23,7 +23,7 @@ export default function ApodRange() {
 			const data = await res.json();
 			setRangeData(data);
 		}
-	}, []);
+	}, [start_date, end_date]);
 
 	if (!rangeData) return <div />;
 
