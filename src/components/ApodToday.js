@@ -24,7 +24,7 @@ export default function ApodToday() {
 
   return (
     <>
-      <div className="content">
+      <div className="">
         <NavLink
           to="/apodtoday"
           style={{

@@ -23,7 +23,7 @@ export default function ApodRange() {
 			const data = await res.json();
 			setRangeData(data);
 		}
-	}, []);
+	}, [start_date, end_date]);
 
 	if (!rangeData) return <div />;
 
@@ -34,7 +34,7 @@ export default function ApodRange() {
 			<DatePicker selected={date} onChange={date => setDate(date)} />
 
 			return (
-			<div className="banner">
+			<div className="">
 				<p>Want to see a range of days for Picture of the Day? Choose a date before June 16th,
 					1995. If you like it, add it to your Album.</p>
 

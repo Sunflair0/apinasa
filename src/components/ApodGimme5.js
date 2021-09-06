@@ -86,7 +86,7 @@ export default function ApodGimme5() {
 
       </div>
 
-      <div className="content stylebox">
+      <div className=" stylebox">
         {gimme5Data.map(item => (
           <div className="apodPhoto">
 

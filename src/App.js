@@ -38,7 +38,6 @@ import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
 import VentConsole from "./components/VentConsole"
 import VentureTour from "./components/VentureTour"
-import Navbar from "./components/Navbar";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
