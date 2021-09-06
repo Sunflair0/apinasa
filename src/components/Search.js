@@ -26,7 +26,7 @@ const Search = ({
   }, [data, setSearch]);
 
   return (
-    <div className="content">
+    <div className="">
       <h2 className="splash">Welcome, {clienttag}</h2>
       <form className="form">
         <div>

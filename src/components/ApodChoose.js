@@ -30,7 +30,7 @@ export default function ApodChoose() {
   return (
     <>
       
-        <p className="banner">Want to see a different Picture of the Day? Choose a date before June 16th,
+        <p className="">Want to see a different Picture of the Day? Choose a date before June 16th,
           1995. If you like it, add it to your Album.</p>
 
         <DatePicker

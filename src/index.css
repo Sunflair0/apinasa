@@ -40,11 +40,14 @@ margin-left: 700px;
 flex-direction: row;
 }
 
-.apodNav {
+.clear {
 display: flex;
-height: 120px;
-width: 120px;
-margin-right: 50px;
+height: 320px;
+width: fit-content;
+margin-left: 700px;
+flex-direction: row;
+
+
 }
 
 
@@ -564,9 +567,20 @@ border-color: blue;
 
 /* /////  Outer Flexbox */
 .bigShell {
-display: flex;
-flex-wrap: nowrap;
-flex-direction: column;
+border: solid  #f69619 2px;
+display: inline-flex;
+justify-content: center;
+flex-direction: row;
+}
+
+.flex1 {
+background-color: #07615b;
+flex: 1 60%;
+}
+
+.flex2 {
+border: solid  #19f6e8 2px;
+flex: 2 25%;
 }
 
 /*///////Main Menu*/
@@ -574,12 +588,7 @@ flex-direction: column;
 
 .menu1{  
 margin-top: 35px;
-margin-left: 15px;
 display: flex;
-align-items: center;
-justify-content: center;
-width: 200px;
-background-color: #060808;
 } 
 ul 
 {
@@ -597,14 +606,12 @@ text-shadow: 10px 10px 10px 10px#0e0b0b;
 } 
 
  .menu1 li :hover{
-	box-shadow:   2px 7px 1px rgb(116, 211, 73);
-text-shadow: 0px 0px 10px#000000;
+text-shadow: 0px 0px 100px#000000;
 background-color: rgb(56, 119, 145);
-	box-shadow: inset 0px 1px 0px #6ebdda, 0px 5px 0px 0px #182b3b, 2px 8px 7px 2px rgb(165, 187, 228);
-color: rgb(5, 3, 19);
+box-shadow: inset 0px 1px 0px #74e0d9, 0px 5px 0px 0px #19f6e8, 2px 8px 10px 1px #19f6e8;
 font-size:17px;
-color: rgb(155, 173, 233);
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+color: #19f6e8;
+text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 } 
 
  .menu1items {
@@ -614,7 +621,7 @@ display: flex;
 flex-direction: row;
 width: 70px;
 background-color: rgb(1, 10, 51);
-	font-size:16px;
+	font-size:17px;
 	text-decoration:none;
 color: rgb(171, 194, 219);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -624,19 +631,18 @@ color: rgb(171, 194, 219);
 	margin-left:35px;
   border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	box-shadow: inset 0px 1px 0px #1b9ece, 0px 5px 0px 0px #182b3b, 2px 8px 7px 2px rgb(73, 121, 211);
+	box-shadow: inset 0px 1px 0px #4facce, 0px 5px 0px 0px #102d46, 2px 10px 5px 0px rgb(11, 54, 134);
 
 }
 
 .content2 {
-
+margin-top: vh;
 }
 
 .menu1items::active {
 align-items: center;
 justify-content: center;
 display: flex;
-
 	background-image: linear-gradient(to bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
 	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
 }
@@ -647,7 +653,7 @@ align-items: center;
 justify-content: center;
 display: flex;
 padding-left: 12px;
-	content:"n";
+	content:"X";
 	width:25px;
 	max-height:32px;
 	height:100%;
@@ -657,7 +663,7 @@ padding-left: 12px;
 	top:0px;
 	left:-36px;
 	font-weight:bold;
-  	color:#ceda8d;
+  color:#75880a;
 	border-right:solid 1px #000000;
 	background-image: linear-gradient(bottom, rgb(10,94,125) 0%, rgb(14,139,184) 100%);
 	border-top-left-radius: 5px;
@@ -677,13 +683,11 @@ color:rgba(0, 0, 255, 0.493);
 
 
 /* //// Venture Menu */
-/* .main-bar {
+.main-bar {
 display: flex;
 background-color: #838080;
 height: 500px;
-
-} */
-
+}
 
 .menu-bars {
   margin-left: 3.5rem;
@@ -697,20 +701,6 @@ margin-top: -60px;
  margin-left: 3.6em;
 font-size: 2rem;
 background: #000000;
-}
-
-.menu1 li .menu-barsx :hover {
-	box-shadow: 2px 7px 1px black !important;
-background-color: black;
-color: red;
-  text-shadow: 0 25 10px black;
-height: 32px;
-width: 32px;
-margin-top: -20px;
- margin-left: 2.3em;
-
-background: #000000 !important;
-
 }
 
 .main-menu-active {

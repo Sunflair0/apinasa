@@ -24,69 +24,9 @@ export default function ApodGimme5() {
 
   return (
     <>
-      <div className="">
-        <NavLink
-          to="/apodtoday"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/today.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
+ 
 
-        <NavLink
-          to="/apodchoose"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/choose.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/apodgimme5"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/gimme.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/apodrange"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/range.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
-      </div>
-
-      <div className="content stylebox">
+      <div className="stylebox">
         {gimme5Data.map(item => (
           <div className="apodPhoto">
 

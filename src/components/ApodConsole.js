@@ -8,23 +8,34 @@ import ApodRange from './ApodRange';
 
 
 export default function ApodConsole() {
-const [showToday, setShowToday] = useState(true);
-const [showChoose, setShowChoose] =useState();
-const [showGimme5, setShowGimme5] =useState();
-const [showRange, setShowRange] =useState();
+  const [showToday, setShowToday] = useState(true);
+  const [showChoose, setShowChoose] = useState();
+  const [showGimme5, setShowGimme5] = useState();
+  const [showRange, setShowRange] = useState();
+  const options = ["today", "choose", "gimme", "range"];
 
 
 
-const options =["aToday","aChoose","aGimme","aRange"];
-const [selection, setSelection]=useState("")
-const onClick = () => setShowToday(true);
+  const [selection, setSelection] = useState("")
 
-	return (
-	 <>
-      <div className="banner">
+
+  return (
+    <>
+
+      <div className="clear">
+        <p>{selection === "today" && <ApodToday />}2222</p>
+        <p>{selection === "choose" && <ApodChoose />}</p>
+        <p>{selection === "gimme" && <ApodGimme5 />}</p>
+        <p>{selection === "range" && <ApodRange />}</p>
+
+      </div>
+
+      <div className="">
+
+
         <NavLink
           to="#"
- onClick={() => setShowToday(showToday)}
+          onClick={() => setShowToday(showToday)}
           style={{
             height: "120px",
             width: "100px",
@@ -32,7 +43,7 @@ const onClick = () => setShowToday(true);
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
+            margin: "1em",
             transition: ".3s ease all",
           }}
         >
@@ -40,7 +51,7 @@ const onClick = () => setShowToday(true);
 
         <NavLink
           to="#"
- onClick={() => setShowChoose(showChoose)}
+          onClick={() => setShowChoose(showChoose)}
           style={{
             height: "120px",
             width: "100px",
@@ -48,15 +59,15 @@ const onClick = () => setShowToday(true);
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
+            margin: "1em",
             transition: ".3s ease all",
           }}
         >
         </NavLink>
 
-        <button
+        <NavLink
           to="#"
-onClick={() => setShowGimme5(showGimme5)}
+          onClick={() => setShowGimme5(showGimme5)}
           style={{
             height: "120px",
             width: "100px",
@@ -64,15 +75,15 @@ onClick={() => setShowGimme5(showGimme5)}
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
+            margin: "1em",
             transition: ".3s ease all",
           }}
         >
-        </button>
+        </NavLink>
 
         <NavLink
           to="#"
-onClick={() => setShowRange(showRange)}
+          onClick={() => setShowRange(showRange)}
           style={{
             height: "120px",
             width: "100px",
@@ -80,24 +91,19 @@ onClick={() => setShowRange(showRange)}
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+            margin: "1em",
             transition: ".3s ease all",
           }}
         >
         </NavLink>
 
       </div >
-<div className="banner">
-<p>{selection === "today" && <ApodToday/>}</p>
-<p>{selection === "choose" && <ApodChoose/>}</p>
-<p>{selection === "gimme" && <ApodGimme5/>}</p>
-<p>{selection === "range"  && <ApodRange/>}</p>
-
-</div>
 
 
-{options.map(opt => <button type="button" key={opt} onClick={e=> setSelection(opt)}>{opt}</button>)}
-    <nav className="banner "></nav>
-      
+
+      {options.map(opt => <button type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
+      <nav className="clear "></nav>
+
     </>
   );
 }

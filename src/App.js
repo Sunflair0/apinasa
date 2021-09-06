@@ -38,7 +38,6 @@ import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
 import VentConsole from "./components/VentConsole"
 import VentureTour from "./components/VentureTour"
-import Navbar from "./components/Navbar";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
@@ -67,22 +66,22 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           {clienttag && (
             <>
               <div className=" ">
-         
-                  {/*///// Main Menu Toggle */}
+
+                {/*///// Main Menu Toggle */}
 
 
-                  <h1 >SpaceTours <Link to='#' className="menu-bars">
-                    <FaIcons.FaBars onClick={showSidebar} />
-                  </Link></h1>
+                <h1 >SpaceTours <Link to='#' className="menu-bars">
+                  <FaIcons.FaBars onClick={showSidebar} />
+                </Link></h1>
 
-<div className="menu1 ">
-<div className=""></div>
+                <div className="menu1 ">
+
                   <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
 
 
-                    <ul className="">
+                    <ul className="flex2">
 
-                      <div className="main-menu-items   navbar-toggle ">
+                      <div className="main-menu-items navbar-toggle ">
 
                         <Link to="#" className="menu-barsx">
                           <AiIcons.AiOutlineClose onClick={showSidebar} />
@@ -191,7 +190,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
               </div>
             </>
           )}
-        </nav></div>
+        </nav>
 
       <main>
         <Switch>
@@ -222,8 +221,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
 
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
-
-
 
           <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
 
@@ -257,6 +254,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           </Route>
         </Switch>
       </main>
+</div>
     </Router>
   );
 }

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
 // import BigCube from "./BigCube";
 
@@ -6,7 +6,7 @@ import React, {useState} from "react";
 export default function VentConsole() {
   return (
     <div>
-      
+      VentConsole page
     </div>
   )
 }
