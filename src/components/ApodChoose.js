@@ -43,7 +43,7 @@ export default function ApodChoose() {
         placeholderText="Select a date"
       />
 
-      <div className="content stylebox">
+      <div className="stylebox">
         <div className="apodPhoto">
           {chooseData.media_type === "image" ? (
             <img

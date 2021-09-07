@@ -22,36 +22,37 @@ export default function ApodGimme5() {
 
   return (
     <>
-      <div className="flex3">
-        <div className="stylebox">
-          {gimme5Data.map(item => (
-            <div className="apodPhoto">
+<div className="flex3"></div>
+      <div className="apodPhoto">
+        {gimme5Data.map(item => (
+          <div className=" infobox stylebox">
 
-              {item.media_type === "image" ? (
-                <img
-                  src={item.url}
-                  alt={item.title}
-                />
-              ) : (
-                <iframe
-                  title="space-video"
-                  src={item.url}
-                  frameBorder="0"
-                  gesture="media"
-                  allow="encrypted-media"
-                  allowFullScreen
-                />
-              )}
-              <div>
-                <h1>{item.title}</h1>
-                <p className="date">{item.date}</p>
-                <p className="url">{item.url} </p>
-                <p className="copyright">{item.copyright} (copyright)</p>
-                <p className="explanation">{item.explanation}</p>
-              </div>
+            {item.media_type === "image" ? (
+              <img
+                src={item.url}
+                alt={item.title}
+              />
+            ) : (
+              <iframe
+                title="space-video"
+                src={item.url}
+                
+                gesture="media"
+                allow="encrypted-media"
+                allowFullScreen
+              />
+
+            )}
+            <div>
+              <h1>{item.title}</h1>
+              <p className="date">{item.date}</p>
+              <p className="url">{item.url} </p>
+              <p className="copyright">{item.copyright} (copyright)</p>
+              <p className="explanation">{item.explanation}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+
       </div>
     </>
   );

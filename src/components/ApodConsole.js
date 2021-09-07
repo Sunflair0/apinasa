@@ -19,9 +19,9 @@ export default function ApodConsole() {
     <>
 
       <div className="flex1">
-        <div className="">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
+        <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
         </div>
-<div className=" xx">
+<div className=" apodBox apodSee">
         <NavLink
           to="#"
           style={{
@@ -31,7 +31,7 @@ export default function ApodConsole() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            margin: "1em",
+          
             transition: ".3s ease all",
           }} onClick={() => setShowToday(showToday)}>
         </NavLink>
@@ -45,7 +45,7 @@ export default function ApodConsole() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            margin: "1em",
+         
             transition: ".3s ease all",
           }} onClick={() => setShowChoose(showChoose)}>
         </NavLink>
@@ -59,7 +59,7 @@ export default function ApodConsole() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            margin: "1em",
+         
             transition: ".3s ease all",
           }} onClick={() => setShowGimme5(showGimme5)}>
         </NavLink>
@@ -73,7 +73,7 @@ export default function ApodConsole() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            margin: "1em",
+        
             transition: ".3s ease all",
           }} onClick={() => setShowRange(showRange)}>
         </NavLink>

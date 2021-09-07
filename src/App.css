@@ -1,4 +1,7 @@
-
+.shell {
+min-width: 550vh;
+/* margin-top: 10vh; */
+}
 
 /* /////tourinfo page */
 
@@ -85,38 +88,52 @@ background-position: 0px 0px;
 /* APOD */
         /* header buttons */
 
+.scrollable-element {
+  scrollbar-width: thin;
+}
+
 .stylebox {
   display: flex;
+flex-wrap: nowrap;
     border: solid 1px rgb(216, 86, 39);
     background-color: #0e1224;
     box-shadow: inset -2px 2px 5px #ceda8d,
      inset 2px -1px 5px #d4dd9f;
-     min-width: 350px;
-      }
+     min-width: 650px;
+  max-height: 60vh;
+word-wrap: break-word;
+    }
 
 .infobox {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin-right: 50px;
+  width: 95%;
+  margin: 10px;
+padding: 5px;
   object-fit: contain;
-  max-height: 60vh;
-  overflow: auto;
+   overflow: auto;
+
 } 
 
 .apodPhoto {
   display: flex;
-  padding: 40px;
-  margin: 0 auto;
+  padding: 10px;
+  margin: 10px;
   max-height: 100%;
 
 }
 
 .apodPhoto img {
-  width: 50%;
-  margin-right: 50px;
+  width: 60%;
+  margin: 10px;
+  margin-right: 20px;
   object-fit: contain;
-  max-height: 60vh;
+  max-height: 70vh;
+}
+
+.bobo
+ {margin-top: auto;
+
 }
 
 .apodPhoto h1 {
@@ -141,7 +158,7 @@ background-position: 0px 0px;
   color: #bbb;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 750px) {
   .apodPhoto {
     display: block;
   }
@@ -206,7 +223,6 @@ margin: 5em;
 height: 100px;
 width: 100px;
 border-radius: 50px;
-
  box-shadow: inset 0 0 18px #fff, 
        inset 6px 0 18px #f3bad6, 
        inset -6px 0 18px #0ff, 

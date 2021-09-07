@@ -55,7 +55,7 @@ const Login = ({ setClient }) => {
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
 
           <div>{error}</div>
-        </div> </div>
+        </div> 
       <div className="circle5" title="Mercury"></div>
 
       <div className="earthmoon">
@@ -75,6 +75,7 @@ const Login = ({ setClient }) => {
       <div className="circle12" title="Umbriel"></div>
       <div className="circle13" title="Oberon"></div>
       <div className="circle14" title="comet"></div>
+</div>
     </>
   );
 };
