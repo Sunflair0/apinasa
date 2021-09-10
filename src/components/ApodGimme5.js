@@ -36,7 +36,6 @@ export default function ApodGimme5() {
               <iframe
                 title="space-video"
                 src={item.url}
-                
                 gesture="media"
                 allow="encrypted-media"
                 allowFullScreen

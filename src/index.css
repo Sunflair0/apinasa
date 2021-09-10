@@ -542,8 +542,35 @@ justify-content: center;
 flex-direction: row;
 }
 
+/* 
+.btn {
+background-color: rgb(70, 62, 78);
+
+} */
+
+
+.like-btn {
+padding: 10px;
+  cursor: pointer;
+border-radius: 10px;
+ border: 2px rgb(25, 200, 212);
+    background-color: #101652;
+   color: #bff3bf;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 23%;
+  display: block;
+  margin: auto auto 0px auto;
+  padding: 5px;
+box-shadow: inset 0px 1px 3px  #388bf7;
+}
+
+.like-btn a:hover {
+background-color: #636dd4;
+}
+
+
 .flex1 {
-margin: 100px 40px 0px 10px;
+margin: 100px 10px 0px 10px;
 padding: 0px 10px;
 flex-wrap: nowrap;
 flex-direction: row;
@@ -555,7 +582,7 @@ flex: 2 25%;
 }
 
 .flex3 {
-margin: 100px 40px 0px 10px;
+margin: 100px 0px 0px 10px;
 padding: 0px 10px;
 justify-content: space-evenly;
 flex: 3 75%;
@@ -608,7 +635,7 @@ text-shadow: 10px 10px 10px 10px#0e0b0b;
 
 } 
 
- .menu1 li :hover{
+.menu1 li :hover{
 text-shadow: 0px 0px 100px#000000;
 background-color: rgb(56, 119, 145);
 box-shadow: inset 0px 1px 0px #74e0d9, 0px 5px 0px 0px #19f6e8, 2px 8px 10px 1px #19f6e8;

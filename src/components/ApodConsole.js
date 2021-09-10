@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
 import ApodGimme5 from './ApodGimme5';
@@ -22,59 +22,55 @@ export default function ApodConsole() {
         <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
         </div>
 <div className=" apodBox apodSee">
-        <NavLink
+        <NavLink className="red"
           to="#"
           style={{
             height: "120px",
-            width: "100px",
+            width: "120px",
             backgroundImage: "url(./assets/today.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
           
-            transition: ".3s ease all",
           }} onClick={() => setShowToday(showToday)}>
         </NavLink>
 
-        <NavLink
+        <Link className="red"
           to="#"
           style={{
             height: "120px",
-            width: "100px",
+            width: "120px",
             backgroundImage: "url(./assets/choose.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
          
-            transition: ".3s ease all",
           }} onClick={() => setShowChoose(showChoose)}>
-        </NavLink>
+        </Link>
 
-        <NavLink
+        <NavLink className="red"
           to="#"
           style={{
             height: "120px",
-            width: "100px",
+            width: "120px",
             backgroundImage: "url(./assets/gimme.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
          
-            transition: ".3s ease all",
           }} onClick={() => setShowGimme5(showGimme5)}>
         </NavLink>
 
-        <NavLink
+        <NavLink className="red"
           to="#"
           style={{
             height: "120px",
-            width: "100px",
+            width: "120px",
             backgroundImage: "url(./assets/range.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
         
-            transition: ".3s ease all",
           }} onClick={() => setShowRange(showRange)}>
         </NavLink>
       </div >
