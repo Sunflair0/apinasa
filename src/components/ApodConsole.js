@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
 import ApodGimme5 from './ApodGimme5';
@@ -26,7 +26,7 @@ export default function ApodConsole() {
           to="#"
           style={{
             height: "120px",
-            width: "120px",
+            width: "100px",
             backgroundImage: "url(./assets/today.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -35,24 +35,24 @@ export default function ApodConsole() {
           }} onClick={() => setShowToday(showToday)}>
         </NavLink>
 
-        <Link className="red"
+        <NavLink className="red"
           to="#"
           style={{
             height: "120px",
-            width: "120px",
+            width: "100px",
             backgroundImage: "url(./assets/choose.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
          
           }} onClick={() => setShowChoose(showChoose)}>
-        </Link>
+        </NavLink>
 
         <NavLink className="red"
           to="#"
           style={{
             height: "120px",
-            width: "120px",
+            width: "100px",
             backgroundImage: "url(./assets/gimme.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -65,7 +65,7 @@ export default function ApodConsole() {
           to="#"
           style={{
             height: "120px",
-            width: "120px",
+            width: "100px",
             backgroundImage: "url(./assets/range.png)",
             backgroundPosition: 'center',
             backgroundSize: 'cover',

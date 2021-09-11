@@ -8,11 +8,11 @@ const Album = ({ deleteEntry, album, clienttag }) => {
     <>
       <div style={{ backgroundColor: "rgb(70,184,167", height: "100vh" }}>
         <h2 className="flex1">Album for {clienttag}</h2>
-        <div className="flex3">
+        <div className="">
           {album.map((pic) => (
             <Console
               id={pic.id}
-              isFav={true}
+              isLiked={true}
               deleteEntry={deleteEntry}
               title={pic.title}
               url={pic.url}

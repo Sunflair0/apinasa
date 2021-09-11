@@ -550,17 +550,17 @@ background-color: rgb(70, 62, 78);
 
 
 .like-btn {
-padding: 10px;
+margin:  10px;
   cursor: pointer;
 border-radius: 10px;
- border: 2px rgb(25, 200, 212);
+border: 2px rgb(25, 200, 212);
     background-color: #101652;
-   color: #bff3bf;
+  color: #bff3bf;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  width: 23%;
+  width: 25%;
   display: block;
   margin: auto auto 0px auto;
-  padding: 5px;
+  padding: 8px 18px 8px 18px;
 box-shadow: inset 0px 1px 3px  #388bf7;
 }
 
@@ -570,11 +570,10 @@ background-color: #636dd4;
 
 
 .flex1 {
-margin: 100px 10px 0px 10px;
-padding: 0px 10px;
+margin: 100px 50px 0px 0px;
 flex-wrap: nowrap;
 flex-direction: row;
-flex: 1 74%;
+
 }
 
 .flex2 {
@@ -582,10 +581,9 @@ flex: 2 25%;
 }
 
 .flex3 {
-margin: 100px 0px 0px 10px;
-padding: 0px 10px;
-justify-content: space-evenly;
-flex: 3 75%;
+display: flex;
+margin: auto 50px 0 auto;
+
 }
 
 .apodSee {
@@ -600,7 +598,7 @@ margin-right: 1.2em;
 .apodBox {
 display: flex;
 flex-direction: row;
-width: 650px;
+width: 700px;
 justify-content: space-between;
 margin-left: 15px;
 }
@@ -619,6 +617,7 @@ flex-direction: row;
 .menu1{  
 margin-top: 35px;
 display: flex;
+
 } 
 ul 
 {
@@ -627,6 +626,7 @@ list-style-type: none;
 } 
 .menu1 li 
 {
+
 display: flex;
 padding: 0mm;
 border-radius: 5px 5px ;
@@ -653,8 +653,8 @@ width: 70px;
 background-color: rgb(1, 10, 51);
 	font-size:17px;
 	text-decoration:none;
-color: rgb(171, 194, 219);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   color: #bff3bf;
+  text-shadow: -1px -1px 5 rgb(0,0,0), 1px -1px 5 rgb(0,0,0), -1px 1px 5 rgb(0,0,0), 1px 1px 5 rgb(0,0,0);
 	position:relative;
 	padding:12px 25px;
 	border-left:solid 1px #2a7eec;

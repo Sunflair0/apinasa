@@ -1,9 +1,23 @@
-import React, { useEffect, useState, } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
+import { connect } from "react-redux";
+import { addEntry, deleteEntry } from '../redux/actions';
+import Console from './Console';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
-export default function ApodGimme5() {
+const ApodGimme5 = ({
+  addEntry,
+  deleteEntry,
+  album,
+  isLiked,
+  id,
+  pic
+
+}) => {
   const [gimme5Data, setGimme5Data] = useState(null);
+  const likedIds = useMemo(() => {
+    return album.map((val) => val.id);
+  }, [album]);
 
   useEffect(() => {
     fetchGimme5();
@@ -22,7 +36,7 @@ export default function ApodGimme5() {
 
   return (
     <>
-<div className="flex3"></div>
+      <div className=""></div>
       <div className="apodPhoto">
         {gimme5Data.map(item => (
           <div className=" infobox stylebox">
@@ -31,6 +45,8 @@ export default function ApodGimme5() {
               <img
                 src={item.url}
                 alt={item.title}
+                id={item.id}
+                key={item.id}
               />
             ) : (
               <iframe
@@ -42,13 +58,20 @@ export default function ApodGimme5() {
               />
 
             )}
-            <div>
+
+            <Console
+              deleteEntry={deleteEntry}
+              addEntry={addEntry}
+              isLiked={likedIds.includes(item.id)}
+              key={item.id}
+              id={item.id} />
+            
               <h1>{item.title}</h1>
               <p className="date">{item.date}</p>
               <p className="url">{item.url} </p>
               <p className="copyright">{item.copyright} (copyright)</p>
               <p className="explanation">{item.explanation}</p>
-            </div>
+            
           </div>
         ))}
 
@@ -56,3 +79,18 @@ export default function ApodGimme5() {
     </>
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    album: state.album,
+
+  };
+}
+
+const mapDispatchToProps = {
+  deleteEntry,
+  addEntry
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApodGimme5);
