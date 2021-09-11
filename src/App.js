@@ -98,7 +98,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className=" menu1items" to="/form">
-                        Order Now{" "}
+                        Order{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
@@ -113,10 +113,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         Earth {" "}
                       </NavLink></li>
 
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/search">
-                        Search{" "}
-                      </NavLink></li>
-
                       <li><NavLink activeClassName="active" className="menu1items" to="/album">
                         Album{" "} </NavLink></li>
 
@@ -125,15 +121,11 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
-                        TourIns{" "}
+                        Extras{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/ipn">
                         IPN{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/tourguide">
-                        TourGuide{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour">

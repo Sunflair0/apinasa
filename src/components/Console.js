@@ -1,8 +1,9 @@
 import React from "react";
 
-function Console({ id, title, url, isLiked, addEntry, deleteEntry, pic }) {
+
+function Console({ id, title, url, isLiked, addEntry, deleteEntry }) {
   return (
-    <div className="flex1">
+    <div className="">
       <h4 className="presenter">{title}</h4>
      
       {isLiked && (
@@ -13,7 +14,7 @@ function Console({ id, title, url, isLiked, addEntry, deleteEntry, pic }) {
       {!isLiked && (
         <button
           button className="like-btn"
-          onClick={() => addEntry({ id, title, url, pic })}
+          onClick={() => addEntry({ id, title, url })}
         >
           Add to Album
         </button>

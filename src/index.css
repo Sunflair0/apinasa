@@ -11,7 +11,8 @@ radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.04) 1px, transparent 7px
 background-size: 550px 550px, 450px 450px, 350px 350px, 250px 250px, 500px 400px, 250px 120px;
 background-position: 0px 0px, 10px 10px, 40px 60px, 130px 270px, 100px 130px, 150px 100px;
 font-family: "Times New Roman", Times, serif;
-	color:#ceda8d;
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+color:#ceda8d;
 }
 
 /* page spacing */
@@ -559,7 +560,7 @@ border: 2px rgb(25, 200, 212);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   width: 25%;
   display: block;
-  margin: auto auto 0px auto;
+  margin: 10px auto 0px auto;
   padding: 8px 18px 8px 18px;
 box-shadow: inset 0px 1px 3px  #388bf7;
 }
