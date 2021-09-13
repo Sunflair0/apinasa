@@ -14,8 +14,11 @@ const Album = ({ deleteEntry, album, clienttag }) => {
               id={pic.id}
               isLiked={true}
               deleteEntry={deleteEntry}
+              date={pic.date}
+              copyright={pic.copyright}
               title={pic.title}
               url={pic.url}
+              description={pic.description}
               key={pic.id}
             />
           ))}

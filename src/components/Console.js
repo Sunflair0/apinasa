@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Console({ id, title, url, isLiked, addEntry, deleteEntry }) {
+function Console({ id, title, url, date, copyright, explanation, isLiked, addEntry, deleteEntry }) {
   return (
     <div className="">
       <h4 className="presenter">{title}</h4>
@@ -14,7 +14,7 @@ function Console({ id, title, url, isLiked, addEntry, deleteEntry }) {
       {!isLiked && (
         <button
           button className="like-btn"
-          onClick={() => addEntry({ id, title, url })}
+          onClick={() => addEntry({ id, title, url, date, copyright, explanation })}
         >
           Add to Album
         </button>

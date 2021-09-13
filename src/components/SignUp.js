@@ -14,8 +14,8 @@ const Signup = () => {
     <>
      
 <h2 className="logintop">Signup</h2>
-      <div className="spacer"><form className="loginform">
-        <div className="stripeGroup">      </div>
+      <div className="spacer"><form className="tourguide">
+        <div className="stripeGroup"></div>
           <div className="stripe"><label  id="space" htmlFor="clienttag"></label>
            <div className="namepass"><input
             id="clienttag" placeholder= "Client Name"
@@ -37,16 +37,16 @@ const Signup = () => {
 <div className="outerS"> <div className="signMess">
 <div className="carousel-wrapper">
 					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
-						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
+						<div style={{ marginTop: "70px" }}>
 							This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
 						</div>
-						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
+						<div style={{ marginTop: "70px" }}>
 							This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.
 						</div>
-						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
+						<div style={{ marginTop: "70px" }}>
 							Flip the TourGuide to select which Venture you want next.
 						</div>								
-						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
+						<div style={{ marginTop: "70px" }}>
 							Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.
 						</div>
 					</Carousel>

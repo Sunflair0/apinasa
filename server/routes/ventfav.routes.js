@@ -1,17 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const { byUserIDv, byUserIDf, delOneventf, delAllventf } = require("../models/ventfav.model");
+const { byClientIDv, byClientIDf, delOneventf, delAllventf } = require("../models/ventfav.model");
 
 // /////I want to see all the ventures I have chosen
-router.get("/mine/:user_id", (req, res) => {
-return byUserIDv(res, req.params.user_id);
+router.get("/mine/:client_id", (req, res) => {
+return byClientIDv(res, req.params.client_id);
 });
 
 // /////I want to add a venture to look at later
-router.post("/add/:user_id", (req, res) => {
-  const { user_id, vent_id, tour, description} = req.body;
-  if (user_id && vent_id && tour&& description ) {
-  return byUserIDf(res, user_id, vent_id, tour, description);
+router.post("/add/:client_id", (req, res) => {
+  const { client_id, vent_id, tour, description} = req.body;
+  if (client_id && vent_id && tour&& description ) {
+  return byClientIDf(res, client_id, vent_id, tour, description);
   }
   return res.send({
     success: false,
@@ -21,15 +21,15 @@ router.post("/add/:user_id", (req, res) => {
 });
 
 // /////I want to delete off my vent personal list
-router.delete("/delete/one/:user_id/:vent_id", (req,res)=> {
-const {user_id, vent_id} =req.params;
-return delOneventf(res, user_id,vent_id);
+router.delete("/delete/one/:client_id/:vent_id", (req,res)=> {
+const {client_id, vent_id} =req.params;
+return delOneventf(res, client_id,vent_id);
 });
 
 // /////I want to clear my personal vent list
-router.delete("/delete/all/:user_id", (req,res)=> {
-const {user_id} =req.params;
-return delAllventf(res, user_id);
+router.delete("/delete/all/:client_id", (req,res)=> {
+const {client_id} =req.params;
+return delAllventf(res, client_id);
 });
 
 module.exports = router;
