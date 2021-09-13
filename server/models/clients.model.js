@@ -8,7 +8,7 @@ async function signup(res, clienttag, password) {
   let json = { data: null, success: false, error: null };
   try {
     const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
-      clienttag,
+      clienttag
     ]);
     if (clients.length !== 0) {
       json.error = "Choice already taken";
