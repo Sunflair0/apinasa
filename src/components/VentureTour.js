@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import * as FaIcons from "react-icons/fa";
 import {Link} from "react-router-dom";
 import { useFetch, useEffect } from "react";
 
@@ -11,7 +10,7 @@ const { callAPI: getventures } = useFetch("GET");
 
 useEffect(() => {
     async function call() {
-      const res = await getventures(`/api/ventures/tours`);
+      const res = await getventures(`http://localhost:3006/api/ventures/tour/all`);
       if (!res.success) {
         return console.error(res.error);
       }

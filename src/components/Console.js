@@ -1,21 +1,22 @@
 import React from "react";
 
-function Console({ id, title, url, isFav, addFavorite, deleteFavorite, addapod, deleteapod }) {
+
+function Console({ id, title, url, date, copyright, explanation, isLiked, addEntry, deleteEntry }) {
   return (
-    <div className="presenter">
-      <h4 className="center">{title}</h4>
-      <img className="pic" alt="astronomy pic" src={url} />
-      {isFav && (
-        <button className="presenter" onClick={() => deleteFavorite({id, deleteapod })}>
-          Delete Favorite
+    <div className="">
+      <h4 className="presenter">{title}</h4>
+     
+      {isLiked && (
+        <button className="like-btn" onClick={() => deleteEntry(id)}>
+          Delete from Album
         </button>
       )}
-      {!isFav && (
+      {!isLiked && (
         <button
-          className="presenter"
-          onClick={() => addFavorite({ id, title, url, addapod })}
+          button className="like-btn"
+          onClick={() => addEntry({ id, title, url, date, copyright, explanation })}
         >
-          Add Favorite
+          Add to Album
         </button>
       )}
     </div>

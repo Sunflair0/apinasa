@@ -1,3 +1,20 @@
+
+
+
+/*signup*/
+.namepass
+{
+display: flex;
+flex-direction: column;
+}
+
+
+
+.shell {
+min-width: 550vh;
+
+}
+
 /* /////tourinfo page */
 
 .tour-page {
@@ -28,6 +45,11 @@
   text-decoration: none;
   font-weight: bold;
   font-family: "Times New Roman", Times, serif;
+}
+
+
+Link a:hover {
+background-color: red;
 }
 
 .venture-menu a:hover {
@@ -81,65 +103,120 @@ background-position: 0px 0px;
 }
 
 /* APOD */
-        /* header buttons */
 
+
+/* APOD Console buttons and action shadows */
+
+.apodSee {
+display: flex;
+flex-direction: row;
+width: 75%;
+object-fit: contain;
+margin-top: -140px;
+margin-right: 1.2em;
+}
+
+.apodBox {
+display: flex;
+flex-direction: row;
+width: 700px;
+justify-content: space-between;
+margin-left: 15px;
+}
+
+.clear {
+height: 130px;
+width: 130px;
+opacity: 0;
+flex-wrap: nowrap;
+flex-direction: row;
+}
+
+        /* picture boxes */
+
+/* width */
+.stylebox::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+background: #000000;
+border-radius: 10px;
+box-shadow: inset 0 0 7px #ceda8d;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #b19559;
+border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b67f08;
+}
 .stylebox {
-  display: flex;
+display: flex;
+flex-wrap: nowrap;
+margin: 15px;
     border: solid 1px rgb(216, 86, 39);
     background-color: #0e1224;
     box-shadow: inset -2px 2px 5px #ceda8d,
-     inset 2px -1px 5px #d4dd9f;
-     min-width: 350px;
-      }
+    inset 2px -1px 5px #d4dd9f;
+    min-width: 650px;
+  max-height: 60vh;
+word-wrap: break-word;
+    }
 
 .infobox {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin-right: 50px;
+  width: 95%;
+  padding: 5px;
   object-fit: contain;
-  max-height: 60vh;
   overflow: auto;
+  margin-top: 30px;
 } 
 
 .apodPhoto {
   display: flex;
-  padding: 40px;
-  margin: 0 auto;
+  flex-direction: column;
+ 
+  display: block;
+  margin: auto;
   max-height: 100%;
 
 }
 
- .apodPhoto img {
-  width: 50%;
-  margin-right: 50px;
+.apodPhoto img {
+
+  width: 95%;
+  margin: 10px;
   object-fit: contain;
-  max-height: 60vh;
+  max-height: 70vh;
 }
 
+
 .apodPhoto h1 {
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
 
 .urla {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  margin-top: 0;
   overflow: visible;
 }
 
 .apodPhoto .date  {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .apodPhoto .explanation {
   color: #bbb;
+  margin: 15px;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 600px) {
   .apodPhoto {
     display: block;
   }
@@ -147,29 +224,111 @@ background-position: 0px 0px;
   .infobox .apodPhoto img {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
   }
 }
+
+/* Album Like button */
+
+.like-btn {
+margin:  10px;
+border-radius: 10px;
+border: 2px rgb(25, 200, 212);
+  background-color: #101652;
+  color: #bff3bf;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 25%;
+  display: block;
+  margin: 10px auto 0px auto;
+  padding: 8px 18px 8px 18px;
+box-shadow: inset 0px 1px 3px  #388bf7;
+}
+
+      /* header buttons */
+
+/* .red {
+background-color: rgb(150, 131, 131);
+height: 150px;
+width: 150px;
+transition: 3.3s ease all;
+} */
+
+/* Insurance */
+
+.fadeBox {
+height: 40px;
+width:  40px;
+margin-top: -3rem;
+border-radius: 150px;
+background: radial-gradient( rgb(50, 194, 151) 50%, rgb(14, 169, 180) 90%);
+border: rgb(65, 65, 57) 2px solid;
+box-shadow: inset 0 px 5px 5px #3a3204,
+5px -10px 50px 7px rgb(233, 204, 44);
+  background: radial-gradient(circle at 50% 50px, rgb(0, 0, 0), rgb(88, 80, 4) 58%);
+
+
+}
+
+.boxFade {
+margin-left: 500px;
+height: 200px;
+width: 200px;
+border-radius: 150px ;
+border-color:  #899c1a 10px solid;
+box-shadow:  25px -11px 80px #857209,
+inset -40px 20px 20px#3f3604;
+background: linear-gradient( 20deg, rgb(47, 33, 110) 15%, rgb(145, 150, 104) 35%, rgb(14, 170, 84) 100%);
+}
+
+.iris {
+height: 50px;
+width: 50px;
+border: rgb(54, 3, 16) 1px solid;
+box-shadow: inset 0px 0px 25px 1px rgb(77, 4, 32);
+margin-left: -90px;
+margin-top: 200px;
+border-radius: 50px;
+  background: radial-gradient( circle at 50% 7px, #e4d3ff, rgba(19, 6, 78, 0.308) 35%),
+     radial-gradient(50% 50% at 75% 75%, #52699b, transparent) ;
+}
+.bubble {background: radial-gradient(100% 85% at 25% 25%, rgb(52, 50, 170), transparent 43%),
+radial-gradient(65% 65% at 15% 15%, rgb(19, 19, 20), transparent 63%),
+radial-gradient(100% 25% at 25% 25%, rgb(248, 248, 248), transparent 100%),
+     radial-gradient(15% 15% at 75% 75%, #7c6fb4, transparent), 
+    radial-gradient(100% 100% at 50% 25%, transparent, #0f417a 98%);
+   border: 1px solid #0e262e;
+   border-radius: 100%;
+   height: 150px;
+   width: 150px; }
+
+/*  IPN */
 .ipn {
 margin: 5em;
 height: 100px;
 width: 100px;
 border-radius: 50px;
- box-shadow: inset 0 0 18px #fff, 
-       inset 6px 0 18px #f3bad6, 
-       inset -6px 0 18px #0ff, 
-       inset 6px 0 30px #f3bad6, 
-       inset -6px 0 30px #0ff, 
-       0 0 18px #fff, -4px 0 18px 
-       #f3bad6, 4px 0 18px #0ff;
-animation: rotation .8s  infinite  linear ;
+box-shadow: inset 0 0 18px #fff, 
+      inset 6px 0 18px #f3bad6, 
+      inset -6px 0 18px #0ff, 
+      inset 6px 0 30px #f3bad6, 
+      inset -6px 0 30px #0ff, 
+      0 0 18px #fff, -4px 0 18px 
+    #f3bad6, 4px 0 18px #0ff;
+animation: rotation 1.5s  infinite  linear ;
+background: repeating-radial-gradient(#030302, hsl(221, 47%, 46%),  hsl(330, 59%, 20%) 8px);
   }
 @keyframes rotation {
   from {
     transform: scale(.01)  rotate(0deg);
   }
   to {
-    transform: scale(1) rotate(1100deg);
+    transform: scale(1.5) rotate(1100deg);
   }
 }
 
+/* Contact Form */
+
+.contactBg {
+background: linear-gradient( 45deg, rgb(167, 151, 236) 15%, rgb(59, 58, 92) 35%, rgb(156, 101, 147) 100%);
+
+}

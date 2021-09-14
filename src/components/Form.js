@@ -5,7 +5,7 @@ import {  } from "../redux/actions";
 
 export default function Form() {
 	return (
-		<div className="content">
+		<div className="">
 			Order Form
 		</div>
 	)

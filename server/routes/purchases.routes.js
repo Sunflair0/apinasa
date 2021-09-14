@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const { addPurch, byUserIDv, delOnePurch } = require("../models/purchases.model");
+const { addPurch, byClientIDv, delOnePurch } = require("../models/purchases.model");
 
 
 // /////I want to buy this
 router.put("/add", (req, res) => {
-const {user_id, vent_id} =req.body;
-if (user_id && vent_id){ 
-return addPurch(res, user_id, vent_id);
+const {client_id, vent_id} =req.body;
+if (client_id && vent_id){ 
+return addPurch(res, client_id, vent_id);
 }
 return res.send({
 success: false,
@@ -16,14 +16,14 @@ data: null,});
 });
 
 // /////I want to see what have I bought
-router.get("/see/:user_id", (req, res) => {
-return byUserIDv(res, req.params.user_id); 
+router.get("/see/:client_id", (req, res) => {
+return byClientIDv(res, req.params.client_id); 
 });
 
 // /////I want to delete what I bought
-router.delete("/delete/:user_id/:vent_id", (req,res)=> {
-const {user_id, vent_id} =req.params;
-return delOnePurch(res, user_id, vent_id);
+router.delete("/delete/:client_id/:vent_id", (req,res)=> {
+const {client_id, vent_id} =req.params;
+return delOnePurch(res, client_id, vent_id);
 });
 
 

@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState } from "react";
 import Console from "./Console";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import { setSearch, addFavorite, deleteFavorite } from "../redux/actions";
+import { setSearch, addEntry, deleteEntry } from "../redux/actions";
 
 const Search = ({
-  addFavorite,
-  deleteFavorite,
-  favorites,
+  addEntry,
+  deleteEntry,
+  album,
   clienttag,
   setSearch,
   search,
@@ -15,9 +15,9 @@ const Search = ({
   const [searchField, setSearchField] = useState("");
   const [query, setQuery] = useState("");
   const { data, loading, error } = useFetch(query);
-  const favIds = useMemo(() => {
-    return favorites.map((val) => val.id);
-  }, [favorites]);
+  const likeIds = useMemo(() => {
+    return album.map((val) => val.id);
+  }, [album]);
 
   useEffect(() => {
     if (data) {
@@ -26,7 +26,7 @@ const Search = ({
   }, [data, setSearch]);
 
   return (
-    <div className="content">
+    <div className="">
       <h2 className="splash">Welcome, {clienttag}</h2>
       <form className="form">
         <div>
@@ -48,19 +48,19 @@ const Search = ({
           Submit
         </button>
       </form>
-      {loading && <div className="text-center">Loading Gifs</div>}
+      {loading && <div className="text-center">Loading pics</div>}
       {error && <div className="text-center">{error}</div>}
       {search && (
         <div className="flex-wrap">
-          {search.map((gif) => (
+          {search.map((pic) => (
             <Console
-              deleteFavorite={deleteFavorite}
-              addFavorite={addFavorite}
-              isFav={favIds.includes(gif.id)}
-              id={gif.id}
-              title={gif.title}
-              url={gif.images.original.url}
-              key={gif.id}
+              deleteFAlbum={deleteEntry}
+              addFAlbum={addEntry}
+              isFav={likeIds.includes(pic.id)}
+              id={pic.id}
+              title={pic.title}
+              url={pic.images.original.url}
+              key={pic.id}
             />
           ))}
         </div>
@@ -72,14 +72,14 @@ const Search = ({
 function mapStateToProps(state) {
   return {
     clienttag: state.client.clienttag,
-    favorites: state.favorites,
+    album: state.album,
     search: state.search,
   };
 }
 
 const mapDispatchToProps = {
-  deleteFavorite,
-  addFavorite,
+  deleteEntry,
+  addEntry,
   setSearch,
 };
 

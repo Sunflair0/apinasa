@@ -14,7 +14,7 @@ export default function TourGuide() {
 						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
 							This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
 						</div>
-						<div style={{ color: "#15f4ee", marginTop: "50px" }}>
+						<div style={{ color: "#15f4ee", marginTop: "300px" }}>
 							This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.
 						</div>
 						<div style={{ color: "#15f4ee", marginTop: "50px" }}>

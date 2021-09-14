@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import * as AiIcons from "react-icons/ai";
-import TourGuide from "./TourGuide";
-import signUpMess from "./TourGuide"
+import { Carousel } from "react-responsive-carousel";
 
 const Signup = () => {
   const [clienttag, setclienttag] = useState("");
@@ -15,8 +14,8 @@ const Signup = () => {
     <>
      
 <h2 className="logintop">Signup</h2>
-      <div className="spacer"><form className="loginform">
-        <div className="stripeGroup">      </div>
+      <div className="spacer"><form className="tourguide">
+        <div className="stripeGroup"></div>
           <div className="stripe"><label  id="space" htmlFor="clienttag"></label>
            <div className="namepass"><input
             id="clienttag" placeholder= "Client Name"
@@ -36,7 +35,22 @@ const Signup = () => {
           />
         </div>
 <div className="outerS"> <div className="signMess">
-<signUpMess />
+<div className="carousel-wrapper">
+					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
+						<div style={{ marginTop: "70px" }}>
+							This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
+						</div>
+						<div style={{ marginTop: "70px" }}>
+							This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.
+						</div>
+						<div style={{ marginTop: "70px" }}>
+							Flip the TourGuide to select which Venture you want next.
+						</div>								
+						<div style={{ marginTop: "70px" }}>
+							Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.
+						</div>
+					</Carousel>
+				</div>			
 </div>
         <button
           className="btnGroup" 

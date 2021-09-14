@@ -1,0 +1,267 @@
+/* // ///// TourGuide  */
+.stripe 
+{
+background-color: #31475583;
+padding: 0%;
+height: 128px;
+width: 310px;
+margin-bottom: 10px;
+border-bottom: 1px rgba(255, 255, 255, 0.425) solid;
+border-radius: 10px 10px 0px 0px;
+}
+.control-arrow.control-next{
+text-decoration: none;
+}
+
+/* login */
+.tourguide 
+{
+background-color: rgba(255, 255, 255, 0.05);
+border: solid 1px rgb(27, 55, 71);
+border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
+box-shadow: 4px 4px 1px 2px hsla(203, 27%, 26%, 0.548),
+inset 5px 5px 2px hsla(180, 22%, 20%, 0.596);
+display: flex;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 310px;
+height: 520px;
+margin-top: 50px;
+border-radius: 10px;
+font-weight: 300;
+align-content: center;
+justify-content: center;
+backdrop-filter: blur(5px);
+box-shadow: 0px 0px 0px 1px #ffffff79;
+border-color: rgb(134, 134, 136);
+box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
+inset 5px 5px 2px hsla(180, 15%, 18%, 0.973);
+z-index: 100;
+
+}
+.btnGroup
+{
+display:flex;
+flex-direction: column;
+justify-content: center;
+text-decoration: none;
+}
+
+.bulb{
+/*AiOutlineBulb*/
+animation: mymove 4s infinite;
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: rgb(51, 22, 22);
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+@keyframes mymove
+{
+  50% {box-shadow: 0px -20px 30px rgba(41, 172, 150, 0.877)}
+}
+.bulbOff {
+background-color: rgb(221, 21, 21);
+}
+
+.bulb :active{
+/*AiOutlineBulb*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: rgba(41, 172, 150, 0.877) dotted 1px;
+border-radius: 5px;
+ box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
+
+}
+
+.intraNet{
+/*AiFillWechat*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.intraNet :active{
+/*AiFillWechat*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.speaker{
+/*AiFillAudio*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.speaker :active{
+/*AiFillAudio*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.camera{
+/*AiOutlineCamera*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.camera :active{
+/*AiOutlineCamera*/
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 0px;
+top: 0px;
+background-color: black;
+height: 30px;
+width: 30px;
+border: white dotted 1px;
+border-radius: 5px;
+}
+
+.modelNum{
+font-family: "Copperplate", Times, serif;
+margin-left: 1em;
+color: #15f4ee;
+position:fixed;
+left:0px;
+bottom:0px;
+}
+.tourguide button
+{
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius:50px;
+margin-left: 5px;
+margin-top: 45px;
+width:50px;
+height: 50px;
+z-index: 11;
+background-image: linear-gradient(to right, #314755 0%, #56ce32  51%, #314755 100%)
+}
+.gmessage, .smessage 
+{
+height: 102px;
+width: 210px;
+font-family: "Monaco", Times, serif;
+display:inline-block;
+padding: 5px;
+border-radius: 10px;
+background-color: rgba(51, 54, 61, 0);
+border: 3px groove rgb(134, 134, 136);
+justify-content: flex-start;
+margin-top: 20px;
+color: #15f4f4;
+box-shadow: 5px 5px 2px hsla(180, 24%, 26%, 0.938),
+inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
+border-color: rgb(149, 150, 151);
+z-index: 11;
+}
+.signMess
+{
+height: 200px;
+width: 210px;
+font-family: "Monaco", Times, serif;
+display:inline-block;
+padding: 5px;
+border-radius: 10px;
+background-color: rgba(51, 54, 61, 0);
+border: 3px groove rgb(134, 134, 136);
+justify-content: flex-start;
+margin-top: 50px;
+color: #15f4f4;
+box-shadow: 5px 5px 2px hsla(180, 24%, 26%, 0.938),
+inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
+border-color: rgb(149, 150, 151);
+z-index: 11;
+}
+.outerS{
+display: inline-flex;
+flex-direction: row;
+flex-basis:auto;
+padding: 20px;
+}
+input {
+margin-top: 75px;
+margin-left: auto;
+margin-right: auto;
+margin: 10px;
+width: 200px;
+height: 25px;
+padding-left: 15px;
+background-color: #ace4f8bb;
+border-radius: 40px 4px;
+box-shadow: 0px 0px 0px 1px #ffffff79;
+border-color: rgb(236, 237, 241);
+box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
+inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
+}
+input:hover 
+{
+ box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
+}
+.tourguide:hover 
+{
+border-color: blue;
+}
