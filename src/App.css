@@ -1,6 +1,18 @@
+
+
+
+/*signup*/
+.namepass
+{
+display: flex;
+flex-direction: column;
+}
+
+
+
 .shell {
 min-width: 550vh;
-/* margin-top: 10vh; */
+
 }
 
 /* /////tourinfo page */
@@ -91,14 +103,58 @@ background-position: 0px 0px;
 }
 
 /* APOD */
-        /* picture boxes */
 
-.scrollable-element {
-  scrollbar-width: thin;
+
+/* APOD Console buttons and action shadows */
+
+.apodSee {
+display: flex;
+flex-direction: row;
+width: 75%;
+object-fit: contain;
+margin-top: -140px;
+margin-right: 1.2em;
 }
 
+.apodBox {
+display: flex;
+flex-direction: row;
+width: 700px;
+justify-content: space-between;
+margin-left: 15px;
+}
+
+.clear {
+height: 130px;
+width: 130px;
+opacity: 0;
+flex-wrap: nowrap;
+flex-direction: row;
+}
+
+        /* picture boxes */
+
+/* width */
+.stylebox::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+background: #000000;
+border-radius: 10px;
+box-shadow: inset 0 0 7px #ceda8d;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #b19559;
+border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b67f08;
+}
 .stylebox {
-  display: flex;
+display: flex;
 flex-wrap: nowrap;
 margin: 15px;
     border: solid 1px rgb(216, 86, 39);
@@ -114,7 +170,6 @@ word-wrap: break-word;
   display: flex;
   flex-direction: column;
   width: 95%;
-  margin: 0px;
   padding: 5px;
   object-fit: contain;
   overflow: auto;
@@ -124,7 +179,7 @@ word-wrap: break-word;
 .apodPhoto {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+ 
   display: block;
   margin: auto;
   max-height: 100%;
@@ -172,7 +227,24 @@ word-wrap: break-word;
     margin-bottom: 5px;
   }
 }
-         /* header buttons */
+
+/* Album Like button */
+
+.like-btn {
+margin:  10px;
+border-radius: 10px;
+border: 2px rgb(25, 200, 212);
+  background-color: #101652;
+  color: #bff3bf;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 25%;
+  display: block;
+  margin: 10px auto 0px auto;
+  padding: 8px 18px 8px 18px;
+box-shadow: inset 0px 1px 3px  #388bf7;
+}
+
+      /* header buttons */
 
 /* .red {
 background-color: rgb(150, 131, 131);
@@ -257,6 +329,6 @@ background: repeating-radial-gradient(#030302, hsl(221, 47%, 46%),  hsl(330, 59%
 /* Contact Form */
 
 .contactBg {
-background: linear-gradient( 45deg, rgb(167, 151, 236) 15%, rgb(72, 69, 218) 35%, rgb(14, 170, 84) 100%);
+background: linear-gradient( 45deg, rgb(167, 151, 236) 15%, rgb(59, 58, 92) 35%, rgb(156, 101, 147) 100%);
 
 }

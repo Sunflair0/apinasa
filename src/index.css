@@ -17,6 +17,20 @@ color:#ceda8d;
 
 /* page spacing */
 
+.flex1 {
+margin: 100px 50px 0px 0px;
+flex-wrap: nowrap;
+flex-direction: row;
+}
+.flex2 {
+flex: 2 25%;
+}
+
+.flex3 {
+display: flex;
+margin: auto 50px 0 auto;
+}
+
 .presenter {
   color: rgb(4, 89, 163);
   font-weight: 500;
@@ -38,593 +52,21 @@ background-color: hsl(230, 90%, 8%);
 border-color: #2c4cee;
 box-shadow: 0px 0px 30px #2c4cee;
 }
-.uGroup2
-{
-position: static;
-margin-top: -500px;
-margin-left: -250px;
-}
-.therest 
-{
-flex: content;
-margin-bottom: -575px;
-z-index: -1;
-}
-
-/* /////Celestial Bodies */
-.circle 
-{ 
-/*Earth*/
-margin-left: 20%;
-margin-top: 27%;
-height: 63.5px;
-  width:63.5px;
-  border-radius: 70px;
-  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(0, 0, 255), rgba(0, 0, 0, 0.87));
-box-shadow: 0px 0px 20px  rgb(87, 87, 223);
-z-index: -2;
-}
-.circle1
-{
-/*Pluto*/
-display: flex;
-margin-left: auto;
-margin-top: 1%;
-height: 10.37px;
-  width:10.37px;
-  border-radius: 70px;
-  background-color:antiquewhite rgb((255, 115, 0)); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(150, 140, 131), rgb(0, 0, 0));
-  position: relative;
-}
-.circle2 
-{
-/*Ganymede*/
-margin-left: 65%;
-margin-top: -20%;
-height: 26px;
-  width:26px;
-  border-radius: 50px;
-  background-color: rgb(255, 196, 0); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(160, 157, 143), rgb(62, 63, 30));
-z-index: 1;
-}
-.circle3
-{
-/*Mars*/
-margin-left: 30%;
-margin-bottom:5.8%;
-height: 34px;
-  width:34px;
-  border-radius: 60px;
-  background-color: rgb(255, 153, 0); /* For browsers that do not support gradients */
- background-image: radial-gradient(circle, rgb(161, 138, 112), rgb(49, 21, 21));
-z-index: 2;
-}
-.circle4 
-{
-/*Callisto*/
-margin-left: 60%;
-margin-top:-20%;
-height:24px;
-  width:24px;
-  border-radius: 700px;
-  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(148, 230, 148),rgb(0, 0, 0));
-z-index: 2;
-}
-.circle5 
-{
-/* Mercury*/
-margin-left: 14.5%;
-margin-top: 20%;
-position: static;
-height: 23px;
-  width:23px;
-  border-radius: 50px;
-  background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
-z-index: 1;
-box-shadow: black;
-}
-.circle6 
-{
-/*Mimas*/
-margin-left: 65%;
-margin-top: -17%;
-height: 10px;
-  width:10px;
-  border-radius: 50px;
-  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
-z-index: 1;
-}
-.circle7 
-{
-/*Moon*/
-margin-left: 20%;
-margin-top: -2%;
-position: relative;
-height: 17.35px;
-  width:17.35px;
-  border-radius: 50px;
-  background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
-z-index: 0;
-}
-.circle8 
-{
-/*Titan*/
-margin-left: 67%;
-margin-top: 45%;
-position: relative;
-height: 26px;
-  width:26px;
-  border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(238, 222, 153),rgb(8, 6, 0));
-  z-index: 3;
- box-shadow: 0px 0px 15px  rgb(224, 221, 169);
-}
-.circle9
-{
-/*Uranus*/
-margin-top: 54%;
-margin-left: 70%;
-
-height:250px;
-  width: 250px;
-  border-radius: 150px;
-  background-color: rgb((37, 189, 125)); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(114, 243, 232),rgba(0, 0, 0, 0.479), rgba(61, 178, 224, 0.788));
-z-index: -2;
-}
-.circle10 
-{
-/*Ariel*/
-margin-left: 76%;
-margin-top: -19%;
-position: relative;
-height: 7px;
-  width:7px;
-  border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(151, 108, 58), rgb(208, 221, 90));
-z-index: -1;
-}
-.circle11 
-{
-/*Titania*/
-margin-left: 74.3%;
-margin-top: 7%;
-position: relative;
-height: 9px;
-  width:9px;
-  border-radius: 70px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(221, 123, 12, 0.418), rgba(187, 140, 86, 0.842),rgb(0, 0, 0) );
-z-index: -1;
-}
-.circle12
-{
-/*Umbriel*/
-margin-left: 74.3%;
-margin-top: 7%;
-position: relative;
-height: 6px;
-  width:6px;
-  border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(231, 144, 14, 0.952),rgba(0, 0, 0, 0.781) );
-z-index: -1;
-}
-.circle13
-{
-/*Oberon*/
-margin-left: 93.3%;
-margin-top: -50%;
-position: relative;
-height: 7px;
-  width:7px;
-  border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
-z-index: -1;
-}
-.circle14
-{
-/*comet*/
-height: 1px;
-  width:150px;
-  border-radius: 500px 5px 1px 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(229, 231, 216, 0.952),rgba(0, 0, 0, 0.781) );
-z-index: 3;
-}
-.circle15 
-{
-/*Sun*/
-display: flex;
-position: relative;
-margin-left: -245em;
-margin-block-start: -390em; 
-position: sticky;
-height: 6645px;
-  width:6645px;
-  border-radius: 70000px;
-  background-color: rgb(148, 172, 41); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(137, 160, 37, 0.171), rgb(148, 172, 41));
-z-index: -1;
- box-shadow: 0px 250px 50px 1px rgb(148, 172, 41, 0.175);
-}
-.circle16 
-{ 
-/*Blackhole*/
-margin-left: -20%;
-margin-top: -50%;
-height:303.5px;
-  width:303.5px;
-  border-radius: 370px;
-  background-color: rgb(0, 0, 0); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(155, 51, 120, 0.384),rgba(41, 2, 28, 0.075),rgba(70, 11, 165, 0.486) );
-box-shadow: 0px 0px 2px 2px rgba(70, 11, 165, 0.315);
-z-index: -2;
-}
 
 .spacer{
 margin-top: 90px;
 }
 
-/* // ///// TourGuide  */
-.stripe 
-{
-background-color: #31475583;
-padding: 0%;
-height: 128px;
-width: 310px;
-margin-bottom: 10px;
-border-bottom: 1px rgba(255, 255, 255, 0.425) solid;
-border-radius: 10px 10px 0px 0px;
-}
-.control-arrow.control-next{
-text-decoration: none;
-}
-/*signup*/
-.namepass
-{
-display: flex;
-flex-direction: column;
-}
-/* login */
-.tourguide 
-{
-background-color: rgba(255, 255, 255, 0.05);
-border: solid 1px rgb(27, 55, 71);
-border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
-box-shadow: 4px 4px 1px 2px hsla(203, 27%, 26%, 0.548),
-inset 5px 5px 2px hsla(180, 22%, 20%, 0.596);
-display: flex;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 310px;
-height: 520px;
-margin-top: 50px;
-border-radius: 10px;
-font-weight: 300;
-align-content: center;
-justify-content: center;
-backdrop-filter: blur(5px);
-box-shadow: 0px 0px 0px 1px #ffffff79;
-border-color: rgb(134, 134, 136);
-box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
-inset 5px 5px 2px hsla(180, 15%, 18%, 0.973);
-z-index: 100;
-
-}
-.btnGroup
-{
-display:flex;
-flex-direction: column;
-justify-content: center;
-text-decoration: none;
-}
-
-.bulb{
-/*AiOutlineBulb*/
-animation: mymove 4s infinite;
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: rgb(51, 22, 22);
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-@keyframes mymove
-{
-  50% {box-shadow: 0px -20px 30px rgba(41, 172, 150, 0.877)}
-}
-.bulbOff {
-background-color: rgb(221, 21, 21);
-}
-
-.bulb :active{
-/*AiOutlineBulb*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: rgba(41, 172, 150, 0.877) dotted 1px;
-border-radius: 5px;
- box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
-
-}
-
-.intraNet{
-/*AiFillWechat*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-
-.intraNet :active{
-/*AiFillWechat*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-
-.speaker{
-/*AiFillAudio*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-
-.speaker :active{
-/*AiFillAudio*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-
-.camera{
-/*AiOutlineCamera*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-
-.camera :active{
-/*AiOutlineCamera*/
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 0px;
-top: 0px;
-background-color: black;
-height: 30px;
-width: 30px;
-border: white dotted 1px;
-border-radius: 5px;
-}
-
-.modelNum{
-font-family: "Copperplate", Times, serif;
-margin-left: 1em;
-color: #15f4ee;
-position:fixed;
-left:0px;
-bottom:0px;
-}
-.tourguide button
-{
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius:50px;
-margin-left: 5px;
-margin-top: 45px;
-width:50px;
-height: 50px;
-z-index: 11;
-background-image: linear-gradient(to right, #314755 0%, #56ce32  51%, #314755 100%)
-}
-.gmessage, .smessage 
-{
-height: 102px;
-width: 210px;
-
-font-family: "Monaco", Times, serif;
-display:inline-block;
-padding: 5px;
-border-radius: 10px;
-background-color: rgba(51, 54, 61, 0);
-border: 3px groove rgb(134, 134, 136);
-justify-content: flex-start;
-margin-top: 20px;
-color: #15f4f4;
-box-shadow: 5px 5px 2px hsla(180, 24%, 26%, 0.938),
-inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
-border-color: rgb(149, 150, 151);
-z-index: 11;
-}
-.signMess
-{
-height: 200px;
-width: 210px;
-font-family: "Monaco", Times, serif;
-display:inline-block;
-padding: 5px;
-border-radius: 10px;
-background-color: rgba(51, 54, 61, 0);
-border: 3px groove rgb(134, 134, 136);
-justify-content: flex-start;
-margin-top: 50px;
-color: #15f4f4;
-box-shadow: 5px 5px 2px hsla(180, 24%, 26%, 0.938),
-inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
-border-color: rgb(149, 150, 151);
-z-index: 11;
-}
-.outerS{
-display: inline-flex;
-flex-direction: row;
-flex-basis:auto;
-padding: 20px;
-}
-input {
-margin-top: 75px;
-margin-left: auto;
-margin-right: auto;
-margin: 10px;
-width: 200px;
-height: 25px;
-padding-left: 15px;
-background-color: #ace4f8bb;
-border-radius: 40px 4px;
-box-shadow: 0px 0px 0px 1px #ffffff79;
-border-color: rgb(236, 237, 241);
-box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
-inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
-}
-input:hover 
-{
- box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
-}
-.tourguide:hover 
-{
-border-color: blue;
-}
-
 /* /////  Outer Flexbox */
+
 .bigShell {
 display: inline-flex;
 justify-content: center;
 flex-direction: row;
 }
 
-/* 
-.btn {
-background-color: rgb(70, 62, 78);
-
-} */
 
 
-.like-btn {
-margin:  10px;
-  cursor: pointer;
-border-radius: 10px;
-border: 2px rgb(25, 200, 212);
-    background-color: #101652;
-  color: #bff3bf;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  width: 25%;
-  display: block;
-  margin: 10px auto 0px auto;
-  padding: 8px 18px 8px 18px;
-box-shadow: inset 0px 1px 3px  #388bf7;
-}
-
-.like-btn a:hover {
-background-color: #636dd4;
-}
-
-
-.flex1 {
-margin: 100px 50px 0px 0px;
-flex-wrap: nowrap;
-flex-direction: row;
-
-}
-
-.flex2 {
-flex: 2 25%;
-}
-
-.flex3 {
-display: flex;
-margin: auto 50px 0 auto;
-
-}
-
-.apodSee {
-display: flex;
-flex-direction: row;
-width: 75%;
-object-fit: contain;
-margin-top: -140px;
-margin-right: 1.2em;
-}
-
-.apodBox {
-display: flex;
-flex-direction: row;
-width: 700px;
-justify-content: space-between;
-margin-left: 15px;
-}
-
-.clear {
-height: 130px;
-width: 130px;
-opacity: 0;
-flex-wrap: nowrap;
-flex-direction: row;
-}
 
 
 /*///////Main Menu*/
@@ -721,8 +163,6 @@ padding-left: 12px;
 color:rgba(0, 0, 255, 0.493);
 }
 
-
-
 /* //// Menu Toggle */
 .main-bar {
 display: flex;
@@ -754,7 +194,7 @@ display: block;
 .main-menu-active {
 top: 100px;
 left: 0;
-  transition: 5ms;
+  transition: .5ms;
 }
 .main-menu {
 top: 0px;
@@ -765,7 +205,7 @@ display: flex;
 justify-content: center;
 position: fixed;
 left: -100%;
-transition: 15ms;
+transition: .2ms;
 }
 .main-menu-items {
   width: 100%;

@@ -3,8 +3,7 @@ const query = require("../config/mysql.conf");
 const { v4: uuidv4 } = require('uuid');
 
 
-async function signup(res, clienttag, password) {
- 
+async function signup(res, clienttag, password) { 
   let json = { data: null, success: false, error: null };
   try {
     const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
@@ -33,12 +32,12 @@ async function login( clienttag, password) {
   let json = { data: null, success: false, error: null };
   try {
     const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
-      clienttag,
+      clienttag
     ]);
     const client = clients[0] || { password: 1234 };
     const matches = await bcrypt.compare(password, client.password);
     if (matches) {
-       json = { ...json, data: { clienttag, uuid: client.uuid } };
+      json = { ...json, data: { clienttag, uuid: client.uuid } };
     } else {
       json.error = "Invalid clienttag / password";
     }
@@ -49,12 +48,12 @@ async function login( clienttag, password) {
   }
 }
 
-async function getByClientID(res, clientID) {
+async function getByClientID(uuid) {
   let json = { error: null, data: null };
   try {
     const clients = await query(
-      "SELECT id, clienttag, uuid FROM clients WHERE id = ?",
-      [clientID]
+      "SELECT id, clienttag, uuid FROM clients WHERE uuid = ?",
+      [uuid]
     );
     if (clients.length === 0) {
       json.error = "No client found";
@@ -64,7 +63,7 @@ async function getByClientID(res, clientID) {
   } catch (err) {
     json.error = "Something went wrong?";
   } finally {
-    return res.send(json);
+    return (json);
   }
 }
 

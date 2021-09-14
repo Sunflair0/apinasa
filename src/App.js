@@ -13,7 +13,8 @@ import {
   Switch,
 } from "react-router-dom";
 import "./App.css";
-
+import "./tourguide.css";
+import "./planet.css";
 import ProtectedRoute from "./shared/ProtectedRoute";
 import Album from "./components/Album";
 import ApodConsole from "./components/ApodConsole";
@@ -39,10 +40,6 @@ import VentConsole from "./components/VentConsole"
 import VentureTour from "./components/VentureTour"
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-
-
-
-
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {

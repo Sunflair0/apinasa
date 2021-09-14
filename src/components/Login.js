@@ -17,7 +17,7 @@ const Login = ({ setClient }) => {
         <div className="logintop">Welcome to SpaceTours</div>
         <div className="circle15" title="Sun/Sol"></div>
         <div className="therest">
-          <form className="loginform">
+          <form className="tourguide">
             <div className="stripe">
               <label htmlFor="clienttag"></label>
               <div className="bulb"><AiIcons.AiOutlineBulb />
