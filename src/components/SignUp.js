@@ -37,7 +37,11 @@ const Signup = () => {
 <div className="outerS"> <div className="signMess">
 <div className="carousel-wrapper">
 					<Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
-						<div style={{ marginTop: "70px" }}>
+									<div style={{ marginTop: "70px" }}>
+							My Sign Up stopped working. I will get it back on track soon. In the mean time, use  (( hobolife travel )) as a ((  username password ) combo to enter. Thanks!
+						</div>
+
+<div style={{ marginTop: "70px" }}>
 							This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
 						</div>
 						<div style={{ marginTop: "70px" }}>
