@@ -39,7 +39,6 @@ border-color: rgb(134, 134, 136);
 box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
 inset 5px 5px 2px hsla(180, 15%, 18%, 0.973);
 z-index: 100;
-
 }
 .btnGroup
 {
@@ -242,7 +241,7 @@ flex-direction: row;
 flex-basis:auto;
 padding: 20px;
 }
-input {
+.tourguide input {
 margin-top: 75px;
 margin-left: auto;
 margin-right: auto;
@@ -257,11 +256,50 @@ border-color: rgb(236, 237, 241);
 box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
 inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 }
-input:hover 
+.tourguide input:hover 
 {
  box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
 }
 .tourguide:hover 
 {
 border-color: blue;
+}
+.glassForm {
+background-color: hsla(0, 0%, 100%, 0.05);
+display: flex;
+position: relative;
+top: 300px;
+left: 50%;
+right: auto;
+transform: translate(-50%, -50%);
+width: 710px;
+height: 520px;
+margin-top: 50px;
+border-radius: 10px;
+font-weight: 300;
+align-content: center;
+justify-content: center;
+backdrop-filter: blur(5px);
+border-color: rgb(236, 237, 241);
+box-shadow: 0px 0px 0px 1px #ffffff79;
+box-shadow: 4px 4px 1px 2px hsla(180, 12%, 30%, 0.973),
+inset 5px 5px 2px hsla(180, 16%, 36%, 0.973);
+z-index: 100;
+}
+
+.glassForm input {
+margin-top: 75px;
+margin-left: auto;
+margin-right: auto;
+margin: 10px;
+width: 200px;
+height: 25px;
+padding-left: 15px;
+background-color: hsla(0, 0%, 0%, 0.5);
+border-radius: 5px;
+box-shadow: 0px 0px 0px 1px #ffffff79;
+border-bottom:rgb(236, 237, 241) ;
+box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
+inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
+
 }
