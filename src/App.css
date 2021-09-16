@@ -90,6 +90,7 @@ background-color: red;
   flex-flow: row wrap;
   border: solid 2px black;
   padding: 4px;
+  
 }
 
 .top-border {
@@ -114,14 +115,16 @@ width: 75%;
 object-fit: contain;
 margin-top: -140px;
 margin-right: 1.2em;
+flex-basis: calc(100% / 3 - 34px);
 }
 
 .apodBox {
 display: flex;
 flex-direction: row;
-width: 700px;
+width: 100%;
 justify-content: space-between;
 margin-left: 15px;
+flex-basis: calc(100% / 3 - 34px);
 }
 
 .clear {
@@ -130,6 +133,10 @@ width: 130px;
 opacity: 0;
 flex-wrap: nowrap;
 flex-direction: row;
+}
+
+.explanation {
+  color: antiquewhite;
 }
 
         /* picture boxes */
@@ -155,6 +162,7 @@ border-radius: 5px;
 }
 .stylebox {
 display: flex;
+flex-basis: calc(100% / 3 - 34px);
 flex-wrap: nowrap;
 margin: 15px;
     border: solid 1px rgb(216, 86, 39);
@@ -179,7 +187,7 @@ word-wrap: break-word;
 .apodPhoto {
   display: flex;
   flex-direction: column;
- 
+  flex-basis: calc(100% / 3 - 34px);
   display: block;
   margin: auto;
   max-height: 100%;

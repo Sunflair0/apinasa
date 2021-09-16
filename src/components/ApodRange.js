@@ -43,41 +43,42 @@ const ApodRange = ({
             <h3>Want to see a range of days for Picture of the Day? Choose a date before June 16th,
                 1995. If you like it, add it to your Album.</h3>
 
-            <DatePicker
-                required
-                selected={date}
-                onChange={(date) => setStart_Date(date)}
-                selectsStart
-                startDate={start_date}
-                endDate={end_date}
-                showYearDropdown
-                scrollableMonthYearDropdown
-                showMonthDropdown
-                useShortMonthInDropdown
-                fixedHeight
-                dateFormat="yyyy-MM-dd"
-                minDate={new Date(1995, 6, 16)}
-                maxDate={new Date()}
-                placeholderText="Select a start date"
-            />
+            <div style={{ textShadow: "-1px -1px rgb(255, 255, 255)" }}>
+                <DatePicker style={{ textShadow: "-1px -1px white" }}
+                    required
+                    selected={date}
+                    onChange={(date) => setStart_Date(date)}
+                    selectsStart
+                    startDate={start_date}
+                    endDate={end_date}
+                    showYearDropdown
+                    scrollableMonthYearDropdown
+                    showMonthDropdown
+                    useShortMonthInDropdown
+                    fixedHeight
+                    dateFormat="yyyy-MM-dd"
+                    minDate={new Date(1995, 6, 16)}
+                    maxDate={new Date()}
+                />
 
-            <DatePicker
-                required
-                selected={end_date}
-                onChange={(date) => setEnd_Date(date)}
-                selectsEnd
-                startDate={start_date}
-                endDate={end_date}
-                dateFormat="yyyy-MM-dd"
-                minDate={new Date(1995, 6, 16)}
-                maxDate={new Date()}
-                placeholderText="Select an end date"
-                showYearDropdown
-                scrollableMonthYearDropdown
-                showMonthDropdown
-                useShortMonthInDropdown
-                fixedHeight
-            />
+                <DatePicker style={{ textShadow: "-1px -1px white" }}
+                    required
+                    selected={end_date}
+                    onChange={(date) => setEnd_Date(date)}
+                    selectsEnd
+                    startDate={start_date}
+                    endDate={end_date}
+                    dateFormat="yyyy-MM-dd"
+                    minDate={new Date(1995, 6, 16)}
+                    maxDate={new Date()}
+                    showYearDropdown
+                    scrollableMonthYearDropdown
+                    showMonthDropdown
+                    useShortMonthInDropdown
+                    fixedHeight
+                /></div>
+
+                
             <div className="flex3">
                 <div className="apodPhoto">
                     {rangeData.map(item => (

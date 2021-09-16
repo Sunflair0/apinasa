@@ -38,7 +38,7 @@ const ApodGimme5 = ({
       <div className="flex3">
         <div className="apodPhoto">
           {gimme5Data.map(item => (
-            <div className=" infobox stylebox">
+            <div className="infobox stylebox">
 
               {item.media_type === "image" ? (
                 <img
@@ -87,8 +87,8 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   deleteEntry,
-  addEntry
-};
+  addEntry,
 
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApodGimme5);

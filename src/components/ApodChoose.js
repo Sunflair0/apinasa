@@ -32,6 +32,7 @@ const ApodChoose = ({
       setChooseData(data);
     }
   }, [date]);
+  console.log(date)
 
   if (!chooseData) return <div />;
 
@@ -40,8 +41,10 @@ const ApodChoose = ({
       <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
         1995. If you like it, add it to your Album.</h3>
 
-      <DatePicker
+<div style={{textShadow: "-1px -1px rgb(255, 255, 255)"}}>
+      <DatePicker 
         required
+        dateFormat="yyyy-MM-dd"
         selected={date}
         onChange={handleChange}
         showYearDropdown
@@ -49,12 +52,11 @@ const ApodChoose = ({
         showMonthDropdown
         useShortMonthInDropdown
         fixedHeight
-        dateFormat="yyyy-MM-dd"
+        
         minDate={new Date(1995, 6, 16)}
         maxDate={new Date()}
-        placeholderText="Select a date"
-      />
-
+        />
+</div>
       <div className="flex3">
 
         <div className="apodBox">

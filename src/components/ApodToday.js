@@ -9,7 +9,6 @@ const ApodToday = ({
   deleteEntry,
   album
 
-
 }) => {
   const [apodData, setApodData] = useState(null);
   const likedIds = useMemo(() => {
@@ -38,7 +37,7 @@ const ApodToday = ({
       <div className="flex3">
 
         <div className="apodBox">
-          <div className=" infobox stylebox" >
+          <div className="infobox stylebox">
             {apodData.media_type === "image" ? (
               <img
                 src={apodData.url}
