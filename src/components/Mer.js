@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Mer() {
 	return (
-		<div className="banner">
+		<div className="">
 MER page for Mars
 			
 		</div>

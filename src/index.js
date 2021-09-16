@@ -10,9 +10,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 ReactDOM.render(
 <Provider store={store}>
-
     <App />
-  </Provider>,
+</Provider>,
   document.getElementById("root")
 );
 

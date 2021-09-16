@@ -6,14 +6,15 @@ import {
 } from "./redux/actions";
 import {
   BrowserRouter as Router,
-  NavLink,
   Link,
+  NavLink,
   Redirect,
   Route,
   Switch,
 } from "react-router-dom";
 import "./App.css";
-
+import "./tourguide.css";
+import "./planet.css";
 import ProtectedRoute from "./shared/ProtectedRoute";
 import Album from "./components/Album";
 import ApodConsole from "./components/ApodConsole";
@@ -32,7 +33,6 @@ import Mer from "./components/Mer";
 import Search from "./components/Search";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
-import Tour from "./components/Navbar"
 import TourGuide from "./components/TourGuide"
 import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
@@ -40,10 +40,6 @@ import VentConsole from "./components/VentConsole"
 import VentureTour from "./components/VentureTour"
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-
-
-
-
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
@@ -64,24 +60,22 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <NavLink activeClassName="active" className="presenter" to="/signup"
           ></NavLink>
           {clienttag && (
-            <>
-              <div className=" ">
-         
-                  {/*///// Main Menu Toggle */}
+          <>
+            
+             {/*///// Main Menu Toggle */}
 
+                <h1 >SpaceTours <Link to='#' className="menu-bars">
+                  <FaIcons.FaBars onClick={showSidebar} />
+                </Link></h1>
 
-                  <h1 >SpaceTours <Link to='#' className="menu-bars">
-                    <FaIcons.FaBars onClick={showSidebar} />
-                  </Link></h1>
+                <div className="menu1">
 
-<div className="menu1 ">
-<div className=""></div>
                   <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
 
 
-                    <ul className="">
+                    <ul className="flex2">
 
-                      <div className="main-menu-items   navbar-toggle ">
+                      <div className="main-menu-items navbar-toggle ">
 
                         <Link to="#" className="menu-barsx">
                           <AiIcons.AiOutlineClose onClick={showSidebar} />
@@ -96,32 +90,16 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         HOME{" "}
                       </NavLink></li>
 
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"
-                      > Tour Info{" "}
+                      <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"> 
+                        Tour Info{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className=" menu1items" to="/form">
-                        Form{" "}
+                        Order{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
-                        CONSOLE {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodtoday">
-                        today {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodchoose">
-                        choose {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodgimme5">
-                        gimme 5 {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodrange">
-                        range {" "}
+                        APOD {" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -132,10 +110,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         Earth {" "}
                       </NavLink></li>
 
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/search">
-                        Search{" "}
-                      </NavLink></li>
-
                       <li><NavLink activeClassName="active" className="menu1items" to="/album">
                         Album{" "} </NavLink></li>
 
@@ -143,20 +117,12 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         Contact Us{" "}
                       </NavLink></li>
 
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/tour">
-                        Tour{" "}
-                      </NavLink></li>
-
                       <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
-                        TourIns{" "}
+                        Extras{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/ipn">
                         IPN{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/tourguide">
-                        TourGuide{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour">
@@ -187,10 +153,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                     </ul>
                   </nav>
                 </div>
-              </div>
-            </>
+                         </>
           )}
-        </nav></div>
+        </nav>
 
       <main>
         <Switch>
@@ -222,8 +187,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
-
-
           <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
 
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
@@ -235,8 +198,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
           <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
-
-          <ProtectedRoute path="/tour" reqUser={true} component={Tour} />
 
           <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
 
@@ -256,6 +217,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           </Route>
         </Switch>
       </main>
+</div>
     </Router>
   );
 }

@@ -3,10 +3,10 @@ import React from 'react'
 export default function Earth() {
 	return (
 <>
-		<div className="banner">
+		<div className="">
 			Earth Page
 		</div>
-<p className="content">hello</p>
+<p className="">hello</p>
 </>
 	)
 }

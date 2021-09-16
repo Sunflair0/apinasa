@@ -6,20 +6,24 @@ import { deleteEntry } from "../redux/actions";
 const Album = ({ deleteEntry, album, clienttag }) => {
   return (
     <>
-<div style={{backgroundColor: "rgb(70,184,167", height: "100vh"}}>
-      <h2 className="content">Album for {clienttag}</h2>
-      <div className="flex-wrap">
-        {album.map((pic) => (
-          <Console
-            id={pic.id}
-            isFav={true}
-            deleteEntry={deleteEntry}
-            title={pic.title}
-            url={pic.url}
-            key={pic.id}
-          />
-        ))}
-      </div></div>
+      <div style={{ backgroundColor: "rgb(70,184,167", height: "100vh" }}>
+        <h2 className="flex1">Album for {clienttag}</h2>
+        <div className="">
+          {album.map((pic) => (
+            <Console
+              id={pic.id}
+              isLiked={true}
+              deleteEntry={deleteEntry}
+              date={pic.date}
+              copyright={pic.copyright}
+              title={pic.title}
+              url={pic.url}
+              description={pic.description}
+              key={pic.id}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
@@ -32,7 +36,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  deleteEntry,
+  deleteEntry
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Album);

@@ -12,7 +12,7 @@ function TourInfo() {
 
  
     <>
-<div className=" content banner">Tour Info Page</div>
+<div className=" content ">Tour Info Page</div>
       <div className="displayvent">
         <VentConsole2 />
         <div className="venture-menu">

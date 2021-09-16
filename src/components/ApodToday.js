@@ -1,11 +1,22 @@
-import React, { useEffect, useState, } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState, useMemo } from 'react';
+import { connect } from "react-redux";
+import { addEntry, deleteEntry } from '../redux/actions';
+import Console from './Console';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
+const ApodToday = ({
+  addEntry,
+  deleteEntry,
+  album,
+  isLiked,
+  id,
+  pic
 
-export default function ApodToday() {
+}) => {
   const [apodData, setApodData] = useState(null);
-
+  const likedIds = useMemo(() => {
+    return album.map((val) => val.id);
+  }, [album]);
 
   useEffect(() => {
     fetchApod();
@@ -25,96 +36,58 @@ export default function ApodToday() {
   return (
     <>
       <div className="">
-        <NavLink
-          to="/apodtoday"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/today.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
+        <div className="apodBox ">
+          <div className=" infobox stylebox" >
+            {apodData.media_type === "image" ? (
+              <img
+                src={apodData.url}
+                alt={apodData.title}
+                id={apodData.id}
+                key={apodData.id}
+              />
+            ) : (
+              <iframe
+                title="space-video"
+                src={apodData.url}
+                frameBorder="0"
+                gesture="media"
+                allow="encrypted-media"
+                allowFullScreen
+              />
+            )}
+            <div className="">
 
-        <NavLink
-          to="/apodchoose"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/choose.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
+              <Console
+                deleteEntry={deleteEntry}
+                addEntry={addEntry}
+                isLiked={likedIds.includes(apodData.id)}
+                key={apodData.id}
+                id={apodData.id} />
 
-        <NavLink
-          to="/apodgimme5"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/gimme.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            marginRight: "5em",
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
-        <NavLink
-          to="/apodrange"
-          style={{
-            height: "120px",
-            width: "100px",
-            backgroundImage: "url(./assets/range.png)",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            transition: ".3s ease all",
-          }}
-        >
-        </NavLink>
-
+              <h1>{apodData.title}</h1>
+              <p className="date">{apodData.date}</p>
+              <p className="urla">{apodData.url} </p>
+              <p className="copyright">{apodData.copyright} (copyright)</p>
+              <p className="explanation">{apodData.explanation}</p>
+            </div>
+          </div>
+        </div>
       </div>
-     
-      <div className="content stylebox">
-        <div className="apodPhoto">
-          {apodData.media_type === "image" ? (
-            <img
-              src={apodData.url}
-              alt={apodData.title}
-
-            />
-          ) : (
-            <iframe
-              title="space-video"
-              src={apodData.url}
-              frameBorder="0"
-              gesture="media"
-              allow="encrypted-media"
-              allowFullScreen
-            />
-          )}
-          <div className="infobox">
-            <h1>{apodData.title}</h1>
-            <p className="date">{apodData.date}</p>
-            <p className="urla">{apodData.url} </p>
-            <p className="copyright">{apodData.copyright} (copyright)</p>
-            <div className="exBox"></div>
-            <p className="explanation">{apodData.explanation}</p>
-
-          </div></div></div>
     </>
   );
 }
 
+function mapStateToProps(state) {
+  return {
+    album: state.album,
 
+  };
+}
+
+const mapDispatchToProps = {
+  deleteEntry,
+  addEntry
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApodToday);

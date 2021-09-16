@@ -1,21 +1,22 @@
 import React from "react";
 
-function Console({ id, title, url, isLiked, addEntry, deleteEntry, addapod, deleteapod }) {
+
+function Console({ id, title, url, date, copyright, explanation, isLiked, addEntry, deleteEntry }) {
   return (
-    <div className="presenter">
-      <h4 className="center">{title}</h4>
-      <img className="pic" alt="astronomy pic" src={url} />
+    <div className="">
+      <h4 className="presenter">{title}</h4>
+     
       {isLiked && (
-        <button className="presenter" onClick={() => deleteEntry({id, deleteapod })}>
-          Delete Entry
+        <button className="like-btn" onClick={() => deleteEntry(id)}>
+          Delete from Album
         </button>
       )}
       {!isLiked && (
         <button
-          className="presenter"
-          onClick={() => addEntry({ id, title, url, addapod })}
+          button className="like-btn"
+          onClick={() => addEntry({ id, title, url, date, copyright, explanation })}
         >
-          Add Entry
+          Add to Album
         </button>
       )}
     </div>
