@@ -3,22 +3,28 @@ import { connect } from "react-redux";
 
 
 const Form = ({
-clienttag
+	clienttag
 }) => {
 
-
+	const handleSubmit = (e) => { e.preventDefault() }
 
 	return (
-		<div className="glassForm">
-			Order Form
-		</div>
+		<>
+			<div className="flex3">
+				<div className="glassForm">
+					Order Form
+					<form onSubmit={handleSubmit}>
+					</form>
+				</div>
+			</div>
+		</>
 	)
 }
 
 function mapStateToProps(state) {
-  return {
-       clienttag: state.client.clienttag
-  };
+	return {
+		clienttag: state.client.clienttag
+	};
 }
 
 const mapDispatchToProps = {
