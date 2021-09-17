@@ -111,20 +111,20 @@ background-position: 0px 0px;
 .apodSee {
 display: flex;
 flex-direction: row;
+flex-basis: calc(100% / 3 - 34px);
 width: 75%;
 object-fit: contain;
 margin-top: -140px;
 margin-right: 1.2em;
-flex-basis: calc(100% / 3 - 34px);
 }
 
 .apodBox {
 display: flex;
 flex-direction: row;
+flex-basis: calc(100% / 3 - 34px);
 width: 100%;
 justify-content: space-between;
 margin-left: 15px;
-flex-basis: calc(100% / 3 - 34px);
 }
 
 .clear {
@@ -142,19 +142,22 @@ flex-direction: row;
   width: 10px;
 }
 /* Track */
-::-webkit-scrollbar-track {
+.stylebox::-webkit-scrollbar-track {
 background: #000000;
-border-radius: 10px;
+border-radius: 0px 0px 5px 5px;
 box-shadow: inset 0 0 7px #ceda8d;
 }
 /* Handle */
-::-webkit-scrollbar-thumb {
-background: #b19559;
-border-radius: 5px;
+.stylebox::-webkit-scrollbar-thumb {
+background: linear-gradient( 10deg, rgb(185, 106, 15) 10%, rgb(148, 140, 32) 100%);
+box-shadow: inset 0 0 5px 1px #929009;
+border-radius:  5px;
 }
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b67f08;
+.stylebox::-webkit-scrollbar-thumb:hover {
+background: linear-gradient( 10deg, rgb(238, 198, 152) 30%, rgb(150, 146, 98) 100%);
+box-shadow: inset 0 0 5px 1px #929009;
+
 }
 .stylebox {
 display: flex;
@@ -168,6 +171,8 @@ margin: 15px;
     min-width: 650px;
   max-height: 60vh;
 word-wrap: break-word;
+
+overflow: hidden;
     }
 
 .infobox {
@@ -241,11 +246,15 @@ border: 2px rgb(25, 200, 212);
   background-color: #101652;
   color: #bff3bf;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  width: 25%;
+  width: 146px;
   display: block;
   margin: 10px auto 0px auto;
   padding: 8px 18px 8px 18px;
 box-shadow: inset 0px 1px 3px  #388bf7;
+}
+
+.like-btn :hover{
+background-color: #000000;
 }
 
       /* header buttons */

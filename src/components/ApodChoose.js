@@ -13,7 +13,7 @@ const ApodChoose = ({
 
 }) => {
   const [chooseData, setChooseData] = useState(new Date());
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date(2018, 2, 5));
   const handleChange = date => setDate(date);
   const likedIds = useMemo(() => {
     return album.map((val) => val.id);
@@ -40,20 +40,19 @@ const ApodChoose = ({
       <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
         1995. If you like it, add it to your Album.</h3>
 
-      <div style={{ textShadow: "-1px -1px transparent" }}>
-        <DatePicker
-          required
-          dateFormat="yyyy-MM-dd"
-          selected={date}
-          onChange={handleChange}
-          showYearDropdown
-          scrollableMonthYearDropdown
-          showMonthDropdown
-          useShortMonthInDropdown
-          fixedHeight
-
-          minDate={new Date(1995, 6, 16)}
-          maxDate={new Date()}
+<div style={{textShadow: "-1px -1px transparent"}}>
+      <DatePicker 
+        required
+        dateFormat="yyyy-MM-dd"
+        selected={date}
+        onChange={handleChange}
+        showYearDropdown
+        scrollableMonthYearDropdown
+        showMonthDropdown
+        useShortMonthInDropdown
+        fixedHeight        
+        minDate={new Date(1995, 6, 16)}
+        maxDate={new Date()}
         />
       </div>
       <div className="flex3">
