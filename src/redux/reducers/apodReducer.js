@@ -6,9 +6,9 @@ const initialApodState = [];
 export default function apodReducer(state = initialApodState, action) {
   switch (action.type) {
 case ADD_APOD:
-	return[...state,action.pic];
+	return[...state,action.item];
 case DELETE_APOD:
-	return state.filter((pic) => pic.id !==action.id)
+	return state.filter((item) => item.id !==action.id)
 case CLEAR_APOD:
 	return [];
 default:

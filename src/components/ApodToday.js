@@ -7,10 +7,7 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
 const ApodToday = ({
   addEntry,
   deleteEntry,
-  album,
-  isLiked,
-  id,
-  pic
+  album
 
 }) => {
   const [apodData, setApodData] = useState(null);
@@ -33,20 +30,32 @@ const ApodToday = ({
 
   if (!apodData) return <div />;
 
+  function bigPic() {
+function handleClick(e) {
+  e.preventDefault();
+  }
+  return (
+      
+<a href="#" onClick={handleClick}>boo</a>
+)
+  }
+
   return (
     <>
-      <div className="">
-        <div className="apodBox ">
-          <div className=" infobox stylebox" >
+      <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like.</h3>
+
+      <div className="flex3">
+        <div className="apodBox">
+          <div className="infobox stylebox">
             {apodData.media_type === "image" ? (
-              <img
+              <img onClick={() =>alert("boo")}
                 src={apodData.url}
                 alt={apodData.title}
                 id={apodData.id}
                 key={apodData.id}
               />
             ) : (
-              <iframe
+              <iframe onClick={() =>alert("boo")}
                 title="space-video"
                 src={apodData.url}
                 frameBorder="0"
@@ -55,24 +64,22 @@ const ApodToday = ({
                 allowFullScreen
               />
             )}
-            <div className="">
+            <Console
+              deleteEntry={deleteEntry}
+              addEntry={addEntry}
+              isLiked={likedIds.includes(apodData.id)}
+              key={apodData.id}
+              id={apodData.id} />
 
-              <Console
-                deleteEntry={deleteEntry}
-                addEntry={addEntry}
-                isLiked={likedIds.includes(apodData.id)}
-                key={apodData.id}
-                id={apodData.id} />
-
-              <h1>{apodData.title}</h1>
-              <p className="date">{apodData.date}</p>
-              <p className="urla">{apodData.url} </p>
-              <p className="copyright">{apodData.copyright} (copyright)</p>
-              <p className="explanation">{apodData.explanation}</p>
-            </div>
+            <h1>{apodData.title}</h1>
+            <p className="date">{apodData.date}</p>
+            <p className="urla">{apodData.url} </p>
+            <p className="copyright">{apodData.copyright} (copyright)</p>
+            <p className="explanation">{apodData.explanation}</p>
           </div>
         </div>
       </div>
+      <a id="apod.hdurl" href="#!" target="_blank"></a>
     </>
   );
 }
