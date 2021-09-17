@@ -7,9 +7,9 @@ export default function albumReducer(
  {
   switch (action.type) {
     case ADD_ENTRY:
-      return [...state, action.pic];
+      return [...state, action.item];
     case DELETE_ENTRY:
-      return state.filter((pic) => pic.id !== action.id);
+      return state.filter((item) => item.id !== action.id);
     case CLEAR_ALBUM:
       return [];
     default:

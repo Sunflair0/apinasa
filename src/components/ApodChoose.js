@@ -1,12 +1,24 @@
-import React, { useEffect, useState, } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
+import { connect } from "react-redux";
+import { addEntry, deleteEntry } from '../redux/actions';
+import Console from './Console';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
-export default function ApodChoose() {
+const ApodChoose = ({
+  addEntry,
+  deleteEntry,
+  album
+
+
+}) => {
   const [chooseData, setChooseData] = useState(new Date());;
   const [date, setDate] = useState(new Date());
   const handleChange = date => setDate(date);
+  const likedIds = useMemo(() => {
+    return album.map((val) => val.id);
+  }, [album]);
 
   useEffect(() => {
     fetchChoose();
@@ -20,16 +32,19 @@ export default function ApodChoose() {
       setChooseData(data);
     }
   }, [date]);
+  console.log(date)
 
   if (!chooseData) return <div />;
 
   return (
     <>
-      <p className="flex3">Want to see a different Picture of the Day? Choose a date before June 16th,
-        1995. If you like it, add it to your Album.</p>
+      <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
+        1995. If you like it, add it to your Album.</h3>
 
-      <DatePicker
+<div style={{textShadow: "-1px -1px rgb(255, 255, 255)"}}>
+      <DatePicker 
         required
+        dateFormat="yyyy-MM-dd"
         selected={date}
         onChange={handleChange}
         showYearDropdown
@@ -37,30 +52,39 @@ export default function ApodChoose() {
         showMonthDropdown
         useShortMonthInDropdown
         fixedHeight
-        dateFormat="yyyy-MM-dd"
+        
         minDate={new Date(1995, 6, 16)}
         maxDate={new Date()}
-        placeholderText="Select a date"
-      />
+        />
+</div>
+      <div className="flex3">
 
-      <div className="stylebox">
-        <div className="apodPhoto">
-          {chooseData.media_type === "image" ? (
-            <img
-              src={chooseData.url}
-              alt={chooseData.title}
-            />
-          ) : (
-            <iframe
-              title="space-video"
-              src={chooseData.url}
-              frameBorder="0"
-              gesture="media"
-              allow="encrypted-media"
-              allowFullScreen
-            />
-          )}
-          <div>
+        <div className="apodBox">
+          <div className=" infobox stylebox" >
+            {chooseData.media_type === "image" ? (
+              <img
+                src={chooseData.url}
+                alt={chooseData.title}
+                id={chooseData.id}
+                key={chooseData.id}
+              />
+            ) : (
+              <iframe
+                title="space-video"
+                src={chooseData.url}
+                frameBorder="0"
+                gesture="media"
+                allow="encrypted-media"
+                allowFullScreen
+              />
+            )}
+            <Console
+              deleteEntry={deleteEntry}
+              addEntry={addEntry}
+              isLiked={likedIds.includes(chooseData.id)}
+              key={chooseData.id}
+              id={chooseData.id} />
+
             <h1>{chooseData.title}</h1>
             <p className="date">{chooseData.date}</p>
             <p className="url">{chooseData.url} </p>
@@ -72,3 +96,18 @@ export default function ApodChoose() {
     </>
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    album: state.album
+
+  };
+}
+
+const mapDispatchToProps = {
+  deleteEntry,
+  addEntry
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApodChoose);
