@@ -162,8 +162,8 @@ width: 30px;
 border: white dotted 1px;
 border-radius: 5px;
 }
-
-.camera :active{
+.camera :active
+{
 /*AiOutlineCamera*/
 display: flex;
 justify-content: center;
@@ -177,14 +177,15 @@ width: 30px;
 border: white dotted 1px;
 border-radius: 5px;
 }
-
-.modelNum{
+.modelNum
+{
 font-family: "Copperplate", Times, serif;
 margin-left: 1em;
-color: #15f4ee;
+color:rgb(112, 109, 109);
 position:fixed;
 left:0px;
 bottom:0px;
+font-size: 12px;
 }
 .tourguide button
 {
@@ -219,7 +220,7 @@ z-index: 11;
 }
 .signMess
 {
-height: 200px;
+height: 260px;
 width: 210px;
 font-family: "Monaco", Times, serif;
 display:inline-block;
@@ -235,13 +236,20 @@ inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
 border-color: rgb(149, 150, 151);
 z-index: 11;
 }
-.outerS{
+.sign 
+{
+text-decoration: none;
+margin-left: -3.45em
+}
+.outerS
+{
 display: inline-flex;
 flex-direction: row;
 flex-basis:auto;
 padding: 20px;
 }
-.tourguide input {
+.tourguide input 
+{
 margin-top: 75px;
 margin-left: auto;
 margin-right: auto;
@@ -286,8 +294,8 @@ box-shadow: 4px 4px 1px 2px hsla(180, 12%, 30%, 0.973),
 inset 5px 5px 2px hsla(180, 16%, 36%, 0.973);
 z-index: 100;
 }
-
-.glassForm input {
+.glassForm input 
+{
 margin-top: 75px;
 margin-left: auto;
 margin-right: auto;

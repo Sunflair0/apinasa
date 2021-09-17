@@ -30,23 +30,32 @@ const ApodToday = ({
 
   if (!apodData) return <div />;
 
+  function bigPic() {
+function handleClick(e) {
+  e.preventDefault();
+  }
+  return (
+      
+<a href="#" onClick={handleClick}>boo</a>
+)
+  }
+
   return (
     <>
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like.</h3>
 
       <div className="flex3">
-
         <div className="apodBox">
           <div className="infobox stylebox">
             {apodData.media_type === "image" ? (
-              <img
+              <img onClick={() =>alert("boo")}
                 src={apodData.url}
                 alt={apodData.title}
                 id={apodData.id}
                 key={apodData.id}
               />
             ) : (
-              <iframe
+              <iframe onClick={() =>alert("boo")}
                 title="space-video"
                 src={apodData.url}
                 frameBorder="0"
@@ -70,6 +79,7 @@ const ApodToday = ({
           </div>
         </div>
       </div>
+      <a id="apod.hdurl" href="#!" target="_blank"></a>
     </>
   );
 }

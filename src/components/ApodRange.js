@@ -15,8 +15,8 @@ const ApodRange = ({
 }) => {
     const [rangeData, setRangeData] = useState(null);
     const [date, setDate] = useState(new Date());
-    const [start_date, setStart_Date] = useState();
-    const [end_date, setEnd_Date] = useState();
+    const [start_date, setStart_Date] = useState(new Date(-3));
+    const [end_date, setEnd_Date] = useState(new Date());
     const likedIds = useMemo(() => {
         return album.map((val) => val.id);
     }, [album]);
@@ -44,7 +44,7 @@ const ApodRange = ({
                 1995. If you like it, add it to your Album.</h3>
 
             <div style={{ textShadow: "-1px -1px rgb(255, 255, 255)" }}>
-                <DatePicker style={{ textShadow: "-1px -1px white" }}
+                <DatePicker style={{ textShadow: "-1px -1px transparent" }}
                     required
                     selected={date}
                     onChange={(date) => setStart_Date(date)}
@@ -61,7 +61,7 @@ const ApodRange = ({
                     maxDate={new Date()}
                 />
 
-                <DatePicker style={{ textShadow: "-1px -1px white" }}
+                <DatePicker style={{ textShadow: "-1px -1px transparent" }}
                     required
                     selected={end_date}
                     onChange={(date) => setEnd_Date(date)}

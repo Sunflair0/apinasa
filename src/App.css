@@ -111,20 +111,20 @@ background-position: 0px 0px;
 .apodSee {
 display: flex;
 flex-direction: row;
+flex-basis: calc(100% / 3 - 34px);
 width: 75%;
 object-fit: contain;
 margin-top: -140px;
 margin-right: 1.2em;
-flex-basis: calc(100% / 3 - 34px);
 }
 
 .apodBox {
 display: flex;
 flex-direction: row;
+flex-basis: calc(100% / 3 - 34px);
 width: 100%;
 justify-content: space-between;
 margin-left: 15px;
-flex-basis: calc(100% / 3 - 34px);
 }
 
 .clear {
@@ -137,6 +137,7 @@ flex-direction: row;
 
 .explanation {
   color: antiquewhite;
+  font-weight: 500;
 }
 
         /* picture boxes */
@@ -175,6 +176,8 @@ margin: 15px;
     min-width: 650px;
   max-height: 60vh;
 word-wrap: break-word;
+
+overflow: hidden;
     }
 
 .infobox {
@@ -248,7 +251,7 @@ border: 2px rgb(25, 200, 212);
   background-color: #101652;
   color: #bff3bf;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  width: 25%;
+  width: 146px;
   display: block;
   margin: 10px auto 0px auto;
   padding: 8px 18px 8px 18px;
