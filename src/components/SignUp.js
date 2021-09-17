@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { setClient } from "../redux/actions";
 import useFetch from "../hooks/useFetch";
+import { connect } from "react-redux";
 import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 
-const Signup = () => {
+const Signup = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
   const { callAPI: signupCall } = useFetch("POST");
@@ -37,30 +38,24 @@ const Signup = () => {
               />
             </div>
             <div className="outerS">
-               <div className="signMess">
-              <div className="carousel-wrapper">
-                <Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
-                  <div style={{ marginTop: "70px" }}>
-                   <div> My Sign Up stopped working. I will get it back on track soon. In the mean time, use </div>
-                    <div style={{color:"darkorange"}}> hobolife travel </div> 
-                    <div> as a</div>
-                    <div style={{color:"darkorange"}}> username password </div> <p>combo to enter. Thanks!</p> 
-                  </div>
-                  <div style={{ marginTop: "70px" }}>
-                    This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
-                  </div>
-                  <div style={{ marginTop: "70px" }}>
-                    This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.
-                  </div>
-                  <div style={{ marginTop: "70px" }}>
-                    Flip the TourGuide to select which Venture you want next.
-                  </div>
-                  <div style={{ marginTop: "70px" }}>
-                    Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.
-                  </div>
-                </Carousel>
+              <div className="signMess">
+                <div className="carousel-wrapper">
+                  <Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
+                    <div style={{ marginTop: "70px" }}>
+                      This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
+                    </div>
+                    <div style={{ marginTop: "70px" }}>
+                      This model lights up. It is solar charged but can and will power down with extensive use. Touch the gray action stripe at the top to activate the light.
+                    </div>
+                    <div style={{ marginTop: "70px" }}>
+                      Flip the TourGuide to select which Venture you want next.
+                    </div>
+                    <div style={{ marginTop: "70px" }}>
+                      Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.
+                    </div>
+                  </Carousel>
+                </div>
               </div>
-            </div>
               <button
                 className="btnGroup"
                 onClick={async (e) => {
@@ -77,15 +72,18 @@ const Signup = () => {
                       password,
                     });
                     if (res.error) {
-                      return setError(res.error);
+                      return setError(res.error)
+
+                    } else {
+                      setClient(clienttag);
                     }
                   }
                 }}
-              >Signup
+              >GO
               </button>
               <div className="btnGroup">
-              <Link  className="sign" to="/login"><button  type="button">Login</button></Link>
-            </div></div>
+              </div>
+            </div>
             <div className="modelNum">TourGuide 2.1M31-7 LU</div>
           </div>
         </form>
@@ -99,9 +97,14 @@ const Signup = () => {
         <div className="circle12" title="Umbriel"></div>
         <div className="circle13" title="Oberon"></div>
       </div>
-      <div>{error}</div> 
+      <div>{error}</div>
     </>
-  ); 
+  );
 };
 
-export default Signup;
+function mapStateToProps(state) {
+  return {};
+};
+const mapDispatchToProps = { setClient };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

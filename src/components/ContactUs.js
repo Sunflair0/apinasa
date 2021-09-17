@@ -16,6 +16,7 @@ const ContactUs = ({
           <div>Contact Us
             <form onSubmit={handleSubmit}>
 
+
               <textarea type="text" required value={text} onChange={(e) => setText(e.target.value)} />
               <input type="email" placeholder="Email" name="email" ></input>
               <select name="selectList" id="selectList">
