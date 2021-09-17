@@ -39,7 +39,6 @@ const ApodGimme5 = ({
         <div className="apodPhoto">
           {gimme5Data.map(item => (
             <div className="infobox stylebox">
-
               {item.media_type === "image" ? (
                 <img
                   src={item.url}

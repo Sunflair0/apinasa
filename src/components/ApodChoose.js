@@ -11,9 +11,8 @@ const ApodChoose = ({
   deleteEntry,
   album
 
-
 }) => {
-  const [chooseData, setChooseData] = useState(new Date());;
+  const [chooseData, setChooseData] = useState(new Date());
   const [date, setDate] = useState(new Date());
   const handleChange = date => setDate(date);
   const likedIds = useMemo(() => {
@@ -41,25 +40,24 @@ const ApodChoose = ({
       <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
         1995. If you like it, add it to your Album.</h3>
 
-<div style={{textShadow: "-1px -1px rgb(255, 255, 255)"}}>
-      <DatePicker 
-        required
-        dateFormat="yyyy-MM-dd"
-        selected={date}
-        onChange={handleChange}
-        showYearDropdown
-        scrollableMonthYearDropdown
-        showMonthDropdown
-        useShortMonthInDropdown
-        fixedHeight
-        
-        minDate={new Date(1995, 6, 16)}
-        maxDate={new Date()}
-        />
-</div>
-      <div className="flex3">
+      <div style={{ textShadow: "-1px -1px transparent" }}>
+        <DatePicker
+          required
+          dateFormat="yyyy-MM-dd"
+          selected={date}
+          onChange={handleChange}
+          showYearDropdown
+          scrollableMonthYearDropdown
+          showMonthDropdown
+          useShortMonthInDropdown
+          fixedHeight
 
-        <div className="apodBox">
+          minDate={new Date(1995, 6, 16)}
+          maxDate={new Date()}
+        />
+      </div>
+      <div className="flex3">
+        <div className="apodPhoto">
           <div className=" infobox stylebox" >
             {chooseData.media_type === "image" ? (
               <img
