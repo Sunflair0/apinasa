@@ -16,7 +16,7 @@ const ApodRange = ({
     const [rangeData, setRangeData] = useState(null);
     const [date, setDate] = useState(new Date());
     const [start_date, setStart_Date] = useState( () => {
-        const newDate = new Date();
+    const newDate = new Date();
         return new Date(newDate.setDate(newDate.getDate() - 3));
     });
 
@@ -52,8 +52,7 @@ console.log(data)
 
     return (
         <>
-            <h3>Want to see a range of days for Picture of the Day? Choose a date before June 16th,
-                1995. If you like it, add it to your Album.</h3>
+            <h3>Want to see a range of days for Picture of the Day? We start you off with three, but feel free to choose your own range and add to your album at will.</h3>
 <div>Choose a start date</div>
             <div style={{ textShadow: "-1px -1px rgb(255, 255, 255)" }}>
 
@@ -99,7 +98,7 @@ console.log(data)
                         <div className=" infobox stylebox">
 
                             {item.media_type === "image" ? (
-                                <img
+                               <img onClick={() =>window.open(item.url,"apodblank")}
                                     src={item.url}
                                     alt={item.title}
                                     id={item.id}

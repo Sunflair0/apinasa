@@ -11,15 +11,10 @@ const ApodChoose = ({
   deleteEntry,
   album
 
-
 }) => {
   const [chooseData, setChooseData] = useState(new Date());
   const [date, setDate] = useState(new Date(2018, 2, 5));
-  const handleChange = date => {
-    let myDate=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-    setDate(date)
-
-  };
+  const handleChange = date => {setDate(date)};
   const likedIds = useMemo(() => {
     return album.map((val) => val.id);
   }, [album]);
@@ -37,8 +32,7 @@ const ApodChoose = ({
       setChooseData(data);
     }
   }, [date]);
-  console.log(date)
-
+ 
   if (!chooseData) return <div />;
 
   return (
@@ -65,7 +59,7 @@ const ApodChoose = ({
         <div className="apodPhoto">
           <div className=" infobox stylebox" >
             {chooseData.media_type === "image" ? (
-              <img
+             <img onClick={() =>window.open(chooseData.url,"apodblank")}
                 src={chooseData.url}
                 alt={chooseData.title}
                 id={chooseData.id}

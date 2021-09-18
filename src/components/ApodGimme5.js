@@ -41,7 +41,7 @@ const ApodGimme5 = ({
             <div className="infobox stylebox">
 
               {item.media_type === "image" ? (
-                <img
+             <img onClick={() =>window.open(item.url,"apodblank")}
                   src={item.url}
                   alt={item.title}
                   id={item.id}

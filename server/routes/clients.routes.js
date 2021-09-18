@@ -48,6 +48,7 @@ router.post("/login", (req, res) => {
     if (err) {
       return res.send({ success: false, error: err, data: null });
     }
+console.log("authenticated",info)
     return res
       .cookie("jwt", info.token, { secure: true, httpOnly: true })
       .send({ success: true, error: null, data: client });
