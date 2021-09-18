@@ -96,7 +96,6 @@ console.log(data)
                 <div className="apodPhoto">
                     {rangeData.map(item => (
                         <div className=" infobox stylebox">
-
                             {item.media_type === "image" ? (
                                <img onClick={() =>window.open(item.url,"apodblank")}
                                     src={item.url}

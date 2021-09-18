@@ -35,7 +35,7 @@ const ApodToday = ({
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like. Click on the picture to open in another tab in your browser.</h3>
 
       <div className="flex3">
-        <div className="apodBox">
+        <div className="apodPhoto">
           <div className="infobox stylebox">
             {apodData.media_type === "image" ? (
               <img onClick={() =>window.open(apodData.url,"apodblank")}
@@ -45,7 +45,7 @@ const ApodToday = ({
                 key={apodData.id}
               />
             ) : (
-              <iframe onClick={() =>alert("boo")}
+              <iframe 
                 title="space-video"
                 src={apodData.url}
                 frameBorder="0"
@@ -69,7 +69,6 @@ const ApodToday = ({
           </div>
         </div>
       </div>
-      <a id="apod.hdurl" href="#!" target="_blank"></a>
     </>
   );
 }
