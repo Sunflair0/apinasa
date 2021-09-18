@@ -15,7 +15,11 @@ const ApodChoose = ({
 }) => {
   const [chooseData, setChooseData] = useState(new Date());
   const [date, setDate] = useState(new Date(2018, 2, 5));
-  const handleChange = date => setDate(date);
+  const handleChange = date => {
+    let myDate=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+    setDate(date)
+
+  };
   const likedIds = useMemo(() => {
     return album.map((val) => val.id);
   }, [album]);
@@ -24,9 +28,10 @@ const ApodChoose = ({
     fetchChoose();
 
     async function fetchChoose() {
+ let myDate=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${myDate}`
       );
       const data = await res.json();
       setChooseData(data);
@@ -57,7 +62,7 @@ const ApodChoose = ({
         />
 </div>
       <div className="flex3">
-        <div className="apodBox">
+        <div className="apodPhoto">
           <div className=" infobox stylebox" >
             {chooseData.media_type === "image" ? (
               <img
