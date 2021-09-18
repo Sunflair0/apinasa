@@ -273,7 +273,7 @@ inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 border-color: blue;
 }
 .glassForm {
-background-color: hsla(0, 0%, 100%, 0.05);
+background-color: hsla(226, 66%, 11%, 0.5);
 display: flex;
 position: relative;
 top: 300px;
@@ -314,19 +314,26 @@ inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 /* ////Contact Us */
 
 .textForm {
-margin-top: 100px;
+margin-top: -250px;
 margin-left: 270px;
-background-color: hsla(226, 66%, 11%, 0.5);
+background-color: hsla(240, 43%, 1%, 0.5);
 border-radius: 10px;
 color: antiquewhite;
 padding: 15px;
 font: 17px;
-border: 3px solid rgb(53, 65, 73);
-box-shadow: 3px 1px 5px 1px #645757e0,
-2px 2px 2px 2px  hsla(180, 52%, 46%, 0.973),
-inset 4px 5px 4px hsl(180, 5%, 18%);
+border: 1px solid rgb(53, 65, 73);
+box-shadow: 1px 1px 2px 1px #645757e0,
+1px 1px 1px 1px  hsla(180, 52%, 46%, 0.973),
+inset 1px 3px 2px 1px hsl(180, 5%, 18%);
 }
-
+.textForm::active{
+border-radius: 10px;
+border: blue dotted 2px;
+}
+.textForm::hover{
+border-radius: 10px;
+border: blue dotted 2px;
+}
 .textEmail{
 margin-bottom: 300px;
 }

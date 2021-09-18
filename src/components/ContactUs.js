@@ -11,9 +11,9 @@ const ContactUs = ({
 
   return (
     <>
-      <div className="">
+      <div className="flex3">Contact Us
         <div className="glassForm">
-          <div>Contact Us
+          <div>
             <form onSubmit={handleSubmit}>
 
 <input type="submit" ></input>
@@ -28,11 +28,9 @@ const ContactUs = ({
                 <option value="Other" label="Other">Other</option>
               </select>
 
-              {/* <input type="text" placeholder="Tell Us" ref="register({ required: true, minLength: 3; maxLength: 15;})"></input>
- <p> Subject must be between 3 and 15 characters</p>  */}
-
-              
-              <textarea className="textForm" type="text" required value={text} placeholder="TELL US" onChange={(e) => setText(e.target.value)}
+                       
+              <textarea className="textForm" type="text" required value={text} placeholder="TELL US in less than 500 characters" onChange={(e) => setText(e.target.value)}
+maxLength="500"
                 rows={17}
                 cols={50} />
             </form>
