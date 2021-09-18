@@ -12,6 +12,8 @@ flex-direction: column;
 
 .shell {
 min-width: 550vh;
+ width: 450%;
+ height: 205vh;
 
 }
 

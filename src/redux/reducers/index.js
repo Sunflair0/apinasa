@@ -6,7 +6,7 @@ import clientReducer from "./clientReducer";
 import contactusReducer from "./contactusReducer";
 import albumReducer from "./albumReducer";
 import formReducer from "./formReducer";
-import searchReducer from "./searchReducer";
+
 
 
 const rootReducer = combineReducers({
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   contactus: contactusReducer,
   album: albumReducer,
   form: formReducer,
-  search: searchReducer,
+ 
 
   
 });

@@ -1,18 +1,22 @@
 body {
-color: antiquewhite;
+
 background-color:black;
 background-image:
-radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 20px),
-radial-gradient(white, rgba(255,255,255,.05) 2px, transparent 15px),
+
 radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 10px),
 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
 radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.04) 1px, transparent 7px);
-background-size: 550px 550px, 450px 450px, 350px 350px, 250px 250px, 500px 400px, 250px 120px;
+background-size:  350px 750px, 450px 250px, 500px 400px, 250px 120px;
 background-position: 0px 0px, 10px 10px, 40px 60px, 130px 270px, 100px 130px, 150px 100px;
 font-family: "Times New Roman", Times, serif;
 text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 color:#ceda8d;
+}
+
+@keyframes twink{
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
 }
 
 /* width */

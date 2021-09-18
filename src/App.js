@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
-  clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
+  clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
   clearBigCube, clearBuyVent,
 } from "./redux/actions";
 import {
@@ -40,7 +40,7 @@ import VentureTour from "./components/VentureTour"
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
-function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
+function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
@@ -48,6 +48,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
   return (
     <Router>
+<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
+<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+
       <div className="bigShell">
         <nav >
           {" "}
@@ -60,7 +63,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           ></NavLink>
           {clienttag && (
           <>
-            
              {/*///// Main Menu Toggle */}
 
                 <h1 >SpaceTours <Link to='#' className="menu-bars">
@@ -143,7 +145,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                           clearContactUs();
                           clearAlbum();
                           clearForm();
-                          clearSearch();
                         }}
                       >
                         Logout
@@ -158,11 +159,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
       <main>
         <Switch>
-
-
-
-
-
 
           <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
@@ -214,7 +210,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           </Route>
         </Switch>
       </main>
-</div>
+</div></div></div>
     </Router>
   );
 }
@@ -226,7 +222,6 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   clearForm,
   clearApod,
-  clearSearch,
   clearAlbum,
   clearClient,
   clearContactUs,
