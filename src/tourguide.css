@@ -273,25 +273,25 @@ inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 border-color: blue;
 }
 .glassForm {
-background-color: hsla(0, 0%, 100%, 0.05);
+background-color: hsla(226, 66%, 11%, 0.5);
 display: flex;
 position: relative;
 top: 300px;
 left: 50%;
 right: auto;
 transform: translate(-50%, -50%);
-width: 710px;
-height: 520px;
-margin-top: 50px;
+width: 720px;
+height: 500px;
+margin-top: 200px;
 border-radius: 10px;
 font-weight: 300;
 align-content: center;
 justify-content: center;
 backdrop-filter: blur(5px);
-border-color: rgb(236, 237, 241);
-box-shadow: 0px 0px 0px 1px #ffffff79;
-box-shadow: 4px 4px 1px 2px hsla(180, 12%, 30%, 0.973),
-inset 5px 5px 2px hsla(180, 16%, 36%, 0.973);
+border: 3px solid rgb(53, 65, 73);
+box-shadow: 3px 3px 5px 1px #645757e0,
+4px 4px 2px hsla(180, 52%, 46%, 0.973),
+inset 4px 5px 4px hsl(180, 5%, 18%);
 z-index: 100;
 }
 .glassForm input 
@@ -309,5 +309,34 @@ box-shadow: 0px 0px 0px 1px #ffffff79;
 border-bottom:rgb(236, 237, 241) ;
 box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
 inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
+}
 
+/* ////Contact Us */
+
+.textForm {
+margin-top: -250px;
+margin-left: 270px;
+background-color: hsla(240, 43%, 1%, 0.5);
+border-radius: 10px;
+color: antiquewhite;
+padding: 15px;
+font: 17px;
+border: 1px solid rgb(53, 65, 73);
+box-shadow: 1px 1px 2px 1px #645757e0,
+1px 1px 1px 1px  hsla(180, 52%, 46%, 0.973),
+inset 1px 3px 2px 1px hsl(180, 5%, 18%);
+}
+.textForm::active{
+border-radius: 10px;
+border: blue dotted 2px;
+}
+.textForm::hover{
+border-radius: 10px;
+border: blue dotted 2px;
+}
+.textEmail{
+margin-bottom: 300px;
+}
+.textDrop{
+margin-bottom: 400px;
 }

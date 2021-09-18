@@ -11,15 +11,14 @@ const ContactUs = ({
 
   return (
     <>
-      <div className="flex3">
+      <div className="flex3">Contact Us
         <div className="glassForm">
-          <div>Contact Us
+          <div>
             <form onSubmit={handleSubmit}>
 
-
-              <textarea type="text" required value={text} onChange={(e) => setText(e.target.value)} />
-              <input type="email" placeholder="Email" name="email" ></input>
-              <select name="selectList" id="selectList">
+<input type="submit" ></input>
+              <input className="textEmail" type="email" placeholder="Email" name="email" ></input>
+              <select className="textDrop" name="selectList" id="selectList">
                 <option value="Newsletter" label="Newsletter">Newsletter</option>
                 <option value="Insurance Claim" label="Insurance Claim">Insurance Claim</option>
                 <option value="IntraPlanet Net" label="IntraPlanet Net">IntraPlanet Net</option>
@@ -29,10 +28,11 @@ const ContactUs = ({
                 <option value="Other" label="Other">Other</option>
               </select>
 
-              {/* <input type="text" placeholder="Tell Us" ref="register({ required: true, minLength: 3; maxLength: 15;})"></input>
- <p> Subject must be between 3 and 15 characters</p>  */}
-
-              <input type="submit"></input>
+                       
+              <textarea className="textForm" type="text" required value={text} placeholder="TELL US in less than 500 characters" onChange={(e) => setText(e.target.value)}
+maxLength="500"
+                rows={17}
+                cols={50} />
             </form>
           </div>
         </div>
