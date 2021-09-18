@@ -30,7 +30,6 @@ import Form from "./components/Form";
 import Ipn from "./components/Ipn"
 import Login from "./components/Login";
 import Mer from "./components/Mer";
-import Search from "./components/Search";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
 import TourGuide from "./components/TourGuide"
@@ -192,8 +191,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           <ProtectedRoute path="/login" reqUser={false} component={Login} />
 
           <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
-
-          <ProtectedRoute path="/search" reqUser={true} component={Search} />
 
           <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
