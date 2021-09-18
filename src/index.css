@@ -82,6 +82,7 @@ width: 350px;
 background-color: hsl(230, 90%, 8%);
 border-color: #2c4cee;
 box-shadow: 0px 0px 30px #2c4cee;
+z-index: 10;
 }
 
 .spacer{
