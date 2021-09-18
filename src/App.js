@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
-  clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
+  clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
   clearBigCube, clearBuyVent,
 } from "./redux/actions";
 import {
@@ -30,7 +30,6 @@ import Form from "./components/Form";
 import Ipn from "./components/Ipn"
 import Login from "./components/Login";
 import Mer from "./components/Mer";
-import Search from "./components/Search";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
 import TourGuide from "./components/TourGuide"
@@ -41,7 +40,7 @@ import VentureTour from "./components/VentureTour"
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
-function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
+function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
@@ -144,7 +143,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                           clearContactUs();
                           clearAlbum();
                           clearForm();
-                          clearSearch();
                         }}
                       >
                         Logout
@@ -193,8 +191,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
 
-          <ProtectedRoute path="/search" reqUser={true} component={Search} />
-
           <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
           <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
@@ -229,7 +225,6 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   clearForm,
   clearApod,
-  clearSearch,
   clearAlbum,
   clearClient,
   clearContactUs,
