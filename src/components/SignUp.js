@@ -13,6 +13,10 @@ const Signup = ({ setClient }) => {
 
   return (
     <>
+
+<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
+<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+
       <h2 className="logintop">Signup</h2>
       <div className="spacer">
         <form className="tourguide">
@@ -98,6 +102,8 @@ const Signup = ({ setClient }) => {
         <div className="circle13" title="Oberon"></div>
       </div>
       <div>{error}</div>
+</div>
+</div>
     </>
   );
 };

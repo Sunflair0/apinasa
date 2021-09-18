@@ -10,7 +10,11 @@ const Login = ({ setClient }) => {
 
   return (
     <>
-      <div className="shell">
+<div className="shell">
+<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
+<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+
+      
         <div className="logintop">Welcome to SpaceTours</div>
         <div className="circle15" title="Sun/Sol"></div>
         <div className="therest">
@@ -75,6 +79,8 @@ const Login = ({ setClient }) => {
         <div className="circle13" title="Oberon"></div>
         <div className="circle14" title="comet"></div>
       </div>
+</div>
+</div>
     </>
   );
 };

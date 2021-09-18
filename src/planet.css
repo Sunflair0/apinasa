@@ -1,6 +1,7 @@
 /* Login & Sign in Page */
 
 /* /////Celestial Bodies */
+
 .circle 
 { 
 /*Earth*/
@@ -204,7 +205,7 @@ height: 6645px;
   border-radius: 70000px;
   background-color: rgb(148, 172, 41); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgba(137, 160, 37, 0.171), rgb(148, 172, 41));
-z-index: -1;
+z-index: 1;
  box-shadow: 0px 250px 50px 1px rgb(148, 172, 41, 0.175);
 animation-name:sol;
 animation-duration: 10s;

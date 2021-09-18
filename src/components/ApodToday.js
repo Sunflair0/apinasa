@@ -30,16 +30,6 @@ const ApodToday = ({
 
   if (!apodData) return <div />;
 
-  function bigPic() {
-function handleClick(e) {
-  e.preventDefault();
-  }
-  return (
-      
-<a href="#" onClick={handleClick}>boo</a>
-)
-  }
-
   return (
     <>
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like.</h3>
