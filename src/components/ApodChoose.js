@@ -13,7 +13,7 @@ const ApodChoose = ({
 
 }) => {
   const [chooseData, setChooseData] = useState(new Date());
-  const [date, setDate] = useState(new Date(2018, 2, 5));
+  const [date, setDate] = useState(new Date(2007,2, 25));
   const handleChange = date => {setDate(date)};
   const likedIds = useMemo(() => {
     return album.map((val) => val.id);
@@ -53,6 +53,17 @@ const ApodChoose = ({
         fixedHeight        
         minDate={new Date(1995, 6, 16)}
         maxDate={new Date()}
+popperModifiers={{
+                        offset: {
+                          enabled: true,
+                          offset: "0px, 0px"
+                        },
+preventOverflow: {
+                          enabled: true,
+                          escapeWithReference: false,
+                          boundariesElement: "scrollParent"
+                        }
+                      }}
         />
 </div>
       <div className="flex3">

@@ -17,7 +17,7 @@ const ApodRange = ({
     const [date, setDate] = useState(new Date());
     const [start_date, setStart_Date] = useState( () => {
     const newDate = new Date();
-        return new Date(newDate.setDate(newDate.getDate() - 3));
+        return new Date(newDate.setDate(newDate.getDate() - 2));
     });
 
     const [end_date, setEnd_Date] = useState(new Date());
