@@ -12,8 +12,8 @@ flex-direction: column;
 
 .shell {
 min-width: 550vh;
- width: 450%;
- height: 205vh;
+ width: 350%;
+ /* height: 105vh; */
 
 }
 
@@ -266,12 +266,20 @@ background-color: #000000;
 
       /* header buttons */
 
-/* .red {
+.red {
 background-color: rgb(150, 131, 131);
-height: 150px;
-width: 150px;
 transition: 3.3s ease all;
-} */
+outline: 2px solid white;
+
+
+} 
+.red::hover{
+background-color: rgb(128, 6, 6);
+outline: 2ps solid red;
+outline-offset: 11px;
+transition: outlineOffset 250ms ease;
+}
+
 
 /* Insurance */
 

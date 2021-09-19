@@ -3,11 +3,8 @@ const passport = require("passport");
 const auth = require("../middleware/auth.middleware");
 const router = express.Router();
 const {
-  signup,
-  login,
-  getAllClients,
-  getByClientID,
-  getByClienttag,
+  signup
+  
 } = require("../models/clients.model");
 
 router.get("/validate", auth, (req, res) => {

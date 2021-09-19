@@ -6,8 +6,9 @@ import { deleteEntry } from "../redux/actions";
 const Album = ({ deleteEntry, album, clienttag }) => {
   return (
     <>
-      <div style={{ backgroundColor: "rgb(70,184,167", height: "100vh", width: "150vh" }}>
-        <h2 className="flex1">Album for {clienttag}</h2>
+      <h2 className="flex1" >Album for {clienttag} </h2>
+      <div style={{ backgroundImage: "linear-gradient(to right, #46b8a7 , rgb(66,170,177))", height: "100vh", width: "150vh", opacity: ".45" }}>
+
         <div className="">
           {album.map((item) => (
             <Console
@@ -18,7 +19,7 @@ const Album = ({ deleteEntry, album, clienttag }) => {
               title={item.title}
               date={item.date}
               url={item.url}
-              copyright={item.copyright}   
+              copyright={item.copyright}
               description={item.description}
             />
           ))}
