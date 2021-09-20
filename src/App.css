@@ -1,5 +1,8 @@
 
-
+.mask {
+background-color: #131314;
+opacity: .65;
+}
 
 /*signup*/
 .namepass
@@ -11,9 +14,9 @@ flex-direction: column;
 
 
 .shell {
-min-width: 550vh;
- width: 450%;
- height: 205vh;
+
+ width: 400vh;
+ height:300vh;
 
 }
 

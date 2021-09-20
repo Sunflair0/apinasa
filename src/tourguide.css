@@ -18,16 +18,13 @@ text-decoration: none;
 {
 background-color: rgba(255, 255, 255, 0.05);
 border: solid 1px rgb(27, 55, 71);
-border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
-box-shadow: 4px 4px 1px 2px hsla(203, 27%, 26%, 0.548),
-inset 5px 5px 2px hsla(180, 22%, 20%, 0.596);
 display: flex;
 position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 width: 310px;
-height: 520px;
+height: 500px;
 margin-top: 50px;
 border-radius: 10px;
 font-weight: 300;
@@ -37,7 +34,7 @@ backdrop-filter: blur(5px);
 box-shadow: 0px 0px 0px 1px #ffffff79;
 border-color: rgb(134, 134, 136);
 box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
-inset 5px 5px 2px hsla(180, 15%, 18%, 0.973);
+inset 5px 5px 2px hsla(180, 15%, 13%, 0.973);
 z-index: 100;
 }
 .btnGroup
@@ -185,7 +182,7 @@ color:rgb(112, 109, 109);
 position:fixed;
 left:0px;
 bottom:0px;
-font-size: 12px;
+font-size: 13px;
 }
 .tourguide button
 {
@@ -193,12 +190,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 border-radius:50px;
-margin-left: 5px;
+margin-left: 10px;
 margin-top: 45px;
 width:50px;
 height: 50px;
 z-index: 11;
-background-image: linear-gradient(to right, #314755 0%, #56ce32  51%, #314755 100%)
+background-image: linear-gradient(to right, #314755 0%, #56ce32  49%, #314755 100%)
 }
 .gmessage, .smessage 
 {
@@ -254,12 +251,11 @@ margin-top: 75px;
 margin-left: auto;
 margin-right: auto;
 margin: 10px;
-width: 200px;
+width: 220px;
 height: 25px;
 padding-left: 15px;
 background-color: #ace4f8bb;
 border-radius: 40px 4px;
-box-shadow: 0px 0px 0px 1px #ffffff79;
 border-color: rgb(236, 237, 241);
 box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
 inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);

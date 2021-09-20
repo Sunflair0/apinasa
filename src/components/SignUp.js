@@ -13,8 +13,7 @@ const Signup = ({ setClient }) => {
 
   return (
     <>
-
-<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
+<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100", height: "100%"}}>
 <div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
 
       <h2 className="logintop">Signup</h2>
@@ -93,14 +92,8 @@ const Signup = ({ setClient }) => {
         </form>
       </div>
       <div className="circle16" title="Blackhole"></div>
-      <div className="circle3 mars2" title="Mars"></div>
-      <div className="uGroup2">
-        <div className="circle9" title="Uranus"></div>
-        <div className="circle10" title="Ariel"></div>
-        <div className="circle11" title="Titania"></div>
-        <div className="circle12" title="Umbriel"></div>
-        <div className="circle13" title="Oberon"></div>
-      </div>
+      <div className="comet" title="comet"></div>
+   
       <div>{error}</div>
 </div>
 </div>
