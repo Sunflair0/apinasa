@@ -156,11 +156,23 @@ height: 26px;
   z-index: 3;
  box-shadow: 0px 0px 15px  rgb(224, 221, 169);
 }
+.uGroup2
+{
+position: relative;
+bottom: 0%;
+display: flex;
+margin-top: -500px;
+margin-left: -250px;
+align-items: center;
+justify-self: center;
+height: 500px;
+width: 500px;
+}
 .circle9
 {
 /*Uranus*/
-margin-top: 54%;
-margin-left: 70%;
+position: absolute;
+
 
 height:250px;
   width: 250px;
@@ -172,22 +184,23 @@ z-index: -2;
 .circle10 
 {
 /*Ariel*/
-margin-left: 76%;
-margin-top: -19%;
-position: relative;
+
+position: absolute;
 height: 7px;
   width:7px;
   border-radius: 50px;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(151, 108, 58), rgb(208, 221, 90));
 z-index: -1;
+animation: 20s ariel linear infinite ease;
 }
+
+
+
 .circle11 
 {
 /*Titania*/
-margin-left: 74.3%;
-margin-top: 7%;
-position: relative;
+position: absolute;
 height: 9px;
   width:9px;
   border-radius: 70px;
@@ -198,9 +211,8 @@ z-index: -1;
 .circle12
 {
 /*Umbriel*/
-margin-left: 74.3%;
-margin-top: 7%;
-position: relative;
+
+position: absolute;
 height: 6px;
   width:6px;
   border-radius: 50px;
@@ -211,25 +223,64 @@ z-index: -1;
 .circle13
 {
 /*Oberon*/
-margin-left: 93.3%;
-margin-top: -50%;
-position: relative;
+
+position: absolute;
 height: 7px;
   width:7px;
   border-radius: 50px;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: -1;
+animation:20s ariel linear infinite ;
 }
-.circle14
+.comet
 {
 /*comet*/
-height: 1px;
-  width:150px;
-  border-radius: 500px 5px 1px 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(229, 231, 216, 0.952),rgba(0, 0, 0, 0.781) );
+margin-left: 750px;
+height: 50px;
+width:0px;
+color: rgb(210, 210, 247);
+box-shadow: 0px 0px 1px 0.1px ;
+border-radius: 500px 0px 0px 0px;
 z-index: 3;
+transform-origin: 0 0;
+animation: 10s comet forwards linear 10 ;
+}
+@keyframes comet {
+      0% {
+      opacity: 1;
+      transform: scale(.6)rotate(45deg);
+    }
+      1% {
+      opacity: 1;
+      transform: scale(3) rotate(45deg);
+    }
+      2% {
+      opacity: .8;
+      transform: scale(4) rotate(45deg);
+    }
+      3% {  
+      background-color: rgb(241, 190, 190);
+      opacity: .6;
+      transform: scale(5) rotate(45deg);
+    }
+      4% {
+      background-color: rgb(0, 0, 0);
+      opacity: .5;
+      transform: scale(6) rotate(45deg);
+    }
+      5% {   
+      opacity: .3;
+      transform: scale(7) rotate(45deg);
+    }
+     10% {
+      opacity: .0;
+      transform: scale(7) rotate(45deg);
+    }
+    100% {  
+      opacity: .0;
+      transform: scale(7) rotate(45deg);
+    }
 }
 .circle15 
 {
@@ -269,8 +320,7 @@ background-color: rgb(148, 172, 41); }
 .circle16 
 { 
 /*Blackhole*/
-margin-left: -20%;
-margin-top: -50%;
+
 height:303.5px;
   width:303.5px;
   border-radius: 370px;
@@ -282,12 +332,7 @@ z-index: -2;
 
 /* spacing for planets */
 
-.uGroup2
-{
-position: static;
-margin-top: -500px;
-margin-left: -250px;
-}
+
 .therest 
 {
 flex: content;

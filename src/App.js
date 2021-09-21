@@ -48,10 +48,13 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
   return (
     <Router>
+
 <div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
 <div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+<div  className="">
 
-      <div className="bigShell">
+      <div className="bigShell ">
+
         <nav >
           {" "}
           {!clienttag && (
@@ -65,7 +68,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
           <>
              {/*///// Main Menu Toggle */}
 
-                <h1 >SpaceTours <Link to='#' className="menu-bars">
+                <div className="topMask"><h1 >SpaceTours <Link to='#' className="menu-bars">
                   <FaIcons.FaBars onClick={showSidebar} />
                 </Link></h1>
 
@@ -152,7 +155,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                     </ul>
                   </nav>
-                </div>
+                </div></div>
                          </>
           )}
         </nav>
@@ -210,7 +213,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
           </Route>
         </Switch>
       </main>
-</div></div></div>
+</div></div></div></div>
     </Router>
   );
 }
