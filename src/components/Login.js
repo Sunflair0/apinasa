@@ -12,11 +12,12 @@ const Login = ({ setClient }) => {
     <>
 <div className="shell">
 <div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
-<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 1000s infinite"}}>
 
       
         <div className="logintop">Welcome to SpaceTours</div>
         <div className="circle15" title="Sun/Sol"></div>
+
         <div className="therest">
           <form className="tourguide">
             <div className="stripe">
@@ -60,7 +61,7 @@ const Login = ({ setClient }) => {
 
         </div>
         <div className="circle5" title="Mercury"></div>
-
+<div className="comet"></div>
         <div className="earthmoon">
           <div className="circle" title="Earth"></div>
           <div className="circle7" title="Moon/Luna"></div></div>

@@ -11,8 +11,6 @@ display: flex;
 flex-direction: column;
 }
 
-
-
 .shell {
 
  width: 400vh;
@@ -264,9 +262,15 @@ box-shadow: inset 0px 1px 3px  #388bf7;
 }
 
 .like-btn :hover{
-background-color: #000000;
+background-color: #04529b;
+
 }
 
+.like-btn::before:hover{
+width: 100px;
+height: 20px;
+background-color: #0ff;
+}
       /* header buttons */
 
 .red {

@@ -18,11 +18,12 @@ color:#ceda8d;
 {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
+
 }
 .topMask {
-height: 55px;
+margin-top: -30px;
 width: 100%;
-background-color: #080444;
+
 
 }
 /* width */
