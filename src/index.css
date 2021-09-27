@@ -1,23 +1,25 @@
 body {
-
-background-color:black;
-
 background-image:
-radial-gradient(rgb(160, 29, 29), rgba(241, 10, 10, 0.411) 2px, transparent 5px),
+url("./asset2/stars.png"),
+url("./asset2/twink.png"),
+radial-gradient(rgb(160, 29, 29), rgba(241, 10, 10, 0.411) 2px, transparent 2px),
 radial-gradient(rgb(226, 9, 9), rgba(255,255,255,.05) 1px, transparent 10px),
 radial-gradient(rgb(144, 123, 221), rgba(55, 12, 209, 0.3) 2px, transparent 4px),
 radial-gradient(rgb(37, 5, 216), rgba(33, 7, 126, 0.2) 2px, transparent 10px),
 radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.04) 1px, transparent 7px);
-background-size: 280vh 120vh, 350px 450px, 40vh 10vh, 500px 400px, 250px 120px;
-background-position: -50px 10px, 10px 70px, 10px -200px, 40px 60px, 130px 270px, 100px 130px, 150px 100px;
+
+background-size: 550px 750px, 850px 650px, 40vh 50vh, 850px 600px, 250px 120px;
+background-position: 1em 100em, 10px 70px, 100px 250px, 130px 20px,  150px 100px;
 font-family: "Times New Roman", Times, serif;
 text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000000;
 color:#ceda8d;
+
+background-color:rgb(0, 0, 0);
 }
 @keyframes twink
 {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    from {transform: translatex(0px) translateY(0px);}
+    to {transform: translatex(-500000px) translateY(-5000px) ;}
 
 }
 .topMask {

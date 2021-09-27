@@ -44,17 +44,16 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
-  
+  const [sidebar2, setSidebar2] = useState(true)
+  const showSidebar2 = () => setSidebar2(!sidebar2)
   return (
     <Router>
 
-<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
-<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}/>
 
+      <div className="bigShell">
 
-      <div className="bigShell ">
-
-        <nav >
+        <nav>
           {" "}
           {!clienttag && (
             <NavLink activeClassName="active" className="menuitem" to="/login">
@@ -212,7 +211,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
           </Route>
         </Switch>
       </main>
-</div></div></div>
+</div>
     </Router>
   );
 }

@@ -18,7 +18,7 @@ const Signup = ({ setClient }) => {
 
       <h2 className="logintop">Signup</h2>
       <div className="spacer">
-        <form className="tourguide">
+        <form className="tourguide" style={{marginTop: "300px"}}>
           <div className="stripeGroup"></div>
           <div className="stripe">
             <label id="space" htmlFor="clienttag"></label>
@@ -74,6 +74,7 @@ const Signup = ({ setClient }) => {
                       clienttag,
                       password,
                     });
+                    // console.log("res",res)
                     if (res.error) {
                       return setError(res.error)
 
