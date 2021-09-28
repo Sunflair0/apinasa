@@ -3,7 +3,7 @@ import React from 'react'
 export default function TourIns() {
 	return (
 		<>
-<div className="">
+<div className="flex3 contactBg">
 			<div className="boxFade">
 				<div className="fadeBox">
 					<div className="iris"></div>

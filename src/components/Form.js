@@ -10,7 +10,7 @@ const Form = ({
 
 	return (
 		<>
-			<div className="flex3">
+			<div className="flex3 contactBg3">
 				<div className="glassForm">
 					Order Form
 					<form onSubmit={handleSubmit}>
