@@ -15,7 +15,13 @@ const Signup = ({ setClient }) => {
     <>
 <div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100", height: "100%"}}>
 <div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
-
+<svg>
+<filter id="wavy">
+<feTurbulence x="0" y="0" baseFrequency=".009" numOctaves="5" seed="2"></feTurbulence>
+<animate attributeName="baseFrequency" dur="60s" values=".02;0.005;.02" repeatCount="indefinite"></animate>
+<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+</filter>
+</svg>
       <h2 className="logintop">Signup</h2>
       <div className="spacer">
         <form className="tourguide">

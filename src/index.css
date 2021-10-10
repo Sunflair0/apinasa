@@ -14,6 +14,7 @@ font-family: "Times New Roman", Times, serif;
 text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000000;
 color:#ceda8d;
 }
+
 @keyframes twink
 {
     from {background-position:0 0;}
