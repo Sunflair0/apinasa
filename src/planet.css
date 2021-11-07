@@ -64,19 +64,36 @@ height:24px;
   background-image: radial-gradient(circle, rgb(148, 230, 148),rgb(0, 0, 0));
 z-index: 2;
 }
+
+.merc5 {
+height: 100px;
+width: 100px;
+animation: merc 1sec infinite ease-in-out linear;
+margin-top: -15vh;
+position: absolute;
+
+z-index: 10;
+}
+@keyframes merc {
+    from {transform:rotate(0deg)  rotateZ(-101deg);}
+    to {transform:rotate(360deg)  rotateZ(-101deg);}
+}
+
+
 .circle5 
 {
 /* Mercury*/
-margin-left: 14.5%;
-margin-top: 20%;
-position: static;
+
+position: absolute;
 height: 23px;
   width:23px;
-  border-radius: 50px;
+
   background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
-z-index: 1;
+
 box-shadow: black;
+
+
 }
 .circle6 
 {
@@ -246,36 +263,21 @@ animation: 10s comet forwards linear 10 ;
 .circle15 
 {
 /*Sun*/
-display: flex;
-position: relative;
-margin-left: -245em;
-margin-block-start: -390em; 
-position: sticky;
+
+position: absolute;
+margin-left: -150vh;
+margin-block-start: 100vh; 
+
 height: 6645px;
-  width:6645px;
-  border-radius: 70000px;
-  background-color: rgb(148, 172, 41); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(137, 160, 37, 0.171), rgb(148, 172, 41));
+width: 6645px;
+border-radius: 70000px;
+background-color: rgb(206, 193, 17);
 z-index: 1;
- box-shadow: 0px 250px 50px 1px rgb(148, 172, 41, 0.175);
-animation-name:sol;
-animation-duration: 10s;
-animation-iteration-count: infinite;
-animation-timing-function: ease-in-out;
-animation-delay: 0s;
-animation-play-state: running;
-}
-@keyframes sol{
-0%{
-background-color: rgb(148, 172, 41); }
-30%{
-background-color: rgb(185, 176, 38); 
-}
-60%{
-background-color: rgb(185, 104, 38); 
-}
-100%{
-background-color: rgb(148, 172, 41); }
+ box-shadow:  0px 0px 20px rgb(161, 147, 17),
+ 0px 0px 40px rgba(240, 227, 50),
+ 0px 0px 60px rgba(240, 227, 50),
+ 0px 0px 80px rgba(240, 227, 50),
+inset 0px 0px 50px 100px rgba(170, 170, 50, 1);
 }
 
 .circle16 
