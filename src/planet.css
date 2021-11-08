@@ -5,16 +5,26 @@
 .circle 
 { 
 /*Earth*/
-margin-left: 20%;
-margin-top: 27%;
+margin-right: 40vh;
+margin-top: 30vh;
 height: 63.5px;
-  width:63.5px;
-  border-radius: 70px;
+width:63.5px;
+position: absolute; 
+border-radius: 50%;
   background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(0, 0, 255), rgba(0, 0, 0, 0.87));
 box-shadow: 0px 0px 20px  rgb(87, 87, 223);
-z-index: -2;
+
+animation: earth linear 40s infinite;
 }
+@keyframes earth 
+{
+  from  { transform: translatex(0vh) scale(1.5) translatey(0vh) scale(1.5);
+        } 
+  to    { transform: translatex(55vh) scale(0) translatey(100vh) scale(0);
+        }
+}
+
 .circle1
 {
 /*Pluto*/
@@ -43,15 +53,38 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-left: 30%;
-margin-bottom:5.8%;
+margin-top: -10px;
+margin-left: -10px;
+position: absolute;
 height: 34px;
-  width:34px;
-  border-radius: 60px;
-  background-color: rgb(255, 153, 0); /* For browsers that do not support gradients */
- background-image: radial-gradient(circle, rgb(161, 138, 112), rgb(49, 21, 21));
+width:34px;
+border-radius: 50%;
+background:
+radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
+radial-gradient(65% 65% at 25% 25%, rgb(90, 44, 7), transparent 53%),
+radial-gradient(100% 25% at 5% 0%, #351417, transparent 100%),
+  radial-gradient(75% 15% at 55% 75%, #442702, transparent 50%), 
+  radial-gradient(75% 15% at 85% 70%, #756043, transparent 20%),     
+  radial-gradient(100% 15% at 35% 85%, #442702, transparent 25%), 
+  radial-gradient(100% 15% at 25% 75%, #442702, transparent 25%), 
+  radial-gradient(100% 5% at 15% 70%, #442702, transparent 25%), 
+  radial-gradient(95% 5% at 85% 88%, #442702, transparent 20%), 
+  radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%), 
+radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
+radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
+radial-gradient(100% 100% at 0% 5%, transparent, #e83c4a 98%);box-shadow: inset -25px -5px 20px 1px rgba(170, 149, 81, 0.5);
+border: 1px solid #000000;
 z-index: 2;
+animation: mars linear 60s infinite;
 }
+@keyframes mars 
+{
+  from  { transform: translatex(0vh) scale(1.5) translatey(0vh) scale(1);
+        } 
+  to    { transform: translatex(-55vh) scale(0) translatey(-80vh) scale(0);
+        }
+}
+
 .circle4 
 {
 /*Callisto*/
@@ -68,15 +101,11 @@ z-index: 2;
 .merc5 {
 height: 100px;
 width: 100px;
-animation: merc 1sec infinite ease-in-out linear;
-margin-top: -15vh;
+
+margin-top: 10vh;
 position: absolute;
 
 z-index: 10;
-}
-@keyframes merc {
-    from {transform:rotate(0deg)  rotateZ(-101deg);}
-    to {transform:rotate(360deg)  rotateZ(-101deg);}
 }
 
 
@@ -87,7 +116,7 @@ z-index: 10;
 position: absolute;
 height: 23px;
   width:23px;
-
+  border-radius: 50px;
   background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
 
@@ -150,7 +179,6 @@ width: 500px;
 {
 /*Uranus*/
 position: absolute;
-
 
 height:250px;
   width: 250px;
@@ -266,14 +294,14 @@ animation: 10s comet forwards linear 10 ;
 
 position: absolute;
 margin-left: -150vh;
-margin-block-start: 100vh; 
-
+margin-block-start: 30vh; 
 height: 6645px;
 width: 6645px;
 border-radius: 70000px;
 background-color: rgb(206, 193, 17);
 z-index: 1;
- box-shadow:  0px 0px 20px rgb(161, 147, 17),
+ box-shadow:  
+ 0px 0px 20px rgb(161, 147, 17),
  0px 0px 40px rgba(240, 227, 50),
  0px 0px 60px rgba(240, 227, 50),
  0px 0px 80px rgba(240, 227, 50),

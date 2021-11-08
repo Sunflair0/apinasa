@@ -91,6 +91,13 @@ const Signup = ({ setClient }) => {
           </div>
         </form>
       </div>
+      <div className="circle9" title="Uranus">
+        <div className="circle6" title="Mimas"></div>
+        <div className="circle8" title="Titan"></div>
+        <div className="circle10" title="Ariel"></div>
+        <div className="circle11" title="Titania"></div>
+        <div className="circle12" title="Umbriel"></div>
+        <div className="circle13" title="Oberon"></div></div>
       <div className="circle16" title="Blackhole"></div>
       <div className="comet" title="comet"></div>
    
