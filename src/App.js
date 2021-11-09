@@ -51,16 +51,25 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 <div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
 <div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
 
-
       <div className="bigShell ">
 
-        <nav >
+        <nav>
+{useEffect(() => {
+    async function valid() {
+      const res = await validate("/api/clients/validate");
+      if (res.success) {
+        login(res.data.clienttag);
+      }
+    } 
+valid();
+  }, []);
+
           {" "}
           {!clienttag && (
             <NavLink activeClassName="active" className="menuitem" to="/login">
-              {" "}
-            </NavLink>
-          )}{" "}
+          {" "}
+            </NavLink>)}
+          {" "}
           <NavLink activeClassName="active" className="presenter" to="/signup"
           ></NavLink>
           {clienttag && (
@@ -75,7 +84,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                   <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
 
-
                     <ul className="flex2">
 
                       <div className="main-menu-items navbar-toggle ">
@@ -85,9 +93,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                         </Link>
                       </div>
 
-
                       {/* ///// Main Menu */}
-
 
                       <li> <NavLink activeClassName="active" className=" menu1items" to="/splash">
                         HOME{" "}
