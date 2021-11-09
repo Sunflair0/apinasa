@@ -3,15 +3,10 @@ import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
-import useFetch from "../hooks/useFetch";
-
-
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
-  const { callAPI: loginCall } = useFetch("POST");
-  const [error, setError] = useState(null);
 
   return (
     <>
@@ -85,22 +80,13 @@ const Login = ({ setClient }) => {
                 <Link className=" btnGroup" to="/signup"><button type="button">Sign Up!</button></Link>
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
 
-            <div className="circle6" title="Mimas"></div>
-            <div className="circle8" title="Titan"></div>
-            <div className="circle9" title="Uranus"></div>
-            <div className="circle10" title="Ariel"></div>
-            <div className="circle11" title="Titania"></div>
-            <div className="circle12" title="Umbriel"></div>
-            <div className="circle13" title="Oberon"></div>
-            <div className="circle14" title="comet"></div>
-          </div>
         </div>
 </div>
     </>
   );
 };
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {};
 };
 const mapDispatchToProps = { setClient };
