@@ -19,7 +19,7 @@ text-decoration: none;
 background-color: rgba(255, 255, 255, 0.05);
 border: solid 1px rgb(27, 55, 71);
 display: flex;
-position: sticky;
+position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
@@ -35,7 +35,7 @@ box-shadow: 0px 0px 0px 1px #ffffff79;
 border-color: rgb(134, 134, 136);
 box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
 inset 5px 5px 2px hsla(180, 15%, 13%, 0.973);
-z-index: 110;
+z-index: 100;
 }
 .btnGroup
 {
@@ -269,7 +269,7 @@ inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 border-color: blue;
 }
 .glassForm {
-background-color: hsla(223, 25%, 86%, 0.219);
+background-color: hsla(226, 66%, 11%, 0.5);
 display: flex;
 position: relative;
 top: 300px;
@@ -283,11 +283,10 @@ border-radius: 10px;
 font-weight: 300;
 align-content: center;
 justify-content: center;
-backdrop-filter: blur(15px);
+backdrop-filter: blur(5px);
 border: 3px solid rgb(53, 65, 73);
 box-shadow: 3px 3px 5px 1px #645757e0,
 4px 4px 2px hsla(180, 52%, 46%, 0.973),
-0px 0px 100px .3px rgb(0, 0, 0),
 inset 4px 5px 4px hsl(180, 5%, 18%);
 z-index: 100;
 }
@@ -336,52 +335,4 @@ margin-bottom: 300px;
 }
 .textDrop{
 margin-bottom: 400px;
-}
-
-
-@mixin dots($count) {
-  $text-shadow: ();
-  @for $i from 0 through $count {
-    $text-shadow: $text-shadow,
-                 (-.5+(random()) * 5) + em
-                 (-.5+(random()) * 5) + em
-                 7px
-                 hsla(random() * 360, 100%, 60%, 50%,.9);
-  }
-  text-shadow: $text-shadow;
-}
-
-
-.glassForm::before, .glassForm::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 3em;
-  height: 3em;
-  content: '. ';
-  mix-blend-mode: screen;
-  animation: 44s -27s move infinite ease-in-out alternate;
-}
-
-
-.glassForm::before {
-  @include dots(20);
-  animation-duration: 44s;
-  animation-delay: -27s;
-}
-
-.glassForm::after {
-  @include dots(40);
-  animation-duration: 43s;
-  animation-delay: -32s;
-}
-
-
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(10) translateX(-20px);
-  }
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
-  }
 }
