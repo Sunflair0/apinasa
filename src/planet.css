@@ -5,26 +5,24 @@
 .circle 
 { 
 /*Earth*/
-margin-right: 40vh;
-margin-top: 30vh;
+margin-left: 270vh;
+margin-top: 70vh;
 height: 63.5px;
-width:63.5px;
+width: 63.5px;
 position: absolute; 
 border-radius: 50%;
   background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(0, 0, 255), rgba(0, 0, 0, 0.87));
 box-shadow: 0px 0px 20px  rgb(87, 87, 223);
-
-animation: earth linear 40s infinite;
+animation: earth linear 100s infinite;
 }
 @keyframes earth 
 {
-  from  { transform: translatex(0vh) scale(1.5) translatey(0vh) scale(1.5);
-        } 
-  to    { transform: translatex(55vh) scale(0) translatey(100vh) scale(0);
-        }
+from {transform: translatex(-50vh) scale(1.5) translatey(-203vh) scale(1.5);
+     } 
+to   {transform: translatex(-25vh) scale(0) translatey(-260vh) scale(0);
+     }
 }
-
 .circle1
 {
 /*Pluto*/
@@ -53,8 +51,8 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-top: -10px;
-margin-left: -10px;
+margin-top: 70vh;
+margin-left: 270vh;
 position: absolute;
 height: 34px;
 width:34px;
@@ -72,19 +70,21 @@ radial-gradient(100% 25% at 5% 0%, #351417, transparent 100%),
   radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%), 
 radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
 radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
-radial-gradient(100% 100% at 0% 5%, transparent, #e83c4a 98%);box-shadow: inset -25px -5px 20px 1px rgba(170, 149, 81, 0.5);
-border: 1px solid #000000;
-z-index: 2;
-animation: mars linear 60s infinite;
-}
-@keyframes mars 
-{
-  from  { transform: translatex(0vh) scale(1.5) translatey(0vh) scale(1);
-        } 
-  to    { transform: translatex(-55vh) scale(0) translatey(-80vh) scale(0);
-        }
-}
+radial-gradient(100% 100% at 0% 5%, transparent, #e83c4a 98%),
+linear-gradient(#e83c4a,#5e0710);
 
+box-shadow: inset -25px -5px 20px 1px rgba(170, 149, 81, 0.5);
+z-index: -2;
+animation: mars linear 90s infinite;
+animation-delay: 10s;
+}
+@keyframes mars
+{
+from {transform: translatex(-25vh) scale(2.3) translatey(10vh) scale(2.3) rotate(72.7deg);
+     } 
+to   {transform: translatex(-65vh) scale(0) translatey(-213vh) scale(0) rotate(70.3deg);
+     }
+}
 .circle4 
 {
 /*Callisto*/
@@ -97,32 +97,25 @@ height:24px;
   background-image: radial-gradient(circle, rgb(148, 230, 148),rgb(0, 0, 0));
 z-index: 2;
 }
-
-.merc5 {
-height: 100px;
-width: 100px;
-
-margin-top: 10vh;
-position: absolute;
-
-z-index: 10;
-}
-
-
 .circle5 
 {
 /* Mercury*/
-
+margin-left: 270vh;
+margin-top: 70vh;
 position: absolute;
 height: 23px;
   width:23px;
-  border-radius: 50px;
+  border-radius: 50%;
   background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
-
 box-shadow: black;
-
-
+animation: 23s merc linear infinite;
+}
+@keyframes merc {
+from    { transform: translatex(0vh) scale(1.3) translatey(-10vh) scale(1.3);
+        } 
+  to    { transform: translatex(-10vh) scale(0) translatey(-183vh) scale(0);
+        }
 }
 .circle6 
 {
@@ -148,6 +141,14 @@ height: 17.35px;
   background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
 z-index: 0;
+animation: luna 15s infinite alternate;
+}
+@keyframes luna
+{
+from    { transform: translatex(-2vh) translatey(-5vh);
+        } 
+  to    { transform: translatex(0vh) translatey(13vh);
+        }
 }
 .circle8 
 {
@@ -163,49 +164,64 @@ height: 26px;
   z-index: 3;
  box-shadow: 0px 0px 15px  rgb(224, 221, 169);
 }
-.uGroup2
+.uGroup
 {
-position: relative;
-bottom: 0%;
-display: flex;
-margin-top: -500px;
-margin-left: -250px;
+margin-left: -130vh;
+position: absolute;
+margin-top: 55vh;
 align-items: center;
 justify-self: center;
-height: 500px;
-width: 500px;
+height: 300px;
+width: 300px;
+z-index: 2;
 }
 .circle9
 {
 /*Uranus*/
+margin-left: 180vh;
+margin-top: -20vh;
 position: absolute;
-
 height:250px;
   width: 250px;
-  border-radius: 150px;
+  border-radius: 50%;
   background-color: rgb((37, 189, 125)); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(114, 243, 232),rgba(0, 0, 0, 0.479), rgba(61, 178, 224, 0.788));
-z-index: -2;
+z-index: -20;
+animation: uranus 360s linear infinite;
+}
+@keyframes uranus{
+from    { transform: translatex(0vh) translatey(60vh);
+        } 
+  to    { transform: translatex(-40vh) translatey(-153vh);
+        }
 }
 .circle10 
 {
 /*Ariel*/
-
+margin-left: 120px;
+margin-top: 120px;
+display: inline-block;
 position: absolute;
 height: 7px;
   width:7px;
-  border-radius: 50px;
+  border-radius: 50%;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(151, 108, 58), rgb(208, 221, 90));
 z-index: -1;
-animation: 20s ariel linear infinite ease;
+animation: ariel linear infinite 20s;
 }
-
-
-
+@keyframes ariel{
+from    {  transform: rotate(0deg) translateX(120px) rotate(0deg);
+        } 
+  to    {  transform: rotate(360deg) translateX(120px) rotate(0deg);
+        }
+}
 .circle11 
 {
 /*Titania*/
+margin-left: 120px;
+margin-top: 120px;
+display: inline-block;
 position: absolute;
 height: 9px;
   width:9px;
@@ -213,11 +229,21 @@ height: 9px;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgba(221, 123, 12, 0.418), rgba(187, 140, 86, 0.842),rgb(0, 0, 0) );
 z-index: -1;
+animation: titania linear infinite 17s;
+}
+
+@keyframes titania{
+from    {  transform: rotate(0deg) translateX(111px) rotate(0deg);
+        } 
+  to    {  transform: rotate(360deg) translateX(111px) rotate(0deg);
+        }
 }
 .circle12
 {
 /*Umbriel*/
-
+margin-left: 120px;
+margin-top: 122px;
+display: inline-block;
 position: absolute;
 height: 6px;
   width:6px;
@@ -225,11 +251,20 @@ height: 6px;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgba(231, 144, 14, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: -1;
+animation: umbriel linear infinite 28s;
+}
+@keyframes umbriel{
+from    {  transform: rotate(0deg) translateX(105px) rotate(0deg);
+        } 
+  to    {  transform: rotate(360deg) translateX(105px) rotate(0deg);
+        }
 }
 .circle13
 {
 /*Oberon*/
-
+margin-left: 120px;
+margin-top: 122px;
+display: inline-block;
 position: absolute;
 height: 7px;
   width:7px;
@@ -237,7 +272,35 @@ height: 7px;
   background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
 z-index: -1;
-animation:20s ariel linear infinite ;
+animation: oberon linear infinite 35s;
+}
+@keyframes oberon
+        {
+from    {  transform: rotate(0deg) translateX(100px) rotate(0deg);
+        } 
+  to    {  transform: rotate(360deg) translateX(100px) rotate(0deg);
+        }
+}
+.circle17
+{
+/*Miranda*/
+margin-left: 120px;
+margin-top: 122px;
+display: inline-block;
+position: absolute;
+height: 7px;
+  width:7px;
+  border-radius: 50px;
+  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
+z-index: -1;
+animation: miranda linear infinite 37s;
+}
+@keyframes miranda{
+from    {  transform: rotate(0deg) translateX(90px) rotate(0deg);
+        } 
+  to    {  transform: rotate(360deg) translateX(90px) rotate(0deg);
+        }
 }
 .comet
 {
@@ -291,21 +354,21 @@ animation: 10s comet forwards linear 10 ;
 .circle15 
 {
 /*Sun*/
-
 position: absolute;
 margin-left: -150vh;
-margin-block-start: 30vh; 
+margin-block-start: 40vh; 
 height: 6645px;
 width: 6645px;
-border-radius: 70000px;
+border-radius: 50%;
 background-color: rgb(206, 193, 17);
-z-index: 1;
- box-shadow:  
+z-index: 10;
+box-shadow:  
  0px 0px 20px rgb(161, 147, 17),
  0px 0px 40px rgba(240, 227, 50),
  0px 0px 60px rgba(240, 227, 50),
- 0px 0px 80px rgba(240, 227, 50),
-inset 0px 0px 50px 100px rgba(170, 170, 50, 1);
+ 0px 0px 80px rgba(240, 227, 50), 
+  inset 0px 0px 50px 100px rgba(170, 170, 50, 1);
+
 }
 
 .circle16 
