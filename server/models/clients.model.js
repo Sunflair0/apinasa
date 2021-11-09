@@ -28,21 +28,26 @@ async function signup(res, clienttag, password) {
   }
 }
 
-async function login( clienttag, password) {
+async function login( username, password) {
   let json = { data: null, success: false, error: null };
   try {
     const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
-      clienttag
+      username
     ]);
+
+    console.log("clients");
+    console.log(clients);
+
+
     const client = clients[0] || { password: 1234 };
     const matches = await bcrypt.compare(password, client.password);
     if (matches) {
-      json = { ...json, data: { clienttag, uuid: client.uuid } };
+      json = { ...json, data: { username, uuid: client.uuid } };
     } else {
       json.error = "Invalid clienttag / password";
     }
   } catch (err) {
-    json.error = "Something went wrong?";
+    json.error = "Something went wrong";
   } finally {
     return (json);
   }

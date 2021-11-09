@@ -132,17 +132,14 @@ z-index: 1;
 .circle7 
 {
 /*Moon*/
-
-position: fixed;
-height:17.35px;
+margin-left: 20%;
+margin-top: -2%;
+position: relative;
+height: 17.35px;
   width:17.35px;
   border-radius: 50px;
   background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
-animation-name: luna;
-  animation-duration: 40s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 z-index: 0;
 animation: luna 15s infinite alternate;
 }
@@ -152,41 +149,6 @@ from    { transform: translatex(-2vh) translatey(-5vh);
         } 
   to    { transform: translatex(0vh) translatey(13vh);
         }
-}
-@keyframes luna {
-  0% {
-    transform: translateX(50px) scale(0);
-  }
-  10% {
-    transform: translateX(40px) scale(0.15);
-  }
-  20% {
-    transform: translateX(30px) scale(0.2);
-  }
-  30% {
-    transform: translateX(20px) scale(0.8);
-  }
-  40% {
-    transform: translateX(10px) scale(0.95);
-  }
-  50% {
-    transform: translateX(0px) scale(1.0);
-  }
-  60% {
-    transform: translateX(-10px) scale(0.95);
-  }
-  70% {
-    transform: translateX(-20px) scale(0.8);
-  }
-  80% {
-    transform: translateX(-30px) scale(0.2);
-  }
-  90% {
-    transform: translateX(-40px) scale(0.15);
-  }
-  100% {
-    transform: translateX(-50px) scale(0);
-  }
 }
 .circle8 
 {

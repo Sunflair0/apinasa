@@ -11,7 +11,7 @@ const ContactUs = ({
 
   return (
     <>
-      <div className="flex3">Contact Us
+      <div className="flex3 contactBg2">Contact Us
         <div className="glassForm">
           <div>
             <form onSubmit={handleSubmit}>
