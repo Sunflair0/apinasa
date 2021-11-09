@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import {
   clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
@@ -44,6 +44,16 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
+
+useEffect(() => {
+    async function valid() {
+      const res = await validate("/api/clients/validate");
+      if (res.success) {
+        login(res.data.clienttag);
+      }
+    } 
+valid();
+  }, []);
   
   return (
     <Router>
@@ -54,15 +64,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
       <div className="bigShell ">
 
         <nav>
-{useEffect(() => {
-    async function valid() {
-      const res = await validate("/api/clients/validate");
-      if (res.success) {
-        login(res.data.clienttag);
-      }
-    } 
-valid();
-  }, []);
+
 
           {" "}
           {!clienttag && (
