@@ -133,17 +133,13 @@ z-index: 1;
 {
 /*Moon*/
 margin-left: 20%;
-margin-top: 200px;
-position: fixed;
-height: 1007.35px;
+margin-top: -2%;
+position: relative;
+height: 17.35px;
   width:17.35px;
   border-radius: 50px;
   background-color: rgb(0, 0, 255); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(171, 218, 241), rgb(0,0,0));
-animation-name: luna;
-  animation-duration: 40s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 z-index: 0;
 animation: luna 15s infinite alternate;
 }
@@ -153,41 +149,6 @@ from    { transform: translatex(-2vh) translatey(-5vh);
         } 
   to    { transform: translatex(0vh) translatey(13vh);
         }
-}
-@keyframes luna {
-  0% {
-    transform: translateX(150px) scale(0);
-  }
-  10% {
-    transform: translateX(160px) scale(0.15);
-  }
-  20% {
-    transform: translateX(130px) scale(0.2);
-  }
-  30% {
-    transform: translateX(100px) scale(0.3);
-  }
-  40% {
-    transform: translateX(60px) scale(0.35);
-  }
-  50% {
-    transform: translateX(0px) scale(0.4);
-  }
-  60% {
-    transform: translateX(-60px) scale(0.35);
-  }
-  70% {
-    transform: translateX(-100px) scale(0.3);
-  }
-  80% {
-    transform: translateX(-130px) scale(0.2);
-  }
-  90% {
-    transform: translateX(-160px) scale(0.15);
-  }
-  100% {
-    transform: translateX(-150px) scale(0);
-  }
 }
 .circle8 
 {
@@ -416,81 +377,13 @@ box-shadow:
 
 height:303.5px;
   width:303.5px;
-  border-radius: 50%;
-  background-color: rgb(26, 21, 25); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(155, 51, 120),rgba(41, 2, 28, 0.075),rgba(70, 11, 165, 0.486) );
+  border-radius: 370px;
+  background-color: rgb(0, 0, 0); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgba(155, 51, 120, 0.384),rgba(41, 2, 28, 0.075),rgba(70, 11, 165, 0.486) );
 box-shadow: 0px 0px 2px 2px rgba(70, 11, 165, 0.315);
-filter: url(#wavy) blur(1px);
 z-index: -2;
 }
-.circle16::before{
- border-radius: 50%;
-content: " ";
-position:absolute;
-height:303.5px;
-  width:303.5px;
-border: 20px solid rgba(187, 27, 166, 0.795);
-box-sizing: border-box;
-border-radius: 50%;
-box-shadow: 0 0 50px  rgba(155, 51, 120)
-  inset 0 0 50px  rgb(70, 11, 165);
-animation: flame 6s linear infinite;
-}
 
-.circle16::after{
- border-radius: 50%;
-content: " ";
-position:absolute;
-height:303.5px;
-  width:303.5px;
-border: 20px solid rgba(86, 18, 163, 0.801);
-box-sizing: border-box;
-border-radius: 50%;
-box-shadow: 0 0 10px  rgb(14, 12, 13)
-  inset 0 10 50px  rgb(127, 118, 143);
-
-}
-
-@keyframes flame {
-0%{
-box-shadow: 0 0 50px  rgba(155, 51, 120),
-  inset 0 0 50px rgb(70, 11, 165);
-filter: hue-rotate(0deg);
-}
-20%{
-box-shadow: 0 0 60px  rgba(155, 51, 120),
-  inset 0 0 60px  rgb(70, 11, 165);
-filter: hue-rotate(0deg);
-}40%{
-box-shadow: 0 0 40px rgba(155, 51, 120),
-  inset 0 0 40px rgb(70, 11, 165);
-
-box-shadow: 0 0 80px rgba(155, 51, 120),
-  inset 0 0 80px  rgba(155, 51, 120);
-
-
-}60%{
-box-shadow: 0 0 80px rgba(155, 51, 120),
-  inset 0 0 80px  rgba(155, 51, 120);
-
-
-}80%{
-box-shadow: 0 0 100px rgba(155, 51, 120),
-  inset 0 0 100px  rgba(155, 51, 120);
-
-
-}
- 100%{
-box-shadow: 0 0 50px rgba(155, 51, 120),
-  inset 0 0 50px  rgba(155, 51, 120);
-
-filter: hue-rotate(360deg);
-}
-}
-svg {
-height: 0;
-width: 0;
-}
 /* spacing for planets */
 
 
