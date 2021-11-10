@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useFetch } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import {
   clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
@@ -45,20 +45,16 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
  
-const login = useCallback((clienttag) => {
   
-
 useEffect(() => {
-    async function valid() {
-      const res = await validate("/api/clients/validate");
+     {
+      const res = validate("/api/clients/validate");
       if (res.success) {
-        login(res.data.clienttag);
+        setClient(clienttag);
       }
-    } 
-valid();
-  }, []);
-  
-  return (
+  });
+
+return (
     <Router>
 
 <div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>

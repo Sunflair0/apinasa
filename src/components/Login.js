@@ -17,10 +17,12 @@ const Login = ({ setClient }) => {
       
         <div className="logintop">Welcome to SpaceTours</div>
         <div className="circle15" title="Sun/Sol">
-        <div className="circle5" title="Mercury"></div>
-        <div className="circle" title="Earth">
+<div className="circle3" title="Mars"></div>
+  <div className="circle" title="Earth">
         <div className="circle7" title="Moon/Luna"></div></div>
-        <div className="circle3" title="Mars"></div>
+        <div className="circle5" title="Mercury"></div>
+      
+        
         
         <div className="circle9" title="Uranus">
             <div className="circle17" title="Miranda"></div>
