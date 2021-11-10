@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useFetch } from "react";
 import { connect } from "react-redux";
 import {
   clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
@@ -44,6 +44,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
+ 
+const login = useCallback((clienttag) => {
+  
 
 useEffect(() => {
     async function valid() {
