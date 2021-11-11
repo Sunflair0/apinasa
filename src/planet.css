@@ -171,23 +171,23 @@ position: absolute;
 margin-top: 55vh;
 align-items: center;
 justify-self: center;
-height: 300px;
-width: 300px;
+height: 320px;
+width: 320px;
 z-index: 2;
 }
 .circle9
 {
 /*Uranus*/
 margin-left: 180vh;
-margin-top: -20vh;
+margin-top: -10vh;
 position: absolute;
-height:250px;
-  width: 250px;
+height:340px;
+  width: 340px;
   border-radius: 50%;
   background-color: rgb((37, 189, 125)); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(114, 243, 232),rgba(0, 0, 0, 0.479), rgba(61, 178, 224, 0.788));
+  background-image: radial-gradient(circle, rgb(5, 226, 230) 0%, rgb(20, 68, 68) 45%, rgba(0,6,6,0) 46%, rgba(0,6,6,0) 56%,rgba(8, 70, 71, 0.8) 62%, rgb(32, 63, 63) 63%, rgb(0, 0, 0, 0) 70%);
 z-index: -20;
-animation: uranus 360s linear infinite;
+animation: uranus 340s linear infinite;
 }
 @keyframes uranus{
 from    { transform: translatex(0vh) translatey(60vh);
@@ -198,108 +198,108 @@ from    { transform: translatex(0vh) translatey(60vh);
 .circle10 
 {
 /*Ariel*/
-margin-left: 120px;
-margin-top: 120px;
+margin-left: 170px;
+margin-top: 170px;
 display: inline-block;
 position: absolute;
-height: 7px;
-  width:7px;
+height: 5px;
+  width:5px;
   border-radius: 50%;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(151, 108, 58), rgb(208, 221, 90));
+  background-color: rgb(151, 108, 58); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(231, 173, 107), rgb(208, 221, 90));
 z-index: -1;
-animation: ariel linear infinite 20s;
+animation: ariel linear infinite 21s;
 }
 @keyframes ariel{
-from    {  transform: rotate(0deg) translateX(120px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(153px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(120px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(153px) rotate(0deg);
         }
 }
 .circle11 
 {
 /*Titania*/
-margin-left: 120px;
-margin-top: 120px;
+margin-left: 170px;
+margin-top: 170px;
 display: inline-block;
 position: absolute;
-height: 9px;
-  width:9px;
+height: 15px;
+  width:15px;
   border-radius: 70px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(221, 123, 12, 0.418), rgba(187, 140, 86, 0.842),rgb(0, 0, 0) );
+  background-color: rgb(221, 123, 12); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, rgb(221, 123, 12),rgb(0, 0, 0) );
 z-index: -1;
-animation: titania linear infinite 17s;
+animation: titania linear infinite 67s;
 }
 
 @keyframes titania{
-from    {  transform: rotate(0deg) translateX(111px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(151px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(111px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(151px) rotate(0deg);
         }
 }
 .circle12
 {
 /*Umbriel*/
-margin-left: 120px;
-margin-top: 122px;
+margin-left: 170px;
+margin-top: 172px;
 display: inline-block;
 position: absolute;
-height: 6px;
-  width:6px;
+height: 7px;
+  width:7px;
   border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(231, 144, 14, 0.952),rgba(0, 0, 0, 0.781) );
+  background-color: rgb(231, 144, 14); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle,  rgb(231, 144, 14),rgba(0, 0, 0, 0.781) );
 z-index: -1;
-animation: umbriel linear infinite 28s;
+animation: umbriel linear infinite 43s;
 }
 @keyframes umbriel{
-from    {  transform: rotate(0deg) translateX(105px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(147px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(105px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(147px) rotate(0deg);
         }
 }
 .circle13
 {
 /*Oberon*/
-margin-left: 120px;
-margin-top: 122px;
+margin-left: 170px;
+margin-top: 172px;
 display: inline-block;
 position: absolute;
-height: 7px;
-  width:7px;
+height: 4px;
+  width:4px;
   border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
+  background-color: rgb(226, 118, 10); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle,  rgb(226, 118, 10),rgba(0, 0, 0, 0.7) );
 z-index: -1;
-animation: oberon linear infinite 35s;
+animation: oberon linear infinite 33s;
 }
 @keyframes oberon
         {
-from    {  transform: rotate(0deg) translateX(100px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(158px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(100px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(158px) rotate(0deg);
         }
 }
 .circle17
 {
 /*Miranda*/
-margin-left: 120px;
-margin-top: 122px;
+margin-left: 170px;
+margin-top: 172px;
 display: inline-block;
 position: absolute;
-height: 7px;
-  width:7px;
+height: 9px;
+  width:9px;
   border-radius: 50px;
-  background-color: rgb(224, 205, 184); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgba(238, 236, 234, 0.952),rgba(0, 0, 0, 0.781) );
+  background-color: rgb(184, 181, 34); /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle,  rgb(184, 181, 34),rgba(0, 0, 0, 0.781) );
 z-index: -1;
-animation: miranda linear infinite 37s;
+animation: miranda linear infinite 50s;
 }
 @keyframes miranda{
-from    {  transform: rotate(0deg) translateX(90px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(140px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(90px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(140px) rotate(0deg);
         }
 }
 .comet
