@@ -70,8 +70,8 @@ radial-gradient(100% 25% at 5% 0%, #351417, transparent 100%),
   radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%), 
 radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
 radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
-radial-gradient(100% 100% at 0% 5%, transparent, #e83c4a 98%),
-linear-gradient(#e83c4a,#5e0710);
+radial-gradient(100% 100% at 0% 5%, transparent, #df0e20 98%),
+linear-gradient(#b3303b,#3a1317);
 
 box-shadow: inset -25px -5px 20px 1px rgba(170, 149, 81, 0.5);
 z-index: -2;
