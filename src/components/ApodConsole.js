@@ -31,6 +31,7 @@ export default function ApodConsole() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+
           
           }} onClick={() => setShowToday(showToday)}>
         </NavLink>

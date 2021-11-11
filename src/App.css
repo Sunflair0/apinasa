@@ -1,5 +1,8 @@
 
-
+.mask {
+background-color: #131314;
+opacity: .65;
+}
 
 /*signup*/
 .namepass
@@ -8,10 +11,10 @@ display: flex;
 flex-direction: column;
 }
 
-
-
 .shell {
-min-width: 550vh;
+
+ width: 400vh;
+ height:300vh;
 
 }
 
@@ -90,6 +93,7 @@ background-color: red;
   flex-flow: row wrap;
   border: solid 2px black;
   padding: 4px;
+  
 }
 
 .top-border {
@@ -110,6 +114,7 @@ background-position: 0px 0px;
 .apodSee {
 display: flex;
 flex-direction: row;
+flex-basis: calc(100% / 3 - 34px);
 width: 75%;
 object-fit: contain;
 margin-top: -140px;
@@ -119,7 +124,8 @@ margin-right: 1.2em;
 .apodBox {
 display: flex;
 flex-direction: row;
-width: 700px;
+flex-basis: calc(100% / 3 - 34px);
+width: 100%;
 justify-content: space-between;
 margin-left: 15px;
 }
@@ -132,6 +138,11 @@ flex-wrap: nowrap;
 flex-direction: row;
 }
 
+.explanation {
+  color: antiquewhite;
+  font-weight: 500;
+}
+
         /* picture boxes */
 
 /* width */
@@ -139,22 +150,26 @@ flex-direction: row;
   width: 10px;
 }
 /* Track */
-::-webkit-scrollbar-track {
+.stylebox::-webkit-scrollbar-track {
 background: #000000;
-border-radius: 10px;
+border-radius: 0px 0px 5px 5px;
 box-shadow: inset 0 0 7px #ceda8d;
 }
 /* Handle */
-::-webkit-scrollbar-thumb {
-background: #b19559;
-border-radius: 5px;
+.stylebox::-webkit-scrollbar-thumb {
+background: linear-gradient( 10deg, rgb(185, 106, 15) 10%, rgb(148, 140, 32) 100%);
+box-shadow: inset 0 0 5px 1px #929009;
+border-radius:  5px;
 }
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b67f08;
+.stylebox::-webkit-scrollbar-thumb:hover {
+background: linear-gradient( 10deg, rgb(238, 198, 152) 30%, rgb(150, 146, 98) 100%);
+box-shadow: inset 0 0 5px 1px #929009;
+
 }
 .stylebox {
 display: flex;
+flex-basis: calc(100% / 3 - 34px);
 flex-wrap: nowrap;
 margin: 15px;
     border: solid 1px rgb(216, 86, 39);
@@ -164,6 +179,8 @@ margin: 15px;
     min-width: 650px;
   max-height: 60vh;
 word-wrap: break-word;
+
+overflow: hidden;
     }
 
 .infobox {
@@ -179,7 +196,7 @@ word-wrap: break-word;
 .apodPhoto {
   display: flex;
   flex-direction: column;
- 
+  flex-basis: calc(100% / 3 - 34px);
   display: block;
   margin: auto;
   max-height: 100%;
@@ -237,21 +254,39 @@ border: 2px rgb(25, 200, 212);
   background-color: #101652;
   color: #bff3bf;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  width: 25%;
+  width: 146px;
   display: block;
   margin: 10px auto 0px auto;
   padding: 8px 18px 8px 18px;
 box-shadow: inset 0px 1px 3px  #388bf7;
 }
 
+.like-btn :hover{
+background-color: #04529b;
+
+}
+
+.like-btn::before:hover{
+width: 100px;
+height: 20px;
+background-color: #0ff;
+}
       /* header buttons */
 
-/* .red {
+.red {
 background-color: rgb(150, 131, 131);
-height: 150px;
-width: 150px;
 transition: 3.3s ease all;
-} */
+outline: 2px solid white;
+
+
+} 
+.red::hover{
+background-color: rgb(128, 6, 6);
+outline: 2ps solid red;
+outline-offset: 11px;
+transition: outlineOffset 250ms ease;
+}
+
 
 /* Insurance */
 
@@ -301,6 +336,33 @@ radial-gradient(100% 25% at 25% 25%, rgb(248, 248, 248), transparent 100%),
    height: 150px;
    width: 150px; }
 
+.marsa { background:
+radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
+radial-gradient(65% 65% at 25% 25%, rgb(133, 70, 18), transparent 53%),
+radial-gradient(100% 25% at 5% 0%, rgb(150, 72, 20), transparent 100%),
+  radial-gradient(75% 15% at 55% 75%, #442702, transparent 50%), 
+  radial-gradient(75% 15% at 85% 70%, #442702, transparent 20%),     
+  radial-gradient(100% 15% at 35% 85%, #442702, transparent 25%), 
+  radial-gradient(100% 15% at 25% 75%, #442702, transparent 25%), 
+  radial-gradient(100% 5% at 15% 70%, #442702, transparent 25%), 
+  radial-gradient(95% 5% at 85% 88%, #442702, transparent 20%), 
+  radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%), 
+radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
+radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
+radial-gradient(100% 100% at 0% 5%, transparent, #e87f3c 98%);
+box-shadow: inset -25px -5px 20px 1px rgba(170, 149, 81, 0.5);
+border: 1px solid #000000;
+   border-radius: 100%;
+   height: 150px;
+   width: 150px; 
+margin-top: -1.3vh;
+
+margin-left: -90px;;
+margin-left: -90px;
+}
+
+
+
 /*  IPN */
 .ipn {
 margin: 5em;
@@ -329,6 +391,22 @@ background: repeating-radial-gradient(#030302, hsl(221, 47%, 46%),  hsl(330, 59%
 /* Contact Form */
 
 .contactBg {
-background: linear-gradient( 45deg, rgb(167, 151, 236) 15%, rgb(59, 58, 92) 35%, rgb(156, 101, 147) 100%);
+height: 120vh;
+width: 150vh;
+background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
 
+.contactBg2 {
+height: 120vh;
+width: 150vh;
+background: linear-gradient(217deg, rgba(235, 10, 10, 0.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(201, 136, 52, 0.815), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+.contactBg3 {
+height: 120vh;
+width: 150vh;
+background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0), #0522a15d 7.9%, #000000 7.8%, #f13607,#c8d606 15%, #f13607 19.9%,#ff0000 20%);
 }

@@ -8,7 +8,3 @@ export function clearClient() {
 export function setClient(clienttag) {
   return { type: SET_CLIENT, clienttag };
 }
-export const CLEAR_CLIENTTAG = "Clear Clienttag";
-
-
-

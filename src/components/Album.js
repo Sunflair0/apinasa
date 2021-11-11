@@ -6,20 +6,21 @@ import { deleteEntry } from "../redux/actions";
 const Album = ({ deleteEntry, album, clienttag }) => {
   return (
     <>
-      <div style={{ backgroundColor: "rgb(70,184,167", height: "100vh" }}>
-        <h2 className="flex1">Album for {clienttag}</h2>
+      <h2 className="flex1" >Album for {clienttag} </h2>
+      <div style={{ backgroundImage: "linear-gradient(to right, #46b8a7 , rgb(66,170,177))", height: "100vh", width: "150vh", opacity: ".45" }}>
+
         <div className="">
-          {album.map((pic) => (
+          {album.map((item) => (
             <Console
-              id={pic.id}
+              id={item.id}
+              key={item.id}
               isLiked={true}
               deleteEntry={deleteEntry}
-              date={pic.date}
-              copyright={pic.copyright}
-              title={pic.title}
-              url={pic.url}
-              description={pic.description}
-              key={pic.id}
+              title={item.title}
+              date={item.date}
+              url={item.url}
+              copyright={item.copyright}
+              description={item.description}
             />
           ))}
         </div>

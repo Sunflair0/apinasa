@@ -1,4 +1,4 @@
-import { ADD_ENTRY, DELETE_ENTRY, CLEAR_ALBUM } from "../actions";
+import { ADD_ENTRY, DELETE_ENTRY, CLEAR_ALBUM, SET_ALBUM } from "../actions";
 
 const initialAlbumState = [];
 
@@ -7,11 +7,13 @@ export default function albumReducer(
  {
   switch (action.type) {
     case ADD_ENTRY:
-      return [...state, action.pic];
+      return [...state, action.item];
     case DELETE_ENTRY:
-      return state.filter((pic) => pic.id !== action.id);
+      return state.filter((item) => item.id !== action.id);
     case CLEAR_ALBUM:
       return [];
+    case SET_ALBUM:
+      return [...action.album];
     default:
       return state;
   }

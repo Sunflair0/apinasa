@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
-  clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs,
+  clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
   clearBigCube, clearBuyVent,
 } from "./redux/actions";
 import {
@@ -30,7 +30,6 @@ import Form from "./components/Form";
 import Ipn from "./components/Ipn"
 import Login from "./components/Login";
 import Mer from "./components/Mer";
-import Search from "./components/Search";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
 import TourGuide from "./components/TourGuide"
@@ -41,15 +40,20 @@ import VentureTour from "./components/VentureTour"
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
-function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clearAlbum, clearClient, clearContactUs, clearBuyVent }
+function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
-
-
+  
   return (
     <Router>
-      <div className="bigShell">
+
+<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
+<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+
+
+      <div className="bigShell ">
+
         <nav >
           {" "}
           {!clienttag && (
@@ -61,10 +65,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           ></NavLink>
           {clienttag && (
           <>
-            
              {/*///// Main Menu Toggle */}
 
-                <h1 >SpaceTours <Link to='#' className="menu-bars">
+                <div className="topMask"><h1 >SpaceTours <Link to='#' className="menu-bars">
                   <FaIcons.FaBars onClick={showSidebar} />
                 </Link></h1>
 
@@ -90,6 +93,13 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         HOME{" "}
                       </NavLink></li>
 
+                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
+                        APOD {" "}
+                      </NavLink></li>
+
+                      <li><NavLink activeClassName="active" className="menu1items" to="/album">
+                        Album{" "} </NavLink></li>
+                      
                       <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"> 
                         Tour Info{" "}
                       </NavLink></li>
@@ -98,8 +108,8 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                         Order{" "}
                       </NavLink></li>
 
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
-                        APOD {" "}
+                      <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
+                        Contact Us{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
@@ -108,13 +118,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/earth">
                         Earth {" "}
-                      </NavLink></li>
-
-                      <li><NavLink activeClassName="active" className="menu1items" to="/album">
-                        Album{" "} </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
-                        Contact Us{" "}
                       </NavLink></li>
 
                       <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
@@ -144,7 +147,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
                           clearContactUs();
                           clearAlbum();
                           clearForm();
-                          clearSearch();
                         }}
                       >
                         Logout
@@ -152,18 +154,13 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
                     </ul>
                   </nav>
-                </div>
+                </div></div>
                          </>
           )}
         </nav>
 
       <main>
         <Switch>
-
-
-
-
-
 
           <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
@@ -193,8 +190,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
 
           <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
 
-          <ProtectedRoute path="/search" reqUser={true} component={Search} />
-
           <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
           <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
@@ -217,7 +212,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearSearch, clear
           </Route>
         </Switch>
       </main>
-</div>
+</div></div></div>
     </Router>
   );
 }
@@ -229,7 +224,6 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   clearForm,
   clearApod,
-  clearSearch,
   clearAlbum,
   clearClient,
   clearContactUs,

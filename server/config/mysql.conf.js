@@ -4,7 +4,7 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   host: process.env.DB_HOST,
   password: process.env.DB_PASSWORD,
-  client: process.env.DB_CLIENT,
+  user: process.env.DB_CLIENT,
   database: process.env.DB_DATABASE,
   port: process.env.DB_PORT,
 });

@@ -18,16 +18,13 @@ text-decoration: none;
 {
 background-color: rgba(255, 255, 255, 0.05);
 border: solid 1px rgb(27, 55, 71);
-border-color: 0px 0px 2px 2px rgba(91, 91, 184, 0.877);
-box-shadow: 4px 4px 1px 2px hsla(203, 27%, 26%, 0.548),
-inset 5px 5px 2px hsla(180, 22%, 20%, 0.596);
 display: flex;
 position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 width: 310px;
-height: 520px;
+height: 500px;
 margin-top: 50px;
 border-radius: 10px;
 font-weight: 300;
@@ -37,9 +34,8 @@ backdrop-filter: blur(5px);
 box-shadow: 0px 0px 0px 1px #ffffff79;
 border-color: rgb(134, 134, 136);
 box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
-inset 5px 5px 2px hsla(180, 15%, 18%, 0.973);
+inset 5px 5px 2px hsla(180, 15%, 13%, 0.973);
 z-index: 100;
-
 }
 .btnGroup
 {
@@ -163,8 +159,8 @@ width: 30px;
 border: white dotted 1px;
 border-radius: 5px;
 }
-
-.camera :active{
+.camera :active
+{
 /*AiOutlineCamera*/
 display: flex;
 justify-content: center;
@@ -178,14 +174,15 @@ width: 30px;
 border: white dotted 1px;
 border-radius: 5px;
 }
-
-.modelNum{
+.modelNum
+{
 font-family: "Copperplate", Times, serif;
 margin-left: 1em;
-color: #15f4ee;
+color:rgb(112, 109, 109);
 position:fixed;
 left:0px;
 bottom:0px;
+font-size: 13px;
 }
 .tourguide button
 {
@@ -193,12 +190,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 border-radius:50px;
-margin-left: 5px;
+margin-left: 10px;
 margin-top: 45px;
 width:50px;
 height: 50px;
 z-index: 11;
-background-image: linear-gradient(to right, #314755 0%, #56ce32  51%, #314755 100%)
+background-image: linear-gradient(to right, #314755 0%, #56ce32  49%, #314755 100%)
 }
 .gmessage, .smessage 
 {
@@ -220,7 +217,7 @@ z-index: 11;
 }
 .signMess
 {
-height: 200px;
+height: 260px;
 width: 210px;
 font-family: "Monaco", Times, serif;
 display:inline-block;
@@ -236,13 +233,65 @@ inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
 border-color: rgb(149, 150, 151);
 z-index: 11;
 }
-.outerS{
+.sign 
+{
+text-decoration: none;
+margin-left: -3.45em
+}
+.outerS
+{
 display: inline-flex;
 flex-direction: row;
 flex-basis:auto;
 padding: 20px;
 }
-input {
+.tourguide input 
+{
+margin-top: 75px;
+margin-left: auto;
+margin-right: auto;
+margin: 10px;
+width: 220px;
+height: 25px;
+padding-left: 15px;
+background-color: #ace4f8bb;
+border-radius: 40px 4px;
+border-color: rgb(236, 237, 241);
+box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
+inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
+}
+.tourguide input:hover 
+{
+ box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
+}
+.tourguide:hover 
+{
+border-color: blue;
+}
+.glassForm {
+background-color: hsla(226, 66%, 11%, 0.5);
+display: flex;
+position: relative;
+top: 300px;
+left: 50%;
+right: auto;
+transform: translate(-50%, -50%);
+width: 720px;
+height: 500px;
+margin-top: 200px;
+border-radius: 10px;
+font-weight: 300;
+align-content: center;
+justify-content: center;
+backdrop-filter: blur(5px);
+border: 3px solid rgb(53, 65, 73);
+box-shadow: 3px 3px 5px 1px #645757e0,
+4px 4px 2px hsla(180, 52%, 46%, 0.973),
+inset 4px 5px 4px hsl(180, 5%, 18%);
+z-index: 100;
+}
+.glassForm input 
+{
 margin-top: 75px;
 margin-left: auto;
 margin-right: auto;
@@ -250,18 +299,40 @@ margin: 10px;
 width: 200px;
 height: 25px;
 padding-left: 15px;
-background-color: #ace4f8bb;
-border-radius: 40px 4px;
+background-color: hsla(0, 0%, 0%, 0.5);
+border-radius: 5px;
 box-shadow: 0px 0px 0px 1px #ffffff79;
-border-color: rgb(236, 237, 241);
+border-bottom:rgb(236, 237, 241) ;
 box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
 inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 }
-input:hover 
-{
- box-shadow: 0px 0px 200px 20px rgba(41, 172, 150, 0.877);
+
+/* ////Contact Us */
+
+.textForm {
+margin-top: -250px;
+margin-left: 270px;
+background-color: hsla(240, 43%, 1%, 0.5);
+border-radius: 10px;
+color: antiquewhite;
+padding: 15px;
+font: 17px;
+border: 1px solid rgb(53, 65, 73);
+box-shadow: 1px 1px 2px 1px #645757e0,
+1px 1px 1px 1px  hsla(180, 52%, 46%, 0.973),
+inset 1px 3px 2px 1px hsl(180, 5%, 18%);
 }
-.tourguide:hover 
-{
-border-color: blue;
+.textForm::active{
+border-radius: 10px;
+border: blue dotted 2px;
+}
+.textForm::hover{
+border-radius: 10px;
+border: blue dotted 2px;
+}
+.textEmail{
+margin-bottom: 300px;
+}
+.textDrop{
+margin-bottom: 400px;
 }

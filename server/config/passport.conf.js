@@ -33,7 +33,9 @@ if (error) {
     if (req && req.cookies) {
       token = req.cookies["jwt"];
     }
+console.log("token",token)
     return token;
+
   };
 
   //! JWT strategy

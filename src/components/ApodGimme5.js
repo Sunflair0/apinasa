@@ -8,10 +8,7 @@ const apiKey = process.env.REACT_APP_NASA_KEY;
 const ApodGimme5 = ({
   addEntry,
   deleteEntry,
-  album,
-  isLiked,
-  id,
-  pic
+  album
 
 }) => {
   const [gimme5Data, setGimme5Data] = useState(null);
@@ -36,45 +33,46 @@ const ApodGimme5 = ({
 
   return (
     <>
-      <div className=""></div>
-      <div className="apodPhoto">
-        {gimme5Data.map(item => (
-          <div className=" infobox stylebox">
+      <h3>Bam! Here you are, five stunning pictures from NASA's library from past APODs. See something you like? Click the Add button and keep it for yourself.</h3>
 
-            {item.media_type === "image" ? (
-              <img
-                src={item.url}
-                alt={item.title}
-                id={item.id}
+      <div className="flex3">
+        <div className="apodPhoto">
+          {gimme5Data.map(item => (
+            <div className="infobox stylebox">
+
+              {item.media_type === "image" ? (
+             <img onClick={() =>window.open(item.url,"apodblank")}
+                  src={item.url}
+                  alt={item.title}
+                  id={item.id}
+                  key={item.id}
+                />
+              ) : (
+                <iframe
+                  title="space-video"
+                  src={item.url}
+                  frameBorder="0"
+                  gesture="media"
+                  allow="encrypted-media"
+                  allowFullScreen
+                />
+              )}
+
+              <Console
+                deleteEntry={deleteEntry}
+                addEntry={addEntry}
+                isLiked={likedIds.includes(item.id)}
                 key={item.id}
-              />
-            ) : (
-              <iframe
-                title="space-video"
-                src={item.url}
-                gesture="media"
-                allow="encrypted-media"
-                allowFullScreen
-              />
+                id={item.id} />
 
-            )}
-
-            <Console
-              deleteEntry={deleteEntry}
-              addEntry={addEntry}
-              isLiked={likedIds.includes(item.id)}
-              key={item.id}
-              id={item.id} />
-            
               <h1>{item.title}</h1>
               <p className="date">{item.date}</p>
               <p className="url">{item.url} </p>
               <p className="copyright">{item.copyright} (copyright)</p>
               <p className="explanation">{item.explanation}</p>
-            
-          </div>
-        ))}
-
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
@@ -82,15 +80,15 @@ const ApodGimme5 = ({
 
 function mapStateToProps(state) {
   return {
-    album: state.album,
+    album: state.album
 
   };
 }
 
 const mapDispatchToProps = {
   deleteEntry,
-  addEntry
-};
+  addEntry,
 
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApodGimme5);

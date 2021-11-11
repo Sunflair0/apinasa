@@ -1,12 +1,35 @@
 import React from "react";
 import { connect } from "react-redux";
-import {  } from "../redux/actions";
 
 
-export default function Form() {
+const Form = ({
+	clienttag
+}) => {
+
+	const handleSubmit = (e) => { e.preventDefault() }
+
 	return (
-		<div className="">
-			Order Form
-		</div>
+		<>
+			<div className="flex3 contactBg3">
+				<div className="glassForm">
+					Order Form
+					<form onSubmit={handleSubmit}>
+					</form>
+				</div>
+			</div>
+		</>
 	)
 }
+
+function mapStateToProps(state) {
+	return {
+		clienttag: state.client.clienttag
+	};
+}
+
+const mapDispatchToProps = {
+
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

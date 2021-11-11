@@ -3,11 +3,8 @@ const passport = require("passport");
 const auth = require("../middleware/auth.middleware");
 const router = express.Router();
 const {
-  signup,
-  login,
-  getAllClients,
-  getByClientID,
-  getByClienttag,
+  signup
+  
 } = require("../models/clients.model");
 
 router.get("/validate", auth, (req, res) => {
@@ -36,18 +33,29 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  const { clienttag, password } = req.body;
-  if (!validate(clienttag, password)) {
+  const { username, password } = req.body;
+
+
+  console.log("req.body", req.body);
+
+  if (!validate(username, password)) {
    return res.send({
     success: false,
     data: null,
     error: "Invalid data provided",
     });
   }
+  console.log("About to call 'local-login'");
   passport.authenticate("local-login", (err, client, info) => {
+    
+    console.log("err", err);
+    console.log("client", client);
+    console.log("info", info);
+
     if (err) {
       return res.send({ success: false, error: err, data: null });
     }
+    console.log("authenticated",info)
     return res
       .cookie("jwt", info.token, { secure: true, httpOnly: true })
       .send({ success: true, error: null, data: client });
