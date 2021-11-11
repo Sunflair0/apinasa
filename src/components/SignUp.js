@@ -88,6 +88,7 @@ const Signup = ({ setClient }) => {
               </div>
             </div>
             <div className="modelNum">TourGuide 2.1M31-7 LU</div>
+<div className="error__message">{error}</div>
           </div>
         </form>
       </div>
@@ -104,7 +105,7 @@ const Signup = ({ setClient }) => {
       <div className="circle16" title="Blackhole"></div>
       <div className="comet" title="comet"></div>
    
-      <div>{error}</div>
+      
 </div>
 </div>
     </>

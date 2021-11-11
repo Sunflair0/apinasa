@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import {
-  clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
+  clearForm, clearApod, clearAlbum, setClient, clearClient, clearContactUs,
   clearBigCube, clearBuyVent,
 } from "./redux/actions";
 import {
@@ -44,15 +44,15 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 ) {
   const [sidebar, setSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar)
+let validate 
  
   
 useEffect(() => {
-     {
       const res = validate("/api/clients/validate");
       if (res.success) {
         setClient(clienttag);
       }
-  });
+}, []);
 
 return (
     <Router>
