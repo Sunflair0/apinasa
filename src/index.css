@@ -76,23 +76,61 @@ margin: auto 50px 0 auto;
 }
 
 .logintop {
+margin-left: -125px;
 text-align: center;
 border-radius: 15px;
-padding: 5px;
-height: 45px;
+padding: 3px;
+height: 22px;
+font-size: 20px;
 position: fixed;
 top: 10%;
 left: 50%;
 transform: translate(-50%, -50%);
 font-weight: 600;
-font-size: xx-large;
-width: 350px;
+width: 250px;
+background-color: hsl(230, 90%, 8%);
+border-color: #2c4cee;
+box-shadow: 0px 0px 30px #2c4cee;
+z-index: 50;
+color: rgba(240, 227, 50);
+animation: drop_in forwards .7s ease-in-out;
+}
+.logintop::before {
+content: '';
+border-radius: 15px;
+margin-top: -25px;
+height: 25px;
+position: absolute;
+top: 0%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 200px;
 background-color: hsl(230, 90%, 8%);
 border-color: #2c4cee;
 box-shadow: 0px 0px 30px #2c4cee;
 z-index: 10;
 }
-
+.logintop::after {
+content: '';
+border-radius: 15px;
+margin-top: 55px;
+height: 25px;
+position: absolute;
+top: 0%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 200px;
+background-color: hsl(230, 90%, 8%);
+border-color: #2c4cee;
+box-shadow: 0px 0px 30px #2c4cee;
+z-index: 10;
+}
+@keyframes drop_in 
+{
+from {opacity: 0; transform: translateY(-50px);}
+to {opacity: 1; transform: translateY(0px);}
+ 
+}
 .spacer{
 margin-top: 90px;
 }
