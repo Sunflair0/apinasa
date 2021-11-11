@@ -93,7 +93,7 @@ border-color: #2c4cee;
 box-shadow: 0px 0px 30px #2c4cee;
 z-index: 50;
 color: rgba(240, 227, 50);
-animation: drop_in forwards .7s ease-in-out;
+animation: drop_in forwards 1.5s ease-in-out;
 }
 .logintop::before {
 content: '';
