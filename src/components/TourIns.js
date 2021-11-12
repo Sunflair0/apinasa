@@ -8,7 +8,7 @@ export default function TourIns() {
 				<div className="fadeBox">
 					<div className="iris"></div>
 						<div className="bubble"></div>
-<div className="marsa"></div>
+<div className="errorMessage"></div>
 
 					
 				</div></div></div>
