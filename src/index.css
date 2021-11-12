@@ -143,6 +143,17 @@ justify-content: center;
 flex-direction: row;
 }
 
+.errorMessage {
+align-items: center;
+justify-content: center;
+width: 350px;
+height: 50px;
+background: rgb(89, 102, 63);
+border: rgb(199, 10, 10) 2px solid;
+color: rgb(199, 10, 10);
+outline: 2px solid rgb(199, 10, 10);
+outline-offset: 5px;
+}
 
 /*///////Main Menu*/
 
