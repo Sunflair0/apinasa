@@ -104,7 +104,10 @@ const Signup = ({ setClient }) => {
       <div className="circle16" title="Blackhole"></div>
       <div className="comet" title="comet"></div>
    
-      <div>{error}</div>
+      {error.length > 0 && (
+          <div className="errorMessage">{error}
+          </div>
+        )}
 </div>
 </div>
     </>
