@@ -323,18 +323,28 @@ box-shadow: inset 0px 0px 25px 1px rgb(77, 4, 32);
 margin-left: -90px;
 margin-top: 200px;
 border-radius: 50px;
-  background: radial-gradient( circle at 50% 7px, #e4d3ff, rgba(19, 6, 78, 0.308) 35%),
-     radial-gradient(50% 50% at 75% 75%, #52699b, transparent) ;
+background: radial-gradient( circle at 50% 30px, #e4d3ff, rgba(19, 6, 78, 0.308) 20%),
+radial-gradient(50% 50% at 75% 75%, #cec10b, transparent) ;
 }
+
 .bubble {background: radial-gradient(100% 85% at 25% 25%, rgb(52, 50, 170), transparent 43%),
 radial-gradient(65% 65% at 15% 15%, rgb(19, 19, 20), transparent 63%),
 radial-gradient(100% 25% at 25% 25%, rgb(248, 248, 248), transparent 100%),
-     radial-gradient(15% 15% at 75% 75%, #7c6fb4, transparent), 
-    radial-gradient(100% 100% at 50% 25%, transparent, #0f417a 98%);
-   border: 1px solid #0e262e;
-   border-radius: 100%;
-   height: 150px;
-   width: 150px; }
+radial-gradient(15% 15% at 75% 75%, #7c6fb4, transparent), 
+radial-gradient(100% 100% at 50% 25%, transparent, #0f417a 98%);
+border: 1px solid #0e262e;
+border-radius: 100%;
+height: 150px;
+width: 150px; 
+}
+
+.minisun {
+background: rgb(235, 121, 68);
+background: radial-gradient(circle, rgb(250, 182, 98) 10%,rgb(253, 187, 64) 25%,rgb(253, 169, 42) 45%,rgb(255, 145, 0) 55%, rgb(255, 86, 34) 70%,rgb(255, 0, 0) 80%);
+border-radius: 50%;
+height: 150px;
+width: 150px; 
+}
 
 .marsa { background:
 radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
@@ -352,11 +362,10 @@ radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
 radial-gradient(100% 100% at 0% 5%, transparent, #e87f3c 98%);
 box-shadow: inset -25px -5px 20px 1px rgba(170, 149, 81, 0.5);
 border: 1px solid #000000;
-   border-radius: 100%;
-   height: 150px;
-   width: 150px; 
+border-radius: 100%;
+height: 150px;
+width: 150px; 
 margin-top: -1.3vh;
-
 margin-left: -90px;;
 margin-left: -90px;
 }

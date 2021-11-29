@@ -9,6 +9,7 @@ export default function TourIns() {
 					<div className="iris"></div>
 						<div className="bubble"></div>
 <div className="marsa"></div>
+<div className="minisun"></div>
 
 					
 				</div></div></div>

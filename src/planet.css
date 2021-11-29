@@ -359,18 +359,22 @@ margin-left: -150vh;
 margin-block-start: 40vh; 
 height: 6645px;
 width: 6645px;
+background: rgb(235, 121, 68);
+background: radial-gradient(circle, rgb(250, 182, 98) 30%,rgb(252, 210, 21) 60%,rgb(255, 153, 0) 75%);
+box-shadow: 
+            inset 0px 0px 40px 10px rgb(255, 80, 0),
+            inset 0px 0px 100px rgb(255, 120, 0.5),
+            inset 0px 0px 200px rgb(255, 120, 0.5),
+            inset 0px 0px 300px rgb(255, 120, 0.5),
+            inset 0px 0px 400px rgb(255, 120, 0.5),
+            0px 0px 20px 3px rgb(0, 0, 0),
+            0px 0px 100px 40px hsla(40, 100%, 50%, 0.07),
+            0px 0px 100px 60px hsla(40, 100%, 50%, 0.07),
+            0px 0px 100px 100px hsla(40, 100%, 50%, 0.07),
+            0px 0px 100px 200px hsla(40, 100%, 50%, 0.07);
 border-radius: 50%;
-background-color: rgb(206, 193, 17);
 z-index: 10;
-box-shadow:  
- 0px 0px 20px rgb(161, 147, 17),
- 0px 0px 40px rgba(240, 227, 50),
- 0px 0px 60px rgba(240, 227, 50),
- 0px 0px 80px rgba(240, 227, 50), 
-  inset 0px 0px 50px 100px rgba(170, 170, 50, 1);
-
 }
-
 .circle16 
 { 
 /*Blackhole*/
