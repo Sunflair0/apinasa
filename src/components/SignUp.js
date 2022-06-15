@@ -13,8 +13,8 @@ const Signup = ({ setClient }) => {
 
   return (
     <>
-<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100", height: "100%"}}>
-<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+<div style={{backgroundImage: "url(../assets/stars.png)", zIndex: "-100", height: "100%"}}>
+<div style={{backgroundImage: "url(../assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
 
       <h2 className="logintop">Signup</h2>
       <div className="spacer">
