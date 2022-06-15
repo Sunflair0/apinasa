@@ -9,7 +9,21 @@ export default function TourIns() {
 					<div className="iris"></div>
 						<div className="bubble"></div>
 <div className="marsa"></div>
-<div className="minisun"></div>
+<div className="circle9">
+	
+<div className="circle10"></div>
+
+<div className="circle11">
+
+</div>
+
+<div className="circle12"></div>
+
+<div className="circle13"></div>
+
+<div className="circle17"></div>
+
+</div>
 
 					
 				</div></div></div>

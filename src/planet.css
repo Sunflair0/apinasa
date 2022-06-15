@@ -51,8 +51,8 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-top: 70vh;
-margin-left: 270vh;
+margin-top: 50vh;
+margin-left: 37vh;
 position: absolute;
 height: 34px;
 width:34px;
@@ -74,15 +74,14 @@ radial-gradient(100% 100% at 0% 5%, transparent, #b34125 98%),
 linear-gradient(#c44f32,#3a1317);
 
 box-shadow: inset -25px -5px 20px 1px rgba(128, 111, 56, 0.5);
-z-index: -2;
-animation: mars linear 90s infinite;
-animation-delay: 10s;
+z-index: 2;
+animation: mars linear 60s infinite;
 }
 @keyframes mars
 {
-from {transform: translatex(-25vh) scale(2.3) translatey(10vh) scale(2.3) rotate(72.7deg);
+from {transform: translatex(30vh) scale(2.3) translatey(50vh) scale(2.3) rotate(72.7deg);
      } 
-to   {transform: translatex(-65vh) scale(0) translatey(-213vh) scale(0) rotate(70.3deg);
+to   {transform: translatex(15vh) scale(0) translatey(-93vh) scale(0) rotate(70.3deg);
      }
 }
 .circle4 
@@ -100,7 +99,7 @@ z-index: 2;
 .circle5 
 {
 /* Mercury*/
-margin-left: 270vh;
+margin-left: 70vh;
 margin-top: 70vh;
 position: absolute;
 height: 23px;
@@ -110,11 +109,13 @@ height: 23px;
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
 box-shadow: black;
 animation: 23s merc linear infinite;
+z-index: 2;
 }
 @keyframes merc {
-from    { transform: translatex(0vh) scale(1.3) translatey(-10vh) scale(1.3);
+from    { transform: translatex(30vh) scale(1.3) translatey(30vh) scale(1.3);
         } 
-  to    { transform: translatex(-10vh) scale(0) translatey(-183vh) scale(0);
+  to    { transform: translatex(25vh) scale(0) translatey(-100vh) scale(0);
+          color: #000000;
         }
 }
 .circle6 
@@ -178,28 +179,28 @@ z-index: 2;
 .circle9
 {
 /*Uranus*/
-margin-left: 180vh;
-margin-top: -10vh;
-position: absolute;
-height:340px;
-  width: 340px;
+margin-left: 40vh; 
+margin-top: 20vh;
+position: static;
+height:640px;
+  width: 640px;
   border-radius: 50%;
   background-color: rgb((37, 189, 125)); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(5, 226, 230) 0%, rgb(20, 68, 68) 45%, rgba(0,6,6,0) 46%, rgba(0,6,6,0) 56%,rgba(8, 70, 71, 0.8) 62%, rgb(32, 63, 63) 63%, rgb(0, 0, 0, 0) 70%);
-z-index: -20;
-animation: uranus 340s linear infinite;
+  background-image: radial-gradient(circle, rgb(157, 229,228) 0%, rgb(78,152,151) 27%, rgb(67,109,105) 28%, rgba(0,6,6,0) 28%,rgba(0, 0, 0, 0) 66%,rgba(8, 70, 71, 0.336) 65%, rgba(0, 0, 0, 0) 65%, rgba(8, 70, 71, 0.8) 72%, rgb(58, 102, 102) 97%, rgba(6, 31, 34, 0.562) 98%, rgba(0, 0, 0, 0) 100%);
+z-index: 0;
+animation: uranus 100s linear infinite;
 }
 @keyframes uranus{
-from    { transform: translatex(0vh) translatey(60vh);
+from    { transform: translatex(-55vh) translatey(90vh);
         } 
-  to    { transform: translatex(-40vh) translatey(-153vh);
+  to    { transform: translatex(-50vh) translatey(-150vh);
         }
 }
 .circle10 
 {
 /*Ariel*/
-margin-left: 170px;
-margin-top: 170px;
+margin-left: 315px;
+margin-top: 315px;
 display: inline-block;
 position: absolute;
 height: 5px;
@@ -207,20 +208,20 @@ height: 5px;
   border-radius: 50%;
   background-color: rgb(151, 108, 58); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(231, 173, 107), rgb(208, 221, 90));
-z-index: -1;
-animation: ariel linear infinite 21s;
+z-index: 1;
+animation: ariel linear infinite 71s;
 }
 @keyframes ariel{
-from    {  transform: rotate(0deg) translateX(153px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(293px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(153px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(293px) rotate(0deg);
         }
 }
 .circle11 
 {
 /*Titania*/
-margin-left: 170px;
-margin-top: 170px;
+margin-left: 315px;
+margin-top: 315px;
 display: inline-block;
 position: absolute;
 height: 15px;
@@ -228,42 +229,42 @@ height: 15px;
   border-radius: 70px;
   background-color: rgb(221, 123, 12); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(221, 123, 12),rgb(0, 0, 0) );
-z-index: -1;
-animation: titania linear infinite 67s;
+z-index: 1;
+animation: titania linear infinite 87s;
 }
 
 @keyframes titania{
-from    {  transform: rotate(0deg) translateX(151px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(321px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(151px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(321px) rotate(0deg);
         }
 }
 .circle12
 {
 /*Umbriel*/
-margin-left: 170px;
-margin-top: 172px;
+margin-left: 315px;
+margin-top: 313px;
 display: inline-block;
 position: absolute;
 height: 7px;
   width:7px;
   border-radius: 50px;
   background-color: rgb(231, 144, 14); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle,  rgb(231, 144, 14),rgba(0, 0, 0, 0.781) );
-z-index: -1;
-animation: umbriel linear infinite 43s;
+  /* background-image: radial-gradient(circle,  rgb(231, 144, 14),rgba(0, 0, 0, 0.781) ); */
+z-index: 1;
+animation: umbriel linear infinite 193s;
 }
 @keyframes umbriel{
-from    {  transform: rotate(0deg) translateX(147px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(307px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(147px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(307px) rotate(0deg);
         }
 }
 .circle13
 {
 /*Oberon*/
-margin-left: 170px;
-margin-top: 172px;
+margin-left: 315px;
+margin-top: 315px;
 display: inline-block;
 position: absolute;
 height: 4px;
@@ -271,21 +272,21 @@ height: 4px;
   border-radius: 50px;
   background-color: rgb(226, 118, 10); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(226, 118, 10),rgba(0, 0, 0, 0.7) );
-z-index: -1;
-animation: oberon linear infinite 33s;
+z-index: 1;
+animation: oberon linear infinite 47s;
 }
 @keyframes oberon
         {
-from    {  transform: rotate(0deg) translateX(158px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(300px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(158px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(300px) rotate(0deg);
         }
 }
 .circle17
 {
 /*Miranda*/
-margin-left: 170px;
-margin-top: 172px;
+margin-left: 315px;
+margin-top: 315px;
 display: inline-block;
 position: absolute;
 height: 9px;
@@ -293,13 +294,13 @@ height: 9px;
   border-radius: 50px;
   background-color: rgb(184, 181, 34); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(184, 181, 34),rgba(0, 0, 0, 0.781) );
-z-index: -1;
-animation: miranda linear infinite 50s;
+z-index: 1;
+animation: miranda linear infinite 140s;
 }
 @keyframes miranda{
-from    {  transform: rotate(0deg) translateX(140px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(305px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(140px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(305px) rotate(0deg);
         }
 }
 .comet
@@ -361,9 +362,10 @@ height: 1000px;
 width: 1000px;
 clip-path: circle(200% at 100% 280%);
 background: rgb(235, 121, 68);
-background: linear-gradient(168deg, rgb(238, 88, 50) 80%,#d87f02 87%, #fcd215 95%);
-z-index: 10;
+background: linear-gradient(168deg, #ee5832 80%,#d87f02 87%, #fcd215 95%);
+z-index: 2;
 }
+
 /* spacing for planets */
 
 
