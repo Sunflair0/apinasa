@@ -354,40 +354,16 @@ animation: 10s comet forwards linear 10 ;
 .circle15 
 {
 /*Sun*/
-position: absolute;
-margin-left: -150vh;
-margin-block-start: 40vh; 
-height: 6645px;
-width: 6645px;
+position: fixed;
+right: 0;
+bottom: 0;
+height: 1000px;
+width: 1000px;
+clip-path: circle(200% at 100% 280%);
 background: rgb(235, 121, 68);
-background: radial-gradient(circle, rgb(250, 182, 98) 30%,rgb(252, 210, 21) 60%,rgb(255, 153, 0) 75%);
-box-shadow: 
-            inset 0px 0px 40px 10px rgb(255, 80, 0),
-            inset 0px 0px 100px rgb(255, 120, 0.5),
-            inset 0px 0px 200px rgb(255, 120, 0.5),
-            inset 0px 0px 300px rgb(255, 120, 0.5),
-            inset 0px 0px 400px rgb(255, 120, 0.5),
-            0px 0px 20px 3px rgb(0, 0, 0),
-            0px 0px 100px 40px hsla(40, 100%, 50%, 0.07),
-            0px 0px 100px 60px hsla(40, 100%, 50%, 0.07),
-            0px 0px 100px 100px hsla(40, 100%, 50%, 0.07),
-            0px 0px 100px 200px hsla(40, 100%, 50%, 0.07);
-border-radius: 50%;
+background: linear-gradient(168deg, rgb(238, 88, 50) 80%,#d87f02 87%, #fcd215 95%);
 z-index: 10;
 }
-.circle16 
-{ 
-/*Blackhole*/
-
-height:303.5px;
-  width:303.5px;
-  border-radius: 370px;
-  background-color: rgb(0, 0, 0); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgba(155, 51, 120, 0.384),rgba(41, 2, 28, 0.075),rgba(70, 11, 165, 0.486) );
-box-shadow: 0px 0px 2px 2px rgba(70, 11, 165, 0.315);
-z-index: -2;
-}
-
 /* spacing for planets */
 
 

@@ -10,36 +10,27 @@ const Login = ({ setClient }) => {
 
   return (
     <>
-<div className="shell">
-<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
-<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
+      <div className="shell">
+        <div style={{ backgroundImage: "url(./assets/stars.png)", zIndex: "-100" }}>
+          <div style={{ backgroundImage: "url(./assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
 
-      
-        <div className="logintop">Welcome to SpaceTours</div>
-        <div className="circle15" title="Sun/Sol">
-        <div className="circle5" title="Mercury"></div>
-        <div className="circle" title="Earth">
-        <div className="circle7" title="Moon/Luna"></div></div>
-        <div className="circle3" title="Mars"></div>
-        
-        <div className="circle9" title="Uranus">
-            <div className="circle17" title="Miranda"></div>
-            <div className="circle10" title="Ariel"></div>
-            <div className="circle11" title="Titania"></div>
-            <div className="circle12" title="Umbriel"></div>
-            <div className="circle13" title="Oberon"></div>
-      </div>
- 
-       <div className="circle6" title="Mimas"></div>
-       <div className="circle8" title="Titan"></div>
 
-        <div className="circle1" title="Pluto"></div>
-        <div className="circle2" title="Ganymede"></div>
-        <div className="circle4" title="Callisto"></div>
-        <div className="circle14" title="comet"></div>
-      </div>
-  </div>
+            <div className="logintop">Welcome to SpaceTours</div>
+            <div className="circle15" title="Sun/Sol">
+              <div className="circle5" title="Mercury"></div>
+              <div className="circle3" title="Mars"></div>
 
+              <div className="circle9" title="Uranus">
+                <div className="circle17" title="Miranda"></div>
+                <div className="circle10" title="Ariel"></div>
+                <div className="circle11" title="Titania"></div>
+                <div className="circle12" title="Umbriel"></div>
+                <div className="circle13" title="Oberon"></div>
+              </div>
+              <div className="circle14" title="comet"></div>
+            </div>
+
+          </div>
           <form className="tourguide">
             <div className="stripe">
               <label htmlFor="clienttag"></label>
@@ -81,12 +72,12 @@ const Login = ({ setClient }) => {
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
 
         </div>
-</div>
+      </div>
     </>
   );
 };
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {};
 };
 const mapDispatchToProps = { setClient };
