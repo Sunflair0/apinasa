@@ -9,7 +9,7 @@ const Signup = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
   const { callAPI: signupCall } = useFetch("POST");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   return (
     <>
@@ -69,7 +69,7 @@ const Signup = ({ setClient }) => {
                     clienttag.length <= 20 &&
                     password.length <= 20
                   ) {
-                    setError(null);
+                    setError("");
                     let res = await signupCall("/api/clients/signup", {
                       clienttag,
                       password,
@@ -104,7 +104,10 @@ const Signup = ({ setClient }) => {
       <div className="circle16" title="Blackhole"></div>
       <div className="comet" title="comet"></div>
    
-      <div>{error}</div>
+      {error.length > 0 && (
+          <div className="errorMessage">{error}
+          </div>
+        )}
 </div>
 </div>
     </>
