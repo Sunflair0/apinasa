@@ -13,6 +13,38 @@ border-radius: 10px 10px 0px 0px;
 text-decoration: none;
 }
 
+.card_holder {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  position: relative;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+    translateY(var(--translate-y, 0));
+  
+  transition: 150ms;  
+}
+.card_signin_back, .card_login_front
+{
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  
+}
+
+.card_signin_back
+{
+  transform: rotateY(180deg);
+  
+}
+.flip
+{
+--rotate-y: 180deg;
+}
+
 /* login */
 .tourguide 
 {
@@ -35,7 +67,7 @@ box-shadow: 0px 0px 0px 1px #ffffff79;
 border-color: rgb(134, 134, 136);
 box-shadow: 4px 4px 1px 2px hsla(180, 16%, 25%, 0.973),
 inset 5px 5px 2px hsla(180, 15%, 13%, 0.973);
-z-index: 100;
+z-index: -100;
 }
 .btnGroup
 {

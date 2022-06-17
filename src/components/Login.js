@@ -1,38 +1,28 @@
 import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import SignUp from "./SignUp";
 import * as AiIcons from "react-icons/ai";
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
+  const [flip, setFlip] =useState(false);
+
+  <div onClick={() => setFlip(!flip)}>
+      {flip? <SignUp /> : <Login />}
+  </div>
+
 
   return (
-    <>
-      <div className="shell">
-        <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
-          <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
-
-
-            <div className="logintop">Welcome to SpaceTours</div>
-             <div className="circle15" title="Sun/Sol"></div>
-              <div className="circle5" title="Mercury"></div>
-              <div className="circle3" title="Mars"></div>
-              <div className="circle9" title="Uranus">
-                <div className="circle17" title="Miranda"></div>
-                <div className="circle10" title="Ariel"></div>
-                <div className="circle11" title="Titania"></div>
-                <div className="circle12" title="Umbriel"></div>
-                <div className="circle13" title="Oberon"></div>
-              </div>
-              <div className="circle14" title="comet"></div>
-            </div>
-          </div>
+    <>  
+    <div className="cardholder "> 
+    <div className="card_login_front">  
           <form className="tourguide">
             <div className="stripe">
               <label htmlFor="clienttag"></label>
               <div className="bulb"><AiIcons.AiOutlineBulb /></div>
+              
               <div id="space">
                 <input
                   placeholder="Name"
@@ -66,11 +56,10 @@ const Login = ({ setClient }) => {
                 </button>
 
               </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
-                <Link className=" btnGroup" to="/signup"><button type="button">Sign Up!</button></Link>
+                <div className="btnGroup" onClick={() => <SignUp />}><button type="button">Sign Up!</button></div>
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
-
-        </div>
-      
+              </div>
+              </div>
     </>
   );
 };
