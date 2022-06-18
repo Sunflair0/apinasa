@@ -16,7 +16,7 @@ export default function Cardflip() {
         <>
         <div className="shell">    
 
- <ReactCardFlip isFlipped={isFlipped}flipDirection="vertical">
+ {/* <ReactCardFlip isFlipped={isFlipped}flipDirection="vertical">
         <Login>
         <div className="card_login_front"></div>
         <button onClick={this.handleClick}>Sign Up!</button>
@@ -26,7 +26,7 @@ export default function Cardflip() {
         <div className="card_signin_back"></div>
           <button onClick={this.handleClick}>To Login</button>
         </SignUp>
-      </ReactCardFlip>
+      </ReactCardFlip> */}
 
           
             {/* <div className="logintop">Welcome to SpaceTours</div> */}
