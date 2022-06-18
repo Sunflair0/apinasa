@@ -7,11 +7,9 @@ import * as AiIcons from "react-icons/ai";
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
-  const [flip, setFlip] =useState(false);
+  
 
-  <div onClick={() => setFlip(!flip)}>
-      {flip? <SignUp /> : <Login />}
-  </div>
+ 
 
 
   return (

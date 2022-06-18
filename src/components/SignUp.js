@@ -14,7 +14,7 @@ const Signup = ({ setClient }) => {
   return (
     <>
       <div className="cardholder">
-        <div className="card_signin_back">
+        
                 <form className="tourguide">
           <div className="stripeGroup"></div>
           <div className="stripe">
@@ -88,7 +88,7 @@ const Signup = ({ setClient }) => {
           </div>
         </form>
       </div>
-      </div>
+  
       <div>{error}</div>
     </>
   );
