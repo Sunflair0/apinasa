@@ -7,15 +7,9 @@ import * as AiIcons from "react-icons/ai";
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
-  
-
- 
-
 
   return (
-    <>  
-    <div className="cardholder "> 
-    <div className="card_login_front">  
+    <>      
           <form className="tourguide">
             <div className="stripe">
               <label htmlFor="clienttag"></label>
@@ -56,8 +50,7 @@ const Login = ({ setClient }) => {
               </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
                 <div className="btnGroup" onClick={() => <SignUp />}><button type="button">Sign Up!</button></div>
               </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
-              </div>
-              </div>
+                          
     </>
   );
 };

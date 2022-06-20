@@ -13,9 +13,7 @@ const Signup = ({ setClient }) => {
 
   return (
     <>
-      <div className="cardholder">
-        
-                <form className="tourguide">
+                    <form className="tourguide">
           <div className="stripeGroup"></div>
           <div className="stripe">
             <label id="space" htmlFor="clienttag"></label>
@@ -87,8 +85,7 @@ const Signup = ({ setClient }) => {
             <div className="modelNum">TourGuide 2.1M31-7 LU</div>
           </div>
         </form>
-      </div>
-  
+       
       <div>{error}</div>
     </>
   );

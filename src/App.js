@@ -24,7 +24,7 @@ import ApodGimme5 from "./components/ApodGimme5";
 import ApodRange from "./components/ApodRange";
 import BigCube from "./components/BigCube";
 import BuyVent from "./components/BuyVent";
-import Cardflip from "./components/Cardflip";
+import LoginPage from "./components/LoginPage";
 import ContactUs from "./components/ContactUs";
 import Earth from "./components/Earth";
 import Form from "./components/Form";
@@ -33,7 +33,7 @@ import Login from "./components/Login";
 import Mer from "./components/Mer";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
-import TourGuide from "./components/TourGuide"
+import TourGuide from "./components/TourGuideMessages"
 import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
 import VentConsole from "./components/VentConsole"
@@ -58,7 +58,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
             <nav>
               {" "}
               {!clienttag && (
-                <NavLink activeClassName="active" className="menuitem" to="/cardflip">
+                <NavLink activeClassName="active" className="menuitem" to="/LoginPage">
                   {" "}
                 </NavLink>
               )}{" "}
@@ -139,7 +139,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                           <li> <NavLink
                             className="menu1items"
-                            to="/cardflip"
+                            to="/LoginPage"
                             onClick={() => {
                               clearApod();
                               clearBigCube();
@@ -155,7 +155,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                         </ul>
                       </nav>
                     </div>
-                    </div>
+                  </div>
                 </>
               )}
             </nav>
@@ -179,7 +179,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                 <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
 
-                <ProtectedRoute path="/cardflip" reqUser={false} component={Cardflip} />
+                <ProtectedRoute path="/loginpage" reqUser={false} component={LoginPage} />
 
                 <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
@@ -187,7 +187,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                 <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
-                <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />                
+                <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
 
                 <ProtectedRoute path="/login" reqUser={false} component={Login} />
 
@@ -207,17 +207,15 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                 <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
 
-
-
                 <Route path="*">
 
-                  <Redirect to="/cardflip" />
+                  <Redirect to="/loginpage" />
                 </Route>
               </Switch>
             </main>
           </div>
-          </div>
-          </div>
+        </div>
+      </div>
     </Router>
   );
 }
