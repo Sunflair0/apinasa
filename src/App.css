@@ -1,6 +1,4 @@
-body {
-  overflow: hidden;
-}
+
 .mask {
 background-color: #131314;
 opacity: .65;
@@ -19,8 +17,7 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  position: relative;
-}
+  position: relative;}
 
 /* /////tourinfo page */
 
