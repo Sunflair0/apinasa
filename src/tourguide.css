@@ -19,13 +19,12 @@ text-decoration: none;
 background-color: rgba(255, 255, 255, 0.05);
 border: solid 1.5px #c4e0df8a;
 display: flex;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+position: sticky;
+/* margin: auto; */
+
+transform: translate(50%, -50%);
 width: 310px;
 height: 500px;
-margin-top: 50px;
 border-radius: 10px;
 font-weight: 300;
 align-content: center;
@@ -75,7 +74,7 @@ align-items: center;
 position: fixed;
 right: 0px;
 top: 0px;
-background-color: black;
+background-color: rgb(41, 172, 150);
 height: 30px;
 width: 30px;
 border: rgba(41, 172, 150, 0.877) dotted 1px;
@@ -177,10 +176,11 @@ border-radius: 5px;
 {
 font-family: "Copperplate", Times, serif;
 margin-left: 1em;
-color:rgb(112, 109, 109);
+color:rgb(214, 214, 214);
 position:fixed;
 left:0px;
 bottom:0px;
+filter: drop-shadow(0px 0px 40px rgb(0, 0, 0));
 font-size: 13px;
 }
 .tourguide button
@@ -194,7 +194,8 @@ margin-top: 45px;
 width:50px;
 height: 50px;
 z-index: 11;
-background-image: linear-gradient(to right, #314755 0%, #56ce32  49%, #314755 100%)
+border: 2px solid rgba(38, 59, 49, 0.5);
+background-image: linear-gradient(to right, #314755 0%, #47ec1d  49%, #314755 100%)
 }
 .gmessage, .smessage 
 {
@@ -265,7 +266,7 @@ inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 }
 .tourguide:hover 
 {
-border-color: blue;
+border-color: #c4e0df8a;
 }
 .glassForm {
 background-color: hsla(226, 66%, 11%, 0.5);
@@ -284,7 +285,7 @@ align-content: center;
 justify-content: center;
 backdrop-filter: blur(5px);
 border: 3px solid rgb(53, 65, 73);
-box-shadow: 3px 3px 5px 1px #645757e0,
+box-shadow: 3px 3px 5px 1px #c4e0df8a,
 4px 4px 2px hsla(180, 52%, 46%, 0.973),
 inset 4px 5px 4px hsl(180, 5%, 18%);
 z-index: 100;
