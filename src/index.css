@@ -1,7 +1,6 @@
 body {
-
+overflow: hidden;
 background-color:black;
-
 background-image:
 radial-gradient(rgb(160, 29, 29), rgba(241, 10, 10, 0.411) 2px, transparent 5px),
 radial-gradient(rgb(226, 9, 9), rgba(255,255,255,.05) 1px, transparent 10px),
