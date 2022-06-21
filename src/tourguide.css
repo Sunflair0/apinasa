@@ -25,6 +25,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 width: 310px;
 height: 500px;
+margin-top: 50px;
 border-radius: 10px;
 font-weight: 300;
 align-content: center;

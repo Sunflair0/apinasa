@@ -12,12 +12,10 @@ flex-direction: column;
 }
 
 .shell {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  position: relative;}
+width: 100vw;
+height:100vh;
+overflow: hidden;
+}
 
 /* /////tourinfo page */
 

@@ -6,6 +6,7 @@ export default function LoginPage() {
     return (
         <>
             <div className='shell'>
+                <div className='logintop'></div>
                 <div><Background /></div>
                 <div><Cardflip /></div>
             </div>

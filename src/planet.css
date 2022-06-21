@@ -51,7 +51,7 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-top: 0vh;
+margin-top: 50vh;
 margin-left: 37vh;
 position: absolute;
 height: 34px;
@@ -81,7 +81,7 @@ animation: mars linear 90s infinite;
 {
 from {transform: translatex(30vh) scale(2.3) translatey(10vh) scale(2.3) rotate(72.7deg);
      } 
-to   {transform: translatex(55vh) scale(0) translatey(-73vh) scale(0) rotate(70.3deg);
+to   {transform: translatex(15vh) scale(0) translatey(-93vh) scale(0) rotate(70.3deg);
      }
 }
 .circle4 
@@ -100,7 +100,7 @@ z-index: 2;
 {
 /* Mercury*/
 margin-left: 70vh;
-margin-top: 0vh;
+margin-top: 70vh;
 position: absolute;
 height: 23px;
   width:23px;
@@ -112,7 +112,7 @@ animation: 47s merc linear infinite;
 z-index: 0;
 }
 @keyframes merc {
-from    { transform: translatex(10vh) scale(1.3) translatey(30vh) scale(1.3);
+from    { transform: translatex(30vh) scale(1.3) translatey(30vh) scale(1.3);
         } 
   to    { transform: translatex(25vh) scale(0) translatey(-100vh) scale(0);
           color: #000000;
@@ -180,7 +180,7 @@ z-index: 0;
 {
 /*Uranus*/
 margin-left: 40vh; 
-margin-top: 0vh;
+margin-top: 20vh;
 position: static;
 height:640px;
 width: 640px;
@@ -193,7 +193,7 @@ background-image: radial-gradient(circle, rgb(157, 229, 228) 0%, rgb(115, 167, 1
 animation: uranus 300s linear infinite;
 }
 @keyframes uranus{
-from    { transform: translatex(5vh) translatey(-80vh);
+from    { transform: translatex(5vh) translatey(-90vh);
         } 
   to    { transform: translatex(35vh) translatey(89vh);
         }
@@ -308,7 +308,7 @@ from    {  transform: rotate(0deg) translateX(255px) rotate(0deg);
 .comet
 {
 /*comet*/
-margin-top: -5%;
+margin-top: -55%;
 right: -26%;
 height: 200px;
 width:0px;
