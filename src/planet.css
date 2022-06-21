@@ -51,7 +51,7 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-top: 50vh;
+margin-top: 0vh;
 margin-left: 37vh;
 position: absolute;
 height: 34px;
@@ -74,14 +74,14 @@ radial-gradient(100% 100% at 0% 5%, transparent, #b34125 98%),
 linear-gradient(#c44f32,#3a1317);
 
 box-shadow: inset -25px -5px 20px 1px rgba(128, 111, 56, 0.5);
-z-index: 2;
-animation: mars linear 60s infinite;
+z-index: 0;
+animation: mars linear 90s infinite;
 }
 @keyframes mars
 {
 from {transform: translatex(30vh) scale(2.3) translatey(50vh) scale(2.3) rotate(72.7deg);
      } 
-to   {transform: translatex(15vh) scale(0) translatey(-93vh) scale(0) rotate(70.3deg);
+to   {transform: translatex(55vh) scale(0) translatey(-93vh) scale(0) rotate(70.3deg);
      }
 }
 .circle4 
@@ -100,7 +100,7 @@ z-index: 2;
 {
 /* Mercury*/
 margin-left: 70vh;
-margin-top: 70vh;
+margin-top: 0vh;
 position: absolute;
 height: 23px;
   width:23px;
@@ -108,11 +108,11 @@ height: 23px;
   background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
 box-shadow: black;
-animation: 23s merc linear infinite;
-z-index: 2;
+animation: 47s merc linear infinite;
+z-index: 0;
 }
 @keyframes merc {
-from    { transform: translatex(30vh) scale(1.3) translatey(30vh) scale(1.3);
+from    { transform: translatex(10vh) scale(1.3) translatey(30vh) scale(1.3);
         } 
   to    { transform: translatex(25vh) scale(0) translatey(-100vh) scale(0);
           color: #000000;
@@ -174,26 +174,28 @@ align-items: center;
 justify-self: center;
 height: 320px;
 width: 320px;
-z-index: 2;
+z-index: 0;
 }
 .circle9
 {
 /*Uranus*/
 margin-left: 40vh; 
-margin-top: 20vh;
+margin-top: 0vh;
 position: static;
 height:640px;
   width: 640px;
   border-radius: 50%;
   background-color: rgb((37, 189, 125)); /* For browsers that do not support gradients */
-  background-image: radial-gradient(circle, rgb(157, 229,228) 0%, rgb(78,152,151) 27%, rgb(67,109,105) 28%, rgba(0,6,6,0) 28%,rgba(0, 0, 0, 0) 66%,rgba(8, 70, 71, 0.336) 65%, rgba(0, 0, 0, 0) 65%, rgba(8, 70, 71, 0.8) 72%, rgb(58, 102, 102) 97%, rgba(6, 31, 34, 0.562) 98%, rgba(0, 0, 0, 0) 100%);
-z-index: 0;
-animation: uranus 100s linear infinite;
+  background-image: radial-gradient(circle, rgb(157, 229, 228) 0%, rgb(115, 167, 166) 29%, transparent 29%,
+                   transparent 50%, rgba(157, 229, 228, 0.3) 51%, transparent 54%,
+                   transparent 61%, rgba(157, 229, 228, 0.5) 62%, transparent 63%,
+                   transparent 50%, rgba(157, 229, 228, 0.65) 65%, transparent 100%);
+animation: uranus 300s linear infinite;
 }
 @keyframes uranus{
-from    { transform: translatex(-55vh) translatey(90vh);
+from    { transform: translatex(-15vh) translatey(-70vh);
         } 
-  to    { transform: translatex(-50vh) translatey(-150vh);
+  to    { transform: translatex(20vh) translatey(89vh);
         }
 }
 .circle10 
@@ -208,8 +210,8 @@ height: 5px;
   border-radius: 50%;
   background-color: rgb(151, 108, 58); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(231, 173, 107), rgb(208, 221, 90));
-z-index: 1;
-animation: ariel linear infinite 71s;
+z-index: -2;
+animation: ariel linear infinite 97s;
 }
 @keyframes ariel{
 from    {  transform: rotate(0deg) translateX(293px) rotate(0deg);
@@ -224,19 +226,19 @@ margin-left: 315px;
 margin-top: 315px;
 display: inline-block;
 position: absolute;
-height: 15px;
-  width:15px;
+height: 11px;
+  width:11px;
   border-radius: 70px;
   background-color: rgb(221, 123, 12); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(221, 123, 12),rgb(0, 0, 0) );
-z-index: 1;
-animation: titania linear infinite 87s;
+z-index: -2;
+animation: titania linear infinite 137s;
 }
 
 @keyframes titania{
-from    {  transform: rotate(0deg) translateX(321px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(261px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(321px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(261px) rotate(0deg);
         }
 }
 .circle12
@@ -250,8 +252,8 @@ height: 7px;
   width:7px;
   border-radius: 50px;
   background-color: rgb(231, 144, 14); /* For browsers that do not support gradients */
-  /* background-image: radial-gradient(circle,  rgb(231, 144, 14),rgba(0, 0, 0, 0.781) ); */
-z-index: 1;
+  background-image: radial-gradient(circle,  rgb(226, 177, 103),rgba(0, 0, 0, 0.781) );
+z-index: -2;
 animation: umbriel linear infinite 193s;
 }
 @keyframes umbriel{
@@ -272,7 +274,7 @@ height: 4px;
   border-radius: 50px;
   background-color: rgb(226, 118, 10); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(226, 118, 10),rgba(0, 0, 0, 0.7) );
-z-index: 1;
+z-index: -2;
 animation: oberon linear infinite 47s;
 }
 @keyframes oberon
@@ -294,27 +296,28 @@ height: 9px;
   border-radius: 50px;
   background-color: rgb(184, 181, 34); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(184, 181, 34),rgba(0, 0, 0, 0.781) );
-z-index: 1;
+z-index: -1;
 animation: miranda linear infinite 140s;
 }
 @keyframes miranda{
-from    {  transform: rotate(0deg) translateX(305px) rotate(0deg);
+from    {  transform: rotate(0deg) translateX(255px) rotate(0deg);
         } 
-  to    {  transform: rotate(360deg) translateX(305px) rotate(0deg);
+  to    {  transform: rotate(360deg) translateX(255px) rotate(0deg);
         }
 }
 .comet
 {
 /*comet*/
-margin-left: 750px;
-height: 50px;
+margin-left: 45vh;
+margin-bottom: 0vh;
+height: 70px;
 width:0px;
-color: rgb(210, 210, 247);
-box-shadow: 0px 0px 1px 0.1px ;
+color: rgb(249, 252, 208);
+box-shadow: 0px 0px .5px 0.1px ;
 border-radius: 500px 0px 0px 0px;
 z-index: 3;
 transform-origin: 0 0;
-animation: 10s comet forwards linear 10 ;
+animation: 15s comet linear infinite;
 }
 @keyframes comet {
       0% {
@@ -363,7 +366,7 @@ width: 1000px;
 clip-path: circle(200% at 100% 280%);
 background: rgb(235, 121, 68);
 background: linear-gradient(168deg, #ee5832 80%,#d87f02 87%, #fcd215 95%);
-z-index: 2;
+z-index: 0;
 }
 
 /* spacing for planets */

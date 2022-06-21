@@ -1,4 +1,6 @@
-
+body {
+  overflow: hidden;
+}
 .mask {
 background-color: #131314;
 opacity: .65;
