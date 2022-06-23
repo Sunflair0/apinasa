@@ -32,7 +32,7 @@ import Login from "./components/Login";
 import Mer from "./components/Mer";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
-import TourGuide from "./components/TourGuide"
+import TourGuide from "./components/TourGuideMessage"
 import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
 import VentConsole from "./components/VentConsole"
