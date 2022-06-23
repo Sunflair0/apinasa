@@ -15,7 +15,7 @@ const Login = ({ setClient }) => {
           <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
 
 
-            <div className="logintop">Welcome to SpaceTours</div>
+            <div id="logintop">Welcome to SpaceTours</div>
              <div className="circle15" title="Sun/Sol"></div>
               <div className="circle5" title="Mercury"></div>
               <div className="circle3" title="Mars"></div>
