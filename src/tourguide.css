@@ -173,15 +173,15 @@ height: 30px;
 width: 30px;
 border: white dotted 1px;
 border-radius: 5px;
-}
-.modelNum
+}.modelNum
 {
 font-family: "Copperplate", Times, serif;
 margin-left: 1em;
-color:rgb(112, 109, 109);
+color:rgb(214, 214, 214);
 position:fixed;
 left:0px;
 bottom:0px;
+filter: drop-shadow(0px 0px 40px rgb(0, 0, 0));
 font-size: 13px;
 }
 .tourguide button
@@ -195,7 +195,8 @@ margin-top: 45px;
 width:50px;
 height: 50px;
 z-index: 11;
-background-image: linear-gradient(to right, #314755 0%, #56ce32  49%, #314755 100%)
+border: 2px solid rgba(38, 59, 49, 0.5);
+background-image: linear-gradient(to right, #314755 0%, #47ec1d  49%, #314755 100%)
 }
 .gmessage, .smessage 
 {
@@ -209,7 +210,7 @@ background-color: rgba(51, 54, 61, 0);
 border: 3px groove rgb(134, 134, 136);
 justify-content: flex-start;
 margin-top: 20px;
-color: #06e7f7;
+color: #00fff2;
 box-shadow: 5px 5px 2px hsla(180, 24%, 26%, 0.938),
 inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
 border-color: rgb(149, 150, 151);
@@ -227,7 +228,7 @@ background-color: rgba(51, 54, 61, 0);
 border: 3px groove rgb(134, 134, 136);
 justify-content: flex-start;
 margin-top: 50px;
-color: #1979f6;
+color: #00fff2;
 box-shadow: 5px 5px 2px hsla(180, 24%, 26%, 0.938),
 inset 3px 3px 2px hsla(180, 31%, 11%, 0.973);
 border-color: rgb(149, 150, 151);
