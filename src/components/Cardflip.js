@@ -1,39 +1,30 @@
-import React, {} from "react";
+import React, {useState} from "react";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import ReactCardFlip from 'react-card-flip';
 
 
-class Cardflip extends React.Component {
-    constructor() {
-      super();
-        this.state = {
-        isFlipped: false
-      };
-      this.handleClick = this.handleClick.bind(this);
-      
-    }
-  
-    handleClick(e) {
-      e.preventDefault();
-      this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-    }
-  
-    render() {
-      return (
-        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+const Cardflip = () => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleClick = () => {
+        setIsFlipped(!isFlipped);
+    };
+
+    return (
+        <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
           <Login>
-    
-            <button onClick={this.handleClick}>Click to flip</button>
+            This is the front of the card.
+            <button onClick={handleClick}>Click to flip</button>
           </Login>
   
           <SignUp>
-            
-            <button onClick={this.handleClick}>Sign</button>
+            This is the back of the card.
+            <button onClick={handleClick}>Click to flip</button>
           </SignUp>
         </ReactCardFlip>
-      )
-    }
-  }
+
+    )
+}
 
   export default (Cardflip);
