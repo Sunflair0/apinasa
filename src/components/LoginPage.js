@@ -17,13 +17,16 @@ export default function LoginPage() {
 
             <div><Background /></div>
             
-                <div className='card'>
+                <div className='card '>
                     <div className="tourguide">
+                    <div  className={isFlipped ? "toggle_flip" : "toggle_flop"}></div>
 
-                        <div className={isFlipped ? "toggle_flip" : "toggle_flop"}>
-                            <Login />
+                    <Login />
+ <button className="btnGroup tgButton loc2 " onClick={handleToggle}>Sign Up!</button>
+                        
+                           
                             
-                                <button className="btnGroup tgButton loc2 " onClick={handleToggle}>Sign Up!</button>
+                               
                                 
 <div className="signmore">
                                 <div className='card_back  '>
@@ -33,7 +36,7 @@ export default function LoginPage() {
                                 <button className="btnGroup tgButton loc" onClick={handleToggle}>To Login</button>
                                  </div>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
            

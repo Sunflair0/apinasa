@@ -9,8 +9,8 @@ const Login = ({ setClient }) => {
 
   return (
     <>
-      <form
-      >
+      <form >
+        <div className="tourguide1">
         <div className="stripe">
           <label htmlFor="clienttag"></label>
           <div className="bulb"><AiIcons.AiOutlineBulb /></div>
@@ -49,6 +49,7 @@ const Login = ({ setClient }) => {
 
           </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
           </div>
+        </div>
         </div>
       </form>
 
