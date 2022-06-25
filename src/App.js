@@ -53,7 +53,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
         <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
 
 
-          <div className="bigShell ">
+          {/* <div className="bigShell "> */}
 
             <nav>
               {" "}
@@ -62,8 +62,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                   {" "}
                 </NavLink>
               )}{" "}
-              <NavLink activeClassName="active" className="presenter" to="/signup"
-              ></NavLink>
+             
               {clienttag && (
                 <>
                   {/*///// Main Menu Toggle */}
@@ -213,7 +212,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                 </Route>
               </Switch>
             </main>
-          </div>
+          
         </div>
       </div>
     </Router>

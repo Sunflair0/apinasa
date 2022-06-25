@@ -164,6 +164,10 @@ display: inline-flex;
 justify-content: center;
 flex-direction: row;
 position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
 }
 
 .errorMessage {

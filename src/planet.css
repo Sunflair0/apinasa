@@ -193,9 +193,9 @@ background-image: radial-gradient(circle, rgb(157, 229, 228) 0%, rgb(115, 167, 1
 animation: uranus 300s linear infinite;
 }
 @keyframes uranus{
-from    { transform: translatex(5vh) translatey(-90vh);
+from    { transform: translatex(5vh) translatey(-107.5vh);
         } 
-  to    { transform: translatex(35vh) translatey(89vh);
+  to    { transform: translatex(45vh) translatey(89vh);
         }
 }
 .circle10 
