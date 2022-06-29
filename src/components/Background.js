@@ -1,10 +1,10 @@
 import React, { } from "react";
 
 export default function Background() {
-    
 
     return (
     <>
+    <div className="shell">
         {/* <div className="logo"></div> */}
         
         <div className="circle9" title="Uranus">
@@ -17,6 +17,7 @@ export default function Background() {
         <div className="circle5" title="Mercury"></div>
         <div className="circle3" title="Mars"></div>
         <div className="comet" title="comet"></div>
+        </div>
     </>
     )
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
 
 const Login = ({ setClient }) => {
@@ -15,11 +14,13 @@ const Login = ({ setClient }) => {
           <label htmlFor="clienttag"></label>
           <div className="bulb"><AiIcons.AiOutlineBulb /></div>
           <div id="space">
+
             <input
               placeholder="Name"
               id="clienttag"
               onChange={(e) => setClienttag(e.target.value)}
-              value={clienttag} /></div>
+              value={clienttag} />
+              </div>
           <label htmlFor="password" >
 
           </label>
@@ -47,8 +48,11 @@ const Login = ({ setClient }) => {
             </button>
 
           </div><div className="outerS"><div className="smessage">If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
-            <Link className=" btnGroup" to="/signup"><button type="button">Sign Up!</button></Link>
-          </div><div className="modelNum">TourGuide 2.1M31-7 LU</div></div></form>
+          </div>
+        </div>
+        
+      </form>
+
     </>
   );
 };
