@@ -12,35 +12,9 @@ border-radius: 10px 10px 0px 0px;
 .control-arrow.control-next{
 text-decoration: none;
 }
-
-
 /* login */
-.log-shell
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 310px;
-height: 500px;
-}
 
-
-.log
-{
-position: relative;
-
-transform-style: preserve-3d;
-perspective: 1000px;
-cursor: default;
- top: 50%; 
- left: -50%;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;  
-}
-.cards{
+.card{
 position: fixed;
 top: 30%;
 left: 40%; 
@@ -52,7 +26,7 @@ background: rgba(75, 102, 117, 0.04);
 .tourguide 
 {
 cursor: default;
-background: rgba(75, 102, 117, 0.01);
+background-image: linear-gradient(340deg,  #d8d8051f,#4b667520 35%);
 border: solid .5px rgba(70, 201, 201, 0.25);
 max-width: 310px;
 height: 500px;
@@ -108,41 +82,20 @@ height: 50px;
 z-index: 110;
 border: 2px solid rgba(38, 59, 49, 0.5);
 background-image: linear-gradient(to right, #314755 0%, #85e76c  49%, #314755 100%);
-
 }
-.tgButton
+.opposite
 {
-  margin-left: 90%;
+  transform: translateX(-337px);
 }
-.signmore
-{
-  transform: translateY(-340%);
-
+.flip {
+  transform: translateX(60px);
 }
-.loc
+.space
 {
-  top: 250%;
-  left: 6%;
-  z-index: 160; 
-  display: flex; 
-  position: absolute;
-  width:50px;
-  height: 50px;
-  border-radius:50%;
-  background-image: transparent;
-}
-.loc2
-{
-  top: 115%;
-  transform: translate(-10%, -340%);
-  left: auto;
-  z-index: 160; 
-  /* display: flex;  */
-  /* position: absolute; */
-  width:50px;
-  height: 50px;
-  border-radius:50%;
-  color: white;
+  margin-top: 10px;
+  margin-left: 20px;
+  align-items: center;
+  display: flex;
 }
 .gmessage, .smessage 
 {
@@ -172,6 +125,7 @@ padding: 5px;
 border-radius: 10px;
 background-color: rgba(0, 0, 0, 0.5);
 justify-content: flex-start;
+margin-left: 63px;
 margin-top: 50px;
 color: #5fd482;
 border: 1px groove rgba(255, 255, 255, 0.5);
@@ -290,7 +244,7 @@ margin-bottom: 400px;
   justify-content: center;
   align-items: center;
   position: fixed;
-  right: 0px;
+  right: 5px;
   top: 0px;
   background-color: rgb(51, 22, 22);
   height: 30px;

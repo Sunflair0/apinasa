@@ -51,28 +51,27 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-top: 50vh;
+margin-top: -70vh;
 margin-left: 1vh;
 position: absolute;
 height: 34px;
 width:34px;
 border-radius: 50%;
 background:
-radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
-radial-gradient(65% 65% at 25% 25%, rgb(90, 44, 7), transparent 53%),
-radial-gradient(100% 25% at 5% 0%, #351417, transparent 10%),
-  radial-gradient(75% 15% at 55% 75%, #442702, transparent 50%), 
-  radial-gradient(75% 15% at 85% 70%, #000000, transparent 20%),     
-  radial-gradient(100% 15% at 35% 85%, #442702, transparent 25%), 
-  radial-gradient(100% 15% at 25% 75%, #442702, transparent 25%), 
-  radial-gradient(100% 5% at 15% 70%, #442702, transparent 25%), 
-  radial-gradient(95% 5% at 85% 88%, #442702, transparent 20%), 
-  radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%), 
-radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
-radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
-radial-gradient(100% 100% at 0% 5%, transparent, #b34125 98%),
-linear-gradient(#c44f32,#3a1317);
-
+      radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
+      radial-gradient(65% 65% at 25% 25%, rgb(90, 44, 7), transparent 53%),
+      radial-gradient(100% 25% at 5% 0%, #351417, transparent 10%),
+      radial-gradient(75% 15% at 55% 75%, #442702, transparent 50%), 
+      radial-gradient(75% 15% at 85% 70%, #000000, transparent 20%),     
+      radial-gradient(100% 15% at 35% 85%, #442702, transparent 25%), 
+      radial-gradient(100% 15% at 25% 75%, #442702, transparent 25%), 
+      radial-gradient(100% 5% at 15% 70%, #442702, transparent 25%), 
+      radial-gradient(95% 5% at 85% 88%, #442702, transparent 20%), 
+      radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%), 
+      radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
+      radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
+      radial-gradient(100% 100% at 0% 5%, transparent, #b34125 98%),
+      linear-gradient(#c44f32,#3a1317);
 box-shadow: inset -25px -5px 20px 1px rgba(128, 111, 56, 0.5);
 z-index: 0;
 animation: mars linear 90s infinite;
@@ -99,8 +98,8 @@ z-index: 2;
 .circle5 
 {
 /* Mercury*/
-margin-left: 50vh;
-margin-top: 70vh;
+margin-left: 70vh;
+margin-top: -60vh;
 position: absolute;
 height: 23px;
   width:23px;
@@ -108,7 +107,7 @@ height: 23px;
   background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
 box-shadow: black;
-animation: 47s merc linear infinite;
+animation: 37s merc linear infinite;
 z-index: 0;
 }
 @keyframes merc {
@@ -180,7 +179,7 @@ z-index: 0;
 {
 /*Uranus*/
 margin-left: 40vh; 
-margin-top: -10vh;
+margin-top: 27vh;
 position: static;
 height:640px;
 width: 640px;
@@ -190,12 +189,12 @@ background-image: radial-gradient(circle, rgb(157, 229, 228) 0%, rgb(115, 167, 1
                    transparent 50%, rgba(108, 153, 152, 0.3) 52%, transparent 54%,
                    transparent 61%, rgba(95, 129, 129, 0.7) 62%, transparent 63%,
                    transparent 50%, rgba(95, 133, 131, 0.8) 65%, transparent 100%);
-animation: uranus 300s linear infinite;
+animation: uranus 170s linear infinite;
 }
 @keyframes uranus{
 from    { transform: translatex(5vh) translatey(-127.5vh);
         } 
-  to    { transform: translatex(45vh) translatey(89vh);
+  to    { transform: translatex(45vh) translatey(40vh);
         }
 }
 .circle10 
@@ -211,7 +210,7 @@ height: 5px;
   background-color: rgb(151, 108, 58); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(231, 173, 107), rgb(120, 128, 52));
 z-index: -2;
-animation: ariel linear infinite 97s;
+animation: ariel linear infinite 63s;
 }
 @keyframes ariel{
 from    {  transform: rotate(0deg) translateX(273px) rotate(0deg);
@@ -232,7 +231,7 @@ height: 11px;
   background-color: rgb(221, 123, 12); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(221, 123, 12),rgb(0, 0, 0) );
 z-index: -2;
-animation: titania linear infinite 137s;
+animation: titania linear infinite 87s;
 }
 
 @keyframes titania{
@@ -254,7 +253,7 @@ height: 7px;
   background-color: rgb(231, 144, 14); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(226, 177, 103),rgba(0, 0, 0, 0.781) );
 z-index: -2;
-animation: umbriel linear infinite 193s;
+animation: umbriel linear infinite 103s;
 }
 @keyframes umbriel{
 from    {  transform: rotate(0deg) translateX(307px) rotate(0deg);
@@ -275,7 +274,7 @@ height: 4px;
   background-color: rgb(226, 118, 10); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(226, 118, 10),rgba(0, 0, 0, 0.7) );
 z-index: -2;
-animation: oberon linear infinite 47s;
+animation: oberon linear infinite 37s;
 }
 @keyframes oberon
         {
@@ -297,7 +296,7 @@ height: 9px;
   background-color: rgb(184, 181, 34); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle,  rgb(184, 181, 34),rgba(0, 0, 0, 0.781) );
 z-index: -1;
-animation: miranda linear infinite 140s;
+animation: miranda linear infinite 30s;
 }
 @keyframes miranda{
 from    {  transform: rotate(0deg) translateX(255px) rotate(0deg);
@@ -308,8 +307,8 @@ from    {  transform: rotate(0deg) translateX(255px) rotate(0deg);
 .comet
 {
 /*comet*/
-margin-top: -55%;
-right: -26%;
+margin-top: -115%;
+right: -20%;
 height: 200px;
 width:0px;
 color: rgb(249, 252, 208);

@@ -11,20 +11,18 @@ const Login = ({ setClient }) => {
     <>
       <form className="tourguide">
         <div className="stripe">
+        <div className="namepass">
           <label htmlFor="clienttag"></label>
           <div className="bulb"><AiIcons.AiOutlineBulb /></div>
-          <div id="space">
-
-            <input
+           <input
               placeholder="Name"
               id="clienttag"
               onChange={(e) => setClienttag(e.target.value)}
               value={clienttag} />
-              </div>
+             
           <label htmlFor="password" >
-
           </label>
-          <div id="space"><input placeholder="Password"
+          <input placeholder="Password"
             type="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}
@@ -32,6 +30,8 @@ const Login = ({ setClient }) => {
           /></div>
           <div className="outerS"><div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
             <button
+        style={{ transform: "translateX(6px)" }}
+
               className="btnGroup"
               onClick={(e) => {
                 e.preventDefault();

@@ -9,6 +9,7 @@ opacity: .65;
 {
 display: flex;
 flex-direction: column;
+transform: translate(5px, 5px);
 }
 
 .shell {

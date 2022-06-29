@@ -52,18 +52,18 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
       <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
         <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
 
- <nav>
-<div className="log-shell">         
-              
+          <nav>
+            <div className="log-shell">
+
               {!clienttag && (
                 <NavLink activeClassName="active" className="menuitem" to="/LoginPage">
                   {" "}
                 </NavLink>
               )}{" "}
-</div>
-              
-          <div className="bigShell">
-             
+            </div>
+
+            <div className="bigShell">
+
               {clienttag && (
                 <>
                   {/*///// Main Menu Toggle */}
@@ -158,65 +158,65 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                   </div>
                 </>
               )}</div>
-            </nav>
-            
+          </nav>
 
-            <main>
-              <Switch>
 
-                <ProtectedRoute path="/album" reqUser={true} component={Album} />
+          <main>
+            <Switch>
 
-                <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
+              <ProtectedRoute path="/album" reqUser={true} component={Album} />
 
-                <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
+              <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
 
-                <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
+              <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
 
-                <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
+              <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
 
-                <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
+              <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
 
-                <ProtectedRoute path="/apodgimme5" reqUser={true} component={ApodGimme5} />
+              <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
 
-                <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
+              <ProtectedRoute path="/apodgimme5" reqUser={true} component={ApodGimme5} />
 
-                <ProtectedRoute path="/loginpage" reqUser={false} component={LoginPage} />
+              <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
 
-                <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
+              <ProtectedRoute path="/loginpage" reqUser={false} component={LoginPage} />
 
-                <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
+              <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
 
-                <ProtectedRoute path="/form" reqUser={true} component={Form} />
+              <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
 
-                <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
+              <ProtectedRoute path="/form" reqUser={true} component={Form} />
 
-                <ProtectedRoute path="/login" reqUser={false} component={Login} />
+              <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
 
-                <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
+              <ProtectedRoute path="/login" reqUser={false} component={Login} />
 
-                <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
+              <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
 
-                <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
+              <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
 
-                <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
+              <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
 
-                <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
+              <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
 
-                <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
+              <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
 
-                <ProtectedRoute path="/ventconsole" reqUser={true} component={VentConsole} />
+              <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
 
-                <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
+              <ProtectedRoute path="/ventconsole" reqUser={true} component={VentConsole} />
 
-                <Route path="*">
+              <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
 
-                  <Redirect to="/loginpage" />
-                </Route>
-              </Switch>
-            </main>
-          </div>
+              <Route path="*">
+
+                <Redirect to="/loginpage" />
+              </Route>
+            </Switch>
+          </main>
         </div>
-    
+      </div>
+
     </Router>
   );
 }

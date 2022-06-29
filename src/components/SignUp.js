@@ -16,24 +16,25 @@ const Signup = ({ setClient }) => {
       <form className="tourguide">
         <div className="stripeGroup"></div>
         <div className="stripe">
-          <label id="space" htmlFor="clienttag"></label>
           <div className="namepass">
-
+          <label id="space" htmlFor="clienttag"></label>
+          
+<div className="flip">
             <input
               id="clienttag"
               placeholder="SpaceTours Handle"
               onChange={(e) => setClienttag(e.target.value)}
               value={clienttag}
             />
-            <div className="bulb"><AiIcons.AiOutlineBulb /></div>
+            <div className="bulb opposite"><AiIcons.AiOutlineBulb /></div>
 
-            <label id="space" htmlFor="password"></label>
+            <label  htmlFor="password"></label>
             <input placeholder="Password"
               type="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-            />
+            /></div>
           </div>
           <div className="outerS">
             <div className="signMess">
@@ -55,7 +56,7 @@ const Signup = ({ setClient }) => {
               </div>
             </div>
             <button
-              className="btnGroup"
+              style={{ transform: "translate(-225px, 10px)" }}
               onClick={async (e) => {
                 e.preventDefault();
                 if (
@@ -78,8 +79,7 @@ const Signup = ({ setClient }) => {
                 }
               }}
             >GO
-            </button>
-           
+            </button>           
           </div>
         </div>
       </form>
