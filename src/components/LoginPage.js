@@ -4,11 +4,10 @@ import Cardflip from './Cardflip'
 
 export default function LoginPage() {
     return (
-        <>
-        
-         <div><Background /></div>
-            <div classname=""><Cardflip /></div>             
-                          
+        <>        
+            <div><Background />
+            <div><Cardflip /></div>
+            </div>
         </>
     )
 }

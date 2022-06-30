@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
-import * as AiIcons from "react-icons/ai";
+import { TourGuideLight } from "./TourGuideLight";
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");
@@ -12,8 +12,8 @@ const Login = ({ setClient }) => {
       <form className="tourguide">
         <div className="stripe">
         <div className="namepass">
-          <label htmlFor="clienttag"></label>
-          <div className="bulb"><AiIcons.AiOutlineBulb /></div>
+          <label htmlFor="clienttag"></label>          
+          <TourGuideLight/>
            <input
               placeholder="Name"
               id="clienttag"

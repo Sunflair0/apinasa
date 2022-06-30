@@ -33,7 +33,8 @@ import Login from "./components/Login";
 import Mer from "./components/Mer";
 import Signup from "./components/SignUp";
 import Splash from "./components/Splash";
-import TourGuide from "./components/TourGuideMessages"
+import TourGuideLight from "./components/TourGuideLight"
+import TourGuideMessages from "./components/TourGuideMessages"
 import TourInfo from "./components/TourInfo"
 import TourIns from "./components/TourIns"
 import VentConsole from "./components/VentConsole"
@@ -60,9 +61,6 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                   {" "}
                 </NavLink>
               )}{" "}
-            </div>
-
-            <div className="bigShell">
 
               {clienttag && (
                 <>
@@ -198,7 +196,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
               <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
 
-              <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
+              <ProtectedRoute path="/tourguidelight" reqUser={true} component={TourGuideLight} />
+
+              <ProtectedRoute path="/tourguidemessages" reqUser={true} component={TourGuideMessages} />
 
               <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
 

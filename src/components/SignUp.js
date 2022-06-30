@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import * as AiIcons from "react-icons/ai";
+import { TourGuideLight } from "./TourGuideLight";
 import { Carousel } from "react-responsive-carousel";
 
 const Signup = ({ setClient }) => {
@@ -17,24 +17,21 @@ const Signup = ({ setClient }) => {
         <div className="stripeGroup"></div>
         <div className="stripe">
           <div className="namepass">
-          <label id="space" htmlFor="clienttag"></label>
-          
-<div className="flip">
-            <input
-              id="clienttag"
-              placeholder="SpaceTours Handle"
-              onChange={(e) => setClienttag(e.target.value)}
-              value={clienttag}
-            />
-            <div className="bulb opposite"><AiIcons.AiOutlineBulb /></div>
-
-            <label  htmlFor="password"></label>
-            <input placeholder="Password"
-              type="password"
-              id="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            /></div>
+            <label id="space" htmlFor="clienttag"></label>
+            <div className="flip">
+              <input
+                id="clienttag"
+                placeholder="SpaceTours Handle"
+                onChange={(e) => setClienttag(e.target.value)}
+                value={clienttag}/>
+              <div className="opposite"><TourGuideLight  /></div>
+              <label htmlFor="password"></label>
+              <input placeholder="Password"
+                type="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              /></div>
           </div>
           <div className="outerS">
             <div className="signMess">
@@ -79,7 +76,7 @@ const Signup = ({ setClient }) => {
                 }
               }}
             >GO
-            </button>           
+            </button>
           </div>
         </div>
       </form>
