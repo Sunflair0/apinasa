@@ -273,13 +273,14 @@ margin-bottom: 400px;
   font-weight: 100;  
   border-left: 30px transparent solid;
   border-right: 30px transparent solid;
-  border-top: 178px rgba(7, 58, 50, 0.5) solid;
+  border-top: 178px #f7ff8480 solid;
+  border-bottom: 10px transparent solid;
   padding-top: 11px;
   border-radius: 30px / 40px;
-  transform: translate(-22px, -95px);  
-  filter: drop-shadow(0 0 10px #419aff); 
+  transform: translate(-20px, -90px);  
+  filter: drop-shadow(0 0 20px #e2f27d); 
   height: 20px;
-  width: 15px;
+  width: 20px;
   }
   .bulbOn::before{
     content: "";
@@ -287,7 +288,7 @@ margin-bottom: 400px;
     height: 20px;
     width: 0px;
     border-radius: 30px / 45px;
-    transform: translate(36px, -179px)rotate(90deg);
+    transform: translate(40px, -179px)rotate(90deg);
   }  
   .intraNet{
   /*AiFillWechat*/

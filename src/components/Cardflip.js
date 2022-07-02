@@ -13,11 +13,11 @@ const Cardflip = () => {
   return (
 
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="card">
-      <div >
+      <div>
         <button className="tgButton" style={{ transform: "translate(25px, 300px)" }} onClick={handleClick}>Sign Up!</button>
         <Login />
       </div>
-      <div >
+      <div>
         <button className="tgButton" style={{ transform: "translate(-205px, 370px)" }} onClick={handleClick}>To Login</button>
         <SignUp />
       </div>
