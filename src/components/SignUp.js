@@ -36,7 +36,7 @@ const Signup = ({ setClient }) => {
           <div className="outerS">
             <div className="signMess">
               <div className="carousel-wrapper">
-                <Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showArrows={true} showStatus={false} showIndicators={false} showThumbs={false} >
+                <Carousel autoPlay useKeyboardArrows={true} infiniteLoop={true} interval={6500} showStatus={false} showIndicators={false} showThumbs={false} >
                   <div style={{ marginTop: "70px" }}>
                     This is your TourGuide. Please keep it with you at all times while on the site to access our amazing deals.
                   </div>

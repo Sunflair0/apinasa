@@ -4,7 +4,6 @@ export default function Background() {
 
     return (
         <>
-            <div className="card">
                 {/* <div className="logo"></div> */}
 
                 <div className="circle9" title="Uranus">
@@ -19,8 +18,7 @@ export default function Background() {
                 </div> 
                 <div className="circle5" title="Mercury"></div>
                 <div className="comet" title="comet"></div>
-                <div className="circle15" title="Sun/Sol"></div>                
-            </div>
+                <div className="circle15" title="Sun/Sol"></div> 
         </>
     )
 }
