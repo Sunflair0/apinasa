@@ -12,8 +12,11 @@ export default function Background() {
                     <div className="circle11" title="Titania"></div>
                     <div className="circle12" title="Umbriel"></div>
                     <div className="circle13" title="Oberon"></div>
-                </div>                
-                <div className="circle3" title="Mars"></div>
+                </div>  
+                <div className="rotateMars">    
+                <div>        
+                <div className="circle3" title="Mars"></div></div>
+                </div> 
                 <div className="circle5" title="Mercury"></div>
                 <div className="comet" title="comet"></div>
                 <div className="circle15" title="Sun/Sol"></div>                

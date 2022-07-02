@@ -12,6 +12,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import {TGButtonsProvider} from "./TGButtonsContext";
 import "./App.css";
 import "./tourguide.css";
 import "./planet.css";
@@ -48,6 +49,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
   const showSidebar = () => setSidebar(!sidebar)
 
   return (
+    <TGButtonsProvider>
     <Router>
 
       <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
@@ -218,6 +220,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
       </div>
 
     </Router>
+    </TGButtonsProvider>
   );
 }
 

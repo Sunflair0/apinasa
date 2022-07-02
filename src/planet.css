@@ -51,13 +51,12 @@ z-index: 1;
 .circle3
 {
 /*Mars*/
-margin-left: -130vh;
-margin-top: 85vh;
+margin-left: -40vh;
+margin-top: 150vh;
 position: absolute;
 height: 54px;
 width:54px;
 border-radius: 50%;
-transform: rotate(20deg);
 background:
       radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
       radial-gradient(65% 65% at 25% 25%, rgb(90, 44, 7), transparent 53%),
@@ -72,17 +71,20 @@ background:
       radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
       radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
       radial-gradient(100% 100% at 0% 5%, transparent, #b34125 98%),
-      linear-gradient(20deg, #c44f32,#3a1317);
-      
+      linear-gradient(20deg, #c44f32,#3a1317);      
 box-shadow: inset -25px -5px 20px 1px rgba(128, 111, 56, 0.5);
 z-index: 0;
-animation: mars linear 69s infinite;
+animation: mars linear 225s infinite;
+}
+.rotateMars
+{
+  transform: rotate(90deg);
 }
 @keyframes mars
 {
-from  { transform: rotate(270deg) translateX(70vh) scale(5);
+from  { transform: rotate(250deg) translateX(50vh) scale(3);
 } 
-to    { transform: rotate(360deg) translateX(380vh) scale(0); 
+to    { transform: rotate(360deg) translateX(890vh) scale(0); 
 }
 }
 .circle4 
@@ -100,8 +102,8 @@ z-index: 2;
 .circle5 
 {
 /* Mercury*/
-margin-left: -120vh;
-margin-top: 85vh;
+margin-left: -190vh;
+margin-top: 65vh;
 position: absolute;
 height: 23px;
   width:23px;
@@ -109,11 +111,11 @@ height: 23px;
   background-color: rgb(189, 194, 184); /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
 box-shadow: black;
-animation: 25s merc linear infinite;
+animation: 69s merc linear infinite;
 
 }
 @keyframes merc {
-from    { transform: rotate(290deg) translateX(80vh) scale(1.5);
+from    { transform: rotate(290deg) translateX(60vh) scale(1.5);
         } 
   to    { transform: rotate(360deg) translateX(380vh) scale(0);
           color: #000000;
@@ -196,7 +198,7 @@ animation: uranus 190s linear infinite;
 @keyframes uranus{
 from    { transform: translatex(-55vh) translatey(-127.5vh);
         } 
-  to    { transform: translatex(75vh) translatey(40vh);
+  to    { transform: translatex(80vh) translatey(40vh);
         }
 }
 .circle10 

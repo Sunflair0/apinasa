@@ -1,18 +1,17 @@
-import React, { useState } from 'react'
+import { useTGButtonsContext } from "../hooks/useTGButtonsContext";
 import * as AiIcons from "react-icons/ai";
 
-export const TourGuideLight = () => {
-    const [light, setLight] = useState(false);
-
-    const handleClick = () => {
-      setLight(!light);
-    }
+function TourGuideLight() {
+  const { light, handleBulbToggle } = useTGButtonsContext();
 
   return (
     <>
-    <div className="bulb"><AiIcons.AiOutlineBulb /></div>
+      <div className={`bulb${light}`}
+        onClick={handleBulbToggle} >
+        <AiIcons.AiOutlineBulb />
+      </div>
     </>
-  )
+  );
 }
 
 export default (TourGuideLight);

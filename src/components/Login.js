@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
-import { TourGuideLight } from "./TourGuideLight";
+import TourGuideLight from "./TourGuideLight";
 
 const Login = ({ setClient }) => {
   const [clienttag, setClienttag] = useState("");

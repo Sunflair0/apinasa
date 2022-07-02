@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { setClient } from "../redux/actions";
 import useFetch from "../hooks/useFetch";
 import { connect } from "react-redux";
-import { TourGuideLight } from "./TourGuideLight";
+import TourGuideLight from "./TourGuideLight";
 import { Carousel } from "react-responsive-carousel";
 
 const Signup = ({ setClient }) => {
