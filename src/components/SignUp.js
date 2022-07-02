@@ -14,17 +14,17 @@ const Signup = ({ setClient }) => {
   return (
     <>
       <form className="tourguide">
-        <div className="stripeGroup"></div>
         <div className="stripe">
           <div className="namepass">
-            <label id="space" htmlFor="clienttag"></label>
+            <label htmlFor="clienttag"></label>
+            <div className="opposite"><TourGuideLight /></div>
             <div className="flip">
               <input
-                id="clienttag"
                 placeholder="SpaceTours Handle"
+                id="clienttag"                
                 onChange={(e) => setClienttag(e.target.value)}
-                value={clienttag}/>
-              <div className="opposite"><TourGuideLight  /></div>
+                value={clienttag} />
+              
               <label htmlFor="password"></label>
               <input placeholder="Password"
                 type="password"
@@ -74,14 +74,15 @@ const Signup = ({ setClient }) => {
                     setClient(clienttag);
                   }
                 }
-              }}
+              }
+              }
             >GO
             </button>
           </div>
         </div>
       </form>
-
-      <div>{error}</div>
+      <div >{error}</div>
+      {/* className="errorMessage" */}
     </>
   );
 };

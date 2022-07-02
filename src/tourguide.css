@@ -36,8 +36,8 @@ font-weight: 300;
 align-content: center;
 justify-content: center;
 backdrop-filter: blur(7px); 
-box-shadow: 5px 5px 5px 1px rgba(26, 32, 30, 0.767),
-            5px 5px 0px 3px rgba(184, 199, 199, 0.521),
+box-shadow: 5px 5px 5px 1px rgba(2, 17, 12, 0.555),
+            4px 4px 1px 2px rgba(134, 145, 145, 0.521),
             inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3),
             inset 5px 4px 2px rgba(17, 43, 43, 0.3);
 z-index: 90;
@@ -87,7 +87,7 @@ background-image: linear-gradient(to right, #314755 0%, #85e76c  49%, #314755 10
 }
 .opposite
 {
-  transform: translate(-330px, -46px);
+  transform: translateX(-268px);
 }
 .flip {
   transform: translateX(60px);
@@ -263,44 +263,31 @@ margin-bottom: 400px;
   }
  .bulbOn
  {
-  background:linear-gradient(125deg, #0c3941, rgb(134, 134, 12), #0c3941 ) ;
-  border: rgb(170, 172, 73) dashed 1px;
+  background:radial-gradient(circle, black 30%, rgb(141, 161, 165));
+  border: rgb(63, 182, 156) dotted 1px;
  }
-
   .bulbOn::after
   {
-  content: "";
-  border-left: 34px transparent solid;
-  border-right: 34px transparent solid;
-  border-top: 160px rgba(7, 58, 50, 0.5) solid;
-  padding-top: 10px;
-  border-radius: 25px / 40px;
-  transform: translate(-21px, -97px);  
-  filter: drop-shadow(0 0 15px #41f9ff); 
+  content: "💡";
+  font-weight: 100;  
+  border-left: 30px transparent solid;
+  border-right: 30px transparent solid;
+  border-top: 178px rgba(7, 58, 50, 0.5) solid;
+  padding-top: 11px;
+  border-radius: 30px / 40px;
+  transform: translate(-22px, -95px);  
+  filter: drop-shadow(0 0 10px #419aff); 
   height: 20px;
   width: 15px;
-  background:linear-gradient(125deg, #0c3941, rgb(134, 134, 12), #0c3941 ) ;
-
   }
   .bulbOn::before{
     content: "";
-    color: black;
-    display: inline-block;
-    font: var(--fa-font-solid);
-    font-weight: 600;
-    border: #c7dbd625 solid 21px;
+    border: #c7dbd625 solid 20px;
     height: 20px;
     width: 0px;
     border-radius: 30px / 45px;
-    transform: translate(34px, -171px)rotate(90deg);
-  }
-  
-  .bulb :active{
-  /*AiOutlineBulb*/
-  background-color: rgb(172, 170, 41);
-  border: rgba(41, 172, 150, 0.877) dotted 1px;
-  }
-  
+    transform: translate(36px, -179px)rotate(90deg);
+  }  
   .intraNet{
   /*AiFillWechat*/
   display: flex;

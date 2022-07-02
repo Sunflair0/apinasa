@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const query = require("../config/mysql.conf");
+const query = require("../config/mysql.conf").default;
 const { v4: uuidv4 } = require('uuid');
 
 

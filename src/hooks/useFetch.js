@@ -18,7 +18,7 @@ export default function useFetch(method) {
         throw response;
       }
     } catch (e) {
-      return { error: "Something isn't right, please try again" };
+      return { error: <div className="errorMessage"> "Something isn't right, please try again" </div>};
     }
   }
   // Exposes the data, any error, and whether or not it was loading
