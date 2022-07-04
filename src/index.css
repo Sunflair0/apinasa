@@ -75,6 +75,13 @@ background-clip: content-box;
 
 /* page spacing */
 
+.flex_backing {
+  display: flex;
+  position: relative;
+  /* height: 100vh; */
+  /* width: 100vw; */
+}
+
 .flex1 {
 margin: 100px 50px 0px 0px;
 flex-wrap: nowrap;

@@ -17,16 +17,17 @@ text-decoration: none;
 
 .card{
 position: fixed;
-top: 30%;
+bottom: 10%;
 left: 40%; 
 width: 310px;
 height: 500px;
 border-radius: 10px;
-backdrop-filter: blur(7px); 
+/* backdrop-filter: blur(7px);  */
 background: rgba(75, 102, 117, 0.04);
 }
 .tourguide 
 {
+  position: relative;
 cursor: default;
 background-image: linear-gradient(340deg,  #a5700e33,rgba(40, 54, 61, 0.014) 15%);
 border: solid .5px rgba(70, 201, 201, 0.25);
@@ -38,8 +39,8 @@ font-weight: 300;
 align-content: center;
 justify-content: center;
 backdrop-filter: blur(7px); 
-box-shadow: 5px 5px 5px 1px rgba(2, 17, 12, 0.555),
-            4px 4px 1px 2px rgba(134, 145, 145, 0.521),
+box-shadow: 4px 4px 2px 1px rgba(72, 119, 111, 0.219),
+            3px 3px 1px 1px rgba(5, 41, 29, 0.205),
             inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3),
             inset 5px 4px 2px rgba(17, 43, 43, 0.3);
 z-index: 90;
@@ -169,7 +170,7 @@ inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 }
 .tourguide:hover 
 {
-border-color: #c4e0df8a;
+border-color: rgba(48, 136, 136, 0.781);
 }
 .glassForm {
 background-color: hsla(226, 66%, 11%, 0.5);
@@ -260,35 +261,35 @@ margin-bottom: 400px;
   }
   @keyframes mymove
   {
-    50% {box-shadow: 0px -20px 30px rgba(41, 172, 150, 0.877)}
+    50% {box-shadow: 0px -20px 30px rgba(41, 172, 150, 0.9)}
   }
  .bulbOn
  {
-  background:radial-gradient(circle, black 30%, rgb(141, 161, 165));
+  background:radial-gradient(circle, black 35%, rgb(141, 161, 165));
   border: rgb(63, 182, 156) dotted 1px;
  }
   .bulbOn::after
   {
   content: "💡";
   font-weight: 100;  
-  border-left: 30px transparent solid;
-  border-right: 30px transparent solid;
-  border-top: 178px #f7ff8480 solid;
+  border-left: 29px transparent solid;
+  border-right: 29px transparent solid;
+  border-top: 150px rgba(41, 172, 150, 0.336) solid;
   border-bottom: 10px transparent solid;
   padding-top: 11px;
-  border-radius: 30px / 40px;
-  transform: translate(-20px, -90px);  
-  filter: drop-shadow(0 0 20px #e2f27d); 
+  border-radius: 40px / 40px;
+  transform: translate(-24px, -75px);  
+  filter: drop-shadow(0 0 30px rgb(57, 255, 222)); 
   height: 20px;
   width: 20px;
   }
   .bulbOn::before{
     content: "";
-    border: #c7dbd625 solid 20px;
-    height: 20px;
+    border: #ffffff25 solid 24px;
+    height: 15px;
     width: 0px;
-    border-radius: 30px / 45px;
-    transform: translate(40px, -179px)rotate(90deg);
+    border-radius: 50%;
+    transform: translate(37.5px, -148px)rotate(90deg);
   }  
   .intraNet{
   /*AiFillWechat*/
