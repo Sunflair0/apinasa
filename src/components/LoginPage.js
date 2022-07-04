@@ -7,7 +7,7 @@ export default function LoginPage() {
         <>
         <div className="flex_backing">
             <div className="logo"></div>
-            <div><Background /> </div>
+            <div><Background /></div>
             <div style={{position: 'absolute'}}><Cardflip /></div>
             </div>
         </>

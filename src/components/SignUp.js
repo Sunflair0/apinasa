@@ -21,15 +21,15 @@ const Signup = ({ setClient }) => {
             <div className="flip">
               <input
                 placeholder="SpaceTours Handle"
-                id="clienttag"                
-                onChange={(e) => setClienttag(e.target.value)}
+                id="clienttag"
+                onChange={(e) => { setClienttag(e.target.value); }}
                 value={clienttag} />
-              
+
               <label htmlFor="password"></label>
               <input placeholder="Password"
                 type="password"
                 id="password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => { setPassword(e.target.value); }}
                 value={password}
               /></div>
           </div>

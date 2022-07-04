@@ -10,7 +10,7 @@ export default function useFetch(method) {
       opts = { ...opts, body: JSON.stringify(body) };
     }
     try {
-      const response = await fetch(url, opts);
+      const response = await fetch('url, opts');
       if (response.ok) {
         const json = await response.json();
         return json;

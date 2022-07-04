@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 8080;
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const passportConf = require("./server/config/passport.conf");
-
 const albumRoutes = require("./server/routes/album.routes");
 const purchasesRoutes =require("./server/routes/purchases.routes");
 const testimonialsRoutes = require("./server/routes/testimonials.routes");
@@ -32,8 +31,6 @@ app.get("/", (req, res) =>{
 console.log(req.url);
 res.send("<h4><hello></h4>");
 });
-
-
   
 app.get("*", (req, res) => {
   return res.sendFile("/build/index.html", { root: __dirname + "/" });
@@ -42,4 +39,3 @@ app.get("*", (req, res) => {
 app.listen(PORT, function(){
 console.log("Listening on port 3306");
 })
-

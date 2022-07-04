@@ -1,5 +1,6 @@
 import { createPool } from "mysql";
 import { promisify } from "util";
+
 const pool = createPool({
   connectionLimit: 10,
   host: process.env.DB_HOST,
