@@ -202,7 +202,7 @@
       transparent 50%, rgba(162, 182, 194, 0.3) 52%, transparent 54%,
       transparent 61%, rgba(117, 132, 141, 0.75) 62%, transparent 63%,
       transparent 50%, rgba(196, 222, 238, 0.6) 65%, transparent 100%);
-  animation: uranus 155s linear infinite;
+  animation: uranus 315s linear infinite;
 }
 
 @keyframes uranus {
