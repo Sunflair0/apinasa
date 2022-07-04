@@ -35,7 +35,6 @@ router.post("/signup", (req, res) => {
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-
   console.log("req.body", req.body);
 
   if (!validate(username, password)) {

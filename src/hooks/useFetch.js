@@ -9,16 +9,18 @@ export default function useFetch(method) {
     if (body) {
       opts = { ...opts, body: JSON.stringify(body) };
     }
+
     try {
-      const response = await fetch('url, opts');
+      const response = await fetch('http://localhost:3306', opts);
       if (response.ok) {
         const json = await response.json();
         return json;
       } else {
         throw response;
       }
-    } catch (e) {
-      return { error: <div className="errorMessage"> "Something isn't right, please try again" </div>};
+    } catch (e) {console.log(e);
+      return { error: "Something isn't right, please try again"  };
+      
     }
   }
   // Exposes the data, any error, and whether or not it was loading
