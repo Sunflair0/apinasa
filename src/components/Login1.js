@@ -51,8 +51,6 @@ export const Login = ({ setClient }) => {
             init();
         }
     }, [
-        setClient,
-        apiLogin,
         clienttagInput,
         clienttagError,
         passwordInput,
@@ -83,18 +81,18 @@ export const Login = ({ setClient }) => {
                     <div className="login-input-container">
                         <div className="input-container">
                             <input
-                                style={{ width: "80%" }}
+                                style={{ width: "100%" }}
                                 type="text"                                
                                 error={displayError && !!clienttagError}
                                 label="SpaceTours Handle"
                                 value={clienttagInput}
-                                helpertext={displayError ? clienttagError : ""}
+                                helperText={displayError ? clienttagError : ""}
                                 onChange={(e) => setClienttagInput(e.target.value)}
                             />
                         </div>
                         <div className="input-container">
                             <input
-                                style={{ width: "80%" }}
+                                style={{ width: "100%" }}
                                 type="password"
 
                                 
@@ -102,7 +100,7 @@ export const Login = ({ setClient }) => {
                                 label="Password"
                                 
                                 value={passwordInput}
-                                helpertext={displayError ? passwordError : ""}
+                                helperText={displayError ? passwordError : ""}
                                 onChange={(e) => setPasswordInput(e.target.value)}
                             />
                         </div>
@@ -125,9 +123,7 @@ export const Login = ({ setClient }) => {
     );
 };
 
-const mapStateToProps = state => { 
-  return { Login: state.Login }; 
-};
+function mapStateToProps(state){};
 const mapDispatchToProps = { setClient };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

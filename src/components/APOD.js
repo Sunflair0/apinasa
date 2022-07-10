@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
 import ApodGimme5 from './ApodGimme5';
@@ -7,7 +7,7 @@ import ApodRange from './ApodRange';
 
 
 
-export default function ApodConsole() {
+export default function Apod() {
   const [showToday, setShowToday] = useState(true);
   const [showChoose, setShowChoose] = useState();
   const [showGimme5, setShowGimme5] = useState();
@@ -18,12 +18,11 @@ export default function ApodConsole() {
   return (
     <>
 
-      <div className="flex1">
+      <div className="">
         <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
         </div>
 <div className=" apodBox apodSee">
-        <NavLink className="red"
-          to="#"
+        <Link to="/apodtoday"
           style={{
             height: "120px",
             width: "100px",
@@ -34,10 +33,10 @@ export default function ApodConsole() {
 
           
           }} onClick={() => setShowToday(showToday)}>
-        </NavLink>
+        </Link>
 
-        <NavLink className="red"
-          to="#"
+        <Link 
+          to="apodchoose"
           style={{
             height: "120px",
             width: "100px",
@@ -47,10 +46,10 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
          
           }} onClick={() => setShowChoose(showChoose)}>
-        </NavLink>
+        </Link>
 
-        <NavLink className="red"
-          to="#"
+        <Link 
+          to="apodgimme"
           style={{
             height: "120px",
             width: "100px",
@@ -60,10 +59,10 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
          
           }} onClick={() => setShowGimme5(showGimme5)}>
-        </NavLink>
+        </Link>
 
-        <NavLink className="red"
-          to="#"
+        <Link 
+          to="apodrange"
           style={{
             height: "120px",
             width: "100px",
@@ -73,7 +72,7 @@ export default function ApodConsole() {
             backgroundRepeat: 'no-repeat',
         
           }} onClick={() => setShowRange(showRange)}>
-        </NavLink>
+        </Link>
       </div >
 </div>
 
@@ -86,5 +85,3 @@ export default function ApodConsole() {
     </>
   );
 }
-
-

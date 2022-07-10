@@ -4,7 +4,7 @@ import { useFetch, useEffect } from "react";
 
 
 
-export default function VentureTour() {
+export default function VentureTours() {
   const [ventures, setVentures] = useState(false)
 const { callAPI: getventures } = useFetch("GET");
 
@@ -17,7 +17,7 @@ useEffect(() => {
       setVentures(res.data);
   }
     call();
-  }, []);
+  }, [getventures]);
 
 
   return (

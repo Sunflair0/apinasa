@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Mer() {
+export default function MER() {
 	return (
-		<div className="">
-MER page for Mars
-			
+
+		<div>
+			<h1>MER page for Mars</h1>			
 		</div>
 	)
 }

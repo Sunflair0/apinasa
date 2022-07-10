@@ -13,10 +13,10 @@ export default function useAPI() {
   }, []);
 
   const login = useCallback(
-    async (username, password) => {
-      return await makeAPICall("/api/users/login", {
+    async (clienttag, password) => {
+      return await makeAPICall("/api/clients/login", {
         method: "POST",
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ clienttag, password }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -26,10 +26,10 @@ export default function useAPI() {
   );
 
   const addFave = useCallback(
-    async (gif) => {
+    async (item) => {
       return await makeAPICall("/api/favorites/add", {
         method: "PUT",
-        body: JSON.stringify(gif),
+        body: JSON.stringify(item),
         headers: {
           "Content-Type": "application/json",
         },
@@ -39,8 +39,8 @@ export default function useAPI() {
   );
 
   const delFave = useCallback(
-    async (gif_id) => {
-      return await makeAPICall(`/api/favorites/remove/${gif_id}`, {
+    async (item_id) => {
+      return await makeAPICall(`/api/favorites/remove/${item_id}`, {
         method: "DELETE",
       });
     },
@@ -54,11 +54,11 @@ export default function useAPI() {
   }, [makeAPICall]);
 
   const logout = useCallback(async () => {
-    return await makeAPICall("/api/users/logout", { method: "GET" });
+    return await makeAPICall("/api/clients/logout", { method: "GET" });
   }, [makeAPICall]);
 
   const verify = useCallback(async () => {
-    return await makeAPICall("/api/users/verify", { method: "GET" });
+    return await makeAPICall("/api/clients/verify", { method: "GET" });
   }, [makeAPICall]);
 
   return { login, addFave, delFave, favesByUserID, logout, verify };

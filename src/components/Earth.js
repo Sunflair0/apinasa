@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Earth() {
+export default function EARTH() {
 	return (
 <>
 		<div className="">
