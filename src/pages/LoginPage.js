@@ -1,6 +1,6 @@
 import React from 'react'
-import Background from './Background'
-import Cardflip from './Cardflip'
+import Background from '../components/Background'
+import Cardflip from '../components/Cardflip'
 
 export default function LoginPage() {
     return (

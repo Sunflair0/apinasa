@@ -8,40 +8,40 @@ import {
   BrowserRouter as Router, Routes, Route, Navigate, NavLink, Link,
   nav, footer
 } from "react-router-dom";
-import { TGButtonsProvider } from "./TGButtonsContext";
+import { ToggleProvider } from "./ToggleContext";
 import "./App.css";
 import "./tourguide.css";
 import "./planet.css";
 import ProtectedRoute from "./shared/ProtectedRoute";
-import About from "./components/About";
-import Album from "./components/Album";
-import APOD from "./components/APOD";
-import ApodToday from "./components/ApodToday";
-import ApodChoose from "./components/ApodChoose";
-import ApodGimme5 from "./components/ApodGimme5";
-import ApodRange from "./components/ApodRange";
+import About from "./pages/About";
+import Album from "./pages/Album";
+import APOD from "./pages/APOD";
+import ApodToday from "./pages/ApodToday";
+import ApodChoose from "./pages/ApodChoose";
+import ApodGimme5 from "./pages/ApodGimme5";
+import ApodRange from "./pages/ApodRange";
 import BigCube from "./components/BigCube";
 import BuyVent from "./components/BuyVent";
 import Dashboard from "./components/Dashboard";
-import LoginPage from "./components/LoginPage";
-import ContactUs from "./components/ContactUs";
-import EARTH from "./components/EARTH";
-import Error from "./components/Error";
-import Form from "./components/Form";
-import Ipn from "./components/Ipn"
+import LoginPage from "./pages/LoginPage";
+import ContactUs from "./pages/ContactUs";
+import EARTH from "./pages/EARTH";
+import Error from "./pages/Error";
+import Form from "./pages/Form";
+import Ipn from "./pages/Ipn"
 import Login from "./components/Login";
-import MER from "./components/MER";
-import MyPage from "./components/MyPage";
-import NASA from "./components/NASA";
+import MER from "./pages/MER";
+import MyPage from "./pages/MyPage";
+import NASA from "./pages/NASA";
 import Signup from "./components/SignUp";
-import Home from "./components/Home";
-import Testimonials from "./components/Testimonials";
+import Home from "./pages/Home";
+import Testimonials from "./pages/Testimonials";
 import TourGuideLight from "./components/TourGuideLight";
 import TourGuideMessages from "./components/TourGuideMessages";
 import TourInfo from "./components/TourInfo";
 import TourIns from "./components/TourIns";
 import VentConsole from "./components/VentConsole";
-import VentureTours from "./components/VentureTours";
+import VentureTours from "./pages/VentureTours";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
@@ -55,16 +55,17 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
     <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
       <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
 
-        <TGButtonsProvider>
+        <ToggleProvider>
           <Router>
-            <Routes>
+            <Routes className="flex_backing">
 
               {/* {!clienttag && ()} */}
-              <Route path="/" element={<LoginPage />} />
+              <Route path="loginpage" element={<LoginPage />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
-              <Route path="home" element={<Home />} />
+              <Route path="/" element={<Home />} >
+
               <Route path="about" element={<About />} />
               <Route path="nasa" element={<NASA />}>
                 <Route path="apod" element={<APOD />}>
@@ -83,11 +84,11 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
               <Route path="venturetours" element={<VentureTours />} />\
               <Route path="contactus" element={<ContactUs />} />
               <Route path="*" element={<Error />} />
-
+              </Route>
 
               {clienttag && (
                 <>
-                  <nav>SpaceTours</nav>
+                  
                   <ul>
                     <li> <Route path="/" element={<Home />} > HOME
                     </Route></li>
@@ -110,7 +111,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                     <li> <Route path="testimonials" element={<Testimonials />}>Salutes</Route></li>
                     <li> <Route path="contactus" element={<ContactUs />} >Contact Us</Route></li>
 
-                    <footer></footer>
+                    
 
 
                     <li><Route activeClassName="active" className="menu1items" to="/album">
@@ -208,7 +209,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
             </Routes>
 
           </Router>
-        </TGButtonsProvider>
+        </ToggleProvider>
       </div>
     </div>
   );

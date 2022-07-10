@@ -10,7 +10,7 @@ const Dashboard = ({ clienttag }) => {
                 <div className='in_dashboard'>
                     <div className='brand'><span className='brand_outline'>Space</span><span className='brand_solid'>Tours</span></div>
                     <div className='curr_user'>
-                        <div className='logged'>Currently logged in as:  {clienttag} 1234</div>
+                        <div className='logged'>Currently logged in as: {clienttag}</div>
                         <dir className='avatar_box'><div className='avatar'>
                         </div>
                         </dir>

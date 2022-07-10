@@ -1,10 +1,21 @@
-import React from 'react';
-import sh from '../assets2/sh.png';
+import { useToggleContext } from "../hooks/useToggleContext";
+
 
 const Logo = () => {
+  const { shipFly, handleMenuToggle } = useToggleContext();
   return (
-    <div style={{marginTop:"30px", marginBottom:"-20px"}}>
-    <img src={sh} height={150} width={150} alt='spacetours spaceship' />
+    <div className={`ship_${shipFly}`}
+      style={{
+        marginTop: "30px",
+        marginBottom: "-20px",
+        height: "150px",
+        width: "150px",
+        backgroundImage: "url(./assets/sh.png)",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }} onClick={handleMenuToggle} 
+      alt="spaceship logo">
     </div>
   )
 }

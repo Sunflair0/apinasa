@@ -1,8 +1,8 @@
-import { useTGButtonsContext } from "../hooks/useTGButtonsContext";
+import { useToggleContext } from "../hooks/useToggleContext";
 import * as AiIcons from "react-icons/ai";
 
 function TourGuideLight() {
-  const { light, handleBulbToggle } = useTGButtonsContext();
+  const { light, handleBulbToggle } = useToggleContext();
 
   return (
     <>

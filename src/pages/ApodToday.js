@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
 import { addEntry, deleteEntry } from '../redux/actions';
-import Console from './Console';
+import Console from "../components/Console"
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const ApodToday = ({

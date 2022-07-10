@@ -80,6 +80,8 @@
 
 .rotatePlanets {
   transform: rotate(60deg);
+  left: -36vw;
+  top: 85vh;
 }
 
 @keyframes mars {

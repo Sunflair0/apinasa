@@ -2,13 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-
-
 const About = ({ clienttag }) => {
   return (
     <>
-      <h1 className="flex1">Greetings, {clienttag}!</h1>
-      <div className="flex3 mask"> <h4>
+    <div className="content_flexbox">
+      <div className="mask"> <h4>
+      <h1>Greetings, {clienttag}!</h1>      
         <p>We are so happy you have chosen to explore the solar system with us. Take a moment to look through all your options before making a final choice. Make sure you look through all the extras that are available to you to make your Venture both safe and enjoyable (and maybe even profitable!)</p>
         <p> If you know someone that is on a Venture, you can sign up for our IntraPlanetary Net to keep in touch however you like. With our special TeraQ technology the chat will be real time. It will be as if you are almost there in person (not actually a feature, but the possibility is there).</p>
         <p>Feel free to explore pictures of space, courtesy of NASA's Astronomy Picture of the Day (APOD), or access Mars with MERs. If you happen to be far from Earth, we have a link to real-time pictures of the blue marble from above to assuage your homesickness. You can even keep your favorite pictures in a personal folder for future perusal.</p>
@@ -19,6 +18,7 @@ const About = ({ clienttag }) => {
         <p>Also, you can always push the Home button to come back here and read through explanations if you forget (happens to the best of us).</p> </h4>
       </div>
       <Link to="/">Back Home</Link>
+</div>
     </>
   )
 }
