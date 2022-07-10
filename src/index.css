@@ -96,7 +96,7 @@ body {
   display: flex;
   position: absolute;
   align-items: center;
-  width: 80%;
+  width: 80%;  
   top: 50%;
   transform: translateY(-50%);
   padding: 10px;
@@ -113,6 +113,7 @@ body {
   width: 152px;
   height: 2rem;
   border: black 1px solid;
+  border-left: black 2px solid;
 }
 
 .brand_outline,
@@ -124,7 +125,8 @@ body {
 }
 
 .brand_outline {
-  border: black 2px solid;
+  border: #000000 1px solid;
+  border-right-color: transparent;
   background: black;
 }
 
@@ -135,30 +137,38 @@ body {
   background: #ceda8d;
 }
 
-.curr_user {
-  display: flex;
+.curr_user { 
   flex-direction: row;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5px;
-  left: 200px;
-  width: max-content;
-  border: 1px rgb(0, 255, 115) solid;
+  position: relative; 
+  display: inline-flex;
+  width: 200px;
+  left: 200px;  
+  padding:0 5px;
+  border: rgb(0, 255, 157) solid 1px;
 }
 
 .logged {
-  display: flex;  
-  width: min-content;
+  flex-basis: 75%; 
+  font-size: 14px; 
+  width: 140px;  
+  justify-content: center;
 }
 
-.avatar {  
+.avatar_box {  
+  flex-basis: 25%;
+  justify-content: center;
+  align-items: center; 
+  height: 2.5em;  
+  width: 50px;
+}
+
+.avatar {   
   border-radius: 50%;
-  margin-left: 10px;
-  height: 4vh;
-  width: 4vh; 
+  min-height: 40px;
+  min-width: 40px; 
+  margin: 0 10px;  
   background-image: radial-gradient(circle, rgb(0, 0, 255), rgba(0, 0, 0, 0.87));
-  box-shadow: 0px 0px 20px rgb(87, 87, 223);
+  box-shadow: 0px 0px 12px rgb(101, 101, 241);
 }
 
 .cart {
@@ -177,7 +187,7 @@ body {
   display: inline-block;
   position: absolute;
   align-items: center;
-  background-color: #0a64ec;
+  background-image: linear-gradient(to right bottom, #0a56c7, rgb(22, 190, 196));
   border: rgb(62, 0, 133) 2px groove;
   color: white;
   text-align: center;
@@ -188,7 +198,7 @@ body {
   transform: translateY(-50%);
   right: 10px;
   border-radius: 5px 5px;
-  box-shadow: inset 0px 3px 10px hsla(0, 0%, 0%, 0.4);
+  box-shadow: inset 0px 3px 10px hsla(0, 0%, 0%, 0.562);
 }
 
 .d_button:hover {
@@ -240,7 +250,6 @@ body {
     inset 0 0 7px rgba(251, 253, 241, 0.712);
   font-size: 20px;
   background-image: linear-gradient(to right bottom, #5cc2c0, rgb(146, 246, 250));
-
   position: absolute;
   top: 0px;
   left: 30px;
