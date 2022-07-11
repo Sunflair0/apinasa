@@ -16,7 +16,7 @@ const showSidebar2 = () => setSidebar2(!sidebar2)
     <>
       VentConsole page
 
-      <div className="leftMenu topMask"><h1 ><Link to='#' className="menu-bars">
+      <div className="leftMenu"><h1 ><Link to='#' className="menu-bars">
         <FaIcons.FaBars onClick={showSidebar2} />
       </Link></h1>
 

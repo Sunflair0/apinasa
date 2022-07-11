@@ -9,13 +9,13 @@ const Home = ({ clienttag }) => {
   return (
     <>
           {/* <h1 className=" ">Welcome to SpaceTours, {clienttag}!</h1> */}
-      <Dashboard />
+       <Dashboard />
       <div className="menu_flexbox">
+       
       <Logo  />
       <Navbar />
       </div>
       <Outlet />
-
     </>
   )
 }

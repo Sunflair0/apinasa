@@ -56,8 +56,9 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
       <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
 
         <ToggleProvider>
-          <Router>
-            <Routes className="flex_backing">
+          <div className="flex_backing">
+          <Router >
+            <Routes>
 
               {/* {!clienttag && ()} */}
               <Route path="loginpage" element={<LoginPage />} />
@@ -209,6 +210,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
             </Routes>
 
           </Router>
+          </div>
         </ToggleProvider>
       </div>
     </div>
