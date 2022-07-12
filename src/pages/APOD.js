@@ -17,7 +17,6 @@ export default function Apod() {
 
   return (
     <>
-
       <div className="">
         <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
         </div>

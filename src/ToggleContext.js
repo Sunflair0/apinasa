@@ -8,13 +8,20 @@ export function ToggleProvider({ children }) {
         setLight(light ==='Off' ? 'On' : 'Off');
     }
 
-    const [shipFly, setShipFly] =useState("");
-    const handleMenuToggle = () => {
-        setShipFly(shipFly  ? 'Fly' : 'Return');
+    const [shipFly, setShipFly] =useState('');
+    const handleShipToggle = () => {
+        setShipFly(shipFly === 'Fly'  ? 'Return' : 'Fly');
     }
+
+    const [menuMove, setMenuMove] =useState('');
+    const handleMenuToggle = () => {
+        setMenuMove(menuMove === 'Up'  ? 'Down' : 'Up');
+    }
+
+
     
     return (
-        <ToggleContext.Provider value={{light, setLight, handleBulbToggle, shipFly, handleMenuToggle }}>
+        <ToggleContext.Provider value={{light, setLight, handleBulbToggle, shipFly, handleShipToggle, menuMove, handleMenuToggle }}>
             {children}
         </ToggleContext.Provider>
     );

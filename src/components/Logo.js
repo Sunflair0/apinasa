@@ -2,21 +2,22 @@ import { useToggleContext } from "../hooks/useToggleContext";
 
 
 const Logo = () => {
-  const { shipFly, handleMenuToggle } = useToggleContext();
+  const { shipFly, handleShipToggle } = useToggleContext();
   return (
     <div className={`ship_${shipFly}`}
+          onClick={handleShipToggle}
       style={{
         marginTop: "30px",
         marginBottom: "-20px",
-        height: "150px",
-        width: "150px",
+        height: "125px",
+        width: "125px",
         backgroundImage: "url(./assets/sh.png)",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-      }} onClick={handleMenuToggle} 
-      alt="spaceship logo">
+        backgroundRepeat: 'no-repeat',
+        cursor: 'pointer'
+      }}  >
     </div>
   )
 }
-export default Logo;
+export default (Logo);

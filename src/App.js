@@ -47,9 +47,7 @@ import * as AiIcons from "react-icons/ai";
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
-  const [sidebar, setSidebar] = useState(true)
-  const showSidebar = () => setSidebar(!sidebar)
-
+  
   return (
 
     <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
@@ -70,10 +68,10 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
               <Route path="about" element={<About />} />
               <Route path="nasa" element={<NASA />}>
                 <Route path="apod" element={<APOD />}>
-                  <Route path="apodtoday" element={<ApodToday />}></Route>
-                  <Route path="apodchoose" element={<ApodChoose />}></Route>
-                  <Route path="apodrange" element={<ApodRange />}></Route>
-                  <Route path="apodgimme5" element={<ApodGimme5 />}></Route>
+                  <Route path="apodtoday" element={<ApodToday />} />
+                  <Route path="apodchoose" element={<ApodChoose />} />
+                  <Route path="apodrange" element={<ApodRange />} />
+                  <Route path="apodgimme5" element={<ApodGimme5 />} />
                 </Route>
                 <Route path="mer" element={<MER />}>
                 </Route>

@@ -13,7 +13,8 @@ useEffect(() => {
       const res = await getventures(`http://localhost:3006/api/ventures/tour/all`);
       if (!res.success) {
         return console.error(res.error);
-      }
+        
+      }console.log(res);
       setVentures(res.data);
   }
     call();

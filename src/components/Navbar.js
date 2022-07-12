@@ -1,29 +1,42 @@
 import React from 'react';
-// import * as AiIcons from 'react-icons/ai';
-import { NavLink } from 'react-router-dom';
-
+import { NavbarData } from "./NavbarData";
+import { useToggleContext } from "../hooks/useToggleContext";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const { menuMove, handleMenuToggle } = useToggleContext();
   return (
-    <nav >        
-    <ul className='menu1items'>
-    {/* <AiIcons.AiFillHome style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="/">HOME</NavLink></li>
-    {/* <AiIcons.AiFillRead style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="about">ABOUT</NavLink></li>
-    {/* <div style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="nasa">NASA</NavLink></li>
-    {/* <AiIcons.AiFillSmile style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="mypage" >MY PAGE</NavLink></li>
-    {/* <AiIcons.AiTwotoneRocket style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="venturetours">TOURS</NavLink></li>
-    {/* <AiIcons.AiOutlineAudit style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="testimonials">SALUTES</NavLink></li>
-    {/* <AiIcons.AiFillEdit style={{transform: "translateX(0px)", color:"#fff", zIndex: "10"}}/> */}
-    <li><NavLink to="contactus">CONTACT US</NavLink></li>
-    </ul>
-</nav>
+    <>
+      <nav className={`menuMove_${menuMove}`}
+        onClick={handleMenuToggle}>
+        <ul>
 
+        {NavbarData.map((item, index) => {
+            return (
+        <li section key={index} className={item.hot}>
+                <Link to={item.path}>            
+               
+               <span>{item.icon}</span>
+             </Link>
+           </li >
+             )
+            })}
+         
+
+          {NavbarData.map((item, index) => {
+            return (
+              <li key={index} className={item.style}>  
+                <span data_icon={item.icon}></span>                
+                <Link to={item.path}>            
+               
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    </>
   );
 };
-export default Navbar;
+export default (Navbar);
