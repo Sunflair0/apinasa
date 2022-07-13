@@ -7,21 +7,9 @@ export function ToggleProvider({ children }) {
     const handleBulbToggle = () => {
         setLight(light ==='Off' ? 'On' : 'Off');
     }
-
-    const [shipFly, setShipFly] =useState('');
-    const handleShipToggle = () => {
-        setShipFly(shipFly === 'Fly'  ? 'Return' : 'Fly');
-    }
-
-    const [menuMove, setMenuMove] =useState('');
-    const handleMenuToggle = () => {
-        setMenuMove(menuMove === 'Up'  ? 'Down' : 'Up');
-    }
-
-
-    
+  
     return (
-        <ToggleContext.Provider value={{light, setLight, handleBulbToggle, shipFly, handleShipToggle, menuMove, handleMenuToggle }}>
+        <ToggleContext.Provider value={{light, setLight, handleBulbToggle, }}>
             {children}
         </ToggleContext.Provider>
     );

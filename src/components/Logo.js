@@ -1,23 +1,19 @@
-import { useToggleContext } from "../hooks/useToggleContext";
-
-
 const Logo = () => {
-  const { shipFly, handleShipToggle } = useToggleContext();
   return (
-    <div className={`ship_${shipFly}`}
-          onClick={handleShipToggle}
-      style={{
-        marginTop: "30px",
+    <>
+      <div style={{
+        marginTop: "13%",
         marginRight: "10%",
-        height: "125px",
-        width: "125px",
+        height: "150px",
+        width: "150px",
         backgroundImage: "url(./assets/sh.png)",
         backgroundPosition: 'center',
-        backgroundSize: 'cover',
+        backgroundSize: '93%',
         backgroundRepeat: 'no-repeat',
         cursor: 'pointer'
-      }}  >
-    </div>
+      }}>
+      </div>
+    </>
   )
 }
 export default (Logo);
