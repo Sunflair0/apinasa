@@ -7,49 +7,49 @@ export const NavbarData =[
     path: '/',
     icon: <AiIcons.AiFillHome />, 
     style: 'menu1items',
-    iSpace: 'iconSpace'
+    iSpace: 'li::before'
     },
     {
     title: 'ABOUT',
     path: 'about',
     icon:<AiIcons.AiFillRead />, 
     style: 'menu1items',
-    iSpace: 'iconSpace' 
+    iSpace: 'li::before' 
     },
     {   
     title: 'NASA',
     path: 'nasa',
     icon: <AiIcons.AiFillHome />, 
     style: 'menu1items',
-    iSpace: 'iconSpace' 
+    iSpace: 'li::before' 
     },
     {
     title: 'MY PAGE',
     path: 'mypage',
     icon: <AiIcons.AiFillSmile/>, 
     style: 'menu1items',
-    iSpace: 'iconSpace' 
+    iSpace: 'li::before' 
     },
     {
     title: 'TOURS',
     path: 'venturetours',
     icon: <AiIcons.AiTwotoneRocket />, 
     style: 'menu1items',
-    iSpace: 'iconSpace'     
+    iSpace: 'li::before'     
     },
     {
     title: 'SALUTES',
     path: 'testimonials',
     icon: <AiIcons.AiFillEdit />, 
     style: 'menu1items',
-    iSpace: 'iconSpace' 
+    iSpace: 'li::before' 
     },
     {
     title: 'CONTACT US',
     path: 'contactus',
     icon: <AiIcons.AiFillHome />, 
     style: 'menu1items',
-    iSpace: 'iconSpace' 
+    iSpace: 'li::before' 
     },    
 ]
  

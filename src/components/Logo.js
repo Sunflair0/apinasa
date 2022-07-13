@@ -8,7 +8,7 @@ const Logo = () => {
           onClick={handleShipToggle}
       style={{
         marginTop: "30px",
-        marginBottom: "-20px",
+        marginRight: "10%",
         height: "125px",
         width: "125px",
         backgroundImage: "url(./assets/sh.png)",

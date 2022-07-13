@@ -17,14 +17,14 @@ opacity: .65;
 
 .ship_Return {
   animation: ship_return1 2s forwards ease-in,
-             menu_down 1.4s 2s steps(7) forwards,
-             ship_return2 2s 3.5s forwards;
+    menu_down1 1.4s 2s forwards,
+    ship_return2 2s 3.5s forwards;
 }
 
 .ship_Fly {
   animation: ship_fly1 2s forwards ease-in,
-             menu_up 1.4s 2s steps(7) forwards,
-             ship_fly2 2s 3.5s forwards;
+    menu_up1 1.4s 2s  forwards,
+    ship_fly2 2s 3.5s forwards;
 }
 
 @keyframes ship_fly1 {
@@ -85,11 +85,31 @@ opacity: .65;
 }
 
 .menuMove_Up {
-  transform: translateY();
+  animation: menu_up 1.4s 2s steps(7) forwards;
+}
+
+.menuMove_Down {
+  animation: menu_down 1.4s 2s steps(7) forwards;
 }
 
 @keyframes menu_up {
+  from {
+    transform: translateY(0%) scale(1);
+  }
 
+  to {
+    transform: translateY(-1500%) scale(0)
+  }
+}
+
+@keyframes menu_down {
+  from {
+    transform: translateY(-100px) scale(0)
+  }
+
+  to {
+    transform: translateY(100px) scale(1);
+  }
 }
 
 .icon_show {

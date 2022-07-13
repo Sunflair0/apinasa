@@ -36,14 +36,10 @@ import NASA from "./pages/NASA";
 import Signup from "./components/SignUp";
 import Home from "./pages/Home";
 import Testimonials from "./pages/Testimonials";
-import TourGuideLight from "./components/TourGuideLight";
-import TourGuideMessages from "./components/TourGuideMessages";
 import TourInfo from "./components/TourInfo";
 import TourIns from "./components/TourIns";
-import VentConsole from "./components/VentConsole";
 import VentureTours from "./pages/VentureTours";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
+
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
@@ -51,7 +47,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
   return (
 
     <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
-      <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 800s linear infinite" }}>
+      <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
 
         <ToggleProvider>
           <div className="flex_backing">
@@ -90,6 +86,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
                   
                   <ul>
                     <li> <Route path="/" element={<Home />} > HOME
+    
                     </Route></li>
                     <li> <Route path="/nasa" element={<NASA />}>NASA</Route></li>
 
