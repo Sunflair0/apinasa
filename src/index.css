@@ -249,10 +249,18 @@ box-shadow: inset 0px 1px 0px #fbff05,
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 20%;
-  /* justify-content: left; */
+  width: 20%;  
   align-items: center;
 }
+
+.menu_flexbox2 {
+  display: flex;
+  position: relative;
+  width: 20%;    
+  height: 7vh;
+  border: pink 2px solid;
+}
+
 
 .content_flexbox {
   display: flex;
@@ -484,7 +492,7 @@ li::before {
   position: relative;
   text-decoration: none;
   height: 35px;
-  width: 117px;
+  width: 105px;
   font-size: 14px;
   text-shadow: 10px 10px 10px 10px#0e0b0b;
   margin-right: 12%;

@@ -18,7 +18,7 @@ const About = ({ clienttag }) => {
         <p>Also, you can always push the Home button to come back here and read through explanations if you forget (happens to the best of us).</p>
       </div>
       <button>
-      <Link to="/">Back Home</Link>
+      <Link to="/home">Back Home</Link>
       </button>
 </div>
     </>

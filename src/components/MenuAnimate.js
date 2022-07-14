@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 
 function MenuAnimate() {
   const [reversed, setReversed] = useState(true);
+  const [div, setDiv]= useState();
   const el = useRef();
   const q = gsap.utils.selector(el);  
   const tl = useRef(); // store the timeline in a ref.
@@ -49,7 +50,7 @@ function MenuAnimate() {
           rotation: 0,
           x: '-60%',
           y: '0%',
-          scale: .1,          
+          scale: .1,  
         });
   }, []);
   

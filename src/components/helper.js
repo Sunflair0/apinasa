@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function TourIns() {
-	return (
-		<>
+const helper = () => {
+  return (
+    <>
  <div className="flex02">
 	<div className="circle3"></div>	
  			<div className="boxFade">
@@ -13,5 +13,7 @@ export default function TourIns() {
  				
  				</div></div></div>
  		</>
-	)
+  )
 }
+
+export default helper

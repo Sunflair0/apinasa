@@ -22,28 +22,29 @@ import ApodGimme5 from "./pages/ApodGimme5";
 import ApodRange from "./pages/ApodRange";
 import BigCube from "./components/BigCube";
 import BuyVent from "./components/BuyVent";
-import Dashboard from "./components/Dashboard";
+
 import LoginPage from "./pages/LoginPage";
 import ContactUs from "./pages/ContactUs";
 import EARTH from "./pages/EARTH";
 import Error from "./pages/Error";
 import Form from "./pages/Form";
 import Ipn from "./pages/Ipn"
-import Login from "./components/Login";
+
 import MER from "./pages/MER";
 import MyPage from "./pages/MyPage";
 import NASA from "./pages/NASA";
-import Signup from "./components/SignUp";
+import PagesTemplate from "./components/PagesTemplate";
+
 import Home from "./pages/Home";
 import Testimonials from "./pages/Testimonials";
 import TourInfo from "./components/TourInfo";
-import TourIns from "./components/TourIns";
+import TourAddOns from "./components/TourAddOns";
 import VentureTours from "./pages/VentureTours";
 
 
 function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
 ) {
-  
+
   return (
 
     <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
@@ -51,87 +52,46 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
         <ToggleProvider>
           <div className="flex_backing">
-          <Router >
-            <Routes>
+            <Router >
+              <Routes>
 
-              {/* {!clienttag && ()} */}
-              <Route path="loginpage" element={<LoginPage />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="login" element={<Login />} />
-              <Route path="signup" element={<Signup />} />
-              <Route path="/" element={<Home />} >
+                {/* {!clienttag && ()} */}
+                <Route path="loginpage" element={<LoginPage />} />
 
-              <Route path="about" element={<About />} />
-              <Route path="nasa" element={<NASA />}>
-                <Route path="apod" element={<APOD />}>
-                  <Route path="apodtoday" element={<ApodToday />} />
-                  <Route path="apodchoose" element={<ApodChoose />} />
-                  <Route path="apodrange" element={<ApodRange />} />
-                  <Route path="apodgimme5" element={<ApodGimme5 />} />
+
+                <Route path="/" element={<PagesTemplate />} >
+                  <Route index element={<Home />} />
+                  <Route path="about" element={<About />} />
+                  <Route path="nasa" element={<NASA />}>
+                    <Route path="apod" element={<APOD />}>
+                      <Route path="apodtoday" element={<ApodToday />} />
+                      <Route path="apodchoose" element={<ApodChoose />} />
+                      <Route path="apodrange" element={<ApodRange />} />
+                      <Route path="apodgimme5" element={<ApodGimme5 />} />
+                    </Route>
+                    <Route path="mer" element={<MER />}>
+                    </Route>
+                    <Route path="earth" element={<EARTH />}>
+                    </Route>
+                  </Route>
+                  <Route path="mypage" element={<MyPage />}>
+                    <Route path="album" element={<Album />} />
+                    <Route path="mypage" element={<MyPage />} />
+                  </Route>
+                  <Route path="venturetours" element={<VentureTours />} />
+                  <Route path="venturetours/:tourId" element={<TourInfo />} />
+                  <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
+
+                  <Route path="contactus" element={<ContactUs />}>
+                    <Route path="form" element={<Form />} />
+                  </Route>
+                  <Route path="*" element={<Error />} />
                 </Route>
-                <Route path="mer" element={<MER />}>
-                </Route>
-                <Route path="earth" element={<EARTH />}>
-                </Route>
-              </Route>
-
-              <Route path="mypage" element={<MyPage />} />
-              <Route path="venturetours" element={<VentureTours />} />\
-              <Route path="contactus" element={<ContactUs />} />
-              <Route path="*" element={<Error />} />
-              </Route>
-
+             
               {clienttag && (
                 <>
-                  
-                  <ul>
-                    <li> <Route path="/" element={<Home />} > HOME
-    
-                    </Route></li>
-                    <li> <Route path="/nasa" element={<NASA />}>NASA</Route></li>
 
-                    <Link to="/apod">
-                      APOD {" "}
-
-                    </Link>
-                    <Route activeClassName="active" className="menu1items" to="/mer">
-                      MER {" "}
-                    </Route>
-
-                    <Route activeClassName="active" className="menu1items" to="/earth">
-                      Earth {" "}
-                    </Route>
-                    <li> <Route path="about" element={<About />}>About</Route></li>
-                    <li> <Route path="mypage" element={<MyPage />}>My Page</Route></li>
-                    <li> <Route path="venturetours" element={<VentureTours />}>Tours</Route></li>
-                    <li> <Route path="testimonials" element={<Testimonials />}>Salutes</Route></li>
-                    <li> <Route path="contactus" element={<ContactUs />} >Contact Us</Route></li>
-
-                    
-
-
-                    <li><Route activeClassName="active" className="menu1items" to="/album">
-                      Album{" "} </Route></li>
-
-                    <li> <Route activeClassName="active" className=" menu1items" to="/tourinfo">
-                      Tour Info{" "}
-                    </Route></li>
-
-                    <li> <Route activeClassName="active" className=" menu1items" to="/form">
-                      Order{" "}
-                    </Route></li>
-
-                    <li> <Route activeClassName="active" className="menu1items" to="/tourins">
-                      Extras{" "}
-                    </Route></li>
-
-                    <li> <Route activeClassName="active" className="menu1items" to="/ipn">
-                      IPN{" "}
-                    </Route></li>
-
-                    <li> <Route activeClassName="active" className="menu1items" to="/ventconsole">
-                      VentConsole{" "}
-                    </Route></li>
+                  <ul>            
 
                     <li> <Route
                       className="menu1items"
@@ -194,7 +154,7 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
 
                 <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
 
-                <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
+                <ProtectedRoute path="/TourAddOns" reqUser={true} component={TourAddOns} />
 
                 <ProtectedRoute path="/ventconsole" reqUser={true} component={VentConsole} />
 
@@ -205,10 +165,10 @@ function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearC
             </Routes>
 
           </Router>
-          </div>
-        </ToggleProvider>
       </div>
-    </div>
+    </ToggleProvider>
+      </div >
+    </div >
   );
 };
 
