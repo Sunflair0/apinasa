@@ -1,29 +1,27 @@
 import React from 'react';
 import { NavbarData } from "./NavbarData";
-import { useToggleContext } from "../hooks/useToggleContext";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const { menuMove, handleMenuToggle } = useToggleContext();
+
   return (
     <>
-      <nav className={`menuMove_${menuMove}`}
-        onClick={handleMenuToggle}>
-        <ul>
-         
-
+    <nav>
+      <ul>
           {NavbarData.map((item, index) => {
             return (
-              <li key={index} className={item.style}>  
-                <Link to={item.path}>            
-               
+              <li key={index} className={item.style} >
+                <NavLink to={item.path}  style={({isActive})=>{
+                  return {color:isActive?'#fff000' : '' };
+                } } >
+
                   <span>{item.title}</span>
-                </Link>
+                </NavLink>
               </li>
             )
           })}
         </ul>
-      </nav>
+    </nav>
     </>
   );
 };

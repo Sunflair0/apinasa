@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import useAPI from "../hooks/useAPI";
@@ -8,7 +8,7 @@ import TourGuideLight from "./TourGuideLight";
 
 export const Login = ({ setClient }) => {
     const { login: apiLogin } = useAPI();
-    const navigate = useNavigate();
+  
     const [clienttagInput, setClienttagInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [clienttagError, setclienttagError] = useState(null);

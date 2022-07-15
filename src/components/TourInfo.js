@@ -1,34 +1,15 @@
-import React, {useState} from "react";
-import VentConsole2 from "./VentConsole";
-import * as FaIcons from "react-icons/fa";
-import { Link } from "react-router-dom";
-// import { clearForm } from "../form";
+import React from 'react';
+    import {Link, useParams} from 'react-router-dom';
+  
+    const TourInfo = () => {
+      const {tourId} = useParams();
+    
+      return (
+        <section className="products">
+          <h2>{tourId}</h2>
+          <Link to='/venturetours'>back to TOURS</Link>
+        </section>
+      )
+    }
 
-
-function TourInfo() {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
-  return (
-
- 
-    <>
-<div className=" content ">Tour Info Page</div>
-      <div className="displayvent">
-        <VentConsole2 />
-        <div className="venture-menu">
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-        </div>
-        <nav className={sidebar ? "venture-menu active" : "venture-menu"}>
-          <ul className="venture-menu-items" onClick={showSidebar}>
-            <li className="venture-toggle">
-              <Link to="#" className="menu-bars"></Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </>
-  );
-}
 export default TourInfo;
