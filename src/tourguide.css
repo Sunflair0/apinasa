@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+
+
 /* // ///// TourGuide  */
 .stripe 
 {
@@ -22,8 +26,15 @@ left: 40%;
 width: 310px;
 height: 500px;
 border-radius: 10px;
-backdrop-filter: blur(7px); 
-background: rgba(75, 102, 117, 0.04);
+background: rgba(2, 40, 60, 0);
+backdrop-filter: blur(7px);
+transform-style: preserve-3d;
+transition: 1s;
+backface-visibility: hidden;
+}
+
+.back {
+transform: rotateY(180deg);
 }
 .tourguide 
 {
@@ -75,7 +86,7 @@ cursor: pointer;
 z-index: 120;
 }
 .tourguide button, .tgButton
-{
+{ 
 position: absolute;
 align-items: center;
 justify-content: center;
@@ -90,7 +101,7 @@ background-image: linear-gradient(to right, #314755 0%, #85e76c  49%, #314755 10
 }
 .opposite
 {
-  transform: translateX(-268px);
+  transform: translate(-270px, -4px);
 }
 .flip {
   transform: translateX(60px);
@@ -129,7 +140,7 @@ width: 210px;
 border-radius: 10px;
 font-family: "Monaco", Times, serif;
 padding: 5px;
-margin-left: 63px;
+margin-left: 59px;
 margin-top: 50px;
 color: #5fd482;
 background-color: rgba(0, 0, 0, 0.5);
@@ -247,7 +258,7 @@ margin-bottom: 400px;
   justify-content: center;
   align-items: center;
   position: fixed;
-  right: 12px;
+  right: 8px;
   top: 0px; 
   height: 30px;
   width: 30px;  

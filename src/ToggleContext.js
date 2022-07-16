@@ -3,13 +3,13 @@ import { createContext, useState } from "react";
 export  const ToggleContext = createContext();
 
 export function ToggleProvider({ children }) {
-    const [light, setLight] = useState('Off');
+    const [islight, setIsLight] = useState('Off');
     const handleBulbToggle = () => {
-        setLight(light ==='Off' ? 'On' : 'Off');
+        setIsLight(islight ==='Off' ? 'On' : 'Off');
     }
   
     return (
-        <ToggleContext.Provider value={{light, setLight, handleBulbToggle, }}>
+        <ToggleContext.Provider value={{islight, setIsLight, handleBulbToggle}}>
             {children}
         </ToggleContext.Provider>
     );

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
 body {
   overflow: hidden;
   background-color: black;
@@ -11,7 +13,7 @@ body {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000000;
   color: #ceda8d; 
   justify-content: center;
-  
+  height: 100vh;
 
 
 }
@@ -93,7 +95,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 6vh;
+  height: 50px;
   background-image: linear-gradient(to left, rgb(161, 121, 9) 0%, rgb(49, 4, 4) 100%);
   border-bottom: #ceda8d solid 2px;
 }
@@ -112,7 +114,6 @@ body {
   display: flex;
   position: absolute;
   font-size: 30px;
-  /* left: 10px; */
   justify-content: center;
   align-items: center;
   margin-right: 10px;
@@ -187,18 +188,18 @@ body {
   padding: 10px;
   font-size: 26px;
   right: 0%;
-  color: rgb(71, 7, 7);
+  color: rgb(1, 1, 71);
 }
 
 .d_button {
   display: inline-block;
   position: absolute;
   align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins",Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  background-image: linear-gradient(to right bottom, #1505eb, rgb(121, 177, 17));
-  border: rgb(0, 0, 0) 1px solid;
+  font-weight: 300;
+  background-image: linear-gradient(to right bottom, #000b6f, rgb(42, 60, 9));
+  border: rgb(0, 0, 0) 2px groove;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -209,31 +210,49 @@ body {
   border-radius: 5px 5px;
   box-shadow: inset 0px 3px 10px hsla(0, 0%, 0%, 0.562);
   text-shadow: 10px 10px 10px 10px#0e0b0b;
-
-
   background-image:
     radial-gradient(ellipse at 105% 6%,
       rgba(253, 233, 145, 0.664) 6%,
       rgba(233, 212, 94, 0.466) 6%,
       transparent 13%),
-    linear-gradient(rgb(11, 47, 206)50%,
+    linear-gradient(rgb(3, 3, 164)50%,
       rgba(17, 5, 51, 0.541)120%);
-
-
   text-shadow: -1px -1px 5px rgb(0, 0, 0),
     1px -1px 5px rgb(0, 0, 0),
     -1px 1px 5px rgb(0, 0, 0),
     1px 1px 5px rgb(0, 0, 0);
-  /* padding: 10px; */
   box-shadow: inset 0px 1px 0px #fbff05,
     inset 1px 0px 0px #fbff05,
     0px 3px 1px 0px #200906,
     2px 2px 2px 2px #200606,
     3px 5px 5px 4px rgba(78, 45, 1, 0.479);
 }
-
 .d_button:hover {
+ background-image:
+    radial-gradient(ellipse at 105% 6%,
+      rgba(253, 233, 145, 0.664) 6%,
+      rgba(233, 212, 94, 0.466) 6%,
+      transparent 13%),
+    linear-gradient(rgb(1, 1, 99)50%,
+      rgba(17, 5, 51, 0.541)120%);
+  border: rgb(0, 0, 0) 1px solid;
+  box-shadow: inset 0px 1px 0px #fbff05,
+    inset 1px 0px 0px #fbff05,
+    0px 3px 1px 0px #200906,
+    2px 2px 2px 2px #200606,
+    3px 5px 5px 4px rgba(78, 45, 1, 0.479);
+  transition: box-shadow .5 ease-in-out;
+}
+
+.d_button:active {
   border: rgb(0, 0, 0) 2px groove;
+ background-image:
+    radial-gradient(ellipse at 105% 6%,
+      rgba(253, 233, 145, 0.664) 6%,
+      rgba(233, 212, 94, 0.466) 6%,
+      transparent 13%),
+    linear-gradient(rgb(0, 0, 87)50%,
+      rgba(17, 5, 51, 0.541)120%);
   box-shadow: 0px 3px 10px hsla(0, 0%, 0%, 0.4);
   transition: box-shadow .5 ease-in-out;
 }
@@ -242,11 +261,9 @@ body {
 
 .flex_backing {
 display: flex;
-  position: relative;
-  flex-direction: row;
-  top: 6vh;
-  height: 100vh;
-  width: 100%;
+position: relative;
+flex-direction: row;
+top: 10vh; 
 }
 
 .menu_flexbox {
@@ -395,11 +412,13 @@ li {
 }
 
 .app > *+* {
-  margin-top: 1rem
+margin-top: 1rem;
+margin-left:1rem;
 }
 .ship {
   margin-top: -25%;
-  margin-left: -13%;
+  margin-left: 50%;
+  left: 5rem;
   height: 150px;
   width: 150px;
   border: none;
@@ -468,6 +487,7 @@ li span {
   justify-content: center;
   position: relative;
   text-decoration: none;
+left: 5rem;
   height: 35px;
   width: 105px;
   font-size: 14px;
