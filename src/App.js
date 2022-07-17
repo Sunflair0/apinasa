@@ -53,8 +53,7 @@ function App({ clienttag }
             <div className="flex_backing">
               <Router >
                 <Routes>
-                  <Route path="loginpage" element={<ProtectedRoute isPrivate={false}> <LoginPage />
-                  </ProtectedRoute>
+                  <Route path="loginpage" element={<ProtectedRoute isPrivate={false}> <LoginPage /></ProtectedRoute>
                   }></Route>                  
                     <Route path="/" element={<ProtectedRoute isPrivate={false}><PagesTemplate /></ProtectedRoute>} >
                     <Route index element={<Home />} />

@@ -16,39 +16,41 @@ function MenuAnimate() {
         scale: 1,
       })
       .to(q(".ship"), {
-        duration: .3,
+        duration: .5,
         rotation: 32,
         scale: 1,
+        ease: 'ease-in',
         outlineColor: '000'
       })
       .to(q(".ship"), {
-        duration: 2,
+        duration: 1.5,
         x: '15%',
         rotation: 32,
         scale: 2.5,
         ease: 'ease-in'
       })
-        .to(q(".menu1items"), {
+      .to(q(".menu1items"), {
         duration: 1,
         y: "-350%",
         stagger: .3,
         scale: 0,
       })
       .to(q(".ship"), {
+        duration: 1,
         rotation: 32,
         scale: 2.5,
       })
       .to(q(".ship"), {
-        duration: .3,
+        duration: 1,
         x: '150%',
         y: "60%",
         rotation: -32,
-        scale: .8,
+        scale: 1.4,
         outlineColor: '#00ff2a'
-      })
+      },"<")
       .to(q(".ship"), {
         duration: .2,
-        rotation: 0,
+        rotation: 62,
         x: '-60%',
         y: '0%',
         scale: .2,
