@@ -1,25 +1,23 @@
-import React from 'react'
-
-
 export const  NavbarData =[
     {
     title: 'HOME',
     path: '/',
-    icon: ''
+    iconFont: 'font-link-sharp',
+    icon: '🏠'
 , 
     style: 'menu1items ',
     },
     {
     title: 'ABOUT',
     path: 'about',
-    icon:'', 
+    icon:'📖', 
     style: 'menu1items',
 
     },
     {   
     title: 'NASA',
     path: 'nasa',
-    icon: '❤', 
+    icon: '🔭', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },
@@ -33,21 +31,21 @@ export const  NavbarData =[
     {
     title: 'TOURS',
     path: 'venturetours',
-    icon: '❤', 
+    icon: '🚀 ',
     style: 'menu1items',
     iSpace: 'li::before',     
     },
     {
     title: 'SALUTES',
     path: 'testimonials',
-    icon: '❤', 
+    icon: '🗣️', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },
     {
     title: 'CONTACT US',
     path: 'contactus',
-    icon: '❤', 
+    icon: '📣', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },    

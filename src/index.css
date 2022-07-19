@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 
+
 body {
   overflow: hidden;
   background-color: black;
@@ -39,6 +40,9 @@ body {
   height: 95vh;
   width: 100%;
 }
+
+.font-link {
+font-family: 'material-symbols-sharp';}
 
 .errorMessage {
   text-shadow: none;
@@ -497,13 +501,13 @@ li span {
   justify-content: center;
   position: relative;
   text-decoration: none;
-left: 5rem;
+  left: 5rem;
   height: 35px;
   width: 105px;
   font-size: 14px;
   text-shadow: 10px 10px 10px 10px#0e0b0b;
   margin-right: 12%;
-  margin-bottom: 27%;
+  margin-bottom: 25%;
   border-radius: 0px 5px 5px 0px;
   background-image:
     radial-gradient(ellipse at 105% 6%,
