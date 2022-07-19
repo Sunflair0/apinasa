@@ -6,7 +6,7 @@ const Logo = () => {
         marginRight: "10%",
         height: "150px",
         width: "150px",
-        backgroundImage: "url(./assets/sh.png)",
+        backgroundImage: "url(./assets/shi.png)",
         backgroundPosition: 'center',
         backgroundSize: '93%',
         backgroundRepeat: 'no-repeat',

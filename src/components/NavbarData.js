@@ -1,52 +1,53 @@
 import React from 'react'
-import * as AiIcons from 'react-icons/ai';
 
-export const NavbarData =[
+
+export const  NavbarData =[
     {
     title: 'HOME',
     path: '/',
-    icon: <AiIcons.AiFillHome />, 
+    icon: ''
+, 
     style: 'menu1items ',
     },
     {
     title: 'ABOUT',
     path: 'about',
-    icon:<AiIcons.AiFillRead />, 
+    icon:'', 
     style: 'menu1items',
 
     },
     {   
     title: 'NASA',
     path: 'nasa',
-    icon: <AiIcons.AiFillHome />, 
+    icon: '❤', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },
     {
     title: 'MY PAGE',
     path: 'mypage',
-    icon: <AiIcons.AiFillSmile/>, 
+    icon: '❤', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },
     {
     title: 'TOURS',
     path: 'venturetours',
-    icon: <AiIcons.AiTwotoneRocket />, 
+    icon: '❤', 
     style: 'menu1items',
     iSpace: 'li::before',     
     },
     {
     title: 'SALUTES',
     path: 'testimonials',
-    icon: <AiIcons.AiFillEdit />, 
+    icon: '❤', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },
     {
     title: 'CONTACT US',
     path: 'contactus',
-    icon: <AiIcons.AiFillHome />, 
+    icon: '❤', 
     style: 'menu1items',
     iSpace: 'li::before', 
     },    
