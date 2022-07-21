@@ -11,14 +11,10 @@ const Navbar = () => {
           {NavbarData.map((item, index) => {
             return (
               <li key={index} className={item.style}
-
-                 data-icon={item.icon}
->
-
+                data-icon={item.icon}>
                 <NavLink to={item.path} style={({ isActive }) => {
                   return { color: isActive ? '#fff000' : '' };
                 }} >
-
                   <span>{item.title}</span>
                 </NavLink>
               </li>

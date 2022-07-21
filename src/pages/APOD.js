@@ -1,5 +1,6 @@
 import React, { useState, } from 'react';
 import { Link } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
 import ApodGimme5 from './ApodGimme5';
@@ -15,13 +16,13 @@ export default function Apod() {
 
   return (
     <>
-      <div>
-        <div className="">
+     <div className="content_flexbox">
+      <div>hello APOD       
           <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
           </div>
           <div className=" apodBox apodSee">
             <Link className='apodButton'
-              to="apodtoday"
+              to="nasa/apod/apodtoday"
               style={{
                 backgroundImage: "url(./assets/today.png)"
               }}
@@ -29,7 +30,7 @@ export default function Apod() {
             </Link>
 
             <Link className='apodButton'
-              to="apodchoose"
+              to="nasa/apod/apodchoose"
               style={{
                 backgroundImage: "url(./assets/choose.png)"
               }}
@@ -37,7 +38,7 @@ export default function Apod() {
             </Link>
 
             <Link className='apodButton'
-              to="apodgimme"
+              to="nasa/apod/apodgimme"
               style={{
                 backgroundImage: "url(./assets/gimme.png)"
               }}
@@ -45,7 +46,7 @@ export default function Apod() {
             </Link>
 
             <Link className='apodButton'
-              to="apodrange"
+              to="nasa/apod/apodrange"
               style={{
                 backgroundImage: "url(./assets/range.png)"
               }}
@@ -61,6 +62,7 @@ export default function Apod() {
           <p>{selection === "range" && <ApodRange />}</p>
         </div>
       </div>
+      <Outlet />
     </>
   );
 }

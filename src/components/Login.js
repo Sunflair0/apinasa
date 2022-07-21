@@ -84,7 +84,7 @@ export const Login = ({ setClienttag }) => {
                                 error={displayError && !!clienttagError}
                                 label="SpaceTours Handle"
                                 value={clienttagInput}
-                                helperText={displayError ? clienttagError : ""}
+                                // helpertext={displayError ? clienttagError : ""}
                                 onChange={(e) => setClienttagInput(e.target.value)}
                             />
                         </div>
@@ -98,7 +98,7 @@ export const Login = ({ setClienttag }) => {
                                 label="Password"
                                 
                                 value={passwordInput}
-                                helperText={displayError ? passwordError : ""}
+                                // helpertext={displayError ? passwordError : ""}
                                 onChange={(e) => setPasswordInput(e.target.value)}
                             />
                         </div>
@@ -113,6 +113,7 @@ export const Login = ({ setClienttag }) => {
                     <div className="outerS">
                         <div className="smessage">
                             If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
+                            {/* Sign Up! button located on CardFlip.js */}
                     </div>
                 </div>
 
@@ -121,7 +122,7 @@ export const Login = ({ setClienttag }) => {
     );
 };
 
-function mapStateToProps(state){};
+const mapStateToProps = (state) => ({});
 const mapDispatchToProps = { setClienttag };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

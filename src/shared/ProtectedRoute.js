@@ -3,15 +3,15 @@ import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 function ProtectedRoute({ clienttag, isPrivate, children }) {
-      //! Is this a private route?
+      // Is this a private route?
       const redirectTo = isPrivate ? "/loginpage" : "/home";
-      //! Is there an activeUser?
-      //! Do the two work in combination
+      // Is there an activeUser?
+      // Do the two work in combination
       if ((clienttag && isPrivate) || (!clienttag && !isPrivate)) {
-        //! If so, render the component
+        // If so, render the component
         return <>{children}</>;
       } else {
-        //! If not, redirect them
+        // If not, redirect them
         return <Navigate to={redirectTo} />;
       }
     }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { setClienttag } from "./redux/actions";
+import { verify}  from "../src/hooks/useAPI";
 import useAPI from "../src/hooks/useAPI";
-// import { verify}  from "../src/hooks/useAPI";
+
 import {
   BrowserRouter as Router, Routes, Route, Navigate
 } from "react-router-dom";
@@ -27,6 +28,7 @@ import EARTH from "./pages/EARTH";
 import Error from "./pages/Error";
 import Form from "./pages/Form";
 import Ipn from "./pages/Ipn"
+import ISS from "./pages/ISS"
 
 import MER from "./pages/MER";
 import MyPage from "./pages/MyPage";
@@ -67,32 +69,39 @@ function App({ clienttag, setClienttag }) {
                 <Router >
                   <Routes>
                     <Route path="loginpage" element={<ProtectedRoute isPrivate={false}><LoginPage /></ProtectedRoute>} />
+
                     <Route path="/" element={<ProtectedRoute isPrivate={false}><PagesTemplate /></ProtectedRoute>} >
                       <Route index element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
+                      <Route path="home" element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
                       <Route path="about" element={<ProtectedRoute isPrivate={false}><About /></ProtectedRoute>} />
-                      <Route path="nasa" element={<ProtectedRoute isPrivate={false}><NASA /></ProtectedRoute>}>
-                        <Route path="apod" element={<ProtectedRoute isPrivate={false}><APOD /></ProtectedRoute>}>
-                          <Route index element={<ProtectedRoute isPrivate={false}><ApodToday /></ProtectedRoute>} />
-                          <Route path="apodchoose" element={<ProtectedRoute isPrivate={false}><ApodChoose /></ProtectedRoute>} />
-                          <Route path="apodrange" element={<ProtectedRoute isPrivate={false}><ApodRange /></ProtectedRoute>} />
-                          <Route path="apodgimme5" element={<ProtectedRoute isPrivate={false}><ApodGimme5 /></ProtectedRoute>} />
+                      <Route path="nasa/" element={<ProtectedRoute isPrivate={false}><NASA /></ProtectedRoute>}>
+
+                        <Route path="apod/" element={<ProtectedRoute isPrivate={false}><APOD /></ProtectedRoute>}>
+
+                          <Route index element={<ProtectedRoute isPrivate={false}><div><ApodToday /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodtoday" element={<ProtectedRoute isPrivate={false}><div><ApodToday /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodchoose" element={<ProtectedRoute isPrivate={false}><div><ApodChoose /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodrange" element={<ProtectedRoute isPrivate={false}><div><ApodRange /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodgimme5" element={<ProtectedRoute isPrivate={false}><div><ApodGimme5 /></div></ProtectedRoute>} />
                         </Route>
+
                         <Route path="mer" element={<ProtectedRoute isPrivate={false}><MER /></ProtectedRoute>} />
                         <Route path="earth" element={<ProtectedRoute isPrivate={false}><EARTH /></ProtectedRoute>} />
+                        <Route path="iss" element={<ProtectedRoute isPrivate={false}><ISS /></ProtectedRoute>} />
+                        
                       </Route>
                       <Route path="mypage" element={<ProtectedRoute isPrivate={false}><MyPage /></ProtectedRoute>}>
                         <Route path="album" element={<ProtectedRoute isPrivate={false}><Album /></ProtectedRoute>} />
                       </Route>
                       <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} >
-                        <Route path="tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
-                        <Route path="addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
+                        <Route path=":tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
+                        <Route path=":addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
                       </Route>
                       <Route path="testimonials" element={<ProtectedRoute isPrivate={false}><Testimonials /></ProtectedRoute>} />
                       <Route path="contactus" element={<ProtectedRoute isPrivate={false}><ContactUs /></ProtectedRoute>}>
                         <Route path="form" element={<ProtectedRoute isPrivate={false}><Form /></ProtectedRoute>} />
                       </Route>
-                    </Route>
-                    <Route path="*" element={<ProtectedRoute isPrivate={false}><Error /></ProtectedRoute>} >
+                      <Route path="*" element={<ProtectedRoute isPrivate={false}><Error /></ProtectedRoute>} />
                     </Route>
                   </Routes>
                 </Router>
