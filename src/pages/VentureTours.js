@@ -1,53 +1,51 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
-import { useFetch, useEffect } from "react";
-
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import useAPI from "../hooks/useAPI";
+import {tours} from "../hooks/useAPI";
+import { NavbarData } from "../components/NavbarData";
 
 export default function VentureTours() {
   const [ventures, setVentures] = useState(false)
-const { callAPI: getventures } = useFetch("GET");
+  const { tours: apiVentureTours } = useAPI();
 
-useEffect(() => {
+  useEffect(() => {
     async function call() {
-      const res = await getventures(`http://localhost:3006/api/ventures/tour/all`);
+      const res = await apiVentureTours(`http://localhost:3006/api/ventures/tour/all`);
       if (!res.success) {
         return console.error(res.error);
-        
-      }console.log(res);
+      } console.log(res);
       setVentures(res.data);
-  }
+    }
     call();
-  }, [getventures]);
-
+  }, [apiVentureTours]);
 
   return (
     <>
-
-   
+      <div className="content_flexbox">
         <div className="venture-menu">
           <Link to="#" className="menu-bars">
-           
           </Link>
         </div>
-       
-          <ul className="venture-menu-items">
-            <li className="venture-toggle">
-              <Link to="#" className="menu-bars"></Link>
-            </li>
-            {ventures.map((item, index) => {
-              return (
-                <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon}/>
+        <ul className="venture-menu-items">
+          <li className="venture-toggle">
+            <Link to="#" className="menu-bars"></Link>
+          </li>
+          {
+          NavbarData.map((item, index) => {
+            return (
+              <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon} />
 
-                  <Link to={item.path}>
-                   
-                    <span>{item.title}</span>
-                    
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+                <Link to={item.path}>
+
+                  <span>{item.title}</span>
+
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </>
   );
 }

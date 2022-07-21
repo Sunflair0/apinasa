@@ -1,13 +1,12 @@
 import { useCallback } from "react";
+import axios from "axios";
 
-export default function useAPI() {
+function useAPI() {
   const makeAPICall = useCallback(async (url, config) => {
     try {
-      const res = await fetch(url, config);
-      const json = await res.json();
-      return json;
-    } catch (err) {
-      console.log(err);
+      return (await axios(url, config)).data;
+    } catch (error) {
+      console.log(error);
       return { data: null, success: false, error: "Something went wrong." };
     }
   }, []);
@@ -15,51 +14,69 @@ export default function useAPI() {
   const login = useCallback(
     async (clienttag, password) => {
       return await makeAPICall("/api/clients/login", {
-        method: "POST",
-        body: JSON.stringify({ clienttag, password }),
-        headers: {
-          "Content-Type": "application/json",
+        method: "post",
+        data: {
+          clienttag,
+          password
         },
       });
     },
     [makeAPICall]
   );
 
-  const addFave = useCallback(
+  const tours = useCallback(
+    async () => {
+      return await makeAPICall("/api/clients/venturetours", {
+        method: "get",
+        data: {         
+        },
+      });
+    },
+    [makeAPICall]
+  );
+
+  const signup = useCallback(async () => {
+    return await makeAPICall("api/clients/signup", { method: "put" });
+  }, [makeAPICall])
+
+  const verify = useCallback(async () => {
+    return await makeAPICall("/api/clients/verify", { method: "get" });
+  }, [makeAPICall]);
+
+
+  const addToAlbum = useCallback(
     async (item) => {
-      return await makeAPICall("/api/favorites/add", {
-        method: "PUT",
-        body: JSON.stringify(item),
-        headers: {
-          "Content-Type": "application/json",
+      return await makeAPICall("/api/album/add", {
+        method: "put",
+        data: {
+          item
         },
       });
     },
     [makeAPICall]
   );
 
-  const delFave = useCallback(
+  const delFromAlbum = useCallback(
     async (item_id) => {
-      return await makeAPICall(`/api/favorites/remove/${item_id}`, {
-        method: "DELETE",
+      return await makeAPICall(`/api/album/remove/${item_id}`, {
+        method: "delete",
       });
     },
     [makeAPICall]
   );
 
-  const favesByUserID = useCallback(async () => {
-    return await makeAPICall(`/api/favorites/`, {
-      method: "GET",
+  const albumByUserID = useCallback(async () => {
+    return await makeAPICall(`/api/album/`, {
+      method: "get",
     });
   }, [makeAPICall]);
 
   const logout = useCallback(async () => {
-    return await makeAPICall("/api/clients/logout", { method: "GET" });
+    return await makeAPICall("/api/clients/logout", { method: "get" });
   }, [makeAPICall]);
 
-  const verify = useCallback(async () => {
-    return await makeAPICall("/api/clients/verify", { method: "GET" });
-  }, [makeAPICall]);
 
-  return { login, addFave, delFave, favesByUserID, logout, verify };
-}
+
+  return { login, tours, signup, verify, addToAlbum, delFromAlbum, albumByUserID, logout };
+};
+export default useAPI;

@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 const Home = ({ clienttag }) => {
   return (
     <>
-<div className="content_flexbox">
-          <h1 className=" ">Welcome to SpaceTours, {clienttag}!</h1>
+      <div className="content_flexbox">
+        <h1 className=" ">Welcome to SpaceTours, {clienttag}!</h1>
       </div>
     </>
   )

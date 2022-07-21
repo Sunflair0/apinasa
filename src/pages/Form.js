@@ -2,15 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 
 
-const Form = ({
-	clienttag
-}) => {
+const Form = ({ clienttag }) => {
 
 	const handleSubmit = (e) => { e.preventDefault() }
 
 	return (
 		<>
-			<div className="flex3 contactBg3">
+			<div className="content_flexbox">
 				<div className="glassForm">
 					Order Form
 					<form onSubmit={handleSubmit}>
@@ -28,8 +26,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

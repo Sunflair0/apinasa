@@ -94,7 +94,6 @@ Link a:hover {
   flex-flow: row wrap;
   border: solid 2px black;
   padding: 4px;
-
 }
 
 .top-border {
@@ -142,6 +141,14 @@ Link a:hover {
 .explanation {
   color: antiquewhite;
   font-weight: 500;
+}
+
+.apodButton {
+  height: 120px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* picture boxes */
@@ -258,12 +265,15 @@ Link a:hover {
   border: 2px rgb(25, 200, 212);
   background-color: #101652;
   color: #bff3bf;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   width: 146px;
   display: block;
   margin: 10px auto 0px auto;
   padding: 8px 18px 8px 18px;
   box-shadow: inset 0px 1px 3px #388bf7;
+  text-shadow: -1px -1px 0 #000, 
+                1px -1px 0 #000, 
+                -1px 1px 0 #000, 
+                1px 1px 0 #000;
 }
 
 .like-btn :hover {

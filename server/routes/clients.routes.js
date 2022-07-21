@@ -1,11 +1,9 @@
 const express = require("express");
 const passport = require("passport");
 const auth = require("../middleware/auth.middleware");
+const { login, signup } = require("../models/clients.model")
 const router = express.Router();
-const {
-  signup
-  
-} = require("../models/clients.model");
+
 
 router.get("/validate", auth, (req, res) => {
   return res.send({
@@ -44,6 +42,7 @@ router.post("/login", (req, res) => {
     error: "Invalid data provided",
     });
   }
+  
   console.log("About to call 'local-login'");
   passport.authenticate("local-login", (err, client, info) => {
     

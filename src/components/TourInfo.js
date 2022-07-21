@@ -25,6 +25,7 @@ const TourInfo = () => {
 
   return (
     <>
+    <div className="content_flexbox">
       <section className="products">
         <h2>{tourId}</h2>
         <Link to='/venturetours'>back to TOURS</Link>
@@ -53,6 +54,7 @@ const TourInfo = () => {
           );
         })} */}
       </ul>
+      </div>
     </>
   );
 }

@@ -2,52 +2,44 @@ export const  NavbarData =[
     {
     title: 'HOME',
     path: '/',
-    iconFont: 'font-link-sharp',
-    icon: '🏠'
-, 
+    icon: '🏠', 
     style: 'menu1items ',
     },
     {
     title: 'ABOUT',
     path: 'about',
-    icon:'📖', 
+    icon:'🧾', 
     style: 'menu1items',
-
     },
     {   
     title: 'NASA',
     path: 'nasa',
     icon: '🔭', 
     style: 'menu1items',
-    iSpace: 'li::before', 
     },
     {
     title: 'MY PAGE',
     path: 'mypage',
     icon: '❤', 
     style: 'menu1items',
-    iSpace: 'li::before', 
     },
     {
     title: 'TOURS',
     path: 'venturetours',
     icon: '🚀 ',
-    style: 'menu1items',
-    iSpace: 'li::before',     
+    style: 'menu1items',  
     },
     {
     title: 'SALUTES',
     path: 'testimonials',
-    icon: '🗣️', 
+    icon: '💬', 
     style: 'menu1items',
-    iSpace: 'li::before', 
     },
     {
     title: 'CONTACT US',
     path: 'contactus',
-    icon: '📣', 
+    icon: '✉', 
     style: 'menu1items',
-    iSpace: 'li::before', 
     },    
 ]
  

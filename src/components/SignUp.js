@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import useFetch from "../hooks/useFetch";
-import { setClient } from "../redux/actions";
-import { connect } from "react-redux";
 import TourGuideLight from "./TourGuideLight";
 import { Carousel } from "react-responsive-carousel";
+import useAPI from "../hooks/useAPI";
 
-const Signup = ({ setClient }) => {
+const Signup = () => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
-  const {callAPI: signupCall } = useFetch("POST");
+  const {signup: signupCall } = useAPI();
   const [error, setError] = useState(null);
 
   return (
@@ -71,7 +69,7 @@ const Signup = ({ setClient }) => {
                     return setError(res.error)
 
                   // } else {
-                  //   setClient(clienttag);
+                  //   setClienttag(clienttag);
                   }
                 }
               }
@@ -87,9 +85,4 @@ const Signup = ({ setClient }) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {};
-};
-const mapDispatchToProps = { setClient };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default Signup;

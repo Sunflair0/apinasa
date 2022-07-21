@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
-
-import { setClient } from "../redux/actions";
+import { setClienttag } from "../redux/actions";
 import { connect } from "react-redux";
 import useAPI from "../hooks/useAPI";
 import TourGuideLight from "./TourGuideLight";
 
 
-export const Login = ({ setClient }) => {
+export const Login = ({ setClienttag }) => {
     const { login: apiLogin } = useAPI();
-  
     const [clienttagInput, setClienttagInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [clienttagError, setclienttagError] = useState(null);
@@ -42,7 +40,7 @@ export const Login = ({ setClient }) => {
             if (!res.success) {
                 setApiError(res.error);
             } else {
-                setClient(res.data.clienttag);
+                setClienttag(res.data.clienttag);
             }
         }
         if (clienttagError || passwordError) {
@@ -51,8 +49,6 @@ export const Login = ({ setClient }) => {
             init();
         }
     }, [
-        setClient,
-        apiLogin,
         clienttagInput,
         clienttagError,
         passwordInput,
@@ -88,7 +84,7 @@ export const Login = ({ setClient }) => {
                                 error={displayError && !!clienttagError}
                                 label="SpaceTours Handle"
                                 value={clienttagInput}
-                                helpertext={displayError ? clienttagError : ""}
+                                helperText={displayError ? clienttagError : ""}
                                 onChange={(e) => setClienttagInput(e.target.value)}
                             />
                         </div>
@@ -102,7 +98,7 @@ export const Login = ({ setClient }) => {
                                 label="Password"
                                 
                                 value={passwordInput}
-                                helpertext={displayError ? passwordError : ""}
+                                helperText={displayError ? passwordError : ""}
                                 onChange={(e) => setPasswordInput(e.target.value)}
                             />
                         </div>
@@ -125,9 +121,7 @@ export const Login = ({ setClient }) => {
     );
 };
 
-const mapStateToProps = state => { 
-  return { Login: state.Login }; 
-};
-const mapDispatchToProps = { setClient };
+function mapStateToProps(state){};
+const mapDispatchToProps = { setClienttag };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

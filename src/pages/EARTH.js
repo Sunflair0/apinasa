@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function EARTH() {
 	return (
-<>
-		<div className="">
-			Earth Page
-		</div>
-<p className="">hello</p>
-</>
+		<>
+			<div className="content_flexbox">
+				<div>Earth Page</div>
+			</div>
+			<p className="">hello</p>
+		</>
 	)
 }

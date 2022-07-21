@@ -1,12 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { setClienttag } from "./redux/actions";
+import useAPI from "../src/hooks/useAPI";
+// import { verify}  from "../src/hooks/useAPI";
 import {
-  clearForm, clearApod, clearAlbum, clearClient, clearContactUs,
-  clearBigCube, clearBuyVent,
-} from "./redux/actions";
-import {
-  BrowserRouter as Router, Routes, Route, Navigate, NavLink, Link,
-  nav
+  BrowserRouter as Router, Routes, Route, Navigate
 } from "react-router-dom";
 import { ToggleProvider } from "./ToggleContext";
 import "./App.css";
@@ -42,70 +40,77 @@ import TourAddOns from "./components/TourAddOns";
 import VentureTours from "./pages/VentureTours";
 
 
-function App({ clienttag }
-) {
+function App({ clienttag, setClienttag }) {
+  const { verify } = useAPI();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const verifyClienttag = async () => {
+      const res = await verify();
+
+      setLoading(false);
+      if (res.success) {
+        setClienttag(res.data.clienttag);
+      }
+    };
+    verifyClienttag();
+  }, []);
+
   return (
     <>
-      <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
-        <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
-
-          <ToggleProvider>
-            <div className="flex_backing">
-              <Router >
-                <Routes>
-                  <Route path="loginpage" element={<ProtectedRoute isPrivate={false}> <LoginPage /></ProtectedRoute>
-                  }></Route>                  
+      {!loading && (
+        <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
+          <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
+            <ToggleProvider>
+              <div className="flex_backing">
+                <Router >
+                  <Routes>
+                    <Route path="loginpage" element={<ProtectedRoute isPrivate={false}><LoginPage /></ProtectedRoute>} />
                     <Route path="/" element={<ProtectedRoute isPrivate={false}><PagesTemplate /></ProtectedRoute>} >
-                    <Route index element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="nasa" element={<NASA />}>
-                      <Route path="apod" element={<APOD />}>
-                        <Route path="apodtoday" element={<ApodToday />} />
-                        <Route path="apodchoose" element={<ApodChoose />} />
-                        <Route path="apodrange" element={<ApodRange />} />
-                        <Route path="apodgimme5" element={<ApodGimme5 />} />
+                      <Route index element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
+                      <Route path="about" element={<ProtectedRoute isPrivate={false}><About /></ProtectedRoute>} />
+                      <Route path="nasa" element={<ProtectedRoute isPrivate={false}><NASA /></ProtectedRoute>}>
+                        <Route path="apod" element={<ProtectedRoute isPrivate={false}><APOD /></ProtectedRoute>}>
+                          <Route index element={<ProtectedRoute isPrivate={false}><ApodToday /></ProtectedRoute>} />
+                          <Route path="apodchoose" element={<ProtectedRoute isPrivate={false}><ApodChoose /></ProtectedRoute>} />
+                          <Route path="apodrange" element={<ProtectedRoute isPrivate={false}><ApodRange /></ProtectedRoute>} />
+                          <Route path="apodgimme5" element={<ProtectedRoute isPrivate={false}><ApodGimme5 /></ProtectedRoute>} />
+                        </Route>
+                        <Route path="mer" element={<ProtectedRoute isPrivate={false}><MER /></ProtectedRoute>} />
+                        <Route path="earth" element={<ProtectedRoute isPrivate={false}><EARTH /></ProtectedRoute>} />
                       </Route>
-                      <Route path="mer" element={<MER />}>
+                      <Route path="mypage" element={<ProtectedRoute isPrivate={false}><MyPage /></ProtectedRoute>}>
+                        <Route path="album" element={<ProtectedRoute isPrivate={false}><Album /></ProtectedRoute>} />
                       </Route>
-                      <Route path="earth" element={<EARTH />}>
+                      <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} >
+                        <Route path="tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
+                        <Route path="addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
+                      </Route>
+                      <Route path="testimonials" element={<ProtectedRoute isPrivate={false}><Testimonials /></ProtectedRoute>} />
+                      <Route path="contactus" element={<ProtectedRoute isPrivate={false}><ContactUs /></ProtectedRoute>}>
+                        <Route path="form" element={<ProtectedRoute isPrivate={false}><Form /></ProtectedRoute>} />
                       </Route>
                     </Route>
-                    <Route path="mypage" element={<MyPage />}>
-                      <Route path="album" element={<Album />} />
-                      <Route path="mypage" element={<MyPage />} />
+                    <Route path="*" element={<ProtectedRoute isPrivate={false}><Error /></ProtectedRoute>} >
                     </Route>
-                    <Route path="venturetours" element={<VentureTours />} />
-                    <Route path=":tourId" element={<TourInfo />} />
-                    <Route path=":addOnsID" element={<TourAddOns />} />
-                    <Route path="testimonials" element={<Testimonials />} />
-                    <Route path="contactus" element={<ContactUs />}>
-                      <Route path="form" element={<Form />} />
-                    </Route>
-                    <Route path="*" element={<Error />} />
-                  </Route>
-
-                </Routes>
-              </Router>
-            </div>
-          </ToggleProvider>
+                  </Routes>
+                </Router>
+              </div>
+            </ToggleProvider>
+          </div >
         </div >
-      </div >
+      )}
     </>
   );
 };
 
 const mapStateToProps = state => {
-  return { clienttag: state.client.clienttag };
+  return { clienttag: state.clienttag };
 };
 
 const mapDispatchToProps = {
-  clearForm,
-  clearApod,
-  clearAlbum,
-  clearClient,
-  clearContactUs,
-  clearBigCube,
-  clearBuyVent,
+  setClienttag
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

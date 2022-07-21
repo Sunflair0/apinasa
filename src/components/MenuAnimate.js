@@ -50,7 +50,7 @@ function MenuAnimate() {
       },"<")
       .to(q(".ship"), {
         duration: .2,
-        rotation: 62,
+        rotation: 0,
         x: '-60%',
         y: '0%',
         scale: .2,
