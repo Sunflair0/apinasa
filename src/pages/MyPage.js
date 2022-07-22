@@ -9,7 +9,11 @@ const MyPage = () => {
         <div>MyPage</div>
         <Link to='album'>Album</Link>
         <Link to='ipn'>IPN</Link>
-        <Link to='dailyreward'>Bank</Link>
+        <Link to='dailyreward'>Bank</Link>       
+        <Link to='purchases'>Purchases</Link>
+        <Link to='mysalutes'>My Salutes</Link>
+        <Link to='travelnow'>Travel Now</Link>
+        <Link to='presentlocation'>Present Location</Link>
       </div>
       <Outlet />
     </>

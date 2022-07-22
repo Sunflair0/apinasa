@@ -44,9 +44,7 @@ export default function VentureTours() {
             );
           })}
         </ul>
-        <div className="tourguide"></div>
-        
-   
+        <div className="tourguide"></div>  
         <Link to=':tourId'>TOURS</Link>
         <Link to=':addOnsID'>Add Ons</Link>
       
