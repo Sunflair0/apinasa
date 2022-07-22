@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import useAPI from "../hooks/useAPI";
 import {tours} from "../hooks/useAPI";
 import { NavbarData } from "../components/NavbarData";
+import { Outlet } from "react-router-dom";
 
 export default function VentureTours() {
   const [ventures, setVentures] = useState(false)
@@ -37,14 +38,19 @@ export default function VentureTours() {
               <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon} />
 
                 <Link to={item.path}>
-
                   <span>{item.title}</span>
-
                 </Link>
               </li>
             );
           })}
         </ul>
+        <div className="tourguide"></div>
+        
+   
+        <Link to=':tourId'>TOURS</Link>
+        <Link to=':addOnsID'>Add Ons</Link>
+      
+      <Outlet />
       </div>
     </>
   );
