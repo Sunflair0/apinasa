@@ -137,6 +137,9 @@ font-family: 'material-symbols-sharp';}
 .brand_outline {
   border: #ceda8d 1px solid;
   background: transparent;
+  text-shadow: 0px 1px 1px #000000, 
+               0px 2px 1px #000000,
+               0px 3px 1px #000000;
 }
 
 .brand_solid {
@@ -151,7 +154,7 @@ font-family: 'material-symbols-sharp';}
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   display: inline-flex;
   border-radius: 7px;
   background: linear-gradient(to bottom left, 
@@ -162,7 +165,7 @@ font-family: 'material-symbols-sharp';}
           rgba(120, 189, 41, 0.4) 80%,
           rgba(201, 235, 53, 0.6) 100%);
   width: 200px;
-  right: -107%;
+  right: -24.5%;
   padding: 0 4px;
   outline: rgba(0, 0, 0, 0.726) 2px solid;
   outline-offset: -3px;
