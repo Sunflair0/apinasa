@@ -10,8 +10,8 @@ const ContactUs = ({
   const [text, setText] = useState();
 
   return (
-    <>
-      <div className="flex3 contactBg2">Contact Us
+    <><h2>Contact Us</h2>
+      <div className="flex3 contactBg2">
         <div className="glassForm">
           <div>
             <form onSubmit={handleSubmit}>

@@ -19,28 +19,23 @@ import ApodToday from "./pages/ApodToday";
 import ApodChoose from "./pages/ApodChoose";
 import ApodGimme5 from "./pages/ApodGimme5";
 import ApodRange from "./pages/ApodRange";
-import BigCube from "./components/BigCube";
-import BuyVent from "./components/BuyVent";
-
+import DailyReward from "./pages/DailyReward";
 import LoginPage from "./pages/LoginPage";
 import ContactUs from "./pages/ContactUs";
 import EARTH from "./pages/EARTH";
 import Error from "./pages/Error";
 import Form from "./pages/Form";
-import Ipn from "./pages/Ipn"
+import Home from "./pages/Home";
+import IPN from "./pages/IPN"
 import ISS from "./pages/ISS"
-
 import MER from "./pages/MER";
 import MyPage from "./pages/MyPage";
 import NASA from "./pages/NASA";
 import PagesTemplate from "./components/PagesTemplate";
-
-import Home from "./pages/Home";
 import Testimonials from "./pages/Testimonials";
 import TourInfo from "./components/TourInfo";
 import TourAddOns from "./components/TourAddOns";
 import VentureTours from "./pages/VentureTours";
-
 
 function App({ clienttag, setClienttag }) {
   const { verify } = useAPI();
@@ -92,6 +87,8 @@ function App({ clienttag, setClienttag }) {
                       </Route>
                       <Route path="mypage" element={<ProtectedRoute isPrivate={false}><MyPage /></ProtectedRoute>}>
                         <Route path="album" element={<ProtectedRoute isPrivate={false}><Album /></ProtectedRoute>} />
+                        <Route path="IPN" element={<ProtectedRoute isPrivate={false}><IPN /></ProtectedRoute>} />
+                        <Route path="dailyreward" element={<ProtectedRoute isPrivate={false}><DailyReward /></ProtectedRoute>} />
                       </Route>
                       <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} >
                         <Route path=":tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />

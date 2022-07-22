@@ -2,12 +2,14 @@ import React from "react";
 import Console from "../components/Console";
 import { connect } from "react-redux";
 import { deleteEntry } from "../redux/actions";
+import { Outlet } from "react-router-dom";
 
 const Album = ({ deleteEntry, album, clienttag }) => {
   return (
     <>
-      <h2 className="content_flexbox" >Album for {clienttag} </h2>
-      <div style={{ backgroundImage: "linear-gradient(to right, #46b8a7 , rgb(66,170,177))", height: "100vh", width: "150vh", opacity: ".45" }}>
+      <div className="content_flexbox">
+      <h2>  Album for {clienttag} </h2>
+      <div className="content_column" style={{ backgroundImage: "linear-gradient(to right, #46b8a7 , rgb(66,170,177))", height: "100vh", width: "150vh", opacity: ".45" }}>
 
         <div className="">
           {album.map((item) => (
@@ -25,6 +27,8 @@ const Album = ({ deleteEntry, album, clienttag }) => {
           ))}
         </div>
       </div>
+      </div> 
+      <Outlet />
     </>
   );
 };

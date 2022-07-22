@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function Ipn() {
+export default function IPN() {
 	return (
-<>
-
-		<div className="flex1 ">
-			Intra-Planetary Net (chat)
-			<div className="ipn"></div>
-		</div>
-</>
+		<>
+			<div className="content_flexbox">
+				<div>Intra-Planetary Net (chat)</div>
+				<div className="ipn">	
+				</div>
+			</div>
+		</>
 	)
 }

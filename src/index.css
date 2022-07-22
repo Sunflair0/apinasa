@@ -309,6 +309,17 @@ height: 100vh;
   width: 100%;
 }
 
+.content_column {
+  display: flex;
+  top: 10rem;
+  position: relative;
+  width: auto;
+  flex-direction: column;
+  margin: -10rem 4rem 4rem;
+  padding: 3rem ;  
+  width: 100%;
+}
+
 .flex2 {
   flex: 2 25%;
 }
