@@ -1,241 +1,131 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { setClienttag } from "./redux/actions";
+import { verify } from "../src/hooks/useAPI";
+import useAPI from "../src/hooks/useAPI";
+
 import {
-  clearForm, clearApod, clearAlbum, setClient, clearClient, clearContactUs,
-  clearBigCube, clearBuyVent,
-} from "./redux/actions";
-import {
-  BrowserRouter as Router,
-  Link,
-  NavLink,
-  Redirect,
-  Route,
-  Switch,
+  BrowserRouter as Router, Routes, Route, Navigate
 } from "react-router-dom";
+import { ToggleProvider } from "./ToggleContext";
 import "./App.css";
 import "./tourguide.css";
 import "./planet.css";
 import ProtectedRoute from "./shared/ProtectedRoute";
-import Album from "./components/Album";
-import ApodConsole from "./components/ApodConsole";
-import ApodToday from "./components/ApodToday";
-import ApodChoose from "./components/ApodChoose";
-import ApodGimme5 from "./components/ApodGimme5";
-import ApodRange from "./components/ApodRange";
-import BigCube from "./components/BigCube";
-import BuyVent from "./components/BuyVent";
-import ContactUs from "./components/ContactUs";
-import Earth from "./components/Earth";
-import Form from "./components/Form";
-import Ipn from "./components/Ipn"
-import Login from "./components/Login";
-import Mer from "./components/Mer";
-import Signup from "./components/SignUp";
-import Splash from "./components/Splash";
-import TourGuide from "./components/TourGuide"
-import TourInfo from "./components/TourInfo"
-import TourIns from "./components/TourIns"
-import VentConsole from "./components/VentConsole"
-import VentureTour from "./components/VentureTour"
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
+import About from "./pages/About";
+import Album from "./pages/Album";
+import APOD from "./pages/APOD";
+import ApodToday from "./pages/ApodToday";
+import ApodChoose from "./pages/ApodChoose";
+import ApodGimme5 from "./pages/ApodGimme5";
+import ApodRange from "./pages/ApodRange";
+import DailyReward from "./pages/DailyReward";
+import LoginPage from "./pages/LoginPage";
+import ContactUs from "./pages/ContactUs";
+import EARTH from "./pages/EARTH";
+import Error from "./pages/Error";
+import Form from "./pages/Form";
+import Home from "./pages/Home";
+import IPN from "./pages/IPN"
+import ISS from "./pages/ISS"
+import MER from "./pages/MER";
+import MyItems from "./pages/MyItems";
+import MyPage from "./pages/MyPage";
+import MySalutes from "./pages/MySalutes";
+import MyTrip from "./pages/MyTrip";
+import NASA from "./pages/NASA";
+import PagesTemplate from "./components/PagesTemplate";
+import Testimonials from "./pages/Testimonials";
+import TourInfo from "./components/TourInfo";
+import TourAddOns from "./components/TourAddOns";
+import VentureTours from "./pages/VentureTours";
+import TravelNow from "./pages/TravelNow";
+import Purchases from "./pages/Purchases";
+import PresentLocation from "./pages/PresentLocation";
 
-function App({ clienttag, clearBigCube, clearForm, clearApod, clearAlbum, clearClient, clearContactUs, clearBuyVent }
-) {
-  const [sidebar, setSidebar] = useState(true)
-  const showSidebar = () => setSidebar(!sidebar)
-let validate 
- 
-  
-useEffect(() => {
-      const res = validate("/api/clients/validate");
+function App({ clienttag, setClienttag }) {
+  const { verify } = useAPI();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const verifyClienttag = async () => {
+      const res = await verify();
+
+      setLoading(false);
       if (res.success) {
-        setClient(clienttag);
+        setClienttag(res.data.clienttag);
       }
-}, []);
+    };
+    verifyClienttag();
+  }, []);
 
-return (
-    <Router>
+  return (
+    <>
+      {!loading && (
+        <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
+          <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
+            <ToggleProvider>
+              <div className="flex_backing">
+                <Router >
+                  <Routes>
+                    <Route path="loginpage" element={<ProtectedRoute isPrivate={false}><LoginPage /></ProtectedRoute>} />
 
-<div style={{backgroundImage: "url(./assets/stars.png)", zIndex: "-100"}}>
-<div style={{backgroundImage: "url(./assets/twink.png)", zIndex: "-90",  animation: "twink 800s linear infinite"}}>
-
-      <div className="bigShell ">
-
-        <nav>
-
-
-          {" "}
-          {!clienttag && (
-            <NavLink activeClassName="active" className="menuitem" to="/login">
-          {" "}
-            </NavLink>)}
-          {" "}
-          <NavLink activeClassName="active" className="presenter" to="/signup"
-          ></NavLink>
-          {clienttag && (
-          <>
-             {/*///// Main Menu Toggle */}
-
-                <div className="topMask"><h1 >SpaceTours <Link to='#' className="menu-bars">
-                  <FaIcons.FaBars onClick={showSidebar} />
-                </Link></h1>
-
-                <div className="menu1">
-
-                  <nav className={sidebar ? 'main-menu-active ' : 'main-menu '}>
-
-                    <ul className="flex2">
-
-                      <div className="main-menu-items navbar-toggle ">
-
-                        <Link to="#" className="menu-barsx">
-                          <AiIcons.AiOutlineClose onClick={showSidebar} />
-                        </Link>
-                      </div>
-
-                      {/* ///// Main Menu */}
-
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/splash">
-                        HOME{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/apodconsole">
-                        APOD {" "}
-                      </NavLink></li>
-
-                      <li><NavLink activeClassName="active" className="menu1items" to="/album">
-                        Album{" "} </NavLink></li>
-                      
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/tourinfo"> 
-                        Tour Info{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className=" menu1items" to="/form">
-                        Order{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/contactus">
-                        Contact Us{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/mer">
-                        MER {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/earth">
-                        Earth {" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/tourins">
-                        Extras{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/ipn">
-                        IPN{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/venturetour">
-                        VentureTour{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink activeClassName="active" className="menu1items" to="/ventconsole">
-                        VentConsole{" "}
-                      </NavLink></li>
-
-                      <li> <NavLink
-                        className="menu1items"
-                        to="/login"
-                        onClick={() => {
-                          clearApod();
-                          clearBigCube();
-                          clearBuyVent();
-                          clearClient()
-                          clearContactUs();
-                          clearAlbum();
-                          clearForm();
-                        }}
-                      >
-                        Logout
-                      </NavLink></li>
-
-                    </ul>
-                  </nav>
-                </div></div>
-                         </>
-          )}
-        </nav>
-
-      <main>
-        <Switch>
-
-          <ProtectedRoute path="/album" reqUser={true} component={Album} />
-
-          <ProtectedRoute path="/bigcube" reqUser={true} component={BigCube} />
-
-          <ProtectedRoute path="/buyvent" reqUser={true} component={BuyVent} />
-
-          <ProtectedRoute path="/apodconsole" reqUser={true} component={ApodConsole} />
-
-          <ProtectedRoute path="/apodtoday" reqUser={true} component={ApodToday} />
-
-          <ProtectedRoute path="/apodchoose" reqUser={true} component={ApodChoose} />
-
-          <ProtectedRoute path="/apodgimme5" reqUser={true} component={ApodGimme5} />
-
-          <ProtectedRoute path="/apodrange" reqUser={true} component={ApodRange} />
-
-          <ProtectedRoute path="/contactus" reqUser={true} component={ContactUs} />
-
-          <ProtectedRoute path="/earth" reqUser={true} component={Earth} />
-
-          <ProtectedRoute path="/form" reqUser={true} component={Form} />
-
-          <ProtectedRoute path="/ipn" reqUser={true} component={Ipn} />
-
-          <ProtectedRoute path="/login" reqUser={false} component={Login} />
-
-          <ProtectedRoute path="/mer" reqUser={true} component={Mer} />
-
-          <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
-
-          <ProtectedRoute path="/splash" reqUser={true} component={Splash} />
-
-          <ProtectedRoute path="/tourguide" reqUser={true} component={TourGuide} />
-
-          <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
-
-          <ProtectedRoute path="/tourins" reqUser={true} component={TourIns} />
-
-          <ProtectedRoute path="/ventconsole" reqUser={true} component={VentConsole} />
-
-          <ProtectedRoute path="/venturetour" reqUser={true} component={VentureTour} />
-
-
-
-          <Route path="*">
-
-            <Redirect to="/login" />
-          </Route>
-        </Switch>
-      </main>
-</div></div></div>
-    </Router>
+                    <Route path="/" element={<ProtectedRoute isPrivate={false}><PagesTemplate /></ProtectedRoute>} >
+                      <Route index element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
+                      <Route path="home" element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
+                      <Route path="about" element={<ProtectedRoute isPrivate={false}><About /></ProtectedRoute>} />
+                      <Route path="nasa/" element={<ProtectedRoute isPrivate={false}><NASA /></ProtectedRoute>}>
+                        <Route path="apod/" element={<ProtectedRoute isPrivate={false}><APOD /></ProtectedRoute>}>
+                          <Route index element={<ProtectedRoute isPrivate={false}><div><ApodToday /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodtoday" element={<ProtectedRoute isPrivate={false}><div><ApodToday /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodchoose" element={<ProtectedRoute isPrivate={false}><div><ApodChoose /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodrange" element={<ProtectedRoute isPrivate={false}><div><ApodRange /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodgimme5" element={<ProtectedRoute isPrivate={false}><div><ApodGimme5 /></div></ProtectedRoute>} />
+                        </Route>
+                        <Route path="mer" element={<ProtectedRoute isPrivate={false}><MER /></ProtectedRoute>} />
+                        <Route path="earth" element={<ProtectedRoute isPrivate={false}><EARTH /></ProtectedRoute>} />
+                        <Route path="iss" element={<ProtectedRoute isPrivate={false}><ISS /></ProtectedRoute>} />
+                      </Route>
+                      <Route path="mypage" element={<ProtectedRoute isPrivate={false}><MyPage /></ProtectedRoute>}>
+                        <Route path="album" element={<ProtectedRoute isPrivate={false}><Album /></ProtectedRoute>} />
+                        <Route path="IPN" element={<ProtectedRoute isPrivate={false}><IPN /></ProtectedRoute>} />
+                        <Route path="mysalutes" element={<ProtectedRoute isPrivate={false}><MySalutes /></ProtectedRoute>} />
+                        <Route path="dailyreward" element={<ProtectedRoute isPrivate={false}><DailyReward /></ProtectedRoute>} />
+                        <Route path="purchases" element={<ProtectedRoute isPrivate={false}><Purchases /></ProtectedRoute>} >
+                          <Route path="mytrip" element={<ProtectedRoute isPrivate={false}><MyTrip /></ProtectedRoute>} />
+                          <Route path="myitems" element={<ProtectedRoute isPrivate={false}><MyItems /></ProtectedRoute>} />
+                        </Route>
+                        <Route path="travelnow" element={<ProtectedRoute isPrivate={false}><TravelNow /></ProtectedRoute>} />
+                        <Route path="presentlocation" element={<ProtectedRoute isPrivate={false}><PresentLocation /></ProtectedRoute>} />
+                      </Route>
+                      <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} >
+                        <Route path=":tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
+                        <Route path=":addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
+                      </Route>
+                      <Route path="testimonials" element={<ProtectedRoute isPrivate={false}><Testimonials /></ProtectedRoute>} />
+                      <Route path="contactus" element={<ProtectedRoute isPrivate={false}><ContactUs /></ProtectedRoute>}>
+                        <Route path="form" element={<ProtectedRoute isPrivate={false}><Form /></ProtectedRoute>} />
+                      </Route>
+                      <Route path="*" element={<ProtectedRoute isPrivate={false}><Error /></ProtectedRoute>} />
+                    </Route>
+                  </Routes>
+                </Router>
+              </div>
+            </ToggleProvider>
+          </div >
+        </div >
+      )}
+    </>
   );
-}
+};
 
-function mapStateToProps(state) {
-  return { clienttag: state.client.clienttag };
-}
+const mapStateToProps = state => {
+  return { clienttag: state.clienttag };
+};
 
 const mapDispatchToProps = {
-  clearForm,
-  clearApod,
-  clearAlbum,
-  clearClient,
-  clearContactUs,
-  clearBigCube,
-  clearBuyVent,
+  setClienttag
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { connect } from "react-redux";
 import { addEntry, deleteEntry } from '../redux/actions';
-import Console from './Console';
+import Console from "../components/Console"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;

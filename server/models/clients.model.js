@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
-const query = require("../config/mysql.conf");
+const query = require("../config/mysql.conf").default;
 const { v4: uuidv4 } = require('uuid');
-
 
 async function signup(res, clienttag, password) { 
   let json = { data: null, success: false, error: null };
@@ -15,8 +14,7 @@ async function signup(res, clienttag, password) {
       const hashed = await bcrypt.hash(password, 10);
       const uuid = uuidv4();
       await query("INSERT INTO clients (password, clienttag, uuid) VALUES (?,?,?)", [
-        hashed,
-        clienttag, uuid
+        hashed, clienttag, uuid
       ]);
       json = { ...json, success: true };
     }

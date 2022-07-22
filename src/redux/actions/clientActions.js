@@ -1,10 +1,10 @@
-export const CLEAR_CLIENT = "Clear Client";
-export const SET_CLIENT = "Set Client";
+export const CLEAR_CLIENTTAG = "Clear Clientag";
+export const SET_CLIENTTAG = "Set Clienttag";
 
-export function clearClient() {
-  return { type: CLEAR_CLIENT };
-}
+export const setClienttag = (clienttag) => {
+  return { type: SET_CLIENTTAG, clienttag };
+};
 
-export function setClient(clienttag) {
-  return { type: SET_CLIENT, clienttag };
-}
+export const clearClienttag = () => {
+  return { type: CLEAR_CLIENTTAG };
+};
