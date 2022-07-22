@@ -124,8 +124,8 @@ font-family: 'material-symbols-sharp';}
   margin-right: 10px;
   width: 152px;
   height: 2rem;
-  border: black 1px solid;
-  border-left: black 2px solid;
+  border: black 2px solid;
+  border-left: black 1.5em solid;
 }
 
 .brand_outline,
@@ -143,27 +143,41 @@ font-family: 'material-symbols-sharp';}
 
 .brand_solid {
   border: #ceda8d 2px solid;
+  background: #ceda8d;
   color: rgb(0, 0, 0);
   text-shadow: none;
-  font-weight: 500;
-  background: #ceda8d;
+  font-weight: 500;  
 }
 
 .curr_user {
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: relative;
   display: inline-flex;
-  width: 200px;
-  left: 180px;
+  border-radius: 7px;
+  background: linear-gradient(to bottom left, 
+          rgba(47, 196, 47, 0.2) 0%,
+          rgba(122, 187, 122, 0.1) 20%,
+          transparent 25%,
+          rgba(44, 233, 44, 0.2) 60%,
+          rgba(117, 172, 55, 0.4) 80%,
+          rgba(44, 233, 44, 0.2) 100%);
+  width: 180px;
+  left: 200px;
   padding: 0 4px;
+  outline: rgba(0, 0, 0, 0.726) 3px solid;
+  outline-offset: -3px;
   border: rgb(0, 255, 174) solid 1px;
+  transform: translate(560%, 55px);
 }
 
 .logged_user{
+  display: flex;
   flex-basis: 75%;
-  font-size: 14px;
-  width: 140px;
+  font-size: 14px;  
   justify-content: center;
+  align-items: center;
   text-shadow: -1px -1px 0 #000, 
                 1px -1px 0 #000, 
                 -1px 1px 0 #000, 
