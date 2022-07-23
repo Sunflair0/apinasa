@@ -477,15 +477,15 @@ margin-left:1rem;
   background-size: 93%;
   background-color: transparent;
   background-repeat: no-repeat;
-  cursor: pointer;
-  z-index: 100;
+  cursor: pointer;  
 }
 
 .cursor_follow {
   position: absolute;
-  mix-blend-mode: difference;
   user-select: none;
-  /* transform: translate(20px, 20px); */
+  cursor: default;
+  transform: rotate(32deg)scale(.4);
+  z-index: 0;
 }
 
 .menu1items:hover {
