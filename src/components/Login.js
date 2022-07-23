@@ -79,7 +79,7 @@ export const Login = ({ setClienttag }) => {
                             <input
                                 style={{ width: "80%" }}
                                 type="text"                                
-                                error={displayError && !!clienttagError}
+                                error={displayError ? !!clienttagError : undefined}
                                 label="SpaceTours Handle"
                                 value={clienttagInput}
                                 // helpertext={displayError ? clienttagError : ""}
@@ -90,7 +90,7 @@ export const Login = ({ setClienttag }) => {
                             <input
                                 style={{ width: "80%" }}
                                 type="password"                                
-                                error={displayError && !!passwordError}
+                                error={displayError ? !!passwordError : undefined}
                                 label="Password"
                                 
                                 value={passwordInput}
