@@ -15,6 +15,7 @@ function configPassport(passport) {
 console.log(data);
 console.log(error);      
 if (error) {
+  
         return done(error);
       }
       //! Otherwise send an appropriate message
@@ -22,7 +23,7 @@ if (error) {
       const token = jwt.sign({ uuid: data.uuid }, process.env.SECRET_KEY, {
         expiresIn: "7 days",
       });
-
+      
       return done(null, { clienttag: data.clienttag }, { token });
     })
   );

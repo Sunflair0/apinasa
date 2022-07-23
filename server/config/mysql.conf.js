@@ -1,7 +1,6 @@
-import { createPool } from "mysql";
-import { promisify } from "util";
-
-const pool = createPool({
+const mysql = require("mysql");
+const util = require("util");
+const pool = mysql.createPool({
   connectionLimit: 10,
   host: process.env.DB_HOST,
   password: process.env.DB_PASSWORD,
@@ -27,6 +26,6 @@ pool.getConnection((err, connection) => {
   return;
 });
 
-const query = promisify(pool.query).bind(pool);
+const query = util.promisify(pool.query).bind(pool);
 
-export default query;
+module.exports = query;

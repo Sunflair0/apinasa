@@ -55,13 +55,12 @@ export const Login = ({ setClienttag }) => {
         passwordError,
         setDisplayError,
         setApiError,
+        apiLogin,
+        setClienttag
     ]);
-
-
 
     return (
         <>
-
             <div className="login-container">
                 <div className="login-message">
                     {apiError && (
@@ -75,7 +74,6 @@ export const Login = ({ setClienttag }) => {
                 <div className="stripe">
                     <div className="namepass"></div>
                     <TourGuideLight />
-
                     <div className="login-input-container">
                         <div className="input-container">
                             <input
@@ -91,9 +89,7 @@ export const Login = ({ setClienttag }) => {
                         <div className="input-container">
                             <input
                                 style={{ width: "80%" }}
-                                type="password"
-
-                                
+                                type="password"                                
                                 error={displayError && !!passwordError}
                                 label="Password"
                                 
@@ -116,7 +112,6 @@ export const Login = ({ setClienttag }) => {
                             {/* Sign Up! button located on CardFlip.js */}
                     </div>
                 </div>
-
             </form>
         </>
     );

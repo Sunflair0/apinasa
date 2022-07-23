@@ -1,75 +1,30 @@
 const express = require("express");
-const passport = require("passport");
-const auth = require("../middleware/auth.middleware");
+const authenticate = require("../middleware/authenticate.middleware");
 const { login, signup } = require("../models/clients.model")
+const validate = require("../middleware/validate-input")
 const router = express.Router();
 
-
-router.get("/validate", auth, (req, res) => {
-  return res.send({
-    success: true,
-    error: null,
-    data: { clienttag: req.client.clienttag },
-  });
-});
-
 router.get("/logout", (req, res) => {
-  res.clearCookie("jwt");
-  return res.send({ success: true, error: null, body: null });
+  res.clearCookie("access_token");
+  return res.send({ success: true, error: null, body: null, });
 });
 
-router.post("/signup", (req, res) => {
-  const { clienttag, password } = req.body;
-  if (validate(clienttag, password)) {
-    return signup(res, clienttag, password);
-  }
-  return res.send({
-    success: false,
-    data: null,
-    error: "Invalid data provided",
-  });
+router.post("/signup", validate, (req, res) => {
+  signup(res, req.body.clienttag, req.body.password);
 });
 
 router.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
+  const { clienttag, password } = req.body;
   console.log("req.body", req.body);
-
-  if (!validate(username, password)) {
-   return res.send({
-    success: false,
-    data: null,
-    error: "Invalid data provided",
-    });
-  }
-  
-  console.log("About to call 'local-login'");
-  passport.authenticate("local-login", (err, client, info) => {
-    
-    console.log("err", err);
-    console.log("client", client);
-    console.log("info", info);
-
-    if (err) {
-      return res.send({ success: false, error: err, data: null });
-    }
-    console.log("authenticated",info)
-    return res
-      .cookie("jwt", info.token, { secure: true, httpOnly: true })
-      .send({ success: true, error: null, data: client });
-  })(req, res);
+  login(res, clienttag, password);
 });
 
-function validate(clienttag, password) {
-  return (
-    clienttag &&
-    clienttag.length >= 4 &&
-    clienttag.length <= 20 &&
-    password &&
-    password.length >= 4 &&
-    password.length <= 20
-  );
-}
+router.get("/verify", authenticate, (req, res) => {
+  return res.send({
+      data: { clienttag: req.clients.clienttag },
+      success: true,
+      error: null
+  });
+});
 
 module.exports = router;
-

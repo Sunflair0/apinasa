@@ -1,9 +1,9 @@
 function validate(req, res, next) {
-    const { username, password } = req.body
-    if (!username ||
+    const { clienttag, password } = req.body
+    if (!clienttag ||
         !password ||
-        username.length < 2 ||
-        username.length > 20 ||
+        clienttag.length < 2 ||
+        clienttag.length > 20 ||
         password.length < 6 ||
         password.length > 20) {
         return res.send({
@@ -15,4 +15,4 @@ function validate(req, res, next) {
     return next();
 }
 
-export default validate
+module.exports = validate
