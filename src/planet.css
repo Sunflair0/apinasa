@@ -80,13 +80,13 @@
 
 .rotatePlanets {
   transform: rotate(60deg);
-  left: -36vw;
-  top: 85vh;
+  left: -28vw;
+  top: 56vh;
 }
 
 @keyframes mars {
   from {
-    transform: translate(-111vh, 16vh)scale(2.3);
+    transform: translate(-111vh, 46vh)scale(2.3);
   }
 
   to {
@@ -110,15 +110,14 @@
 
 .circle5 {
   /* Mercury*/
-  margin-left: -34vh;
-  margin-top: -70vh;
+  margin-top: -50vh;
   position: fixed;
   height: 23px;
   width: 23px;
   border-radius: 50%;
   background-image: radial-gradient(circle, rgb(189, 194, 184), rgb(0, 0, 0));
   box-shadow: black;
-  animation: 20s merc linear infinite;
+  animation: 25s merc linear infinite;
 }
 
 @keyframes merc {

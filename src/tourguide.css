@@ -21,14 +21,12 @@ text-decoration: none;
 
 .card{
 position: fixed;
-bottom: 10%;
+bottom: 20%;
 left: 40%; 
 width: 310px;
 height: 500px;
 border-radius: 10px;
 background: rgba(2, 40, 60, 0);
-backdrop-filter: blur(7px);
-transform-style: preserve-3d;
 transition: 1s;
 backface-visibility: hidden;
 }

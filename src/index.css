@@ -478,6 +478,14 @@ margin-left:1rem;
   background-color: transparent;
   background-repeat: no-repeat;
   cursor: pointer;
+  z-index: 100;
+}
+
+.cursor_follow {
+  position: absolute;
+  mix-blend-mode: difference;
+  user-select: none;
+  /* transform: translate(20px, 20px); */
 }
 
 .menu1items:hover {
