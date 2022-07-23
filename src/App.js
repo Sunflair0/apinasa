@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { setClienttag } from "./redux/actions";
-import { verify } from "./hooks/useAPI";
 import useAPI from "./hooks/useAPI";
 
 import {
