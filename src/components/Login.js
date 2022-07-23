@@ -55,13 +55,12 @@ export const Login = ({ setClienttag }) => {
         passwordError,
         setDisplayError,
         setApiError,
+        apiLogin,
+        setClienttag
     ]);
-
-
 
     return (
         <>
-
             <div className="login-container">
                 <div className="login-message">
                     {apiError && (
@@ -75,13 +74,12 @@ export const Login = ({ setClienttag }) => {
                 <div className="stripe">
                     <div className="namepass"></div>
                     <TourGuideLight />
-
                     <div className="login-input-container">
                         <div className="input-container">
                             <input
                                 style={{ width: "80%" }}
                                 type="text"                                
-                                error={displayError && !!clienttagError}
+                                error={displayError ? !!clienttagError : undefined}
                                 label="SpaceTours Handle"
                                 value={clienttagInput}
                                 // helpertext={displayError ? clienttagError : ""}
@@ -91,10 +89,8 @@ export const Login = ({ setClienttag }) => {
                         <div className="input-container">
                             <input
                                 style={{ width: "80%" }}
-                                type="password"
-
-                                
-                                error={displayError && !!passwordError}
+                                type="password"                                
+                                error={displayError ? !!passwordError : undefined}
                                 label="Password"
                                 
                                 value={passwordInput}
@@ -116,7 +112,6 @@ export const Login = ({ setClienttag }) => {
                             {/* Sign Up! button located on CardFlip.js */}
                     </div>
                 </div>
-
             </form>
         </>
     );

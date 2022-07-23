@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { setClienttag } from "./redux/actions";
-import { verify } from "../src/hooks/useAPI";
-import useAPI from "../src/hooks/useAPI";
+import useAPI from "./hooks/useAPI";
 
 import {
-  BrowserRouter as Router, Routes, Route, Navigate
+  BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
 import { ToggleProvider } from "./ToggleContext";
 import "./App.css";
@@ -58,7 +57,7 @@ function App({ clienttag, setClienttag }) {
       }
     };
     verifyClienttag();
-  }, []);
+  }, [setClienttag, verify]);
 
   return (
     <>
@@ -71,43 +70,43 @@ function App({ clienttag, setClienttag }) {
                   <Routes>
                     <Route path="loginpage" element={<ProtectedRoute isPrivate={false}><LoginPage /></ProtectedRoute>} />
 
-                    <Route path="/" element={<ProtectedRoute isPrivate={false}><PagesTemplate /></ProtectedRoute>} >
-                      <Route index element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
-                      <Route path="home" element={<ProtectedRoute isPrivate={false}><Home /></ProtectedRoute>} />
-                      <Route path="about" element={<ProtectedRoute isPrivate={false}><About /></ProtectedRoute>} />
-                      <Route path="nasa/" element={<ProtectedRoute isPrivate={false}><NASA /></ProtectedRoute>}>
-                        <Route path="apod/" element={<ProtectedRoute isPrivate={false}><APOD /></ProtectedRoute>}>
-                          <Route index element={<ProtectedRoute isPrivate={false}><div><ApodToday /></div></ProtectedRoute>} />
-                          <Route path="nasa/apod/apodtoday" element={<ProtectedRoute isPrivate={false}><div><ApodToday /></div></ProtectedRoute>} />
-                          <Route path="nasa/apod/apodchoose" element={<ProtectedRoute isPrivate={false}><div><ApodChoose /></div></ProtectedRoute>} />
-                          <Route path="nasa/apod/apodrange" element={<ProtectedRoute isPrivate={false}><div><ApodRange /></div></ProtectedRoute>} />
-                          <Route path="nasa/apod/apodgimme5" element={<ProtectedRoute isPrivate={false}><div><ApodGimme5 /></div></ProtectedRoute>} />
+                    <Route path="/" element={<ProtectedRoute isPrivate={true}><PagesTemplate /></ProtectedRoute>} >
+                      <Route index element={<ProtectedRoute isPrivate={true}><Home /></ProtectedRoute>} />
+                      <Route path="home" element={<ProtectedRoute isPrivate={true}><Home /></ProtectedRoute>} />
+                      <Route path="about" element={<ProtectedRoute isPrivate={true}><About /></ProtectedRoute>} />
+                      <Route path="nasa/" element={<ProtectedRoute isPrivate={true}><NASA /></ProtectedRoute>}>
+                        <Route path="apod/" element={<ProtectedRoute isPrivate={true}><APOD /></ProtectedRoute>}>
+                          <Route index element={<ProtectedRoute isPrivate={true}><div><ApodToday /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodtoday" element={<ProtectedRoute isPrivate={true}><div><ApodToday /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodchoose" element={<ProtectedRoute isPrivate={true}><div><ApodChoose /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodrange" element={<ProtectedRoute isPrivate={true}><div><ApodRange /></div></ProtectedRoute>} />
+                          <Route path="nasa/apod/apodgimme5" element={<ProtectedRoute isPrivate={true}><div><ApodGimme5 /></div></ProtectedRoute>} />
                         </Route>
-                        <Route path="mer" element={<ProtectedRoute isPrivate={false}><MER /></ProtectedRoute>} />
-                        <Route path="earth" element={<ProtectedRoute isPrivate={false}><EARTH /></ProtectedRoute>} />
-                        <Route path="iss" element={<ProtectedRoute isPrivate={false}><ISS /></ProtectedRoute>} />
+                        <Route path="mer" element={<ProtectedRoute isPrivate={true}><MER /></ProtectedRoute>} />
+                        <Route path="earth" element={<ProtectedRoute isPrivate={true}><EARTH /></ProtectedRoute>} />
+                        <Route path="iss" element={<ProtectedRoute isPrivate={true}><ISS /></ProtectedRoute>} />
                       </Route>
-                      <Route path="mypage" element={<ProtectedRoute isPrivate={false}><MyPage /></ProtectedRoute>}>
-                        <Route path="album" element={<ProtectedRoute isPrivate={false}><Album /></ProtectedRoute>} />
-                        <Route path="IPN" element={<ProtectedRoute isPrivate={false}><IPN /></ProtectedRoute>} />
-                        <Route path="mysalutes" element={<ProtectedRoute isPrivate={false}><MySalutes /></ProtectedRoute>} />
-                        <Route path="dailyreward" element={<ProtectedRoute isPrivate={false}><DailyReward /></ProtectedRoute>} />
-                        <Route path="purchases" element={<ProtectedRoute isPrivate={false}><Purchases /></ProtectedRoute>} >
-                          <Route path="mytrip" element={<ProtectedRoute isPrivate={false}><MyTrip /></ProtectedRoute>} />
-                          <Route path="myitems" element={<ProtectedRoute isPrivate={false}><MyItems /></ProtectedRoute>} />
+                      <Route path="mypage" element={<ProtectedRoute isPrivate={true}><MyPage /></ProtectedRoute>}>
+                        <Route path="album" element={<ProtectedRoute isPrivate={true}><Album /></ProtectedRoute>} />
+                        <Route path="IPN" element={<ProtectedRoute isPrivate={true}><IPN /></ProtectedRoute>} />
+                        <Route path="mysalutes" element={<ProtectedRoute isPrivate={true}><MySalutes /></ProtectedRoute>} />
+                        <Route path="dailyreward" element={<ProtectedRoute isPrivate={true}><DailyReward /></ProtectedRoute>} />
+                        <Route path="purchases" element={<ProtectedRoute isPrivate={true}><Purchases /></ProtectedRoute>} >
+                          <Route path="mytrip" element={<ProtectedRoute isPrivate={true}><MyTrip /></ProtectedRoute>} />
+                          <Route path="myitems" element={<ProtectedRoute isPrivate={true}><MyItems /></ProtectedRoute>} />
                         </Route>
-                        <Route path="travelnow" element={<ProtectedRoute isPrivate={false}><TravelNow /></ProtectedRoute>} />
-                        <Route path="presentlocation" element={<ProtectedRoute isPrivate={false}><PresentLocation /></ProtectedRoute>} />
+                        <Route path="travelnow" element={<ProtectedRoute isPrivate={true}><TravelNow /></ProtectedRoute>} />
+                        <Route path="presentlocation" element={<ProtectedRoute isPrivate={true}><PresentLocation /></ProtectedRoute>} />
                       </Route>
-                      <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} >
-                        <Route path=":tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
-                        <Route path=":addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
+                      <Route path="venturetours" element={<ProtectedRoute isPrivate={true}><VentureTours /></ProtectedRoute>} >
+                        <Route path=":tourId" element={<ProtectedRoute isPrivate={true}><TourInfo /></ProtectedRoute>} />
+                        <Route path=":addOnsID" element={<ProtectedRoute isPrivate={true}><TourAddOns /></ProtectedRoute>} />
                       </Route>
-                      <Route path="testimonials" element={<ProtectedRoute isPrivate={false}><Testimonials /></ProtectedRoute>} />
-                      <Route path="contactus" element={<ProtectedRoute isPrivate={false}><ContactUs /></ProtectedRoute>}>
-                        <Route path="form" element={<ProtectedRoute isPrivate={false}><Form /></ProtectedRoute>} />
+                      <Route path="testimonials" element={<ProtectedRoute isPrivate={true}><Testimonials /></ProtectedRoute>} />
+                      <Route path="contactus" element={<ProtectedRoute isPrivate={true}><ContactUs /></ProtectedRoute>}>
+                        <Route path="form" element={<ProtectedRoute isPrivate={true}><Form /></ProtectedRoute>} />
                       </Route>
-                      <Route path="*" element={<ProtectedRoute isPrivate={false}><Error /></ProtectedRoute>} />
+                      <Route path="*" element={<ProtectedRoute isPrivate={true}><Error /></ProtectedRoute>} />
                     </Route>
                   </Routes>
                 </Router>

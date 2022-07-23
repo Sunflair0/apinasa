@@ -24,25 +24,26 @@ function useAPI() {
     [makeAPICall]
   );
 
-  const tours = useCallback(
-    async () => {
-      return await makeAPICall("/api/clients/venturetours", {
-        method: "get",
-        data: {         
-        },
-      });
+  // const tours = useCallback(
+  //   async () => {
+  //     return await makeAPICall("/api/clients/venturetours", {
+  //       method: "get",
+  //       data: {         
+  //       },
+  //     });
+  //   },
+  //   [makeAPICall]
+  // );
+
+  const signup = useCallback(async (clienttag, password) => {
+    return await makeAPICall("api/clients/signup", { method: "put" ,
+    data: {
+      clienttag,
+      password,
     },
-    [makeAPICall]
-  );
-
-  const signup = useCallback(async () => {
-    return await makeAPICall("api/clients/signup", { method: "put" });
-  }, [makeAPICall])
-
-  const verify = useCallback(async () => {
-    return await makeAPICall("/api/clients/verify", { method: "get" });
-  }, [makeAPICall]);
-
+  });
+},
+   [makeAPICall] ); 
 
   const addToAlbum = useCallback(
     async (item) => {
@@ -76,7 +77,12 @@ function useAPI() {
   }, [makeAPICall]);
 
 
-
-  return { login, tours, signup, verify, addToAlbum, delFromAlbum, albumByUserID, logout };
+ const verify = useCallback(async () => {
+    return await makeAPICall("/api/clients/verify", 
+    { method: "get", 
+  });
+  }, [makeAPICall]);
+  return { login, logout, signup, verify, addToAlbum, delFromAlbum, albumByUserID };
 };
+ 
 export default useAPI;
