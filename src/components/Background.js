@@ -4,7 +4,8 @@ export default function Background() {
 
     return (
         <>
-            <div className="flex_backing rotatePlanets">
+        <div  >
+            <div className="flex_backing rotatePlanets" >
                 <div className="circle9" title="Uranus">
                     <div className="circle10" title="Ariel"></div>
                     <div className="circle11" title="Titania"></div>
@@ -16,6 +17,7 @@ export default function Background() {
             </div>
             <div className="comet" title="comet"></div>
             <div className="circle15" title="Sun/Sol"></div>
+            </div>
         </>
     );
 }

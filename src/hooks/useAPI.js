@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import axios from "axios";
 
-function useAPI() {
+const useAPI = () => {
   const makeAPICall = useCallback(async (url, config) => {
     try {
       return (await axios(url, config)).data;
@@ -36,14 +36,15 @@ function useAPI() {
   // );
 
   const signup = useCallback(async (clienttag, password) => {
-    return await makeAPICall("api/clients/signup", { method: "put" ,
-    data: {
-      clienttag,
-      password,
-    },
-  });
-},
-   [makeAPICall] ); 
+    return await makeAPICall("api/clients/signup", {
+      method: "put",
+      data: {
+        clienttag,
+        password,
+      },
+    });
+  },
+    [makeAPICall]);
 
   const addToAlbum = useCallback(
     async (item) => {
@@ -77,12 +78,13 @@ function useAPI() {
   }, [makeAPICall]);
 
 
- const verify = useCallback(async () => {
-    return await makeAPICall("/api/clients/verify", 
-    { method: "get", 
-  });
+  const verify = useCallback(async () => {
+    return await makeAPICall("/api/clients/verify",
+      {
+        method: "get",
+      });
   }, [makeAPICall]);
-  return { login, logout, signup, verify, addToAlbum, delFromAlbum, albumByUserID };
+  return { login, logout, signup, verify };
 };
- 
+
 export default useAPI;

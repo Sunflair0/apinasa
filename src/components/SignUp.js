@@ -6,17 +6,17 @@ import useAPI from "../hooks/useAPI";
 const Signup = () => {
   const [clienttag, setClienttag] = useState("");
   const [password, setPassword] = useState("");
-  const {signup: signupCall } = useAPI();
+  const { signup: signupCall } = useAPI();
   const [error, setError] = useState(null);
 
   return (
     <>
       <form className="tourguide">
-        <div className="stripe">
-          <div className="namepass">
-            <label htmlFor="clienttag"></label>
-            <div className="opposite"><TourGuideLight /></div>
-            <div className="flip">
+        <div className="stripe">          
+          <div className="opposite"><TourGuideLight /></div>
+          <div className="flip_inputs">
+            <div className="namepass">
+              <label htmlFor="clienttag"></label>
               <input
                 placeholder="SpaceTours Handle"
                 id="clienttag"
@@ -68,8 +68,8 @@ const Signup = () => {
                   if (res.error) {
                     return setError(res.error)
 
-                  // } else {
-                  //   setClienttag(clienttag);
+                    // } else {
+                    //   setClienttag(clienttag);
                   }
                 }
               }

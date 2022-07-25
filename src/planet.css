@@ -33,8 +33,6 @@
   height: 10.37px;
   width: 10.37px;
   border-radius: 70px;
-  background-color: antiquewhite rgb((255, 115, 0));
-  /* For browsers that do not support gradients */
   background-image: radial-gradient(circle, rgb(150, 140, 131), rgb(0, 0, 0));
   position: relative;
 }

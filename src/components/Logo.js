@@ -1,12 +1,10 @@
 const Logo = () => {
   return (
     <>
-      <div style={{
-        marginTop: "13%",
-        marginRight: "10%",
+      <div style={{      
         height: "150px",
         width: "150px",
-        backgroundImage: "url(./assets/shi.png)",
+        backgroundImage: "url(../assets/shi.png)",
         backgroundPosition: 'center',
         backgroundSize: '93%',
         backgroundRepeat: 'no-repeat',

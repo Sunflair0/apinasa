@@ -1,25 +1,25 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { connect } from "react-redux";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Dashboard = ({ clienttag }) => {
+const Dashboard = ({ client }) => {
     return (
         <>
             <div className='dashboard'>
                 <div className='in_dashboard'>
                     <div className='brand'><span className='brand_outline'>Space</span><span className='brand_solid'>Tours</span></div>
                     <div className='curr_user'>
-                        <div className='logged_user' >Currently logged in as: {clienttag}
+                        <div className='logged_user' >Currently logged in as: {client}
                         <span style={{color: '#00ffae'}}>12345678901234567890</span></div>
-                        <dir className='avatar_box'><div className='avatar'>
+                        <div className='avatar_box'><div className='avatar'>
                         </div>
-                        </dir>
+                        </div>
                     </div>
                     <div className='cart'><AiOutlineShoppingCart />
                     </div>
                 </div>
-                <NavLink to="Logout" className='d_button'>LOGOUT</NavLink>
+                <Link to="/loginpage" className='d_button'>LOGOUT</Link>
             </div>
 
         </>
@@ -27,7 +27,7 @@ const Dashboard = ({ clienttag }) => {
 }
 function mapStateToProps(state) {
     return {
-        clienttag: state.client.clienttag
+        client: state.client
     };
 }
 

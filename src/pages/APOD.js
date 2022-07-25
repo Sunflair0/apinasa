@@ -34,15 +34,15 @@ export default function Apod() {
               style={{
                 backgroundImage: "url(./assets/choose.png)"
               }}
-              onClick={() => setShowChoose(showChoose)}>
+              onClick={() => setShowChoose(showChoose)}>hello Choose
             </Link>
 
             <Link className='apodButton'
-              to="nasa/apod/apodgimme"
+              to="nasa/apod/apodgimme5"
               style={{
                 backgroundImage: "url(./assets/gimme.png)"
               }}
-              onClick={() => setShowGimme5(showGimme5)}>
+              onClick={() => setShowGimme5(showGimme5)}>Hello Gimme
             </Link>
 
             <Link className='apodButton'
@@ -50,7 +50,7 @@ export default function Apod() {
               style={{
                 backgroundImage: "url(./assets/range.png)"
               }}
-              onClick={() => setShowRange(showRange)}>
+              onClick={() => setShowRange(showRange)}>Hello Range
             </Link>
           </div >
         </div>

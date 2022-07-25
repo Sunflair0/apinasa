@@ -44,7 +44,7 @@ maxLength="500"
 function mapStateToProps(state) {
   return {
 
-    clienttag: state.client.clienttag
+    client: state.client,
 
   };
 }

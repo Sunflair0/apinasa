@@ -1,32 +1,32 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { setClienttag } from "../redux/actions";
+import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import useAPI from "../hooks/useAPI";
 import TourGuideLight from "./TourGuideLight";
 
 
-export const Login = ({ setClienttag }) => {
+export const Login = ({ setClient }) => {
     const { login: apiLogin } = useAPI();
     const [clienttagInput, setClienttagInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
-    const [clienttagError, setclienttagError] = useState(null);
+    const [clienttagError, setClienttagError] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
     const [displayError, setDisplayError] = useState(false);
     const [apiError, setApiError] = useState(null);
 
     useEffect(() => {
         if (clienttagInput.length > 20) {
-            setclienttagError("Handle must be at max 20 characters");
+            setClienttagError("Handle, less than 20 characters, please");
         } else if (clienttagInput.length < 2) {
-            setclienttagError("Handle must be at least 2 characters");
+            setClienttagError("Handle must be at least 2 characters");
         } else {
-            setclienttagError(null);
+            setClienttagError(null);
         }
     }, [clienttagInput]);
 
     useEffect(() => {
         if (passwordInput.length > 20) {
-            setPasswordError("Password must be at max 20 characters");
+            setPasswordError("Password, less than 20 characters, please");
         } else if (passwordInput.length < 6) {
             setPasswordError("Password must be at least 6 characters");
         } else {
@@ -40,7 +40,7 @@ export const Login = ({ setClienttag }) => {
             if (!res.success) {
                 setApiError(res.error);
             } else {
-                setClienttag(res.data.clienttag);
+                setClient(res.data.clienttag);
             }
         }
         if (clienttagError || passwordError) {
@@ -55,61 +55,49 @@ export const Login = ({ setClienttag }) => {
         passwordError,
         setDisplayError,
         setApiError,
-        apiLogin,
-        setClienttag
+        // apiLogin,
+        // setClient
     ]);
 
     return (
         <>
-            <div className="login-container">
-                <div className="login-message">
-                    {apiError && (
-                        <div className="errorMessage">
-                            <span>{apiError}</span>
-                        </div>
-                    )}
-                </div>
-            </div>
             <form className="tourguide">
                 <div className="stripe">
-                    <div className="namepass"></div>
-                    <TourGuideLight />
-                    <div className="login-input-container">
-                        <div className="input-container">
-                            <input
-                                style={{ width: "80%" }}
-                                type="text"                                
-                                error={displayError ? !!clienttagError : undefined}
-                                label="SpaceTours Handle"
-                                value={clienttagInput}
-                                // helpertext={displayError ? clienttagError : ""}
-                                onChange={(e) => setClienttagInput(e.target.value)}
-                            />
-                        </div>
-                        <div className="input-container">
-                            <input
-                                style={{ width: "80%" }}
-                                type="password"                                
-                                error={displayError ? !!passwordError : undefined}
-                                label="Password"
-                                
-                                value={passwordInput}
-                                // helpertext={displayError ? passwordError : ""}
-                                onChange={(e) => setPasswordInput(e.target.value)}
-                            />
-                        </div>
+                     <TourGuideLight />
+                    <div className="namepass">                   
+                    <input
+                        style={{ width: "80%" }}
+                        type="text"
+                        error={displayError ? !!clienttagError : undefined}
+                        label="SpaceTours Handle"
+                        value={clienttagInput}
+                        onChange={(e) => setClienttagInput(e.target.value)}
+                    />
+                    <input
+                        style={{ width: "80%" }}
+                        type="password"
+                        error={displayError ? !!passwordError : undefined}
+                        label="Password"
+                        value={passwordInput}
+                        onChange={(e) => setPasswordInput(e.target.value)}
+                    />
                     </div>
-                    <div className="outerS">
-                        <div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
-                        <button style={{ transform: "translateX(6px)" }}
-                            className="btnGroup" variant="contained" onClick={() => login()}>
-                            GO
-                        </button>
-                    </div>
-                    <div className="outerS">
-                        <div className="smessage">
-                            If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
-                            {/* Sign Up! button located on CardFlip.js */}
+                </div>
+                <div className="outerS">
+                    <div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
+                    <button style={{ transform: "translate(6px, -10px)" }}
+                        className="btnGroup" onClick={() => login()}>
+                        GO
+                    </button>
+                </div>
+                <div className="outerS">
+                    <div className="smessage">
+                        If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
+                    {/* Sign Up! button located on CardFlip.js */}
+                    <div className="errorMessage">
+                        {apiError && (
+                            <span>{apiError}</span>
+                        )}
                     </div>
                 </div>
             </form>
@@ -117,7 +105,11 @@ export const Login = ({ setClienttag }) => {
     );
 };
 
-const mapStateToProps = (state) => ({});
-const mapDispatchToProps = { setClienttag };
+function mapStateToProps(state) {
+    return {
+        client: state.client
+    };
+}
+const mapDispatchToProps = { setClient };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

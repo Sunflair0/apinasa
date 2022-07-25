@@ -7,7 +7,7 @@ const PagesTemplate = () => {
     return (
         <>
             <Dashboard />
-            <div className="menu_flexbox">
+            <div className='flex_backing'>
                 <MenuAnimate />
             </div>
             <Outlet />

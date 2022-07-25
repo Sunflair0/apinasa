@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 import { deleteEntry } from "../redux/actions";
 import { Outlet } from "react-router-dom";
 
-const Album = ({ deleteEntry, album, clienttag }) => {
+const Album = ({ deleteEntry, album, client }) => {
   return (
     <>
       <div className="content_flexbox">
-      <h2>  Album for {clienttag} </h2>
-      <div className="content_column" style={{ backgroundImage: "linear-gradient(to right, #46b8a7 , rgb(66,170,177))", height: "100vh", width: "150vh", opacity: ".45" }}>
+      <h2>  Album for {client} </h2>
+      <div className="album">
 
         <div className="">
           {album.map((item) => (
@@ -24,7 +24,9 @@ const Album = ({ deleteEntry, album, clienttag }) => {
               copyright={item.copyright}
               description={item.description}
             />
-          ))}
+            
+          ))};
+
         </div>
       </div>
       </div> 
@@ -35,7 +37,7 @@ const Album = ({ deleteEntry, album, clienttag }) => {
 
 function mapStateToProps(state) {
   return {
-    clienttag: state.client.clienttag,
+    client: state.client,
     album: state.album,
   };
 }
