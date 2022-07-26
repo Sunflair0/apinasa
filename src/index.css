@@ -133,6 +133,10 @@ body {
   align-items: center;
   width: 76px;
   height: 2.3rem;
+  box-shadow: 
+  0px 2px 1px #110505,
+  0px 2px 1px #110505,
+  0px 3px 1px #110505;
 }
 
 .brand_outline {
@@ -141,6 +145,14 @@ body {
   text-shadow: 0px 1px 1px #000000,
     0px 2px 1px #000000,
     0px 3px 1px #000000;
+    box-shadow: 
+  inset
+  0px 2px 1px #110505,
+  inset
+  -2px 0px 1px #110505,
+  -2px 3px 1px #110505,
+  0px 2px 1px #110505,
+  0px 3px 1px #110505;
 }
 
 .brand_solid {
@@ -324,14 +336,14 @@ body {
 
 .content_flexbox {
   display: flex;
-  top: 10rem;
+  top: 5rem;
   position: relative;
   overflow: visible;
   width: auto;
   flex-direction: column; 
-  padding: 3rem;
+  padding: 1rem 2rem;
   width: 95%;
-  border: rgb(180, 27, 53) 3px solid;
+  overflow: scroll;
 }
 
 .title_row {
@@ -490,7 +502,7 @@ li {
   perspective: 0px;
   z-index: 10;
 }
-.ship::after
+.ship1::after
 {
   content: ''; 
   filter: blur(2px);
@@ -505,7 +517,7 @@ li {
   position: absolute;
   user-select: none;
   cursor: default;
-  transform: rotate(33deg)scale(.32);
+  transform: rotate(32deg)scale(.32);
   transition: .5s;
   z-index: 0;
 }
@@ -515,7 +527,7 @@ li {
   box-shadow: inset 0px 1px 0px #74e0d9,
     1px 3px 1px 2px #19f6e8,
     0px 5px 0px 0px #19f6e8,
-    4px 8px 10px 2px #19f6e8;
+    4px 8px 20px 2px #19f6e8;
   font-size: 14px;
   color: #19f6e8;
   background-image:
@@ -537,7 +549,7 @@ li {
 }
 
 .menu1items:hover a:link,
-.menu1items:hover a:visited {
+.menu1items:hover  {
   color: #19f6e8;
   text-decoration: none;
 }
@@ -584,8 +596,8 @@ li span {
   /* padding: 10px; */
   box-shadow: inset 0px 1px 0px #62c4e7,
     inset 1px 0px 0px rgb(74, 90, 18),
-    0px 5px 1px 0px #061420,
-    3px 2px 2px 2px #061420,
+    0px 5px 1px 0px #000000,
+    3px 2px 2px 2px #010525,
     3px 5px 5px 4px rgba(140, 255, 255, 0.5);
   user-select: none;
   transition: transform .2s;
@@ -629,11 +641,25 @@ li span {
 }
 
 .album {
-  border: rgb(140, 204, 22) 4px solid;
+  border: rgb(121, 133, 14) 4px solid;
   height: 100vh;
   width: 50rem;
   opacity: .45;
-  background:  radial-gradient(circle, #a5e6d0 20%, #0027a7 60%, black 90%, rgb(209, 196, 18) 90%);
+  background: linear-gradient( -135deg, 
+  rgba(180,180,180,0.2) 0, 
+  rgba(255,255,255,0.2) 50%, 
+  rgba(255,255,255,0.4) 50%, 
+  rgba(255,255,255,0.4) 100%), 
+  linear-gradient( 135deg, 
+  rgba(180,180,180,0.2) 0, 
+  rgba(255,255,255,0.2) 50%, 
+  rgba(255,255,255,0.4) 50%, 
+  rgba(255, 255, 255, 0.4) 100%), 
+  radial-gradient( ellipse closest-side, 
+  #EBA149 0, 
+  #E28234 38%, 
+  #9B432D 65%, 
+  #010b9e73 100%);
 }
 
 .headtitle {

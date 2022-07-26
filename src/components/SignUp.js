@@ -11,7 +11,7 @@ const Signup = () => {
 
   return (
     <>
-      <form className="tourguide">
+      <form className="tourguide sunburn">
         <div className="stripe">          
           <div className="opposite"><TourGuideLight /></div>
           <div className="flip_inputs">

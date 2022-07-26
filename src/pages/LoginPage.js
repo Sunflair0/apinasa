@@ -3,6 +3,7 @@ import Logo from '../components/Logo'
 import gsap from 'gsap'
 import Background from '../components/Background'
 import Cardflip from '../components/Cardflip'
+import Brand from '../components/Brand'
 
 export default function LoginPage() {
     let tl = gsap.timeline();
@@ -36,7 +37,9 @@ export default function LoginPage() {
             <div className="flex_backing">
                 <div><Background /></div>
                 <div className='ship cursor_follow' ref={el => cursor = el}><Logo /></div>
-                <div><Cardflip /></div>
+                <div style={{transform: 'translateX(500px)'}}>
+                <Brand /></div>
+                <Cardflip />
             </div>
         </>
     )

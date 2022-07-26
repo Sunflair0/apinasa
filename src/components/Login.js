@@ -3,6 +3,7 @@ import { setClient } from "../redux/actions";
 import { connect } from "react-redux";
 import useAPI from "../hooks/useAPI";
 import TourGuideLight from "./TourGuideLight";
+import { useNavigate } from "react-router-dom";
 
 
 export const Login = ({ setClient }) => {
@@ -13,6 +14,7 @@ export const Login = ({ setClient }) => {
     const [passwordError, setPasswordError] = useState(null);
     const [displayError, setDisplayError] = useState(false);
     const [apiError, setApiError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (clienttagInput.length > 20) {
@@ -39,8 +41,10 @@ export const Login = ({ setClient }) => {
             const res = await apiLogin(clienttagInput, passwordInput);
             if (!res.success) {
                 setApiError(res.error);
+                
             } else {
                 setClient(res.data.clienttag);
+                navigate('/home');
             }
         }
         if (clienttagError || passwordError) {
@@ -61,7 +65,7 @@ export const Login = ({ setClient }) => {
 
     return (
         <>
-            <form className="tourguide">
+            <form className="tourguide sunburn">
                 <div className="stripe">
                      <TourGuideLight />
                     <div className="namepass">                   

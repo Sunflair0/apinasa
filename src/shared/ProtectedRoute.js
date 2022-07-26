@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 function ProtectedRoute({ client, isPrivate, children }) {
       // Is this a private route?
-      const redirectTo = isPrivate ? "/home" : "/mypage";
+      const redirectTo = isPrivate ? "/loginpage" : "/home";
       // Is there an activeUser?
       // Do the two work in combination
       if ((client && isPrivate) || (!client && !isPrivate)) {

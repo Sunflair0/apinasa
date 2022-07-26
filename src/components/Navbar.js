@@ -13,7 +13,7 @@ const Navbar = () => {
               <li key={index} className={item.style}
                 data-icon={item.icon}>
                 <NavLink to={item.path} style={({ isActive }) => {
-                  return { color: isActive ? '#fff000' : '' };
+                  return { color: isActive ? '#fff000' : '#74a741' };
                 }} >
                   <span>{item.title}</span>
                 </NavLink>

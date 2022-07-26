@@ -38,9 +38,6 @@
 .tourguide {
   position: relative;
   cursor: default;
-  background-image: linear-gradient(340deg, 
-                  rgba(165, 112, 14, 0.2), 
-                  rgba(40, 54, 61, 0.014) 15%);
   border: solid .5px rgba(70, 201, 201, 0.25);
   border-bottom: solid .5px rgba(15, 235, 235, 0.25);
   max-width: 310px;
@@ -55,6 +52,11 @@
     inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3),
     inset 5px 4px 2px rgba(17, 43, 43, 0.3);
   z-index: 90;
+}
+.sunburn {
+  background-image: linear-gradient(340deg, 
+  rgba(165, 112, 14, 0.2), 
+  rgba(40, 54, 61, 0.014) 15%);
 }
 
 .tourguide::after {

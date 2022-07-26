@@ -44,26 +44,28 @@ import TravelNow from "./pages/TravelNow";
 import VentureTours from "./pages/VentureTours";
 
 function App({ client, setClient, logout }) {
-  //const { verify } = useAPI();
+  const { verify } = useAPI();
 
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   const verifyClient = async () => {
-  //     const res = await verify();
+  useEffect(() => {
+    const verifyClient = async () => {
+      const res = await verify();
 
-  //     setLoading(false);
-  //     if (res.success) {
-  //       setClient(res.data.clienttag);
-  //     }
-  //   };
-  //   verifyClient();
-  // }, [setClient, verify]);
+      setLoading(false);
+      if (res.success) {
+        setClient(res.data.clienttag);
+      }
+    };
+    verifyClient();
+  }, [setClient, verify]);
+
+  
 
   return (
     <>
      {
-    //  !loading && 
+     !loading && 
      ( 
         <div style={{ backgroundImage: "url(../assets/stars.png)", zIndex: "-100" }}>
           <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
@@ -95,16 +97,17 @@ function App({ client, setClient, logout }) {
                         <Route path="mysalutes" element={<ProtectedRoute isPrivate={false}><MySalutes /></ProtectedRoute>} />
                         <Route path="dailyreward" element={<ProtectedRoute isPrivate={false}><DailyReward /></ProtectedRoute>} />
                         <Route path="purchases" element={<ProtectedRoute isPrivate={false}><Purchases /></ProtectedRoute>} >
+                                                  <Route path="purchases/:tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
+
                           <Route path="mytrip" element={<ProtectedRoute isPrivate={false}><MyTrip /></ProtectedRoute>} />
                           <Route path="myitems" element={<ProtectedRoute isPrivate={false}><MyItems /></ProtectedRoute>} />
                         </Route>
                         <Route path="travelnow" element={<ProtectedRoute isPrivate={false}><TravelNow /></ProtectedRoute>} />
                         <Route path="presentlocation" element={<ProtectedRoute isPrivate={false}><PresentLocation /></ProtectedRoute>} />
                       </Route>
-                      <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} >
-                        <Route path=":tourId" element={<ProtectedRoute isPrivate={false}><TourInfo /></ProtectedRoute>} />
-                        <Route path=":addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
-                      </Route>
+                      <Route path="venturetours" element={<ProtectedRoute isPrivate={false}><VentureTours /></ProtectedRoute>} />
+                        <Route path="venturetours/:addOnsID" element={<ProtectedRoute isPrivate={false}><TourAddOns /></ProtectedRoute>} />
+                      
                       <Route path="testimonials" element={<ProtectedRoute isPrivate={false}><Testimonials /></ProtectedRoute>} />
                       <Route path="contactus" element={<ProtectedRoute isPrivate={false}><ContactUs /></ProtectedRoute>}>
                         <Route path="form" element={<ProtectedRoute isPrivate={false}><Form /></ProtectedRoute>} />

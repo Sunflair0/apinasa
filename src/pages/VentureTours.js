@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useAPI from "../hooks/useAPI";
 import {tours} from "../hooks/useAPI";
@@ -12,11 +12,12 @@ export default function VentureTours() {
 
   useEffect(() => {
     async function call() {
-      const res = await apiVentureTours(`http://localhost:3006/api/ventures/tour/all`);
-      if (!res.success) {
-        return console.error(res.error);
-      } console.log(res);
-      setVentures(res.data);
+      // const res = await apiVentureTours
+      // (`http://localhost:3006/api/ventures/tour/all`);
+      // if (!res.success) {
+      //   return console.error(res.error);
+      // } console.log(res);
+      // setVentures(res.data);
     }
     call();
   }, [apiVentureTours]);
@@ -45,7 +46,7 @@ export default function VentureTours() {
           })}
         </ul>
         <div className="tourguide"></div>  
-        <Link to=':tourId'>TOURS</Link>
+       
         <Link to=':addOnsID'>Add Ons</Link>
       
       <Outlet />
