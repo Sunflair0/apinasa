@@ -24,16 +24,16 @@ const useAPI = () => {
     [makeAPICall]
   );
 
-  // const tours = useCallback(
-  //   async () => {
-  //     return await makeAPICall("/api/users/venturetours", {
-  //       method: "get",
-  //       data: {         
-  //       },
-  //     });
-  //   },
-  //   [makeAPICall]
-  // );
+  const tours = useCallback(
+    async () => {
+      return await makeAPICall("/api/users/venturetours", {
+        method: "get",
+        data: {         
+        },
+      });
+    },
+    [makeAPICall]
+  );
 
   const signup = useCallback(async (username, password) => {
     return await makeAPICall("api/users/signup", {
@@ -84,7 +84,7 @@ const useAPI = () => {
         method: "get",
       });
   }, [makeAPICall]);
-  return { login, logout, signup, verify };
+  return { login, logout, signup, verify, albumByUserID, tours, delFromAlbum, addToAlbum };
 };
 
 export default useAPI;

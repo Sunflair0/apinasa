@@ -6,7 +6,6 @@ import { ToggleProvider } from "./ToggleContext";
 import "./App.css";
 import "./tourguide.css";
 import "./planet.css";
-import RequireAuth from "./features/auth/RequireAuth";
 import About from "./pages/About";
 import Album from "./pages/Album";
 import APOD from "./pages/APOD";
@@ -53,7 +52,7 @@ function App() {
                   <Routes>
                     <Route path="loginpage" element={<LoginPage />} />
 
-                    <Route element={<RequireAuth />}>
+                   
                       <Route path="/" element={<PagesTemplate />} >
                         <Route index element={<Home />} />
                         <Route path="home" element={<Home />} />
@@ -92,10 +91,10 @@ function App() {
                           <Route path="form" element={<Form />} />
                         </Route>
                       </Route>
-                    </Route>
-                    <Route element={<RequireAuth allowedRoles={[2]} />} >
+                  
+                    {/* <Route element={<allowedRoles={[2]} />} > */}
                     <Route path="admin" element={<Admin />} />
-                    </Route>
+                    {/* </Route> */}
                     <Route path="*" element={<Error />} />
 
                   </Routes>
