@@ -2,19 +2,19 @@ const bcrypt = require("bcrypt");
 const query = require("../config/mysql.conf").default;
 const { v4: uuidv4 } = require('uuid');
 
-async function signup(res, clienttag, password) { 
+async function signup(res, username, password) { 
   let json = { data: null, success: false, error: null };
   try {
-    const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
-      clienttag
+    const users = await query("SELECT * FROM users WHERE username = ?", [
+      username
     ]);
-    if (clients.length !== 0) {
+    if (users.length !== 0) {
       json.error = "Choice already taken";
     } else {
       const hashed = await bcrypt.hash(password, 10);
       const uuid = uuidv4();
-      await query("INSERT INTO clients (password, clienttag, uuid) VALUES (?,?,?)", [
-        hashed, clienttag, uuid
+      await query("INSERT INTO users (password, username, uuid) VALUES (?,?,?)", [
+        hashed, username, uuid
       ]);
       json = { ...json, success: true };
     }
@@ -29,20 +29,20 @@ async function signup(res, clienttag, password) {
 async function login( username, password) {
   let json = { data: null, success: false, error: null };
   try {
-    const clients = await query("SELECT * FROM clients WHERE clienttag = ?", [
+    const users = await query("SELECT * FROM users WHERE username = ?", [
       username
     ]);
 
-    console.log("clients");
-    console.log(clients);
+    console.log("users");
+    console.log(users);
 
 
-    const client = clients[0] || { password: 1234 };
-    const matches = await bcrypt.compare(password, client.password);
+    const user = users[0] || { password: 1234 };
+    const matches = await bcrypt.compare(password, user.password);
     if (matches) {
-      json = { ...json, data: { username, uuid: client.uuid } };
+      json = { ...json, data: { username, uuid: user.uuid } };
     } else {
-      json.error = "Invalid clienttag / password";
+      json.error = "Invalid username / password";
     }
   } catch (err) {
     json.error = "Something went wrong";
@@ -51,17 +51,17 @@ async function login( username, password) {
   }
 }
 
-async function getByClientID(uuid) {
+async function getByUserID(uuid) {
   let json = { error: null, data: null };
   try {
-    const clients = await query(
-      "SELECT id, clienttag, uuid FROM clients WHERE uuid = ?",
+    const users = await query(
+      "SELECT id, username, uuid FROM users WHERE uuid = ?",
       [uuid]
     );
-    if (clients.length === 0) {
-      json.error = "No client found";
+    if (users.length === 0) {
+      json.error = "No user found";
     } else {
-      json = { ...json, data: clients[0] };
+      json = { ...json, data: users[0] };
     }
   } catch (err) {
     json.error = "Something went wrong?";
@@ -70,17 +70,17 @@ async function getByClientID(uuid) {
   }
 }
 
-async function getByClienttag(res, clienttag) {
+async function getByusername(res, username) {
   let json = { success: false, error: null, data: null };
   try {
-    const clients = await query(
-      "SELECT id, clienttag, uuid FROM clients WHERE clienttag = ?",
-      [clienttag]
+    const users = await query(
+      "SELECT id, username, uuid FROM users WHERE username = ?",
+      [username]
     );
-    if (clients.length === 0) {
-      json.error = "No client found";
+    if (users.length === 0) {
+      json.error = "No user found";
     } else {
-      json = { ...json, success: true, data: clients[0] };
+      json = { ...json, success: true, data: users[0] };
     }
   } catch (err) {
     json.error = "Something went wrong?";
@@ -89,14 +89,14 @@ async function getByClienttag(res, clienttag) {
   }
 }
 
-async function getAllclients(res) {
+async function getAllusers(res) {
   let json = { success: false, error: null, data: null };
   try {
-    const clients = await query("SELECT id, clienttag, uuid FROM clients");
-    if (clients.length === 0) {
-      json.error = "No clients found";
+    const users = await query("SELECT id, username, uuid FROM users");
+    if (users.length === 0) {
+      json.error = "No users found";
     } else {
-      json = { ...json, success: true, data: clients };
+      json = { ...json, success: true, data: users };
     }
   } catch (err) {
     json.error = "Something went wrong?";
@@ -105,4 +105,4 @@ async function getAllclients(res) {
   }
 }
 
-module.exports = { signup, login, getAllclients, getByClientID, getByClienttag };
+module.exports = { signup, login, getAllusers, getByUserID, getByusername };

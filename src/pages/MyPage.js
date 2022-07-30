@@ -7,8 +7,8 @@ const MyPage = () => {
     <>
       <div className="content_flexbox">
         <div>MyPage</div>
-        <Link to='album'>Album</Link>
-        <Link to='ipn'>IPN</Link>
+        <Link to='album' className='album'>Album</Link>
+        <Link to='ipn' className='ipn'></Link>
         <Link to='dailyreward'>Bank</Link>       
         <Link to='purchases'>Purchases</Link>
         <Link to='mysalutes'>My Salutes</Link>

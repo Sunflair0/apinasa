@@ -36,7 +36,7 @@ export default function VentureTours() {
           {
           NavbarData.map((item, index) => {
             return (
-              <li key={index} ><img alt="right sidebar with planets as index holders" src={item.icon} />
+              <li key={index} ><img alt="menu2" src={item.icon} />
 
                 <Link to={item.path}>
                   <span>{item.title}</span>

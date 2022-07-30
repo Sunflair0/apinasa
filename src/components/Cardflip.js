@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Login from "./Login";
+import Login from "../features/auth/Login";
 import SignUp from "./SignUp";
 import ReactCardFlip from 'react-card-flip';
 

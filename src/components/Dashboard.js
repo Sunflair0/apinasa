@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import Brand from './Brand';
 
-const Dashboard = ({ client }) => {
+const Dashboard = ({ user }) => {
     return (
         <>
             <div className='dashboard'>
                 <div className='in_dashboard'>
                     < Brand />
                     <div className='curr_user'>
-                        <div className='logged_user' >Currently logged in as: {client}
+                        <div className='logged_user' >Currently logged in as: {user}
                             <span style={{ color: '#00ffae' }}>12345678901234567890</span></div>
                         <div className='avatar_box'><div className='avatar'>
                         </div>
@@ -27,7 +27,7 @@ const Dashboard = ({ client }) => {
 }
 function mapStateToProps(state) {
     return {
-        client: state.client
+        user: state.user
     };
 }
 

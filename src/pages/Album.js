@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import { deleteEntry } from "../redux/actions";
 import { Outlet } from "react-router-dom";
 
-const Album = ({ deleteEntry, album, client }) => {
+const Album = ({ deleteEntry, album, user }) => {
   return (
     <>
       <div className="content_flexbox">
-      <h2>  Album for {client} </h2>
+      <h2>  Album for {user} </h2>
       <div className="album">
 
         <div className="">
@@ -37,7 +37,7 @@ const Album = ({ deleteEntry, album, client }) => {
 
 function mapStateToProps(state) {
   return {
-    client: state.client,
+    user: state.user,
     album: state.album,
   };
 }

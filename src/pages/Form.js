@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 
-const Form = ({ clienttag }) => {
+const Form = ({ username }) => {
 
 	const handleSubmit = (e) => { e.preventDefault() }
 
@@ -21,7 +21,7 @@ const Form = ({ clienttag }) => {
 
 function mapStateToProps(state) {
 	return {
-		clienttag: state.client.clienttag
+		username: state.user.username
 	};
 }
 

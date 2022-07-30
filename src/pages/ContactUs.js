@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 
 const ContactUs = ({
-  clienttag
+  username
 }) => {
 
   const handleSubmit = (e) => { e.preventDefault() }
@@ -47,7 +47,7 @@ const ContactUs = ({
 function mapStateToProps(state) {
   return {
 
-    client: state.client,
+    user: state.user,
 
   };
 }

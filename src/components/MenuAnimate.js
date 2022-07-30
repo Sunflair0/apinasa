@@ -2,14 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Logo from './Logo';
 import Navbar from './Navbar';
-import {CSSRulePlugin} from "gsap/all";
 
 function MenuAnimate() {
   const [reversed, setReversed] = useState(true);
   const el = useRef();
   const q = gsap.utils.selector(el);
   const tl = useRef(); // store the timeline in a ref.
-  const rule = CSSRulePlugin.getRule(".ship:after");
 
   useEffect(() => {
     tl.current && tl.current.progress(0).kill();

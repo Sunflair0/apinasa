@@ -1,6 +1,6 @@
 const express = require("express");
 const authenticate = require("../middleware/authenticate.middleware");
-const { login, signup } = require("../models/clients.model")
+const { login, signup } = require("../models/users.model")
 const validate = require("../middleware/validate-input")
 const router = express.Router();
 
@@ -10,18 +10,18 @@ router.get("/logout", (req, res) => {
 });
 
 router.post("/signup", validate, (req, res) => {
-  signup(res, req.body.clienttag, req.body.password);
+  signup(res, req.body.username, req.body.password);
 });
 
 router.post("/login", (req, res) => {
-  const { clienttag, password } = req.body;
+  const { username, password } = req.body;
   console.log("req.body", req.body);
-  login(res, clienttag, password);
+  login(res, username, password);
 });
 
 router.get("/verify", authenticate, (req, res) => {
   return res.send({
-      data: { clienttag: req.clients.clienttag },
+      data: { username: req.users.username },
       success: true,
       error: null
   });

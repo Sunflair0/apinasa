@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import useAPI from "../hooks/useAPI";
 
 const Signup = () => {
-  const [clienttag, setClienttag] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { signup: signupCall } = useAPI();
   const [error, setError] = useState(null);
@@ -16,12 +16,12 @@ const Signup = () => {
           <div className="opposite"><TourGuideLight /></div>
           <div className="flip_inputs">
             <div className="namepass">
-              <label htmlFor="clienttag"></label>
+              <label htmlFor="username"></label>
               <input
                 placeholder="SpaceTours Handle"
-                id="clienttag"
-                onChange={(e) => { setClienttag(e.target.value); }}
-                value={clienttag} />
+                id="username"
+                onChange={(e) => { setUsername(e.target.value); }}
+                value={username} />
 
               <label htmlFor="password"></label>
               <input placeholder="Password"
@@ -55,21 +55,21 @@ const Signup = () => {
               onClick={async (e) => {
                 e.preventDefault();
                 if (
-                  clienttag.length > 4 &&
+                  username.length > 4 &&
                   password.length > 4 &&
-                  clienttag.length <= 20 &&
+                  username.length <= 20 &&
                   password.length <= 20
                 ) {
                   setError(null);
-                  let res = await signupCall("/api/clients/signup", {
-                    clienttag,
+                  let res = await signupCall("/api/users/signup", {
+                    username,
                     password,
                   });
                   if (res.error) {
                     return setError(res.error)
 
                     // } else {
-                    //   setClienttag(clienttag);
+                    //   setUsername(username);
                   }
                 }
               }

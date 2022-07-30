@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-function ProtectedRoute({ client, isPrivate, children }) {
+function ProtectedRoute({ user, isPrivate, children }) {
       // Is this a private route?
       const redirectTo = isPrivate ? "/loginpage" : "/home";
       // Is there an activeUser?
       // Do the two work in combination
-      if ((client && isPrivate) || (!client && !isPrivate)) {
+      if ((user && isPrivate) || (!user && !isPrivate)) {
         // If so, render the component
         return <>{children}</>;
       } else {
@@ -18,7 +18,7 @@ function ProtectedRoute({ client, isPrivate, children }) {
     
     const mapStateToProps = (state) => {
       return {
-        client: state.client,
+        user: state.user,
       };
     };
     

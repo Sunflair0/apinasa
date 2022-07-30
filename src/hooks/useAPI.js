@@ -12,11 +12,11 @@ const useAPI = () => {
   }, []);
 
   const login = useCallback(
-    async (clienttag, password) => {
-      return await makeAPICall("/api/clients/login", {
+    async (username, password) => {
+      return await makeAPICall("/api/users/login", {
         method: "post",
         data: {
-          clienttag,
+          username,
           password
         },
       });
@@ -26,7 +26,7 @@ const useAPI = () => {
 
   // const tours = useCallback(
   //   async () => {
-  //     return await makeAPICall("/api/clients/venturetours", {
+  //     return await makeAPICall("/api/users/venturetours", {
   //       method: "get",
   //       data: {         
   //       },
@@ -35,11 +35,11 @@ const useAPI = () => {
   //   [makeAPICall]
   // );
 
-  const signup = useCallback(async (clienttag, password) => {
-    return await makeAPICall("api/clients/signup", {
+  const signup = useCallback(async (username, password) => {
+    return await makeAPICall("api/users/signup", {
       method: "put",
       data: {
-        clienttag,
+        username,
         password,
       },
     });
@@ -74,12 +74,12 @@ const useAPI = () => {
   }, [makeAPICall]);
 
   const logout = useCallback(async () => {
-    return await makeAPICall("/api/clients/logout", { method: "get" });
+    return await makeAPICall("/api/users/logout", { method: "get" });
   }, [makeAPICall]);
 
 
   const verify = useCallback(async () => {
-    return await makeAPICall("/api/clients/verify",
+    return await makeAPICall("/api/users/verify",
       {
         method: "get",
       });

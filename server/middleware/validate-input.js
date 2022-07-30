@@ -1,9 +1,9 @@
 function validate(req, res, next) {
-    const { clienttag, password } = req.body
-    if (!clienttag ||
+    const { username, password } = req.body
+    if (!username ||
         !password ||
-        clienttag.length < 2 ||
-        clienttag.length > 20 ||
+        username.length < 2 ||
+        username.length > 20 ||
         password.length < 6 ||
         password.length > 20) {
         return res.send({

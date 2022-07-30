@@ -96,7 +96,10 @@ preventOverflow: {
             <h1>{chooseData.title}</h1>
             <p className="date">{chooseData.date}</p>
             <p className="url">{chooseData.url} </p>
-            <p className="copyright">{chooseData.copyright} (copyright)</p>
+            <p className="copyright">{chooseData.copyright} (copyright)</p>'
+            {/* if (chooseData.copyright ==!null) return;'
+            <p className="copyright">{chooseData.copyright} (copyright)</p>'
+            else return; ""; */}
             <p className="explanation">{chooseData.explanation}</p>
           </div>
         </div>
