@@ -41,5 +41,11 @@ export const  NavbarData =[
     icon: '✉', 
     style: 'menu1items',
     },    
+    {
+    title: 'Helper',
+    path: 'Helper',
+    icon: ':)', 
+    style: 'menu1items',
+    },  
 ]
  

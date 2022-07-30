@@ -37,6 +37,7 @@ import TourAddOns from "./components/TourAddOns";
 import TravelNow from "./pages/TravelNow";
 import VentureTours from "./pages/VentureTours";
 import Admin from "./pages/Admin";
+import Helper from "./components/Helper";
 
 function App() {
 
@@ -48,7 +49,6 @@ function App() {
             <div style={{ backgroundImage: "url(../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
               <ToggleProvider>
                 <div className="flex_backing">
-
                   <Routes>
                     <Route path="loginpage" element={<LoginPage />} />
 
@@ -88,8 +88,9 @@ function App() {
 
                         <Route path="testimonials" element={<Testimonials />} />
                         <Route path="contactus" element={<ContactUs />}>
-                          <Route path="form" element={<Form />} />
+                          <Route path="form" element={<Form />} />                        
                         </Route>
+                          <Route path="Helper" element={<Helper />} />
                       </Route>
                   
                     {/* <Route element={<allowedRoles={[2]} />} > */}
