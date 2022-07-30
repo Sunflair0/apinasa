@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {cAllF, cAllApodF, cAllVentF, addFavA, addFavV, deleteAllFav, delAllApodF, delAllVentF, delOneVentF,delOneApodF} = require("../models/users.model");
+const {cAllF, cAllApodF, cAllVentF, addFavA, addFavV, deleteAllFav, delAllApodF, delAllVentF, delOneVentF,delOneApodF} = require("../models/clients.model");
 
 // /////I want to see all album
 router.get("/see/vent/:user_id", (req, res) => {
