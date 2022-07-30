@@ -134,25 +134,26 @@ body {
   width: 76px;
   height: 2.3rem;
   box-shadow: 
-  0px 2px 1px #110505,
-  0px 2px 1px #110505,
-  0px 3px 1px #110505;
+  0px 2px 1px #271b1b,
+  0px 2px 1px #271b1b,
+  0px 3px 1px #271b1b;
 }
 
 .brand_outline {
   border: #ceda8d 1px solid;
   background: transparent;
-  text-shadow: 0px 1px 1px #000000,
+  text-shadow: 
+    0px 1px 1px #000000,
     0px 2px 1px #000000,
     0px 3px 1px #000000;
     box-shadow: 
   inset
-  0px 2px 1px #110505,
+  0px 2px 1px #271b1b,
   inset
-  -2px 0px 1px #110505,
-  -2px 3px 1px #110505,
-  0px 2px 1px #110505,
-  0px 3px 1px #110505;
+  -2px 0px 1px #271b1b,
+  -2px 3px 1px #271b1b,
+  0px 2px 1px #271b1b,
+  0px 3px 1px #271b1b;
 }
 
 .brand_solid {
@@ -209,13 +210,56 @@ body {
   width: 45px;
 }
 
-.avatar {
+.avatar_earth {
   border-radius: 50%;
   min-height: 33px;
   min-width: 33px;
   margin: 0 10px;
   background-image: radial-gradient(circle, rgb(0, 0, 255), rgba(0, 0, 0, 0.87));
   box-shadow: 0px 0px 20px rgb(101, 101, 241);
+}
+.avatar_mercury {
+  border-radius: 50%;
+  min-height: 33px;
+  min-width: 33px;
+  margin: 0 10px;
+  background-image: 
+            radial-gradient(circle, 
+            rgb(177, 188, 194) 0%,
+            rgb(139, 139, 139) 70%, 
+            rgb(0, 0, 0) 90%);
+  box-shadow: 0px 0px 20px rgb(255, 155, 25);
+}
+
+.avatar_uranus {
+  border-radius: 50%;
+  min-height: 33px;
+  min-width: 33px;
+  margin: 0 10px;
+  background-image: radial-gradient(circle, rgb(239, 241, 250) 0%, 
+  rgb(174, 197, 211) 30%, 
+  rgb(30, 36, 39) 90%);
+  box-shadow: 0px 0px 20px rgb(0, 226, 139);
+}
+.avatar_sun {
+  border-radius: 50%;
+  min-height: 33px;
+  min-width: 33px;
+  margin: 0 10px;
+  background-image: radial-gradient(circle, #fcd215 10%, #d87f02 60%, #ee5832 90%);
+  box-shadow: 0px 0px 20px rgb(255, 0, 191);
+}
+
+.avatar_traveling {
+  border-radius: 50%;
+  min-height: 33px;
+  min-width: 33px;
+  margin: 0 10px;
+  background-image: 
+            radial-gradient(4px 3px at 20% 15%, #ecfaf9 2px, #85fdeb 7px, transparent 20px),
+            radial-gradient(circle at 75% 65%, #a7edf7 1px, #50cece 7px, transparent 22px),
+            radial-gradient(9px 8px at 25% 90%, #1d557a 4px, #284945 10px);
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
 
 .cart {
