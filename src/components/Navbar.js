@@ -1,9 +1,11 @@
-import React from 'react';
-import { NavbarData } from "./NavbarData";
+import {useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import { NavbarData } from "./NavbarData";
+import NavbarSubMenu from './NavbarSubMenu';
 
 
 const Navbar = () => {
+
   return (
     <>
       <nav>
@@ -15,7 +17,10 @@ const Navbar = () => {
                 <NavLink to={item.path} style={({ isActive }) => {
                   return { color: isActive ? '#fff000' : '#74a741' };
                 }} >
-                  <span>{item.title}</span>
+                <div> <span>{item.title}</span></div> 
+                
+               
+                  
                 </NavLink>
               </li>
             )

@@ -1,15 +1,15 @@
 import React from "react";
 
 
-function AlbumArray({ entry, isLiked, addEntry, removeEntry }) {
+function AlbumArray({ val, entry, isLiked, addEntry, removeEntry }) {
   return (
     <div className="presenter">
-      {/* <h4>{entry.title}</h4> */}
-      {/* <h3>{entry.id}</h3> */}
-      {/* <img src={entry.url} alt={entry.id} /> */}
-      {/* <h4>{entry.date}</h4> */}
-      {/* <h4>{entry.copyright}</h4> */}
-      {/* <h5>{entry.explanation}</h5> */}
+      <h4>{val.title}</h4>
+      <h3>{val.id}</h3>
+      <img src={val.url} alt={val.id} />
+      <h4>{val.date}</h4>
+      <h4>{val.copyright}</h4>
+      <h5>{val.explanation}</h5>
 
       {isLiked && (
         <button className="like-btn" onClick={() => removeEntry(entry.id)}>
