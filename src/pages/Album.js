@@ -1,35 +1,35 @@
 import React from "react";
-import Console from "../components/Console";
+import AlbumArray from "../components/AlbumArray";
 import { connect } from "react-redux";
-import { deleteEntry } from "../redux/actions";
+import { removeEntry } from "../redux/actions";
 import { Outlet } from "react-router-dom";
 
-const Album = ({ deleteEntry, album, user }) => {
+function Album({
+  user,
+  liked,
+  removeEntry
+}) {
   return (
     <>
       <div className="content_flexbox">
-      <h2>  Album for {user} </h2>
-      <div className="album">
-
-        <div className="">
-          {album.map((item) => (
-            <Console
-              id={item.id}
-              key={item.id}
+        <h2>  Album for {user} </h2>
+        <section className="album">
+          {liked.map((entry) => (
+            <AlbumArray
+              key={entry.id}
+              id={entry.id}
+              item={entry}
               isLiked={true}
-              deleteEntry={deleteEntry}
-              title={item.title}
-              date={item.date}
-              url={item.url}
-              copyright={item.copyright}
-              description={item.description}
+              removeEntry={removeEntry}
+              title={entry.title}
+              date={entry.date}
+              url={entry.url}
+              copyright={entry.copyright}
+              description={entry.description}
             />
-            
           ))};
-
-        </div>
+        </section>
       </div>
-      </div> 
       <Outlet />
     </>
   );
@@ -38,12 +38,12 @@ const Album = ({ deleteEntry, album, user }) => {
 function mapStateToProps(state) {
   return {
     user: state.user,
-    album: state.album,
+    liked: state.nasa.liked,
   };
 }
 
 const mapDispatchToProps = {
-  deleteEntry
+  removeEntry
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Album);

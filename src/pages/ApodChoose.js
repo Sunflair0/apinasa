@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import { addEntry, deleteEntry } from '../redux/actions';
-import Console from "../components/Console"
+import { addEntry, removeEntry } from '../redux/actions';
+import Console from "../components/AlbumArray"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const ApodChoose = ({
   addEntry,
-  deleteEntry,
+  removeEntry,
   album
 
 }) => {
@@ -87,7 +87,7 @@ preventOverflow: {
               />
             )}
             <Console
-              deleteEntry={deleteEntry}
+              removeEntry={removeEntry}
               addEntry={addEntry}
               isLiked={likedIds.includes(chooseData.id)}
               key={chooseData.id}
@@ -116,7 +116,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  deleteEntry,
+  removeEntry,
   addEntry
 };
 

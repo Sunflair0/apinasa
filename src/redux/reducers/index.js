@@ -4,7 +4,7 @@ import bigcubeReducer from "./bigcubeReducer";
 import buyventReducer from "./buyventReduce";
 import userReducer from "./userReducer";
 import contactusReducer from "./contactusReducer";
-import albumReducer from "./albumReducer";
+import nasaReducer from "./nasaReducer";
 import formReducer from "./formReducer";
 
 
@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   buyvent: buyventReducer,
   user: userReducer,
   contactus: contactusReducer,
-  album: albumReducer,
+  nasa: nasaReducer,
   form: formReducer,
  
 

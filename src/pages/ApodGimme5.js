@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import { addEntry, deleteEntry } from '../redux/actions';
-import Console from "../components/Console"
+import { addEntry, removeEntry } from '../redux/actions';
+import Console from "../components/AlbumArray"
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
 const ApodGimme5 = ({
   addEntry,
-  deleteEntry,
+  removeEntry,
   album
 
 }) => {
@@ -59,7 +59,7 @@ const ApodGimme5 = ({
               )}
 
               <Console
-                deleteEntry={deleteEntry}
+                removeEntry={removeEntry}
                 addEntry={addEntry}
                 isLiked={likedIds.includes(item.id)}
                 key={item.id}
@@ -86,7 +86,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  deleteEntry,
+  removeEntry,
   addEntry,
 
 };

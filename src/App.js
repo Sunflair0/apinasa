@@ -90,7 +90,7 @@ function App() {
                         <Route path="contactus" element={<ContactUs />}>
                           <Route path="form" element={<Form />} />                        
                         </Route>
-                          <Route path="Helper" element={<Helper />} />
+                          <Route path="helper" element={<Helper />} />
                       </Route>
                   
                     {/* <Route element={<allowedRoles={[2]} />} > */}

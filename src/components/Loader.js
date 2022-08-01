@@ -17,7 +17,8 @@ const Loader = () => {
                 position: 'absolute',
             }}><Logo /></div>
             <div className='loading_text'>Loading...
-            </div></div>
+            </div>
+        </div>
     )
 }
 
