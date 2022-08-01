@@ -19,12 +19,15 @@ const About = ({ user }) => {
     </>
   )
 }
-function mapStateToProps(state) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    user: state.user,  };
-}
-
-const mapDispatchToProps = {
+  
+  };
 };
+
+const mapStateToProps = (state) => ({
+ 
+  loggedInUser: state.user,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

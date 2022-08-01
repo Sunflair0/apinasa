@@ -1,49 +1,56 @@
 import React from "react";
-import AlbumArray from "../components/AlbumArray";
 import { connect } from "react-redux";
-import { removeEntry } from "../redux/actions";
-import { Outlet } from "react-router-dom";
+import AlbumArray from "../components/AlbumArray";
+import { add, remove } from "../redux/features/albumSlice";
 
 function Album({
-  user,
-  liked,
-  removeEntry
+  album,
+  add,
+  remove,
+  loggedInUser
 }) {
   return (
     <>
       <div className="content_flexbox">
-        <h2>  Album for {user} </h2>
+        <h2>  Album for {loggedInUser} </h2>
         <section className="album">
-          {liked.map((entry) => (
+{album &&
+album.length > 0 &&
+album.map((val) => (
             <AlbumArray
-              key={entry.id}
-              id={entry.id}
-              item={entry}
+              key={val.id}              
+              liked={val}
               isLiked={true}
-              removeEntry={removeEntry}
-              title={entry.title}
-              date={entry.date}
-              url={entry.url}
-              copyright={entry.copyright}
-              description={entry.description}
+              add={add}
+              remove={remove}
+              title={val.title}
+              date={val.date}
+              url={val.url}
+              copyright={val.copyright}
+              description={val.description}
             />
-          ))};
+          ))}
+               {album.length === 0 && (
+         <h3>
+            Your Album is empty. Visit NASA to fill here!
+          </h3>
+             )}
         </section>
-      </div>
-      <Outlet />
+      </div>    
     </>
   );
 };
 
-function mapStateToProps(state) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    user: state.user,
-    liked: state.nasa.liked,
+    add: (entry) => dispatch(add(entry)),
+    remove: (id) => dispatch(remove(id)),
   };
-}
-
-const mapDispatchToProps = {
-  removeEntry
 };
+
+const mapStateToProps = (state) => ({
+  album: state.album,
+  loggedInUser: state.user,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Album);

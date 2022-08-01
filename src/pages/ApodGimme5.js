@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import { addEntry, removeEntry } from '../redux/actions';
-import Console from "../components/AlbumArray"
+import AlbumArray from "../components/AlbumArray";
+import { add, remove } from "../redux/features/albumSlice";
+
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 
@@ -58,7 +59,7 @@ const ApodGimme5 = ({
                 />
               )}
 
-              <Console
+              <AlbumArray
                 removeEntry={removeEntry}
                 addEntry={addEntry}
                 isLiked={likedIds.includes(item.id)}
@@ -78,17 +79,16 @@ const ApodGimme5 = ({
   );
 }
 
-function mapStateToProps(state) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    album: state.album
-
+    add: (entry) => dispatch(add(entry)),
+    remove: (id) => dispatch(remove(id)),
   };
-}
-
-const mapDispatchToProps = {
-  removeEntry,
-  addEntry,
-
 };
+
+const mapStateToProps = (state) => ({
+  album: state.album,
+  loggedInUser: state.user,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApodGimme5);

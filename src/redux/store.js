@@ -1,8 +1,10 @@
-import { createStore } from "redux";
-import rootReducer from "./reducers";
+import { configureStore } from "@reduxjs/toolkit";
+import albumReducer from "./features/albumSlice";
+import userReducer from "./features/userSlice";
 
-const INITIAL_STATE = {
-    user: null,
-  };
-
-export default createStore(rootReducer, INITIAL_STATE);
+export default configureStore({
+  reducer: {
+    album: albumReducer,
+    user: userReducer,    
+  },
+});

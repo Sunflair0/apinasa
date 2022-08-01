@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { setUser } from "../redux/actions";
-import { connect } from "react-redux";
+import { login } from "../redux/features/userSlice";import { connect } from "react-redux";
 import useAPI from "../hooks/useAPI";
 import TourGuideLight from "./TourGuideLight";
 import { useNavigate } from "react-router-dom";
@@ -108,11 +107,12 @@ export const Login = ({ setUser }) => {
     );
 };
 
-function mapStateToProps(state) {
+const mapDispatchToProps = (dispatch) => {
     return {
-        user: state.user
+      login: (username) => dispatch(login(username)),
     };
-}
-const mapDispatchToProps = { setUser };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+  };
+  
+  const mapStateToProps = () => ({});
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Login);

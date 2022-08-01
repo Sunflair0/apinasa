@@ -44,17 +44,12 @@ const ContactUs = ({
   )
 }
 
-function mapStateToProps(state) {
+const mapDispatchToProps = (dispatch) => {
   return {
-
-    user: state.user,
-
+  
   };
-}
-
-const mapDispatchToProps = {
-
 };
 
+const mapStateToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactUs);

@@ -19,13 +19,12 @@ const Form = ({ username }) => {
 	)
 }
 
-function mapStateToProps(state) {
-	return {
-		username: state.user.username
-	};
-}
-
-const mapDispatchToProps = {
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+const mapDispatchToProps = (dispatch) => {
+    return {
+  
+    };
+  };
+  
+  const mapStateToProps = () => ({});
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Form);

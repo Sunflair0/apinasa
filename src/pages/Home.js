@@ -10,13 +10,13 @@ const Home = ({ user }) => {
     </>
   )
 }
-function mapStateToProps(state) {
-  return {
-      user: state.user
-  };
-}
 
-const mapDispatchToProps = {
+const mapDispatchToProps = (dispatch) => {
+  return {
+ 
+  };
 };
+
+const mapStateToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
