@@ -7,7 +7,7 @@
 
 
 body {
-  overflow: hidden;
+  // overflow: hidden;
   background-color: black;
   background-image:
     radial-gradient(rgb(160, 29, 29), rgba(241, 10, 10, 0.411) 2px, transparent 5px),
@@ -68,34 +68,36 @@ body {
 }
 
 .flex_backing {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    top: 3.5vh;
-    height: 100vh;
-  }
-  .ship_flexbox {
-    display: flex;
-    position: relative;  
-    left: 2rem;
-  }
-  .menu_flexbox {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;  
-    left: 3.4rem;
-    top: 0rem;
-    padding-right: 4rem;
-  }
-  
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  top: 3.5vh;
+  height: 100vh;
+}
+
+.ship_flexbox {
+  display: flex;
+  position: relative;
+  left: 2rem;
+}
+
+.menu_flexbox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  left: 3.4rem;
+  top: 0rem;
+  padding-right: 4rem;
+}
+
 .content_flexbox {
   display: flex;
   top: 5rem;
   position: relative;
   overflow: visible;
   width: auto;
-  flex-direction: column; 
+  flex-direction: column;
   padding: 1rem 2rem;
   width: 95%;
   overflow: scroll;
@@ -105,4 +107,11 @@ body {
   margin-top: 5vh;
   height: 95vh;
   width: 100%;
-}  
+}
+
+.center {
+  margin: auto 0;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}

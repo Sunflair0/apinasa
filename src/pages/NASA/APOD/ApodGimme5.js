@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import AlbumArray from "../components/AlbumArray";
-import { add, remove } from "../redux/features/albumSlice";
+import AlbumArray from "../../../components/AlbumArray";
+import { add, remove } from "../../../redux/features/albumSlice";
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 

@@ -1,11 +1,14 @@
-import React, { } from "react";
+import React, { useEffect } from "react";
 
 export default function Background() {
+    useEffect(() => {
+        document.body.classList.add('stop_scroll');
+    }, []);
 
     return (
         <>
-            <div className="flex_backing rotatePlanets" >
-                <div className="circle9" title="Uranus">
+            <div className=" flex_backing rotatePlanets" >
+                <div className="circle9" title="Uranus" style={{ overflow: 'hidden' }}>
                     <div className="circle10" title="Ariel"></div>
                     <div className="circle11" title="Titania"></div>
                     <div className="circle12" title="Umbriel"></div>

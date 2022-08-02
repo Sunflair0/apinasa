@@ -38,8 +38,9 @@ export default function LoginPage() {
             <div className="flex_backing">
                 <div><Background /></div>
                 <div className='ship cursor_follow' ref={el => cursor = el}><Ship /></div>
-                <div style={{transform: 'translateX(500px)'}}>
-                <Brand /></div>
+
+                <div className='center'>
+                <Brand/></div>
                 <Cardflip />
             </div>
         </>

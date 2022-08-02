@@ -1,9 +1,9 @@
 import React from 'react'
-import Dashboard from "../components/Dashboard"
+import Dashboard from "./Dashboard"
 import { Outlet } from "react-router-dom";
-import MenuAnimate from "../components/MenuAnimate";
+import MenuAnimate from "./MenuAnimate";
 
-const PagesTemplate = () => {
+const Layout = () => {
     return (
         <>
             <Dashboard />
@@ -14,4 +14,4 @@ const PagesTemplate = () => {
         </>
     )
 }
-export default PagesTemplate
+export default Layout

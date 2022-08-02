@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { connect } from "react-redux";
-import AlbumArray from "../components/AlbumArray";
-import { add, remove } from "../redux/features/albumSlice";
+import AlbumArray from "../../../components/AlbumArray";
+import { add, remove } from "../../../redux/features/albumSlice";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;

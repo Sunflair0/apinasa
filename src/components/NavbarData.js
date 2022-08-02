@@ -31,10 +31,6 @@ export const NavbarData = [
                 path: 'about/game/',
                 style: 'menu1items'
             },
-
-
-
-
         ]
     },
     {
