@@ -1,8 +1,6 @@
-import {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavbarData } from "./NavbarData";
-import NavbarSubMenu from './NavbarSubMenu';
-import "../styles/css/navbar.min.css";
+import "../../styles/css/navbar.min.css";
 
 
 const Navbar = () => {

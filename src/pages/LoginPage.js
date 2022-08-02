@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react'
-import Ship from '../components/Ship'
+import Ship from '../components/Animations/Ship'
 import gsap from 'gsap'
-import Background from '../components/Background'
-import Cardflip from '../components/Cardflip'
-import Brand from '../components/Brand'
+import Background from '../components/Structure/Background'
+import Cardflip from '../components/Animations/Cardflip'
+import Brand from '../components/Structure/Brand'
 import "../styles/css/ship.min.css";
 
 export default function LoginPage() {

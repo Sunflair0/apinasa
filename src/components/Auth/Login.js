@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { login } from "../redux/features/userSlice";import { connect } from "react-redux";
-import useAPI from "../hooks/useAPI";
-import TourGuideLight from "./TourGuideLight";
+import { login } from "../../redux/features/userSlice";import { connect } from "react-redux";
+import useAPI from "../../hooks/useAPI";
+import TourguideLight from "../Tourguide/TourguideLight";
 import { useNavigate } from "react-router-dom";
 
 
@@ -65,7 +65,7 @@ export const Login = ({ setUser }) => {
         <>
             <form className="tourguide sunburn">
                 <div className="stripe">
-                     <TourGuideLight />
+                     <TourguideLight />
                     <div className="namepass">                   
                     <input
                         style={{ width: "80%" }}

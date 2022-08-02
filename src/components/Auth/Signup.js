@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TourGuideLight from "./TourGuideLight";
+import TourguideLight from "../Tourguide/TourguideLight";
 import { Carousel } from "react-responsive-carousel";
-import useAPI from "../hooks/useAPI";
+import useAPI from "../../hooks/useAPI";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -13,7 +13,7 @@ const Signup = () => {
     <>
       <form className="tourguide sunburn">
         <div className="stripe">          
-          <div className="opposite"><TourGuideLight /></div>
+          <div className="opposite"><TourguideLight /></div>
           <div className="flip_inputs">
             <div className="namepass">
               <label htmlFor="username"></label>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel';
 
 
-export default function TourGuide() {
+export default function TourguideMessages() {
 	const gmessage = ("");
 
 

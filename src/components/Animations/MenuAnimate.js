@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Ship from './Ship';
-import Navbar from './Navbar';
+import Navbar from '../Navbar/Navbar';
 
 function MenuAnimate() {
   const [reversed, setReversed] = useState(true);

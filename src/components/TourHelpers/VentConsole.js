@@ -3,11 +3,6 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-
-// import BigCube from "./BigCube";
-
-
-
 export default function VentConsole(
 ) 
 {const [sidebar2, setSidebar2] = useState(true)

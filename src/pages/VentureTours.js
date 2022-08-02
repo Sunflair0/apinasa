@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useAPI from "../hooks/useAPI";
 import {tours} from "../hooks/useAPI";
-import { NavbarData } from "../components/NavbarData";
+import { NavbarData } from "../components/Navbar/NavbarData";
 import { Outlet } from "react-router-dom";
 
 export default function VentureTours() {

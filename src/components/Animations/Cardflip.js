@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Login from "./Login";
-import SignUp from "./SignUp";
+import Login from "../Auth/Login";
+import SignUp from "../Auth/Signup";
 import ReactCardFlip from 'react-card-flip';
 
 const Cardflip = () => {

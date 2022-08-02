@@ -1,7 +1,7 @@
 import React from 'react'
-import Dashboard from "./Dashboard"
+import Dashboard from "../components/Structure/Dashboard"
 import { Outlet } from "react-router-dom";
-import MenuAnimate from "./MenuAnimate";
+import MenuAnimate from "../components/Animations/MenuAnimate";
 
 const Layout = () => {
     return (

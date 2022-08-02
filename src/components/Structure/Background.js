@@ -7,7 +7,7 @@ export default function Background() {
 
     return (
         <>
-            <div className=" flex_backing rotatePlanets" >
+            <div className="flex_backing rotatePlanets" >
                 <div className="circle9" title="Uranus" style={{ overflow: 'hidden' }}>
                     <div className="circle10" title="Ariel"></div>
                     <div className="circle11" title="Titania"></div>

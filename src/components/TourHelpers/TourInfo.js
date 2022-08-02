@@ -1,4 +1,4 @@
-import { useState, useFetch, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 
@@ -13,7 +13,7 @@ const TourInfo = () => {
   const { tourId } = useParams();
 // useEffect(() => {
 //   async function call() {
-//     const res = await getventures(`http://localhost:3006/api/ventures/tour/all`);
+//     const res = await getventures(`http://localhost:3306/api/ventures/tour/all`);
 //     if (!res.success) {
 //       return console.error(res.error);
 //     }

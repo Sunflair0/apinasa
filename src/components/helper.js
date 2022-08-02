@@ -1,6 +1,6 @@
 import React from 'react'
 
-const helper = () => {
+const Helper = () => {
 	return (
 		<>
 			<div className="content_flexbox">
@@ -17,4 +17,4 @@ const helper = () => {
 	)
 }
 
-export default helper
+export default Helper
