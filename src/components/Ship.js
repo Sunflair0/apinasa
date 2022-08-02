@@ -1,4 +1,4 @@
-const Logo = () => {
+const Ship = () => {
   return (
     <>
       <div style={{      
@@ -14,4 +14,4 @@ const Logo = () => {
     </>
   )
 }
-export default (Logo);
+export default (Ship);

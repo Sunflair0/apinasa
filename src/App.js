@@ -3,9 +3,9 @@ import {
   Routes, Route
 } from "react-router-dom";
 import { ToggleProvider } from "./ToggleContext";
-import "./App.css";
-import "./tourguide.css";
-import "./planet.css";
+import "./styles/css/index.min.css";
+import "./styles/css/tourguide.min.css";
+import "./styles/css/planet.min.css";
 import About from "./pages/About";
 import Album from "./pages/Album";
 import APOD from "./pages/APOD";

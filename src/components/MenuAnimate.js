@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import Logo from './Logo';
+import Ship from './Ship';
 import Navbar from './Navbar';
 
 function MenuAnimate() {
@@ -63,10 +63,10 @@ function MenuAnimate() {
 
   return (
     <div className="app" ref={el}>
-      <div className='logo_flexbox'>
+      <div className='ship_flexbox'>
         <button className='ship'
           onClick={() => setReversed(!reversed)} >
-          <Logo />
+          <Ship />
         </button></div>
       <div className='menu_flexbox'>
         <Navbar />

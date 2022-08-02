@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavbarData } from "./NavbarData";
 import NavbarSubMenu from './NavbarSubMenu';
+import "../styles/css/navbar.min.css";
 
 
 const Navbar = () => {
@@ -17,8 +18,7 @@ const Navbar = () => {
                 <NavLink to={item.path} style={({ isActive }) => {
                   return { color: isActive ? '#fff000' : '#74a741' };
                 }} >
-                <div> <span>{item.title}</span></div> 
-                
+                <div> <span>{item.title}</span></div>               
                
                   
                 </NavLink>

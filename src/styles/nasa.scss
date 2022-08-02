@@ -1,0 +1,235 @@
+.presenter {
+    color: rgb(4, 89, 163);
+    font-weight: 500;
+}
+
+.flex3 {
+    display: flex;
+    margin: auto 50px 0 auto;
+}
+
+.album {
+    border: rgb(121, 133, 14) 4px solid;
+    height: 100vh;
+    width: 50rem;
+    opacity: .45;
+    background: linear-gradient(-135deg,
+            rgba(180, 180, 180, 0.2) 0,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.4) 100%),
+        linear-gradient(135deg,
+            rgba(180, 180, 180, 0.2) 0,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.4) 100%),
+        radial-gradient(ellipse closest-side,
+            #EBA149 0,
+            #E28234 38%,
+            #9B432D 65%,
+            #010b9e73 100%);
+}
+
+.iconStay {
+    display: block;
+}
+
+.icon_show {
+    transform: translateX(-40px)
+}
+
+
+/* APOD Console buttons and action shadows */
+
+.apodSee {
+    display: flex;
+    flex-direction: row;
+    flex-basis: calc(100% / 3 - 34px);
+    width: 75%;
+    object-fit: contain;
+    margin-top: -140px;
+    margin-right: 1.2em;
+  }
+  
+  .apodBox {
+    display: flex;
+    flex-direction: row;
+    flex-basis: calc(100% / 3 - 34px);
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 15px;
+  }
+  
+  .clear {
+    height: 130px;
+    width: 130px;
+    opacity: 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  
+  .explanation {
+    color: antiquewhite;
+    font-weight: 500;
+  }
+  
+  .apodButton {
+    height: 120px;
+    width: 100px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  /* picture boxes */
+  
+  /* width */
+  .stylebox::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .stylebox::-webkit-scrollbar-track {
+    background: #000000;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: inset 0 0 7px #ceda8d;
+  }
+  
+  /* Handle */
+  .stylebox::-webkit-scrollbar-thumb {
+    background: linear-gradient(10deg, rgb(185, 106, 15) 10%, rgb(148, 140, 32) 100%);
+    box-shadow: inset 0 0 5px 1px #929009;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  .stylebox::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(10deg, rgb(238, 198, 152) 30%, rgb(150, 146, 98) 100%);
+    box-shadow: inset 0 0 5px 1px #929009;
+  
+  }
+  
+  .stylebox {
+    display: flex;
+    flex-basis: calc(100% / 3 - 34px);
+    flex-wrap: nowrap;
+    margin: 15px;
+    border: solid 1px rgb(216, 86, 39);
+    background-color: #0e1224;
+    box-shadow: inset -2px 2px 5px #ceda8d,
+      inset 2px -1px 5px #d4dd9f;
+    min-width: 650px;
+    max-height: 60vh;
+    word-wrap: break-word;
+  
+    overflow: hidden;
+  }
+  
+  .infobox {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 5px;
+    object-fit: contain;
+    overflow: auto;
+    margin-top: 30px;
+  }
+  
+  .apodPhoto {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(100% / 3 - 34px);
+    display: block;
+    margin: auto;
+    max-height: 100%;
+  
+  }
+  
+  .apodPhoto img {
+  
+    width: 95%;
+    margin: 10px;
+    object-fit: contain;
+    max-height: 70vh;
+  }
+  
+  
+  .apodPhoto h1 {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  
+  
+  .urla {
+    margin-top: 0;
+    overflow: visible;
+  }
+  
+  .apodPhoto .date {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .apodPhoto .explanation {
+    color: #bbb;
+    margin: 15px;
+  }
+  
+  @media (max-width: 600px) {
+    .apodPhoto {
+      display: block;
+    }
+  
+    .infobox .apodPhoto img {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Album Like button */
+  
+  .like-btn {
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px rgb(25, 200, 212);
+    background-color: #101652;
+    color: #bff3bf;
+    width: 146px;
+    display: block;
+    margin: 10px auto 0px auto;
+    padding: 8px 18px 8px 18px;
+    box-shadow: inset 0px 1px 3px #388bf7;
+    text-shadow: -1px -1px 0 #000, 
+                  1px -1px 0 #000, 
+                  -1px 1px 0 #000, 
+                  1px 1px 0 #000;
+  }
+  
+  .like-btn :hover {
+    background-color: #04529b;
+  
+  }
+  
+  .like-btn::before:hover {
+    width: 100px;
+    height: 20px;
+    background-color: #0ff;
+  }
+  
+  /* header buttons */
+  
+  .red {
+    background-color: rgb(150, 131, 131);
+    transition: 3.3s ease all;
+    outline: 2px solid white;
+  
+  
+  }
+  
+  .red::hover {
+    background-color: rgb(128, 6, 6);
+    outline: 2ps solid red;
+    outline-offset: 11px;
+    transition: outlineOffset 250ms ease;
+  }

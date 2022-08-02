@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './Logo'
+import Ship from './Ship'
 
 const Loader = () => {
     return (
@@ -15,7 +15,7 @@ const Loader = () => {
             <div style={{
                 transform: 'rotate(32deg)',
                 position: 'absolute',
-            }}><Logo /></div>
+            }}><Ship /></div>
             <div className='loading_text'>Loading...
             </div>
         </div>

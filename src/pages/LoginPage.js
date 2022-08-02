@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react'
-import Logo from '../components/Logo'
+import Ship from '../components/Ship'
 import gsap from 'gsap'
 import Background from '../components/Background'
 import Cardflip from '../components/Cardflip'
 import Brand from '../components/Brand'
+import "../styles/css/ship.min.css";
 
 export default function LoginPage() {
     let tl = gsap.timeline();
@@ -36,7 +37,7 @@ export default function LoginPage() {
         <>
             <div className="flex_backing">
                 <div><Background /></div>
-                <div className='ship cursor_follow' ref={el => cursor = el}><Logo /></div>
+                <div className='ship cursor_follow' ref={el => cursor = el}><Ship /></div>
                 <div style={{transform: 'translateX(500px)'}}>
                 <Brand /></div>
                 <Cardflip />
