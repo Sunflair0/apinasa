@@ -6,8 +6,7 @@ export const NavbarSubMenu = ({ item }) => {
     const showSubnav = () => setSubnav(!subnav);
 
     return (
-        <>
-   
+        <>   
             <NavLink to={item.path} className={item.style}
                 data-icon={item.icon}
                 style={({ isActive }) => {
