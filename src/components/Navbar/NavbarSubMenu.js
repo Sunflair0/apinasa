@@ -22,7 +22,7 @@ const NavbarSubMenu = ({ item }) => {
             {subNav && item.subNav.map((item,index) => {
                 return (
                     <ddl to={item.path} key={index}>
-                        <div className='menu1items'>{item.title}</div>
+                        <div className={item.style}>{item.title}</div>
                     </ddl>
                 )
             })}
@@ -30,4 +30,4 @@ const NavbarSubMenu = ({ item }) => {
     )
 }
 
-export default NavbarSubMenu
+export default (NavbarSubMenu)

@@ -1,0 +1,17 @@
+.errorMessage {
+  text-shadow: none;
+  font-size: larger;
+  display: flex;
+  margin-top: -187%;
+  margin-left: -8%;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
+  height: 70px;
+  background: rgb(89, 102, 63);
+  border: rgb(199, 10, 10) 2px solid;
+  color: black;
+  outline: 2px solid rgb(199, 10, 10);
+  outline-offset: 5px;
+  z-index: 200;
+}/*# sourceMappingURL=errors.css.map */

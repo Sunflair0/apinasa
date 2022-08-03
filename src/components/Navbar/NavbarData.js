@@ -14,22 +14,22 @@ export const NavbarData = [
             {
                 title: 'SITE',
                 path: 'about/site/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'TOURS',
                 path: 'about/tours/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'EXTRAS',
                 path: 'about/extras/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'GAME',
                 path: 'about/game/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
         ]
     },
@@ -42,22 +42,22 @@ export const NavbarData = [
             {
                 title: 'APOD',
                 path: 'nasa/apod/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'EARTH',
                 path: 'nasa/earth/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'MER',
                 path: 'nasa/mer/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'ISS',
                 path: 'nasa/iss/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             }
         ]
     },
@@ -82,12 +82,12 @@ export const NavbarData = [
             {
                 title: 'READ',
                 path: 'testimonials/read/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             },
             {
                 title: 'WRITE',
                 path: 'testimonials/write/',
-                style: 'menu1items'
+                style: 'subMenu1items'
             }
         ]
     },
