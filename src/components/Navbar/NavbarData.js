@@ -1,3 +1,5 @@
+import * as RiIcons from 'react-icons/ri'
+
 export const NavbarData = [
     {
         title: 'HOME',
@@ -10,6 +12,8 @@ export const NavbarData = [
         path: 'about',
         icon: '🧾',
         style: 'menu1items',
+        iconClose: <RiIcons.RiArrowDownSFill />,
+        iconOpen: <RiIcons.RiArrowUpSFill />,
         subNav: [
             {
                 title: 'SITE',
@@ -29,7 +33,8 @@ export const NavbarData = [
             {
                 title: 'GAME',
                 path: 'about/game/',
-                style: 'subMenu1items'
+                style: 'subMenu1items',
+
             },
         ]
     },
@@ -38,6 +43,8 @@ export const NavbarData = [
         path: 'nasa',
         icon: '🔭',
         style: 'menu1items',
+        iconClose: <RiIcons.RiArrowDownSFill />,
+        iconOpen: <RiIcons.RiArrowUpSFill />,
         subNav: [
             {
                 title: 'APOD',
@@ -78,6 +85,8 @@ export const NavbarData = [
         path: 'testimonials',
         icon: '💬',
         style: 'menu1items',
+        iconClose: <RiIcons.RiArrowDownSFill />,
+        iconOpen: <RiIcons.RiArrowUpSFill />,
         subNav: [
             {
                 title: 'READ',
@@ -87,7 +96,7 @@ export const NavbarData = [
             {
                 title: 'WRITE',
                 path: 'testimonials/write/',
-                style: 'subMenu1items'
+                style: 'subMenu1items',               
             }
         ]
     },

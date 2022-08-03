@@ -3,7 +3,8 @@ li span {
 }
 
 .subMenu1items {
-  height: 40px;
+display: flex;
+  height: 140px;
   width: 35px;
   border: red solid 2px;
   background: red;

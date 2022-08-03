@@ -1,33 +1,36 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
-const NavbarSubMenu = ({ item }) => {
-    const [subNav, setSubnav] = useState(false)
-
-    const showSubnav = () => setSubnav(!subNav)
+export const NavbarSubMenu = ({ item }) => {
+    const [subnav, setSubnav] = useState(false);
+    const showSubnav = () => setSubnav(!subnav);
 
     return (
         <>
-            <NavLink 
+            <NavLink to={item.path}  className={item.style}
+                  data-icon={item.icon}
+                style={({ isActive }) => {
+                    return { color: isActive ? '#fff000' : '#74a741' };
+                }}
                 onCLick={item.subNav && showSubnav}>
-                <div>{item.title}</div>
+                <div> <span>{item.title}</span></div>
+
                 <div>
-                    {item.subNav && subNav
-                        ? item.iconOpened
+                    {item.subNav && subnav
+                        ? item.iconOpen
                         : item.subNav
-                            ? item.iconClosed
+                            ? item.iconClose
                             : null}
-                </div>                
+                </div>
             </NavLink>
-            {subNav && item.subNav.map((item,index) => {
+            {subnav && item.subNav.map((item, index) => {
                 return (
-                    <ddl to={item.path} key={index}>
-                        <div className={item.style}>{item.title}</div>
-                    </ddl>
+                    <Link to={item.path} key={index}>
+                        <div className={item.style}><span>{item.title}</span></div>
+                    </Link>
                 )
             })}
         </>
     )
 }
 
-export default (NavbarSubMenu)
