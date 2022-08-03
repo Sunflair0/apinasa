@@ -1,8 +1,10 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+
+
 /* // ///// TourGuide  */
 .stripe {
-  background-color: rgba(49, 71, 85, 0.5137254902);
+  background-color: #31475583;
   padding: 0%;
   height: 128px;
   width: 310px;
@@ -16,6 +18,7 @@
 }
 
 /* login */
+
 .card {
   position: fixed;
   bottom: 20%;
@@ -25,8 +28,7 @@
   border-radius: 10px;
   background: rgba(2, 40, 60, 0);
   transition: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .back {
@@ -36,22 +38,25 @@
 .tourguide {
   position: relative;
   cursor: default;
-  border: solid 0.5px rgba(70, 201, 201, 0.25);
-  border-bottom: solid 0.5px rgba(15, 235, 235, 0.25);
+  border: solid .5px rgba(70, 201, 201, 0.25);
+  border-bottom: solid .5px rgba(15, 235, 235, 0.25);
   max-width: 310px;
   height: 500px;
   border-radius: 10px;
   font-weight: 300;
   align-content: center;
   justify-content: center;
-  -webkit-backdrop-filter: blur(7px);
-          backdrop-filter: blur(7px);
-  box-shadow: 4px 4px 2px 1px rgba(72, 119, 111, 0.219), 3px 3px 1px 1px rgba(5, 41, 29, 0.205), inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3), inset 5px 4px 2px rgba(17, 43, 43, 0.3);
+  backdrop-filter: blur(7px);
+  box-shadow: 4px 4px 2px 1px rgba(72, 119, 111, 0.219),
+    3px 3px 1px 1px rgba(5, 41, 29, 0.205),
+    inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3),
+    inset 5px 4px 2px rgba(17, 43, 43, 0.3);
   z-index: 90;
 }
-
 .sunburn {
-  background-image: linear-gradient(340deg, rgba(165, 112, 14, 0.2), rgba(40, 54, 61, 0.014) 15%);
+  background-image: linear-gradient(340deg, 
+  rgba(165, 112, 14, 0.2), 
+  rgba(40, 54, 61, 0.014) 15%);
 }
 
 .tourguide::after {
@@ -126,7 +131,8 @@
   justify-content: flex-start;
   color: #5fd482;
   border: 1px groove rgba(255, 255, 255, 0.5);
-  box-shadow: 4px 4px 2px hsla(180deg, 8%, 26%, 0.6), inset 4px 3px 2px hsla(180deg, 5%, 18%, 0.975);
+  box-shadow: 4px 4px 2px hsla(180, 8%, 26%, 0.6),
+    inset 4px 3px 2px hsla(180, 5%, 18%, 0.975);
   z-index: 11;
 }
 
@@ -143,13 +149,14 @@
   color: #5fd482;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px groove rgba(255, 255, 255, 0.5);
-  box-shadow: 3px 2px 2px hsla(180deg, 8%, 26%, 0.6), inset 3px 2px 2px hsla(180deg, 5%, 18%, 0.975);
+  box-shadow: 3px 2px 2px hsla(180, 8%, 26%, 0.6),
+    inset 3px 2px 2px hsla(180, 5%, 18%, 0.975);
   z-index: 11;
 }
 
 .sign {
   text-decoration: none;
-  margin-left: -3.45em;
+  margin-left: -3.45em
 }
 
 .outerS {
@@ -166,10 +173,11 @@
   width: 220px;
   height: 25px;
   padding-left: 15px;
-  background-color: rgba(172, 228, 248, 0.7333333333);
+  background-color: #ace4f8bb;
   border-radius: 40px 4px;
   border-color: rgb(236, 237, 241);
-  box-shadow: 3px 4px 1px hsla(180deg, 12%, 30%, 0.973), inset 3px 3px 1px hsla(180deg, 16%, 36%, 0.973);
+  box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
+    inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 }
 
 .blue:hover {
@@ -181,7 +189,7 @@
 }
 
 .glassForm {
-  background-color: hsla(226deg, 66%, 11%, 0.5);
+  background-color: hsla(226, 66%, 11%, 0.5);
   display: flex;
   position: relative;
   top: 300px;
@@ -195,10 +203,11 @@
   font-weight: 300;
   align-content: center;
   justify-content: center;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   border: 3px solid rgb(53, 65, 73);
-  box-shadow: 3px 3px 5px 1px rgba(196, 224, 223, 0.5411764706), 4px 4px 2px hsla(180deg, 52%, 46%, 0.973), inset 4px 5px 4px hsl(180deg, 5%, 18%);
+  box-shadow: 3px 3px 5px 1px #c4e0df8a,
+    4px 4px 2px hsla(180, 52%, 46%, 0.973),
+    inset 4px 5px 4px hsl(180, 5%, 18%);
   z-index: 100;
 }
 
@@ -210,24 +219,28 @@
   width: 200px;
   height: 25px;
   padding-left: 15px;
-  background-color: hsla(0deg, 0%, 0%, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
-  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4745098039);
+  box-shadow: 0px 0px 0px 1px #ffffff79;
   border-bottom: rgb(236, 237, 241);
-  box-shadow: 3px 4px 1px hsla(180deg, 12%, 30%, 0.973), inset 3px 3px 1px hsla(180deg, 16%, 36%, 0.973);
+  box-shadow: 3px 4px 1px hsla(180, 12%, 30%, 0.973),
+    inset 3px 3px 1px hsla(180, 16%, 36%, 0.973);
 }
 
 /* ////Contact Us */
+
 .textForm {
   margin-top: -250px;
   margin-left: 270px;
-  background-color: hsla(240deg, 43%, 1%, 0.5);
+  background-color: hsla(240, 43%, 1%, 0.5);
   border-radius: 10px;
   color: antiquewhite;
   padding: 15px;
   font: 17px;
   border: 1px solid rgb(53, 65, 73);
-  box-shadow: 1px 1px 2px 1px rgba(100, 87, 87, 0.8784313725), 1px 1px 1px 1px hsla(180deg, 52%, 46%, 0.973), inset 1px 3px 2px 1px hsl(180deg, 5%, 18%);
+  box-shadow: 1px 1px 2px 1px #645757e0,
+    1px 1px 1px 1px hsla(180, 52%, 46%, 0.973),
+    inset 1px 3px 2px 1px hsl(180, 5%, 18%);
 }
 
 .textForm::active {
@@ -268,23 +281,17 @@
 }
 
 .bulbOff {
-  -webkit-animation: mymove 2.5s infinite;
-          animation: mymove 2.5s infinite;
+  animation: mymove 2.5s infinite;
   background-color: rgb(51, 22, 22);
   border: white dotted 1px;
 }
 
-@-webkit-keyframes mymove {
-  50% {
+@keyframes mymove {
+    50% {
     box-shadow: 0px -10px 20px rgba(41, 172, 150, 0.808);
   }
 }
 
-@keyframes mymove {
-  50% {
-    box-shadow: 0px -10px 20px rgba(41, 172, 150, 0.808);
-  }
-}
 .bulbOn {
   background: radial-gradient(circle, black 35%, rgb(141, 161, 165));
   border: rgb(63, 182, 156) dotted 1px;
@@ -296,19 +303,22 @@
   margin-bottom: 2.5em;
   filter: drop-shadow(0px 0px 2px #39ffde);
   filter: blur(1px);
-  box-shadow: 0 0 7px rgba(0, 204, 255, 0.75), 0 -10px 15px rgba(115, 14, 231, 0.35);
-  background-color: rgba(71, 255, 230, 0.631372549);
+  box-shadow:
+    0 0 7px rgba(0, 204, 255, 0.75),
+    0 -10px 15px rgba(115, 14, 231, 0.35);
+  background-color: #47ffe6a1;
   width: 15px;
   height: 30vh;
   position: absolute;
-  transform: rotate3d(1, 0, 0, -40deg) translateY(-14.7vh);
+  transform: rotate3d(1, 0, 0, -40deg)translateY(-14.7vh);
+ 
 }
 
 .bulbOn::before {
   content: "💡";
   height: 15px;
   width: 0px;
-  transform: translate(-0.8px, -2px);
+  transform: translate(-.8px, -2px)
 }
 
 .intraNet {
@@ -399,4 +409,4 @@
   width: 30px;
   border: white dotted 1px;
   border-radius: 5px;
-}/*# sourceMappingURL=tourguide.css.map */
+}

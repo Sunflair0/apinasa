@@ -3,7 +3,7 @@ import {
   Routes, Route
 } from "react-router-dom";
 import { ToggleProvider } from "./ToggleContext";
-import "./styles/css/index.min.css";
+import "./index.css";
 import About from "./pages/About/About";
 import Album from "./pages/Album";
 import APOD from "./pages/NASA/APOD/APOD";

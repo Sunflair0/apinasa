@@ -1,18 +1,17 @@
-@import "./dashboard.scss";
-@import "./errors.scss";
-@import "./loading.scss";
-@import "./misc.scss";
-@import "./nasa.scss";
-@import "./navbar.scss";
-@import "./planet.scss";
-@import "./ship.scss";
-@import "./tour_menu.scss";
-@import "./tourguide.scss";
+@import "./styles/dashboard.css";
+@import "./styles/errors.css";
+@import "./styles/loading.css";
+@import "./styles/misc.css";
+@import "./styles/nasa.css";
+@import "./styles/navbar.css";
+@import "./styles/planet.css";
+@import "./styles/ship.css";
+@import "./styles/tour_menu.css";
+@import "./styles/tourguide.css";
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 
 
 body {
-  // overflow: hidden;
   background-color: black;
   background-image:
     radial-gradient(rgb(160, 29, 29), rgba(241, 10, 10, 0.411) 2px, transparent 5px),

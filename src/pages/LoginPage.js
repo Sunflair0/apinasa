@@ -4,7 +4,6 @@ import gsap from 'gsap'
 import Background from '../components/Structure/Background'
 import Cardflip from '../components/Animations/Cardflip'
 import Brand from '../components/Structure/Brand'
-import "../styles/css/ship.min.css";
 
 export default function LoginPage() {
     let tl = gsap.timeline();
