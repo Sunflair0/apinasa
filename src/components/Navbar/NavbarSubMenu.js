@@ -7,26 +7,29 @@ export const NavbarSubMenu = ({ item }) => {
 
     return (
         <>
-            <NavLink to={item.path}  className={item.style}
-                  data-icon={item.icon}
+   
+            <NavLink to={item.path} className={item.style}
+                data-icon={item.icon}
                 style={({ isActive }) => {
                     return { color: isActive ? '#fff000' : '#74a741' };
                 }}
                 onCLick={item.subNav && showSubnav}>
-                <div> <span>{item.title}</span></div>
-
                 <div>
-                    {item.subNav && subnav
-                        ? item.iconOpen
-                        : item.subNav
-                            ? item.iconClose
-                            : null}
+                    <span>{item.title}
+
+                        {item.subNav && subnav
+                            ? item.iconOpen
+                            : item.subNav
+                                ? item.iconClose
+                                : null}
+                    </span>
                 </div>
             </NavLink>
+
             {subnav && item.subNav.map((item, index) => {
                 return (
                     <Link to={item.path} key={index}>
-                        <div className={item.style}><span>{item.title}</span></div>
+                        <div ><span>{item.title}</span></div>
                     </Link>
                 )
             })}

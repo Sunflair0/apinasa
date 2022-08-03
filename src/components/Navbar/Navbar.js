@@ -6,15 +6,15 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <ul>
+        
           {NavbarData.map((item, index) => {
             return (
-              <li>
+              
                 <NavbarSubMenu item={item} key={index} />
-              </li>
+             
             )
           })}
-        </ul>
+       
       </nav>
     </>
   );
