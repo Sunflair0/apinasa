@@ -37,7 +37,7 @@ import TourAddOns from "./components/TourHelpers/TourAddOns";
 import TravelNow from "./pages/MyPage/TravelNow";
 import VentureTours from "./pages/VentureTours";
 import Admin from "./pages/Admin";
-import Helper from "./components/Helper";
+import Junk from "./components/Junk";
 
 function App() {
 
@@ -95,7 +95,7 @@ function App() {
                         <Route path="contactus" element={<ContactUs />}>
                           <Route path="form" element={<Form />} />
                         </Route>
-                        <Route path="helper" element={<Helper />} />
+                        <Route path="junk" element={<Junk />} />
                       </Route>
 
                       {/* <Route element={<allowedRoles={[2]} />} > */}

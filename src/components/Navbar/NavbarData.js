@@ -112,8 +112,8 @@ export const NavbarData = [
         style: 'menu1items',
     },
     {
-        title: 'Helper',
-        path: 'Helper',
+        title: 'JUNK',
+        path: 'junk',
         icon: ':)',
         style: 'menu1items',
     },
