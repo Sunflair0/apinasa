@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import Album from '../../Album';
-import { add, remove } from "../../../redux/features/albumSlice";
+import { add, remove, entry, isLiked } from "../../../redux/features/albumSlice";
+
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -57,12 +57,19 @@ const ApodGimme5 = ({
                 />
               )}
 
-              {/* <Album
-                removeEntry={removeEntry}
-                addEntry={addEntry}
-                isLiked={likedIds.includes(item.id)}
-                key={item.id}
-                id={item.id} /> */}
+           
+          {isLiked && (
+        <button className="like-btn" onClick={() => removeEntry(entry.id)}>
+          Delete from Album
+        </button>
+      )}
+      {!isLiked && (
+        <button
+          button className="like-btn"
+          onClick={() => addEntry( entry )}>
+          Add to Album
+        </button>
+)}
 
               <h1>{item.title}</h1>
               <p className="date">{item.date}</p>

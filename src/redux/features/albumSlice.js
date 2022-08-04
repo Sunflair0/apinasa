@@ -11,6 +11,6 @@ export const albumSlice = createSlice({
   },
 });
 
-export const { add, remove, clear } = albumSlice.actions;
+export const { add, remove, clear, entry, isLiked } = albumSlice.actions;
 
 export default albumSlice.reducer;

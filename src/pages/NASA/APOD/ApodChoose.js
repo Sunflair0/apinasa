@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
-import Album from '../../Album';
-import { add, remove } from "../../../redux/features/albumSlice";
+import { add, remove, entry, isLiked } from "../../../redux/features/albumSlice";
+
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,9 +16,6 @@ const ApodChoose = ({
   const [chooseData, setChooseData] = useState(new Date());
   const [date, setDate] = useState(new Date(2007,2, 25));
   const handleChange = date => {setDate(date)};
-  const likedIds = useMemo(() => {
-    return album.map((val) => val.id);
-  }, [album]);
 
   useEffect(() => {
     fetchChoose();
@@ -87,7 +84,19 @@ preventOverflow: {
                 allowFullScreen
               />
             )}
-   
+
+          {isLiked && (
+        <button className="like-btn" onClick={() => removeEntry(entry.id)}>
+          Delete from Album
+        </button>
+      )}
+      {!isLiked && (
+        <button
+          button className="like-btn"
+          onClick={() => addEntry( entry )}>
+          Add to Album
+        </button>
+)}   
 
             <h1>{chooseData.title}</h1>
             <p className="date">{chooseData.date}</p>

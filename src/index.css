@@ -38,10 +38,18 @@ body {
   }
 
   to {
-    background-position: -8700px -5px;
+    background-position: -8700px -50px;
   }
 }
 
+.Graham_Holtshausen {
+opacity: .1;
+}
+
+.gal {
+background-image: "url(../../assets/streaks.png)";
+
+}
 
 /* width */
 ::-webkit-scrollbar {

@@ -1,20 +1,17 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
-import { add, remove } from "../../../redux/features/albumSlice";
-import Album from '../../Album';
+import { add, remove, entry } from "../../../redux/features/albumSlice";
+
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const ApodToday = ({
   addEntry,
   removeEntry,
-  album
+  isLiked
 
 }) => {
   const [apodData, setApodData] = useState(null);
-  const likedIds = useMemo(() => {
-    return album.map((val) => val.id);
-  }, [album]);
 
   useEffect(() => {
     fetchApod();
@@ -55,12 +52,19 @@ const ApodToday = ({
                 allowFullScreen
               />
             )}
-            {/* <Album
-              removeEntry={removeEntry}
-              addEntry={addEntry}
-              isLiked={likedIds.includes(apodData.id)}
-              key={apodData.id}
-              id={apodData.id} /> */}
+
+          {isLiked && (
+        <button className="like-btn" onClick={() => removeEntry(entry.id)}>
+          Delete from Album
+        </button>
+      )}
+      {!isLiked && (
+        <button
+          button className="like-btn"
+          onClick={() => addEntry( entry )}>
+          Add to Album
+        </button>
+)}
 
             <h1>{apodData.title}</h1>
             <p className="date">{apodData.date}</p>

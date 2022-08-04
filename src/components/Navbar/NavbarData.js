@@ -9,7 +9,7 @@ export const NavbarData = [
     },
     {
         title: 'ABOUT',
-        path: '',
+        path: 'about/',
         icon: '🧾',
         style: 'menu1items',
         iconClose: <RiIcons.RiArrowDownSFill />,
@@ -17,7 +17,7 @@ export const NavbarData = [
         subNav: [
             {
                 title: 'ABOUT',
-                path: 'about/about/',
+                path: 'about/',
                 style: 'subMenu1items'
             },
             {
