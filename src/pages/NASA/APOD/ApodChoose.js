@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-
-import AlbumArray from "../../../components/AlbumArray";
+import Album from '../../Album';
 import { add, remove } from "../../../redux/features/albumSlice";
 
 import DatePicker from 'react-datepicker';
@@ -38,7 +37,7 @@ const ApodChoose = ({
   if (!chooseData) return <div />;
 
   return (
-    <>
+    <div className="content_flexbox">
       <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
         1995. If you like it, add it to your Album.</h3>
 
@@ -88,12 +87,7 @@ preventOverflow: {
                 allowFullScreen
               />
             )}
-            <AlbumArray
-              removeEntry={removeEntry}
-              addEntry={addEntry}
-              isLiked={likedIds.includes(chooseData.id)}
-              key={chooseData.id}
-              id={chooseData.id} />
+   
 
             <h1>{chooseData.title}</h1>
             <p className="date">{chooseData.date}</p>
@@ -106,7 +100,7 @@ preventOverflow: {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

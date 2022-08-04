@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import AlbumArray from "../../../components/AlbumArray";
+import Album from '../../Album';
 import { add, remove } from "../../../redux/features/albumSlice";
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
-
 
 const ApodGimme5 = ({
   addEntry,
@@ -33,14 +32,13 @@ const ApodGimme5 = ({
   if (!gimme5Data) return <div />;
 
   return (
-    <>
+    <div className="content_flexbox">
       <h3>Bam! Here you are, five stunning pictures from NASA's library from past APODs. See something you like? Click the Add button and keep it for yourself.</h3>
 
       <div className="flex3">
         <div className="apodPhoto">
           {gimme5Data.map(item => (
             <div className="infobox stylebox">
-
               {item.media_type === "image" ? (
              <img onClick={() =>window.open(item.url,"apodblank")}
                   src={item.url}
@@ -59,12 +57,12 @@ const ApodGimme5 = ({
                 />
               )}
 
-              <AlbumArray
+              {/* <Album
                 removeEntry={removeEntry}
                 addEntry={addEntry}
                 isLiked={likedIds.includes(item.id)}
                 key={item.id}
-                id={item.id} />
+                id={item.id} /> */}
 
               <h1>{item.title}</h1>
               <p className="date">{item.date}</p>
@@ -75,7 +73,7 @@ const ApodGimme5 = ({
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

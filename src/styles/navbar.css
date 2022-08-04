@@ -3,17 +3,22 @@ li span {
 }
 
 .subMenu1items {
-display: flex;
-  height: 140px;
-  width: 35px;
+  display: flex;
+  height: 35px;
+  width: 100px;
+  color: #ffffff;
   border: red solid 2px;
   background: red;
+  padding-left: 3rem;
+  font-size: 18px;
+  align-items: center;
+
 }
 
 .menu1items {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: space-between;
   justify-content: center;
   position: relative;
   text-decoration: none;
@@ -86,9 +91,9 @@ display: flex;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to bottom, rgb(62, 184, 229) 0%, rgb(44, 160, 202) 100%);
-  box-shadow: inset 0px 1px 0px #2ab7ec, 
-  0px 2px 0px 0px #156785, 
-  0px 5px 3px #999;
+  box-shadow: inset 0px 1px 0px #2ab7ec,
+    0px 2px 0px 0px #156785,
+    0px 5px 3px #999;
 }
 
 .menu1items:hover {
@@ -97,7 +102,6 @@ display: flex;
     1px 3px 1px 2px #19f6e8,
     0px 5px 0px 0px #19f6e8,
     4px 8px 20px 2px #19f6e8;
-  font-size: 14px;
   color: #19f6e8;
   background-image:
     radial-gradient(ellipse at 105% 6%,
@@ -118,7 +122,7 @@ display: flex;
 }
 
 .menu1items:hover a:link,
-.menu1items:hover  {
+.menu1items:hover {
   color: #19f6e8;
   text-decoration: none;
 }
@@ -144,12 +148,10 @@ display: flex;
 /* subMenu styles */
 .about,
 .nasa,
-.salutes
- {
+.salutes {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
-

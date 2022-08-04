@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { connect } from "react-redux";
-import AlbumArray from "../../../components/AlbumArray";
 import { add, remove } from "../../../redux/features/albumSlice";
 import Album from '../../Album';
 
@@ -33,7 +32,7 @@ const ApodToday = ({
   if (!apodData) return <div />;
 
   return (
-    <>
+    <div className="content_flexbox">
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like. Click on the picture to open in another tab in your browser.</h3>
 
       <div className="flex3">
@@ -56,12 +55,12 @@ const ApodToday = ({
                 allowFullScreen
               />
             )}
-            <Album
+            {/* <Album
               removeEntry={removeEntry}
               addEntry={addEntry}
               isLiked={likedIds.includes(apodData.id)}
               key={apodData.id}
-              id={apodData.id} />
+              id={apodData.id} /> */}
 
             <h1>{apodData.title}</h1>
             <p className="date">{apodData.date}</p>
@@ -71,7 +70,7 @@ const ApodToday = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -56,18 +56,19 @@ function App() {
                       <Route path="home" element={<Home />} />
 
                       <Route path="about" element={<About />} />
+                      <Route path="nasa" element={<NASA />} />
+                      <Route path="nasa/apod" element={<APOD />}>
 
-                      <Route path="apod" element={<APOD />}>
-                        <Route path="nasa" element={<NASA />} />
 
-                        <Route path="apod/apodtoday" element={<div><ApodToday /></div>} />
-                        <Route path="apod/apodchoose" element={<div><ApodChoose /></div>} />
-                        <Route path="apod/apodrange" element={<div><ApodRange /></div>} />
-                        <Route path="apod/apodgimme5" element={<div><ApodGimme5 /></div>} />
+                        
+                        <Route path="apodtoday" element={<div><ApodToday /></div>} />
+                        <Route path="apodchoose" element={<div><ApodChoose /></div>} />
+                        <Route path="apodrange" element={<div><ApodRange /></div>} />
+                        <Route path="apodgimme5" element={<div><ApodGimme5 /></div>} />
                       </Route>
-                      <Route path="mer" element={<MER />} />
-                      <Route path="earth" element={<EARTH />} />
-                      <Route path="iss" element={<ISS />} />
+                      <Route path="nasa/mer" element={<MER />} />
+                      <Route path="nasa/earth" element={<EARTH />} />
+                      <Route path="nasa/iss" element={<ISS />} />
 
                       <Route path="mypage" element={<MyPage />}>
                         <Route path="album" element={<Album />} />

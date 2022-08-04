@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { connect } from "react-redux";
-import AlbumArray from "../../../components/AlbumArray";
+import Album from '../../Album';
 import { add, remove } from "../../../redux/features/albumSlice";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -51,7 +51,7 @@ console.log(data)
     <DatePicker selected={date} onChange={date => setDate(date)} />
 
     return (
-        <>
+        <div className="content_flexbox">
             <h3>Want to see a range of days for Picture of the Day? We start you off with three, but feel free to choose your own range and add to your album at will.</h3>
 <div>Choose a start date</div>
             <div style={{ textShadow: "-1px -1px rgb(255, 255, 255)" }}>
@@ -92,7 +92,7 @@ console.log(data)
                 /></div>
 
                 
-            <div className="flex3">
+            <div className="">
                 <div className="apodPhoto">
                     {rangeData.map(item => (
                         <div className=" infobox stylebox">
@@ -114,12 +114,12 @@ console.log(data)
                                 />
                             )}
 
-                            <AlbumArray
+                            {/* <Album
                                 removeEntry={removeEntry}
                                 addEntry={addEntry}
                                 isLiked={likedIds.includes(item.id)}
                                 key={item.id}
-                                id={item.id} />
+                                id={item.id} /> */}
 
                             <h1>{item.title}</h1>
                             <p className="date">{item.date}</p>
@@ -130,7 +130,7 @@ console.log(data)
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

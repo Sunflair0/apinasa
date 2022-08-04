@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Outlet } from "react-router-dom";
 import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
@@ -16,42 +16,42 @@ export default function Apod() {
 
   return (
     <>
-     <div className="content_flexbox">
-      <div>hello APOD       
+      <div className="content_flexbox">
+        <div>
           <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
           </div>
           <div className=" apodBox apodSee">
-            <Link className='apodButton'
-              to="nasa/apod/apodtoday"
+            <NavLink className='apodButton'
+              to="apodtoday"
               style={{
-                backgroundImage: "url(./assets/today.png)"
+                backgroundImage: "url(../../assets/today.png)"
               }}
               onClick={() => setShowToday(showToday)}>
-            </Link>
+            </NavLink>
 
-            <Link className='apodButton'
-              to="nasa/apod/apodchoose"
+            <NavLink className='apodButton'
+              to="apodchoose"
               style={{
-                backgroundImage: "url(./assets/choose.png)"
+                backgroundImage: "url(../../assets/choose.png)"
               }}
-              onClick={() => setShowChoose(showChoose)}>hello Choose
-            </Link>
+              onClick={() => setShowChoose(showChoose)}>
+            </NavLink>
 
-            <Link className='apodButton'
-              to="nasa/apod/apodgimme5"
+            <NavLink className='apodButton'
+              to="apodgimme5"
               style={{
-                backgroundImage: "url(./assets/gimme.png)"
+                backgroundImage: "url(../../assets/gimme.png)"
               }}
-              onClick={() => setShowGimme5(showGimme5)}>Hello Gimme
-            </Link>
+              onClick={() => setShowGimme5(showGimme5)}>
+            </NavLink>
 
-            <Link className='apodButton'
-              to="nasa/apod/apodrange"
+            <NavLink className='apodButton'
+              to="apodrange"
               style={{
-                backgroundImage: "url(./assets/range.png)"
+                backgroundImage: "url(../../assets/range.png)"
               }}
-              onClick={() => setShowRange(showRange)}>Hello Range
-            </Link>
+              onClick={() => setShowRange(showRange)}>
+            </NavLink>
           </div >
         </div>
 
@@ -61,8 +61,9 @@ export default function Apod() {
           <p>{selection === "gimme" && <ApodGimme5 />}</p>
           <p>{selection === "range" && <ApodRange />}</p>
         </div>
+        <Outlet />
       </div>
-      <Outlet />
+
     </>
   );
 }

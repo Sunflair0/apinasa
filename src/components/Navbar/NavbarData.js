@@ -9,12 +9,17 @@ export const NavbarData = [
     },
     {
         title: 'ABOUT',
-        path: 'about',
+        path: '',
         icon: '🧾',
         style: 'menu1items',
         iconClose: <RiIcons.RiArrowDownSFill />,
-        iconOpen: <RiIcons.RiArrowUpSFill />,
+        iconOpen: 'arrow_rotate',
         subNav: [
+            {
+                title: 'ABOUT',
+                path: 'about/about/',
+                style: 'subMenu1items'
+            },
             {
                 title: 'SITE',
                 path: 'about/site/',
@@ -26,8 +31,8 @@ export const NavbarData = [
                 style: 'subMenu1items'
             },
             {
-                title: 'EXTRAS',
-                path: 'about/extras/',
+                title: 'ADD ONs',
+                path: 'about/addons/',
                 style: 'subMenu1items'
             },
             {
@@ -40,11 +45,11 @@ export const NavbarData = [
     },
     {
         title: 'NASA',
-        path: 'nasa',
+        path: '/nasa',
         icon: '🔭',
         style: 'menu1items',
         iconClose: <RiIcons.RiArrowDownSFill />,
-        iconOpen: <RiIcons.RiArrowUpSFill />,
+        iconOpen: 'arrow_rotate',
         subNav: [
             {
                 title: 'APOD',
@@ -86,7 +91,7 @@ export const NavbarData = [
         icon: '💬',
         style: 'menu1items',
         iconClose: <RiIcons.RiArrowDownSFill />,
-        iconOpen: <RiIcons.RiArrowUpSFill />,
+        iconOpen: 'arrow_rotate',
         subNav: [
             {
                 title: 'READ',
