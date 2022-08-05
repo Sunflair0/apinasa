@@ -199,10 +199,10 @@
     height: 640px;
     width: 640px;
     border-radius: 50%;
-    background-image: radial-gradient(circle, rgb(196, 222, 238) 0%, rgb(162, 182, 194) 31%, transparent 31%,
-        transparent 50%, rgba(162, 182, 194, 0.3) 52%, transparent 54%,
-        transparent 61%, rgba(117, 132, 141, 0.75) 62%, transparent 63%,
-        transparent 50%, rgba(196, 222, 238, 0.6) 65%, transparent 100%);
+    background-image: radial-gradient(circle, rgb(192, 231, 236) 0%, rgb(147, 184, 192) 31%, transparent 31%,
+        transparent 50%, rgba(200, 240, 242, 0.3) 52%, transparent 54%,
+        transparent 61%, rgba(200, 240, 242, 0.55) 62%, transparent 63%,
+        transparent 50%, rgba(147, 184, 192, 0.9) 65%, transparent 100%);
     animation: uranus 315s linear infinite;
   }
   

@@ -87,7 +87,7 @@ export const Login = ({ setUser }) => {
                 </div>
                 <div className="outerS">
                     <div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
-                    <button style={{ transform: "translate(6px, -10px)" }}
+                    <button style={{ transform: "translate(3px, -10px)" }}
                         className="btnGroup" onClick={() => login()}>
                         GO
                     </button>

@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 
-
-
 /* // ///// TourGuide  */
 .stripe {
   background-color: #31475583;
@@ -20,22 +18,50 @@
 /* login */
 
 .card {
-  position: fixed;
-  bottom: 20%;
-  left: 40%;
+  position: relative;
   width: 310px;
   height: 500px;
   border-radius: 10px;
-  background: rgba(2, 40, 60, 0);
-  transition: 1s;
-  backface-visibility: hidden;
+  perspective: 1000px;
+  /* transform-style: preserve-3d; */
 }
 
-.back {
+.card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+/* backface-visibility: hidden; */
+  transform-style: preserve-3d;
+}
+
+ /* .card .face.login {
+transform-style: preserve-3d;
+backface-visibility: hidden;
+}  */
+
+.signup {
   transform: rotateY(180deg);
+/* transform-style: preserve-3d; */
+/* backface-visibility: hidden; */
+}
+
+.flip_Off {
+  transform: rotateY(180deg);
+  transition: 1s;
+}
+
+.flip_On {
+  transform: rotateY(360deg);
+  transition: 1s;
+  
 }
 
 .tourguide {
+   transform-style: preserve-3d;
+  backface-visibility: hidden; 
   position: relative;
   cursor: default;
   border: solid .5px rgba(70, 201, 201, 0.25);
@@ -53,10 +79,11 @@
     inset 5px 4px 2px rgba(17, 43, 43, 0.3);
   z-index: 90;
 }
+
 .sunburn {
-  background-image: linear-gradient(340deg, 
-  rgba(165, 112, 14, 0.2), 
-  rgba(40, 54, 61, 0.014) 15%);
+  background-image: linear-gradient(340deg,
+      rgba(165, 112, 14, 0.2),
+      rgba(40, 54, 61, 0.014) 15%);
 }
 
 .tourguide::after {
@@ -262,7 +289,7 @@
 }
 
 .opposite {
-  transform: translate(-272px, 2px);
+  transform: translate(-271px, -1px);
 }
 
 .bulbOff,
@@ -287,7 +314,7 @@
 }
 
 @keyframes mymove {
-    50% {
+  50% {
     box-shadow: 0px -10px 20px rgba(41, 172, 150, 0.808);
   }
 }
@@ -311,7 +338,6 @@
   height: 30vh;
   position: absolute;
   transform: rotate3d(1, 0, 0, -40deg)translateY(-14.7vh);
- 
 }
 
 .bulbOn::before {

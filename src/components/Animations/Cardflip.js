@@ -1,27 +1,31 @@
-import React, { useState } from "react";
+import { useToggleContext } from "../../hooks/useToggleContext";
 import Login from "../Auth/Login";
 import SignUp from "../Auth/Signup";
-import ReactCardFlip from 'react-card-flip';
 
-const Cardflip = () => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleClick = () => {
-    setIsFlipped(!isFlipped);
-  };
+export default function Cardflip() {
+  const { isFlipped, handleFlipToggle } = useToggleContext();
 
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="card"  >
-      <div>
-        <button className="tgButton" style={{ transform: "translate(25px, 300px)" }} onClick={handleClick}>Sign Up!</button>
-        <Login />
-      </div>
-      <div>
-        <button className="tgButton" style={{ transform: "translate(-205px, 370px)" }} onClick={handleClick}>To Login</button>
-        <SignUp />
-      </div>
-    </ReactCardFlip>
-  )
-}
+    <>
+      <div className="content_flexbox">
+        <div className={`flip_${isFlipped}`}
+          onClick={handleFlipToggle} >
+          <button style={{ transform: "translate(-270px, 400px)" }}
+            className="tgButton" >
+            Sign Up!
+          </button>
 
-export default (Cardflip);
+          <button style={{ transform: "translate(-208px, -200px)" }}
+            className="tgButton" >
+            To Login
+          </button>
+        </div>
+
+        <div className="card">
+          <Login className="face login " />
+          <SignUp className="face signup " />
+        </div>
+      </div>
+    </>
+  );
+}

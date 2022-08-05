@@ -51,7 +51,7 @@ const Signup = () => {
               </div>
             </div>
             <button
-              style={{ transform: "translate(-225px, 10px)" }}
+              style={{ transform: "translate(-228px, 10px)" }}
               onClick={async (e) => {
                 e.preventDefault();
                 if (
