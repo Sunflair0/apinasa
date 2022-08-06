@@ -44,6 +44,8 @@ body {
 
 .Graham_Holtshausen {
 opacity: .1;
+z-index: 80;
+background-image: "url(../../assets/streaks.png)";
 }
 
 .gal {
@@ -85,7 +87,13 @@ background-image: "url(../../assets/streaks.png)";
   position: relative;
   flex-direction: row;
   top: 3.5vh;
-  height: 100vh;
+  min-height: 100vh;
+}
+.flex_backing2 {
+  display:inline-table;
+   /* justify-content: center; */
+/* align-items: center;  */
+
 }
 
 .ship_flexbox {

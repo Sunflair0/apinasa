@@ -17,53 +17,50 @@
 
 /* login */
 
+.context_box {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: baseline;
+}
+
 .card {
   position: relative;
+margin-left: 100%;
   width: 310px;
   height: 500px;
-  border-radius: 10px;
+  transform-style: preserve-3d;
   perspective: 1000px;
-  /* transform-style: preserve-3d; */
 }
 
 .card .face {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(6px);
-/* backface-visibility: hidden; */
+  border-radius: 10px;
+  backdrop-filter: blur(7px);
   transform-style: preserve-3d;
-}
-
- /* .card .face.login {
-transform-style: preserve-3d;
-backface-visibility: hidden;
-}  */
-
-.signup {
-  transform: rotateY(180deg);
-/* transform-style: preserve-3d; */
-/* backface-visibility: hidden; */
-}
-
-.flip_Off {
-  transform: rotateY(180deg);
   transition: 1s;
+  backface-visibility: hidden;
 }
 
-.flip_On {
+.flip_On .card .face.login {
+  transform: rotateY(180deg);
+}
+
+.card .face.signup {
   transform: rotateY(360deg);
-  transition: 1s;
-  
+}
+
+.flip_Off .card .face.signup {
+  transform: rotateY(180deg);
 }
 
 .tourguide {
-   transform-style: preserve-3d;
-  backface-visibility: hidden; 
-  position: relative;
-  cursor: default;
+  transform-style: preserve-3d;
+  /* display: flex; */
+  width: 310px;
+  height: 500px;
   border: solid .5px rgba(70, 201, 201, 0.25);
   border-bottom: solid .5px rgba(15, 235, 235, 0.25);
   max-width: 310px;
@@ -77,6 +74,9 @@ backface-visibility: hidden;
     3px 3px 1px 1px rgba(5, 41, 29, 0.205),
     inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3),
     inset 5px 4px 2px rgba(17, 43, 43, 0.3);
+  position: absolute;
+  /* top: 0%;
+  left: 0%; */
   z-index: 90;
 }
 
@@ -125,9 +125,10 @@ backface-visibility: hidden;
   margin-top: 45px;
   width: 50px;
   height: 50px;
-  z-index: 110;
   border: 2px solid rgba(38, 59, 49, 0.5);
   background-image: linear-gradient(to right, #314755 0%, #85e76c 49%, #314755 100%);
+  cursor: pointer;
+  z-index: 110;
 }
 
 .flip_inputs {

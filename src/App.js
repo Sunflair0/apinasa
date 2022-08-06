@@ -47,7 +47,7 @@ function App() {
         (
           <div style={{ backgroundImage: "url(../../assets/stars.png)", zIndex: "-100" }}>
             <div style={{ backgroundImage: "url(../../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
-              <div className="Graham_Holtshausen1"style={{ background: "url(../../assets/streaks.png)", zIndex: "-80" }}  alt="universe"/>
+              <img className="Graham_Holtshausen gal" src="url(../../assets/streaks.png)"  alt="universe"/>
 
                 <ToggleProvider>
                   <div className="flex_backing">
@@ -107,6 +107,7 @@ function App() {
 
                   </div>
                 </ToggleProvider>
+
               </div >
             </div >
          

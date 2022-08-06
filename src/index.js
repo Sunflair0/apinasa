@@ -8,17 +8,20 @@ import {
   BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { ToggleProvider } from './ToggleContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path='/*' element={<App />} />
-        </Routes>
+      <ToggleProvider>
+        <Router>
+          <Routes>
+            <Route path='/*' element={<App />} />
+          </Routes>
         </Router>
+      </ToggleProvider>
     </Provider>
   </React.StrictMode>
 
