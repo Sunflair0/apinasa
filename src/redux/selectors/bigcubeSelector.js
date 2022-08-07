@@ -1,1 +1,0 @@
-export const bigCubeSelector = (state) => state.bigcube;

@@ -1,0 +1,157 @@
+li span {
+  padding-left: 6px;
+}
+
+.subMenu1items {
+  display: flex;
+  height: 35px;
+  width: 100px;
+  color: #ffffff;
+  border: red solid 2px;
+  background: red;
+  padding-left: 3rem;
+  font-size: 18px;
+  align-items: center;
+
+}
+
+.menu1items {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  height: 35px;
+  width: 105px;
+  font-size: 14px;
+  text-shadow: 10px 10px 10px 10px#000000;
+  margin-bottom: 35%;
+  border-radius: 0px 5px 5px 0px;
+  background-image:
+    radial-gradient(ellipse at 105% 6%,
+      rgba(145, 253, 253, 0.664) 6%,
+      rgba(94, 228, 233, 0.466) 6%,
+      transparent 13%),
+    linear-gradient(rgba(6, 27, 119, 0.5)50%,
+      rgba(42, 4, 73, 0.26)120%);
+  text-shadow: -1px -1px 5px rgb(0, 0, 0),
+    1px -1px 5px rgb(0, 0, 0),
+    -1px 1px 5px rgb(0, 0, 0),
+    1px 1px 5px rgb(0, 0, 0);
+  /* padding: 10px; */
+  box-shadow: inset 0px 1px 0px #62c4e7,
+    inset 1px 0px 0px rgb(74, 90, 18),
+    0px 5px 1px 0px #000000,
+    3px 2px 2px 2px #010525,
+    3px 5px 5px 4px rgba(140, 255, 255, 0.5);
+  user-select: none;
+  transition: transform .2s;
+}
+
+.menu1items ::active {
+  color: #797c33;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgb(62, 184, 229) 0%, rgb(44, 160, 202) 100%);
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+}
+
+.menu1items::before {
+  content: attr(data-icon);
+  border-radius: 5px 0px 0px 5px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  top: 0px;
+  left: -40px;
+  padding: 8px 12px 0;
+  width: 12px;
+  max-height: 27px;
+  height: 100%;
+  font-weight: bold;
+  color: #75880a;
+  border-right: solid 1px #000000;
+  background-image: linear-gradient(to top right, #23ad236b 13%,
+      rgba(0, 0, 0, 0.95) 35%),
+    linear-gradient(to right,
+      rgba(50, 22, 207, 0.87) 0%,
+      rgb(251, 255, 0) 50%);
+  box-shadow: inset 0px 1px 0px #2ab6e9,
+    inset -1px 0px 0px #2ab6e9,
+    0px 5px 0px 0px #0e1b46,
+    1px 3px 2px 2px #080e24,
+    3px 7px 5px 3px rgba(144, 174, 36, 0.329);
+  transition: transform .2s;
+}
+
+.menu1items ::active {
+  color: #797c33;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgb(62, 184, 229) 0%, rgb(44, 160, 202) 100%);
+  box-shadow: inset 0px 1px 0px #2ab7ec,
+    0px 2px 0px 0px #156785,
+    0px 5px 3px #999;
+}
+
+.menu1items:hover {
+  text-shadow: 0px 0px 100px#000000;
+  box-shadow: inset 0px 1px 0px #74e0d9,
+    1px 3px 1px 2px #19f6e8,
+    0px 5px 0px 0px #19f6e8,
+    4px 8px 20px 2px #19f6e8;
+  color: #19f6e8;
+  background-image:
+    radial-gradient(ellipse at 105% 6%,
+      #b9dee9b9 6%,
+      #19f6e793 7%,
+      transparent 13%),
+    linear-gradient(rgba(1, 10, 51, 0.65) 50%,
+      rgba(105, 162, 228, 0.5) 120%);
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  transform: translateY(8px);
+}
+
+.menu1items:hover ::before {
+  box-shadow: inset 0px 1px 0px #2ab6e9,
+    inset -1px 0px 0px #2ab6e9,
+    1px 3px 2px 2px rgb(56, 68, 12),
+    6px 8px 10px 2px rgba(141, 179, 7, 0.603);
+}
+
+.menu1items:hover a:link,
+.menu1items:hover {
+  color: #19f6e8;
+  text-decoration: none;
+}
+
+.menu1items a:link {
+  color: rgb(166, 240, 166);
+  text-decoration: none;
+
+}
+
+.menu1items a:visited {
+  color: #a9c447;
+  text-decoration: none;
+}
+
+.menu1items .sub_menu:hover {
+  height: 140px;
+  width: 105px;
+  transform: translateX(55px);
+  margin: 55px;
+}
+
+/* subMenu styles */
+.about,
+.nasa,
+.salutes {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}

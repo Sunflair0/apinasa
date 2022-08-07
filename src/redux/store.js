@@ -1,4 +1,10 @@
-import { createStore } from "redux";
-import rootReducer from "./reducers";
+import { configureStore } from "@reduxjs/toolkit";
+import albumReducer from "./features/albumSlice";
+import userReducer from "./features/userSlice";
 
-export default createStore(rootReducer);
+export default configureStore({
+  reducer: {
+    album: albumReducer,
+    user: userReducer,    
+  },
+});
