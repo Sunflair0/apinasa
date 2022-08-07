@@ -65,7 +65,7 @@ export const Login = ({ setUser }) => {
         <>
             <form className="tourguide sunburn">
                 <div className="stripe">
-                     <TourguideLight />
+                     <div><TourguideLight /></div>
                     <div className="namepass">                   
                     <input
                         style={{ width: "80%" }}

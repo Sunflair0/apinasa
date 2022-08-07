@@ -14,12 +14,12 @@ export default function LoginPage() {
     let mouseY = 0;
 
     useEffect(() => {
-        tl.to({},0.016,{
+        tl.to({}, 0.016, {
             repeat: -1,
-            onRepeat: function(){
+            onRepeat: function () {
                 posX += (mouseX - posX) / 30;
                 posY += (mouseY - posY) / 30;
-                tl.set(cursor,{
+                tl.set(cursor, {
                     css: {
                         left: posX - 20,
                         top: posY - 350,
@@ -27,21 +27,21 @@ export default function LoginPage() {
                 })
             }
         })
-        document.addEventListener("mousemove", function(e){
+        document.addEventListener("mousemove", function (e) {
             mouseX = e.pageX;
             mouseY = e.pageY;
         })
     })
     return (
-        <>
-            <div className="flex_backing">
-                <div><Background /></div>
-                <div className='ship cursor_follow' ref={el => cursor = el}><Ship /></div>
+        <><Background />
 
-                <div className='center'>
-                <Brand/></div>
-                <Cardflip />
+            <div className='cursor_follow' ref={el => cursor = el}>
+                <Ship />
             </div>
+
+            <div className='center_tourguide'>
+                <div className='brand_center'><Brand /></div>
+                <Cardflip /></div>
         </>
     )
 }

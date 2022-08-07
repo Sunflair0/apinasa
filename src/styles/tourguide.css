@@ -3,7 +3,7 @@
 /* // ///// TourGuide  */
 .stripe {
   background-color: #31475583;
-  padding: 0%;
+  padding: 0;
   height: 128px;
   width: 310px;
   margin-bottom: 10px;
@@ -17,16 +17,16 @@
 
 /* login */
 
-.context_box {
-  display: flex;
+.center_tourguide {
   position: absolute;
-  justify-content: center;
-  align-items: baseline;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, 0%);
 }
 
 .card {
   position: relative;
-margin-left: 100%;
+  top: -40%;
   width: 310px;
   height: 500px;
   transform-style: preserve-3d;

@@ -7,23 +7,21 @@ export default function Cardflip() {
 
   return (
     <>
-      <div className="flex_backing2">
-        <div className={`flip_${isFlipped}`}>
-          <div className="context_box"></div>
-          <div className="card">
-            <div className="face login ">
-              <Login />
-              <button onClick={handleFlipToggle} style={{ transform: "translate(23px, 300px)" }}
-                className="tgButton" >Sign Up!</button>
-            </div>
-            <div className="face signup ">
-              <SignUp />
-              <button onClick={handleFlipToggle} style={{ transform: "translate(-209px, 290px)" }}
-                className="tgButton" >To Login</button>
-            </div>
+<div className="flex_backing2">
+      <div className={`flip_${isFlipped}`}>
+        <div className="card">
+          <div className="face login ">
+            <Login />
+            <button onClick={handleFlipToggle} style={{ transform: "translate(23px, 300px)" }}
+              className="tgButton" >Sign Up!</button>
+          </div>
+          <div className="face signup ">
+            <SignUp />
+            <button onClick={handleFlipToggle} style={{ transform: "translate(-209px, 290px)" }}
+              className="tgButton" >To Login</button>
           </div>
         </div>
-      </div>
+      </div></div>
     </>
   );
 }
