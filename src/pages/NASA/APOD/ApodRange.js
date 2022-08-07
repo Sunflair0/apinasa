@@ -50,7 +50,7 @@ console.log(data)
     <DatePicker selected={date} onChange={date => setDate(date)} />
 
     return (
-        <div className="content_flexbox">
+        <div className="">
             <h3>Want to see a range of days for Picture of the Day? We start you off with three, but feel free to choose your own range and add to your album at will.</h3>
 <div>Choose a start date</div>
             <div style={{ textShadow: "-1px -1px rgb(255, 255, 255)" }}>

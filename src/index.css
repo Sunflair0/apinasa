@@ -119,10 +119,11 @@ body {
   margin-top: 5rem;
   position: relative;
   overflow: auto;
-  width: auto;
   flex-direction: column;
   padding: 1rem 2rem;
+  height: 95vh;
   width: 95%;
+  min-height: 0;
 }
 
 .brand_center {

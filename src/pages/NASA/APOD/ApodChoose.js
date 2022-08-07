@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { connect } from "react-redux";
 import { add, remove, entry, isLiked } from "../../../redux/features/albumSlice";
 
@@ -34,7 +34,7 @@ const ApodChoose = ({
   if (!chooseData) return <div />;
 
   return (
-    <div className="content_flexbox">
+    <div className="">
       <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
         1995. If you like it, add it to your Album.</h3>
 

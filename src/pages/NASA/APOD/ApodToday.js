@@ -29,7 +29,7 @@ const ApodToday = ({
   if (!apodData) return <div />;
 
   return (
-    <div className="content_flexbox">
+    <div className="">
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like. Click on the picture to open in another tab in your browser.</h3>
 
       <div className="flex3">
