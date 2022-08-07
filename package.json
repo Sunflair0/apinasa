@@ -63,6 +63,6 @@
     ]
   },
   "devDependencies": {
-    "react-card-flip": "^1.1.5"
+    
   }
 }
