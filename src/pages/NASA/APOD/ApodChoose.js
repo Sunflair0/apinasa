@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { connect } from "react-redux";
 import { add, remove, entry, isLiked } from "../../../redux/features/albumSlice";
-
-
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const ApodChoose = ({
@@ -14,43 +10,51 @@ const ApodChoose = ({
 
 }) => {
   const [chooseData, setChooseData] = useState(new Date());
-  const [date, setDate] = useState(new Date(2007,2, 25));
-  const handleChange = date => {setDate(date)};
+  const [date, setDate] = useState(new Date(2007, 2, 25));
+  const handleChange = date => { setDate(date) };
 
   useEffect(() => {
     fetchChoose();
 
     async function fetchChoose() {
- let myDate=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+
       const res = await fetch(
 
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${myDate}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`
       );
       const data = await res.json();
       setChooseData(data);
     }
   }, [date]);
- 
+
   if (!chooseData) return <div />;
 
   return (
-    <div className="content_flexbox">
+    <div className="">
       <h3 >Want to see a different Picture of the Day? Choose a date before June 16th,
         1995. If you like it, add it to your Album.</h3>
 
-<div style={{textShadow: "-1px -1px transparent"}}>
-      <DatePicker 
-        required
-        dateFormat="yyyy-MM-dd"
-        selected={date}
-        onChange={handleChange}
+      <div style={{ textShadow: "-1px -1px transparent" }}>
+        <label for='tell me'></label>
+        <input type="date" minDate={new Date(1995, 6, 16)}
+          defaultValue={3 - 25 - 2007}
+          maxDate={new Date()}
+          required
+          dateFormat="yyyy-MM-dd"
+          selected={date}
+          onChange={handleChange}
+        />
+<button className="like-btn" onClick={handleChange}>Submit</button>
+
+
+        {/* <DatePicker 
+        
         showYearDropdown
         scrollableMonthYearDropdown
         showMonthDropdown
         useShortMonthInDropdown
         fixedHeight        
-        minDate={new Date(1995, 6, 16)}
-        maxDate={new Date()}
+      
 popperModifiers={{
                         offset: {
                           enabled: true,
@@ -62,13 +66,13 @@ preventOverflow: {
                           boundariesElement: "scrollParent"
                         }
                       }}
-        />
-</div>
-      <div className="flex3">
+        /> */}
+      </div>
+      <div className="">
         <div className="apodPhoto">
           <div className=" infobox stylebox" >
             {chooseData.media_type === "image" ? (
-             <img onClick={() =>window.open(chooseData.url,"apodblank")}
+              <img onClick={() => window.open(chooseData.url, "apodblank")}
                 src={chooseData.url}
                 alt={chooseData.title}
                 id={chooseData.id}
@@ -85,18 +89,18 @@ preventOverflow: {
               />
             )}
 
-          {isLiked && (
-        <button className="like-btn" onClick={() => removeEntry(entry.id)}>
-          Delete from Album
-        </button>
-      )}
-      {!isLiked && (
-        <button
-          button className="like-btn"
-          onClick={() => addEntry( entry )}>
-          Add to Album
-        </button>
-)}   
+            {isLiked && (
+              <button className="like-btn" onClick={() => removeEntry(entry.id)}>
+                Delete from Album
+              </button>
+            )}
+            {!isLiked && (
+              <button
+                button className="like-btn"
+                onClick={() => addEntry(entry)}>
+                Add to Album
+              </button>
+            )}
 
             <h1>{chooseData.title}</h1>
             <p className="date">{chooseData.date}</p>

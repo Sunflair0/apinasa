@@ -18,8 +18,9 @@ export default function Apod() {
     <>
       <div className="content_flexbox">
         <div>
-          <div className="apodBox">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
-          </div>
+<div className='flex3'>
+          <div className=" ">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
+          </div></div>
           <div className=" apodBox apodSee">
             <NavLink className='apodButton'
               to="apodtoday"
@@ -55,12 +56,12 @@ export default function Apod() {
           </div >
         </div>
 
-        <div className="flex3">
+        {/* <div className="">
           <p>{selection === "today" && <ApodToday />}</p>
           <p>{selection === "choose" && <ApodChoose />}</p>
           <p>{selection === "gimme" && <ApodGimme5 />}</p>
           <p>{selection === "range" && <ApodRange />}</p>
-        </div>
+        </div> */}
         <Outlet />
       </div>
 
