@@ -35,7 +35,7 @@ const ApodGimme5 = ({
     <div className="">
       <h3>Bam! Here you are, five stunning pictures from NASA's library from past APODs. See something you like? Click the Add button and keep it for yourself.</h3>
 
-      <div className="flex3">
+      <div className="">
         <div className="apodPhoto">
           {gimme5Data.map(item => (
             <div className="infobox stylebox">

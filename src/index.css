@@ -101,7 +101,7 @@ body {
 .ship_flexbox {
   display: flex;
   position: relative;
-top: 6rem;
+  top: 6rem;
   left: 1.6rem;
 }
 

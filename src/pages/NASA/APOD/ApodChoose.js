@@ -68,7 +68,7 @@ preventOverflow: {
                       }}
         /> */}
       </div>
-      <div className="flex3">
+      <div className="">
         <div className="apodPhoto">
           <div className=" infobox stylebox" >
             {chooseData.media_type === "image" ? (

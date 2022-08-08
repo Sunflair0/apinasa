@@ -32,7 +32,7 @@ const ApodToday = ({
     <div className="">
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like. Click on the picture to open in another tab in your browser.</h3>
 
-      <div className="flex3">
+      <div className="">
         <div className="apodPhoto">
           <div className="infobox stylebox">
             {apodData.media_type === "image" ? (
