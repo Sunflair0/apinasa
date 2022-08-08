@@ -35,7 +35,7 @@ const ApodChoose = ({
         1995. If you like it, add it to your Album.</h3>
 
       <div style={{ textShadow: "-1px -1px transparent" }}>
-        <label htmlFor='tell me'></label>
+        <label for='tell me'></label>
         <input type="date" minDate={new Date(1995, 6, 16)}
           defaultValue={3 - 25 - 2007}
           maxDate={new Date()}
