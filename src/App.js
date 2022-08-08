@@ -1,131 +1,119 @@
-import React from "react";
-import { connect } from "react-redux";
-import { clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs,
-clearclienttag, clearByDate, clearEndDate, clearStartDate, } from  "./redux/actions";
+import React, { } from "react";
 import {
-  BrowserRouter as Router,
-  NavLink,
-  Redirect,
-  Route,
-  Switch,
+  Routes, Route
 } from "react-router-dom";
-import "./App.css";
-import Login from "./components/Login";
-import Signup from "./components/SignUp";
-import TourInfo from "./components/TourInfo";
-import Form from "./components/Form";
-import Apod from "./components/Apod";
-import Search from "./components/Search";
-import Favorites from "./components/Favorites";
-import ContactUs from "./components/ContactUs";
-import ProtectedRoute from "./shared/ProtectedRoute";
+import { ToggleProvider } from "./ToggleContext";
+import "./index.css";
+import About from "./pages/About/About";
+import Album from "./pages/Album";
+import APOD from "./pages/NASA/APOD/APOD";
+import ApodToday from "./pages/NASA/APOD/ApodToday";
+import ApodChoose from "./pages/NASA/APOD/ApodChoose";
+import ApodGimme5 from "./pages/NASA/APOD/ApodGimme5";
+import ApodRange from "./pages/NASA/APOD/ApodRange";
+import DailyReward from "./pages/MyPage/DailyReward";
+import ContactUs from "./pages/ContactUs";
+import EARTH from "./pages/NASA/EARTH";
+import Error404 from "./pages/Error404";
+import Form from "./pages/Form";
+import Home from "./pages/Home";
+import IPN from "./pages/MyPage/IPN"
+import ISS from "./pages/NASA/ISS"
+import LoginPage from "./pages/LoginPage";
+import MER from "./pages/NASA/MER";
+import MyItems from "./pages/MyPage/MyItems";
+import MyPage from "./pages/MyPage/MyPage";
+import MySalutes from "./pages/MyPage/MySalutes";
+import MyTrip from "./pages/MyPage/MyTrip";
+import NASA from "./pages/NASA/NASA"
+import Layout from "./pages/Layout";
+import PresentLocation from "./pages/MyPage/PresentLocation";
+import Purchases from "./pages/MyPage/Purchases";
+import Testimonials from "./pages/Testimonials/Testimonials";
+import TestRead from "./pages/Testimonials/TestRead";
+import TestWrite from "./pages/Testimonials/TestWrite";
+import TourInfo from "./components/TourHelpers/TourInfo";
+import TourAddOns from "./components/TourHelpers/TourAddOns";
+import TravelNow from "./pages/MyPage/TravelNow";
+import VentureTours from "./pages/VentureTours";
+import Admin from "./pages/Admin";
+import Junk from "./components/Junk";
 
+function App() {
 
-function App({clienttag, clearTourInfo, clearForm, clearApod, clearSearch, clearFavorites, clearClient, clearContactUs, clearclienttag, clearByDate, clearEndDate, clearStartDate}
-) 
-
-{
   return (
-    <Router>
+    <>
+      {
+        (
+          <div style={{ backgroundImage: "url(../../assets/stars.png)", zIndex: "-100" }}>
+            <div style={{ backgroundImage: "url(../../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
+              <img className="Graham_Holtshausen gal" src="url(../../assets/streaks.png)"  alt="universe"/>
 
-      <nav>
-        {" "}
-        {!clienttag && (
-           <NavLink activeClassName="active" className="menuitem" to="/login">
-            {" "}
-          </NavLink> 
-        )}{" "}
-<NavLink activeClassName="active" className="presenter" to="/signup"
-></NavLink>
-        {clienttag && (
-     <ul>   
-<div className="menu1">
-           <li>  <NavLink activeClassName="active" className="menu1item" to="/tourinfo"
-            > Tour Info{" "}
-            </NavLink></li> 
-            
-          <li>   <NavLink activeClassName="active" className="menu1item" to="/form">
-              Tour Order Form{" "}
-            </NavLink></li> 
+                <ToggleProvider>
+                  <div className="flex_backing">
+                    <Routes>
+                      <Route path="loginpage" element={<LoginPage />} />
+                      <Route path="/" element={<Layout />} >
+                        <Route index element={<Home />} />
+                        <Route path="home" element={<Home />} />
 
-        <li>     <NavLink activeClassName="active" className="menu1item" to="/apod">
-              Apod (Photo of the Day -Astronomy){" "}
-              </NavLink></li> 
+                        <Route path="about" element={<About />} />
+                        <Route path="nasa" element={<NASA />} />
+                        <Route path="nasa/apod" element={<APOD />}>
 
-           <li>  <NavLink activeClassName="active" className="menu1item" to="/search">
-              Search{" "}
-            </NavLink></li> 
 
-         <li>    <NavLink activeClassName="active" className="menu1item" to="/favorites">
-              Favorites{" "} </NavLink></li>
 
-           <li> <NavLink activeClassName="active" className="menu1item" to="/form">
-              Contact Us{" "}
-            </NavLink></li> 
+                          <Route path="apodtoday" element={<div><ApodToday /></div>} />
+                          <Route path="apodchoose" element={<div><ApodChoose /></div>} />
+                          <Route path="apodrange" element={<div><ApodRange /></div>} />
+                          <Route path="apodgimme5" element={<div><ApodGimme5 /></div>} />
+                        </Route>
+                        <Route path="nasa/mer" element={<MER />} />
+                        <Route path="nasa/earth" element={<EARTH />} />
+                        <Route path="nasa/iss" element={<ISS />} />
 
-        <li>    <NavLink
-              className="presenter"
-              to="/login"
-              onClick={() => {
-                clearTourInfo();
-                clearForm();
-                clearApod();
-                clearSearch();
-                clearFavorites();
-                clearContactUs();
-                clearClient();
-              }}
-           >
-              Logout
-            </NavLink></li>
-          </div></ul>
+                        <Route path="mypage" element={<MyPage />}>
+                          <Route path="album" element={<Album />} />
+                          <Route path="IPN" element={<IPN />} />
+                          <Route path="mysalutes" element={<MySalutes />} />
+                          <Route path="dailyreward" element={<DailyReward />} />
+                          <Route path="purchases" element={<Purchases />} >
+                            <Route path="purchases/:tourId" element={<TourInfo />} />
+
+                            <Route path="mytrip" element={<MyTrip />} />
+                            <Route path="myitems" element={<MyItems />} />
+                          </Route>
+                          <Route path="travelnow" element={<TravelNow />} />
+                          <Route path="presentlocation" element={<PresentLocation />} />
+                        </Route>
+                        <Route path="venturetours" element={<VentureTours />} />
+                        <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
+
+                        <Route path="testimonials" element={<Testimonials />} />
+                        <Route path="testread" element={<TestRead />} />
+                        <Route path="testwrite" element={<TestWrite />} />
+                        <Route path="contactus" element={<ContactUs />}>
+                          <Route path="form" element={<Form />} />
+                        </Route>
+                        <Route path="junk" element={<Junk />} />
+                      </Route>
+
+                      {/* <Route element={<allowedRoles={[2]} />} > */}
+                      <Route path="admin" element={<Admin />} />
+                      {/* </Route> */}
+                      <Route path="*" element={<Error404 />} />
+
+                    </Routes>
+
+                  </div>
+                </ToggleProvider>
+
+              </div >
+            </div >
+         
         )}
-      </nav>
-      <main>
-        <Switch>
-          <ProtectedRoute path="/login" reqUser={false} component={Login} />
-
-            <ProtectedRoute path="/signup" reqUser={false} component={Signup} />
-          
-            <ProtectedRoute path="/tourinfo" reqUser={true} component={TourInfo} />
-
-            <ProtectedRoute path="/form" reqUser={true} component={Form} />
-          
-            <ProtectedRoute path="/apod" reqUser={true} component={Apod} />
-                        
-            <ProtectedRoute path="/search" reqUser={true} component={Search} />
-            
-            <ProtectedRoute path="/favorites" reqUser={true} component={Favorites} />
-
-            <ProtectedRoute path="/contactus" reqUser={false} component={ContactUs} />
-
-            <Route path="*">  
-
-            <Redirect to="/login" />
-          </Route>
-        </Switch>
-      </main>
-      </Router>
+    </>
   );
-}
-
-function mapStateToProps(state) {
-  return { clienttag: state.client.clienttag };
-}
-
-const mapDispatchToProps = {
-clienttag,
-clearTourInfo,
-clearForm,
-clearApod,
-clearSearch,
-clearFavorites,
-clearClient,
-clearContactUs,
-clearclienttag,
-clearByDate,
-clearEndDate,
-clearStartDate,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default (App);

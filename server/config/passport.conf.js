@@ -1,17 +1,21 @@
 const LocalStrategy = require("passport-local");
 const { Strategy } = require("passport-jwt");
 const jwt = require("jsonwebtoken");
-const { login, getByClientID } = require("../models/clients.model");
+const { login, getByUserID } = require("../models/users.model");
 
 function configPassport(passport) {
   //! Local strategy
   passport.use(
     "local-login",
-    new LocalStrategy(async (clienttag, password, done) => {
+    new LocalStrategy(async (username, password, done) => {
       //! Check the login things like before
-      const { data, error } = await login(clienttag, password);
+
+      const { data, error } = await login(username, password);
       //! If everything looks good send back a signed jwt with the user's uuid
-      if (error) {
+console.log(data);
+console.log(error);      
+if (error) {
+  
         return done(error);
       }
       //! Otherwise send an appropriate message
@@ -19,8 +23,8 @@ function configPassport(passport) {
       const token = jwt.sign({ uuid: data.uuid }, process.env.SECRET_KEY, {
         expiresIn: "7 days",
       });
-
-      return done(null, { clienttag: data.clienttag }, { token });
+      
+      return done(null, { username: data.username }, { token });
     })
   );
 
@@ -30,7 +34,9 @@ function configPassport(passport) {
     if (req && req.cookies) {
       token = req.cookies["jwt"];
     }
+console.log("token",token)
     return token;
+
   };
 
   //! JWT strategy
@@ -47,7 +53,7 @@ function configPassport(passport) {
       if (!payload || !payload.uuid) {
         return done(true, false, "Invalid Credentials");
       }
-      const { data, error } = await getByClientID(payload.uuid);
+      const { data, error } = await getByUserID(payload.uuid);
       if (error) {
         return done(true, false, "Invalid Credentials");
       }
