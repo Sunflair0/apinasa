@@ -1,6 +1,5 @@
 import React, { useState, } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from 'react-router-dom';
 import ApodToday from './ApodToday';
 import ApodChoose from './ApodChoose';
 import ApodGimme5 from './ApodGimme5';
@@ -22,37 +21,35 @@ export default function Apod() {
           <div className=" ">{options.map(opt => <button className="clear" type="button" key={opt} onClick={e => setSelection(opt)}>{opt}</button>)}
           </div></div>
           <div className=" apodBox apodSee">
-            <NavLink className='apodButton'
+            <Link className='apodButton'
               to="apodtoday"
               style={{
                 backgroundImage: "url(../../assets/today.png)"
               }}
-              onClick={() => setShowToday(showToday)}>
-            </NavLink>
+              onClick={() => setShowToday(showToday)} />
+          
 
-            <NavLink className='apodButton'
+            <Link className='apodButton'
               to="apodchoose"
               style={{
                 backgroundImage: "url(../../assets/choose.png)"
               }}
-              onClick={() => setShowChoose(showChoose)}>
-            </NavLink>
+              onClick={() => setShowChoose(showChoose)} />
+           
 
-            <NavLink className='apodButton'
+            <Link className='apodButton'
               to="apodgimme5"
               style={{
                 backgroundImage: "url(../../assets/gimme.png)"
               }}
-              onClick={() => setShowGimme5(showGimme5)}>
-            </NavLink>
+              onClick={() => setShowGimme5(showGimme5)} />          
 
-            <NavLink className='apodButton'
+            <Link className='apodButton'
               to="apodrange"
               style={{
                 backgroundImage: "url(../../assets/range.png)"
               }}
-              onClick={() => setShowRange(showRange)}>
-            </NavLink>
+              onClick={() => setShowRange(showRange)} />           
           </div >
         </div>
 

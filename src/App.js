@@ -47,70 +47,69 @@ function App() {
         (
           <div style={{ backgroundImage: "url(../../assets/stars.png)", zIndex: "-100" }}>
             <div style={{ backgroundImage: "url(../../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
-              <img className="Graham_Holtshausen gal" src="url(../../assets/streaks.png)"  alt="universe"/>
+              <img className="Graham_Holtshausen gal" src="url(../../assets/streaks.png)" alt="universe" />
 
-                <ToggleProvider>
-                  <div className="flex_backing">
-                    <Routes>
-                      <Route path="loginpage" element={<LoginPage />} />
-                      <Route path="/" element={<Layout />} >
-                        <Route index element={<Home />} />
-                        <Route path="home" element={<Home />} />
+              <ToggleProvider>
+                <div className="flex_backing">
+                  <Routes>
+                    <Route path="loginpage" element={<LoginPage />} />
+                    <Route path="/" element={<Layout />} >
+                      <Route index element={<Home />} />
+                      <Route path="home" element={<Home />} />
 
-                        <Route path="about" element={<About />} />
-                        <Route path="nasa" element={<NASA />} />
-                        <Route path="nasa/apod" element={<APOD />}>
+                      <Route path="about" element={<About />} />
+                      <Route path="nasa" element={<NASA />} />
+                      <Route path="nasa/apod" element={<APOD />}>
 
-
-
-                          <Route path="apodtoday" element={<div><ApodToday /></div>} />
-                          <Route path="apodchoose" element={<div><ApodChoose /></div>} />
-                          <Route path="apodrange" element={<div><ApodRange /></div>} />
-                          <Route path="apodgimme5" element={<div><ApodGimme5 /></div>} />
-                        </Route>
-                        <Route path="nasa/mer" element={<MER />} />
-                        <Route path="nasa/earth" element={<EARTH />} />
-                        <Route path="nasa/iss" element={<ISS />} />
-
-                        <Route path="mypage" element={<MyPage />}>
-                          <Route path="album" element={<Album />} />
-                          <Route path="IPN" element={<IPN />} />
-                          <Route path="mysalutes" element={<MySalutes />} />
-                          <Route path="dailyreward" element={<DailyReward />} />
-                          <Route path="purchases" element={<Purchases />} >
-                            <Route path="purchases/:tourId" element={<TourInfo />} />
-
-                            <Route path="mytrip" element={<MyTrip />} />
-                            <Route path="myitems" element={<MyItems />} />
-                          </Route>
-                          <Route path="travelnow" element={<TravelNow />} />
-                          <Route path="presentlocation" element={<PresentLocation />} />
-                        </Route>
-                        <Route path="venturetours" element={<VentureTours />} />
-                        <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
-
-                        <Route path="testimonials" element={<Testimonials />} />
-                        <Route path="testread" element={<TestRead />} />
-                        <Route path="testwrite" element={<TestWrite />} />
-                        <Route path="contactus" element={<ContactUs />}>
-                          <Route path="form" element={<Form />} />
-                        </Route>
-                        <Route path="junk" element={<Junk />} />
+                        <Route path="apodtoday" element={<div><ApodToday /></div>} />
+                        <Route path="apodchoose" element={<div><ApodChoose /></div>} />
+                        <Route path="apodrange" element={<div><ApodRange /></div>} />
+                        <Route path="apodgimme5" element={<div><ApodGimme5 /></div>} />
                       </Route>
+                      <Route path="nasa/mer" element={<MER />} />
+                      <Route path="nasa/earth" element={<EARTH />} />
+                      <Route path="nasa/iss" element={<ISS />} />
 
-                      {/* <Route element={<allowedRoles={[2]} />} > */}
-                      <Route path="admin" element={<Admin />} />
-                      {/* </Route> */}
-                      <Route path="*" element={<Error404 />} />
+                      <Route path="mypage">
+                        <Route index element={<MyPage />} />
+                        <Route path="album" element={<Album />} />
+                        <Route path="IPN" element={<IPN />} />
+                        <Route path="mysalutes" element={<MySalutes />} />
+                        <Route path="dailyreward" element={<DailyReward />} />
+                        <Route path="purchases" element={<Purchases />} >
+                          <Route path="purchases/:tourId" element={<TourInfo />} />
 
-                    </Routes>
+                          <Route path="mytrip" element={<MyTrip />} />
+                          <Route path="myitems" element={<MyItems />} />
+                        </Route>
+                        <Route path="travelnow" element={<TravelNow />} />
+                        <Route path="presentlocation" element={<PresentLocation />} />
+                      </Route>
+                      <Route path="venturetours" element={<VentureTours />} />
+                      <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
 
-                  </div>
-                </ToggleProvider>
+                      <Route path="testimonials" element={<Testimonials />} />
+                      <Route path="testread" element={<TestRead />} />
+                      <Route path="testwrite" element={<TestWrite />} />
+                      <Route path="contactus" element={<ContactUs />}>
+                        <Route path="form" element={<Form />} />
+                      </Route>
+                      <Route path="junk" element={<Junk />} />
+                    </Route>
 
-              </div >
+                    {/* <Route element={<allowedRoles={[2]} />} > */}
+                    <Route path="admin" element={<Admin />} />
+                    {/* </Route> */}
+                    <Route path="*" element={<Error404 />} />
+
+                  </Routes>
+
+                </div>
+              </ToggleProvider>
+
             </div >
-         
+          </div >
+
         )}
     </>
   );

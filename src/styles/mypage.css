@@ -1,0 +1,30 @@
+.my_page_cards {
+	display: inline-flex;
+	height: 250px;
+	width: 150px;
+	border-radius: 30px;
+	background-color: rgb(27, 27, 27);
+	box-shadow: inset 3px 1px 5px rgb(36, 36, 36),
+		inset -3px -1px 5px rgb(27, 27, 27);
+	filter: drop-shadow(5px 5px 10px rgb(61, 61, 61));
+	margin: 50px;
+	cursor: pointer;
+	transition: transform .3s ease-out;
+}
+
+.my_page_cards:hover {
+	filter: drop-shadow(5px 5px 2px rgb(39, 39, 39));
+	background-color: transparent;
+transform: scale(1.1);
+}
+
+
+.title_style {
+	position: absolute;
+/* display: flex; */
+	left: 0px;
+	top: 0;
+	font-size: large;
+	/* transform: translate(-50%, -50%); */
+justify-content: center;
+}
