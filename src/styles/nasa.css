@@ -14,7 +14,9 @@ iframe {
 
 .flex3 {
   display: flex;
-  margin: auto 50px 0 auto;
+  width: calc(100% - 1rem);
+justify-content: space-around;
+border: pink 4px solid;
 }
 
 .album {
