@@ -1,30 +1,96 @@
 .my_page_cards {
 	display: inline-flex;
-	height: 250px;
+	border: 4px solid rgb(128, 12, 12);
+	height: 150px;
 	width: 150px;
-	border-radius: 30px;
-	background-color: rgb(27, 27, 27);
+	border-radius: 50%;
+	background-color: rgba(32, 30, 27, 0.158);
 	box-shadow: inset 3px 1px 5px rgb(36, 36, 36),
-		inset -3px -1px 5px rgb(27, 27, 27);
-	filter: drop-shadow(5px 5px 10px rgb(61, 61, 61));
+		inset -3px -1px 5px rgb(59, 59, 59);
+	filter: drop-shadow(0px 0px 20px rgb(95, 95, 95));
 	margin: 50px;
 	cursor: pointer;
-	transition: transform .3s ease-out;
+	position: relative;
+	transition: transform .6s ease-out;
+}
+
+.my_page_cards::after {
+	content: '';
+	position: absolute;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background: repeating-conic-gradient(from 5deg at 50% 50%,
+			transparent 0deg 10deg, rgba(180, 180, 180, 0.877) 10deg 20deg, rgba(102, 102, 102, 0.377) 20deg 30deg);
+	transition: transform .6s ease-out;
+	z-index: -1;
+}
+
+.my_page_cards:hover::after {
+	transform: rotate(90deg)scale(0);
 }
 
 .my_page_cards:hover {
-	filter: drop-shadow(5px 5px 2px rgb(39, 39, 39));
+	filter: drop-shadow(0px 0px 20px rgb(0, 230, 173));
 	background-color: transparent;
-transform: scale(1.1);
+	transform: scale(1.1);
+
 }
 
 
 .title_style {
 	position: absolute;
-/* display: flex; */
-	left: 0px;
-	top: 0;
+	display: flex;
+	margin: auto;
 	font-size: large;
-	/* transform: translate(-50%, -50%); */
-justify-content: center;
+	justify-content: center;
+}
+
+.ipnPic {
+	height: 12.5%;
+	width: 20.75%;
+	margin: auto;
+	/* transform: translate(50%, 50%); */
+	/* align-items: center; */
+	display: flex;
+	position: absolute;
+	border-radius: 50%;
+	box-shadow: inset 0 0 18px #fff,
+		inset 6px 0 18px #f3bad6,
+		inset -6px 0 18px #0ff,
+		inset 6px 0 30px #f3bad6,
+		inset -6px 0 30px #0ff,
+		0 0 18px #fff, -4px 0 18px #f3bad6, 4px 0 18px #0ff;
+	animation: rotation 1.5s infinite linear;
+	background: repeating-radial-gradient(#030302, hsl(221, 47%, 46%), hsl(330, 59%, 20%) 8px);
+}
+
+.ganymedePic {
+	top: 0;
+	left: 0;
+	transform: translate(250%, 500%);
+	align-items: center;
+	display: flex;
+	position: absolute;
+	height: 26px;
+	width: 26px;
+	border-radius: 50px;
+	background-image: radial-gradient(circle, rgb(160, 157, 143), rgb(62, 63, 30));
+	z-index: 1;
+}
+
+.earthPic {
+	/*Earth*/
+
+	height: 100px;
+	width: 100px;
+	top: 0;
+	left: 0;
+	transform: translate(28%, 100%);
+	align-items: center;
+	display: flex;
+	position: absolute;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgb(0, 0, 255), rgba(0, 0, 0, 0.87));
+	box-shadow: 0px 0px 20px rgb(87, 87, 223);
 }

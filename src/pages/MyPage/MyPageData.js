@@ -3,13 +3,22 @@ import IPN from "./IPN";
 
 export const MyPageData = [
 {
+title: 'PROFILE',
+tStyle: 'title_style',
+path: 'profile',
+style: "my_page_cards",
+inComp: '',
+picStyle: 'albumPic',
+},
+{ 
 title: 'ALBUM',
 tStyle: 'title_style',
 path: 'album',
 style: "my_page_cards",
 inComp: '',
-picStyle: 'albumPic'
+picStyle: 'albumPic',
 },
+
 { 
 title: 'IPN',
 tStyle: 'title_style',
