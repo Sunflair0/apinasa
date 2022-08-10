@@ -51,10 +51,9 @@ flex-direction: column;
 .apodButtons {
   display: flex;
   flex-direction: row;
-  /* flex-basis: calc((100% / 3 - 34px)-15px); */
-  width: 71%;
+  width: calc(90% - 200px);
   justify-content: space-between;
-  margin: 6rem 2rem 0;
+  margin: 6rem 2rem;
   position: absolute;
 }
 
@@ -78,11 +77,10 @@ transition: .1s all;
 .choose:hover,
 .gimme:hover,
 .range:hover {
-
 transform: scale(1.2);
 }
 
-.today:active, .choose:active, .gimme:active, .range:active {
+.today:link, .choose:link, .gimme:link, .range:link {
 outline:red 3px solid;
 outline-offset: 8px;
 }

@@ -134,10 +134,10 @@ body {
   position: fixed;
   overflow: auto;
   padding: 0 1rem;
-  height: 69vh;
-  width: 85%;
+  max-height:  70vh;
+  width: auto;
   min-height: 0;
-  margin-right: 0%;
+  /* margin-right: 0%; */
 }
 
 .brand_center {
