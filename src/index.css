@@ -103,8 +103,7 @@ body {
 .ship_flexbox {
   display: flex;
   position: relative;
-  top: 0rem;
-  left: 1.7rem;
+  left: 1.5rem;
 }
 
 .menu_flexbox {
@@ -125,6 +124,17 @@ body {
   flex-direction: column;
   padding: 1rem 2rem;
   height: 73vh;
+  width: 100%;
+  min-height: 0;
+}
+.content_flexbox2 {
+  display: flex;
+  margin-top: 5rem;
+  position: relative;
+  overflow: auto;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  height: 70vh;
   width: 100%;
   min-height: 0;
 }

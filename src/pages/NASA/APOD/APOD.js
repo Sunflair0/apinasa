@@ -3,7 +3,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 export default function Apod() {
   const [selection, setSelection] = useState("")
-  // const options = ["today", "choose", "gimme", "range"];
 
   return (
     <>
@@ -42,7 +41,7 @@ export default function Apod() {
           </NavLink>
 
         </div >
-  <div className="content_flexbox">     
+  <div className="content_flexbox2">     
         <Outlet />
       </div>
  </div >
