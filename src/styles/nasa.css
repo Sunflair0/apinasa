@@ -42,7 +42,8 @@ iframe {
 }
 
 .apodPage {
-  display: block;
+  display: flex;
+flex-direction: column;
 }
 
 /* APOD Console buttons and action shadows */
@@ -50,12 +51,11 @@ iframe {
 .apodButtons {
   display: flex;
   flex-direction: row;
-  flex-basis: calc((100% / 3 - 34px)-15px);
-  width: 100%;
-  justify-content: space-around;
-  margin-bottom: -3.7rem;
-  margin-top: 6rem;
-  position: relative;
+  /* flex-basis: calc((100% / 3 - 34px)-15px); */
+  width: 71%;
+  justify-content: space-between;
+  margin: 6rem 2rem 0;
+  position: absolute;
 }
 
 .explanation {

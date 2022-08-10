@@ -39,7 +39,6 @@ export default function Apod() {
               }}
               onClick={() => setSelection(selection)} />
           </NavLink>
-
         </div >
   <div className="content_flexbox2">     
         <Outlet />

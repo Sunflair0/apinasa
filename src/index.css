@@ -89,7 +89,6 @@ body {
   flex-direction: row;
   top: 3vh;
   min-height: 100vh;
-
 }
 
 .flex_backing2 {
@@ -127,16 +126,18 @@ body {
   width: 100%;
   min-height: 0;
 }
+
 .content_flexbox2 {
   display: flex;
-  margin-top: 5rem;
-  position: relative;
-  overflow: auto;
   flex-direction: column;
-  padding: 1rem 2rem;
-  height: 70vh;
-  width: 100%;
+  margin-top: 12rem;
+  position: fixed;
+  overflow: auto;
+  padding: 0 1rem;
+  height: 69vh;
+  width: 85%;
   min-height: 0;
+  margin-right: 0%;
 }
 
 .brand_center {
