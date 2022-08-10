@@ -15,8 +15,8 @@ iframe {
 .flex3 {
   display: flex;
   width: calc(100% - 1rem);
-  justify-content: space-around;
-  border: pink 4px solid;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .album {
@@ -41,54 +41,21 @@ iframe {
       #010b9e73 100%);
 }
 
-.iconStay {
+.apodPage {
   display: block;
-}
-
-.icon_show {
-  transform: translateX(-40px)
-}
-
-.apod_page {
- display: flex;
-flex-direction: column;
-}
-
-.apod_header {
-  display: flex;  
-  flex-basis: calc(100% / 3 - 34px);
-  width: 75%;
-  object-fit: contain;
-  top: 5rem;
-  height: 10rem;
 }
 
 /* APOD Console buttons and action shadows */
 
-.apodSee {
-  display: flex;
-
-  margin-top: -140px;
-  margin-right: 1.2em;
-}
-
-.apodBox {
+.apodButtons {
   display: flex;
   flex-direction: row;
-  flex-basis: calc(100% / 3 - 34px);
+  flex-basis: calc((100% / 3 - 34px)-15px);
   width: 100%;
-  justify-content: space-between;
-  margin-left: 15px;
-}
-
-.clear {
-  height: 130px;
-  width: 130px;
-  opacity: 0;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  cursor: pointer;
-  border: rgb(128, 6, 6) solid 3px;
+  justify-content: space-around;
+  margin-bottom: -3.7rem;
+  margin-top: 6rem;
+  position: relative;
 }
 
 .explanation {
@@ -97,11 +64,27 @@ flex-direction: column;
 }
 
 .apodButton {
-  height: 120px;
-  width: 100px;
+  height: 78px;
+  width: 65px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 10;
+transition: .1s all;
+}
+
+.today:hover,
+.choose:hover,
+.gimme:hover,
+.range:hover {
+
+transform: scale(1.2);
+}
+
+.today:active, .choose:active, .gimme:active, .range:active {
+outline:red 3px solid;
+outline-offset: 8px;
 }
 
 /* picture boxes */
@@ -227,19 +210,4 @@ flex-direction: column;
 .like-btn:hover {
   background-color: #04529b;
   box-shadow: inset 0px 1px 3px #0ff;
-}
-
-/* header buttons */
-
-.red {
-  background-color: rgb(150, 131, 131);
-  transition: 3.3s ease all;
-  outline: 2px solid white;
-}
-
-.red::hover {
-  background-color: rgb(128, 6, 6);
-  outline: 2ps solid red;
-  outline-offset: 11px;
-  transition: outlineOffset 250ms ease;
 }

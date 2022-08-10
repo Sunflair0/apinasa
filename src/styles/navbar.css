@@ -2,6 +2,10 @@ li span {
   padding-left: 6px;
 }
 
+.menu1items:link {
+color: #5ee05e;
+}
+
 .subMenu1items {
   display: flex;
   height: 35px;

@@ -1,6 +1,5 @@
 .my_page_cards {
 	display: inline-flex;
-	border: 4px solid rgb(128, 12, 12);
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
@@ -21,7 +20,7 @@
 	width: 150px;
 	border-radius: 50%;
 	background: repeating-conic-gradient(from 5deg at 50% 50%,
-			transparent 0deg 10deg, rgba(180, 180, 180, 0.877) 10deg 20deg, rgba(102, 102, 102, 0.377) 20deg 30deg);
+			transparent 0deg 10deg, rgba(2, 6, 54, 0.877) 10deg 20deg, rgba(43, 39, 100, 0.377) 20deg 30deg);
 	transition: transform .6s ease-out;
 	z-index: -1;
 }
