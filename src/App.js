@@ -100,15 +100,11 @@ function App() {
                       <Route path="admin" element={<Admin />} />
                       {/* </Route> */}
                       <Route path="*" element={<Error404 />} />
-
                     </Routes>
-
                   </div>
-                </ToggleProvider>
-             
+                </ToggleProvider>             
             </div >
           </div >
-
         )}
     </>
   );

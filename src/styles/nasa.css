@@ -15,39 +15,13 @@ iframe {
 .flex3 {
   display: flex;
   width: calc(100% - 1rem);
-justify-content: space-around;
-border: pink 4px solid;
+  justify-content: space-around;
+  border: pink 4px solid;
 }
 
 .album {
   height: 100vh;
   width: 50rem;
-  border: rgb(121, 133, 14) 4px solid;
-  opacity: .45;
-  background: linear-gradient(-135deg,
-      rgba(180, 180, 180, 0.2) 0,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.4) 100%),
-    linear-gradient(135deg,
-      rgba(180, 180, 180, 0.2) 0,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.4) 100%),
-    radial-gradient(ellipse closest-side,
-      #EBA149 0,
-      #E28234 38%,
-      #9B432D 65%,
-      #010b9e73 100%);
-}
-
-.albumPic {
-height: 55%;
-width: 95%;
-transform: translateY(70%);
-align-items: center;
-display: flex;
-position: absolute;
   border: rgb(121, 133, 14) 4px solid;
   opacity: .45;
   background: linear-gradient(-135deg,
@@ -75,15 +49,25 @@ position: absolute;
   transform: translateX(-40px)
 }
 
+.apod_page {
+ display: flex;
+flex-direction: column;
+}
+
+.apod_header {
+  display: flex;  
+  flex-basis: calc(100% / 3 - 34px);
+  width: 75%;
+  object-fit: contain;
+  top: 5rem;
+  height: 10rem;
+}
 
 /* APOD Console buttons and action shadows */
 
 .apodSee {
   display: flex;
-  flex-direction: row;
-  flex-basis: calc(100% / 3 - 34px);
-  width: 75%;
-  object-fit: contain;
+
   margin-top: -140px;
   margin-right: 1.2em;
 }
