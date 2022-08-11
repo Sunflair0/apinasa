@@ -38,6 +38,7 @@ import TravelNow from "./pages/MyPage/TravelNow";
 import VentureTours from "./pages/VentureTours";
 import Admin from "./pages/Admin";
 import Junk from "./components/Junk";
+import Profile from "./pages/MyPage/Profile";
 
 function App() {
 
@@ -59,7 +60,6 @@ function App() {
                         <Route path="about" element={<About />} />
                         <Route path="nasa" element={<NASA />} />
                         <Route path="nasa/apod" element={<APOD />}>
-
                           <Route path="apodtoday" element={<div><ApodToday /></div>} />
                           <Route path="apodchoose" element={<div><ApodChoose /></div>} />
                           <Route path="apodrange" element={<div><ApodRange /></div>} />
@@ -71,6 +71,7 @@ function App() {
 
                         <Route path="mypage">
                           <Route index element={<MyPage />} />
+                          <Route path="profile" element={<Profile />} />
                           <Route path="album" element={<Album />} />
                           <Route path="IPN" element={<IPN />} />
                           <Route path="mysalutes" element={<MySalutes />} />

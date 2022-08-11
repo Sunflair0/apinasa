@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import { add, remove, entry } from "../../../redux/features/albumSlice";
 
-
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const ApodToday = ({

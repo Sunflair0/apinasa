@@ -35,10 +35,17 @@
 	transform: scale(1.1);
 }
 
+.title_style {
+	position: absolute;
+	display: flex;
+	margin: auto;
+	font-size: large;
+	justify-content: center;
+}
 
 .albumPic {
 height: 55%;
-width: 95%;
+width: 55%;
 transform: translateY(70%);
 align-items: center;
 display: flex;
@@ -62,18 +69,9 @@ position: absolute;
       #010b9e73 100%);
 }
 
-
-.title_style {
-	position: absolute;
-	display: flex;
-	margin: auto;
-	font-size: large;
-	justify-content: center;
-}
-
 .ipnPic {
-	height: 12.5%;
-	width: 20.75%;
+	height: 40%;
+	width: 40%;
 	margin: auto;
 	/* transform: translate(50%, 50%); */
 	/* align-items: center; */

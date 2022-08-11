@@ -8,7 +8,7 @@ tStyle: 'title_style',
 path: 'profile',
 style: "my_page_cards",
 inComp: '',
-picStyle: 'albumPic',
+picStyle: '',
 },
 { 
 title: 'ALBUM',
