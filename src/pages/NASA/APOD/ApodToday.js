@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import { add, remove, entry } from "../../../redux/features/albumSlice";
 
-
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const ApodToday = ({
@@ -29,7 +28,7 @@ const ApodToday = ({
   if (!apodData) return <div />;
 
   return (
-    <div className="">
+    <div>
       <h3>Here it is, the famous Astronomy Picture Of the Day from NASA. If you like it, add it to your Album. Then you can visit it whenever you like. Click on the picture to open in another tab in your browser.</h3>
 
       <div className="">
