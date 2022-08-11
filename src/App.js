@@ -59,11 +59,12 @@ function App() {
 
                         <Route path="about" element={<About />} />
                         <Route path="nasa" element={<NASA />} />
-                        <Route path="nasa/apod" element={<APOD />}>
-                          <Route path="apodtoday" element={<div><ApodToday /></div>} />
-                          <Route path="apodchoose" element={<div><ApodChoose /></div>} />
-                          <Route path="apodrange" element={<div><ApodRange /></div>} />
-                          <Route path="apodgimme5" element={<div><ApodGimme5 /></div>} />
+                        <Route path="nasa/apod" element={<APOD /> }>
+                       
+                          <Route path="apodtoday" element={<ApodToday />} />
+                          <Route path="apodchoose" element={<ApodChoose />} />
+                          <Route path="apodrange" element={<ApodRange />} />
+                          <Route path="apodgimme5" element={<ApodGimme5 />} />
                         </Route>
                         <Route path="nasa/mer" element={<MER />} />
                         <Route path="nasa/earth" element={<EARTH />} />
@@ -85,7 +86,7 @@ function App() {
                           <Route path="travelnow" element={<TravelNow />} />
                           <Route path="presentlocation" element={<PresentLocation />} />
                         </Route>
-                        <Route path="venturetours" element={<VentureTours />} />
+                        <Route path="venturetours/*" element={<VentureTours />} />
                         <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
 
                         <Route path="testimonials" element={<Testimonials />} />
