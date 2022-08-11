@@ -1,1 +1,0 @@
-export const albumSelector = (state) => state.album;

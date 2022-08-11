@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { allTest, writeTByclient, getAllmyTest, byclientIDt, byTestIDt, patchTByclient, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/album.model");
+const { allTest, writeTByuser, getAllmyTest, byuserIDt, byTestIDt, patchTByuser, delOneMyTest, delAllMyTest, findTByTtl} = require("../models/album.model");
 
 // /////I want to see all testimonials
 router.get("/testimonial/all", (req, res) => {
@@ -16,9 +16,9 @@ return findTByTtl(res, req.params.title);
 });
 
 router.post("/add", (req, res) => {
-const {client_id, title, testimonial} =req.body;
-if (client_id && title && testimonial){ 
-return writeTByclient(res, client_id, title, testimonial);
+const {user_id, title, testimonial} =req.body;
+if (user_id && title && testimonial){ 
+return writeTByuser(res, user_id, title, testimonial);
 }
 return res.send({
 success: false,
@@ -28,19 +28,19 @@ data: null,});
 
 // /////I want to see all testimonials3
 router.get("/test/all", (req, res) => {
-return byclientIDt(res);
+return byuserIDt(res);
 });
 
 // /////I want to see all my testimonials
-router.get("/mine/test/all:client_id", (req, res) => {
+router.get("/mine/test/all:user_id", (req, res) => {
 return getAllmyTest(res);
 });
 
 // /////I want to change one of my testimonials
-router.patch("/patch/:client_id/:test_id", (req, res) => {
-const {client_id, test_id, title, testimonial} =req.params;
-if (client_id && test_id && title && testimonial){ 
-return patchTByclient(res, client_id, test_id, title, testimonial);
+router.patch("/patch/:user_id/:test_id", (req, res) => {
+const {user_id, test_id, title, testimonial} =req.params;
+if (user_id && test_id && title && testimonial){ 
+return patchTByuser(res, user_id, test_id, title, testimonial);
 }
 return res.send({
 success: false,
@@ -49,15 +49,15 @@ data: null,});
 });
 
 // /////I want to delete a testimonials
-router.delete("/delete/one/mine/:client_id/:test_id", (req, res) => {
-const {client_id, test_id} =req.params;
-return delOneMyTest(res, client_id, test_id);
+router.delete("/delete/one/mine/:user_id/:test_id", (req, res) => {
+const {user_id, test_id} =req.params;
+return delOneMyTest(res, user_id, test_id);
 });
 
 // /////I want to delete all my testimonials
-router.delete("/delete/all/mine/:client_id/:test_id", (req, res) => {
-const {client_id, test_id} =req.params;
-return delAllMyTest(res, client_id, test_id);
+router.delete("/delete/all/mine/:user_id/:test_id", (req, res) => {
+const {user_id, test_id} =req.params;
+return delAllMyTest(res, user_id, test_id);
 }); 
 
 //!I want to find testimonials by part title

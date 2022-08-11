@@ -1,0 +1,40 @@
+.app {
+  padding: 10px;
+}
+
+.app>*+* {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.ship {
+  display: flex;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border: none;
+  outline: 25px solid transparent;
+  outline-offset: 150px;
+  border-radius: 50%;
+  background-image: "url(../assets/ship.png)";
+  background-position: center;
+  background-size: 93%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 10;
+  filter: contrast(145%) brightness(1.1);
+}
+
+.ship:hover {
+  filter: contrast(145%) brightness(1.5);
+}
+
+.cursor_follow {
+  position: absolute;
+  user-select: none;
+  cursor: default;
+  transform: rotate(32deg)scale(.32);
+  transition: .5s;
+  z-index: 0;
+}

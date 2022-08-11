@@ -1,18 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Route, Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-function ProtectedRoute({ clienttag, path, reqUser, component }) {
-  if ((clienttag && reqUser) || (!clienttag && !reqUser)) {
-    return <Route path={path} component={component} />;
-  } else {
-    return <Redirect to={reqUser ? "/login" : "/splash"} />;
-  }
-}
-function mapStateToProps(state) {
-  return {
-    clienttag: state.client.clienttag,
-  };
-}
-
-export default connect(mapStateToProps, {})(ProtectedRoute);
+function ProtectedRoute({ user, isPrivate, children }) {
+      // Is this a private route?
+      const redirectTo = isPrivate ? "/loginpage" : "/home";
+      // Is there an activeUser?
+      // Do the two work in combination
+      if ((user && isPrivate) || (!user && !isPrivate)) {
+        // If so, render the component
+        return <>{children}</>;
+      } else {
+        // If not, redirect them
+        return <Navigate to={redirectTo} />;
+      }
+    };
+    
+    const mapStateToProps = (state) => {
+      return {
+        user: state.user,
+      };
+    };
+    
+    const mapDispatchToProps = {};    
+    export default connect(mapStateToProps, mapDispatchToProps)(ProtectedRoute);

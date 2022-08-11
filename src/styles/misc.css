@@ -1,0 +1,226 @@
+ /* /////tourinfo page */
+
+ .tour-page {
+   display: flex;
+   flex-direction: row;
+   max-width: fit-content;
+ }
+
+ .top {
+   margin-top: 8px;
+ }
+
+ .pit-shell {
+   flex-direction: column;
+ }
+
+ .venture-menu {
+   width: fit-content;
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+ }
+
+ .venture-menu a {
+   background-color: rgb(0, 255, 42);
+   color: blanchedalmond;
+   display: block;
+   padding: 8px;
+   text-decoration: none;
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+ }
+
+ Link a:hover {
+   background-color: red;
+ }
+
+ .venture-menu a:hover {
+   background-color: rgba(160, 13, 50, 0.5);
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+ }
+
+ .venture-menu a:active {
+   background-color: blanchedalmond;
+   color: black;
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+ }
+
+ .planet-image-text {
+   display: flex;
+   flex-basis: content;
+   margin-top: 5px;
+   margin-left: 10px;
+ }
+
+ .planet-image {
+   display: flex;
+   max-width: min-content;
+   align-self: auto;
+   padding: 4px;
+   transform: scale(4);
+   transform: scale(1);
+ }
+
+ .planet-text {
+   display: flex;
+   background-color: rgba(160, 13, 50, 0.25);
+   color: white;
+   flex-basis: 100%;
+   margin: 5px;
+   flex-flow: row wrap;
+   border: solid 2px black;
+   padding: 4px;
+ }
+
+ .top-border {
+   background-color: darkolivegreen;
+   width: 100%;
+   height: 150px;
+   background-image:
+     radial-gradient(white, rgba(255, 255, 255, .1) 1px, transparent 20px);
+   background-size: 550px 550px;
+   background-position: 0px 0px;
+ }
+
+ /* Insurance */
+
+ .fadeBox {
+   height: 40px;
+   width: 40px;
+   margin-top: -3rem;
+   border-radius: 150px;
+   background: radial-gradient(rgb(50, 194, 151) 50%, rgb(14, 169, 180) 90%);
+   border: rgb(65, 65, 57) 2px solid;
+   box-shadow: inset 0 px 5px 5px #3a3204,
+     5px -10px 50px 7px rgb(233, 204, 44);
+   background: radial-gradient(circle at 50% 50px, rgb(0, 0, 0), rgb(88, 80, 4) 58%);
+
+
+ }
+
+ .boxFade {
+   margin-left: 500px;
+   height: 200px;
+   width: 200px;
+   border-radius: 150px;
+   border-color: #899c1a 10px solid;
+   box-shadow: 25px -11px 80px #857209,
+     inset -40px 20px 20px#3f3604;
+   background: linear-gradient(20deg, rgb(47, 33, 110) 15%, rgb(145, 150, 104) 35%, rgb(14, 170, 84) 100%);
+ }
+
+ .iris {
+   height: 50px;
+   width: 50px;
+   border: rgb(54, 3, 16) 1px solid;
+   box-shadow: inset 0px 0px 25px 1px rgb(77, 4, 32);
+   margin-left: -90px;
+   margin-top: 200px;
+   border-radius: 50px;
+   background: radial-gradient(circle at 50% 30px, #e4d3ff, rgba(19, 6, 78, 0.308) 20%),
+     radial-gradient(50% 50% at 75% 75%, #cec10b, transparent);
+ }
+
+ .bubble {
+   background: radial-gradient(100% 85% at 25% 25%, rgb(52, 50, 170), transparent 43%),
+     radial-gradient(65% 65% at 15% 15%, rgb(19, 19, 20), transparent 63%),
+     radial-gradient(100% 25% at 25% 25%, rgb(248, 248, 248), transparent 100%),
+     radial-gradient(15% 15% at 75% 75%, #7c6fb4, transparent),
+     radial-gradient(100% 100% at 50% 25%, transparent, #0f417a 98%);
+   border: 1px solid #0e262e;
+   border-radius: 100%;
+   height: 150px;
+   width: 150px;
+ }
+
+ .minisun {
+   background: rgb(235, 121, 68);
+   background: radial-gradient(circle, rgb(250, 182, 98) 10%, rgb(253, 187, 64) 25%, rgb(253, 169, 42) 45%, rgb(255, 145, 0) 55%, rgb(255, 86, 34) 70%, rgb(255, 0, 0) 80%);
+   border-radius: 50%;
+   height: 150px;
+   width: 150px;
+ }
+
+ .marsa {
+   height: 34px;
+   width: 34px;
+   border-radius: 50%;
+   background:
+     radial-gradient(95% 35% at 45% 1%, rgb(223, 208, 208), transparent 42%),
+     radial-gradient(65% 65% at 25% 25%, rgb(90, 44, 7), transparent 53%),
+     radial-gradient(100% 25% at 5% 0%, #351417, transparent 100%),
+     radial-gradient(75% 15% at 55% 75%, #442702, transparent 50%),
+     radial-gradient(75% 15% at 85% 70%, #756043, transparent 20%),
+     radial-gradient(100% 15% at 35% 85%, #442702, transparent 25%),
+     radial-gradient(100% 15% at 25% 75%, #442702, transparent 25%),
+     radial-gradient(100% 5% at 15% 70%, #442702, transparent 25%),
+     radial-gradient(95% 5% at 85% 88%, #442702, transparent 20%),
+     radial-gradient(95% 10% at 55% 87%, #442702, transparent 30%),
+     radial-gradient(100% 20% at 45% 100%, rgb(221, 218, 216), transparent 100%),
+     radial-gradient(70% 55% at 5% 75%, rgb(97, 56, 9), transparent 63%),
+     radial-gradient(100% 100% at 0% 5%, #c96624 98%),
+     linear-gradient(#be644d, #3a1317);
+   border-radius: 50%;
+   height: 150px;
+   width: 150px;
+   margin-top: -1.3vh;
+   margin-left: -90px;
+   ;
+   margin-left: -90px;
+ }
+
+
+
+ /*  IPN */
+ .ipn {
+   margin: 5em;
+   height: 100px;
+   width: 100px;
+   border-radius: 50px;
+   box-shadow: inset 0 0 18px #fff,
+     inset 6px 0 18px #f3bad6,
+     inset -6px 0 18px #0ff,
+     inset 6px 0 30px #f3bad6,
+     inset -6px 0 30px #0ff,
+     0 0 18px #fff, -4px 0 18px #f3bad6, 4px 0 18px #0ff;
+   animation: rotation 1.5s infinite linear;
+   background: repeating-radial-gradient(#030302, hsl(221, 47%, 46%), hsl(330, 59%, 20%) 8px);
+ }
+
+ @keyframes rotation {
+   from {
+     transform: scale(.01) rotate(0deg);
+     opacity: 1;
+   }
+
+   to {
+     transform: scale(2) rotate(2200deg);
+     opacity: 0.1;
+   }
+ }
+
+ /* Contact Form */
+
+ .contactBg {
+   height: 120vh;
+   width: 150vh;
+   background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+     linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+     linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+ }
+
+ .contactBg2 {
+   height: 120vh;
+   width: 150vh;
+   background: linear-gradient(217deg, rgba(235, 10, 10, 0.8), rgba(255, 0, 0, 0) 70.71%),
+     linear-gradient(127deg, rgba(201, 136, 52, 0.815), rgba(0, 255, 0, 0) 70.71%),
+     linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+ }
+
+ .contactBg3 {
+   height: 120vh;
+   width: 150vh;
+   background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0), #0522a15d 7.9%, #000000 7.8%, #f13607, #c8d606 15%, #f13607 19.9%, #ff0000 20%);
+ }
