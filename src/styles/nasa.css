@@ -43,7 +43,7 @@ iframe {
 
 .apodPage {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
 }
 
 /* APOD Console buttons and action shadows */
@@ -70,19 +70,14 @@ flex-direction: column;
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 10;
-transition: .1s all;
+  transition: .1s all;
 }
 
 .today:hover,
 .choose:hover,
 .gimme:hover,
 .range:hover {
-transform: scale(1.2);
-}
-
-.today:link, .choose:link, .gimme:link, .range:link {
-outline:red 3px solid;
-outline-offset: 8px;
+  transform: scale(1.2);
 }
 
 /* picture boxes */
