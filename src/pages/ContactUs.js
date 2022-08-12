@@ -14,8 +14,7 @@ const ContactUs = ({
       <div className="content_flexbox">
         <h2>Contact Us</h2>
         <div className="contactBg2">
-          <div className="glassForm">
-            
+          <div className="glassForm" style={{margin: '0% -15%'}}>            
             <div>
               <form onSubmit={handleSubmit}>
 
