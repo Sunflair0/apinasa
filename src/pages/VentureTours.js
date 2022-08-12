@@ -45,7 +45,7 @@ export default function VentureTours() {
             );
           })}
         </ul>
-        <div className="tourguide"></div>  
+        <div className="tourguide" style={{marginTop: '20%', left: '20%'}}></div>  
        
         <Link to=':addOnsID'>Add Ons</Link>
       

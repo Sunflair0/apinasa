@@ -22,7 +22,7 @@ function MenuAnimate() {
       .to(q(".ship"), {
         duration: .6,
         rotation: 32,
-        x: '10%',
+        x: '12%',
         y: '-30%',
         scale: 1.7,
         ease: 'ease-in'
@@ -50,7 +50,7 @@ function MenuAnimate() {
         duration: .2,
         rotation: 0,
         x: '-50%',
-        y: '-50%',
+        y: '-40%',
         scale: .05,
         outlineColor: '#00ff2a'
       });
