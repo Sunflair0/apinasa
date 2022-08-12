@@ -2,6 +2,7 @@
 @import "./styles/errors.css";
 @import "./styles/loading.css";
 @import "./styles/misc.css";
+@import "./styles/mypage.css";
 @import "./styles/nasa.css";
 @import "./styles/navbar.css";
 @import "./styles/planet.css";
@@ -56,6 +57,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 28px;
+
   height: 28px;
 }
 
@@ -64,7 +66,7 @@ body {
   background: #000000;
   box-shadow: inset 0 0 10px 5px #15157c;
 }
-<<<<<<< HEAD
+
 menu :hover{
 background-color: rgba(43, 40, 40, 0.637);
 color: rgb(26, 6, 206);
@@ -100,7 +102,7 @@ color:rgba(0, 0, 255, 0.493);
   background-color: chartreuse;
   width: 250px;
   height: 100vh;
-=======
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -123,16 +125,55 @@ color:rgba(0, 0, 255, 0.493);
   display: flex;
   position: relative;
   flex-direction: row;
-  top: 3.5vh;
+  top: 3vh;
   min-height: 100vh;
 }
+
+.flex_backing2 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ship_flexbox {
+  display: flex;
+  position: relative;
+  top: 6rem;
+  left: 1.6rem;
+}
+
+.menu_flexbox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  left: 3rem;
+  top: 6rem;
+  padding-right: 4rem;
+}
+
+.content_flexbox {
+  display: flex;
+  margin-top: 10.5rem;
+  position: relative;
+  overflow: auto;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  height: 95vh;
+  width: 95%;
+  min-height: 0;
+}
+
+.brand_center {
   display: flex;
   align-items: center;
   position: absolute;
   top: 10%;
   right: calc(50% + 76px);
 }
-<<<<<<< HEAD
+
 span {
   margin-left: 16px;
 }
@@ -142,21 +183,15 @@ span {
   margin: 0;
   padding: 0;
 }
-.callisto,
-.titan,
-.ganymede,
-.mimas,
-.moon {
-=======
 
 .topMask {
   margin-top: 5vh;
   height: 95vh;
   width: 100%;
+}
 
 .center {
   margin: auto 0;
->>>>>>> master
   display: flex;
   position: relative;
   flex-direction: column;

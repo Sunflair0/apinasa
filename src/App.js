@@ -38,6 +38,7 @@ import TravelNow from "./pages/MyPage/TravelNow";
 import VentureTours from "./pages/VentureTours";
 import Admin from "./pages/Admin";
 import Junk from "./components/Junk";
+import Profile from "./pages/MyPage/Profile";
 
 function App() {
 
@@ -47,8 +48,7 @@ function App() {
         (
           <div style={{ backgroundImage: "url(../../assets/stars.png)", zIndex: "-100" }}>
             <div style={{ backgroundImage: "url(../../assets/twink.png)", zIndex: "-90", animation: "twink 700s linear infinite" }}>
-              <img className="Graham_Holtshausen gal" src="url(../../assets/streaks.png)"  alt="universe"/>
-
+              
                 <ToggleProvider>
                   <div className="flex_backing">
                     <Routes>
@@ -59,20 +59,20 @@ function App() {
 
                         <Route path="about" element={<About />} />
                         <Route path="nasa" element={<NASA />} />
-                        <Route path="nasa/apod" element={<APOD />}>
-
-
-
-                          <Route path="apodtoday" element={<div><ApodToday /></div>} />
-                          <Route path="apodchoose" element={<div><ApodChoose /></div>} />
-                          <Route path="apodrange" element={<div><ApodRange /></div>} />
-                          <Route path="apodgimme5" element={<div><ApodGimme5 /></div>} />
+                        <Route path="nasa/apod" element={<APOD /> }>
+                       
+                          <Route path="apodtoday" element={<ApodToday />} />
+                          <Route path="apodchoose" element={<ApodChoose />} />
+                          <Route path="apodrange" element={<ApodRange />} />
+                          <Route path="apodgimme5" element={<ApodGimme5 />} />
                         </Route>
                         <Route path="nasa/mer" element={<MER />} />
                         <Route path="nasa/earth" element={<EARTH />} />
                         <Route path="nasa/iss" element={<ISS />} />
 
-                        <Route path="mypage" element={<MyPage />}>
+                        <Route path="mypage">
+                          <Route index element={<MyPage />} />
+                          <Route path="profile" element={<Profile />} />
                           <Route path="album" element={<Album />} />
                           <Route path="IPN" element={<IPN />} />
                           <Route path="mysalutes" element={<MySalutes />} />
@@ -86,7 +86,7 @@ function App() {
                           <Route path="travelnow" element={<TravelNow />} />
                           <Route path="presentlocation" element={<PresentLocation />} />
                         </Route>
-                        <Route path="venturetours" element={<VentureTours />} />
+                        <Route path="venturetours/*" element={<VentureTours />} />
                         <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
 
                         <Route path="testimonials" element={<Testimonials />} />
@@ -102,15 +102,11 @@ function App() {
                       <Route path="admin" element={<Admin />} />
                       {/* </Route> */}
                       <Route path="*" element={<Error404 />} />
-
                     </Routes>
-
                   </div>
-                </ToggleProvider>
-
-              </div >
+                </ToggleProvider>             
             </div >
-         
+          </div >
         )}
     </>
   );

@@ -2,6 +2,10 @@ li span {
   padding-left: 6px;
 }
 
+.menu1items:link {
+color: #5ee05e;
+}
+
 .subMenu1items {
   display: flex;
   height: 35px;
@@ -22,11 +26,11 @@ li span {
   justify-content: center;
   position: relative;
   text-decoration: none;
-  height: 35px;
-  width: 105px;
+  height: 32px;
+  width: 100px;
   font-size: 14px;
   text-shadow: 10px 10px 10px 10px#000000;
-  margin-bottom: 35%;
+  margin-bottom: 30%;
   border-radius: 0px 5px 5px 0px;
   background-image:
     radial-gradient(ellipse at 105% 6%,
@@ -39,7 +43,6 @@ li span {
     1px -1px 5px rgb(0, 0, 0),
     -1px 1px 5px rgb(0, 0, 0),
     1px 1px 5px rgb(0, 0, 0);
-  /* padding: 10px; */
   box-shadow: inset 0px 1px 0px #62c4e7,
     inset 1px 0px 0px rgb(74, 90, 18),
     0px 5px 1px 0px #000000,

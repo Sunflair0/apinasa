@@ -5,8 +5,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav>
-        
+      <nav>        
           {NavbarData.map((item, index) => {
             return (
               
