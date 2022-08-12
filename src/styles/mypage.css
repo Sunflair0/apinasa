@@ -1,9 +1,12 @@
 .my_page_background {
 	background:
-		linear-gradient(-140deg,
+		linear-gradient(-141deg,
 			transparent 48%,
 			rgba(255, 68, 0, 0.15) 49.5%,
-			transparent 15%, 
+			transparent 15%, 			
+			transparent 51.5%), 
+		linear-gradient(-139deg,
+			transparent 48%,			
 			transparent 50%, 
 			rgba(255, 68, 0, 0.15) 50.5%,
 			transparent 51.5%), 
