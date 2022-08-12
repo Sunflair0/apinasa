@@ -2,8 +2,9 @@
 	display: inline-flex;
 	height: 150px;
 	width: 150px;
-	border-radius: 50%;
-	background-color: rgba(32, 30, 27, 0.158);
+	border-radius: 20px 20px 0 0;
+	background: repeating-conic-gradient(from 5deg at 50% 50%,
+			transparent 0deg 10deg, rgba(40, 50, 53, 0.877) 10deg 20deg, rgba(109, 2, 61, 0.692) 20deg 30deg);
 	box-shadow: inset 3px 1px 5px rgb(36, 36, 36),
 		inset -3px -1px 5px rgb(59, 59, 59);
 	filter: drop-shadow(0px 0px 20px rgb(95, 95, 95));
@@ -18,9 +19,9 @@
 	position: absolute;
 	height: 150px;
 	width: 150px;
-	border-radius: 50%;
+	border-radius: 20px 20px 0 0;
 	background: repeating-conic-gradient(from 5deg at 50% 50%,
-			transparent 0deg 10deg, rgba(2, 6, 54, 0.877) 10deg 20deg, rgba(43, 39, 100, 0.377) 20deg 30deg);
+			transparent 0deg 10deg, rgba(40, 50, 53, 0.877) 10deg 25deg, rgba(73, 15, 231, 0.692) 20deg 30deg);
 	transition: transform .6s ease-out;
 	z-index: -1;
 }
@@ -30,7 +31,7 @@
 }
 
 .my_page_cards:hover {
-	filter: drop-shadow(0px 0px 20px rgb(0, 230, 173));
+	filter: drop-shadow(0px 0px 20px rgb(197, 3, 187));
 	background-color: transparent;
 	transform: scale(1.1);
 }
