@@ -14,7 +14,7 @@
     box-shadow: 0px 0px 20px rgb(87, 87, 223);
     animation: earth linear 100s infinite;
   }
-  
+
   @keyframes earth {
     from {
       transform: translatex(-50vh) scale(1.5) translatey(-203vh) scale(1.5);
@@ -156,6 +156,7 @@
     z-index: 0;
     animation: luna 15s infinite alternate;
   }
+
   
   @keyframes luna {
     from {
