@@ -6,7 +6,7 @@ const NASA = () => {
     <>
       <div className="content_flexbox">
         <div>NASA</div>
-        <Link to='apod/'>APOD</Link>
+        <Link to='apod'>APOD</Link>
         <Link to='mer'>MER</Link>
         <Link to='earth'>EARTH</Link>
         <Link to='iss'>ISS</Link>
