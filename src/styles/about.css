@@ -1,0 +1,57 @@
+.tab {
+	display: flex;
+}
+
+.tab button {
+	display: flex;
+	flex-direction: row;
+	background-color: #f3d189;
+	border-bottom: 5px solid #f3d189;
+	border-radius: 5px 5px 0 0;
+	color: rgb(0, 0, 0);
+	text-shadow: none;
+	font-weight: bold;
+	width: 7rem;
+	height: 2rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.folder {
+	padding: 2rem;
+	height: 80%;
+	background-color: #f3d189;
+	border: #000000 1px solid;
+	box-shadow: 4px 4px 25px #8b7952;
+	border-top: #f3d189 0px solid;
+	border-radius: 0 0 10px 10px;
+	color: rgb(0, 0, 0);
+	text-shadow: none;
+	font-weight: bold;
+	transform: translateY(-4px);
+}
+
+.coffee_stain {
+	background-color: #f3d189;
+	background:
+		radial-gradient(circle at 70% 80%, transparent 10.4%, rgba(82, 42, 19, 0.527) 11%, rgba(82, 42, 19, 0.527) 11.1%, transparent 11.3%), 
+		radial-gradient(circle at 65% 70%,  rgba(82, 42, 19, 0.418) 1.5%, rgba(104, 50, 19, 0.541) 1.5%, transparent 1.8%), 
+		radial-gradient(circle at 61% 65%,  rgb(73, 42, 24) .3%, transparent .5%), 
+		radial-gradient(circle at 63% 70%,  rgb(73, 42, 24) .4%, transparent .7%), 
+		radial-gradient(circle at 65% 75%,  rgb(73, 42, 24) .5%, transparent .8%), 
+		radial-gradient(circle at 67% 78%,  rgb(73, 42, 24) .5%, transparent .8%), 
+		radial-gradient(circle at 71% 81%, transparent 10.5%, rgba(80, 46, 27, 0.897) 11%, transparent 11.3%), 
+		radial-gradient(circle at 57% 78%, rgba(146, 103, 78, 0.397) 0%,  rgba(145, 102, 76, 0.575) 2.1%, transparent 2.2%), 
+		
+#f3d189;
+}
+
+a:hover,
+a:focus,
+a:active {
+	box-shadow: none;
+}
+
+a:hover {
+	transform: translateY(-4px);
+}

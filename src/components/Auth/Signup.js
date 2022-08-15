@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TourguideLight from "../Tourguide/TourguideLight";
 import { Carousel } from "react-responsive-carousel";
-import useAPI from "../../hooks/useAPI";
+// import useAPI from "../shared/hooks/useAPI";
 
-const Signup = () => {
+function Signup() { 
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { signup: signupCall } = useAPI();
-  const [error, setError] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const passError = useMemo(
+    () => password.length < 8 || password.length > 30,
+    [password]
+  );
+  const userError = useMemo(
+    () => username.length < 4 || username.length > 20,
+    [username]
+  );
+  const confirmError = useMemo(
+    () => confirmPassword !== password || passError,
+    [confirmPassword, password, passError]
+  );
 
   return (
     <>
@@ -60,16 +73,16 @@ const Signup = () => {
                   username.length <= 20 &&
                   password.length <= 20
                 ) {
-                  setError(null);
-                  let res = await signupCall("/api/users/signup", {
+                  userError(null);
+                  let res = await ("/api/users/signup", {
                     username,
                     password,
                   });
                   if (res.error) {
-                    return setError(res.error)
+                    return userError(res.error)
+  // if (!confirmError && !passError && !userError) {
+  //             navigate("/");
 
-                    // } else {
-                    //   setUsername(username);
                   }
                 }
               }
@@ -79,7 +92,7 @@ const Signup = () => {
           </div>
         </div>
       </form>
-      <div >{error}</div>
+      {/* <div >{error}</div> */}
       {/* className="errorMessage" */}
     </>
   );

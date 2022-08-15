@@ -34,6 +34,10 @@ import TestRead from "./pages/Testimonials/TestRead";
 import TestWrite from "./pages/Testimonials/TestWrite";
 import TourInfo from "./components/TourHelpers/TourInfo";
 import TourAddOns from "./components/TourHelpers/TourAddOns";
+import AddOns from "./pages/About/AddOns";
+import Game from "./pages/About/Game";
+import ThisSite from "./pages/About/ThisSite";
+import Tours from "./pages/About/Tours";
 import TravelNow from "./pages/MyPage/TravelNow";
 import VentureTours from "./pages/VentureTours";
 import Admin from "./pages/Admin";
@@ -57,7 +61,12 @@ function App() {
                       <Route index element={<Home />} />
                       <Route path="home" element={<Home />} />
 
-                      <Route path="about" element={<About />} />
+                      <Route path="about" element={<About />} >
+                        <Route path="addons" element={<AddOns />} />
+                        <Route path="game" element={<Game />} />
+                        <Route path="thissite" element={<ThisSite />} />
+                        <Route path="tours" element={<Tours />} />
+                      </Route>
                       <Route path="nasa" element={<NASA />} />
                       <Route path="nasa/apod" element={<APOD />}>
 
@@ -79,7 +88,6 @@ function App() {
                         <Route path="dailyreward" element={<DailyReward />} />
                         <Route path="purchases" element={<Purchases />} >
                           <Route path="purchases/:tourId" element={<TourInfo />} />
-
                           <Route path="mytrip" element={<MyTrip />} />
                           <Route path="myitems" element={<MyItems />} />
                         </Route>
