@@ -120,27 +120,38 @@ body {
 
 .content_flexbox {
   display: flex;
-  margin-top: 5rem;
   position: relative;
-  overflow: auto;
   flex-direction: column;
+  margin-top: 5rem;
+  overflow: auto;
   padding: 1rem 2rem;
-  height: 87;
+  height: 87%;
   width: 100%;
+  min-height: 0;
+}
+.content_flexbox1 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-top: 5rem;
+  overflow: auto;
+  padding: 1rem 2rem;
+  width: 85%;
   min-height: 0;
 }
 
 .content_flexbox2 {
   display: flex;
+  position: fixed;
   flex-direction: column;
   margin-top: 12rem;
-  position: fixed;
   overflow: auto;
   padding: 0 1rem;
-  max-height:  70vh;
+  max-height: 70vh;
   width: auto;
   min-height: 0;
 }
+
 
 .brand_center {
   display: flex;

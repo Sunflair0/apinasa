@@ -34,6 +34,7 @@ import TestRead from "./pages/Testimonials/TestRead";
 import TestWrite from "./pages/Testimonials/TestWrite";
 import TourInfo from "./components/TourHelpers/TourInfo";
 import TourAddOns from "./components/TourHelpers/TourAddOns";
+import Intro from "./pages/About/Intro";
 import AddOns from "./pages/About/AddOns";
 import Game from "./pages/About/Game";
 import ThisSite from "./pages/About/ThisSite";
@@ -62,15 +63,18 @@ function App() {
                       <Route path="home" element={<Home />} />
 
                       <Route path="about" element={<About />} >
+                        <Route index element={<Intro />} />
+                        <Route path="intro" element={<Intro />} />
                         <Route path="addons" element={<AddOns />} />
                         <Route path="game" element={<Game />} />
                         <Route path="thissite" element={<ThisSite />} />
                         <Route path="tours" element={<Tours />} />
                       </Route>
+
                       <Route path="nasa" element={<NASA />} />
                       <Route path="nasa/apod" element={<APOD />}>
 
-                        <Route path="apodtoday" element={<ApodToday />} />
+                        <Route index element={<ApodToday />} />
                         <Route path="apodchoose" element={<ApodChoose />} />
                         <Route path="apodrange" element={<ApodRange />} />
                         <Route path="apodgimme5" element={<ApodGimme5 />} />
