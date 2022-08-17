@@ -86,6 +86,19 @@ body {
   background-clip: content-box;
 }
 
+.messages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: inline-flex;
+  top: 2.8rem;
+  left: 12%;
+  width: 85%;
+  height: 2rem;
+}
+
 .flex_backing {
   display: flex;
   position: relative;
@@ -125,10 +138,11 @@ body {
   margin-top: 5rem;
   overflow: auto;
   padding: 1rem 2rem;
-  height: 87%;
+  height: auto;
   width: 100%;
   min-height: 0;
 }
+
 .content_flexbox1 {
   display: flex;
   position: relative;

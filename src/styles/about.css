@@ -44,6 +44,8 @@ padding: 1rem;}
 
 .coffee_stain {
 padding: 1rem;
+border-radius: 0 0 10px 10px;	
+
 	background:
 		radial-gradient(circle at 97% 95%, transparent 10.4%, rgba(161, 117, 91, 0.7) 11%, rgba(139, 130, 124, 0.527) 11.1%, transparent 11.3%),
 		radial-gradient(circle at 97% 95%, transparent 10.4%, rgba(82, 42, 19, 0.15) 10.7%, rgba(82, 42, 19, 0.15) 11.3%, transparent 11.5%),
