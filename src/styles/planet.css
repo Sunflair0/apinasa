@@ -2,7 +2,7 @@
 
 /* /////Celestial Bodies */
 
-.circle {
+.earth {
     /*Earth*/
     margin-left: 270vh;
     margin-top: 70vh;
@@ -25,7 +25,7 @@
     }
   }
   
-  .circle1 {
+  .pluto {
     /*Pluto*/
     display: flex;
     margin-left: auto;
@@ -37,7 +37,7 @@
     position: relative;
   }
   
-  .circle2 {
+  .ganymede {
     /*Ganymede*/
     margin-left: 65%;
     margin-top: -20%;
@@ -48,10 +48,10 @@
     z-index: 1;
   }
   
-  .circle3 {
+  .mars {
     /*Mars*/
-    margin-left: 10vh;
-    margin-top: -85vh;
+    margin-left: 20vh;
+    margin-top: -60vh;
     position: fixed;
     height: 54px;
     width: 54px;
@@ -81,23 +81,22 @@
   }
   
   .rotatePlanets {
-    transform: rotate(60deg);
-    left: -28vw;
-    top: 56vh;
+    transform: rotate(55deg);
+    left: -88vw;
   }
   
   @keyframes mars {
     from {
-      transform: translate(-111vh, 46vh)scale(2.3);
+      transform: translate(5vh, 6vh)scale(2.3);
     }
   
     to {
-      transform: translate(39vh, -12vh)scale(1);
+      transform: translate(153vh, -50vh)scale(1);
       color: #000000;
     }
   }
   
-  .circle4 {
+  .callisto {
     /*Callisto*/
     margin-left: 60%;
     margin-top: -150%;
@@ -110,7 +109,7 @@
     z-index: 2;
   }
   
-  .circle5 {
+  .mercury {
     /* Mercury*/
     margin-top: -50vh;
     position: fixed;
@@ -124,16 +123,16 @@
   
   @keyframes merc {
     from {
-      transform: translate(-100vh, 12vh)scale(2.3);
+      transform: translate(-50vh, 12vh)scale(2.3);
     }
   
     to {
-      transform: translate(110vh, -31.5vh)scale(.6);
+      transform: translate(150vh, -31.5vh)scale(.6);
       color: #000000;
     }
   }
   
-  .circle6 {
+  .mimas {
     /*Mimas*/
     margin-left: 65%;
     margin-top: -17%;
@@ -144,7 +143,7 @@
     z-index: 1;
   }
   
-  .circle7 {
+  .moon {
     /*Moon*/
     margin-left: 20%;
     margin-top: -2%;
@@ -168,7 +167,7 @@
     }
   }
   
-  .circle8 {
+  .titan {
     /*Titan*/
     margin-left: 67%;
     margin-top: 45%;
@@ -192,7 +191,7 @@
     z-index: 0;
   }
   
-  .circle9 {
+  .uranus {
     /*Uranus*/
     margin-left: 30vh;
     margin-top: -102vh;
@@ -204,20 +203,20 @@
         transparent 50%, rgba(200, 240, 242, 0.3) 52%, transparent 54%,
         transparent 61%, rgba(200, 240, 242, 0.55) 62%, transparent 63%,
         transparent 50%, rgba(147, 184, 192, 0.9) 65%, transparent 100%);
-    animation: uranus 315s linear infinite;
+    animation: uranus 240s linear infinite;
   }
   
   @keyframes uranus {
     from {
-      transform: translate(-270%, 10%);
+      transform: translate(-170%, 10%);
     }
   
     to {
-      transform: translate(50%, -50%);
+      transform: translate(155%, -50%);
     }
   }
   
-  .circle10 {
+  .ariel {
     /*Ariel*/
     margin-left: 315px;
     margin-top: 315px;
@@ -241,7 +240,7 @@
     }
   }
   
-  .circle11 {
+  .titania {
     /*Titania*/
     margin-left: 315px;
     margin-top: 315px;
@@ -265,7 +264,7 @@
     }
   }
   
-  .circle12 {
+  .umbriel {
     /*Umbriel*/
     margin-left: 315px;
     margin-top: 313px;
@@ -289,7 +288,7 @@
     }
   }
   
-  .circle13 {
+  .oberon {
     /*Oberon*/
     margin-left: 315px;
     margin-top: 315px;
@@ -313,7 +312,7 @@
     }
   }
   
-  .circle17 {
+  .miranda {
     /*Miranda*/
     margin-left: 315px;
     margin-top: 315px;
@@ -398,7 +397,7 @@
     }
   }
   
-  .circle15 {
+  .sun {
     /*Sun*/
     position: fixed;
     right: 0;
@@ -406,13 +405,8 @@
     height: 1000px;
     width: 1000px;
     clip-path: circle(200% at 100% 280%);
-    background: rgb(235, 121, 68);
     background: linear-gradient(168deg, #ee5832 80%, #d87f02 87%, #fcd215 95%);
     z-index: 0;
-  }
-  
-  #sun {
-    filter: drop-shadow(-1px -30px 25px rgba(255, 30, 0, 0.5));
   }
   
   /* spacing for planets */

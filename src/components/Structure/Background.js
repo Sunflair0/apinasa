@@ -8,20 +8,20 @@ export default function Background() {
 
     return (
         <>
-            <div className="flex_backing rotatePlanets" >
-                <div className="circle9" title="Uranus">
-                    <div className="circle10" title="Ariel"></div>
-                    <div className="circle11" title="Titania"></div>
-                    <div className="circle12" title="Umbriel"></div>
-                    <div className="circle13" title="Oberon"></div>
+            <div className="flex_backing rotatePlanets"  >
+                <div className="uranus" title="Uranus">
+                    <div className="ariel" title="Ariel"></div>
+                    <div className="titania" title="Titania"></div>
+                    <div className="umbriel" title="Umbriel"></div>
+                    <div className="oberon" title="Oberon"></div>
                 </div>
-                <div className="circle3 " title="Mars"></div>
-                <div className="circle5 " title="Mercury"></div>
+                <div className="mars " title="Mars"></div>
+                <div className="mercury " title="Mercury"></div>
             </div>
             <div className="comet" title="comet"></div>
             <div>
             </div>
-            <div className="circle15" title="Sun/Sol"></div>
+            <div className="sun" title="Sun/Sol"></div>
         </>
     );
 }

@@ -12,36 +12,6 @@ export const NavbarData = [
         path: 'about/',
         icon: '🧾',
         style: 'menu1items',
-        iconClose: <RiIcons.RiArrowDownSFill />,
-        iconOpen: 'arrow_rotate',
-        subNav: [
-            {
-                title: 'ABOUT',
-                path: 'about/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'SITE',
-                path: 'about/site/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'TOURS',
-                path: 'about/tours/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'ADD ONs',
-                path: 'about/addons/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'GAME',
-                path: 'about/game/',
-                style: 'subMenu1items',
-
-            },
-        ]
     },
     {
         title: 'NASA',

@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const MyPage = () => {
   return (
     <>
-      <div className="content_flexbox">
+      <div className="content_flexbox my_page_background">
         <nav>
           <ul>
             {MyPageData.map((item) => {

@@ -1,3 +1,4 @@
+@import "./styles/about.css";
 @import "./styles/dashboard.css";
 @import "./styles/errors.css";
 @import "./styles/loading.css";
@@ -7,6 +8,7 @@
 @import "./styles/navbar.css";
 @import "./styles/planet.css";
 @import "./styles/ship.css";
+@import "./styles/testimonials.css";
 @import "./styles/tour_menu.css";
 @import "./styles/tourguide.css";
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
@@ -84,6 +86,19 @@ body {
   background-clip: content-box;
 }
 
+.messages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: inline-flex;
+  top: 2.8rem;
+  left: 12%;
+  width: 85%;
+  height: 2rem;
+}
+
 .flex_backing {
   display: flex;
   position: relative;
@@ -118,27 +133,39 @@ body {
 
 .content_flexbox {
   display: flex;
-  margin-top: 5rem;
   position: relative;
-  overflow: auto;
   flex-direction: column;
+  margin-top: 5rem;
+  overflow: auto;
   padding: 1rem 2rem;
-  height: 87;
+  height: auto;
   width: 100%;
+  min-height: 0;
+}
+
+.content_flexbox1 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-top: 5rem;
+  overflow: auto;
+  padding: 1rem 2rem;
+  width: 85%;
   min-height: 0;
 }
 
 .content_flexbox2 {
   display: flex;
+  position: fixed;
   flex-direction: column;
   margin-top: 12rem;
-  position: fixed;
   overflow: auto;
   padding: 0 1rem;
-  max-height:  70vh;
+  max-height: 70vh;
   width: auto;
   min-height: 0;
 }
+
 
 .brand_center {
   display: flex;
