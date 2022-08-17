@@ -1,20 +1,21 @@
 const LocalStrategy = require("passport-local");
 const { Strategy } = require("passport-jwt");
 const jwt = require("jsonwebtoken");
-const { login, getByClientID } = require("../models/clients.model");
+const { login, getByUserID } = require("../models/users.model");
 
 function configPassport(passport) {
   //! Local strategy
   passport.use(
     "local-login",
-    new LocalStrategy(async (clienttag, password, done) => {
+    new LocalStrategy(async (username, password, done) => {
       //! Check the login things like before
 
-      const { data, error } = await login(clienttag, password);
+      const { data, error } = await login(username, password);
       //! If everything looks good send back a signed jwt with the user's uuid
 console.log(data);
 console.log(error);      
 if (error) {
+  
         return done(error);
       }
       //! Otherwise send an appropriate message
@@ -22,8 +23,8 @@ if (error) {
       const token = jwt.sign({ uuid: data.uuid }, process.env.SECRET_KEY, {
         expiresIn: "7 days",
       });
-
-      return done(null, { clienttag: data.clienttag }, { token });
+      
+      return done(null, { username: data.username }, { token });
     })
   );
 
@@ -52,7 +53,7 @@ console.log("token",token)
       if (!payload || !payload.uuid) {
         return done(true, false, "Invalid Credentials");
       }
-      const { data, error } = await getByClientID(payload.uuid);
+      const { data, error } = await getByUserID(payload.uuid);
       if (error) {
         return done(true, false, "Invalid Credentials");
       }
@@ -61,8 +62,8 @@ console.log("token",token)
   );
 
   //! Serialize user
-  passport.serializeUser((client, done) => {
-    done(null, client.id);
+  passport.serializeUser((user, done) => {
+    done(null, user.id);
   });
 }
 
