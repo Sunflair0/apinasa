@@ -2,10 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { login } from "../../redux/features/userSlice";
 import { connect } from "react-redux";
 import useAPI from "../../hooks/useAPI";
-
 import TourguideLight from "../Tourguide/TourguideLight";
 import { useNavigate } from "react-router-dom";
-
 
 export const Login = ({ setUser }) => {
     const { login: apiLogin } = useAPI();
@@ -19,7 +17,7 @@ export const Login = ({ setUser }) => {
 
     useEffect(() => {
         if (usernameInput.length > 20) {
-            setUsernameError("Handle limit is 20 characters, please");
+            setUsernameError("Handle, less than 20 characters, please");
         } else if (usernameInput.length < 2) {
             setUsernameError("Handle must be at least 2 characters");
         } else {
@@ -29,7 +27,7 @@ export const Login = ({ setUser }) => {
 
     useEffect(() => {
         if (passwordInput.length > 20) {
-            setPasswordError("Password limit is 20 characters, please");
+            setPasswordError("Password, less than 20 characters, please");
         } else if (passwordInput.length < 6) {
             setPasswordError("Password must be at least 6 characters");
         } else {

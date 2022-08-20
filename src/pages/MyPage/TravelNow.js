@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { connect } from "react-redux";
 
 const TravelNow = () => {
   return (
@@ -10,4 +11,14 @@ const TravelNow = () => {
   )
 }
 
-export default TravelNow
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const mapStateToProps = (state) => ({
+  loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TravelNow);

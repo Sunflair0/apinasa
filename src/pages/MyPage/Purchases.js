@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
 
@@ -17,4 +18,15 @@ const Purchases = () => {
     )
 }
 
-export default Purchases
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const mapStateToProps = (state) => ({
+  loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Purchases);

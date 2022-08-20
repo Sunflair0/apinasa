@@ -1,8 +1,8 @@
 import { MyPageData } from './MyPageData';
-import { NavLink } from 'react-router-dom';
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from 'react-router-dom';
+import { connect } from "react-redux";
 
-const MyPage = () => {
+const MyPage = (loggedInUser) => {
   return (
     <>
       <div className="content_flexbox my_page_background">
@@ -28,4 +28,15 @@ const MyPage = () => {
     </>
   )
 }
-export default MyPage;
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const mapStateToProps = (state) => ({
+  loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyPage);

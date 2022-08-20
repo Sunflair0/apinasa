@@ -1,6 +1,3 @@
-import Album from "../Album";
-import IPN from "./IPN";
-
 export const MyPageData = [
 {
 title: 'PROFILE',

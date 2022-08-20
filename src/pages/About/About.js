@@ -22,7 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => ({
-
   loggedInUser: state.user,
 });
 

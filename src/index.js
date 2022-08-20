@@ -24,6 +24,4 @@ root.render(
       </ToggleProvider>
     </Provider>
   </React.StrictMode>
-
-
 );
