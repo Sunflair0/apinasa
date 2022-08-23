@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/features/userSlice";
 import { connect } from "react-redux";
@@ -53,7 +53,6 @@ function Login({ login }) {
                         <input
                             style={{ width: "80%" }}
                             type="text"
-                            error={displayError ? !!usernameError : undefined}
                             label="SpaceTours Handle"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -61,7 +60,6 @@ function Login({ login }) {
                         <input
                             style={{ width: "80%" }}
                             type="password"
-                            error={displayError ? !!passwordError : undefined}
                             label="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
