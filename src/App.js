@@ -28,7 +28,7 @@ import MyTrip from "./pages/MyPage/MyTrip";
 import NASA from "./pages/NASA/NASA"
 import Layout from "./pages/Layout";
 import PresentLocation from "./pages/MyPage/PresentLocation";
-import Purchases from "./pages/MyPage/Purchases";
+import Transactions from "./pages/MyPage/Transactions";
 import Testimonials from "./pages/Testimonials/Testimonials";
 import TestRead from "./pages/Testimonials/TestRead";
 import TestWrite from "./pages/Testimonials/TestWrite";
@@ -91,8 +91,8 @@ function App() {
                         <Route path="IPN" element={<IPN />} />
                         <Route path="mysalutes" element={<MySalutes />} />
                         <Route path="dailyreward" element={<DailyReward />} />
-                        <Route path="purchases" element={<Purchases />} >
-                          <Route path="purchases/:tourId" element={<TourInfo />} />
+                        <Route path="transactions" element={<Transactions />} >
+                          <Route path= "transactions/:tourId" element={<TourInfo />} />
                           <Route path="mytrip" element={<MyTrip />} />
                           <Route path="myitems" element={<MyItems />} />
                         </Route>

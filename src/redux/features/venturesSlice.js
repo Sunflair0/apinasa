@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+
 export const venturesSlice = createSlice({
-  name: "venture",
+  name: "venture_location",
   initialState: null,
   reducers: {
     buy: (state, action) => action.payload,
