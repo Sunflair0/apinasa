@@ -6,7 +6,7 @@ const MyPage = (loggedInUser) => {
   return (
     <>
       <div className="content_flexbox my_page_background">
-        <nav>
+        <nav className="myBackground">
           <ul>
             {MyPageData.map((item) => {
               return (
