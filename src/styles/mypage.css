@@ -1,11 +1,12 @@
-.my_page_background {
+.my_page_background1 {
 	background:
-		linear-gradient(-141deg,
+		/* linear-gradient(-141deg,
 			transparent 48%,
 			rgba(255, 68, 0, 0.15) 49.5%,
 			transparent 15%,
 			transparent 51.5%),
 		linear-gradient(-139deg,
+
 			transparent 48%,
 			transparent 50%,
 			rgba(255, 68, 0, 0.15) 50.5%,
@@ -15,7 +16,86 @@
 			rgba(255, 72, 0, 0.85) 20%,
 			transparent 30%,
 			rgba(255, 72, 0, 0.5) 15%,
+			transparent 50%); */
+transparent;
+}
+
+.black_box {
+	position: relative;
+	height: 600px;
+	width: 600px;
+	background: transparent;
+	transform: rotateZ(215deg);
+}
+
+.black_hole {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+	background:
+		/* radial-gradient(circle at 50% 50%,
+			transparent 18.5%,
+			rgba(255, 72, 0, 0.85) 20%,
+			transparent 30%,
+			rgba(255, 72, 0, 0.5) 15%,
+			transparent 50%),*/
+		radial-gradient(circle at 50% 50%,
+			transparent 20%,
+			rgba(255, 72, 0, 0.85) 20%,
+			transparent 21%,
+			rgba(255, 72, 0, 0.5) 22%,
 			transparent 50%);
+}
+
+.accretion_disc {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 100%;
+	background:
+		/* radial-gradient(circle at 50% 50%,
+			transparent 18.5%,
+			rgba(255, 72, 0, 0.85) 20%,
+			transparent 30%,
+			rgba(255, 72, 0, 0.5) 15%,
+			transparent 50%),*/
+		radial-gradient(circle at 50% 50%,
+			transparent 0%,
+			rgba(255, 72, 0, 0.85) 20%,
+			transparent 30%,
+			rgba(255, 72, 0, 0.5) 21%,
+			transparent 50%), 
+		radial-gradient(30% 55% at 32% 50%, #f7735b7c, transparent 5%),
+		radial-gradient(circle at 32% 50%,
+			#f7735b7c 2%,
+			transparent 5%),
+		radial-gradient(circle at 50% 50%,
+			transparent 18.5%,
+			rgba(255, 72, 0, 0.85) 20%,
+			transparent 30%,
+			rgba(0, 0, 0, 0.808) 15%,
+			transparent 50%);
+	animation: bh 3s ease-in-out infinite;
+}
+
+.my_page_background2 {
+	position: relative;
+	transform: rotateY(120deg);
+	height: 100%;
+	width: 100%;
+background: rgba(255, 192, 203, 0.336);
+}
+
+@keyframes bh {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .my_page_cards {
