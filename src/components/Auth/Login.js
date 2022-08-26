@@ -15,17 +15,17 @@ function Login({ login }) {
 
 
     const passError = useMemo(
-        () => password.length < 8 || password.length > 30,
+        () => password.length < 6 || password.length > 30,
         [password]
     );
     const userError = useMemo(
-        () => username.length < 4 || username.length > 20,
+        () => username.length < 2 || username.length > 20,
         [username]
     );
 
     useEffect(() => {
         if (username.length > 20) {
-            setUsernameError("Handle, less than 20 characters, please");
+            setUsernameError("Handle, max 20 characters, please");
         } else if (username.length < 2) {
             setUsernameError("Handle must be at least 2 characters");
         } else {
@@ -34,8 +34,8 @@ function Login({ login }) {
     }, [username]);
 
     useEffect(() => {
-        if (password.length > 20) {
-            setPasswordError("Password, less than 20 characters, please");
+        if (password.length > 30) {
+            setPasswordError("Password, max 30 characters, please");
         } else if (password.length < 6) {
             setPasswordError("Password must be at least 6 characters");
         } else {
@@ -51,15 +51,19 @@ function Login({ login }) {
                     <div><TourguideLight /></div>
                     <div className="namepass">
                         <input
-                            style={{ width: "80%" }}
+                            required
+                            title="Between 2 and 20 characters"
                             type="text"
+                            pattern="{2,20}"
                             label="SpaceTours Handle"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
                         <input
-                            style={{ width: "80%" }}
+                            required
+                            title="Between 6 and 30 characters"
                             type="password"
+                            pattern="{6,30}"
                             label="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

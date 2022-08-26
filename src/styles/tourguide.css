@@ -134,7 +134,7 @@
 }
 
 .flip_inputs {
-  transform: translateX(60px);
+  transform: translateX(35px);
 }
 
 .space {
@@ -146,6 +146,7 @@
 
 .namepass {
   transform: translate(5px, 15px);
+  width: 78%;
 }
 
 .gmessage,
@@ -323,7 +324,7 @@
 }
 
 .bulbOn {
-  background: radial-gradient(circle, black 35%, rgb(141, 161, 165));
+  background: radial-gradient(circle, black 40%, rgb(0, 255, 221) 100%);
   border: rgb(63, 182, 156) dotted 1px;
   perspective: 40px;
 }
@@ -340,14 +341,11 @@
   width: 15px;
   height: 30vh;
   position: absolute;
-  transform: rotate3d(1, 0, 0, -40deg)translateY(-14.7vh);
+  transform: rotate3d(1, 0, 0, -40deg)translateY(-14.7vh)translateX(1px);
 }
 
-.bulbOn::before {
-  content: "💡";
-  height: 15px;
-  width: 0px;
-  transform: translate(-.8px, -2px)
+.bulbOn svg {
+  fill: rgb(43, 250, 250);
 }
 
 .intraNet {
