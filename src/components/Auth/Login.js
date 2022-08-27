@@ -43,7 +43,6 @@ function Login({ login }) {
         }
     }, [password]);
 
-
     return (
         <>
             <form className="tourguide sunburn">
@@ -55,18 +54,20 @@ function Login({ login }) {
                             title="Between 2 and 20 characters"
                             type="text"
                             pattern="{2,20}"
-                            label="SpaceTours Handle"
+                            placeholder="SpaceTours Handle"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            error={showError ? !!usernameError : undefined}
                         />
                         <input
                             required
                             title="Between 6 and 30 characters"
                             type="password"
                             pattern="{6,30}"
-                            label="Password"
+                            placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            error={showError ? !!passwordError : undefined}
                         />
                     </div>
                 </div>
@@ -74,7 +75,7 @@ function Login({ login }) {
                     <div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
 
                     <button style={{ transform: "translate(3px, -10px)" }}
-                        disabled={passError || userError}
+                     disabled={passError || userError}
                         onClick={(e) => {
                             e.preventDefault();
                             if (!passError && !userError) {

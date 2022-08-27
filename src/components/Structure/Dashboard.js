@@ -12,7 +12,7 @@ const Dashboard = ({ loggedInUser }) => {
                     < Brand />
                     <div className='messages dots'></div>
                     <div className='curr_user'>
-                        <div className='logged_user' >Currently logged in as: <span style={{ color: '#00ffae' }}>{loggedInUser}</span>
+                        <div className='logged_user' >Currently logged in as: <span style={{ color: '#00ffae', fontWeight: '600' }}>{loggedInUser}</span>
                             </div>
                         <div className='avatar_box'><div className='avatar_earth'>
                         </div>
