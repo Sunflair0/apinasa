@@ -30,7 +30,7 @@
 	cursor: pointer;
 }
 
-.tab button:focus {
+.tabOn button {
 	background-color: #f5d99d;
 	border-bottom: 7px solid #f5d99d;
 }
@@ -66,10 +66,12 @@
 		#f5d99d;
 }
 
-a:hover,
-a:focus,
-a:active {
+.tab a:hover,
+.tab a:focus,
+.tab a:active, 
+.tab a:any-link {
 	box-shadow: none;
+	text-decoration: none;
 }
 
 a:hover button {
