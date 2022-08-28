@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AbButtons = () => {
 	const [selection, setSelection] = useState("")
@@ -8,22 +8,11 @@ const AbButtons = () => {
 		<>
 			<div className="content_intro">
 				<div className="tab">
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
-					}} to='intro' onClick={() => setSelection(selection)}><button>Intro</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
-					}} to='addons' onClick={() => setSelection(selection)} ><button>Add Ons</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
-					}} to='game' onClick={() => setSelection(selection)}><button>Game</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
-					}} to='thissite' onClick={() => setSelection(selection)}><button>This Site</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
-					}} to='tours' onClick={() => setSelection(selection)}><button>Tours</button></NavLink>
-
+					<Link to='intro' onClick={() => setSelection(selection)}><button>Intro</button></Link>
+					<Link to='addons' onClick={() => setSelection(selection)} ><button>Add Ons</button></Link>
+					<Link to='game' onClick={() => setSelection(selection)}><button>Game</button></Link>
+					<Link to='thissite' onClick={() => setSelection(selection)}><button>This Site</button></Link>
+					<Link to='tours' onClick={() => setSelection(selection)}><button>Tours</button></Link>
 				</div>
 			</div>
 		</>
