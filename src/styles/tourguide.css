@@ -163,10 +163,10 @@ color: rgb(0, 0, 0);
   z-index: 11;
 }
 
-.signMess {
+.signup_Messages {
   display: inline-block;
   justify-content: flex-start;
-  height: 260px;
+  height: 180px;
   width: 210px;
   border-radius: 10px;
   font-family: "Monaco", Times, serif;

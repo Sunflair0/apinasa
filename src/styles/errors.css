@@ -1,15 +1,10 @@
 .errorMessage {
- color: orangered;
 font-weight: 200;
-transform: translateY(-300%);
+margin: 1rem;
 }
 
 .noMessage {
 color:transparent;
 text-shadow: none;
-transform: translateY(-300%);
-}
-
-.tgUP {
-transform: translateY(300%);
+margin-top: 1rem;
 }

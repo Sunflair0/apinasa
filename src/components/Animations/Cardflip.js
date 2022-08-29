@@ -17,7 +17,7 @@ export default function Cardflip() {
           </div>
           <div className="face signup ">
             <SignUp />
-            <button onClick={handleFlipToggle} style={{ transform: "translate(-209px, 310px)" }}
+            <button onClick={handleFlipToggle} style={{ transform: "translate(-209px, 350px)" }}
               className="tgButton" >Back to Login</button>
           </div>
         </div>
