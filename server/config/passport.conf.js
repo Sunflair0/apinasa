@@ -1,70 +1,41 @@
-const LocalStrategy = require("passport-local");
+const passport = require("passport");
 const { Strategy } = require("passport-jwt");
-const jwt = require("jsonwebtoken");
-const { login, getByUserID } = require("../models/users.model");
+const query = require("./database.config");
 
-function configPassport(passport) {
-  //! Local strategy
-  passport.use(
-    "local-login",
-    new LocalStrategy(async (username, password, done) => {
-      //! Check the login things like before
-
-      const { data, error } = await login(username, password);
-      //! If everything looks good send back a signed jwt with the user's uuid
-console.log(data);
-console.log(error);      
-if (error) {
-  
-        return done(error);
-      }
-      //! Otherwise send an appropriate message
-
-      const token = jwt.sign({ uuid: data.uuid }, process.env.SECRET_KEY, {
-        expiresIn: "7 days",
-      });
-      
-      return done(null, { username: data.username }, { token });
-    })
-  );
-
-  //! JWT Extraction Strategy
-  const cookieJWTExtractor = (req) => {
-    let token = null;
-    if (req && req.cookies) {
-      token = req.cookies["jwt"];
-    }
-console.log("token",token)
-    return token;
-
-  };
-
-  //! JWT strategy
-
-  const jwtOptions = {
-    secretOrKey: process.env.SECRET_KEY,
-    jwtFromRequest: cookieJWTExtractor,
-  };
-
-  passport.use(
-    "jwt",
-    new Strategy(jwtOptions, async (payload, done) => {
-      //? Grab a user by user.uuid
-      if (!payload || !payload.uuid) {
-        return done(true, false, "Invalid Credentials");
-      }
-      const { data, error } = await getByUserID(payload.uuid);
-      if (error) {
-        return done(true, false, "Invalid Credentials");
-      }
-      return done(false, data, null);
-    })
-  );
-
-  //! Serialize user
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
+function cookieExtractor(req) {
+  let token = null;
+  if (req && req.cookies) {
+    token = req.cookies.jwt;
+  }
+  return token;
 }
 
-module.exports = configPassport;
+const jwtOptions = {
+  secretOrKey: process.env.SECRET_KEY,
+  jwtFromRequest: cookieExtractor,
+};
+
+passport.use(
+  "jwt",
+  new Strategy(jwtOptions, async (payload, done) => {
+    try {
+      //! Try to query the database where the users id = payload.id
+      const [user] = await query("SELECT * FROM users WHERE users.id = ?", [
+        payload.id,
+      ]);
+
+      //! If there isn't a user, return done(null, false, "No valid user")
+      if (!user) {
+        return done(null, false, "No user found");
+      }
+
+      //! If there is a user, return done(null, user)
+      return done(null, user);
+    } catch (err) {
+      //! If there was an error, return done(true, false, "Something went wrong")
+      return done(true, false, "Invalid credentials");
+    }
+  })
+);
+
+module.exports = passport;

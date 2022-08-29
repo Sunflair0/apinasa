@@ -73,7 +73,6 @@ function App() {
 
                       <Route path="nasa" element={<NASA />} />
                       <Route path="nasa/apod" element={<APOD />}>
-
                         <Route index element={<ApodToday />} />
                         <Route path="apodtoday" element={<ApodToday />} />
                         <Route path="apodchoose" element={<ApodChoose />} />

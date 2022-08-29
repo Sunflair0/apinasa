@@ -1,14 +1,14 @@
 const bcrypt = require("bcrypt");
 const query = require("../config/mysql.conf").default;
-const { nanoid } = require('@reduxjs/toolkit');
+// const { nanoid } = require('@reduxjs/toolkit');
 
-async function signup(res, username, password) { 
+async function signup(username, password) { 
   let json = { data: null, success: false, error: null };
   try {
-    const users = await query("SELECT * FROM users WHERE username = ?", [
+    const [user] = await query("SELECT * FROM users WHERE username = ?", [
       username
     ]);
-    if (users.length !== 0) {
+    if (user.length !== 0) {
       json.error = "Choice already taken";
     } else {
       const hashed = await bcrypt.hash(password, 10);

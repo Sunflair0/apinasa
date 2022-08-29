@@ -74,6 +74,6 @@
 	text-decoration: none;
 }
 
-a:hover button {
+.tab a:hover button {
 	transform: translateY(-4px);
 }
