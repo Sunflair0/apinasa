@@ -1,33 +1,26 @@
 import React, { useState, } from 'react';
 import { NavLink } from "react-router-dom";
 
-const AbButtons = () => {
+export default function AbButtons() {
 	const [selection, setSelection] = useState("")
 
 	return (
-		<>
-			<div className="content_intro">
-				<div className="tab">
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
+			<div className="content_intro tab">				
+					<NavLink className={({ isActive }) => {
+						return isActive ?  "tabOn"  : ""
 					}} to='intro' onClick={() => setSelection(selection)}><button>Intro</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
+					<NavLink className={({ isActive }) => {
+						return isActive ?  "tabOn"  : ""
 					}} to='addons' onClick={() => setSelection(selection)} ><button>Add Ons</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
+					<NavLink className={({ isActive }) => {
+						return isActive ?  "tabOn"  : ""
 					}} to='game' onClick={() => setSelection(selection)}><button>Game</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
+					<NavLink className={({ isActive }) => {
+						return isActive ?  "tabOn"  : ""
 					}} to='thissite' onClick={() => setSelection(selection)}><button>This Site</button></NavLink>
-					<NavLink style={({ isActive }) => {
-						return isActive ? { fontWeight: 'bold', background: '#f5d99d' } : {}
+					<NavLink className={({ isActive }) => {
+						return isActive ?  "tabOn"  : ""
 					}} to='tours' onClick={() => setSelection(selection)}><button>Tours</button></NavLink>
-
-				</div>
-			</div>
-		</>
+				</div>			
 	);
 };
-
-export default AbButtons

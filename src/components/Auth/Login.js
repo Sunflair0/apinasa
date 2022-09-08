@@ -90,7 +90,7 @@ function Login({ login }) {
                 <div className="outerS">
                     <div className="smessage">
                         If  you have not had the opportunity to create an account, please sign up before entering the site.</div>
-                    {/* Sign Up! button located on CardFlip.js */}
+                    {/* "Sign Up!" button located on CardFlip.js */}
                     <div className="errorMessage">
 
                     </div>

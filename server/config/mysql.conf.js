@@ -23,7 +23,7 @@ pool.getConnection((err, connection) => {
   }
 
   if (connection) connection.release();
-  return;
+
 });
 
 const query = util.promisify(pool.query).bind(pool);

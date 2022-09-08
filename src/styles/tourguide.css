@@ -3,8 +3,8 @@
 /* // ///// TourGuide  */
 .stripe {
   background-color: #31475583;
-  padding: 0;
-  height: 128px;
+
+  height: 160px;
   width: 310px;
   margin-bottom: 10px;
   border-bottom: 1px rgba(49, 97, 116, 0.5) solid;
@@ -30,7 +30,7 @@
   width: 310px;
   height: 500px;
   transform-style: preserve-3d;
-  perspective: 1000px;
+  perspective: 800px;
 }
 
 .card .face {
@@ -58,7 +58,6 @@
 
 .tourguide {
   transform-style: preserve-3d;
-  /* display: flex; */
   width: 310px;
   height: 500px;
   border: solid .5px rgba(70, 201, 201, 0.25);
@@ -75,8 +74,6 @@
     inset 2px 3px 0px 3px rgba(37, 48, 44, 0.3),
     inset 5px 4px 2px rgba(17, 43, 43, 0.3);
   position: absolute;
-  /* top: 0%;
-  left: 0%; */
   z-index: 90;
 }
 
@@ -106,8 +103,6 @@
   background-size: 10px 10px;
 }
 
-
-
 .btnGroup {
   display: flex;
   flex-direction: column;
@@ -119,16 +114,17 @@
 
 .tourguide button,
 .tgButton {
+color: rgb(0, 0, 0);
   position: absolute;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   margin-left: 72%;
   margin-top: 45px;
-  width: 50px;
-  height: 50px;
-  border: 2px solid rgba(38, 59, 49, 0.5);
-  background-image: linear-gradient(to right, #314755 0%, #85e76c 49%, #314755 100%);
+  width: 52px;
+  height: 52px;
+  border: 2px solid rgba(2, 21, 54, 0.2);
+  background-image: linear-gradient(to right, #53768b 0%, #85e76c 49%, #53768b 100%);
   cursor: pointer;
   z-index: 110;
 }
@@ -167,10 +163,10 @@
   z-index: 11;
 }
 
-.signMess {
+.signup_Messages {
   display: inline-block;
   justify-content: flex-start;
-  height: 260px;
+  height: 180px;
   width: 210px;
   border-radius: 10px;
   font-family: "Monaco", Times, serif;
@@ -193,7 +189,7 @@
 .outerS {
   display: inline-flex;
   flex-basis: auto;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .tourguide input {
