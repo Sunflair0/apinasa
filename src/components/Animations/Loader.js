@@ -2,6 +2,7 @@ import React from 'react'
 import Ship from './Ship'
 
 const Loader = () => {
+
     return (
         <div className='loader'>
             <div className='loading'>

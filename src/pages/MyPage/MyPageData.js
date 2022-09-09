@@ -1,6 +1,3 @@
-import Album from "../Album";
-import IPN from "./IPN";
-
 export const MyPageData = [
 {
 title: 'PROFILE',
@@ -37,7 +34,7 @@ style: "my_page_cards",
 { 
 title: 'PURCHASES',
 tStyle: 'title_style',
-path: 'purchases',
+path: 'transactions',
 style: "my_page_cards",
 },
 { 

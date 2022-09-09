@@ -1,5 +1,6 @@
+import { connect } from "react-redux";
 
-export default function IPN() {
+function IPN() {
 	return (
 		<>
 			<div className="content_flexbox">
@@ -10,3 +11,14 @@ export default function IPN() {
 		</>
 	)
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const mapStateToProps = (state) => ({
+  loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(IPN);

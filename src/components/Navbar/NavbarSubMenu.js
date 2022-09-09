@@ -28,7 +28,7 @@ export const NavbarSubMenu = ({ item }) => {
             {subnav && item.subNav.map((item, index) => {
                 return (
                     <Link to={item.path} key={index}>
-                        <div ><span>{item.title}</span></div>
+                        <div className={item.style} ><span>{item.title}</span></div>
                     </Link>
                 )
             })}
