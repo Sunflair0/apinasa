@@ -5,15 +5,15 @@ const Navbar = () => {
 
   return (
     <>
-      <nav>        
-          {NavbarData.map((item, index) => {
-            return (
-              
-                <NavbarSubMenu item={item} key={index} />
-             
-            )
-          })}
-       
+      <nav>
+        {NavbarData.map((item, index) => {
+          return (
+
+            <NavbarSubMenu item={item} key={index} />
+
+          )
+        })}
+
       </nav>
     </>
   );

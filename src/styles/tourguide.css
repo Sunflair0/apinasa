@@ -114,7 +114,7 @@
 
 .tourguide button,
 .tgButton {
-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -163,7 +163,7 @@ color: rgb(0, 0, 0);
   z-index: 11;
 }
 
-.signup_Messages {
+.signupMess {
   display: inline-block;
   justify-content: flex-start;
   height: 180px;
@@ -219,22 +219,20 @@ color: rgb(0, 0, 0);
   background-color: hsla(226, 66%, 11%, 0.5);
   display: flex;
   position: relative;
-  top: 300px;
+  top: 50%;
   left: 50%;
-  right: auto;
   transform: translate(-50%, -50%);
   width: 720px;
   height: 500px;
-  margin-top: 200px;
   border-radius: 10px;
   font-weight: 300;
   align-content: center;
   justify-content: center;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   border: 3px solid rgb(53, 65, 73);
   box-shadow: 3px 3px 5px 1px #c4e0df8a,
-    4px 4px 2px hsla(180, 52%, 46%, 0.973),
-    inset 4px 5px 4px hsl(180, 5%, 18%);
+    4px 4px 1px hsla(180, 52%, 46%, 0.9),
+    inset 4px 5px 2px hsl(180, 5%, 18%);
   z-index: 100;
 }
 

@@ -8,10 +8,10 @@ function About({ loggedInUser }) {
       <div className='content_flexbox1'>
         <h1>Greetings, {loggedInUser}! What do you want to know?</h1>
         <AbButtons />
-<div className="folder">
-        <Outlet />
+        <div className="folder">
+          <Outlet />
+        </div>
       </div>
-</div>
     </>
   );
 };

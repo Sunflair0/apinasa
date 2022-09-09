@@ -17,7 +17,7 @@
 			transparent 30%,
 			rgba(255, 72, 0, 0.5) 15%,
 			transparent 50%); */
-transparent;
+		transparent;
 }
 
 .black_box {
@@ -67,7 +67,7 @@ transparent;
 			rgba(255, 72, 0, 0.85) 20%,
 			transparent 30%,
 			rgba(255, 72, 0, 0.5) 21%,
-			transparent 50%), 
+			transparent 50%),
 		radial-gradient(30% 55% at 32% 50%, #f7735b7c, transparent 5%),
 		radial-gradient(circle at 32% 50%,
 			#f7735b7c 2%,
@@ -86,13 +86,14 @@ transparent;
 	transform: rotateY(120deg);
 	height: 100%;
 	width: 100%;
-background: rgba(255, 192, 203, 0.336);
+	background: rgba(255, 192, 203, 0.336);
 }
 
 @keyframes bh {
 	from {
 		transform: rotate(0deg);
 	}
+
 	to {
 		transform: rotate(360deg);
 	}
@@ -104,15 +105,13 @@ background: rgba(255, 192, 203, 0.336);
 	height: 100px;
 	width: 100px;
 	border: solid 1px rgb(26, 1, 248);
+	border-radius: 10px;
 	background: repeating-conic-gradient(from 5deg at 50% 50%,
 			transparent 0deg 15deg, rgba(17, 186, 238, 0.767)g 20deg, rgb(66, 11, 216) 20deg 30deg);
+	border: rgba(54, 32, 153, 0.932) solid 2px;
 	box-shadow:
-		inset 1px 1px 1px rgb(145, 143, 108),
-		inset -3px -3px 1px rgb(143, 134, 124),
-		inset 4px 4px 1px rgba(58, 58, 58, 0.521),
-		inset -4px -4px 1px rgba(58, 58, 58, 0.521),
-		inset 0 0 400px rgb(0, 0, 0);
-
+		inset 3px 3px 15px rgb(95 0 242),
+		inset -3px -3px 15px rgb(95 0 242);
 	margin: 50px;
 	cursor: pointer;
 	position: relative;
@@ -129,8 +128,8 @@ background: rgba(255, 192, 203, 0.336);
 	border-radius: 50%;
 	background: repeating-conic-gradient(from 5deg at 50% 50%,
 			transparent 0deg 15deg,
-			rgba(58, 168, 7, 0.829) 10deg 15deg,
-			rgb(3, 66, 161) 20deg 10deg);
+			rgba(107, 48, 155, 0.829) 10deg 15deg,
+			#067CB2 20deg 21deg);
 	transition: transform .6s ease-out;
 	z-index: 0;
 }
@@ -141,10 +140,13 @@ background: rgba(255, 192, 203, 0.336);
 
 .my_page_cards:hover {
 	background-color: transparent;
-	border: solid 2px rgb(98, 0, 255);
+	border: rgba(122, 4, 158, 0.75) solid 2px;
+	box-shadow:
+		inset 3px 3px 15px rgb(95 0 242),
+		inset -3px -3px 15px rgb(95 0 242);
 	transition: transform .6s ease-out;
-	outline: 3px solid blue;
-	outline-offset: 10px;
+	/* outline: 3px solid blue;
+	outline-offset: 10px; */
 	transform: scale(1.1);
 }
 
@@ -221,6 +223,7 @@ background: rgba(255, 192, 203, 0.336);
 
 .myBackground {
 	width: 90%;
+	border: rgb(101, 7, 252) solid 2px;
 	box-shadow:
 		inset 3px 2px 5px rgb(28, 32, 235),
 		inset -3px -2px 5px rgb(28, 32, 235);

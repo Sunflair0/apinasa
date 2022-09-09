@@ -10,7 +10,7 @@ export default function Apod() {
         style={({ isActive }) => {
           return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {}
         }}
-        to="apodtoday">
+         to="apodtoday">
         <div className='apodButton today'
           style={{
             backgroundImage: "url(../../assets/today.png)"

@@ -1,7 +1,7 @@
 import React, { useState, } from 'react';
 import { NavLink } from "react-router-dom";
 
-export default function AbButtons() {
+const AbButtons = () => {
 	const [selection, setSelection] = useState("")
 
 	return (
@@ -22,5 +22,7 @@ export default function AbButtons() {
 						return isActive ?  "tabOn"  : ""
 					}} to='tours' onClick={() => setSelection(selection)}><button>Tours</button></NavLink>
 				</div>			
-	);
-};
+	)
+}
+
+export default AbButtons;

@@ -67,7 +67,7 @@ function Signup() {
             </div>
           </div>
           <div className="outerS">
-            <div className="signup_Messages">
+            <div className="signupMess">
               <div
                 id="userHelp"
                 className={userError ? "errorMessage " : "noMessage"}
@@ -88,16 +88,13 @@ function Signup() {
               >
                 Password check must match
               </div>
+  </div>
 
-              if (!confirmError && !passError && !userError) return{
+{/* function submitNow(){if (!confirmError && !passError && !userError) return{
                 <p>Press Submit to create account</p>
-              };
-
-
-
-
-
-            </div>
+              };} */}
+              
+          
             <button
               style={{ transform: "translate(-229px, 25px)" }}
               disabled={confirmError || passError || userError}
