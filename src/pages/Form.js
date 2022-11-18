@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 
-const Form = ({ username }) => {
+const Form = ({ loggedInUser }) => {
 
 	const handleSubmit = (e) => { e.preventDefault() }
 
@@ -20,11 +20,12 @@ const Form = ({ username }) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-  
-    };
-  };
-  
-  const mapStateToProps = () => ({});
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(Form);
+	return {
+	};
+};
+
+const mapStateToProps = (state) => ({
+	loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

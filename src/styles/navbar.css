@@ -3,7 +3,7 @@ li span {
 }
 
 .menu1items:link {
-color: #5ee05e;
+  color: #5ee05e;
 }
 
 .subMenu1items {
@@ -149,11 +149,20 @@ color: #5ee05e;
 }
 
 /* subMenu styles */
-.about,
-.nasa,
-.salutes {
+
+.menu1items:hover .nasa {
   display: flex;
-  height: 90vh;
+  height: 50px;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.menu1items:hover .salutes {
+  display: flex;
+  height: 50px;
+  width: 100px;
   align-items: center;
   justify-content: center;
   font-size: 3rem;

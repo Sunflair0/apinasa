@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { connect } from "react-redux";
 
 const PresentLocation = () => {
   return (
@@ -10,4 +11,14 @@ const PresentLocation = () => {
 )
 }
 
-export default PresentLocation
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const mapStateToProps = (state) => ({
+  loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PresentLocation);

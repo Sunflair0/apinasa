@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const testimonialsSlice = () => {
-  return (
-	<div>testimonialsSlice</div>
-  )
-}
+export const testimonialsSlice = createSlice({
+  name: 'salutes',
+initialState: null, 
+reducers: {
 
-export default testimonialsSlice
+   clear: () => [],
+  },
+});
+
+export const 
+{clear} =testimonialsSlice.actions;
+
+export default testimonialsSlice.reducer;
