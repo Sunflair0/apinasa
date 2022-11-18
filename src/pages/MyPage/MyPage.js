@@ -7,7 +7,7 @@ const MyPage = (loggedInUser) => {
     <>
       <div className="content_flexbox my_page_background">
         <nav className="myBackground">
-          <ul>
+          <ul className="container">
             {MyPageData.map((item) => {
               return (
                 <li className={item.style}>
@@ -16,7 +16,7 @@ const MyPage = (loggedInUser) => {
                   }}>
 
                     <div className={item.picStyle}>{item.inComp}</div>
-                    <span className={item.tStyle}>{item.title}</span>
+                    <div className={item.tStyle}>{item.title}</div>
                   </NavLink>
                 </li>
               )

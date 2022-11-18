@@ -5,7 +5,7 @@ tStyle: 'title_style',
 path: 'profile',
 style: "my_page_cards",
 inComp: '',
-picStyle: '',
+picStyle: 'pic',
 },
 { 
 title: 'ALBUM',
@@ -13,7 +13,7 @@ tStyle: 'title_style',
 path: 'album',
 style: "my_page_cards",
 inComp: '',
-picStyle: 'albumPic',
+picStyle: 'pic albumPic',
 },
 
 { 
@@ -22,7 +22,7 @@ tStyle: 'title_style',
 path: 'ipn',
 style: "my_page_cards",
 inComp: '',
-picStyle: 'ipnPic'
+picStyle: 'pic ipnPic'
 
 },
 { 
@@ -30,32 +30,35 @@ title: 'BANK',
 tStyle: 'title_style',
 path: 'dailyreward',
 style: "my_page_cards",
+picStyle: 'pic',
 },
 { 
 title: 'PURCHASES',
 tStyle: 'title_style',
 path: 'transactions',
 style: "my_page_cards",
+picStyle: 'pic',
 },
 { 
 title: 'SALUTES',
 tStyle: 'title_style',
 path: 'mysalutes',
 style: "my_page_cards",
+picStyle: 'pic',
 },
 { 
-title: 'INITIATE TRAVEL',
-tStyle: 'title_style',
-path: 'travelnow',
-style: "my_page_cards",
-picStyle: 'ganymedePic'
-},
-{ 
-title: 'PRESENT LOCATION',
+title: 'HERE',
 tStyle: 'title_style',
 path: 'presentlocation',
 style: "my_page_cards",
-picStyle: 'earthPic'
+picStyle: 'pic earthPic'
+},
+{ 
+title: 'TO THERE',
+tStyle: 'title_style',
+path: 'travelnow',
+style: "my_page_cards",
+picStyle: 'pic ganymedePic'
 },
 
 ]

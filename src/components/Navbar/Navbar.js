@@ -8,12 +8,9 @@ const Navbar = () => {
       <nav>
         {NavbarData.map((item, index) => {
           return (
-
             <NavbarSubMenu item={item} key={index} />
-
           )
         })}
-
       </nav>
     </>
   );

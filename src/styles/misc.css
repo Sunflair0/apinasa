@@ -197,10 +197,12 @@
   @keyframes rotation {
     from {
       transform: scale(.01) rotate(0deg);
+opacity: 1;
     }
   
     to {
-      transform: scale(1.5) rotate(1100deg);
+      transform: scale(3) rotate(1100deg);
+opacity: 0;
     }
   }
   

@@ -14,11 +14,11 @@ const Dashboard = ({ loggedInUser }) => {
                     <div className='curr_user'>
                         <div className='logged_user' >Currently logged in as: <span style={{ color: '#00ffae', fontWeight: '600' }}>{loggedInUser}</span>
                             </div>
-                        <div className='avatar_box'><div className='avatar_earth'>
+                        <div className='avatar_box'><div className='avatar_mercury'>
                         </div>
                         </div>
                     </div>
-                    <div className='cart'><AiOutlineShoppingCart />
+                    <div className=' clippy'><AiOutlineShoppingCart />
                     </div>
                 </div>
                 <Link to="/loginpage" className='d_button'>LOGOUT</Link>
