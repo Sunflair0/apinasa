@@ -11,7 +11,7 @@ function configPassport(passport) {
       //! Check the login things like before
 
       const { data, error } = await login(username, password);
-      //! If everything looks good send back a signed jwt with the user's uuid
+      //! If everything looks good send back a signed jwt with the user's nanoid
 console.log(data);
 console.log(error);      
 if (error) {
@@ -20,7 +20,7 @@ if (error) {
       }
       //! Otherwise send an appropriate message
 
-      const token = jwt.sign({ uuid: data.uuid }, process.env.SECRET_KEY, {
+      const token = jwt.sign({ nanoid: data.nanoid }, process.env.SECRET_KEY, {
         expiresIn: "7 days",
       });
       
@@ -49,11 +49,11 @@ console.log("token",token)
   passport.use(
     "jwt",
     new Strategy(jwtOptions, async (payload, done) => {
-      //? Grab a user by user.uuid
-      if (!payload || !payload.uuid) {
+      //? Grab a user by user.nanoid
+      if (!payload || !payload.nanoid) {
         return done(true, false, "Invalid Credentials");
       }
-      const { data, error } = await getByUserID(payload.uuid);
+      const { data, error } = await getByUserID(payload.nanoid);
       if (error) {
         return done(true, false, "Invalid Credentials");
       }

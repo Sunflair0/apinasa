@@ -1,0 +1,13 @@
+.testimonial {
+	border: rgba(122, 4, 158, 0.75) solid 2px;
+	box-shadow:
+		inset 3px 3px 15px rgb(95 0 242),
+		inset -3px -3px 15px rgb(95 0 242);
+}
+
+.testimonial_box {
+	border: rgb(101, 7, 252) solid 2px;
+	box-shadow:
+		inset 3px 2px 5px rgb(28, 32, 235),
+		inset -3px -2px 5px rgb(28, 32, 235);
+}

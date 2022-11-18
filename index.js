@@ -15,6 +15,7 @@ const ventfavRoutes = require("./server/routes/ventfav.routes");
 app.use(express.json());
 passportConf(passport);
 app.use(cookieParser());
+
 app.use(passport.initialize());
 app.use(express.static(__dirname + "/build"));
 

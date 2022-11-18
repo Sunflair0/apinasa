@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Test_Write = () => {
+const TestWrite = () => {
   return (
-    <div>Test_Write</div>
+<>
+<div className="content_flexbox">
+    <div>TestWrite</div>
+</div>
+</>
   )
 }
 
-export default Test_Write
+export default TestWrite

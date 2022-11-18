@@ -8,8 +8,9 @@ export default function Apod() {
     <div className="apodButtons">
       <NavLink
         style={({ isActive }) => {
- return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {} }}
-        to="apodtoday">
+          return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {}
+        }}
+         to="apodtoday">
         <div className='apodButton today'
           style={{
             backgroundImage: "url(../../assets/today.png)"
@@ -18,7 +19,7 @@ export default function Apod() {
       </NavLink>
 
       <NavLink
-        style={({ isActive }) => { return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {}}}
+        style={({ isActive }) => { return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {} }}
 
         to="apodchoose">
         <div className='apodButton choose'
@@ -29,7 +30,7 @@ export default function Apod() {
       </NavLink>
 
       <NavLink
-        style={({ isActive }) => { return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {}}}
+        style={({ isActive }) => { return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {} }}
 
         to="apodgimme5">
         <div className='apodButton gimme'
@@ -40,7 +41,7 @@ export default function Apod() {
       </NavLink>
 
       <NavLink
-        style={({ isActive }) => { return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {}}}
+        style={({ isActive }) => { return isActive ? { outline: "#4b4be9 2px solid", outlineOffset: '8px' } : {} }}
 
         to="apodrange">
         <div className='apodButton range'

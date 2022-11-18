@@ -14,10 +14,9 @@ const ContactUs = ({
       <div className="content_flexbox">
         <h2>Contact Us</h2>
         <div className="contactBg2">
-          <div className="glassForm" style={{margin: '0% -15%'}}>            
+          <div className="glassForm">            
             <div>
               <form onSubmit={handleSubmit}>
-
                 <input type="submit" ></input>
                 <input className="textEmail" type="email" placeholder="Email" name="email" ></input>
                 <select className="textDrop" name="selectList" id="selectList">
@@ -44,11 +43,12 @@ const ContactUs = ({
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-  
+  return {  
   };
 };
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state) => ({
+ loggedInUser: state.user,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactUs);

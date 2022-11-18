@@ -1,9 +1,17 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-const Test_Read = () => {
+
+const TestRead = () => {
+
   return (
-    <div>Test_Read</div>
+    <>
+      <div className="content_flexbox">
+        <div>TestRead</div>
+        <Outlet />
+      </div>
+    </>
   )
 }
 
-export default Test_Read
+export default TestRead

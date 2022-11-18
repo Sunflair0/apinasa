@@ -1,20 +1,20 @@
 const bcrypt = require("bcrypt");
 const query = require("../config/mysql.conf").default;
-const { v4: uuidv4 } = require('uuid');
+// const { nanoid } = require('@reduxjs/toolkit');
 
-async function signup(res, username, password) { 
+async function signup(username, password) { 
   let json = { data: null, success: false, error: null };
   try {
-    const users = await query("SELECT * FROM users WHERE username = ?", [
+    const [user] = await query("SELECT * FROM users WHERE username = ?", [
       username
     ]);
-    if (users.length !== 0) {
+    if (user.length !== 0) {
       json.error = "Choice already taken";
     } else {
       const hashed = await bcrypt.hash(password, 10);
-      const uuid = uuidv4();
-      await query("INSERT INTO users (password, username, uuid) VALUES (?,?,?)", [
-        hashed, username, uuid
+  
+      await query("INSERT INTO users (password, username, nanoid) VALUES (?,?,?)", [
+        hashed, username, nanoid
       ]);
       json = { ...json, success: true };
     }
@@ -40,7 +40,7 @@ async function login( username, password) {
     const user = users[0] || { password: 1234 };
     const matches = await bcrypt.compare(password, user.password);
     if (matches) {
-      json = { ...json, data: { username, uuid: user.uuid } };
+      json = { ...json, data: { username, nanoid: user.nanoid } };
     } else {
       json.error = "Invalid username / password";
     }
@@ -51,12 +51,12 @@ async function login( username, password) {
   }
 }
 
-async function getByUserID(uuid) {
+async function getByUserID(nanoid) {
   let json = { error: null, data: null };
   try {
     const users = await query(
-      "SELECT id, username, uuid FROM users WHERE uuid = ?",
-      [uuid]
+      "SELECT id, username, nanoid FROM users WHERE nanoid = ?",
+      [nanoid]
     );
     if (users.length === 0) {
       json.error = "No user found";
@@ -74,7 +74,7 @@ async function getByusername(res, username) {
   let json = { success: false, error: null, data: null };
   try {
     const users = await query(
-      "SELECT id, username, uuid FROM users WHERE username = ?",
+      "SELECT id, username, nanoid FROM users WHERE username = ?",
       [username]
     );
     if (users.length === 0) {
@@ -92,7 +92,7 @@ async function getByusername(res, username) {
 async function getAllusers(res) {
   let json = { success: false, error: null, data: null };
   try {
-    const users = await query("SELECT id, username, uuid FROM users");
+    const users = await query("SELECT id, username, nanoid FROM users");
     if (users.length === 0) {
       json.error = "No users found";
     } else {

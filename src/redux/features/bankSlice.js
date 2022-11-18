@@ -1,9 +1,15 @@
-import React from 'react'
+import { createSlice } from "@reduxjs/toolkit";
 
-const bankSlice = () => {
-  return (
-	<div>bankSlice</div>
-  )
-}
+export const bankSlice = createSlice({
+  name: "location",
+  initialState: [],
+  reducers: {
+    buy: (state, action) => action.payload,
+    sell: (state, action) => action.payload,
+   clear: () => [],
+  },
+});
 
-export default bankSlice
+export const { buy, sell, clear } = bankSlice.actions;
+
+export default bankSlice.reducer;

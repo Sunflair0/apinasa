@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from "react-redux";
 
 const DailyReward = () => {
     return (
@@ -10,4 +11,13 @@ const DailyReward = () => {
     )
 }
 
-export default DailyReward
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const mapStateToProps = (state) => ({
+  loggedInUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DailyReward);

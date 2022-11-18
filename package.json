@@ -4,7 +4,7 @@
   "proxy": "http://localhost:8080",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.3",
+    "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -30,10 +30,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.2.0",
+    "react-query": "^3.39.2",
     "react-redux": "^8.0.2",
     "react-responsive-carousel": "^3.2.20",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
     "save": "^2.5.0",
     "uglify-js": "^3.16.3",
     "web-vitals": "^1.1.2"

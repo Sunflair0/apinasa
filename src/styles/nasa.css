@@ -20,25 +20,17 @@ iframe {
 }
 
 .album {
-  height: 100vh;
-  width: 50rem;
-  border: rgb(121, 133, 14) 4px solid;
-  opacity: .45;
-  background: linear-gradient(-135deg,
-      rgba(180, 180, 180, 0.2) 0,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.4) 100%),
-    linear-gradient(135deg,
-      rgba(180, 180, 180, 0.2) 0,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.4) 100%),
-    radial-gradient(ellipse closest-side,
-      #EBA149 0,
-      #E28234 38%,
-      #9B432D 65%,
-      #010b9e73 100%);
+  height: 80%;
+  width: 80%;
+  border: rgb(121, 133, 14) 1px solid;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    repeating-radial-gradient(circle, #02fcb8 0px, #02fcb8 1px, transparent 2px, transparent 100%),
+    repeating-radial-gradient(circle at 75% 75%, #000000 0px, #000000 1px, transparent 2px, transparent 100%);
+  background-size: 32px 32px;
 }
 
 .apodPage {

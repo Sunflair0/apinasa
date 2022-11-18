@@ -12,36 +12,6 @@ export const NavbarData = [
         path: 'about/',
         icon: '🧾',
         style: 'menu1items',
-        iconClose: <RiIcons.RiArrowDownSFill />,
-        iconOpen: 'arrow_rotate',
-        subNav: [
-            {
-                title: 'ABOUT',
-                path: 'about/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'SITE',
-                path: 'about/site/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'TOURS',
-                path: 'about/tours/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'ADD ONs',
-                path: 'about/addons/',
-                style: 'subMenu1items'
-            },
-            {
-                title: 'GAME',
-                path: 'about/game/',
-                style: 'subMenu1items',
-
-            },
-        ]
     },
     {
         title: 'NASA',
@@ -54,22 +24,22 @@ export const NavbarData = [
             {
                 title: 'APOD',
                 path: 'nasa/apod/',
-                style: 'subMenu1items'
+                style: 'nasa'
             },
             {
                 title: 'EARTH',
                 path: 'nasa/earth/',
-                style: 'subMenu1items'
+                style: 'nasa'
             },
             {
                 title: 'MER',
                 path: 'nasa/mer/',
-                style: 'subMenu1items'
+                style: 'nasa'
             },
             {
                 title: 'ISS',
                 path: 'nasa/iss/',
-                style: 'subMenu1items'
+                style: 'nasa'
             }
         ]
     },
@@ -96,12 +66,12 @@ export const NavbarData = [
             {
                 title: 'READ',
                 path: 'testimonials/read/',
-                style: 'subMenu1items'
+                style: 'salutes'
             },
             {
                 title: 'WRITE',
                 path: 'testimonials/write/',
-                style: 'subMenu1items',               
+                style: 'salutes',               
             }
         ]
     },
