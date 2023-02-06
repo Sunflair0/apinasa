@@ -12,7 +12,9 @@ const MyPage = (loggedInUser) => {
               return (
                 <li className={item.style}>
                   <NavLink to={item.path} style={({ isActive }) => {
-                    return { color: isActive ? '#fff000' : '#067CB2' }
+                    return {
+                      color: isActive ? '#fff000' : '#067CB2',
+                    }
                   }}>
 
                     <div className={item.picStyle}>{item.inComp}</div>

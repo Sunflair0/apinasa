@@ -51,14 +51,14 @@ title: 'HERE',
 tStyle: 'title_style',
 path: 'presentlocation',
 style: "my_page_cards",
-picStyle: 'pic earthPic'
+picStyle: 'pic earthPic',
 },
 { 
 title: 'TO THERE',
 tStyle: 'title_style',
 path: 'travelnow',
 style: "my_page_cards",
-picStyle: 'pic ganymedePic'
+picStyle: 'pic ganymedePic',
 },
 
 ]
