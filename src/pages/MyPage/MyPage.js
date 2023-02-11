@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 const MyPage = (loggedInUser) => {
   return (
     <>
-      <div className="content_flexbox my_page_background">
-        <nav className="myBackground">
-          <ul className="container">
+      <div className="content_flexbox">
+        <nav className="container">
+          <ul className="hexagon">
             {MyPageData.map((item) => {
               return (
                 <li className={item.style}>
@@ -16,10 +16,10 @@ const MyPage = (loggedInUser) => {
                       color: isActive ? '#fff000' : '#067CB2',
                     }
                   }}>
-
-                    <div className={item.picStyle}>{item.inComp}</div>
                     <div className={item.tStyle}>{item.title}</div>
+                    <div className={item.picStyle}>{item.inComp}</div>
                   </NavLink>
+
                 </li>
               )
             })}

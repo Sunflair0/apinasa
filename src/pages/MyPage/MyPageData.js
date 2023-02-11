@@ -33,12 +33,19 @@ style: "my_page_cards",
 picStyle: 'pic',
 },
 { 
-title: 'PURCHASES',
+title: 'center',
+tStyle: 'title_style',
+path: 'travelnow',
+style: "my_page_cards centerHex",
+},
+{ 
+title: 'ITEMS',
 tStyle: 'title_style',
 path: 'transactions',
 style: "my_page_cards",
 picStyle: 'pic',
 },
+
 { 
 title: 'SALUTES',
 tStyle: 'title_style',
@@ -60,5 +67,6 @@ path: 'travelnow',
 style: "my_page_cards",
 picStyle: 'pic ganymedePic',
 },
+
 
 ]
