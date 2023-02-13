@@ -10,16 +10,18 @@ const MyPage = (loggedInUser) => {
           <ul className="hexagon">
             {MyPageData.map((item) => {
               return (
-                <li className={item.style}>
+                <li className={item.grid}>
                   <NavLink to={item.path} style={({ isActive }) => {
                     return {
                       color: isActive ? '#fff000' : '#067CB2',
                     }
                   }}>
+
+                    <div className={item.style}></div>
                     <div className={item.tStyle}>{item.title}</div>
                     <div className={item.picStyle}>{item.inComp}</div>
-                  </NavLink>
 
+                  </NavLink>
                 </li>
               )
             })}

@@ -92,112 +92,177 @@
 	background: rgba(255, 192, 203, 0.336);
 }
 
+
+
+.container {
+
+	display: flex;
+	/* position: absolute; */
+	/* border: 3px yellow solid; */
+	transition: scale 2s forwards ease;
+	justify-content: center;
+	/* font-size: 0; */
+	margin: 8rem auto;
+
+}
+
 .hexagon {
-	position: relative;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(6, 1fr);
-	gap: 20px;
-	transition: all .6s ease-out;
-	perspective: 1000px;
+	grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	/* border: 2px solid lightblue; */
+	/* transition: all .6s ease-out; */
 }
 
 .hexagon::hover {
-
 	transition: all .3s ease-out;
-	scale: 1.1;
 }
 
-.container {
-	position: absolute;
-	transition: scale 2s forwards ease;
-	top: 10rem;
+.hexGrid {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-content: center;
+	/* border: #02fcb8 2px solid; */
+}
+
+
+.grid1 {
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+.grid2 {
+	grid-area: 1 / 2 / 2 / 3;
+}
+
+.grid3 {
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+.grid4 {
+	grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid5 {
+	grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid6 {
+	grid-area: 2 / 3 / 3 / 4;
+}
+
+.grid7 {
+	grid-area: 3 / 1 / 4 / 2;
+}
+
+.grid8 {
+	grid-area: 3 / 2 / 4 / 3;
+}
+
+.grid9 {
+	grid-area: 3 / 3 / 4 / 4;
+}
+
+.title_style {
+	display: flex;
+	/* border: rgb(219, 128, 23) 1px solid; */
+	filter: drop-shadow(0px 7px 1px rgba(0, 0, 0, 0.61));
 	justify-content: center;
-	/* display: flex; */
-	perspective: 1000px;
-	/* width: 600px; */
---s: 100px;
-  --m: 4px;   
-font-size: 0;
+	/* background-color: #1f1f1f; */
+width: 100%;
+	font-size: large;
+	color: yellowgreen;
+	transform: translateY(-500%);
 }
 
+
+.title_style:hover {
+	transition: all .3s ease-out;
+	color: yellow;
+}
+.title_style:where(+ .my_page_cards:hover) {
+	transition: all .3s ease-out;
+	color: yellow;
+}
+
+.title_style:has(~ .my_page_cards:hover) {
+	transition: all .3s ease-out;
+	color: yellow;
+}
+
+.my_page_cards:has(+ .title_style:hover) {
+	animation: pulse 1.5s infinite ease-out;
+	background: rgb(252, 7, 150);
+	rotate: -61deg;
+}
+
+/* 
+.title_style:hover~.my_page_cards {
+	animation: pulse 1.5s infinite ease-out;
+	background: rgb(252, 7, 150);
+	rotate: -61deg;
+} */
 
 .my_page_cards {
 	display: inline-flex;
 	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-	/* animation: pulse 1.5s infinite ease-out; */
 	height: 133px;
 	width: 150.5px;
-	justify-content: space-around;
 	cursor: pointer;
 	position: relative;
-	background: rgb(243, 76, 215);
-	/* transition: 2s linear ease; */
+	background: rgb(133, 33, 116);
 	rotate: 29.1deg;
 	transition: all .6s ease-out;
-	transform: rotateX(0deg) rotateY(0deg);
-	perspective: 1000px;
-	transform-style: preserve-3d;
 }
 
 .my_page_cards::before {
 	content: "";
+	display: flex;
 	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	height: 129px;
 	width: 145.5px;
-	background: rgb(67 6 215);
+	background: rgb(44, 27, 85);
 	position: absolute;
 	left: 2.3px;
 	top: 1.7px;
-	display: block;
 	transition: all .6s ease-out;
-	transform: rotateX(0deg) rotateY(0deg);
-	perspective: 1000px;
-	transform-style: preserve-3d;
 }
 
 .my_page_cards::after {
 	content: "";
-	display: block;
+	display: flex;
 	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	height: 120.2px;
 	width: 135.5px;
-	background: repeating-conic-gradient(rgba(255, 255, 255, 0), black, black 1.8deg);
-	/* background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), repeating-radial-gradient(circle, #02fcb8 0px, #02fcb8 1px, transparent 2px, transparent 100%), repeating-radial-gradient(circle at 75% 75%, #000000 0px, #000000 1px, transparent 2px, transparent 100%); */
-	background-size: 10px 10px;
-
 	background-color: black;
 	background-image:
-		radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
-		radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
-		radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
-		radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
-	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-	background-position: 0 0, 4px 6px, 13px 27px, 7px 5px;
+		linear-gradient(0deg, #8d8d92de 0%, transparent 4%),
+		linear-gradient(180deg, #ffffff79 0%, transparent 9%),
+		repeating-conic-gradient(black, black, transparent, black .605deg),
+		radial-gradient(circle, rgb(0, 0, 0) 15%, rgb(39, 61, 252) 19%, rgb(4, 48, 247) 24%, rgba(133, 4, 253, 0.74) 73%);
 	cursor: pointer;
 	position: absolute;
 	left: 5%;
 	top: 5%;
 	transition: all .6s ease-out;
-	transform: rotateX(0deg) rotateY(0deg);
-	perspective: 1000px;
-	transform-style: preserve-3d;
 }
 
-.my_page_cards:hover {
-	/* background: rgb(238, 17, 172);
-	background: repeating-conic-gradient(rgb(238, 17, 172), rgb(101, 7, 252), rgb(238, 17, 172), rgb(101, 7, 252));
-	height: 180px;
-	width: 200px;
-	animation: spin 1s linear infinite;
-	left: -39.5%;
-	top: -24.6%;
-*/
-	/* animation: pulse 1.5s infinite ease-out; */
+.card_click {
+	background-image:
+		linear-gradient(0deg, #8d8d92de 0%, transparent 4%),
+		linear-gradient(180deg, #ffffff79 0%, transparent 9%),
+		repeating-conic-gradient(black, transparent, black .545deg),
+		radial-gradient(circle, rgb(0, 0, 0) 15%, rgb(0, 26, 255) 21%, rgb(4, 48, 247) 24%, rgba(133, 4, 253, 0.74) 73%);
+}
 
+@keyframes zoom {}
+
+.my_page_cards:hover {
+	animation: pulse 1.5s infinite ease-out;
 	background: rgb(252, 7, 150);
-	height: 132px;
-	width: 151px;
+	rotate: -61deg;
 }
 
 @keyframes spin {
@@ -212,34 +277,24 @@ font-size: 0;
 
 @keyframes pulse {
 	50% {
-		scale: 1.015
+		scale: 1.05;
 	}
 }
 
 
-.centerHex,
-.centerHex::before,
-.centerHex::after {
-	content: "";
-	background: transparent;
-}
-
-
-.title_style {
-	filter: drop-shadow(0px 7px 1px rgba(0, 0, 0, 0.61));
-	display: flex;
-	width: 100%;
-	font-size: large;
-	justify-content: center;
-	color: yellowgreen;
-	position: absolute;
-	rotate: -29.1deg;
-	transform: translate(-60%, 25%) translateZ(40px);
-	z-index: 1;
-}
 
 .pic:hover {
 	scale: 1.3;
+}
+
+.centerHex,
+.centerHex::before,
+.centerHex::after,
+.centerHex:hover {
+	content: "";
+	background: transparent;
+
+
 }
 
 .albumPic {
