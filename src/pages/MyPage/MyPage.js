@@ -16,11 +16,9 @@ const MyPage = (loggedInUser) => {
                       color: isActive ? '#fff000' : '#067CB2',
                     }
                   }}>
-
                     <div className={item.style}></div>
                     <div className={item.tStyle}>{item.title}</div>
                     <div className={item.picStyle}>{item.inComp}</div>
-
                   </NavLink>
                 </li>
               )

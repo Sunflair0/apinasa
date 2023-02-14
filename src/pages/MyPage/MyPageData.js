@@ -1,3 +1,4 @@
+import Ship from '../../components/Animations/Ship';
 export const MyPageData = [
 {
 title: 'PROFILE',
@@ -47,7 +48,8 @@ grid: 'grid6 hexGrid',
 tStyle: 'title_style',
 path: 'transactions',
 style: "my_page_cards grid6",
-picStyle: 'pic',
+picStyle: '<Ship/>',
+// inComp: {png: require('../../../public/assets/green25.png')},
 },
 
 { 
@@ -72,7 +74,7 @@ grid: 'grid9 hexGrid',
 tStyle: 'title_style',
 path: 'travelnow',
 style: "my_page_cards grid9",
-picStyle: 'pic ganymedePic1',
+picStyle: 'pic ganymedePic',
 },
 
 

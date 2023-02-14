@@ -99,7 +99,7 @@
 	display: flex;
 	/* position: absolute; */
 	/* border: 3px yellow solid; */
-	transition: scale 2s forwards ease;
+	transition: all .3s ease-out;
 	justify-content: center;
 	/* font-size: 0; */
 	margin: 8rem auto;
@@ -113,7 +113,7 @@
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	/* border: 2px solid lightblue; */
-	/* transition: all .6s ease-out; */
+	transition: all .3s ease-out;
 }
 
 .hexagon::hover {
@@ -125,6 +125,8 @@
 	flex-direction: column;
 	justify-items: center;
 	align-content: center;
+	transition: all .3s ease-out;
+	perspective: 1000px;
 	/* border: #02fcb8 2px solid; */
 }
 
@@ -167,21 +169,19 @@
 
 .title_style {
 	display: flex;
-	/* border: rgb(219, 128, 23) 1px solid; */
 	filter: drop-shadow(0px 7px 1px rgba(0, 0, 0, 0.61));
 	justify-content: center;
-	/* background-color: #1f1f1f; */
-width: 100%;
 	font-size: large;
 	color: yellowgreen;
 	transform: translateY(-500%);
+	transition: all .3s ease-out;
 }
-
 
 .title_style:hover {
-	transition: all .3s ease-out;
+	font-weight: 700;
 	color: yellow;
 }
+
 .title_style:where(+ .my_page_cards:hover) {
 	transition: all .3s ease-out;
 	color: yellow;
@@ -195,15 +195,9 @@ width: 100%;
 .my_page_cards:has(+ .title_style:hover) {
 	animation: pulse 1.5s infinite ease-out;
 	background: rgb(252, 7, 150);
-	rotate: -61deg;
+	rotate: -88deg;
+	transform: perspective(50em) rotate3d(0, 1, 0, -60deg);
 }
-
-/* 
-.title_style:hover~.my_page_cards {
-	animation: pulse 1.5s infinite ease-out;
-	background: rgb(252, 7, 150);
-	rotate: -61deg;
-} */
 
 .my_page_cards {
 	display: inline-flex;
@@ -212,7 +206,9 @@ width: 100%;
 	width: 150.5px;
 	cursor: pointer;
 	position: relative;
-	background: rgb(133, 33, 116);
+	background: linear-gradient(0deg, rgb(133, 33, 116) 0%,
+			#ab32dd 37%,
+			rgb(5 56 153 / 43%) 97%);
 	rotate: 29.1deg;
 	transition: all .6s ease-out;
 }
@@ -223,7 +219,7 @@ width: 100%;
 	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	height: 129px;
 	width: 145.5px;
-	background: rgb(44, 27, 85);
+	background: linear-gradient(180deg, #02ffba, #1360c780 3%, #00000099 96.6%, #a9051fd9 102%);
 	position: absolute;
 	left: 2.3px;
 	top: 1.7px;
@@ -238,10 +234,18 @@ width: 100%;
 	width: 135.5px;
 	background-color: black;
 	background-image:
-		linear-gradient(0deg, #8d8d92de 0%, transparent 4%),
+		radial-gradient(10% 3% at 43% 1%, rgb(208 218 255), transparent 200%, transparent 250%),
+		radial-gradient(14% 3% at 52% 0%, rgb(40, 42, 211), transparent 200%, #5723ff7a 230%, transparent 250%),
+		linear-gradient(0deg, #9b2eed9e 0%, transparent 11%),
+		radial-gradient(8% 9% at 50% 50%, black, transparent 200%, #5723ff7a 230%, transparent 250%),
+		linear-gradient(0deg, black 0%, transparent 11%),
 		linear-gradient(180deg, #ffffff79 0%, transparent 9%),
 		repeating-conic-gradient(black, black, transparent, black .605deg),
-		radial-gradient(circle, rgb(0, 0, 0) 15%, rgb(39, 61, 252) 19%, rgb(4, 48, 247) 24%, rgba(133, 4, 253, 0.74) 73%);
+		radial-gradient(circle, rgb(0, 0, 0) 23%,
+			#0037ff 27%,
+			rgb(39, 61, 252) 33%,
+			rgb(4, 48, 247) 34%,
+			rgba(180, 52, 255, 0.767) 75%);
 	cursor: pointer;
 	position: absolute;
 	left: 5%;
@@ -254,7 +258,7 @@ width: 100%;
 		linear-gradient(0deg, #8d8d92de 0%, transparent 4%),
 		linear-gradient(180deg, #ffffff79 0%, transparent 9%),
 		repeating-conic-gradient(black, transparent, black .545deg),
-		radial-gradient(circle, rgb(0, 0, 0) 15%, rgb(0, 26, 255) 21%, rgb(4, 48, 247) 24%, rgba(133, 4, 253, 0.74) 73%);
+		radial-gradient(circle, rgb(0, 0, 0) 0%, rgb(0, 26, 255) 23%, rgb(4, 48, 247) 24%, rgba(133, 4, 253, 0.74) 73%);
 }
 
 @keyframes zoom {}
@@ -262,7 +266,11 @@ width: 100%;
 .my_page_cards:hover {
 	animation: pulse 1.5s infinite ease-out;
 	background: rgb(252, 7, 150);
-	rotate: -61deg;
+	/* width: 105%; */
+	height: 333%;
+	rotate: -1deg;
+	transform: perspective(50em) rotate3d(1, 0, 0, -60deg);
+	transition: all .6s ease-out;
 }
 
 @keyframes spin {
