@@ -4,12 +4,10 @@ import { add, remove, entry } from "../../../redux/features/albumSlice";
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
-const ApodToday = ({
-  addEntry,
-  removeEntry,
-  isLiked
+function ApodToday({
+  addEntry, removeEntry, isLiked
 
-}) => {
+}) {
   const [apodData, setApodData] = useState(null);
 
   useEffect(() => {
@@ -25,7 +23,8 @@ const ApodToday = ({
     }
   }, []);
 
-  if (!apodData) return <div />;
+  if (!apodData)
+    return <div />;
 
   return (
     <div>
@@ -35,35 +34,34 @@ const ApodToday = ({
         <div className="apodPhoto">
           <div className="infobox stylebox">
             {apodData.media_type === "image" ? (
-              <img onClick={() =>window.open(apodData.url,"apodblank")}
+              <img onClick={() => window.open(apodData.url, "apodblank")}
                 src={apodData.url}
                 alt={apodData.title}
                 id={apodData.id}
-                key={apodData.id}
-              />
+                key={apodData.id} />
             ) : (
-              <iframe 
+              <iframe
                 title="space-video"
                 src={apodData.url}
-                frameBorder="0"
                 gesture="media"
-                allow="encrypted-media"
-                allowFullScreen
-              />
+                allow="autoplay"
+                allowFullScreen />
             )}
 
-          {isLiked && (
-        <button className="like-btn" onClick={() => removeEntry(entry.id)}>
-          Delete from Album
-        </button>
-      )}
-      {!isLiked && (
-        <button
-          button className="like-btn"
-          onClick={() => addEntry( entry )}>
-          Add to Album
-        </button>
-)}
+            {isLiked && (
+              <button 
+              button className="like-btn" 
+              onClick={() => removeEntry(entry.id)}>
+                Delete from Album
+              </button>
+            )}
+            {!isLiked && (
+              <button
+                button className="like-btn"
+                onClick={() => addEntry(entry.id)}>
+                Add to Album
+              </button>
+            )}
 
             <h1>{apodData.title}</h1>
             <p className="date">{apodData.date}</p>

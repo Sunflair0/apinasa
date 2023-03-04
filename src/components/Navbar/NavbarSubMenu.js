@@ -12,7 +12,7 @@ export const NavbarSubMenu = ({ item }) => {
                 style={({ isActive }) => {
                     return { color: isActive ? '#fff000' : '#74a741' };
                 }}
-                onCLick={item.subNav && showSubnav}>
+                onClick={item.subNav && showSubnav}>
                 <div>
                     <span>{item.title}
 
