@@ -16,7 +16,7 @@ tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
 quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
 sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
 recusandae alias error harum maxime adipisci amet laborum. Perspiciatis 
-minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit </p>
+minima nesciunt dolo holla! Officiis iure rerum voluptates a cumque velit </p>
 </div>
 </>
   )
