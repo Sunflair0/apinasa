@@ -38,7 +38,7 @@ style: "my_page_cards grid4",
 picStyle: 'pic',
 },
 { 
-grid: 'grid5 ',
+grid: 'grid5',
 path: '#',
 style: "my_page_cards centerHex",
 },
