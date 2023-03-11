@@ -11,12 +11,12 @@ export default function VentureTours() {
 
   useEffect(() => {
     async function call() {
-      // const res = await apiVentureTours
-      // (`http://localhost:3000/api/ventures/tour/all`);
-      // if (!res.success) {
-      //   return console.error(res.error);
-      // } console.log(res);
-      // setVentures(res.data);
+      const res = await apiVentureTours
+      (`http://localhost:3000/api/ventures/tour/all`);
+      if (!res.success)
+        return console.error(res.error);
+      } console.log(res);
+      setVentures(res.data);
     }
     call();
   }, [apiVentureTours]);

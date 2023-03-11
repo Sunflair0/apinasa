@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react'
 import Ship from '../components/Animations/Ship'
 import gsap from 'gsap'
@@ -34,7 +35,6 @@ export default function LoginPage() {
     })
     return (
         <><Background />
-
             <div className='cursor_follow' ref={el => cursor = el}>
                 <Ship />
             </div>
