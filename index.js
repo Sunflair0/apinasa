@@ -38,5 +38,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, function(){
-console.log("Listening on port 3306");
+console.log("No whammies on port 65001");
 })
