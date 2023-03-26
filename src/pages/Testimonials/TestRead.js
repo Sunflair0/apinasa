@@ -7,7 +7,7 @@ const TestRead = () => {
   return (
     <>
       <div className="content_flexbox">
-        <div>TestRead</div>
+        <div>Testimonials Read</div>
         <Outlet />
       </div>
     </>
