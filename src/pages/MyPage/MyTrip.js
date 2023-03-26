@@ -5,7 +5,7 @@ const MyTrip = () => {
   return (
     <>
     <div className="content_flexbox">
-  <div>My Trip</div>
+  <div>My Trip that I purchased</div>
     </div>
       </>    
   )
