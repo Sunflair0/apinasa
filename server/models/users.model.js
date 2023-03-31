@@ -1,8 +1,8 @@
 const bcrypt = require("bcrypt");
 const query = require("../config/mysql.conf").default;
-// const { nanoid } = require('@reduxjs/toolkit');
+const { nanoid } = require('@reduxjs/toolkit');
 
-async function signup(username, password) { 
+async function signup(res, username, password) { 
   let json = { data: null, success: false, error: null };
   try {
     const [user] = await query("SELECT * FROM users WHERE username = ?", [
@@ -13,7 +13,7 @@ async function signup(username, password) {
     } else {
       const hashed = await bcrypt.hash(password, 10);
   
-      await query("INSERT INTO users (password, username, nanoid) VALUES (?,?,?)", [
+      await query("INSERT INTO users (username, password, nanoid) VALUES (?,?,?)", [
         hashed, username, nanoid
       ]);
       json = { ...json, success: true };
