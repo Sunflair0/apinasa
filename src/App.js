@@ -33,14 +33,14 @@ import Testimonials from "./pages/Testimonials/Testimonials";
 import TestRead from "./pages/Testimonials/TestRead";
 import TestWrite from "./pages/Testimonials/TestWrite";
 import TourInfo from "./components/TourHelpers/TourInfo";
-import TourAddOns from "./components/TourHelpers/TourAddOns";
+// import TourAddOns from "./components/TourHelpers/TourAddOns";
 import Intro from "./pages/About/Intro";
 import AddOns from "./pages/About/AddOns";
 import Game from "./pages/About/Game";
 import ThisSite from "./pages/About/ThisSite";
 import Tours from "./pages/About/Tours";
 import TravelNow from "./pages/MyPage/TravelNow";
-import VentureTours from "./pages/VentureTours";
+// import VentureTours from "./pages/VentureTours";
 import Admin from "./pages/Admin";
 import Junk from "./components/Junk";
 import Profile from "./pages/MyPage/Profile";
@@ -61,6 +61,7 @@ function App() {
                     <Route path="/" element={<Layout />} >
                       <Route index element={<Home />} />
                       <Route path="home" element={<Home />} />
+
 
                       <Route path="about" element={<About />} >
                         <Route index element={<Intro />} />
@@ -98,8 +99,8 @@ function App() {
                         <Route path="travelnow" element={<TravelNow />} />
                         <Route path="presentlocation" element={<PresentLocation />} />
                       </Route>
-                      <Route path="venturetours/*" element={<VentureTours />} />
-                      <Route path="venturetours/:addOnsID" element={<TourAddOns />} />
+                      {/* <Route path="venturetours/*" element={<VentureTours />} /> */}
+                      {/* <Route path="venturetours/:addOnsID" element={<TourAddOns />} /> */}
 
                       <Route path="testimonials" element={<Testimonials />} >
                         <Route path="read" element={<TestRead />} />

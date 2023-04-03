@@ -1,18 +1,25 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../redux/features/userSlice";
+import { useDispatch } from "react-redux";
+import { setCredentials } from "./authSlice";
+import { useLoginMutation } from "./authApiSlice";
 import { connect } from "react-redux";
-import TourguideLight from "../Tourguide/TourguideLight";
+import TourguideLight from "../../../components/Tourguide/TourguideLight";
 
-function Login({ login }) {
-    const navigate = useNavigate();
+const Login = () => {
+    const userRef = useRef();
+    const errRef = useRef();
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const [usernameError, setUsernameError] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
     const [showError, setShowError] = useState(false);
+    const navigate = useNavigate();
 
+    const [login, { isLoading }] = useLoginMutation();
+    const dispatch = useDispatch();
 
     const passError = useMemo(
         () => password.length < 6 || password.length > 30,
@@ -22,6 +29,16 @@ function Login({ login }) {
         () => username.length < 2 || username.length > 20,
         [username]
     );
+
+    useEffect(() => {
+        userRef.current.focus()
+    }, [])
+
+    useEffect(() => {
+        setShowError('')
+    }, [username, password])
+
+
 
     useEffect(() => {
         if (username.length > 20) {
@@ -46,16 +63,20 @@ function Login({ login }) {
     return (
         <>
             <form className="tourguide sunburn">
+
+
                 <div className="stripe">
                     <div><TourguideLight /></div>
                     <div className="namepass">
                         <input
                             required
                             title="Between 2 and 20 characters"
+
                             type="text"
                             pattern="{2,20}"
                             placeholder="SpaceTours Handle"
                             value={username}
+                            ref={userRef}
                             onChange={(e) => setUsername(e.target.value)}
                             error={showError ? !!usernameError : undefined}
                         />
@@ -75,7 +96,7 @@ function Login({ login }) {
                     <div className="gmessage">Now that you have an account, hit the GO button for your next adventure. Keep this device with you to access Ventures on reverse side.</div>
 
                     <button style={{ transform: "translate(3px, -10px)" }}
-                     disabled={passError || userError}
+                        disabled={passError || userError}
                         onClick={(e) => {
                             e.preventDefault();
                             if (!passError && !userError) {
@@ -97,12 +118,13 @@ function Login({ login }) {
                 </div>
             </form>
         </>
+
     );
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: (username) => dispatch(login(username)),
+        login: (username) => dispatch(Login(username)),
     };
 };
 

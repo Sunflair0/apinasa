@@ -1,6 +1,6 @@
 import { useToggleContext } from "../../hooks/useToggleContext";
-import Login from "../Auth/Login";
-import SignUp from "../Auth/Signup";
+import Login from "../../redux/features/auth/Login";
+import SignUp from "../../redux/features/auth/Signup";
 
 export default function Cardflip() {
   const { isFlipped, handleFlipToggle } = useToggleContext();

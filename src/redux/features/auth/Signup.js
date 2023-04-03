@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import TourguideLight from "../Tourguide/TourguideLight";
+import TourguideLight from "../../../components/Tourguide/TourguideLight";
 import { useNavigate } from "react-router-dom";
 
 

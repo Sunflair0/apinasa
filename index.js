@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const passportConf = require("./server/config/passport.conf");

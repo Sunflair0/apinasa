@@ -8,7 +8,7 @@ import Brand from '../components/Structure/Brand'
 
 export default function LoginPage() {
     let tl = gsap.timeline();
-    let cursor = useRef(null);
+    let cursor = useRef();
     let posX = 0;
     let posY = 0;
     let mouseX = 0;
@@ -23,7 +23,7 @@ export default function LoginPage() {
                 tl.set(cursor, {
                     css: {
                         left: posX - 20,
-                        top: posY - 350,
+                        top: posY - 150,
                     }
                 })
             }
