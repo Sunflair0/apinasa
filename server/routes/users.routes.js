@@ -1,6 +1,6 @@
 const express = require("express");
 const authenticate = require("../middleware/authenticate.middleware");
-const { login, signup } = require("../models/users.model")
+const { login, signup, addEmail } = require("../models/users.model")
 const validate = require("../middleware/validate-input")
 const router = express.Router();
 
@@ -19,11 +19,17 @@ router.post("/login", (req, res) => {
   login(res, username, password);
 });
 
+router.post("/addEmail", (req, res) => {
+  const { email } = req.body;
+  console.log("req.body", req.body);
+  addEmail(res, email);
+});
+
 router.get("/verify", authenticate, (req, res) => {
   return res.send({
-      data: { username: req.users.username },
-      success: true,
-      error: null
+    data: { username: req.users.username },
+    success: true,
+    error: null
   });
 });
 
