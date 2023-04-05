@@ -41,8 +41,8 @@ async function login(username, password) {
     const matches = await bcrypt.compare(password, user.password);
     if (matches) {
       json = { ...json, data: { username, nanoid: user.nanoid } };
-// /////will log time of user when sign in
-      await query("INSERT INTO users(updated_at) VALUES (current_timestamp())");
+// /////will log time of user when sign in user_id: user.user_id
+      await query("UPDATE users SET updated_at = CURRENT_TIME() WHERE username=?", [username]);
     } else {
       json.error = "Invalid username / password";
     }
