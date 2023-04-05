@@ -63,7 +63,6 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         try {
             const userData = await login({ username, password }).unwrap()
             dispatch(setCredentials({ ...userData, username }))
@@ -83,7 +82,6 @@ const Login = () => {
             errRef.current.focus();
         }
     }
-
 
     const theGate = isLoading ? <Loader /> : (
         <>
