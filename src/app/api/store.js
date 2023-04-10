@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from ".././app/api/apiSlice";
-import authReducer from "./features/auth/authSlice"
+import { apiSlice } from "./apiSlice";
+import authReducer from "../../redux/features/auth/authSlice"
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import albumReducer from "./features/albumSlice";
-import bankReducer from "./features/bankSlice";
-import profileReducer from "./features/profileSlice";
-import transactionsReducer from "./features/transactionsSlice";
-import testimonialsReducer from "./features/salutesSlice";
-import venturesReducer from "./features/venturesSlice";
-import { nasaApi } from "./features/nasaSlice";
+import albumReducer from "../../redux/features/albumSlice";
+import bankReducer from "../../redux/features/bankSlice";
+import profileReducer from "../../redux/features/profileSlice";
+import transactionsReducer from "../../redux/features/transactionsSlice";
+import testimonialsReducer from "../../redux/features/salutesSlice";
+import venturesReducer from "../../redux/features/venturesSlice";
+import { nasaApi } from "../../redux/features/nasaSlice";
 
 export const store = configureStore({
   reducer: {
@@ -26,6 +26,7 @@ export const store = configureStore({
     getDefaultMiddleware().concat(apiSlice.middleware),
 ///PRODUCTION =FALSE
   devTools: true
+
 });
 
 setupListeners(store.dispatch);

@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { ToggleProvider } from './ToggleContext';
+import { ToggleProvider } from './context/ToggleContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

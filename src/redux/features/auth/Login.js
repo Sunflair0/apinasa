@@ -65,16 +65,17 @@ const Login = () => {
         e.preventDefault()
         try {
             const userData = await login({ username, password }).unwrap()
+            console.log(userData, 'userData');
             dispatch(setCredentials({ ...userData, username }))
             setUsername('')
             setPassword('')
-            navigate('/')
+            navigate('/home')
         } catch (err) {
             if (!err?.response) {
                 setShowError('No Server Response');
-            } else if (err.response?.status === 400) {
+            } else if (err.originalStatus?.status === 400) {
                 setShowError('Missing Username or Password');
-            } else if (err.response?.status === 401) {
+            } else if (err.originalStatus?.status === 401) {
                 setShowError('Unauthorized');
             } else {
                 setShowError('Login Failed');
