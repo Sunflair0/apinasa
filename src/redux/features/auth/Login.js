@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
 import { useLoginMutation } from "./authApiSlice";
-import { connect } from "react-redux";
 import TourguideLight from "../../../components/Tourguide/TourguideLight";
+import Loader from "../../../components/Animations/Loader"
 
 const Login = () => {
     const userRef = useRef();
@@ -16,6 +16,7 @@ const Login = () => {
     const [usernameError, setUsernameError] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
     const [showError, setShowError] = useState(false);
+    // const [servErrMsg, setServErrMsg] = useState(false);
     const navigate = useNavigate();
 
     const [login, { isLoading }] = useLoginMutation();
@@ -60,11 +61,35 @@ const Login = () => {
         }
     }, [password]);
 
-    return (
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const userData = await login({ username, password }).unwrap()
+            console.log(userData, 'userData');
+            dispatch(setCredentials({ ...userData, username }))
+            setUsername('')
+            setPassword('')
+            navigate('/home')
+        } catch (err) {
+            if (!err?.response) {
+                setShowError('No Server Response');
+            } else if (err.originalStatus?.status === 400) {
+                setShowError('Missing Username or Password');
+            } else if (err.originalStatus?.status === 401) {
+                setShowError('Unauthorized');
+            } else {
+                setShowError('Login Failed');
+            }
+            errRef.current.focus();
+        }
+    }
+
+    const theGate = isLoading ? <Loader /> : (
         <>
-            <form className="tourguide sunburn">
+            <p ref={errRef} className={showError ? "errmsg" : "offscreen"} ></p>
 
 
+            <form onSubmit={handleSubmit} className="tourguide sunburn">
                 <div className="stripe">
                     <div><TourguideLight /></div>
                     <div className="namepass">
@@ -120,14 +145,8 @@ const Login = () => {
         </>
 
     );
-};
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        login: (username) => dispatch(Login(username)),
-    };
-};
+    return theGate
+}
 
-const mapStateToProps = () => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login
