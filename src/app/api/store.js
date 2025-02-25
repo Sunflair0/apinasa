@@ -6,7 +6,7 @@ import albumReducer from "../../redux/features/albumSlice";
 import bankReducer from "../../redux/features/bankSlice";
 import profileReducer from "../../redux/features/profileSlice";
 import transactionsReducer from "../../redux/features/transactionsSlice";
-import testimonialsReducer from "../../redux/features/salutesSlice";
+// import testimonialsReducer from "../../redux/features/salutesSlice";
 import venturesReducer from "../../redux/features/venturesSlice";
 import { nasaApi } from "../../redux/features/nasaSlice";
 
@@ -18,7 +18,7 @@ export const store = configureStore({
     bank: bankReducer,
     profile: profileReducer,
     purchases: transactionsReducer,
-    testimonials: testimonialsReducer,
+    // testimonials: testimonialsReducer,
     ventures: venturesReducer,
     [nasaApi.reducerPath]: nasaApi.reducer,
   },

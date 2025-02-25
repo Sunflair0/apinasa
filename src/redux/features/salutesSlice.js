@@ -42,4 +42,5 @@ const selectReadSalutesData = createSelector(selectReadSalutesResult, resultData
 export const {
   selectAll: selectAllSalutes,
   selectById: selectSalutesById,
+  
 } = salutesAdapter.getSelectors(state => selectReadSalutesData(state))

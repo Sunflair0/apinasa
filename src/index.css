@@ -58,7 +58,11 @@ body {
 
 .gal {
   background-image: "url(../../assets/streaks.png)";
+}
 
+.overlay {
+
+border-image: linear-gradient(rgba(0, 0, 0, 0.133), rgba(0, 0, 0, 0.133)) fill 1;
 }
 
 /* width */
