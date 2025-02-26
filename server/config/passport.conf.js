@@ -1,3 +1,4 @@
+require("dotenv").config();
 const LocalStrategy = require("passport-local");
 const { Strategy } = require("passport-jwt");
 const jwt = require("jsonwebtoken");

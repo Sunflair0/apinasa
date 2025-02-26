@@ -12,7 +12,7 @@
 //   useEffect(() => {
 //     async function call() {
 //       const res = await apiVentureTours
-//       (`http://localhost:3000/api/ventures/tour/all`);
+//       (`http://localhost:3700/api/ventures/tour/all`);
 //       if (!res.success)
 //         return console.error(res.error);
 //       } console.log(res);
