@@ -3,7 +3,7 @@ import React from 'react'
 
 const Tourbuttons = () => {
   return (
-    <div>Tourbuttons</div>
+    <div>Tourbuttons are great</div>
   )
 }
 
